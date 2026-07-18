@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+.env
+prisma/*.db
+prisma/*.db-journal
+dev.db
+.vercel
+.env*
+.claude
