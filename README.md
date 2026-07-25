@@ -1,10 +1,14 @@
 # Atelier — Vocabulary Studio
 
+[![CI](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml)
+[**Live demo →**](https://vocab-master-dusky.vercel.app)
+
 A refined, full-stack web app for mastering English vocabulary (A1–B2) using **FSRS** spaced repetition. Built with Next.js, Prisma, and a warm editorial design system.
 
 ```
 3,677 words · 4 study modes · FSRS scheduler · progress analytics
 ```
+
 
 ---
 
