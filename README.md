@@ -1,147 +1,134 @@
 # Atelier — Vocabulary Studio
 
 [![CI](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml)
-[**Live demo →**](https://vocab-master-dusky.vercel.app)
+[![Live demo](https://img.shields.io/badge/demo-Vercel-ember)](https://vocab-master-dusky.vercel.app)
 
-A refined, full-stack web app for mastering English vocabulary (A1–B2) using **FSRS** spaced repetition. Built with Next.js, Prisma, and a warm editorial design system.
+Web app **full-stack** luyện từ vựng tiếng Anh (A1–B2) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập GitHub + đồng bộ dữ liệu học giữa các thiết bị.
 
 ```
-3,677 words · 4 study modes · FSRS scheduler · progress analytics
+3.677 từ · 5 chế độ học · FSRS scheduler · song ngữ Anh–Vi · đăng nhập GitHub
 ```
 
+👉 **Demo chạy thật:** https://vocab-master-dusky.vercel.app
 
 ---
 
-## ✨ Features
+## ✨ Tính năng
 
 ### 🧠 Spaced Repetition (FSRS)
-Powered by the **Free Spaced Repetition Scheduler** — the same algorithm family now default in Anki (2024). It models each card on three variables — *stability*, *difficulty*, *retrievability* — and schedules reviews ~25% more efficiently than the classic SM-2. You rate every card on a four-point scale:
+Dùng **FSRS** (`ts-fsrs`) — mô hình mỗi thẻ theo 3 biến *stability / difficulty / retrievability*, lên lịch ôn hiệu quả hơn ~25% so với SM-2 cổ điển. Mỗi thẻ đánh giá 4 nút:
 
-| Button | Meaning | Effect |
+| Nút | Ý nghĩa | Hiệu ứng |
 |---|---|---|
-| 🔴 Again | You forgot | Re-queue soon |
-| 🟠 Hard | Barely recalled | Short interval |
-| 🟢 Good | Recalled with effort | Standard interval |
-| 🔵 Easy | Instant recall | Long interval |
+| 🔴 Lại | Quên | Ôn lại sớm |
+| 🟠 Khó | Nhớ mờ | Khoảng ngắn |
+| 🟢 Tốt | Nhớ được | Khoảng chuẩn |
+| 🔵 Dễ | Nhớ tức thì | Khoảng dài |
 
-### 🎴 Four study modes
-- **Flashcards** — the core SRS loop. Flip, rate, repeat.
-- **Quiz** — pick the meaning from four same-level distractors.
-- **Typing** — active recall; typos within one character are forgiven (Levenshtein).
-- **Dictation** — hear the word (UK/US audio, adjustable speed), spell it back.
+### 🎴 5 chế độ luyện tập
+- **Flashcard** — lõi SRS: lật thẻ → đánh giá → lặp. Hỗ trợ 3 hướng: **Word→Meaning**, **Meaning→Word**, **Cloze** (điền khuyết trong câu ví dụ).
+- **Trắc nghiệm** — chọn nghĩa trong 4 đáp án cùng cấp CEFR.
+- **Gõ đáp án** — active recall, chấp nhận sai 1 ký tự (Levenshtein).
+- **Nghe & viết** — nghe audio (UK/US, chỉnh tốc độ) rồi chép lại.
+- **Cram (ôn tự do)** — drill nhanh theo cấp/chủ đề, **không đụng lịch SRS** — hợp ôn trước thi.
 
-All modes feed the same schedule. Quiz/Typing/Dictation auto-rate (correct → Good, wrong → Again).
+Mọi chế độ (trừ Cram) ghi vào cùng lịch FSRS; Quiz/Typing/Dictation tự đánh giá (đúng → Good, sai → Again).
 
-### 📈 Progress tracking
-- Streak counter (consecutive active days)
-- Cards due / learned / learning
-- Mastery bars per CEFR level (A1–B2)
-- 365-day activity heatmap
-- 30-day review forecast
-- Recall accuracy trend
-- Per-day study breakdown (new vs. reviews, accuracy)
+### 🌐 Song ngữ Anh–Vi
+Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch qua Google Translate, lưu sẵn DB). UI cũng chuyển được **Tiếng Việt / English**.
 
-### 🎨 Design
-An original "Atelier" aesthetic — warm paper surfaces, a characterful **Fraunces** display serif paired with **Hanken Grotesk**, saffron-ember and moss accents, a subtle paper-grain texture, and choreographed motion via **Motion**. Light & dark themes. Fully responsive (mobile bottom-tab nav).
+### 📈 Theo dõi tiến độ
+- Streak (chuỗi ngày liên tục)
+- Thẻ đến hạn / đã thuộc / đang học
+- Thanh tiến độ theo từng cấp CEFR (A1–B2)
+- Heatmap hoạt động 365 ngày
+- Dự báo ôn tập 30 ngày + xu hướng độ chính xác
+- **Tóm tắt phiên học** chi tiết: % đúng, thời gian, phân bổ 4 nút Again/Hard/Good/Easy
+
+### 🖼️ Ảnh & âm thanh
+- **Ảnh thật trực tiếp** trên thẻ (lấy từ Wikimedia Commons cho ~670 danh từ cụ thể).
+- **Phát âm thật** (bản ghi từ dictionaryapi.dev) + fallback Web Speech API đọc đúng từ.
+
+### 🎨 Thiết kế
+"Aesthetic Atelier" — nền giấy ấm, font **Fraunces** (serif) + **Hanken Grotesk**, accent saffron-ember & moss, texture giấy nhẹ, animation mượt (Motion). Light/Dark theme, responsive đầy đủ (mobile bottom-tab nav). Loading mượt: **progress bar + skeleton** khi chuyển trang.
+
+### 🔐 Đăng nhập & đồng bộ
+**GitHub OAuth** (NextAuth v4 + Prisma adapter). Dữ liệu học lưu trên **Neon Postgres** → sync giữa các thiết bị theo tài khoản.
 
 ---
 
-## 🚀 Quick start
+## 🚀 Chạy local
 
 ```bash
-# 1. Install
 npm install
-
-# 2. The database + 3,677 words are already seeded in prisma/dev.db
-#    (To re-seed from scratch: delete prisma/dev.db, run the steps below)
-npm run db:push     # create SQLite schema
-npm run db:seed     # load vocabulary.json → 3,677 words
-
-# 3. Run
-npm run dev         # http://localhost:3000
+npx prisma generate          # sinh Prisma client
+npx prisma db push           # tạo schema trên Postgres (cần DATABASE_URL)
+npm run db:seed              # nạp 3.677 từ từ data/vocabulary.json
+npm run dev                  # http://localhost:3000
 ```
 
-> **Note:** port 3000 may be busy on this machine — the dev server auto-increments, or run `npx next dev -p 3939`.
+Cần file `.env` (KHÔNG commit):
+```
+DATABASE_URL="postgresql://..."        # Neon / Postgres
+NEXTAUTH_SECRET="..."                   # openssl rand -base64 32
+NEXTAUTH_URL="http://localhost:3000"
+GITHUB_CLIENT_ID="..."                  # GitHub OAuth app
+GITHUB_CLIENT_SECRET="..."
+AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cần login
+```
+
+> Muốn setup Neon + GitHub OAuth đầy đủ, xem `DEPLOY.md`.
 
 ---
 
 ## 🏗️ Tech stack
 
-| Layer | Choice |
+| Lớp | Công nghệ |
 |---|---|
 | Framework | Next.js 14 (App Router) + TypeScript |
-| Database | SQLite + Prisma ORM (zero-setup; swap datasource to Postgres for multi-device) |
+| DB | PostgreSQL (Neon) + Prisma ORM |
+| Auth | NextAuth v4 + GitHub + Prisma adapter |
 | SRS | [`ts-fsrs`](https://github.com/open-spaced-repetition/ts-fsrs) |
-| Styling | Tailwind CSS + custom design tokens |
-| Animation | Motion (Framer Motion) |
+| UI | Tailwind CSS + Motion (Framer Motion) + lucide-react |
 | Charts | Recharts |
-| Icons | lucide-react |
+| i18n | client-side (VI/EN) |
+| Deploy | Vercel + Neon · CI: GitHub Actions |
 
-### Project structure
+### Cấu trúc
 ```
-src/
-├── app/
-│   ├── page.tsx              # Dashboard / home
-│   ├── study/                # Mode picker + 4 study pages
-│   ├── stats/                # Progress analytics
-│   ├── browse/               # Full vocabulary library (search/filter)
-│   ├── settings/             # FSRS params, theme, daily limits
-│   └── api/                  # study/queue, study/review, stats, words, settings
-├── components/
-│   ├── study/                # Flashcard, PracticeSession, RatingButtons
-│   ├── stats/                # StatCard, CefrProgress, Heatmap, Charts
-│   ├── nav.tsx, theme-*, audio-button, cefr-badge
-├── lib/
-│   ├── fsrs.ts               # FSRS wrapper
-│   ├── study-engine.ts       # Queue building, rating, review recording
-│   ├── stats.ts              # Dashboard aggregations
-│   ├── db.ts, utils.ts
-data/vocabulary.json          # 3,677 enriched words (source data)
-prisma/schema.prisma          # Word, Card, ReviewLog, StudySession, DailyStat, Settings
+prisma/         schema.prisma + seed/translate/assign-topics/fetch-images scripts
+src/app/        routes: study (flashcard/quiz/typing/dictation/cram), stats, topics, browse, settings, login + api/
+src/components/ study/*, stats/*, nav, i18n, theme, audio, word-image
+src/lib/        fsrs, study-engine, stats, auth, session, topics-data, tts, cloze, i18n dictionaries
+data/           vocabulary.json (3.677 từ enrich)
 ```
 
 ---
 
-## 🧠 How it works
+## 📊 Dữ liệu
 
-1. **Queue** — on each study session, the engine fetches cards `due <= now` (reviews) plus new cards up to your daily limit (`newCardsPerDay`), defaulting to 20.
-2. **Rate** — your rating runs through `ts-fsrs`, which recomputes the card's stability/difficulty and next due date.
-3. **Persist** — the card is updated, a `ReviewLog` entry is written, and the `DailyStat` for today is incremented (which powers the heatmap & streak).
-4. **Forecast** — the dashboard reads future `due` dates to predict tomorrow's workload.
+3.677 từ từ **Oxford 5000** (A1–B2), enrich thêm:
+- IPA (UK + US), loại từ (Anh + Việt)
+- Nghĩa tiếng Anh + **dịch tiếng Việt** (99%)
+- Câu ví dụ + dịch VI
+- Từ đồng nghĩa / trái nghĩa
+- Audio phát âm (UK/US) · Ảnh thật (Wikimedia, ~670 từ)
 
-### FSRS tuning
-In **Settings** you can adjust:
-- **Target retention** (0.80–0.99) — higher = stronger memory, more reviews
-- **New cards per day** (5–100)
-- **Reviews per day** cap (50–500)
-
----
-
-## 📊 Data
-
-The 3,677 words come from `cefr_a1_b2_vocabulary.json`, enriched with:
-- IPA (UK + US), part of speech (EN + VI)
-- English definitions + extra definitions
-- Example sentences
-- Synonyms & antonyms
-- Audio (UK/US, hosted on the Oxford-5000 repo)
-- Image search links (Google/Bing/Oxford)
-
-| Level | Words |
+| Cấp | Số từ |
 |---|---|
 | A1 | 898 |
 | A2 | 792 |
 | B1 | 690 |
-| B2 | 1,297 |
+| B2 | 1.297 |
 
 ---
 
-## 🔧 Going further
-
-- **Multi-device sync:** change `datasource` in `schema.prisma` from `sqlite` to `postgresql`, point `DATABASE_URL` at Neon/Supabase, run `prisma migrate`.
-- **Auth:** a `userId` column already exists on every table (defaulting to `"local"`) — add NextAuth and scope queries by session user.
-- **FSRS optimization:** ts-fsrs supports parameter optimization from review history for a personalized scheduler.
+## 🔧 Mở rộng
+- **Multi-user:** đã per-user (mọi bảng scope theo `userId` qua session GitHub).
+- **Tối ưu FSRS:** `ts-fsrs` hỗ trợ optimize tham số từ lịch sử ôn → scheduler cá nhân hoá.
+- **Thêm ngôn ngữ UI:** thêm entry vào `src/lib/i18n/dictionaries.ts`.
+- **Ảnh AI 100%:** thay Wikimedia bằng nguồn AI (Lexica/…) khi API ổn định để phủ mọi từ.
 
 ---
 
-*Built as a single-user studio. Data lives in `prisma/dev.db`.*
+*Xây dựng cá nhân — data học sync qua Neon, deploy Vercel, CI GitHub Actions.*

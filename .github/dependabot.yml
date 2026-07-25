@@ -1,0 +1,26 @@
+version: 2
+updates:
+  # npm dependencies — weekly
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      next:
+        patterns: ["next", "@types/react", "react", "react-dom"]
+      prisma:
+        patterns: ["prisma", "@prisma/client"]
+
+  # GitHub Actions versions
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(ci)"
