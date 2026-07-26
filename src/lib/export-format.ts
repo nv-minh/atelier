@@ -17,10 +17,10 @@ export type ExportRow = {
 // share one list.
 export const CEFR_LEVELS = ["A1", "A2", "B1", "B2"] as const;
 
-// BOM (U+FEFF), written as an escape so a formatter/copy-paste can't silently
-// drop the invisible character. Excel needs it to open UTF-8 (Vietnamese
-// diacritics) without mojibake.
-const BOM = "﻿";
+// BOM (U+FEFF), written as a \uFEFF escape so a formatter/copy-paste can't
+// silently drop the invisible character. Excel needs it to open UTF-8
+// (Vietnamese diacritics) without mojibake.
+const BOM = "\uFEFF";
 
 const CSV_HEADER = [
   "Word",
