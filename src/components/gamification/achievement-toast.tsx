@@ -38,10 +38,14 @@ export function useAchievementToasts() {
   }, []);
 
   const toaster = (
-    <div className="pointer-events-none fixed inset-x-0 bottom-24 md:bottom-8 z-50 flex flex-col items-center gap-2 px-4">
+    <div
+      role="status"
+      aria-live="polite"
+      className="pointer-events-none fixed inset-x-0 bottom-24 md:bottom-8 z-50 flex flex-col items-center gap-2 px-4"
+    >
       <AnimatePresence>
         {items.map((it) => (
-          <Toast key={it.id} item={it} onDone={() => dismiss(it.id)} />
+          <Toast key={it.id} item={it} onDone={dismiss} />
         ))}
       </AnimatePresence>
     </div>
@@ -50,15 +54,23 @@ export function useAchievementToasts() {
   return { push, toaster };
 }
 
-function Toast({ item, onDone }: { item: ToastItem; onDone: () => void }) {
+function Toast({ item, onDone }: { item: ToastItem; onDone: (id: number) => void }) {
   const { t } = useI18n();
   const def = ACHIEVEMENT_BY_KEY[item.key];
   const Icon = iconFor(def?.icon ?? "Award");
 
+  // Keep the latest onDone in a ref so the auto-dismiss timer can run ONCE on
+  // mount ([] deps). If we depended on onDone directly, every parent re-render
+  // (e.g. each review during active study) would recreate the callback, re-run
+  // the effect, and restart the 4s timer — the toast would never dismiss.
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
+
   useEffect(() => {
-    const timer = setTimeout(onDone, AUTO_DISMISS_MS);
+    const timer = setTimeout(() => onDoneRef.current(item.id), AUTO_DISMISS_MS);
     return () => clearTimeout(timer);
-  }, [onDone]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <motion.div
@@ -67,7 +79,7 @@ function Toast({ item, onDone }: { item: ToastItem; onDone: () => void }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 12, scale: 0.97 }}
       transition={{ type: "spring", stiffness: 300, damping: 26 }}
-      onClick={onDone}
+      onClick={() => onDone(item.id)}
       className="pointer-events-auto cursor-pointer w-full max-w-sm flex items-center gap-3 rounded-2xl border border-ember/30 bg-surface/95 backdrop-blur-md px-4 py-3 shadow-lg"
     >
       <span className="inline-grid h-10 w-10 shrink-0 place-items-center rounded-full bg-ember/12 text-ember">

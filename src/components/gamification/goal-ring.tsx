@@ -37,7 +37,7 @@ export function GoalRing({
         {t("gamify.dailyGoal")}
       </p>
       <div className="relative" style={{ width: size, height: size }}>
-        <svg width={size} height={size} className="-rotate-90">
+        <svg width={size} height={size} className="-rotate-90" aria-hidden="true">
           <circle
             cx={size / 2}
             cy={size / 2}

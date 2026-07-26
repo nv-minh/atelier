@@ -1,6 +1,7 @@
 import "server-only";
 import { prisma } from "./db";
 import { todayStr, addDays } from "./utils";
+import { computeStreakFromDb } from "./gamification-checks";
 
 export async function getDashboardStats(userId: string) {
   const now = new Date();
@@ -92,32 +93,11 @@ export async function getDashboardStats(userId: string) {
   };
 }
 
-export async function computeStreak(userId: string): Promise<number> {
-  const stats = await prisma.dailyStat.findMany({
-    where: { userId, totalCount: { gt: 0 } },
-    orderBy: { dateStr: "desc" },
-    select: { dateStr: true },
-  });
-  if (stats.length === 0) return 0;
-
-  const today = todayStr();
-  const yesterday = todayStr(addDays(new Date(), -1));
-
-  // streak must include today or yesterday to be "active"
-  if (stats[0].dateStr !== today && stats[0].dateStr !== yesterday) return 0;
-
-  let streak = 0;
-  let cursor = new Date(stats[0].dateStr);
-  for (const s of stats) {
-    if (s.dateStr === todayStr(cursor)) {
-      streak += 1;
-      cursor = addDays(cursor, -1);
-    } else {
-      break;
-    }
-  }
-  return streak;
-}
+// Single source of truth lives in gamification-checks.computeStreakFromDb (a
+// non-server-only module so the tsx backfill can call it too). This server-only
+// wrapper just binds the app's prisma singleton — no duplicated algorithm.
+export const computeStreak = (userId: string): Promise<number> =>
+  computeStreakFromDb(prisma, userId);
 
 // Activity heatmap data: last 365 days
 export async function getActivityHeatmap(userId: string, days = 365) {

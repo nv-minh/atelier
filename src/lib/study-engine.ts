@@ -3,7 +3,6 @@ import { prisma } from "./db";
 import { previewCard, Rating, STATES } from "./fsrs";
 import { addDays, formatInterval, pick, shuffle, todayStr } from "./utils";
 import { awardForReview, awardForSessionEnd } from "./gamification";
-import { XP_PER_RATING } from "./gamification-defs";
 
 export type StudyWord = {
   id: string;
@@ -317,13 +316,12 @@ export async function recordReview(userId: string, cardId: string, rating: Ratin
     },
   });
 
-  // Update daily stats. XP for the rating rides on this SAME upsert (the existing
-  // DailyStat write) so gamification adds zero extra queries to the hot path —
-  // UserProgress + achievement checks happen in awardForReview below.
+  // Update daily stats (non-XP fields). The XP ledgers (DailyStat.xp +
+  // UserProgress.xp) are incremented together inside awardForReview's
+  // transaction, keyed on this SAME dateStr so the day never splits.
   const dateStr = todayStr();
   const isNewContribution = wasNew ? 1 : 0;
   const isReviewContribution = !wasNew ? 1 : 0;
-  const xpForRating = XP_PER_RATING[rating] ?? 0;
   await prisma.dailyStat.upsert({
     where: { userId_dateStr: { userId, dateStr } },
     update: {
@@ -331,7 +329,6 @@ export async function recordReview(userId: string, cardId: string, rating: Ratin
       reviews: { increment: isReviewContribution },
       correctCount: { increment: correct ? 1 : 0 },
       totalCount: { increment: 1 },
-      xp: { increment: xpForRating },
     },
     create: {
       userId,
@@ -340,12 +337,19 @@ export async function recordReview(userId: string, cardId: string, rating: Ratin
       reviews: isReviewContribution,
       correctCount: correct ? 1 : 0,
       totalCount: 1,
-      xp: xpForRating,
     },
   });
 
-  const { xpGained, unlocked, leveledUp } = await awardForReview(userId, rating, wasNew);
-  return { ...updated, xpGained, unlocked, leveledUp };
+  // Gamification is best-effort: the review is already committed above, so a
+  // gamification failure must never 500 the request or lose the review. Fall
+  // back to a zero award and log for diagnosis.
+  let award = { xpGained: 0, unlocked: [] as string[], leveledUp: null as number | null };
+  try {
+    award = await awardForReview(userId, rating, dateStr);
+  } catch (e) {
+    console.error("awardForReview failed (review already recorded):", e);
+  }
+  return { ...updated, ...award };
 }
 
 // ---------- Quiz distractor generation ----------
@@ -434,12 +438,19 @@ export async function endSession(
     data: { ...totals, endedAt: new Date() },
   });
 
-  const { xpGained, unlocked } = await awardForSessionEnd(userId, {
-    mode: session.mode,
-    cardsReviewed: session.cardsReviewed,
-    correctCount: session.correctCount,
-  });
-  return { ok: true, xpGained, unlocked };
+  // Best-effort: the session is already ended above; a gamification failure must
+  // not fail the request. Fall back to a zero award and log.
+  let award = { xpGained: 0, unlocked: [] as string[] };
+  try {
+    award = await awardForSessionEnd(userId, {
+      mode: session.mode,
+      cardsReviewed: session.cardsReviewed,
+      correctCount: session.correctCount,
+    });
+  } catch (e) {
+    console.error("awardForSessionEnd failed (session already ended):", e);
+  }
+  return { ok: true, xpGained: award.xpGained, unlocked: award.unlocked };
 }
 
 export async function updateSettings(

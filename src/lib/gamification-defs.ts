@@ -24,7 +24,7 @@ export function xpForLevel(n: number): number {
 // quadratic 50n² + 50n − xp = 0, floored, then nudged to stay exact against
 // integer rounding at boundaries.
 export function levelFromXp(xp: number): number {
-  if (xp <= 0) return 0;
+  if (!Number.isFinite(xp) || xp <= 0) return 0;
   let n = Math.floor((-1 + Math.sqrt(1 + xp / 12.5)) / 2);
   if (n < 0) n = 0;
   while (xpForLevel(n + 1) <= xp) n += 1;

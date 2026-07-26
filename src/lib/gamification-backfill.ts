@@ -4,7 +4,7 @@
 // truth for "reconstruct a user's gamification state from their review history".
 
 import type { PrismaClient } from "@prisma/client";
-import { XP_PER_RATING } from "./gamification-defs";
+import { ACHIEVEMENTS } from "./gamification-defs";
 import {
   xpByDayFromLogs,
   computeStreakFromDb,
@@ -12,7 +12,6 @@ import {
   totalReviews,
   fullyStartedCefrLevels,
 } from "./gamification-checks";
-import { ACHIEVEMENTS } from "./gamification-defs";
 
 export type BackfillResult = {
   userId: string;

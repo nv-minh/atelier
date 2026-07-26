@@ -203,9 +203,10 @@ model Achievement {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   // Race-safety anchor: a duplicate insert (concurrent unlock) hits P2002 and
-  // is caught by the awarder, so a badge can never be granted twice.
+  // is caught by the awarder, so a badge can never be granted twice. The unique
+  // index also serves userId-prefixed lookups (findMany where userId), so no
+  // separate @@index([userId]) is needed.
   @@unique([userId, key])
-  @@index([userId])
 }
 
 // ── Per-user notebook: bookmarks ("star") + personal notes ───────────
