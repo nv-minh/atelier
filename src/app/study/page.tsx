@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Layers, CheckSquare, Keyboard, Headphones, Zap, Grid3x3, ArrowUpRight } from "lucide-react";
+import { Layers, CheckSquare, Keyboard, Headphones, Zap, Grid3x3, Mic, ArrowUpRight } from "lucide-react";
 import { CefrFilter } from "@/components/study/cefr-filter";
 import { DirectionFilter } from "@/components/study/direction-filter";
 import { useI18n } from "@/components/i18n-provider";
@@ -29,6 +29,7 @@ export default function StudyPage() {
     { slug: "typing", icon: Keyboard, accent: "text-moss-500", ring: "group-hover:border-moss-500/40", title: t("modes.typing.title"), desc: t("modes.typing.desc"), tag: t("modes.tagRecall") },
     { slug: "dictation", icon: Headphones, accent: "text-cefr-b2", ring: "group-hover:border-cefr-b2/40", title: t("modes.dictation.title"), desc: t("modes.dictation.desc"), tag: t("modes.tagListening") },
     { slug: "matching", icon: Grid3x3, accent: "text-cefr-b1", ring: "group-hover:border-cefr-b1/40", title: t("modes.matching.title"), desc: t("modes.matching.desc"), tag: t("modes.tagMatching") },
+    { slug: "pronunciation", icon: Mic, accent: "text-cefr-c1", ring: "group-hover:border-cefr-c1/40", title: t("modes.pron.title"), desc: t("modes.pron.desc"), tag: t("modes.tagPron") },
     { slug: "cram", icon: Zap, accent: "text-ember", ring: "group-hover:border-ember/40", title: t("modes.cram.title"), desc: t("modes.cram.desc"), tag: t("modes.tagCram") },
   ];
 
