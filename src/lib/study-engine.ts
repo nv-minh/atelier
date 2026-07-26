@@ -87,6 +87,19 @@ export async function getStarredWordIds(userId: string): Promise<string[]> {
   return rows.map((r) => r.wordId);
 }
 
+// A "leech" is a word the user keeps forgetting: enough lapses on a card that has
+// left the New state. Derived, never stored. Kept here (with getStarredWordIds) so
+// notebook.ts and study-engine.ts share the constant without a circular import.
+export const LEECH_THRESHOLD = 4;
+
+export async function getLeechWordIds(userId: string): Promise<string[]> {
+  const rows = await prisma.card.findMany({
+    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
+    select: { wordId: true },
+  });
+  return rows.map((r) => r.wordId);
+}
+
 // Build the study queue: due reviews first, then new cards up to the daily limit.
 export async function buildStudyQueue(
   userId: string,
@@ -116,7 +129,9 @@ export async function buildStudyQueue(
     starredIds = await getStarredWordIds(userId);
     wordFilter.id = { in: starredIds };
   }
-  // "leeches" scope: implemented in a later phase — no-op fallthrough for now.
+  // "leeches" scope has no SRS path by design — leeches are usually not due, and
+  // off-schedule Good ratings would corrupt FSRS stability. Leech review is
+  // cram-only (see buildCramQueue); no-op fallthrough here on purpose.
   const where = Object.keys(wordFilter).length ? { userId, word: wordFilter } : { userId };
 
   // 1. Due review cards (state >= 1 and due <= now)
@@ -342,7 +357,7 @@ export async function buildCramQueue(opts?: {
   topic?: string;
   limit?: number;
   userId?: string;
-  scope?: "starred";
+  scope?: "starred" | "leeches";
 }): Promise<StudyWord[]> {
   const cefr = opts?.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
   const topic = opts?.topic && opts.topic !== "ALL" ? opts.topic : undefined;
@@ -351,6 +366,9 @@ export async function buildCramQueue(opts?: {
   if (topic) where.topics = { contains: `"${topic}"` };
   if (opts?.scope === "starred" && opts.userId) {
     const ids = await getStarredWordIds(opts.userId);
+    where.id = { in: ids };
+  } else if (opts?.scope === "leeches" && opts.userId) {
+    const ids = await getLeechWordIds(opts.userId);
     where.id = { in: ids };
   }
   const rows = await prisma.word.findMany({

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { Flame } from "lucide-react";
 import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { ActivityHeatmap } from "@/components/stats/heatmap";
@@ -11,11 +13,13 @@ export function StatsView({
   heatmap,
   forecast,
   accuracy,
+  leeches,
 }: {
   stats: any;
   heatmap: any[];
   forecast: any[];
   accuracy: any[];
+  leeches: { word: string; lapses: number }[];
 }) {
   const { t } = useI18n();
 
@@ -44,6 +48,40 @@ export function StatsView({
       <section className="mb-6">
         <CefrProgress stats={stats.cefrStats} />
       </section>
+
+      {leeches.length > 0 && (
+        <section className="mb-6">
+          <div className="card-atelier p-6 sm:p-7">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="inline-grid h-8 w-8 place-items-center rounded-full bg-red-400/10 text-red-400">
+                <Flame size={15} />
+              </span>
+              <h3 className="display text-lg">{t("stats.leechTitle")}</h3>
+            </div>
+            <ul className="grid gap-1.5">
+              {leeches.map((l) => (
+                <li key={l.word}>
+                  <Link
+                    href={`/word/${encodeURIComponent(l.word)}`}
+                    className="flex items-baseline justify-between gap-4 rounded-lg px-3 py-2 hover:bg-paper-200/50 transition-colors"
+                  >
+                    <span className="display text-base hover:text-ember transition-colors">{l.word}</span>
+                    <span className="text-xs text-red-400 font-semibold tabular-nums shrink-0">
+                      {t("stats.leechLapses", { n: l.lapses })}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/notebook?tab=leeches"
+              className="inline-block mt-3 text-sm text-soft hover:text-ember transition-colors"
+            >
+              {t("stats.leechLink")} →
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section>
         <ActivityHeatmap data={heatmap} />

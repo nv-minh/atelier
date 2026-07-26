@@ -36,6 +36,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     home: {
       streakActive: "Chuỗi {n} ngày — giữ nhịp nhé",
       newDay: "Một ngày mới để học",
+      leechChip: "{n} từ khó",
       title1: "Học những từ",
       title2: "thật sự cần thiết.",
       decoMark: "A1 — B2 · spaced repetition",
@@ -163,6 +164,9 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       nReviews: "{n} lần ôn",
       less: "Ít",
       more: "Nhiều",
+      leechTitle: "Từ khó",
+      leechLapses: "{n} lần quên",
+      leechLink: "Xem tất cả từ khó",
     },
     browse: {
       header: "— Thư viện",
@@ -190,6 +194,14 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         "Gắn sao một từ bất kỳ ở Thư viện hoặc trang chi tiết từ để lưu vào đây. Sau đó bạn có thể học hoặc cram riêng nhóm từ này — lưu ý phần học vẫn tuân theo giới hạn từ mới mỗi ngày.",
       goBrowse: "Tới thư viện",
       hasNote: "Có ghi chú",
+      tabStarred: "Đã gắn sao",
+      tabLeeches: "Từ khó",
+      leechExplainer:
+        "Từ khó là những từ bạn hay quên — đã quên từ 4 lần trở lên sau khi bắt đầu học. Drill riêng nhóm này ở chế độ cram để nhớ lại, không ảnh hưởng lịch SRS.",
+      drillLeeches: "Drill từ khó",
+      lapsesLabel: "{n} lần quên",
+      leechEmptyTitle: "Không có từ khó — tuyệt vời!",
+      leechEmptyBody: "Bạn chưa có từ nào bị quên nhiều lần. Cứ tiếp tục ôn đều nhé.",
     },
     word: {
       notStudied: "Chưa học",
@@ -329,6 +341,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     home: {
       streakActive: "{n}-day streak — keep it alive",
       newDay: "A new day to learn",
+      leechChip: "{n} leeches",
       title1: "Learn the words",
       title2: "that matter.",
       decoMark: "A1 — B2 · spaced repetition",
@@ -456,6 +469,9 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       nReviews: "{n} reviews",
       less: "Less",
       more: "More",
+      leechTitle: "Difficult words",
+      leechLapses: "{n} lapses",
+      leechLink: "See all leeches",
     },
     browse: {
       header: "— Library",
@@ -483,6 +499,14 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         "Star any word in the Library or on a word detail page to save it here. Then you can study or cram just this set — note that studying still respects your daily new-card limit.",
       goBrowse: "Go to library",
       hasNote: "Has a note",
+      tabStarred: "Starred",
+      tabLeeches: "Leeches",
+      leechExplainer:
+        "Leeches are the words you keep forgetting — you've lapsed on them 4 or more times since starting. Drill just this set in cram mode to shore them up; your SRS schedule stays untouched.",
+      drillLeeches: "Drill leeches",
+      lapsesLabel: "{n} lapses",
+      leechEmptyTitle: "No difficult words — great!",
+      leechEmptyBody: "You have no words you keep forgetting. Keep up the steady reviews.",
     },
     word: {
       notStudied: "Not studied yet",

@@ -1,8 +1,8 @@
 import "server-only";
 import { prisma } from "./db";
-import { mapWord, safeJson, getStarredWordIds } from "./study-engine";
+import { mapWord, safeJson, getStarredWordIds, LEECH_THRESHOLD } from "./study-engine";
 
-export { getStarredWordIds };
+export { getStarredWordIds, LEECH_THRESHOLD };
 
 export type NotebookCardState = {
   state: number;
@@ -82,6 +82,45 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
       note: m.note,
       card: c ? { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due } : null,
     };
+  });
+}
+
+// Leeches: cards the user keeps forgetting (lapses >= LEECH_THRESHOLD, state >= 1).
+// Leech status is derived from card counters, never stored. Shaped as NotebookEntry
+// so the notebook UI can render starred and leech lists the same way.
+export async function getLeeches(userId: string): Promise<NotebookEntry[]> {
+  const cards = await prisma.card.findMany({
+    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
+    include: { word: true },
+    orderBy: { lapses: "desc" },
+  });
+
+  const wordIds = cards.map((c) => c.wordId);
+  const marks = wordIds.length
+    ? await prisma.wordMark.findMany({
+        where: { userId, wordId: { in: wordIds } },
+        select: { wordId: true, note: true },
+      })
+    : [];
+  const noteByWord = new Map(marks.map((m) => [m.wordId, m.note]));
+
+  return cards.map((c) => ({
+    wordId: c.wordId,
+    word: c.word.word,
+    cefr: c.word.cefr,
+    typeVi: c.word.typeVi,
+    typeEn: c.word.typeEn,
+    definitionEn: c.word.definitionEn,
+    definitionVi: c.word.definitionVi,
+    imageUrl: c.word.imageUrl,
+    note: noteByWord.get(c.wordId) ?? "",
+    card: { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due },
+  }));
+}
+
+export async function getLeechCount(userId: string): Promise<number> {
+  return prisma.card.count({
+    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
   });
 }
 

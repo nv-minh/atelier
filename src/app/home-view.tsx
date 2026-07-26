@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Flame } from "lucide-react";
 import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { useI18n } from "@/components/i18n-provider";
@@ -19,7 +19,7 @@ export type HomeStats = {
   accuracy: number;
 };
 
-export function HomeView({ stats }: { stats: HomeStats }) {
+export function HomeView({ stats, leechCount }: { stats: HomeStats; leechCount: number }) {
   const { t } = useI18n();
 
   return (
@@ -27,11 +27,19 @@ export function HomeView({ stats }: { stats: HomeStats }) {
       {/* HERO */}
       <section className="pt-10 sm:pt-16 pb-12 sm:pb-16 relative">
         <div className="max-w-3xl">
-          <div className="animate-fade-up">
-            <p className="text-sm text-soft font-mono mb-4 flex items-center gap-2">
+          <div className="animate-fade-up flex flex-wrap items-center gap-3 mb-4">
+            <p className="text-sm text-soft font-mono flex items-center gap-2">
               <Sparkles size={14} className="text-ember" />
               {stats.streak > 0 ? t("home.streakActive", { n: stats.streak }) : t("home.newDay")}
             </p>
+            {leechCount > 0 && (
+              <Link
+                href="/notebook?tab=leeches"
+                className="inline-flex items-center gap-1.5 rounded-full bg-red-400/10 text-red-400 px-3 py-1 text-xs font-semibold hover:bg-red-400/15 transition-colors"
+              >
+                <Flame size={12} /> {t("home.leechChip", { n: leechCount })}
+              </Link>
+            )}
           </div>
           <h1 className="display text-display-xl mb-6 animate-fade-up" style={{ animationDelay: "60ms", animationFillMode: "both" }}>
             {t("home.title1")}

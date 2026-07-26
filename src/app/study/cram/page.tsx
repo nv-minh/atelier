@@ -13,7 +13,10 @@ export default async function CramPage({
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
-  const scope = searchParams.scope === "starred" ? "starred" : undefined;
+  const scope =
+    searchParams.scope === "starred" || searchParams.scope === "leeches"
+      ? searchParams.scope
+      : undefined;
   const words = await buildCramQueue({ cefr: searchParams.cefr, topic: searchParams.topic, limit: 30, userId: user.id, scope });
   if (words.length === 0) return <EmptyStudy />;
   const dir = (searchParams.dir as "forward" | "reverse" | "cloze") || "forward";
