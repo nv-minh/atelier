@@ -10,26 +10,7 @@ import { NoteEditor } from "@/components/note-editor";
 import { useI18n } from "@/components/i18n-provider";
 import { formatInterval } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-
-type StudyWord = {
-  id: string;
-  word: string;
-  cefr: string;
-  typeEn: string | null;
-  typeVi: string | null;
-  ipaUk: string | null;
-  ipaUs: string | null;
-  definitionEn: string | null;
-  definitionVi: string | null;
-  extraDefs: string[];
-  example: string | null;
-  exampleVi: string | null;
-  synonyms: string[];
-  antonyms: string[];
-  imageUrl: string | null;
-  audioUk: string | null;
-  audioUs: string | null;
-};
+import type { StudyWord } from "@/lib/study-engine";
 
 type Detail = {
   word: StudyWord;
@@ -42,10 +23,10 @@ type Detail = {
 };
 
 const stateKey: Record<number, string> = {
-  0: "word.stateNew",
-  1: "word.stateLearning",
-  2: "word.stateReview",
-  3: "word.stateRelearning",
+  0: "common.new",
+  1: "common.learning",
+  2: "common.review",
+  3: "common.relearning",
 };
 
 const ratingKey: Record<number, { key: string; c: string }> = {
@@ -174,7 +155,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
               <dl className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <dt className="text-soft">{t("word.srsState")}</dt>
-                  <dd className="text-ink">{t(stateKey[detail.card.state] ?? "word.stateNew")}</dd>
+                  <dd className="text-ink">{t(stateKey[detail.card.state] ?? "common.new")}</dd>
                 </div>
                 <div className="flex justify-between">
                   <dt className="text-soft">{t("word.srsReps")}</dt>

@@ -9,7 +9,12 @@ export default async function WordDetailPage({ params }: { params: { word: strin
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const word = decodeURIComponent(params.word);
+  let word: string;
+  try {
+    word = decodeURIComponent(params.word);
+  } catch {
+    notFound(); // malformed URI escape sequence
+  }
   const detail = await getWordDetail(user.id, word);
   if (!detail) notFound();
 

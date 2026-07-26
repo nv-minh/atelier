@@ -42,7 +42,9 @@ export async function setWordMark(
   });
 
   if (!mark.starred && mark.note === "") {
-    await prisma.wordMark.delete({ where: { id: mark.id } }).catch(() => {});
+    // Conditional delete: only remove the row if it's still empty, so a
+    // concurrent star/note write racing this cleanup isn't wiped out.
+    await prisma.wordMark.deleteMany({ where: { id: mark.id, starred: false, note: "" } });
     return { starred: false, note: "" };
   }
 
@@ -103,30 +105,36 @@ export async function getWordDetail(userId: string, word: string): Promise<WordD
   const w = await prisma.word.findUnique({ where: { word: word.toLowerCase() } });
   if (!w) return null;
 
-  const card = await prisma.card.findUnique({
-    where: { userId_wordId: { userId, wordId: w.id } },
-    select: { id: true, state: true, reps: true, lapses: true, due: true },
-  });
-
-  const reviews = card
-    ? await prisma.reviewLog.findMany({
-        where: { cardId: card.id },
-        select: { rating: true, reviewedAt: true },
-        orderBy: { reviewedAt: "desc" },
-        take: 50,
-      })
-    : [];
-
-  const mark = await prisma.wordMark.findUnique({
-    where: { userId_wordId: { userId, wordId: w.id } },
-    select: { starred: true, note: true },
-  });
-
-  // Only link synonyms/antonyms that are real entries in the Word table.
   const relatedNames = [...safeJson(w.synonyms), ...safeJson(w.antonyms)];
-  const existing = relatedNames.length
-    ? await prisma.word.findMany({ where: { word: { in: relatedNames } }, select: { word: true } })
-    : [];
+
+  // Fan out the remaining reads in parallel (serverless Postgres latency is
+  // per-round-trip). The card+reviews chain stays sequential internally.
+  const [{ card, reviews }, mark, existing] = await Promise.all([
+    (async () => {
+      const card = await prisma.card.findUnique({
+        where: { userId_wordId: { userId, wordId: w.id } },
+        select: { id: true, state: true, reps: true, lapses: true, due: true },
+      });
+      const reviews = card
+        ? await prisma.reviewLog.findMany({
+            where: { cardId: card.id },
+            select: { rating: true, reviewedAt: true },
+            orderBy: { reviewedAt: "desc" },
+            take: 50,
+          })
+        : [];
+      return { card, reviews };
+    })(),
+    prisma.wordMark.findUnique({
+      where: { userId_wordId: { userId, wordId: w.id } },
+      select: { starred: true, note: true },
+    }),
+    // Only link synonyms/antonyms that are real entries in the Word table.
+    relatedNames.length
+      ? prisma.word.findMany({ where: { word: { in: relatedNames } }, select: { word: true } })
+      : Promise.resolve([]),
+  ]);
+
   const existingSet = new Set(existing.map((e) => e.word));
 
   return {

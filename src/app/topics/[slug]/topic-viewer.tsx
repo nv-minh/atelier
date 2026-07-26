@@ -81,6 +81,7 @@ export function TopicViewer({
 
   const card: Card = {
     cardId: current.id,
+    id: current.id,
     word: current.word,
     cefr: current.cefr,
     typeEn: current.typeEn,

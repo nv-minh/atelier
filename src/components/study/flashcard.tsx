@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { AudioButton } from "@/components/audio-button";
 import { CefrBadge } from "@/components/cefr-badge";
+import { StarButton } from "@/components/star-button";
 import { RatingButtons, type RatingPreview } from "./rating-buttons";
 import { useI18n } from "@/components/i18n-provider";
 import { buildCloze } from "@/lib/cloze";
@@ -10,6 +11,7 @@ import { WordImage, ImageSearchLink } from "@/components/word-image";
 
 export type Card = {
   cardId: string;
+  id: string; // word id — for the star button
   word: string;
   cefr: string;
   typeEn: string | null;
@@ -26,6 +28,7 @@ export type Card = {
   imageUrl: string | null;
   audioUk: string | null;
   audioUs: string | null;
+  starred?: boolean;
 };
 
 export function Flashcard({
@@ -217,10 +220,11 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
         <WordImage imageUrl={card.imageUrl} word={card.word} maxH="max-h-44" />
       </div>
 
-      <div className="flex gap-2 mt-5 pt-4 border-t border-line">
+      <div className="flex items-center gap-2 mt-5 pt-4 border-t border-line">
         <AudioButton word={card.word} accent="uk" size="sm" />
         <AudioButton word={card.word} accent="us" size="sm" />
-        <ImageSearchLink imageUrl={card.imageUrl} className="ml-auto" />
+        <StarButton wordId={card.id} initialStarred={!!card.starred} size="sm" className="ml-auto" />
+        <ImageSearchLink imageUrl={card.imageUrl} />
       </div>
     </div>
   );
