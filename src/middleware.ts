@@ -15,5 +15,5 @@ export default function middleware(req: any) {
 }
 
 export const config = {
-  matcher: ["/study/:path*", "/stats/:path*", "/browse/:path*", "/settings/:path*", "/topics/:path*"],
+  matcher: ["/study/:path*", "/stats/:path*", "/browse/:path*", "/settings/:path*", "/topics/:path*", "/notebook/:path*", "/word/:path*"],
 };

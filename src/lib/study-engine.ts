@@ -45,7 +45,7 @@ export type RatingPreview = {
   due: Date;
 };
 
-function mapWord(w: any): StudyWord {
+export function mapWord(w: any): StudyWord {
   return {
     id: w.id,
     word: w.word,
@@ -67,7 +67,7 @@ function mapWord(w: any): StudyWord {
   };
 }
 
-function safeJson(s: string | null): string[] {
+export function safeJson(s: string | null): string[] {
   if (!s) return [];
   try {
     const v = JSON.parse(s);
@@ -75,6 +75,16 @@ function safeJson(s: string | null): string[] {
   } catch {
     return [];
   }
+}
+
+// The starred word ids for a user. Kept here (not in notebook.ts) so study-engine
+// stays free of a circular import with notebook.ts.
+export async function getStarredWordIds(userId: string): Promise<string[]> {
+  const rows = await prisma.wordMark.findMany({
+    where: { userId, starred: true },
+    select: { wordId: true },
+  });
+  return rows.map((r) => r.wordId);
 }
 
 // Build the study queue: due reviews first, then new cards up to the daily limit.
@@ -85,6 +95,7 @@ export async function buildStudyQueue(
     topic?: string;
     newLimit?: number;
     reviewLimit?: number;
+    scope?: "starred" | "leeches";
   }
 ): Promise<{ queue: StudyCard[]; counts: { new: number; due: number; total: number } }> {
   const settings = await getSettings(userId);
@@ -94,10 +105,15 @@ export async function buildStudyQueue(
   const topic = opts?.topic && opts.topic !== "ALL" ? opts.topic : undefined;
   const now = new Date();
 
-  // build the word sub-filter (cefr + topic) once
+  // build the word sub-filter (cefr + topic + scope) once
   const wordFilter: any = {};
   if (cefr) wordFilter.cefr = cefr;
   if (topic) wordFilter.topics = { contains: `"${topic}"` };
+  if (opts?.scope === "starred") {
+    const ids = await getStarredWordIds(userId);
+    wordFilter.id = { in: ids };
+  }
+  // "leeches" scope: implemented in a later phase — no-op fallthrough for now.
   const where = Object.keys(wordFilter).length ? { userId, word: wordFilter } : { userId };
 
   // 1. Due review cards (state >= 1 and due <= now)
@@ -311,12 +327,18 @@ export async function buildCramQueue(opts?: {
   cefr?: string;
   topic?: string;
   limit?: number;
+  userId?: string;
+  scope?: "starred";
 }): Promise<StudyWord[]> {
   const cefr = opts?.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
   const topic = opts?.topic && opts.topic !== "ALL" ? opts.topic : undefined;
   const where: any = {};
   if (cefr) where.cefr = cefr;
   if (topic) where.topics = { contains: `"${topic}"` };
+  if (opts?.scope === "starred" && opts.userId) {
+    const ids = await getStarredWordIds(opts.userId);
+    where.id = { in: ids };
+  }
   const rows = await prisma.word.findMany({
     where,
     orderBy: [{ cefr: "asc" }, { word: "asc" }],

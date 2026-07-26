@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { Search } from "lucide-react";
+import { Search, StickyNote } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
+import { StarButton } from "@/components/star-button";
 import { useI18n } from "@/components/i18n-provider";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { cn } from "@/lib/utils";
@@ -24,6 +26,8 @@ type Item = {
   example: string | null;
   cardState: number | null;
   reps: number;
+  starred: boolean;
+  hasNote: boolean;
 };
 
 const stateLabel: Record<number, { t: string; c: string }> = {
@@ -123,10 +127,13 @@ export function LibraryClient({
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <span className="display text-lg">{w.word}</span>
+                  <Link href={`/word/${encodeURIComponent(w.word)}`} className="display text-lg hover:text-ember transition-colors">
+                    {w.word}
+                  </Link>
                   {w.ipaUk && <span className="font-mono text-xs text-soft">{w.ipaUk}</span>}
                   <CefrBadge level={w.cefr} />
                   {w.typeVi && <span className="text-xs text-soft">· {w.typeVi}</span>}
+                  {w.hasNote && <StickyNote size={12} className="text-ember" aria-label={t("notebook.hasNote")} />}
                 </div>
                 {w.definitionEn && <p className="text-sm text-soft mt-1 line-clamp-2">{w.definitionEn}</p>}
                 {w.definitionVi && <p className="text-xs text-soft/70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
@@ -137,7 +144,8 @@ export function LibraryClient({
                 )}
               </div>
               <div className="flex flex-col items-end gap-2 shrink-0">
-                <div className="flex gap-1">
+                <div className="flex items-center gap-1">
+                  <StarButton wordId={w.id} initialStarred={w.starred} size="sm" />
                   <AudioButton word={w.word} accent="us" size="sm" />
                 </div>
                 {st ? (

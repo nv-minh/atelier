@@ -9,11 +9,12 @@ export const dynamic = "force-dynamic";
 export default async function FlashcardPage({
   searchParams,
 }: {
-  searchParams: { cefr?: string; topic?: string; dir?: string };
+  searchParams: { cefr?: string; topic?: string; dir?: string; scope?: string };
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
-  const { queue } = await buildStudyQueue(user.id, { cefr: searchParams.cefr, topic: searchParams.topic });
+  const scope = searchParams.scope === "starred" ? "starred" : undefined;
+  const { queue } = await buildStudyQueue(user.id, { cefr: searchParams.cefr, topic: searchParams.topic, scope });
   const dir = (searchParams.dir as "forward" | "reverse" | "cloze") || "forward";
   if (queue.length === 0) {
     return <EmptyStudy />;

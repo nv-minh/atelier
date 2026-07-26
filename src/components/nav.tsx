@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, BarChart3, Library, Settings, Layers, Compass } from "lucide-react";
+import { BookOpen, BarChart3, Library, Settings, Layers, Compass, NotebookPen } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { LangToggle } from "./lang-toggle";
 import { UserMenu } from "./user-menu";
@@ -16,12 +16,15 @@ export function Nav() {
   const isStudying = pathname?.startsWith("/study/") && pathname !== "/study";
 
   const links = [
-    { href: "/", label: t("nav.studio"), icon: Layers },
-    { href: "/topics", label: t("nav.topics"), icon: Compass },
-    { href: "/stats", label: t("nav.progress"), icon: BarChart3 },
-    { href: "/browse", label: t("nav.library"), icon: Library },
-    { href: "/settings", label: t("nav.settings"), icon: Settings },
+    { href: "/", label: t("nav.studio"), icon: Layers, mobile: true },
+    { href: "/topics", label: t("nav.topics"), icon: Compass, mobile: true },
+    { href: "/browse", label: t("nav.library"), icon: Library, mobile: true },
+    { href: "/notebook", label: t("nav.notebook"), icon: NotebookPen, mobile: true },
+    { href: "/stats", label: t("nav.progress"), icon: BarChart3, mobile: true },
+    // Settings stays in the desktop nav / user menu; dropped from the mobile bottom bar to avoid crowding.
+    { href: "/settings", label: t("nav.settings"), icon: Settings, mobile: false },
   ];
+  const mobileLinks = links.filter((l) => l.mobile);
 
   return (
     <>
@@ -86,7 +89,7 @@ export function Nav() {
         )}
       >
         <div className="flex items-center justify-around h-16 pb-[env(safe-area-inset-bottom)]">
-          {links.map((l) => {
+          {mobileLinks.map((l) => {
             const active = pathname === l.href || (l.href !== "/" && pathname?.startsWith(l.href));
             const Icon = l.icon;
             return (

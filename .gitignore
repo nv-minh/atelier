@@ -13,3 +13,4 @@ dev.db
 .vercel
 .env*
 .claude
+*.tsbuildinfo

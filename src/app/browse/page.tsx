@@ -34,22 +34,36 @@ export default async function BrowsePage({
     prisma.word.count({ where }),
   ]);
 
-  const items = words.map((w) => ({
-    id: w.id,
-    word: w.word,
-    cefr: w.cefr,
-    typeEn: w.typeEn,
-    typeVi: w.typeVi,
-    ipaUk: w.ipaUk,
-    ipaUs: w.ipaUs,
-    definitionEn: w.definitionEn,
-    definitionVi: w.definitionVi,
-    imageUrl: w.imageUrl,
-    synonyms: parseJsonArray(w.synonyms),
-    example: w.example,
-    cardState: w.cards[0]?.state ?? null,
-    reps: w.cards[0]?.reps ?? 0,
-  }));
+  // Per-user marks (star + note presence) for the words on this page.
+  const marks = userId
+    ? await prisma.wordMark.findMany({
+        where: { userId, wordId: { in: words.map((w) => w.id) } },
+        select: { wordId: true, starred: true, note: true },
+      })
+    : [];
+  const markByWord = new Map(marks.map((m) => [m.wordId, m]));
+
+  const items = words.map((w) => {
+    const mark = markByWord.get(w.id);
+    return {
+      id: w.id,
+      word: w.word,
+      cefr: w.cefr,
+      typeEn: w.typeEn,
+      typeVi: w.typeVi,
+      ipaUk: w.ipaUk,
+      ipaUs: w.ipaUs,
+      definitionEn: w.definitionEn,
+      definitionVi: w.definitionVi,
+      imageUrl: w.imageUrl,
+      synonyms: parseJsonArray(w.synonyms),
+      example: w.example,
+      cardState: w.cards[0]?.state ?? null,
+      reps: w.cards[0]?.reps ?? 0,
+      starred: mark?.starred ?? false,
+      hasNote: !!mark && mark.note !== "",
+    };
+  });
 
   return (
     <LibraryClient
