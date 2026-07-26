@@ -1,7 +1,7 @@
 import "server-only";
 import { prisma } from "./db";
 import { previewCard, Rating, STATES } from "./fsrs";
-import { addDays, formatInterval, pick, shuffle, todayStr } from "./utils";
+import { addDays, formatInterval, normalizeWord, pick, shuffle, todayStr } from "./utils";
 import { awardForReview, awardForSessionEnd } from "./gamification";
 
 export type StudyWord = {
@@ -363,7 +363,7 @@ export async function getQuizDistractors(correct: StudyWord, n = 3): Promise<str
   return pick(valid, n).map((p) => truncateDef(p.definitionEn!));
 }
 
-function truncateDef(d: string): string {
+export function truncateDef(d: string): string {
   const first = d.split(/[,.;]/)[0];
   return first.length > 70 ? first.slice(0, 67) + "…" : first;
 }
@@ -413,6 +413,88 @@ export async function buildCramQueue(opts?: {
     take: limit,
   });
   return rows.map(mapWord);
+}
+
+// ── Matching game pool ───────────────────────────────────────────────
+export type MatchingItem = { wordId: string; word: string; def: string };
+
+// Build `rounds` arrays of `pairs` word↔definition items for the matching game.
+// Selection prefers the user's due/learning words (state >= 1, due soonest) that
+// match the cefr/topic filter, then tops up with random words from the same
+// filter. Within a single round no two items may share the same word or the same
+// normalized truncated definition (that would make a tile pairing ambiguous), so
+// we fetch a surplus (~3× the target) and greedily fill rounds, skipping any item
+// that would collide inside the round being filled.
+//
+// Degrades gracefully: if the filtered pool is too small (or too many defs
+// collide) to fill every round, it returns as many COMPLETE rounds as it could
+// build — possibly fewer than `rounds`, possibly zero. The page treats an empty
+// result (or a first round smaller than `pairs`) as "not enough words".
+export async function buildMatchingPool(
+  userId: string,
+  opts: { cefr?: string; topic?: string; pairs?: number; rounds?: number } = {}
+): Promise<MatchingItem[][]> {
+  const pairs = opts.pairs ?? 6;
+  const rounds = opts.rounds ?? 4;
+  const cefr = opts.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
+  const topic = opts.topic && opts.topic !== "ALL" ? opts.topic : undefined;
+
+  const wordFilter: any = {};
+  if (cefr) wordFilter.cefr = cefr;
+  if (topic) wordFilter.topics = { contains: `"${topic}"` };
+  // Only words with a usable English definition can produce a definition tile.
+  wordFilter.definitionEn = { not: null };
+
+  const need = pairs * rounds;
+  const surplus = Math.max(need * 3, need + pairs); // headroom for collisions
+
+  // 1. Preferred: due/learning cards (state >= 1), soonest-due first.
+  const dueCards = await prisma.card.findMany({
+    where: { userId, state: { gte: 1 }, word: wordFilter },
+    include: { word: true },
+    orderBy: { due: "asc" },
+    take: surplus,
+  });
+
+  // 2. Top up with random words from the filter. Fetch a generous slice then
+  //    shuffle (same fetch-then-shuffle pattern used elsewhere), excluding words
+  //    already pulled from the due set so we don't duplicate candidates.
+  const dueWordIds = new Set(dueCards.map((c) => c.wordId));
+  const fillWords = await prisma.word.findMany({
+    where: { ...wordFilter, id: { notIn: [...dueWordIds] } },
+    take: surplus,
+  });
+
+  // Candidate order: due words first (already due-sorted), then a shuffled fill.
+  const candidates: StudyWord[] = [
+    ...dueCards.map((c) => mapWord(c.word)),
+    ...shuffle(fillWords).map(mapWord),
+  ];
+
+  // 3. Greedily fill rounds. A candidate can only go into a round if neither its
+  //    word nor its normalized truncated def already appears in that round. Each
+  //    candidate is used at most once across the whole game (consumed on place).
+  const roundsOut: MatchingItem[][] = [];
+  let cursor = 0;
+  for (let r = 0; r < rounds; r++) {
+    const round: MatchingItem[] = [];
+    const usedWords = new Set<string>();
+    const usedDefs = new Set<string>();
+    while (round.length < pairs && cursor < candidates.length) {
+      const c = candidates[cursor++];
+      if (!c.definitionEn) continue;
+      const def = truncateDef(c.definitionEn);
+      const defKey = normalizeWord(def);
+      const wordKey = normalizeWord(c.word);
+      if (!def || !defKey || usedWords.has(wordKey) || usedDefs.has(defKey)) continue;
+      usedWords.add(wordKey);
+      usedDefs.add(defKey);
+      round.push({ wordId: c.id, word: c.word, def });
+    }
+    if (round.length === pairs) roundsOut.push(round);
+    else break; // ran out of collision-free candidates — return complete rounds only
+  }
+  return roundsOut;
 }
 
 // ── Session tracking ─────────────────────────────────────────────────

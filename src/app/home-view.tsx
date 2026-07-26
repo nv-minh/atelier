@@ -136,6 +136,7 @@ export function HomeView({
           <ModeCard href="/study/quiz" title={t("home.quiz")} desc={t("home.quizDesc")} emoji="✓" />
           <ModeCard href="/study/typing" title={t("home.typeIt")} desc={t("home.typeItDesc")} emoji="⌨️" />
           <ModeCard href="/study/dictation" title={t("home.listen")} desc={t("home.listenDesc")} emoji="🎧" />
+          <ModeCard href="/study/matching" title={t("home.matching")} desc={t("home.matchingDesc")} emoji="🧩" />
         </div>
       </section>
     </main>
