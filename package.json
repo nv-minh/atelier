@@ -12,6 +12,8 @@
     "db:backfill-xp": "tsx prisma/backfill-gamification.ts",
     "db:topics": "tsx prisma/assign-topics.ts",
     "db:translate-vi": "tsx prisma/translate-vi.ts",
+    "db:backup": "tsx prisma/backup-db.ts",
+    "db:restore": "tsx prisma/restore-db.ts",
     "db:studio": "prisma studio",
     "packs:fetch": "tsx scripts/packs/fetch-sources.ts",
     "packs:build": "tsx scripts/packs/build-wordlists.ts",

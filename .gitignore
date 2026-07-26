@@ -16,3 +16,4 @@ dev.db
 *.tsbuildinfo
 data/raw/
 data/cache/
+data/backups/

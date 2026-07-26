@@ -39,3 +39,12 @@ npm run packs:verify     # counts + quality gates + samples
 ```
 
 Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics`.
+
+## Backups
+
+`npm run db:backup` dumps every table (words + user data) to
+`data/backups/<stamp>/` as JSON with a manifest; `npm run db:restore`
+(optionally `-- --dir data/backups/<stamp>`) re-inserts rows idempotently
+(`skipDuplicates` — existing rows untouched). Disaster recovery on an empty
+database: `db:push → db:restore`. Backups contain user data and are
+gitignored — copy the folder to external storage for real safety.
