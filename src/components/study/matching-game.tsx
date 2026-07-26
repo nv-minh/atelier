@@ -64,9 +64,23 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
   const [elapsed, setElapsed] = useState(0);
   const startRef = useRef<number>(Date.now());
 
-  // session tracking
-  const sessionIdRef = useRef<string | null>(null);
+  // session tracking. `sessionStartRef` holds the in-flight (or settled) start-POST
+  // promise resolving to the session id (or null on failure); endSession awaits it
+  // so a completion racing ahead of the start can't drop the session.
+  const sessionStartRef = useRef<Promise<string | null> | null>(null);
   const endedRef = useRef(false); // guard against double session-end
+  const startSession = useCallback((): Promise<string | null> => {
+    const p = fetch("/api/study/session", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mode: "matching" }),
+    })
+      .then((r) => r.json())
+      .then((d) => (d?.sessionId as string) ?? null)
+      .catch(() => null);
+    sessionStartRef.current = p;
+    return p;
+  }, []);
 
   // Transient tile-animation timers (wrong-flash clear, round-advance beat).
   // Tracked so they're all cleared if the component unmounts mid-flash — no
@@ -89,22 +103,9 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
 
   // Start the session once on mount.
   useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch("/api/study/session", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ mode: "matching" }),
-        });
-        const d = await res.json();
-        if (!cancelled) sessionIdRef.current = d.sessionId;
-      } catch {}
-    })();
     startRef.current = Date.now();
-    return () => {
-      cancelled = true;
-    };
+    startSession();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Ticking timer — stops once `done`. Cleared on unmount.
@@ -116,19 +117,20 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
     return () => clearInterval(id);
   }, [done]);
 
-  // End the session exactly once, on completion.
-  const endSession = useCallback(
-    () => {
-      if (endedRef.current) return;
-      // Guard only once we actually have a session to end — otherwise a completion
-      // that races ahead of the start POST would burn the guard and never submit.
-      const sid = sessionIdRef.current;
-      if (!sid) return;
-      endedRef.current = true;
-      const durationSec = Math.round((Date.now() - startRef.current) / 1000);
-      const finalMistakes = mistakesRef.current;
-      const correctCount = Math.max(0, totalPairs - Math.min(finalMistakes, totalPairs));
-      fetch("/api/study/session", {
+  // End the session exactly once, on completion. Awaits the start-POST so a fast
+  // completion (racing the start request) still gets a session id rather than
+  // silently dropping the session. The endedRef guard is set synchronously up
+  // front so a double-completion can't fire two PATCHes even before the await.
+  const endSession = useCallback(async () => {
+    if (endedRef.current) return;
+    endedRef.current = true;
+    const durationSec = Math.round((Date.now() - startRef.current) / 1000);
+    const finalMistakes = mistakesRef.current;
+    const correctCount = Math.max(0, totalPairs - Math.min(finalMistakes, totalPairs));
+    const sid = await (sessionStartRef.current ?? Promise.resolve(null));
+    if (!sid) return; // start POST failed — nothing to end (award is best-effort)
+    try {
+      const res = await fetch("/api/study/session", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -137,16 +139,12 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
           correctCount,
           durationSec,
         }),
-      })
-        .then((r) => r.json())
-        .then((d) => {
-          if (d && typeof d.xpGained === "number") setXpGained(d.xpGained);
-          if (d && Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
-        })
-        .catch(() => {});
-    },
-    [totalPairs, pushToast]
-  );
+      });
+      const d = await res.json();
+      if (d && typeof d.xpGained === "number") setXpGained(d.xpGained);
+      if (d && Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
+    } catch {}
+  }, [totalPairs, pushToast]);
 
   const advance = useCallback(
     () => {
@@ -232,8 +230,8 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
 
   const playAgain = useCallback(() => {
     // Local re-shuffle of the same words — a fresh game without a round-trip.
+    // buildTiles reshuffles tile positions so the board isn't identical.
     endedRef.current = false;
-    sessionIdRef.current = null;
     startRef.current = Date.now();
     setRoundIdx(0);
     setTiles(buildTiles(rounds[0]));
@@ -246,19 +244,8 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
     setXpGained(0);
     setElapsed(0);
     setDone(false);
-    // Start a fresh session for the replay.
-    (async () => {
-      try {
-        const res = await fetch("/api/study/session", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ mode: "matching" }),
-        });
-        const d = await res.json();
-        sessionIdRef.current = d.sessionId;
-      } catch {}
-    })();
-  }, [rounds]);
+    startSession(); // fresh session for the replay
+  }, [rounds, startSession]);
 
   if (done) {
     return (

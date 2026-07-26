@@ -1,6 +1,7 @@
 import "server-only";
 import { prisma } from "./db";
 import { todayStr, addDays } from "./utils";
+import { totalXp } from "./gamification-defs";
 import { computeStreakFromDb } from "./gamification-checks";
 
 export async function getDashboardStats(userId: string) {
@@ -201,8 +202,8 @@ export async function getWeeklyRecap(userId: string): Promise<WeeklyRecap> {
     bucket.newCards += s.newCards;
     bucket.timeSec += s.timeSec;
     // Total XP for the week = ReviewLog-derived xp + non-SRS bonusXp (matching, …),
-    // matching how the summary/level compute total.
-    bucket.xp += s.xp + s.bonusXp;
+    // via totalXp so it matches how the summary/level compute total.
+    bucket.xp += totalXp(s);
     bucket.correct += s.correctCount;
     bucket.total += s.totalCount;
   }

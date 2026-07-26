@@ -12,6 +12,14 @@ export const XP_PER_RATING: Record<number, number> = { 1: 2, 2: 4, 3: 6, 4: 8 };
 export const XP_PER_NONSRS_CORRECT = 1;
 export const NONSRS_XP_CAP = 30;
 
+// Total XP for a DailyStat/UserProgress row = the ReviewLog-derived `xp` ledger
+// PLUS the non-SRS `bonusXp` ledger. This is the ONE place that sum is defined —
+// every display, level, goal-check, and recap total routes through it so the two
+// ledgers can never be added inconsistently (a bare `xp` where total was meant).
+export function totalXp(row: { xp?: number | null; bonusXp?: number | null }): number {
+  return (row.xp ?? 0) + (row.bonusXp ?? 0);
+}
+
 // ── Level curve ──────────────────────────────────────────────────────
 // xpForLevel(n) = cumulative XP required to REACH level n. Level 0 sits at 0 XP.
 // 50·n·(n+1): reaching L1 costs 100, L2 costs 300, L3 costs 600, L10 costs 5500 …

@@ -363,8 +363,11 @@ export async function getQuizDistractors(correct: StudyWord, n = 3): Promise<str
   return pick(valid, n).map((p) => truncateDef(p.definitionEn!));
 }
 
+// Canonical short definition for quiz options and matching tiles: first clause,
+// trimmed, capped at 70 chars. Single source of truth — do NOT re-copy this into
+// routes/components; import it.
 export function truncateDef(d: string): string {
-  const first = d.split(/[,.;]/)[0];
+  const first = d.split(/[,.;]/)[0].trim();
   return first.length > 70 ? first.slice(0, 67) + "…" : first;
 }
 
@@ -419,12 +422,18 @@ export async function buildCramQueue(opts?: {
 export type MatchingItem = { wordId: string; word: string; def: string };
 
 // Build `rounds` arrays of `pairs` word↔definition items for the matching game.
-// Selection prefers the user's due/learning words (state >= 1, due soonest) that
-// match the cefr/topic filter, then tops up with random words from the same
-// filter. Within a single round no two items may share the same word or the same
-// normalized truncated definition (that would make a tile pairing ambiguous), so
-// we fetch a surplus (~3× the target) and greedily fill rounds, skipping any item
-// that would collide inside the round being filled.
+// Selection prefers the user's due/learning words (state >= 1) that match the
+// cefr/topic filter, then tops up with random words from the same filter. Within
+// a single round no two items may share the same word or the same normalized
+// truncated definition (that would make a tile pairing ambiguous), so we fetch a
+// surplus (~3× the target) and greedily fill rounds, skipping any item that would
+// collide inside the round being filled.
+//
+// Non-determinism is deliberate: consecutive plays (Play again / refresh) should
+// not hand back the exact same tiles. The due tier is shuffled after fetch (still
+// a TIER — due/learning words are drawn first — but not in strict due order), and
+// the top-up samples a random window of the filtered table rather than the same
+// heap-ordered head every time.
 //
 // Degrades gracefully: if the filtered pool is too small (or too many defs
 // collide) to fill every round, it returns as many COMPLETE rounds as it could
@@ -448,40 +457,51 @@ export async function buildMatchingPool(
   const need = pairs * rounds;
   const surplus = Math.max(need * 3, need + pairs); // headroom for collisions
 
-  // 1. Preferred: due/learning cards (state >= 1), soonest-due first.
+  // 1. Preferred: due/learning cards (state >= 1). Fetch the soonest-due window
+  //    (so the drill leans toward words actually up for review), then shuffle
+  //    that window so a replay isn't an identical board.
   const dueCards = await prisma.card.findMany({
     where: { userId, state: { gte: 1 }, word: wordFilter },
     include: { word: true },
     orderBy: { due: "asc" },
     take: surplus,
   });
+  const dueWords = shuffle(dueCards.map((c) => mapWord(c.word)));
 
-  // 2. Top up with random words from the filter. Fetch a generous slice then
-  //    shuffle (same fetch-then-shuffle pattern used elsewhere), excluding words
-  //    already pulled from the due set so we don't duplicate candidates.
+  // 2. Top up with random words from the filter. A bare findMany with no orderBy
+  //    returns the same heap-ordered head every call and never samples the rest
+  //    of the table — so pick a RANDOM offset into the (deterministically ordered)
+  //    filtered set and take a surplus window from there, then shuffle it. Words
+  //    already pulled from the due set are excluded so candidates don't duplicate.
   const dueWordIds = new Set(dueCards.map((c) => c.wordId));
+  const fillWhere = { ...wordFilter, id: { notIn: [...dueWordIds] } };
+  const fillTotal = await prisma.word.count({ where: fillWhere });
+  const maxOffset = Math.max(0, fillTotal - surplus);
+  const offset = maxOffset > 0 ? Math.floor(Math.random() * (maxOffset + 1)) : 0;
   const fillWords = await prisma.word.findMany({
-    where: { ...wordFilter, id: { notIn: [...dueWordIds] } },
+    where: fillWhere,
+    orderBy: { id: "asc" },
+    skip: offset,
     take: surplus,
   });
 
-  // Candidate order: due words first (already due-sorted), then a shuffled fill.
-  const candidates: StudyWord[] = [
-    ...dueCards.map((c) => mapWord(c.word)),
-    ...shuffle(fillWords).map(mapWord),
-  ];
+  // Candidate order: shuffled due tier first, then the shuffled random top-up.
+  const candidates: StudyWord[] = [...dueWords, ...shuffle(fillWords).map(mapWord)];
 
-  // 3. Greedily fill rounds. A candidate can only go into a round if neither its
-  //    word nor its normalized truncated def already appears in that round. Each
-  //    candidate is used at most once across the whole game (consumed on place).
+  // 3. Greedily fill rounds. A candidate can only enter a round if neither its
+  //    word nor its normalized truncated def already appears in that round. Only
+  //    PLACED candidates are consumed (marked used) — a candidate skipped for a
+  //    round-1 collision remains available for a later round. Each round scans the
+  //    still-unused candidates from the front.
+  const used = new Array<boolean>(candidates.length).fill(false);
   const roundsOut: MatchingItem[][] = [];
-  let cursor = 0;
   for (let r = 0; r < rounds; r++) {
     const round: MatchingItem[] = [];
     const usedWords = new Set<string>();
     const usedDefs = new Set<string>();
-    while (round.length < pairs && cursor < candidates.length) {
-      const c = candidates[cursor++];
+    for (let i = 0; i < candidates.length && round.length < pairs; i++) {
+      if (used[i]) continue;
+      const c = candidates[i];
       if (!c.definitionEn) continue;
       const def = truncateDef(c.definitionEn);
       const defKey = normalizeWord(def);
@@ -489,6 +509,7 @@ export async function buildMatchingPool(
       if (!def || !defKey || usedWords.has(wordKey) || usedDefs.has(defKey)) continue;
       usedWords.add(wordKey);
       usedDefs.add(defKey);
+      used[i] = true;
       round.push({ wordId: c.id, word: c.word, def });
     }
     if (round.length === pairs) roundsOut.push(round);

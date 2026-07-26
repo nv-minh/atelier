@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-
-function truncateDef(d: string): string {
-  const first = d.split(/[,.;]/)[0].trim();
-  return first.length > 70 ? first.slice(0, 67) + "…" : first;
-}
+import { truncateDef } from "@/lib/study-engine";
 
 export async function GET(req: NextRequest) {
   const wordId = req.nextUrl.searchParams.get("wordId");
