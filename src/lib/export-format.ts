@@ -12,7 +12,14 @@ export type ExportRow = {
   cefr: string;
 };
 
-// BOM so Excel opens UTF-8 (Vietnamese diacritics) without mojibake.
+// CEFR levels available as an export scope. Lives here (pure module, no
+// server-only) so both the server scope logic and the client scope select
+// share one list.
+export const CEFR_LEVELS = ["A1", "A2", "B1", "B2"] as const;
+
+// BOM (U+FEFF), written as an escape so a formatter/copy-paste can't silently
+// drop the invisible character. Excel needs it to open UTF-8 (Vietnamese
+// diacritics) without mojibake.
 const BOM = "﻿";
 
 const CSV_HEADER = [

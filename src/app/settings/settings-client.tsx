@@ -6,6 +6,7 @@ import { useTheme } from "@/components/theme-provider";
 import { useI18n } from "@/components/i18n-provider";
 import { LangToggle } from "@/components/lang-toggle";
 import { cn } from "@/lib/utils";
+import { CEFR_LEVELS } from "@/lib/export-format";
 
 export function SettingsClient({
   requestRetention,
@@ -50,10 +51,7 @@ export function SettingsClient({
     { key: "all", label: t("settings.exportScopeAll") },
     { key: "starred", label: t("settings.exportScopeStarred") },
     { key: "learned", label: t("settings.exportScopeLearned") },
-    { key: "cefr:A1", label: "A1" },
-    { key: "cefr:A2", label: "A2" },
-    { key: "cefr:B1", label: "B1" },
-    { key: "cefr:B2", label: "B2" },
+    ...CEFR_LEVELS.map((level) => ({ key: `cefr:${level}`, label: level })),
   ];
   const exportHref = (format: string) =>
     `/api/export?format=${format}&scope=${encodeURIComponent(exportScope)}`;
