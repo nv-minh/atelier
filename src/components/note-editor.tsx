@@ -16,6 +16,9 @@ export function NoteEditor({
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSaved = useRef(initialNote);
+  // Latest note text, readable from the unmount cleanup without making it a dep.
+  const noteRef = useRef(note);
+  noteRef.current = note;
   // Monotonic request id: only the most recent save may commit its result, so
   // a slow earlier response can't overwrite a newer note (out-of-order guard).
   const seq = useRef(0);
@@ -49,24 +52,25 @@ export function NoteEditor({
     }, 800);
   };
 
+  // Unmount-only: flush any text typed in the debounce window that never hit
+  // the network, so a fast navigation away doesn't silently drop the last edit.
+  // Depends only on wordId so the cleanup runs on unmount, not every keystroke;
+  // noteRef supplies the current text.
   useEffect(() => {
     return () => {
       if (timer.current) clearTimeout(timer.current);
-      // Flush any text typed in the debounce window that never hit the network,
-      // so a fast navigation away doesn't silently drop the last edit.
-      if (note !== lastSaved.current) {
+      if (noteRef.current !== lastSaved.current) {
         try {
           fetch("/api/notebook", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ wordId, note }),
+            body: JSON.stringify({ wordId, note: noteRef.current }),
             keepalive: true,
           });
         } catch {}
       }
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [note, wordId]);
+  }, [wordId]);
 
   return (
     <div>
