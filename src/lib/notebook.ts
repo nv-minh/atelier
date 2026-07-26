@@ -1,6 +1,6 @@
 import "server-only";
 import { prisma } from "./db";
-import { mapWord, safeJson, getStarredWordIds, LEECH_THRESHOLD } from "./study-engine";
+import { mapWord, safeJson, getStarredWordIds, LEECH_THRESHOLD, leechWhere } from "./study-engine";
 
 export { getStarredWordIds, LEECH_THRESHOLD };
 
@@ -21,6 +21,7 @@ export type NotebookEntry = {
   definitionVi: string | null;
   imageUrl: string | null;
   note: string;
+  starred: boolean;
   card: NotebookCardState;
 };
 
@@ -80,6 +81,7 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
       definitionVi: m.word.definitionVi,
       imageUrl: m.word.imageUrl,
       note: m.note,
+      starred: true,
       card: c ? { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due } : null,
     };
   });
@@ -90,7 +92,7 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
 // so the notebook UI can render starred and leech lists the same way.
 export async function getLeeches(userId: string): Promise<NotebookEntry[]> {
   const cards = await prisma.card.findMany({
-    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
+    where: leechWhere(userId),
     include: { word: true },
     orderBy: { lapses: "desc" },
   });
@@ -99,29 +101,31 @@ export async function getLeeches(userId: string): Promise<NotebookEntry[]> {
   const marks = wordIds.length
     ? await prisma.wordMark.findMany({
         where: { userId, wordId: { in: wordIds } },
-        select: { wordId: true, note: true },
+        select: { wordId: true, note: true, starred: true },
       })
     : [];
-  const noteByWord = new Map(marks.map((m) => [m.wordId, m.note]));
+  const markByWord = new Map(marks.map((m) => [m.wordId, m]));
 
-  return cards.map((c) => ({
-    wordId: c.wordId,
-    word: c.word.word,
-    cefr: c.word.cefr,
-    typeVi: c.word.typeVi,
-    typeEn: c.word.typeEn,
-    definitionEn: c.word.definitionEn,
-    definitionVi: c.word.definitionVi,
-    imageUrl: c.word.imageUrl,
-    note: noteByWord.get(c.wordId) ?? "",
-    card: { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due },
-  }));
+  return cards.map((c) => {
+    const mark = markByWord.get(c.wordId);
+    return {
+      wordId: c.wordId,
+      word: c.word.word,
+      cefr: c.word.cefr,
+      typeVi: c.word.typeVi,
+      typeEn: c.word.typeEn,
+      definitionEn: c.word.definitionEn,
+      definitionVi: c.word.definitionVi,
+      imageUrl: c.word.imageUrl,
+      note: mark?.note ?? "",
+      starred: mark?.starred ?? false,
+      card: { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due },
+    };
+  });
 }
 
 export async function getLeechCount(userId: string): Promise<number> {
-  return prisma.card.count({
-    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
-  });
+  return prisma.card.count({ where: leechWhere(userId) });
 }
 
 export type WordDetail = {

@@ -92,10 +92,21 @@ export async function getStarredWordIds(userId: string): Promise<string[]> {
 // notebook.ts and study-engine.ts share the constant without a circular import.
 export const LEECH_THRESHOLD = 4;
 
+// Single source of truth for the leech predicate — reused by getLeechWordIds,
+// getLeeches, and getLeechCount so the definition never drifts between them.
+export const leechWhere = (userId: string) => ({
+  userId,
+  lapses: { gte: LEECH_THRESHOLD },
+  state: { gte: 1 },
+});
+
+// Returns leech word ids worst-first (highest lapses), so callers that cap the
+// list drill the actual worst offenders rather than an arbitrary slice.
 export async function getLeechWordIds(userId: string): Promise<string[]> {
   const rows = await prisma.card.findMany({
-    where: { userId, lapses: { gte: LEECH_THRESHOLD }, state: { gte: 1 } },
+    where: leechWhere(userId),
     select: { wordId: true },
+    orderBy: { lapses: "desc" },
   });
   return rows.map((r) => r.wordId);
 }
@@ -364,17 +375,30 @@ export async function buildCramQueue(opts?: {
   const where: any = {};
   if (cefr) where.cefr = cefr;
   if (topic) where.topics = { contains: `"${topic}"` };
+  let leechOrder: string[] | null = null;
   if (opts?.scope === "starred" && opts.userId) {
     const ids = await getStarredWordIds(opts.userId);
     where.id = { in: ids };
   } else if (opts?.scope === "leeches" && opts.userId) {
-    const ids = await getLeechWordIds(opts.userId);
-    where.id = { in: ids };
+    leechOrder = await getLeechWordIds(opts.userId);
+    where.id = { in: leechOrder };
   }
+  const limit = opts?.limit ?? 30;
+
+  // Leeches drill worst-first: fetch all matches (findMany can't order by the id
+  // list), restore the lapses-desc order from getLeechWordIds, then cap — so >30
+  // leeches drill the worst offenders, not an alphabetical slice.
+  if (leechOrder) {
+    const rows = await prisma.word.findMany({ where });
+    const rank = new Map(leechOrder.map((id, i) => [id, i]));
+    rows.sort((a, b) => (rank.get(a.id) ?? Infinity) - (rank.get(b.id) ?? Infinity));
+    return rows.slice(0, limit).map(mapWord);
+  }
+
   const rows = await prisma.word.findMany({
     where,
     orderBy: [{ cefr: "asc" }, { word: "asc" }],
-    take: opts?.limit ?? 30,
+    take: limit,
   });
   return rows.map(mapWord);
 }

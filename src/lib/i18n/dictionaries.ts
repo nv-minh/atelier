@@ -202,6 +202,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       lapsesLabel: "{n} lần quên",
       leechEmptyTitle: "Không có từ khó — tuyệt vời!",
       leechEmptyBody: "Bạn chưa có từ nào bị quên nhiều lần. Cứ tiếp tục ôn đều nhé.",
+      dueNow: "Đến hạn ôn",
     },
     word: {
       notStudied: "Chưa học",
@@ -507,6 +508,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       lapsesLabel: "{n} lapses",
       leechEmptyTitle: "No difficult words — great!",
       leechEmptyBody: "You have no words you keep forgetting. Keep up the steady reviews.",
+      dueNow: "Due now",
     },
     word: {
       notStudied: "Not studied yet",

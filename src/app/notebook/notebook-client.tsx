@@ -17,6 +17,7 @@ type Entry = {
   definitionVi: string | null;
   imageUrl: string | null;
   note: string;
+  starred: boolean;
   card: { state: number; reps: number; lapses: number; due: string } | null;
 };
 
@@ -137,7 +138,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
 
       <div className="grid gap-2.5">
         {entries.map((w) => (
-          <WordRow key={w.wordId} w={w} starred />
+          <WordRow key={w.wordId} w={w} />
         ))}
       </div>
     </>
@@ -175,17 +176,18 @@ function LeechesPanel({ leeches }: { leeches: Entry[] }) {
 
       <div className="grid gap-2.5">
         {leeches.map((w) => (
-          <WordRow key={w.wordId} w={w} starred={false} leech />
+          <WordRow key={w.wordId} w={w} leech />
         ))}
       </div>
     </>
   );
 }
 
-function WordRow({ w, starred, leech }: { w: Entry; starred: boolean; leech?: boolean }) {
+function WordRow({ w, leech }: { w: Entry; leech?: boolean }) {
   const { t, lang } = useI18n();
   const st = w.card ? stateLabel[w.card.state] : null;
   const typeLabel = lang === "vi" ? w.typeVi : w.typeEn;
+  const overdue = w.card ? new Date(w.card.due) <= new Date() : false;
 
   return (
     <div className="card-atelier p-4 sm:p-5 flex items-start gap-4 hover:border-ember/25 transition-colors">
@@ -206,9 +208,8 @@ function WordRow({ w, starred, leech }: { w: Entry; starred: boolean; leech?: bo
           <span className="inline-flex items-center gap-1 rounded-full bg-red-400/10 text-red-400 px-2.5 py-1 text-[11px] font-semibold tabular-nums">
             <Flame size={11} /> {t("notebook.lapsesLabel", { n: w.card.lapses })}
           </span>
-        ) : (
-          <StarButton wordId={w.wordId} initialStarred={starred} size="sm" />
-        )}
+        ) : null}
+        <StarButton wordId={w.wordId} initialStarred={w.starred} size="sm" />
         {st ? (
           <span className={cn("pill text-[9px]", st.c)}>{t(st.key)}</span>
         ) : (
@@ -216,7 +217,7 @@ function WordRow({ w, starred, leech }: { w: Entry; starred: boolean; leech?: bo
         )}
         {leech && w.card && (
           <span className="text-[10px] text-soft tabular-nums">
-            {t("word.srsDue")} {formatInterval(new Date(w.card.due))}
+            {t("word.srsDue")} {overdue ? t("notebook.dueNow") : formatInterval(new Date(w.card.due))}
           </span>
         )}
       </div>
