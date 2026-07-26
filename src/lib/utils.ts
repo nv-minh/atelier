@@ -40,6 +40,13 @@ export function formatInterval(due: Date, now = new Date()): string {
   return `${(days / 365).toFixed(1)}y`;
 }
 
+// mm:ss clock for session/game timers (shared by matching + pronunciation).
+export function fmtTime(sec: number): string {
+  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
+  const ss = String(sec % 60).padStart(2, "0");
+  return `${mm}:${ss}`;
+}
+
 // Levenshtein distance for fuzzy typing match
 export function levenshtein(a: string, b: string): number {
   const m = a.length;

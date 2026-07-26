@@ -7,10 +7,12 @@ import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 import { AudioButton } from "@/components/audio-button";
 import { CefrBadge } from "@/components/cefr-badge";
+import { fmtTime, shuffle } from "@/lib/utils";
 import {
   getSpeechRecognition,
   gradeSpeech,
   type SpeechRecognition,
+  type SpeechRecognitionCtor,
   type SpeechRecognitionEvent,
   type SpeechRecognitionErrorEvent,
 } from "@/lib/speech";
@@ -20,32 +22,26 @@ export type PronWord = {
   cefr: string;
   ipaUk: string | null;
   ipaUs: string | null;
-  audioUk: string | null;
-  audioUs: string | null;
   definitionEn: string | null;
   definitionVi: string | null;
 };
 
-type Phase = "idle" | "listening" | "grading" | "correct" | "wrong";
-
-function fmtTime(sec: number): string {
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
-  const ss = String(sec % 60).padStart(2, "0");
-  return `${mm}:${ss}`;
-}
+type Phase = "idle" | "listening" | "correct" | "wrong";
 
 export function PronunciationSession({ words }: { words: PronWord[] }) {
-  const { t } = useI18n();
+  // Feature-detect in an effect, NOT during render: SpeechRecognition is absent on
+  // the server, so a render-time detect makes the server always emit
+  // UnsupportedScreen while Chrome/Safari hydrate to SupportedSession — a
+  // guaranteed hydration mismatch (React #418/#423) plus an "unsupported" flash.
+  // `undefined` = not yet detected (matches the server's first paint → render null).
+  const [SR, setSR] = useState<SpeechRecognitionCtor | null | undefined>(undefined);
+  useEffect(() => {
+    setSR(() => getSpeechRecognition());
+  }, []);
 
-  // Feature-detect once, synchronously on first render, so we never even start a
-  // session (or POST) in an unsupported browser (Firefox). null = unsupported.
-  const [SR] = useState<(new () => SpeechRecognition) | null>(() => getSpeechRecognition());
-  const supported = SR !== null;
-
-  if (!supported) {
-    return <UnsupportedScreen />;
-  }
-  return <SupportedSession words={words} SR={SR!} />;
+  if (SR === undefined) return null; // pre-detect: render nothing (matches SSR)
+  if (SR === null) return <UnsupportedScreen />;
+  return <SupportedSession words={words} SR={SR} />;
 }
 
 // The real session — only mounted when SpeechRecognition is available, so its
@@ -55,10 +51,15 @@ function SupportedSession({
   SR,
 }: {
   words: PronWord[];
-  SR: new () => SpeechRecognition;
+  SR: SpeechRecognitionCtor;
 }) {
   const { t } = useI18n();
   const { push: pushToast, toaster } = useAchievementToasts();
+
+  // The words for this run, held in state so "Practice again" can reshuffle their
+  // order (buildCramQueue hands back a deterministic cefr/word-sorted list, and the
+  // page's random pick only varies across visits, not across replays in one mount).
+  const [order, setOrder] = useState<PronWord[]>(words);
 
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<Phase>("idle");
@@ -76,7 +77,7 @@ function SupportedSession({
   const resultForIdx = useRef<Map<number, boolean>>(new Map());
   const [correctCount, setCorrectCount] = useState(0);
 
-  const current = words[idx];
+  const current = order[idx];
 
   // Timer.
   const [elapsed, setElapsed] = useState(0);
@@ -117,7 +118,9 @@ function SupportedSession({
       const rec = recRef.current;
       if (rec) {
         try {
-          rec.stop();
+          // abort() (not stop()) discards any pending result immediately — we're
+          // tearing down, so we don't want a late onresult firing mid-unmount.
+          rec.abort();
         } catch {
           // already stopped / never started — ignore
         }
@@ -144,7 +147,7 @@ function SupportedSession({
       if (endedRef.current) return;
       endedRef.current = true;
       const durationSec = Math.round((Date.now() - startRef.current) / 1000);
-      const cardsReviewed = words.length;
+      const cardsReviewed = order.length;
       const sid = await (sessionStartRef.current ?? Promise.resolve(null));
       if (!sid) return; // start POST failed — award is best-effort
       try {
@@ -164,7 +167,7 @@ function SupportedSession({
         if (d && Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
       } catch {}
     },
-    [words.length, pushToast]
+    [order.length, pushToast]
   );
 
   // Advance to the next word, or finish. Takes the final correct tally so the
@@ -172,7 +175,7 @@ function SupportedSession({
   const advance = useCallback(
     (finalCorrect: number) => {
       const next = idx + 1;
-      if (next >= words.length) {
+      if (next >= order.length) {
         setDone(true);
         setElapsed(Math.floor((Date.now() - startRef.current) / 1000));
         endSession(finalCorrect);
@@ -183,30 +186,25 @@ function SupportedSession({
       setHeard("");
       setErrorKind(null);
     },
-    [idx, words.length, endSession]
+    [idx, order.length, endSession]
   );
 
   // Record the graded outcome for the current word. First outcome per index is
-  // locked for scoring; retries after a wrong stay wrong.
+  // locked for scoring; retries after a wrong stay wrong. The Next button reads
+  // the settled `correctCount` on the following render, so no return is needed.
   const scoreAttempt = useCallback(
-    (isCorrect: boolean): number => {
+    (isCorrect: boolean) => {
       if (!resultForIdx.current.has(idx)) {
         resultForIdx.current.set(idx, isCorrect);
-        if (isCorrect) {
-          const nextCount = correctCount + 1;
-          setCorrectCount(nextCount);
-          return nextCount;
-        }
+        if (isCorrect) setCorrectCount((c) => c + 1);
       }
-      return correctCount;
     },
-    [idx, correctCount]
+    [idx]
   );
 
   const startListening = useCallback(() => {
-    // Guard: never start a second recognition while one is live (InvalidStateError)
-    // or after the word has already been marked correct.
-    if (recRef.current || phase === "listening" || phase === "grading") return;
+    // Guard: never start a second recognition while one is live (InvalidStateError).
+    if (recRef.current || phase === "listening") return;
 
     setErrorKind(null);
     setHeard("");
@@ -229,19 +227,14 @@ function SupportedSession({
       if (res) {
         for (let i = 0; i < res.length; i++) alts.push(res[i].transcript);
       }
-      setPhase("grading");
       const { correct, best } = gradeSpeech(alts, current.word);
-      const nextCount = scoreAttempt(correct);
+      scoreAttempt(correct);
       if (correct) {
         setPhase("correct");
       } else {
         setHeard(best);
         setPhase("wrong");
       }
-      // nextCount is only needed when this is the final word AND correct; advance
-      // is user-driven (Next button), so we don't auto-advance here. Retained via
-      // closure through the Next handler reading correctCount fresh.
-      void nextCount;
     };
 
     rec.onerror = (ev: SpeechRecognitionErrorEvent) => {
@@ -316,6 +309,7 @@ function SupportedSession({
     endedRef.current = false;
     resultForIdx.current = new Map();
     startRef.current = Date.now();
+    setOrder((prev) => shuffle(prev)); // fresh order so the replay isn't identical
     setIdx(0);
     setPhase("idle");
     setHeard("");
@@ -334,7 +328,7 @@ function SupportedSession({
         <SummaryScreen
           elapsed={elapsed}
           correctCount={correctCount}
-          total={words.length}
+          total={order.length}
           xpGained={xpGained}
           onPlayAgain={playAgain}
         />
@@ -350,8 +344,8 @@ function SupportedSession({
       {/* HUD */}
       <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
         <div className="shell py-2.5 flex items-center justify-between gap-3 text-sm">
-          <span className="text-soft tabular-nums whitespace-nowrap">
-            {t("study.pronProgress", { n: idx + 1, total: words.length })}
+          <span className="text-soft tabular-nums whitespace-nowrap" aria-live="polite">
+            {t("study.pronProgress", { n: idx + 1, total: order.length })}
           </span>
           <div className="flex items-center gap-4 tabular-nums">
             <span className="text-soft">
@@ -415,6 +409,7 @@ function SupportedSession({
               phase={phase}
               heard={heard}
               noSpeech={errorKind === "noSpeech"}
+              blocked={errorKind === "denied" || errorKind === "network"}
               onStart={startListening}
               onStop={stopListening}
               onRetry={onRetry}
@@ -431,6 +426,7 @@ function MicArea({
   phase,
   heard,
   noSpeech,
+  blocked,
   onStart,
   onStop,
   onRetry,
@@ -439,6 +435,7 @@ function MicArea({
   phase: Phase;
   heard: string;
   noSpeech: boolean;
+  blocked: boolean; // mic denied / network — can't listen, so offer a way past the word
   onStart: () => void;
   onStop: () => void;
   onRetry: () => void;
@@ -446,10 +443,10 @@ function MicArea({
 }) {
   const { t } = useI18n();
   const listening = phase === "listening";
-  const grading = phase === "grading";
 
   return (
-    <div className="flex flex-col items-center gap-5">
+    // aria-live so screen readers announce result transitions on this speech feature.
+    <div className="flex flex-col items-center gap-5" aria-live="polite">
       {phase === "correct" ? (
         <>
           <motion.div
@@ -501,13 +498,10 @@ function MicArea({
           <motion.button
             type="button"
             onClick={listening ? onStop : onStart}
-            disabled={grading}
             aria-label={listening ? t("study.pronListening") : t("study.pronSpeakPrompt")}
-            className={`relative grid h-24 w-24 place-items-center rounded-full transition-colors ${
-              listening
-                ? "bg-ember text-paper"
-                : "bg-ink text-paper hover:opacity-90"
-            } ${grading ? "opacity-60 cursor-default" : "cursor-pointer"}`}
+            className={`relative grid h-24 w-24 place-items-center rounded-full transition-colors cursor-pointer ${
+              listening ? "bg-ember text-paper" : "bg-ink text-paper hover:opacity-90"
+            }`}
           >
             {/* Pulsing ring while listening */}
             {listening && (
@@ -522,14 +516,23 @@ function MicArea({
             <Mic size={38} strokeWidth={1.75} className={listening ? "animate-pulse" : ""} />
           </motion.button>
           <p className="text-sm text-soft min-h-[1.25rem]">
-            {grading
-              ? t("study.pronGrading")
-              : listening
-                ? t("study.pronListening")
-                : noSpeech
-                  ? t("study.pronNoSpeech")
-                  : t("study.pronSpeakPrompt")}
+            {listening
+              ? t("study.pronListening")
+              : noSpeech
+                ? t("study.pronNoSpeech")
+                : t("study.pronSpeakPrompt")}
           </p>
+          {/* Mic denied / network can't be retried by pressing the mic again
+              (browsers won't re-prompt after a hard deny), so offer Skip to avoid
+              a dead-end on the current word. Unscored → counts as a miss. */}
+          {blocked && (
+            <button
+              onClick={onNext}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
+            >
+              <SkipForward size={16} /> {t("study.pronSkip")}
+            </button>
+          )}
         </>
       )}
     </div>

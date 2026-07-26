@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle2, RotateCcw, Layers } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
+import { fmtTime } from "@/lib/utils";
 
 type MatchingItem = { wordId: string; word: string; def: string };
 
@@ -32,12 +33,6 @@ function buildTiles(items: MatchingItem[]): Tile[] {
     [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
   }
   return tiles;
-}
-
-function fmtTime(sec: number): string {
-  const mm = String(Math.floor(sec / 60)).padStart(2, "0");
-  const ss = String(sec % 60).padStart(2, "0");
-  return `${mm}:${ss}`;
 }
 
 export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {

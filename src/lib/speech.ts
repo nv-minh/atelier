@@ -49,7 +49,7 @@ export interface SpeechRecognition extends EventTarget {
   onstart: ((this: SpeechRecognition, ev: Event) => void) | null;
 }
 
-type SpeechRecognitionCtor = new () => SpeechRecognition;
+export type SpeechRecognitionCtor = new () => SpeechRecognition;
 
 // Feature-detect the SpeechRecognition constructor. Returns null on the server
 // (no window) and in browsers that don't implement it (Firefox). Chrome/Edge use
@@ -68,6 +68,10 @@ export function getSpeechRecognition(): SpeechRecognitionCtor | null {
 // characters — is within Levenshtein distance 1 (a single-character slip, mirroring
 // gradeTyping's typo tolerance). `best` is the closest alternative by edit distance
 // to the target, for showing the user what was actually heard.
+//
+// Known limitation: recognition transcribes spoken numbers as digits ("one" → "1"),
+// so number/spelled-out targets can grade as misses. Acceptable for a vocabulary
+// drill (the Oxford set is overwhelmingly non-numeric); not worth a digit↔word map.
 export function gradeSpeech(
   alternatives: string[],
   target: string
