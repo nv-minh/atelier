@@ -9,6 +9,7 @@ const colors: Record<string, string> = {
   A2: "bg-cefr-a2",
   B1: "bg-cefr-b1",
   B2: "bg-cefr-b2",
+  C1: "bg-cefr-c1",
 };
 
 export function CefrProgress({ stats }: { stats: Array<{ level: string; total: number; learned: number; learning: number; unseen: number }> }) {

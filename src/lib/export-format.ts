@@ -15,7 +15,7 @@ export type ExportRow = {
 // CEFR levels available as an export scope. Lives here (pure module, no
 // server-only) so both the server scope logic and the client scope select
 // share one list.
-export const CEFR_LEVELS = ["A1", "A2", "B1", "B2"] as const;
+export const CEFR_LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
 // BOM (U+FEFF), written as a \uFEFF escape so a formatter/copy-paste can't
 // silently drop the invisible character. Excel needs it to open UTF-8

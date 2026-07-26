@@ -10,6 +10,7 @@ import { StarButton } from "@/components/star-button";
 import { useI18n } from "@/components/i18n-provider";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { cn } from "@/lib/utils";
+import { CEFR_LEVELS } from "@/lib/export-format";
 
 type Item = {
   id: string;
@@ -71,7 +72,7 @@ export function LibraryClient({
     startTransition(() => update({}));
   };
 
-  const levels = ["ALL", "A1", "A2", "B1", "B2"];
+  const levels = ["ALL", ...CEFR_LEVELS];
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">

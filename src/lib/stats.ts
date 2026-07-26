@@ -3,6 +3,7 @@ import { prisma } from "./db";
 import { todayStr, addDays } from "./utils";
 import { totalXp } from "./gamification-defs";
 import { computeStreakFromDb } from "./gamification-checks";
+import { CEFR_LEVELS } from "./export-format";
 
 export async function getDashboardStats(userId: string) {
   const now = new Date();
@@ -27,7 +28,7 @@ export async function getDashboardStats(userId: string) {
   });
 
   // CEFR breakdown — 2 queries instead of 12 (was N+1 loop).
-  const cefrLevels = ["A1", "A2", "B1", "B2"];
+  const cefrLevels = [...CEFR_LEVELS];
   const [wordByCefr, cardsWithCefr] = await Promise.all([
     prisma.word.groupBy({ by: ["cefr"], _count: true }),
     prisma.card.findMany({

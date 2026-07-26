@@ -4,8 +4,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/i18n-provider";
 import { TOPICS } from "@/lib/topic-taxonomy";
+import { CEFR_LEVELS } from "@/lib/export-format";
 
-const levels = [{ key: "ALL" }, { key: "A1" }, { key: "A2" }, { key: "B1" }, { key: "B2" }];
+const levels = [{ key: "ALL" }, ...CEFR_LEVELS.map((key) => ({ key }))];
 
 export function CefrFilter() {
   const router = useRouter();

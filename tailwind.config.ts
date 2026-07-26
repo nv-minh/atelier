@@ -68,6 +68,7 @@ const config: Config = {
           a2: "#4A9E9C", // teal
           b1: "#C8821A", // amber - intermediate
           b2: "#B5552E", // warm rust - advanced
+          c1: "#8E5BA6", // plum - upper advanced
         },
       },
       // Tailwind 3.4's opacity scale has no 8 or 12, so `bg-ember/12`,

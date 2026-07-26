@@ -102,6 +102,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
   { key: "cefr_A2", family: "cefr", icon: "BookOpen" },
   { key: "cefr_B1", family: "cefr", icon: "BookOpen" },
   { key: "cefr_B2", family: "cefr", icon: "BookOpen" },
+  { key: "cefr_C1", family: "cefr", icon: "BookOpen" },
 
   // One-shots.
   { key: "perfect_session", family: "session", icon: "Target" },
@@ -109,7 +110,7 @@ export const ACHIEVEMENTS: AchievementDef[] = [
 ];
 
 // The CEFR level a cefr_* achievement key targets ("cefr_A1" -> "A1").
-export const CEFR_ACHIEVEMENT_LEVELS = ["A1", "A2", "B1", "B2"] as const;
+export const CEFR_ACHIEVEMENT_LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
 // Fast lookup for the client (name → def) when rendering a toast from a key.
 export const ACHIEVEMENT_BY_KEY: Record<string, AchievementDef> = Object.fromEntries(
