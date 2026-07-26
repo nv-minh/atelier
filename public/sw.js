@@ -6,6 +6,15 @@ const CACHE_VERSION = "atelier-v1";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const PAGES_CACHE = `${CACHE_VERSION}-pages`;
 
+// Static assets are content-hashed, so each deploy adds a fresh slice that
+// never overwrites the old (still-referenced) chunks. Left unbounded the cache
+// grows every deploy; on mobile, storage pressure evicts Cache Storage
+// ALL-OR-NOTHING, silently wiping the /offline precache. Cap with a FIFO prune
+// (~2 deploys' worth; current build is 66 files) instead of build-id
+// versioning — there's no build step here, and purging per deploy would break
+// the stale-chunk rescue for tabs open across a deploy.
+const MAX_STATIC_ENTRIES = 150;
+
 // Precached at install so the offline fallback works on first outage.
 const PRECACHE = ["/offline"];
 
@@ -72,16 +81,39 @@ self.addEventListener("fetch", (event) => {
 
   if (isStatic) {
     event.respondWith(
-      caches.open(STATIC_CACHE).then((cache) =>
-        cache.match(request).then(
-          (cached) =>
-            cached ||
-            fetch(request).then((response) => {
-              if (response.ok) cache.put(request, response.clone());
-              return response;
-            })
+      caches
+        .open(STATIC_CACHE)
+        .then((cache) =>
+          cache.match(request).then(
+            (cached) =>
+              cached ||
+              fetch(request).then((response) => {
+                if (response.ok) {
+                  // Cache, then FIFO-prune to MAX_STATIC_ENTRIES. keys() is
+                  // insertion-ordered, so slicing the front drops the oldest.
+                  // waitUntil keeps it alive past the response; errors are
+                  // swallowed so a prune failure never breaks the fetch.
+                  event.waitUntil(
+                    cache
+                      .put(request, response.clone())
+                      .then(() => cache.keys())
+                      .then((keys) =>
+                        Promise.all(
+                          keys
+                            .slice(0, Math.max(0, keys.length - MAX_STATIC_ENTRIES))
+                            .map((k) => cache.delete(k))
+                        )
+                      )
+                      .catch(() => {})
+                  );
+                }
+                return response;
+              })
+          )
         )
-      )
+        // If Cache Storage is unavailable (e.g. evicted/quota), degrade to
+        // plain network so assets still load.
+        .catch(() => fetch(request))
     );
     return;
   }
