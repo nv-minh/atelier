@@ -8,8 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Atelier warm scholarly palette
+        // Atelier warm scholarly palette.
+        // DEFAULT keys wire the bare utility (bg-paper, text-ink, bg-ember,
+        // stroke-ember, bg-surface, …) to the CSS vars in globals.css, which are
+        // space-separated channel triplets (e.g. `--ember: 200 130 26`). That's
+        // what makes `rgb(var(--x) / <alpha-value>)` valid AND lets the .dark
+        // overrides recolor every usage. Without DEFAULT, Tailwind emits nothing
+        // for the bare/opacity forms and the class silently does nothing.
         paper: {
+          DEFAULT: "rgb(var(--paper) / <alpha-value>)",
           50: "#FDFBF6",
           100: "#FBF7EE",
           200: "#F5EEE0",
@@ -17,6 +24,7 @@ const config: Config = {
           400: "#E0D2B4",
         },
         ink: {
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
           50: "#F5F2EB",
           100: "#E8E2D5",
           200: "#C9C0AC",
@@ -28,7 +36,17 @@ const config: Config = {
           800: "#1F1C16",
           900: "#14120E",
         },
+        // Surface (card background) as a real utility so `bg-surface` /
+        // `bg-surface/95` work. Note: `border-line` / `text-soft` / `bg-paper`
+        // stay as the component classes already defined in globals.css — we do
+        // NOT add a `line` color here, because a `line` color key would emit a
+        // full-opacity `.border-line` utility that overrides the intended /0.1
+        // hairline. Divider usages use `divide-ink/10` instead.
+        surface: {
+          DEFAULT: "rgb(var(--surface) / <alpha-value>)",
+        },
         ember: {
+          DEFAULT: "rgb(var(--ember) / <alpha-value>)",
           50: "#FDF6EC",
           100: "#FAE8CC",
           200: "#F4CC8E",
@@ -51,6 +69,13 @@ const config: Config = {
           b1: "#C8821A", // amber - intermediate
           b2: "#B5552E", // warm rust - advanced
         },
+      },
+      // Tailwind 3.4's opacity scale has no 8 or 12, so `bg-ember/12`,
+      // `bg-ink/8`, etc. emitted nothing. Add them (used across the app for
+      // subtle tints) rather than rewriting ~150 call sites.
+      opacity: {
+        8: ".08",
+        12: ".12",
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],

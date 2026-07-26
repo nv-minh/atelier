@@ -40,7 +40,7 @@ export function WeeklyRecap({ data }: { data: WeeklyRecapData }) {
           <span className="opacity-60">{t("gamify.lastWeek")}</span>
         </div>
       </div>
-      <div className="divide-y divide-line">
+      <div className="divide-y divide-ink/10">
         {rows.map((r) => (
           <div key={r.label} className="flex items-center justify-between py-2.5">
             <span className="text-sm text-soft">{r.label}</span>
