@@ -17,10 +17,11 @@ export async function PATCH(req: NextRequest) {
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const { sessionId, cardsReviewed, correctCount, durationSec } = await req.json().catch(() => ({}));
   if (!sessionId) return NextResponse.json({ error: "sessionId required" }, { status: 400 });
-  await endSession(sessionId, {
+  const result = await endSession(userId, sessionId, {
     cardsReviewed: cardsReviewed ?? 0,
     correctCount: correctCount ?? 0,
     durationSec: durationSec ?? 0,
   });
-  return NextResponse.json({ ok: true });
+  if (!result.ok) return NextResponse.json({ error: "forbidden" }, { status: 403 });
+  return NextResponse.json({ ok: true, xpGained: result.xpGained, unlocked: result.unlocked });
 }

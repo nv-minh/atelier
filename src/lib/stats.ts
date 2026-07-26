@@ -92,7 +92,7 @@ export async function getDashboardStats(userId: string) {
   };
 }
 
-async function computeStreak(userId: string): Promise<number> {
+export async function computeStreak(userId: string): Promise<number> {
   const stats = await prisma.dailyStat.findMany({
     where: { userId, totalCount: { gt: 0 } },
     orderBy: { dateStr: "desc" },
@@ -161,6 +161,83 @@ export async function getForecast(userId: string, days = 30) {
     if (ds in buckets) buckets[ds] += 1;
   }
   return Object.entries(buckets).map(([date, count]) => ({ date, count }));
+}
+
+// ── Weekly recap: this ISO week (Mon–Sun) vs last week ───────────────
+export type WeekTotals = {
+  reviews: number;
+  newCards: number;
+  timeSec: number;
+  xp: number;
+  correct: number;
+  total: number;
+  accuracy: number; // 0..100
+};
+
+export type WeeklyRecap = {
+  thisWeek: WeekTotals;
+  lastWeek: WeekTotals;
+  delta: { reviews: number; newCards: number; timeSec: number; xp: number; accuracy: number };
+};
+
+// Monday of the ISO week containing `d`, in UTC (matches todayStr's UTC
+// convention). getUTCDay: Sun=0..Sat=6; shift so Monday is the anchor.
+function isoWeekMonday(d = new Date()): Date {
+  const base = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dow = base.getUTCDay(); // 0=Sun
+  const back = dow === 0 ? 6 : dow - 1; // days since Monday
+  return addDays(base, -back);
+}
+
+function emptyWeek(): WeekTotals {
+  return { reviews: 0, newCards: 0, timeSec: 0, xp: 0, correct: 0, total: 0, accuracy: 0 };
+}
+
+export async function getWeeklyRecap(userId: string): Promise<WeeklyRecap> {
+  const thisMonday = isoWeekMonday();
+  const lastMonday = addDays(thisMonday, -7);
+  // Window spans last-week Monday through this-week Sunday (14 days).
+  const windowStart = todayStr(lastMonday);
+  const stats = await prisma.dailyStat.findMany({
+    where: { userId, dateStr: { gte: windowStart } },
+    select: {
+      dateStr: true,
+      reviews: true,
+      newCards: true,
+      timeSec: true,
+      xp: true,
+      correctCount: true,
+      totalCount: true,
+    },
+  });
+
+  const thisWeekStart = todayStr(thisMonday);
+  const thisWeek = emptyWeek();
+  const lastWeek = emptyWeek();
+  for (const s of stats) {
+    const bucket = s.dateStr >= thisWeekStart ? thisWeek : lastWeek;
+    bucket.reviews += s.reviews;
+    bucket.newCards += s.newCards;
+    bucket.timeSec += s.timeSec;
+    bucket.xp += s.xp;
+    bucket.correct += s.correctCount;
+    bucket.total += s.totalCount;
+  }
+  for (const w of [thisWeek, lastWeek]) {
+    w.accuracy = w.total > 0 ? (w.correct / w.total) * 100 : 0;
+  }
+
+  return {
+    thisWeek,
+    lastWeek,
+    delta: {
+      reviews: thisWeek.reviews - lastWeek.reviews,
+      newCards: thisWeek.newCards - lastWeek.newCards,
+      timeSec: thisWeek.timeSec - lastWeek.timeSec,
+      xp: thisWeek.xp - lastWeek.xp,
+      accuracy: thisWeek.accuracy - lastWeek.accuracy,
+    },
+  };
 }
 
 // Accuracy over time (per day, last 30 days)

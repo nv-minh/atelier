@@ -25,6 +25,8 @@ model User {
   dailyStats    DailyStat[]
   settings      Settings[]
   wordMarks     WordMark[]
+  achievements  Achievement[]
+  progress      UserProgress?
 }
 
 model Account {
@@ -161,6 +163,7 @@ model DailyStat {
   timeSec      Int      @default(0)
   correctCount Int      @default(0)
   totalCount   Int      @default(0)
+  xp           Int      @default(0)
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -175,8 +178,34 @@ model Settings {
   newCardsPerDay   Int     @default(20)
   reviewsPerDay    Int     @default(200)
   theme            String  @default("system")
+  dailyGoalXp      Int     @default(60)
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ── Gamification: XP total + unlocked achievements ───────────────────
+// Level is NOT stored — it is derived from xp via levelFromXp (gamification-defs).
+model UserProgress {
+  id           String    @id @default(cuid())
+  userId       String    @unique
+  xp           Int       @default(0)
+  backfilledAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Achievement {
+  id         String   @id @default(cuid())
+  userId     String
+  key        String // "streak_7", "reviews_1000", "cefr_A1", ...
+  unlockedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Race-safety anchor: a duplicate insert (concurrent unlock) hits P2002 and
+  // is caught by the awarder, so a badge can never be granted twice.
+  @@unique([userId, key])
+  @@index([userId])
 }
 
 // ── Per-user notebook: bookmarks ("star") + personal notes ───────────

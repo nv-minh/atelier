@@ -12,5 +12,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
   const updated = await recordReview(userId, cardId, rating as Rating, correct ?? rating >= 3);
-  return NextResponse.json({ ok: true, due: updated?.due });
+  return NextResponse.json({
+    ok: true,
+    due: updated?.due,
+    xpGained: updated?.xpGained ?? 0,
+    unlocked: updated?.unlocked ?? [],
+    leveledUp: updated?.leveledUp ?? null,
+  });
 }
