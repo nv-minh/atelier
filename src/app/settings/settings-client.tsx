@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sun, Moon, Monitor } from "lucide-react";
+import { Sun, Moon, Monitor, Download } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { useI18n } from "@/components/i18n-provider";
 import { LangToggle } from "@/components/lang-toggle";
@@ -24,6 +24,7 @@ export function SettingsClient({
   const [newCards, setNewCards] = useState(newCardsPerDay);
   const [reviews, setReviews] = useState(reviewsPerDay);
   const [saved, setSaved] = useState(false);
+  const [exportScope, setExportScope] = useState("all");
 
   const save = async () => {
     await fetch("/api/settings", {
@@ -44,6 +45,18 @@ export function SettingsClient({
     { key: "dark", label: t("settings.dark"), icon: Moon },
     { key: "system", label: t("settings.auto"), icon: Monitor },
   ] as const;
+
+  const scopeOptions = [
+    { key: "all", label: t("settings.exportScopeAll") },
+    { key: "starred", label: t("settings.exportScopeStarred") },
+    { key: "learned", label: t("settings.exportScopeLearned") },
+    { key: "cefr:A1", label: "A1" },
+    { key: "cefr:A2", label: "A2" },
+    { key: "cefr:B1", label: "B1" },
+    { key: "cefr:B2", label: "B2" },
+  ];
+  const exportHref = (format: string) =>
+    `/api/export?format=${format}&scope=${encodeURIComponent(exportScope)}`;
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14 max-w-2xl">
@@ -127,6 +140,45 @@ export function SettingsClient({
           format={(v) => `${v}`}
           onChange={setReviews}
         />
+      </section>
+
+      {/* Export */}
+      <section className="card-atelier p-6 sm:p-7 mb-4">
+        <h2 className="display text-xl mb-1">{t("settings.export")}</h2>
+        <p className="text-xs text-soft mb-5">{t("settings.exportDesc")}</p>
+
+        <label className="text-sm font-medium block mb-2">{t("settings.exportScope")}</label>
+        <select
+          value={exportScope}
+          onChange={(e) => setExportScope(e.target.value)}
+          className="w-full rounded-2xl border border-line bg-transparent px-4 py-3 text-sm mb-4"
+        >
+          {scopeOptions.map((opt) => (
+            <option key={opt.key} value={opt.key}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+
+        <div className="grid grid-cols-2 gap-2">
+          <a
+            href={exportHref("csv")}
+            download
+            className="flex items-center justify-center gap-2 rounded-2xl border border-line px-4 py-3 text-sm font-medium text-soft hover:text-ink transition-colors"
+          >
+            <Download size={16} />
+            {t("settings.exportCsv")}
+          </a>
+          <a
+            href={exportHref("anki")}
+            download
+            className="flex items-center justify-center gap-2 rounded-2xl border border-line px-4 py-3 text-sm font-medium text-soft hover:text-ink transition-colors"
+          >
+            <Download size={16} />
+            {t("settings.exportAnki")}
+          </a>
+        </div>
+        <p className="text-xs text-soft mt-3">{t("settings.exportAnkiHint")}</p>
       </section>
 
       <div className="flex items-center gap-3">
