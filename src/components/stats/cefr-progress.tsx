@@ -22,8 +22,8 @@ export function CefrProgress({ stats }: { stats: Array<{ level: string; total: n
       </div>
       <div className="space-y-4">
         {stats.map((s, i) => {
-          const learnedPct = (s.learned / s.total) * 100;
-          const learningPct = (s.learning / s.total) * 100;
+          const learnedPct = s.total ? (s.learned / s.total) * 100 : 0;
+          const learningPct = s.total ? (s.learning / s.total) * 100 : 0;
           return (
             <div key={s.level}>
               <div className="flex items-baseline justify-between mb-1.5">

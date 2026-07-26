@@ -414,7 +414,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         conversation: "Giao tiếp hằng ngày",
         "it-programming": "CNTT & Lập trình",
         business: "Tiếng Anh Thương mại",
-        toeic: "TOEIC Trọng tâm",
+        toeic: "Trọng tâm TOEIC",
       },
     },
   },

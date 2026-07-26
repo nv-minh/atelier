@@ -244,12 +244,11 @@ function main() {
   }
 
   // ── it-programming: hand-curated seed list ─────────────────────────
-  if (which.has("it-programming")) {
-    const seedPath = resolve(process.cwd(), "data/sources/it-terms.json");
-    if (!existsSync(seedPath)) {
-      console.log("it-programming: data/sources/it-terms.json missing — skipped");
-      return;
-    }
+  const itSeedPath = resolve(process.cwd(), "data/sources/it-terms.json");
+  if (which.has("it-programming") && !existsSync(itSeedPath)) {
+    console.log("it-programming: data/sources/it-terms.json missing — skipped");
+  } else if (which.has("it-programming")) {
+    const seedPath = itSeedPath;
     const seed = JSON.parse(readFileSync(seedPath, "utf-8")) as {
       terms: Array<{ term: string; category: string; cefr?: string; definition_en?: string }>;
     };

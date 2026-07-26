@@ -3,10 +3,10 @@
 [![CI](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml)
 [![Live demo](https://img.shields.io/badge/demo-Vercel-ember)](https://vocab-master-dusky.vercel.app)
 
-Web app **full-stack** luyện từ vựng tiếng Anh (A1–B2) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập GitHub + đồng bộ dữ liệu học giữa các thiết bị.
+Web app **full-stack** luyện từ vựng tiếng Anh (A1–C1) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập GitHub + đồng bộ dữ liệu học giữa các thiết bị.
 
 ```
-3.677 từ · 5 chế độ học · FSRS scheduler · song ngữ Anh–Vi · đăng nhập GitHub
+6.394 từ · 5 chế độ học · 5 bộ từ chuyên đề · FSRS scheduler · song ngữ Anh–Vi · đăng nhập GitHub
 ```
 
 👉 **Demo chạy thật:** https://vocab-master-dusky.vercel.app
@@ -40,7 +40,7 @@ Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch
 ### 📈 Theo dõi tiến độ
 - Streak (chuỗi ngày liên tục)
 - Thẻ đến hạn / đã thuộc / đang học
-- Thanh tiến độ theo từng cấp CEFR (A1–B2)
+- Thanh tiến độ theo từng cấp CEFR (A1–C1)
 - Heatmap hoạt động 365 ngày
 - Dự báo ôn tập 30 ngày + xu hướng độ chính xác
 - **Tóm tắt phiên học** chi tiết: % đúng, thời gian, phân bổ 4 nút Again/Hard/Good/Easy
@@ -63,9 +63,12 @@ Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch
 npm install
 npx prisma generate          # sinh Prisma client
 npx prisma db push           # tạo schema trên Postgres (cần DATABASE_URL)
-npm run db:seed              # nạp 3.677 từ từ data/vocabulary.json
+npm run db:seed              # nạp 3.677 từ nền (A1–B2) từ data/vocabulary.json
+npm run packs:import         # nạp thêm 5 bộ từ chuyên đề (→ 6.394 từ, có C1)
 npm run dev                  # http://localhost:3000
 ```
+
+> `packs:import` idempotent (chạy lại không đổi gì): từ mới → thêm, từ đã có → hợp nhất chủ đề, **không ghi đè** cefr/nghĩa. Thêm `-- --dry-run` để xem trước.
 
 Cần file `.env` (KHÔNG commit):
 ```
@@ -96,30 +99,55 @@ AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cầ
 
 ### Cấu trúc
 ```
-prisma/         schema.prisma + seed/translate/assign-topics/fetch-images scripts
+prisma/         schema.prisma + seed/translate/assign-topics/fetch-images/import-packs scripts
+scripts/packs/  pipeline dựng bộ từ chuyên đề: fetch-sources → build-wordlists → enrich → translate
 src/app/        routes: study (flashcard/quiz/typing/dictation/cram), stats, topics, browse, settings, login + api/
 src/components/ study/*, stats/*, nav, i18n, theme, audio, word-image
 src/lib/        fsrs, study-engine, stats, auth, session, topics-data, tts, cloze, i18n dictionaries
-data/           vocabulary.json (3.677 từ enrich)
+data/           vocabulary.json (3.677 từ nền) · packs/*.json (5 bộ chuyên đề) · SOURCES.md (giấy phép nguồn)
 ```
 
 ---
 
 ## 📊 Dữ liệu
 
-3.677 từ từ **Oxford 5000** (A1–B2), enrich thêm:
+**6.394 từ** — nền **Oxford 5000** (A1–B2, 3.677 từ) + 5 bộ chuyên đề (thêm C1 và từ vựng theo lĩnh vực), enrich đầy đủ:
 - IPA (UK + US), loại từ (Anh + Việt)
-- Nghĩa tiếng Anh + **dịch tiếng Việt** (99%)
+- Nghĩa tiếng Anh + **dịch tiếng Việt** (từ điển mở OVDP Anh–Việt, fallback Google Translate)
 - Câu ví dụ + dịch VI
 - Từ đồng nghĩa / trái nghĩa
 - Audio phát âm (UK/US) · Ảnh thật (Wikimedia, ~670 từ)
 
 | Cấp | Số từ |
 |---|---|
-| A1 | 898 |
-| A2 | 792 |
-| B1 | 690 |
-| B2 | 1.297 |
+| A1 | 926 |
+| A2 | 884 |
+| B1 | 1.081 |
+| B2 | 2.136 |
+| C1 | 1.367 |
+
+### 📦 Bộ từ chuyên đề (word packs)
+
+5 bộ dựng từ danh sách tần suất mở (NGSL/BSL/TSL) + Oxford C1 + list IT tự soạn, gắn chủ đề sẵn:
+
+| Bộ | Chủ đề | Số từ | Nguồn |
+|---|---|---|---|
+| `oxford-c1` | — (nâng cấp C1) | 1.314 | Oxford 5000 (slice C1) |
+| `conversation` | Giao tiếp hằng ngày | 721 | NGSL-Spoken 1.2 |
+| `business` | Tiếng Anh Thương mại | 1.744 | BSL 1.2 |
+| `toeic` | Trọng tâm TOEIC | 1.250 | TSL 1.2 |
+| `it-programming` | CNTT & Lập trình | 442 | list tự soạn (informed by CSWL) |
+
+Giấy phép + attribution từng nguồn: xem [`data/SOURCES.md`](data/SOURCES.md). File `data/packs/*.json` là **build artifact** đã commit — dựng lại bằng `npm run packs:fetch && packs:build && packs:enrich && packs:translate`.
+
+**Scripts:**
+```bash
+npm run packs:build          # dựng danh sách từ (cần data/raw/ từ packs:fetch)
+npm run packs:enrich         # IPA/nghĩa/ví dụ (dictionaryapi.dev + kaikki fallback)
+npm run packs:translate      # nghĩa VI (từ điển OVDP + gtx fallback, chọn nghĩa theo ngữ cảnh)
+npm run packs:import         # nạp vào DB (idempotent, hỗ trợ --dry-run)
+npm run packs:verify         # kiểm tra chất lượng dữ liệu trong DB (chỉ đọc)
+```
 
 ---
 
