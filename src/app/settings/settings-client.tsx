@@ -13,17 +13,20 @@ export function SettingsClient({
   newCardsPerDay,
   reviewsPerDay,
   theme,
+  dailyGoalXp,
 }: {
   requestRetention: number;
   newCardsPerDay: number;
   reviewsPerDay: number;
   theme: string;
+  dailyGoalXp: number;
 }) {
   const { theme: active, set } = useTheme();
   const { t } = useI18n();
   const [retention, setRetention] = useState(requestRetention);
   const [newCards, setNewCards] = useState(newCardsPerDay);
   const [reviews, setReviews] = useState(reviewsPerDay);
+  const [goalXp, setGoalXp] = useState(dailyGoalXp);
   const [saved, setSaved] = useState(false);
   const [exportScope, setExportScope] = useState("all");
 
@@ -35,6 +38,7 @@ export function SettingsClient({
         requestRetention: retention,
         newCardsPerDay: newCards,
         reviewsPerDay: reviews,
+        dailyGoalXp: goalXp,
       }),
     });
     setSaved(true);
@@ -137,6 +141,22 @@ export function SettingsClient({
           step={50}
           format={(v) => `${v}`}
           onChange={setReviews}
+        />
+      </section>
+
+      {/* Daily goal */}
+      <section className="card-atelier p-6 sm:p-7 mb-4">
+        <h2 className="display text-xl mb-1">{t("settings.dailyGoal")}</h2>
+        <p className="text-xs text-soft mb-6">{t("settings.dailyGoalDesc")}</p>
+        <Slider
+          label={t("settings.dailyGoalXp")}
+          desc={t("settings.dailyGoalXpDesc")}
+          value={goalXp}
+          min={10}
+          max={500}
+          step={10}
+          format={(v) => `${v} XP`}
+          onChange={setGoalXp}
         />
       </section>
 

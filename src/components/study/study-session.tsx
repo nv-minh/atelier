@@ -7,6 +7,7 @@ import { Flashcard, type Card } from "./flashcard";
 import type { RatingPreview } from "./rating-buttons";
 import { getRatingPreviewsClient } from "./preview-client";
 import { useI18n } from "@/components/i18n-provider";
+import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 
 type QueueItem = Card & {
   isNew: boolean;
@@ -23,6 +24,7 @@ type QueueItem = Card & {
 
 export function StudySession({ initialQueue, direction = "forward" }: { initialQueue: QueueItem[]; direction?: "forward" | "reverse" | "cloze" }) {
   const { t } = useI18n();
+  const { push: pushToast, toaster } = useAchievementToasts();
   const [queue, setQueue] = useState<QueueItem[]>(initialQueue);
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -31,6 +33,7 @@ export function StudySession({ initialQueue, direction = "forward" }: { initialQ
   const [againQueue, setAgainQueue] = useState<QueueItem[]>([]);
   const [previews, setPreviews] = useState<RatingPreview[]>([]);
   const [reviewing, setReviewing] = useState(false);
+  const [xpGained, setXpGained] = useState(0);
 
   // session tracking
   const sessionIdRef = useRef<string | null>(null);
@@ -66,11 +69,16 @@ export function StudySession({ initialQueue, direction = "forward" }: { initialQ
       if (!current || reviewing) return;
       setReviewing(true);
       try {
-        await fetch("/api/study/review", {
+        const res = await fetch("/api/study/review", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ cardId: current.cardId, rating }),
         });
+        const d = await res.json().catch(() => null);
+        if (d) {
+          if (typeof d.xpGained === "number") setXpGained((x) => x + d.xpGained);
+          if (Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
+        }
       } catch {}
 
       setReviewed((r) => r + 1);
@@ -131,7 +139,12 @@ export function StudySession({ initialQueue, direction = "forward" }: { initialQ
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ sessionId: sid, cardsReviewed: reviewed, correctCount: correct, durationSec }),
-          }).catch(() => {});
+          })
+            .then((r) => r.json())
+            .then((d) => {
+              if (d && Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
+            })
+            .catch(() => {});
         }
       }
     }
@@ -150,13 +163,17 @@ export function StudySession({ initialQueue, direction = "forward" }: { initialQ
 
   if (done) {
     return (
-      <CompleteScreen
-        count={reviewed}
-        counts={counts}
-        typeCounts={typeCounts}
-        durationSec={Math.round((Date.now() - startTimeRef.current) / 1000)}
-        onRestart={restart}
-      />
+      <>
+        {toaster}
+        <CompleteScreen
+          count={reviewed}
+          counts={counts}
+          typeCounts={typeCounts}
+          durationSec={Math.round((Date.now() - startTimeRef.current) / 1000)}
+          xpGained={xpGained}
+          onRestart={restart}
+        />
+      </>
     );
   }
 
@@ -168,6 +185,7 @@ export function StudySession({ initialQueue, direction = "forward" }: { initialQ
 
   return (
     <div className="min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-4rem)] flex flex-col">
+      {toaster}
       {/* Progress bar */}
       <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
         <div className="shell py-2.5 flex items-center gap-3">
@@ -219,12 +237,14 @@ function CompleteScreen({
   counts,
   typeCounts,
   durationSec,
+  xpGained,
   onRestart,
 }: {
   count: number;
   counts: { 1: number; 2: number; 3: number; 4: number };
   typeCounts: { new: number; review: number };
   durationSec: number;
+  xpGained: number;
   onRestart: () => void;
 }) {
   const { t } = useI18n();
@@ -254,7 +274,13 @@ function CompleteScreen({
           <CheckCircle2 size={40} strokeWidth={1.5} />
         </motion.div>
         <h2 className="display text-display-md mb-1 text-center">{t("study.sessionComplete")}</h2>
-        <p className="text-soft text-center mb-6">{t("study.youReviewed", { n: count })}</p>
+        <p className="text-soft text-center mb-2">{t("study.youReviewed", { n: count })}</p>
+        {xpGained > 0 && (
+          <p className="text-center mb-6 text-sm font-semibold text-ember">
+            {t("gamify.xpEarned", { n: xpGained })}
+          </p>
+        )}
+        {xpGained <= 0 && <div className="mb-4" />}
 
         {/* headline stats */}
         <div className="grid grid-cols-3 gap-3 mb-5">

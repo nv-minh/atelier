@@ -4,7 +4,10 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Flame } from "lucide-react";
 import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
+import { LevelCard } from "@/components/gamification/level-card";
+import { GoalRing } from "@/components/gamification/goal-ring";
 import { useI18n } from "@/components/i18n-provider";
+import type { GamificationSummary } from "@/lib/gamification";
 
 export type HomeStats = {
   totalWords: number;
@@ -19,7 +22,15 @@ export type HomeStats = {
   accuracy: number;
 };
 
-export function HomeView({ stats, leechCount }: { stats: HomeStats; leechCount: number }) {
+export function HomeView({
+  stats,
+  leechCount,
+  gamify,
+}: {
+  stats: HomeStats;
+  leechCount: number;
+  gamify: GamificationSummary;
+}) {
   const { t } = useI18n();
 
   return (
@@ -90,6 +101,18 @@ export function HomeView({ stats, leechCount }: { stats: HomeStats; leechCount: 
         <StatCard label={t("home.streak")} value={`${stats.streak}d`} sub={t("home.consecutiveDays")} delay={60} />
         <StatCard label={t("home.learned")} value={stats.learnedCards} sub={t("home.of", { n: stats.totalWords.toLocaleString() })} accent="text-moss-500" delay={120} />
         <StatCard label={t("home.recall")} value={`${stats.accuracy.toFixed(0)}%`} sub={t("home.last100")} delay={180} />
+      </section>
+
+      {/* LEVEL + GOAL */}
+      <section className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <LevelCard
+          level={gamify.level}
+          currentLevelXp={gamify.currentLevelXp}
+          nextLevelXp={gamify.nextLevelXp}
+          progress01={gamify.progress01}
+          xp={gamify.xp}
+        />
+        <GoalRing todayXp={gamify.todayXp} dailyGoalXp={gamify.dailyGoalXp} delay={60} />
       </section>
 
       {/* TODAY + CEFR */}

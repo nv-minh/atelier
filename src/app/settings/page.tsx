@@ -15,6 +15,7 @@ export default async function SettingsPage() {
       newCardsPerDay={settings.newCardsPerDay}
       reviewsPerDay={settings.reviewsPerDay}
       theme={settings.theme}
+      dailyGoalXp={settings.dailyGoalXp}
     />
   );
 }

@@ -8,6 +8,7 @@ import { CefrBadge } from "@/components/cefr-badge";
 import { useI18n } from "@/components/i18n-provider";
 import { gradeTyping, normalizeWord } from "@/lib/utils";
 import { playWord } from "@/lib/tts";
+import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 
 export type PracticeCard = {
   cardId: string;
@@ -46,10 +47,12 @@ export function PracticeSession({
   mode: "quiz" | "typing" | "dictation";
 }) {
   const { t } = useI18n();
+  const { push: pushToast, toaster } = useAchievementToasts();
   const [queue, setQueue] = useState(cards);
   const [index, setIndex] = useState(0);
   const [feedback, setFeedback] = useState<Feedback>({ state: "idle" });
   const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [xpGained, setXpGained] = useState(0);
   const [busy, setBusy] = useState(false);
 
   const current = queue[index];
@@ -67,7 +70,7 @@ export function PracticeSession({
       setScore((s) => ({ correct: s.correct + (correct ? 1 : 0), total: s.total + 1 }));
       setFeedback({ state: correct ? "correct" : "wrong", message });
       try {
-        await fetch("/api/study/review", {
+        const res = await fetch("/api/study/review", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -76,6 +79,11 @@ export function PracticeSession({
             correct,
           }),
         });
+        const d = await res.json().catch(() => null);
+        if (d) {
+          if (typeof d.xpGained === "number") setXpGained((x) => x + d.xpGained);
+          if (Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
+        }
       } catch {}
       setTimeout(() => {
         setFeedback({ state: "idle" });
@@ -145,6 +153,7 @@ export function PracticeSession({
     const pct = score.total ? Math.round((score.correct / score.total) * 100) : 0;
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6">
+        {toaster}
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center max-w-md">
           <motion.div
             initial={{ scale: 0 }}
@@ -156,7 +165,11 @@ export function PracticeSession({
           </motion.div>
           <h2 className="display text-display-md mb-1">{pct >= 70 ? t("practice.nicelyDone") : t("practice.keepGoing")}</h2>
           <p className="display text-5xl text-ember mb-2">{pct}%</p>
-          <p className="text-soft mb-8">{t("practice.correctOf", { c: score.correct, t: score.total })}</p>
+          <p className="text-soft mb-2">{t("practice.correctOf", { c: score.correct, t: score.total })}</p>
+          {xpGained > 0 && (
+            <p className="text-sm font-semibold text-ember mb-8">{t("gamify.xpEarned", { n: xpGained })}</p>
+          )}
+          {xpGained <= 0 && <div className="mb-6" />}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button onClick={() => window.location.reload()} className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90">
               <RotateCcw size={16} /> {t("practice.practiceAgain")}
@@ -172,6 +185,7 @@ export function PracticeSession({
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
+      {toaster}
       <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
         <div className="shell py-2.5 flex items-center gap-3">
           <span className="text-xs text-soft tabular-nums whitespace-nowrap">

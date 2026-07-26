@@ -6,7 +6,11 @@ import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { ActivityHeatmap } from "@/components/stats/heatmap";
 import { ForecastChart, AccuracyChart } from "@/components/stats/charts";
+import { WeeklyRecap } from "@/components/gamification/weekly-recap";
+import { BadgeGallery } from "@/components/gamification/badge-gallery";
 import { useI18n } from "@/components/i18n-provider";
+import type { WeeklyRecap as WeeklyRecapData } from "@/lib/stats";
+import type { GamificationSummary } from "@/lib/gamification";
 
 export function StatsView({
   stats,
@@ -14,12 +18,16 @@ export function StatsView({
   forecast,
   accuracy,
   leeches,
+  recap,
+  gamify,
 }: {
   stats: any;
   heatmap: any[];
   forecast: any[];
   accuracy: any[];
   leeches: { word: string; lapses: number }[];
+  recap: WeeklyRecapData;
+  gamify: GamificationSummary;
 }) {
   const { t } = useI18n();
 
@@ -40,6 +48,10 @@ export function StatsView({
         <StatCard label={t("stats.recallLabel")} value={`${stats.accuracy.toFixed(0)}%`} accent="text-ember" sub={t("stats.recallSub")} delay={180} />
       </section>
 
+      <section className="mb-6">
+        <WeeklyRecap data={recap} />
+      </section>
+
       <section className="grid lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
         <ForecastChart data={forecast} />
         <AccuracyChart data={accuracy} />
@@ -47,6 +59,10 @@ export function StatsView({
 
       <section className="mb-6">
         <CefrProgress stats={stats.cefrStats} />
+      </section>
+
+      <section className="mb-6">
+        <BadgeGallery unlockedKeys={gamify.unlockedKeys} unlockedAt={gamify.unlockedAt} />
       </section>
 
       {leeches.length > 0 && (
