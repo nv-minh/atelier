@@ -109,9 +109,12 @@ export async function buildStudyQueue(
   const wordFilter: any = {};
   if (cefr) wordFilter.cefr = cefr;
   if (topic) wordFilter.topics = { contains: `"${topic}"` };
+  // Track a starred-id restriction separately so the new-card branch can
+  // intersect with it instead of overwriting wordFilter.id (see below).
+  let starredIds: string[] | null = null;
   if (opts?.scope === "starred") {
-    const ids = await getStarredWordIds(userId);
-    wordFilter.id = { in: ids };
+    starredIds = await getStarredWordIds(userId);
+    wordFilter.id = { in: starredIds };
   }
   // "leeches" scope: implemented in a later phase — no-op fallthrough for now.
   const where = Object.keys(wordFilter).length ? { userId, word: wordFilter } : { userId };
@@ -156,8 +159,19 @@ export async function buildStudyQueue(
       await prisma.card.findMany({ where: { userId }, select: { wordId: true } })
     ).map((c) => c.wordId);
 
+    // Intersect the scope's starred ids with "not yet seen" so scope=starred
+    // never gets padded with arbitrary unseen words (spreading wordFilter would
+    // otherwise let `id: { notIn }` clobber the `id: { in: starredIds }` filter).
+    const freshWordFilter: any = { ...wordFilter };
+    if (starredIds) {
+      const seenSet = new Set(seenWordIds);
+      freshWordFilter.id = { in: starredIds.filter((id) => !seenSet.has(id)) };
+    } else {
+      freshWordFilter.id = { notIn: seenWordIds };
+    }
+
     const freshWords = await prisma.word.findMany({
-      where: { ...wordFilter, id: { notIn: seenWordIds } },
+      where: freshWordFilter,
       take: stillNeeded,
       orderBy: [{ cefr: "asc" }, { word: "asc" }],
     });

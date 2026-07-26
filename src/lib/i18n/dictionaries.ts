@@ -187,7 +187,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dailyLimitNote: "Học từ đã gắn sao vẫn tuân theo giới hạn từ mới mỗi ngày.",
       emptyTitle: "Sổ tay còn trống",
       emptyBody:
-        "Gắn sao một từ bất kỳ ở Thư viện hoặc trang chi tiết từ để lưu vào đây. Sau đó bạn có thể học hoặc cram riêng nhóm từ này.",
+        "Gắn sao một từ bất kỳ ở Thư viện hoặc trang chi tiết từ để lưu vào đây. Sau đó bạn có thể học hoặc cram riêng nhóm từ này — lưu ý phần học vẫn tuân theo giới hạn từ mới mỗi ngày.",
       goBrowse: "Tới thư viện",
       hasNote: "Có ghi chú",
     },
@@ -484,7 +484,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dailyLimitNote: "Studying starred words still respects your daily new-card limit.",
       emptyTitle: "Your notebook is empty",
       emptyBody:
-        "Star any word in the Library or on a word detail page to save it here. Then you can study or cram just this set.",
+        "Star any word in the Library or on a word detail page to save it here. Then you can study or cram just this set — note that studying still respects your daily new-card limit.",
       goBrowse: "Go to library",
       hasNote: "Has a note",
     },
