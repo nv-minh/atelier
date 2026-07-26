@@ -10,11 +10,12 @@
 // src/lib/gamification-backfill.ts and is shared with the lazy inline backfill
 // in getGamificationSummary — one source of truth.
 //
-// ⚠️  --force RESETS each user's XP to the value DERIVED FROM THEIR ReviewLogs.
-//     Today that's every XP source, so it's harmless. But once non-ReviewLog
-//     bonus XP exists (Phase 5's matching/pronunciation ledger split), --force
-//     would ERASE that bonus XP, because the backfill only knows about reviews.
-//     After Phase 5, do NOT --force without first accounting for bonus XP.
+// --force RESETS each user's ReviewLog-derived `xp` (DailyStat.xp + UserProgress.xp)
+// to the value computed from their ReviewLogs. As of Phase 5 the bonusXp ledger
+// (DailyStat.bonusXp + UserProgress.bonusXp) holds all non-SRS XP (matching, …)
+// and is a SEPARATE column this script never reads or writes — so --force is now
+// safe for bonus XP: it only rebuilds `xp`, leaving every bonus untouched. Total
+// XP everywhere in the app is xp + bonusXp.
 
 import { PrismaClient } from "@prisma/client";
 import { runBackfillForUser } from "../src/lib/gamification-backfill";
@@ -26,9 +27,9 @@ async function main() {
 
   if (force) {
     console.warn(
-      "⚠️  --force: XP will be RESET to the value derived from each user's ReviewLogs. " +
-        "This erases any future non-ReviewLog bonus XP (matching/pronunciation). " +
-        "Safe today (reviews are the only XP source); revisit after Phase 5's ledger split."
+      "--force: the ReviewLog-derived `xp` ledger will be RESET to the value " +
+        "derived from each user's ReviewLogs. The separate bonusXp ledger " +
+        "(non-SRS modes like matching) is NOT touched, so bonus XP is safe."
     );
   }
 

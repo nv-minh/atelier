@@ -78,7 +78,12 @@ export async function awardForReview(
   const xpGained = XP_PER_RATING[rating] ?? 0;
 
   const beforeProgress = await prisma.userProgress.findUnique({ where: { userId } });
-  const beforeXp = beforeProgress?.xp ?? 0;
+  // Level is derived from TOTAL XP (ReviewLog-derived `xp` + non-SRS `bonusXp`),
+  // so a review crossing a boundary is detected against the same total the UI
+  // shows. This SRS review only ever increments `xp`; bonusXp is added as a
+  // constant offset on both sides.
+  const beforeBonus = beforeProgress?.bonusXp ?? 0;
+  const beforeXp = (beforeProgress?.xp ?? 0) + beforeBonus;
 
   // Both xp increments in one transaction — atomic, no read-modify-write.
   const [, after] = await prisma.$transaction([
@@ -94,7 +99,8 @@ export async function awardForReview(
     }),
   ]);
 
-  const leveledUp = levelFromXp(after.xp) > levelFromXp(beforeXp) ? levelFromXp(after.xp) : null;
+  const afterXp = after.xp + (after.bonusXp ?? 0);
+  const leveledUp = levelFromXp(afterXp) > levelFromXp(beforeXp) ? levelFromXp(afterXp) : null;
 
   // Total-review milestones: one indexed count. Filter against already-owned
   // keys before attempting any insert (see unlockKeys / existingKeys).
@@ -122,8 +128,11 @@ export async function awardForSessionEnd(
 
   // Non-SRS modes (matching, pronunciation, …) earn a small capped bonus that
   // SRS reviews already earned per-rating. cram records no session, so it never
-  // reaches here — intentional (see SRS_MODES note above). Both xp ledgers are
-  // incremented in one transaction so they can't drift.
+  // reaches here — intentional (see SRS_MODES note above). This lands on the
+  // BONUS ledger (DailyStat.bonusXp + UserProgress.bonusXp), NOT `xp`: `xp` stays
+  // strictly ReviewLog-derived so the backfill can rebuild it without erasing
+  // this bonus. Both bonus ledgers are incremented in one transaction so they
+  // can't drift. Everywhere XP is displayed/goal-checked uses xp + bonusXp.
   if (!SRS_MODES.has(session.mode)) {
     xpGained = Math.min(session.correctCount, NONSRS_XP_CAP) * XP_PER_NONSRS_CORRECT;
     if (xpGained > 0) {
@@ -131,13 +140,13 @@ export async function awardForSessionEnd(
       await prisma.$transaction([
         prisma.dailyStat.upsert({
           where: { userId_dateStr: { userId, dateStr } },
-          update: { xp: { increment: xpGained } },
-          create: { userId, dateStr, xp: xpGained },
+          update: { bonusXp: { increment: xpGained } },
+          create: { userId, dateStr, bonusXp: xpGained },
         }),
         prisma.userProgress.upsert({
           where: { userId },
-          update: { xp: { increment: xpGained } },
-          create: { userId, xp: xpGained },
+          update: { bonusXp: { increment: xpGained } },
+          create: { userId, bonusXp: xpGained },
         }),
       ]);
     }
@@ -175,7 +184,8 @@ export async function awardForSessionEnd(
     prisma.settings.findUnique({ where: { userId } }),
   ]);
   const dailyGoalXp = settings?.dailyGoalXp ?? 60;
-  if ((todayStat?.xp ?? 0) >= dailyGoalXp) candidates.push("goal_reached");
+  const todayTotalXp = (todayStat?.xp ?? 0) + (todayStat?.bonusXp ?? 0);
+  if (todayTotalXp >= dailyGoalXp) candidates.push("goal_reached");
 
   // Filter against already-owned keys before inserting (no doomed re-inserts for
   // badges earned in a prior session). goal_reached is the one intentional
@@ -221,7 +231,11 @@ export async function getGamificationSummary(userId: string): Promise<Gamificati
     prisma.dailyStat.findUnique({ where: { userId_dateStr: { userId, dateStr: todayStr() } } }),
   ]);
 
-  const xp = fresh?.xp ?? 0;
+  // Total XP = the ReviewLog-derived ledger PLUS the non-SRS bonus ledger. Level,
+  // the displayed total, and progress are all computed from this sum so bonus XP
+  // from matching (etc.) counts everywhere it's shown, while the backfill can
+  // still rebuild `xp` alone without erasing bonuses.
+  const xp = (fresh?.xp ?? 0) + (fresh?.bonusXp ?? 0);
   const info = levelInfo(xp);
   const unlockedAt: Record<string, string> = {};
   for (const a of achievements) unlockedAt[a.key] = a.unlockedAt.toISOString();
@@ -232,7 +246,7 @@ export async function getGamificationSummary(userId: string): Promise<Gamificati
     currentLevelXp: info.currentLevelXp,
     nextLevelXp: info.nextLevelXp,
     progress01: info.progress01,
-    todayXp: todayStat?.xp ?? 0,
+    todayXp: (todayStat?.xp ?? 0) + (todayStat?.bonusXp ?? 0),
     dailyGoalXp: settings?.dailyGoalXp ?? 60,
     unlockedKeys: achievements.map((a) => a.key),
     unlockedAt,

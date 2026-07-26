@@ -163,7 +163,8 @@ model DailyStat {
   timeSec      Int      @default(0)
   correctCount Int      @default(0)
   totalCount   Int      @default(0)
-  xp           Int      @default(0)
+  xp           Int      @default(0) // ReviewLog-derived only (backfill can rebuild this)
+  bonusXp      Int      @default(0) // non-SRS mode XP (matching, …); backfill never touches it
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -188,7 +189,8 @@ model Settings {
 model UserProgress {
   id           String    @id @default(cuid())
   userId       String    @unique
-  xp           Int       @default(0)
+  xp           Int       @default(0) // ReviewLog-derived only (backfill can rebuild this)
+  bonusXp      Int       @default(0) // non-SRS mode XP (matching, …); backfill never touches it
   backfilledAt DateTime?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

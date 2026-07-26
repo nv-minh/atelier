@@ -186,6 +186,7 @@ export async function getWeeklyRecap(userId: string): Promise<WeeklyRecap> {
       newCards: true,
       timeSec: true,
       xp: true,
+      bonusXp: true,
       correctCount: true,
       totalCount: true,
     },
@@ -199,7 +200,9 @@ export async function getWeeklyRecap(userId: string): Promise<WeeklyRecap> {
     bucket.reviews += s.reviews;
     bucket.newCards += s.newCards;
     bucket.timeSec += s.timeSec;
-    bucket.xp += s.xp;
+    // Total XP for the week = ReviewLog-derived xp + non-SRS bonusXp (matching, …),
+    // matching how the summary/level compute total.
+    bucket.xp += s.xp + s.bonusXp;
     bucket.correct += s.correctCount;
     bucket.total += s.totalCount;
   }
