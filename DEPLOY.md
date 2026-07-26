@@ -41,3 +41,38 @@ Sau khi xong: nút **Đăng nhập với GitHub** trên `/login` sẽ active →
 - Mọi route học/ôn/thống kê bảo vệ bằng middleware → redirect `/login`.
 - Data per-user (Card/ReviewLog/StudySession/DailyStat/Settings scope theo `userId`).
 - Neon dùng chung cho dev + prod (đây chính là cơ chế sync).
+
+## PWA (cài đặt được + chống mất mạng)
+
+Mục tiêu là **installability + resilience**, KHÔNG phải học offline đầy đủ. Các file:
+`src/app/manifest.ts` (→ `/manifest.webmanifest`), `public/icons/*`, `public/sw.js`,
+`src/app/offline/page.tsx`, `src/components/sw-register.tsx`.
+
+### Service worker cache gì
+- **Precache (lúc install):** chỉ `/offline`.
+- **Static cache-first:** `/_next/static/*` (gồm cả font next/font self-host), `/icons/*`, `/fonts/*` — tên file có hash nên bất biến.
+- **Navigations:** network-first; mất mạng → trả trang `/offline` đã cache. **KHÔNG bao giờ cache HTML điều hướng.**
+- **KHÔNG bao giờ đụng `/api/*`** (đặc biệt `/api/auth/*`) — request đi thẳng ra mạng.
+
+### Quy tắc chống "vỏ đăng nhập cũ" (logged-out-stale-shell)
+HTML điều hướng phụ thuộc session, nên SW không được phép cache nó. Nếu cache, một
+người **đã đăng xuất** có thể thấy lại vỏ giao diện của phiên đã đăng nhập trước đó.
+Vì vậy fetch handler chỉ dùng network cho navigations và chỉ fallback sang `/offline`
+(trang tĩnh, không auth) khi mạng lỗi.
+
+### Bump `CACHE_VERSION` khi nào
+Sửa `const CACHE_VERSION = "atelier-v1"` trong `public/sw.js` (ví dụ `atelier-v2`) mỗi khi
+đổi tập precache hoặc quy tắc caching. Activate sẽ xoá mọi cache không khớp prefix version
+mới rồi `clients.claim()`, nên client cũ được dọn sạch ở lần điều hướng kế tiếp.
+
+### SW chỉ chạy ở production
+`SwRegister` chỉ `register("/sw.js")` khi `NODE_ENV === "production"` — dev không cache để
+lặp code không bị kẹt asset cũ.
+
+### Test thủ công (KHÔNG test được headless)
+Hành vi service worker không kiểm thử được bằng build tĩnh. Sau khi deploy prod:
+1. Mở app trên Chrome → DevTools → **Application → Service Workers**: xác nhận `sw.js` activated.
+2. **Application → Manifest**: thấy tên "Atelier — Vocabulary Studio", 4 icon, `display: standalone`; nút cài đặt xuất hiện (Chrome/Android install prompt, iOS "Add to Home Screen").
+3. Bật **Offline** (Network throttling = Offline) → điều hướng sang route bất kỳ → phải thấy trang `/offline` (không phải màn lỗi trình duyệt).
+4. Đăng xuất → bật Offline → điều hướng: KHÔNG được thấy vỏ giao diện đã đăng nhập (chứng minh HTML điều hướng không bị cache).
+5. Đổi `CACHE_VERSION`, deploy lại, reload 2 lần → cache version cũ bị xoá (kiểm tra **Application → Cache Storage**).

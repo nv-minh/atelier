@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -6,6 +6,7 @@ import { I18nProvider } from "@/components/i18n-provider";
 import { Providers } from "@/components/providers";
 import { ProgressBar } from "@/components/progress-bar";
 import { Nav } from "@/components/nav";
+import { SwRegister } from "@/components/sw-register";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -30,7 +31,17 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Atelier — Vocabulary Studio",
   description: "A refined spaced-repetition studio for mastering English vocabulary, A1 to B2.",
-  icons: { icon: "/favicon.svg" },
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/icons/apple-touch-icon.png",
+  },
+};
+
+// Next 14.2: theme-color belongs in the viewport export, not metadata.
+// Matches the manifest theme_color (Atelier ink #1F1C16).
+export const viewport: Viewport = {
+  themeColor: "#1F1C16",
 };
 
 export default function RootLayout({
@@ -55,6 +66,7 @@ export default function RootLayout({
               <ProgressBar />
               <Nav />
               <div className="relative z-10">{children}</div>
+              <SwRegister />
             </Providers>
           </I18nProvider>
         </ThemeProvider>

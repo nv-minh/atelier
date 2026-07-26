@@ -22,6 +22,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       relearning: "Học lại",
       practice: "Luyện tập",
     },
+    offline: {
+      title: "Bạn đang ngoại tuyến",
+      body: "Việc ôn tập cần kết nối mạng. Kiểm tra kết nối rồi thử lại nhé.",
+      retry: "Thử lại",
+    },
     nav: {
       studio: "Trang chủ",
       topics: "Chủ đề",
@@ -414,6 +419,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       review: "Review",
       relearning: "Relearning",
       practice: "Practice",
+    },
+    offline: {
+      title: "You're offline",
+      body: "Reviews need a connection. Check your network and try again.",
+      retry: "Try again",
     },
     nav: {
       studio: "Studio",
