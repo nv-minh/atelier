@@ -9,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Atelier — Vocabulary Studio",
     short_name: "Atelier",
     description:
-      "A refined spaced-repetition studio for mastering English vocabulary, A1 to B2.",
+      "A refined spaced-repetition studio for mastering English vocabulary, A1 to C1.",
     start_url: "/",
     display: "standalone",
     background_color: "#FDFBF6",
