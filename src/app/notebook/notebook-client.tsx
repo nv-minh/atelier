@@ -5,7 +5,7 @@ import { GraduationCap, Zap, StickyNote, Star, Flame } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { StarButton } from "@/components/star-button";
 import { useI18n } from "@/components/i18n-provider";
-import { cn } from "@/lib/utils";
+import { cn, formatInterval } from "@/lib/utils";
 
 type Entry = {
   wordId: string;
@@ -213,6 +213,11 @@ function WordRow({ w, starred, leech }: { w: Entry; starred: boolean; leech?: bo
           <span className={cn("pill text-[9px]", st.c)}>{t(st.key)}</span>
         ) : (
           <span className="pill text-[9px] text-soft">—</span>
+        )}
+        {leech && w.card && (
+          <span className="text-[10px] text-soft tabular-nums">
+            {t("word.srsDue")} {formatInterval(new Date(w.card.due))}
+          </span>
         )}
       </div>
     </div>
