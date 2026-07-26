@@ -10,7 +10,15 @@
     "db:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:backfill-xp": "tsx prisma/backfill-gamification.ts",
+    "db:topics": "tsx prisma/assign-topics.ts",
+    "db:translate-vi": "tsx prisma/translate-vi.ts",
     "db:studio": "prisma studio",
+    "packs:fetch": "tsx scripts/packs/fetch-sources.ts",
+    "packs:build": "tsx scripts/packs/build-wordlists.ts",
+    "packs:enrich": "tsx scripts/packs/enrich.ts",
+    "packs:translate": "tsx scripts/packs/translate-packs.ts",
+    "packs:import": "tsx prisma/import-packs.ts",
+    "packs:verify": "tsx scripts/packs/verify.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

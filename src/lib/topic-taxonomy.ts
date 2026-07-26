@@ -11,6 +11,9 @@ export type Topic = {
   keywords: string[];
   /** optional accent color class */
   accent: string;
+  /** curated pack topic: words are tagged explicitly at import time, never by
+   *  keyword matching — assign-topics must preserve these slugs on re-runs */
+  curated?: boolean;
 };
 
 export const TOPICS: Topic[] = [
@@ -310,10 +313,50 @@ export const TOPICS: Topic[] = [
       "o'clock", "midday", "dawn", "dusk", "sunset", "sunrise", "time zone",
     ],
   },
+  // ── Curated pack topics ────────────────────────────────────────────
+  // Tagged explicitly by prisma/import-packs.ts, never via keywords.
+  {
+    slug: "conversation",
+    name: "Everyday Conversation",
+    emoji: "🗣️",
+    blurb: "High-frequency words for real spoken English.",
+    accent: "text-cefr-a2",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "it-programming",
+    name: "IT & Programming",
+    emoji: "🖥️",
+    blurb: "Code, systems, networks, and security.",
+    accent: "text-cefr-b2",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "business",
+    name: "Business English",
+    emoji: "📈",
+    blurb: "Meetings, deals, reports, and the workplace.",
+    accent: "text-cefr-b1",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "toeic",
+    name: "TOEIC Essentials",
+    emoji: "🎯",
+    blurb: "Core vocabulary for the TOEIC test.",
+    accent: "text-ember",
+    keywords: [],
+    curated: true,
+  },
 ];
 
 // Build matcher: for each topic, a single regex of all keywords with boundaries.
-const topicMatchers = TOPICS.map((t) => ({
+// Curated/keyword-less topics are excluded — an empty keyword list would build
+// `\b()` which matches every word.
+const topicMatchers = TOPICS.filter((t) => t.keywords.length > 0).map((t) => ({
   slug: t.slug,
   re: new RegExp(`\\b(${t.keywords.join("|")})`, "i"),
 }));

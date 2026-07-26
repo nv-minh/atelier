@@ -1,13 +1,17 @@
 /* eslint-disable */
 import { PrismaClient } from "@prisma/client";
-import { assignTopics } from "../src/lib/topic-taxonomy";
+import { assignTopics, TOPICS } from "../src/lib/topic-taxonomy";
 
 const prisma = new PrismaClient();
+
+// Curated pack slugs (tagged by import-packs.ts) must survive re-runs; keyword
+// topics are recomputed from scratch each time.
+const CURATED = new Set(TOPICS.filter((t) => t.curated).map((t) => t.slug));
 
 async function main() {
   console.log("🏷️  Categorizing all words into topics...\n");
   const words = await prisma.word.findMany({
-    select: { id: true, word: true, definitionEn: true, example: true, synonyms: true },
+    select: { id: true, word: true, definitionEn: true, example: true, synonyms: true, topics: true },
   });
   console.log(`   Found ${words.length} words`);
 
@@ -24,12 +28,19 @@ async function main() {
         const v = JSON.parse(w.synonyms || "[]");
         if (Array.isArray(v)) syns = v;
       } catch {}
-      const topics = assignTopics({
+      let existing: string[] = [];
+      try {
+        const v = JSON.parse(w.topics || "[]");
+        if (Array.isArray(v)) existing = v;
+      } catch {}
+      const keywordTopics = assignTopics({
         word: w.word,
         definitionEn: w.definitionEn,
         example: w.example,
         synonyms: syns,
       });
+      const curated = existing.filter((s) => CURATED.has(s));
+      const topics = [...curated, ...keywordTopics.filter((s) => !curated.includes(s))];
       for (const t of topics) topicCounts[t] = (topicCounts[t] ?? 0) + 1;
       if (topics.length > 0) assigned++;
       updates.push(prisma.word.update({ where: { id: w.id }, data: { topics: JSON.stringify(topics) } }));

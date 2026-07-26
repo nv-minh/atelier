@@ -3,7 +3,7 @@
 // Resumable: progress saved to /tmp/vi-progress.json. Rate-limited with concurrency + delay.
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import https from "https";
+import { gtxTranslate as translate } from "../scripts/packs/lib/gtx";
 
 const prisma = new PrismaClient();
 const PROGRESS_FILE = "/tmp/vi-progress.json";
@@ -22,52 +22,6 @@ if (existsSync(PROGRESS_FILE)) {
   } catch {}
 }
 const saveProgress = () => writeFileSync(PROGRESS_FILE, JSON.stringify([...done]));
-
-function fetchJson(url: string, timeout = 8000): Promise<any> {
-  return new Promise((resolve, reject) => {
-    const req = https.get(url, { timeout }, (res) => {
-      let data = "";
-      res.on("data", (c) => (data += c));
-      res.on("end", () => {
-        try {
-          resolve(JSON.parse(data));
-        } catch (e) {
-          reject(e);
-        }
-      });
-    });
-    req.on("error", reject);
-    req.on("timeout", () => {
-      req.destroy(new Error("timeout"));
-    });
-  });
-}
-
-async function translate(text: string, retries = 2): Promise<string | null> {
-  const clean = text?.trim();
-  if (!clean) return null;
-  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=${encodeURIComponent(
-    clean
-  )}`;
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    try {
-      const data = await fetchJson(url);
-      // data[0] is an array of [translatedChunk, originalChunk, ...]
-      if (Array.isArray(data) && Array.isArray(data[0])) {
-        const translated = data[0]
-          .map((seg: any) => (seg && seg[0]) || "")
-          .join("")
-          .trim();
-        if (translated) return translated;
-      }
-      return null;
-    } catch (e: any) {
-      if (attempt === retries) return null;
-      await sleep(800 * (attempt + 1)); // backoff
-    }
-  }
-  return null;
-}
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
