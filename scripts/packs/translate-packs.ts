@@ -89,6 +89,17 @@ function cleanSense(s: string): string {
     .trim();
 }
 
+// Cross-reference stubs: "(như) transparence", "(xem …)", "(cũng như …)" point at
+// another headword instead of glossing this one, so they carry no real meaning to
+// score against — yet they still collect the POS bonus and can outrank the true
+// senses (transparency → "(như) transparence"). Drop them so the gtx fallback,
+// which translates THIS definition, can win instead.
+const STUB_SENSE = /^\((?:như|xem|cũng như)\)/;
+
+function keepSense(s: string): boolean {
+  return s.length > 1 && !STUB_SENSE.test(s);
+}
+
 function typeViFromLabel(label: string): string | undefined {
   for (const [re, vi] of TYPE_VI_FROM_SECTION) {
     if (re.test(label)) return vi;
@@ -114,10 +125,13 @@ function extractSections(body: string): Section[] {
 
   // `*  <loại từ>- sense- sense` POS sections. Split on `*`, drop the leading
   // `@word /ipa/` header (index 0), stop each piece at the first `@` (which
-  // starts the specialized-field block).
+  // starts the specialized-field block) and at the first `!` (which starts the
+  // idiom block, whose translations otherwise leak in as bogus senses — course's
+  // `!a matter of course` gave "một vấn đề dĩ nhiên" and outscored the real
+  // "loạt; khoá; đợt; lớp" lesson sense).
   const starParts = body.split("*").slice(1);
   for (const part of starParts) {
-    const seg = part.split("@")[0];
+    const seg = part.split("@")[0].split("!")[0];
     const dash = seg.indexOf("-");
     const typeRaw = (dash === -1 ? seg : seg.slice(0, dash)).trim().toLowerCase();
     const typeVi = typeViFromLabel(typeRaw);
@@ -128,7 +142,7 @@ function extractSections(body: string): Section[] {
             .slice(dash + 1)
             .split("-")
             .map(cleanSense)
-            .filter((s) => s.length > 1);
+            .filter(keepSense);
     if (senses.length || typeVi) sections.push({ typeVi, senses, tech: false });
   }
 
@@ -144,7 +158,7 @@ function extractSections(body: string): Section[] {
       .slice(dash + 1)
       .split("-")
       .map(cleanSense)
-      .filter((s) => s.length > 1);
+      .filter(keepSense);
     if (!senses.length) continue;
     const tech = /toán & tin|tin học|kỹ thuật/.test(block);
     sections.push({ senses, tech });
@@ -159,7 +173,7 @@ function extractSections(body: string): Section[] {
         .split(/[@]/)[0]
         .split("-")
         .map(cleanSense)
-        .filter((s) => s.length > 1);
+        .filter(keepSense);
       if (senses.length) sections.push({ senses, tech: false });
     }
   }
@@ -184,7 +198,9 @@ function tokenize(s: string): Set<string> {
 }
 
 // One candidate gloss, tagged with the POS/domain of the section it came from.
-type Candidate = { sense: string; typeVi?: string; tech: boolean; score: number };
+// `hits` is the raw shared-token count before any bonus — a candidate that only
+// scores via the POS bonus (hits === 0) matched no meaning and must not be picked.
+type Candidate = { sense: string; typeVi?: string; tech: boolean; score: number; hits: number };
 
 // Score a single sense against the reference tokens (from gtx(definition_en)):
 // how many reference tokens it shares, normalized by reference size, plus small
@@ -195,16 +211,19 @@ function scoreSense(
   sense: string,
   ref: Set<string>,
   opts: { typeVi?: string; tech: boolean; typeViExpected?: string; preferTech: boolean }
-): number {
-  if (ref.size === 0) return 0;
+): { score: number; hits: number } {
+  if (ref.size === 0) return { score: 0, hits: 0 };
   const toks = tokenize(sense);
   let hits = 0;
   for (const t of ref) if (toks.has(t)) hits++;
   let score = hits / ref.size;
   if (opts.typeViExpected && opts.typeVi === opts.typeViExpected) score += 0.1;
   if (opts.preferTech && opts.tech) score += 0.2;
-  return score;
+  return { score, hits };
 }
+
+const THRESHOLD = 0.12; // at least one meaningful shared token
+const MARGIN = 0.05; // winner must beat the next same-POS sense by this much
 
 // Pick the dictionary senses that best match the chosen English definition.
 // Flattens every section to individual senses, scores each, and keeps the top
@@ -223,28 +242,48 @@ function selectSense(
     // is usually the wrong domain (deploy = military, server = waiter).
     if (preferTech && !sec.tech) continue;
     for (const sense of sec.senses) {
-      candidates.push({
-        sense,
+      const { score, hits } = scoreSense(sense, refTokens, {
         typeVi: sec.typeVi,
         tech: sec.tech,
-        score: scoreSense(sense, refTokens, { typeVi: sec.typeVi, tech: sec.tech, typeViExpected, preferTech }),
+        typeViExpected,
+        preferTech,
       });
+      candidates.push({ sense, typeVi: sec.typeVi, tech: sec.tech, score, hits });
     }
   }
   if (!candidates.length) return undefined;
 
-  candidates.sort((a, b) => b.score - a.score);
-  const best = candidates[0];
-  const THRESHOLD = 0.12; // at least one meaningful shared token
-  if (best.score < THRESHOLD) return undefined;
+  // Hard POS gate: when the word's POS is known and the entry has a section with
+  // that POS, discard every candidate from an explicitly different-POS section.
+  // Token overlap alone lets a wrong-POS gloss win (school noun → the verb
+  // section "cho đi học; dạy dỗ giáo dục" shares giáo/dục with the definition and
+  // beats "trường học"); gating keeps us inside the right part of speech.
+  // Sections without a POS label (specialized fields) stay eligible.
+  let pool = candidates;
+  if (typeViExpected && candidates.some((c) => c.typeVi === typeViExpected)) {
+    pool = candidates.filter((c) => !c.typeVi || c.typeVi === typeViExpected);
+  }
+
+  pool.sort((a, b) => b.score - a.score);
+  const best = pool[0];
+  // A pick needs a real shared token, not just the POS bonus — otherwise a
+  // POS-correct but meaning-wrong sense clears the bar (school's "trường phái").
+  if (best.score < THRESHOLD || best.hits === 0) return undefined;
+
+  // Margin gate: the winner must beat the next DISTINCT same-POS sense by MARGIN.
+  // A near-tie means token overlap can't tell the homonyms apart (course noun:
+  // "cách cư sử" ties "loạt; khoá; đợt; lớp"; fine adj: four senses tie on "tốt"),
+  // so defer to gtx, which translated THIS definition and picks the right sense.
+  const rival = pool.find((c) => c.sense !== best.sense && c.typeVi === best.typeVi);
+  if (rival && best.score - rival.score < MARGIN) return undefined;
 
   // Keep the top sense plus any near-ties from the SAME part of speech, so a
   // definition reads naturally ("trường học, học đường") without dragging in an
   // unrelated homonym from another section.
   const chosen: string[] = [];
-  for (const c of candidates) {
+  for (const c of pool) {
     if (chosen.length >= 2) break;
-    if (c.score < THRESHOLD) break;
+    if (c.score < THRESHOLD || c.hits === 0) break;
     if (c.typeVi !== best.typeVi) continue;
     if (!chosen.includes(c.sense)) chosen.push(c.sense);
   }

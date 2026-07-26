@@ -29,8 +29,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/computer_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/computer_us.mp3"
    },
-   "definition_vi": "điện toán; người tính",
-   "vi_source": "anhviet",
+   "definition_vi": "một máy điện tử có thể lưu trữ, sắp xếp và tìm kiếm thông tin, xử lý các con số và dữ liệu khác cũng như điều khiển các máy khác",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một máy tính ở nhà"
   },
@@ -53,8 +53,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/software_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/software_us.mp3"
    },
-   "definition_vi": "phần mềm (máy tính)",
-   "vi_source": "anhviet",
+   "definition_vi": "các chương trình được máy tính sử dụng để thực hiện các công việc cụ thể",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "phần mềm quản lý/chỉnh sửa"
   },
@@ -101,8 +101,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/application_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/application_us.mp3"
    },
-   "definition_vi": "phép trải",
-   "vi_source": "anhviet",
+   "definition_vi": "một yêu cầu chính thức (thường được viết) về một điều gì đó, chẳng hạn như một công việc, sự cho phép làm điều gì đó hoặc một vị trí tại trường cao đẳng hoặc đại học",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "đơn xin quy hoạch/bằng sáng chế/visa"
   },
@@ -151,8 +151,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/program_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/program_us.mp3"
    },
-   "definition_vi": "đặt chương trình; viết chương trình",
-   "vi_source": "anhviet",
+   "definition_vi": "một tập hợp các hướng dẫn trong mã điều khiển các hoạt động hoặc chức năng của máy tính",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Bạn sẽ cần tải xuống và cài đặt chương trình trên máy tính của mình."
   },
@@ -177,8 +177,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/file_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/file_us.mp3"
    },
-   "definition_vi": "phiếu ghi tin; tập tin",
-   "vi_source": "anhviet",
+   "definition_vi": "một cái hộp hoặc một mảnh thẻ gấp để giữ các giấy tờ rời rạc lại với nhau và theo thứ tự",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một tập tin hộp"
   },
@@ -207,8 +207,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/folder-us.mp3"
    },
-   "definition_vi": "danh mục; máy gấp",
-   "vi_source": "anhviet",
+   "definition_vi": "Một vùng chứa ảo trong hệ thống tệp của máy tính, trong đó các tệp và thư mục khác có thể được lưu trữ. Các tập tin và thư mục con trong một thư mục thường có liên quan với nhau.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Tôi giữ tất cả bài tập ở trường của mình trong một tập hồ sơ màu vàng."
   },
@@ -233,7 +233,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/document_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/document_us.mp3"
    },
-   "definition_vi": "bản ghi; chứng từ",
+   "definition_vi": "chứng từ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Vui lòng đọc và ký vào tài liệu đính kèm."
@@ -257,7 +257,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/desktop_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/desktop_us.mp3"
    },
-   "definition_vi": "bàn giấy; màn hình nền",
+   "definition_vi": "màn hình nền",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "biểu tượng máy tính để bàn"
@@ -305,8 +305,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/tablet_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/tablet_us.mp3"
    },
-   "definition_vi": "bảng con (đồ họa); bảng con, bảng nhỏ",
-   "vi_source": "anhviet",
+   "definition_vi": "một máy tính nhỏ dễ mang theo, có màn hình cảm ứng lớn và thường không có bàn phím vật lý",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Công ty đã ra mắt máy tính bảng 10 inch mới nhất của mình."
   },
@@ -355,8 +355,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/screen_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/screen_us.mp3"
    },
-   "definition_vi": "bình phong; bộ lọc",
-   "vi_source": "anhviet",
+   "definition_vi": "bề mặt phẳng ở phía trước tivi, máy tính hoặc thiết bị điện tử khác mà bạn nhìn thấy hình ảnh hoặc thông tin trên đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một màn hình máy tính"
   },
@@ -379,7 +379,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/install_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/install_us.mp3"
    },
-   "definition_vi": "lắp đặt; lắp ráp",
+   "definition_vi": "thiết bị; thiết lập",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "Họ đang lên kế hoạch lắp đặt một hệ thống thoát nước mới."
@@ -399,7 +399,7 @@
    ],
    "definition_en": "to remove a program or application from a computer",
    "type_en": "verb",
-   "definition_vi": "gỡ bỏ chương trình; hủy cài đặt",
+   "definition_vi": "gỡ bỏ chương trình",
    "vi_source": "anhviet",
    "type_vi": "Động từ"
   },
@@ -424,9 +424,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/update_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/update_us.mp3"
    },
-   "definition_vi": "cập nhật, nhật tu; làm tươi lại",
+   "definition_vi": "phiên bản mới nhất; cập nhật hóa",
    "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "type_vi": "Động từ",
    "example_vi": "Họ sẽ gửi cho bạn thông tin cập nhật thường xuyên qua email."
   },
   {
@@ -450,9 +450,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/upgrade_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/upgrade_us.mp3"
    },
-   "definition_vi": "sự hoàn thiện (phần cứng)",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "hành động làm cho một cỗ máy, hệ thống máy tính, v.v. trở nên mạnh mẽ và hiệu quả hơn; máy móc, hệ thống máy tính, v.v. càng mạnh mẽ và hiệu quả hơn.",
+   "vi_source": "gtx",
+   "type_vi": "Động từ",
    "example_vi": "hướng dẫn cài đặt nâng cấp lên hệ thống hiện có"
   },
   {
@@ -474,8 +474,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/setting_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/setting_us.mp3"
    },
-   "definition_vi": "bệ; cái đệm",
-   "vi_source": "anhviet",
+   "definition_vi": "một môi trường nơi một cái gì đó được đặt; nơi xảy ra chuyện gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một vùng nông thôn/một lý tưởng/một khung cảnh đẹp/bình dị"
   },
@@ -498,7 +498,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/user_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/user_us.mp3"
    },
-   "definition_vi": "khách hàng; người dùng",
+   "definition_vi": "người sử dụng; người dùng",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "người tham gia giao thông"
@@ -572,8 +572,8 @@
    ],
    "definition_en": "the act of ending a session with a computer system or website",
    "type_en": "noun",
-   "definition_vi": "ra, rời khỏi",
-   "vi_source": "anhviet",
+   "definition_vi": "hành động kết thúc một phiên làm việc với hệ thống máy tính hoặc trang web",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -617,8 +617,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/digital_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/digital_us.mp3"
    },
-   "definition_vi": "con số; số",
-   "vi_source": "anhviet",
+   "definition_vi": "sử dụng hệ thống nhận và gửi thông tin dưới dạng một chuỗi các số một và số 0, cho thấy tín hiệu điện tử có hoặc không có ở đó",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "một máy ảnh kỹ thuật số"
   },
@@ -641,8 +641,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/electronic_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/electronic_us.mp3"
    },
-   "definition_vi": "kiểu điện tử",
-   "vi_source": "anhviet",
+   "definition_vi": "có hoặc sử dụng nhiều bộ phận nhỏ, chẳng hạn như vi mạch, điều khiển và điều khiển dòng điện nhỏ",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "Hành khách đi máy bay không còn phải tắt tất cả các thiết bị điện tử khi ở trên máy bay."
   },
@@ -667,8 +667,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/online_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/online_us.mp3"
    },
-   "definition_vi": "nối liền; sẵn sàng",
-   "vi_source": "anhviet",
+   "definition_vi": "có sẵn trên hoặc được thực hiện bằng cách sử dụng internet hoặc mạng máy tính khác",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "Mua sắm trực tuyến vừa rẻ vừa tiện lợi."
   },
@@ -725,9 +725,9 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/wireless-us.mp3"
    },
-   "definition_vi": "không có dây",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "Kết nối không dây với mạng máy tính.",
+   "vi_source": "gtx",
+   "type_vi": "Tính từ",
    "example_vi": "Chỉ khoảng một trăm năm trước, mạng không dây là một công nghệ mới."
   },
   {
@@ -749,7 +749,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/virtual_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/virtual_us.mp3"
    },
-   "definition_vi": "ảo; ảo giác",
+   "definition_vi": "hiệu dụng",
    "vi_source": "anhviet",
    "type_vi": "Tính từ",
    "example_vi": "một hệ thống giúp lập trình viên tạo ra môi trường ảo"
@@ -773,8 +773,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/remote_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/remote_us.mp3"
    },
-   "definition_vi": "từ xa, ở xa",
-   "vi_source": "anhviet",
+   "definition_vi": "cách xa nơi người khác sinh sống",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "một ngôi làng/hòn đảo/địa điểm/khu vực xa xôi"
   },
@@ -824,7 +824,7 @@
    "example": "There are shortcuts to some of my favourite applications on my desktop.",
    "ipa_uk": "/ˈʃɔːtkʌt/",
    "ipa_us": "/ˈʃɔːtkʌt/",
-   "definition_vi": "biểu tượng tắt; lệnh tắt",
+   "definition_vi": "đường tắt",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Có các lối tắt đến một số ứng dụng yêu thích của tôi trên máy tính để bàn."
@@ -846,7 +846,7 @@
    "definition_en": "The act of notifying.",
    "ipa_uk": "/ˌnəʊtɪfɪˈkeɪʃən/",
    "ipa_us": "/ˌnəʊtɪfɪˈkeɪʃən/",
-   "definition_vi": "sự báo; sự thông báo",
+   "definition_vi": "sự thông báo; sự báo",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -895,8 +895,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/crash_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/crash_us.mp3"
    },
-   "definition_vi": "bị sự cố; sự cố chương trình",
-   "vi_source": "anhviet",
+   "definition_vi": "một vụ tai nạn trong đó một chiếc xe đâm vào một vật gì đó, ví dụ như một chiếc xe khác, thường gây hư hỏng và thường làm hành khách bị thương hoặc tử vong",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một vụ tai nạn ô tô/máy bay"
   },
@@ -919,9 +919,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/freeze_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/freeze_us.mp3"
    },
-   "definition_vi": "ngừng phát triển",
+   "definition_vi": "làm đông lạnh; bị kẹt cứng, gắn chặt",
    "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "type_vi": "Danh từ",
    "example_vi": "Nước đóng băng ở 0°C."
   },
   {
@@ -943,9 +943,9 @@
    "example": "After the restart of my browser, the problem went away.",
    "ipa_uk": "/ˈɹiːˌstɑɹt/",
    "ipa_us": "/ˈɹiːˌstɑɹt/",
-   "definition_vi": "sự khởi động lại",
+   "definition_vi": "bắt đầu lại; khởi động lại",
    "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "type_vi": "Động từ",
    "example_vi": "Sau khi khởi động lại trình duyệt của tôi, vấn đề đã biến mất."
   },
   {
@@ -995,7 +995,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/copy_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/copy_us.mp3"
    },
-   "definition_vi": "bản sao chép; tài liệu sao chép",
+   "definition_vi": "tài liệu sao chép",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Những tên trộm đã thay thế bức tranh gốc bằng một bản sao."
@@ -1022,8 +1022,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/paste-us.mp3"
    },
-   "definition_vi": "chèn vào",
-   "vi_source": "anhviet",
+   "definition_vi": "Một hỗn hợp ẩm mềm, cụ thể:",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1045,8 +1045,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/delete_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/delete_us.mp3"
    },
-   "definition_vi": "gạch đi",
-   "vi_source": "anhviet",
+   "definition_vi": "để loại bỏ một cái gì đó đã được viết hoặc in, hoặc đã được lưu trữ trên máy tính",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Tên của bạn đã bị xóa khỏi danh sách."
   },
@@ -1083,9 +1083,9 @@
    "example": "How many undos does this program support?",
    "ipa_uk": "/ʌnˈduː/",
    "ipa_us": "/ʌnˈduː/",
-   "definition_vi": "hoàn tác; không thực hiện",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "Một thao tác đảo ngược một hành động trước đó.",
+   "vi_source": "gtx",
+   "type_vi": "Động từ",
    "example_vi": "Chương trình này hỗ trợ bao nhiêu lần hoàn tác?"
   },
   {
@@ -1107,9 +1107,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/save_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/save_us.mp3"
    },
-   "definition_vi": "cất, giữ; sự lưu",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "giữ ai/cái gì đó an toàn khỏi cái chết, tổn hại, mất mát, v.v.",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "cứu ai/cái gì, cứu mạng ai"
   },
   {
@@ -1133,8 +1133,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/print_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/print_us.mp3"
    },
-   "definition_vi": "bản in, in",
-   "vi_source": "anhviet",
+   "definition_vi": "các chữ cái, từ, số, v.v. đã được in trên giấy",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Chữ in nhỏ rất khó đọc nếu không có kính của tôi."
   },
@@ -1183,8 +1183,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/attachment_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/attachment_us.mp3"
    },
-   "definition_vi": "cái kèm theo; phần kèm theo",
-   "vi_source": "anhviet",
+   "definition_vi": "một tài liệu mà bạn gửi cho ai đó bằng email",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Không có tập tin đính kèm được bao gồm."
   },
@@ -1202,8 +1202,8 @@
    ],
    "definition_en": "a program that searches the internet for web pages containing particular words",
    "type_en": "noun",
-   "definition_vi": "cỗ máy tìm kiếm; công cụ tìm kiếm",
-   "vi_source": "anhviet",
+   "definition_vi": "một chương trình tìm kiếm trên internet các trang web có chứa các từ cụ thể",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1221,8 +1221,8 @@
    ],
    "type_en": "noun",
    "definition_en": "A sheet of paper, marked with a grid, in which financial data is recorded and totals calculated manually.",
-   "definition_vi": "bảng tính; bảng tính điện tử",
-   "vi_source": "anhviet",
+   "definition_vi": "Một tờ giấy, được đánh dấu bằng lưới, trong đó dữ liệu tài chính được ghi lại và tổng số được tính toán thủ công.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1243,8 +1243,8 @@
    "type_en": "noun",
    "ipa_uk": "/ˈɒpəˌɹeɪtɪŋ ˌsɪstəm/",
    "ipa_us": "/ˈɒpəˌɹeɪtɪŋ ˌsɪstəm/",
-   "definition_vi": "hệ điều hành",
-   "vi_source": "anhviet",
+   "definition_vi": "phần mềm chính quản lý phần cứng của máy tính và chạy các chương trình khác, chẳng hạn như Windows, macOS hoặc Linux",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1266,8 +1266,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/version_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/version_us.mp3"
    },
-   "definition_vi": "thế hệ",
-   "vi_source": "anhviet",
+   "definition_vi": "một dạng của một cái gì đó hơi khác so với dạng trước đó hoặc so với các dạng khác của cùng một thứ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "phiên bản của một cái gì đó, phiên bản mới nhất của gói phần mềm"
   },
@@ -1290,7 +1290,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/license_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/license_us.mp3"
    },
-   "definition_vi": "cấp quyền",
+   "definition_vi": "cho phép (ai làm...); cấp giấy phép (cho)",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "cấp giấy phép gì đó, Loại thuốc mới này vẫn chưa được cấp phép ở Mỹ."
@@ -1316,7 +1316,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/feature_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/feature_us.mp3"
    },
-   "definition_vi": "chức năng",
+   "definition_vi": "đặc điểm",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Một đặc điểm thú vị của thành phố là khu chợ cũ."
@@ -1340,8 +1340,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/default_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/default_us.mp3"
    },
-   "definition_vi": "mặc nhiên; sự mặc nhiên",
-   "vi_source": "anhviet",
+   "definition_vi": "điều gì sẽ xảy ra hoặc xuất hiện nếu bạn không thực hiện bất kỳ lựa chọn hoặc thay đổi nào khác, đặc biệt là trong một chương trình máy tính",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Mặc định là năm mươi dòng."
   },
@@ -1364,7 +1364,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/device_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/device_us.mp3"
    },
-   "definition_vi": "phương sách",
+   "definition_vi": "thiết bị; dụng cụ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một thiết bị theo dõi/ghi âm/nghe"
@@ -1398,7 +1398,7 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/gadget-us.mp3"
    },
-   "definition_vi": "đồ đá; đồ gá",
+   "definition_vi": "dụng cụ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Anh ấy mua một thiết bị mới gọn gàng để cắt khoai tây."
@@ -1422,8 +1422,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/icon_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/icon_us.mp3"
    },
-   "definition_vi": "biểu trưng; hình tượng",
-   "vi_source": "anhviet",
+   "definition_vi": "một biểu tượng nhỏ trên màn hình máy tính hoặc điện thoại thông minh đại diện cho một chương trình hoặc một tệp",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Nhấp vào biểu tượng máy in bằng chuột."
   },
@@ -1448,7 +1448,7 @@
    "type_en": "noun",
    "ipa_uk": "/kɜɹsəɹ/",
    "ipa_us": "/kɜɹsəɹ/",
-   "definition_vi": "con trỏ (thước tính); con trỏ màn hình",
+   "definition_vi": "con trỏ màn hình",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -1467,8 +1467,8 @@
    ],
    "definition_en": "a temporary storage area for text or images that have been copied or cut",
    "type_en": "noun",
-   "definition_vi": "bản ghi tạm; bảng ghi tạm",
-   "vi_source": "anhviet",
+   "definition_vi": "vùng lưu trữ tạm thời cho văn bản hoặc hình ảnh đã được sao chép hoặc cắt",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1501,8 +1501,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/trash-us.mp3"
    },
-   "definition_vi": "cặn bã; chất thải",
-   "vi_source": "anhviet",
+   "definition_vi": "Những thứ vô dụng cần vứt bỏ; rác; từ chối.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Tôi là rác rưởi của Harry Potter."
   },
@@ -1526,8 +1526,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/algorithm-us.mp3"
    },
-   "definition_vi": "giải thuật; thuật giải",
-   "vi_source": "anhviet",
+   "definition_vi": "Một tập hợp các bước được sắp xếp để giải một bài toán. Kế hoạch từng bước chính xác cho một quy trình tính toán có thể bắt đầu bằng giá trị đầu vào và mang lại giá trị đầu ra trong một số bước hữu hạn.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1549,8 +1549,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/code_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/code_us.mp3"
    },
-   "definition_vi": "ghi mã; lập mã",
-   "vi_source": "anhviet",
+   "definition_vi": "một hệ thống các từ, chữ cái, số hoặc ký hiệu thể hiện một thông điệp hoặc ghi lại thông tin một cách bí mật hoặc ở dạng ngắn hơn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "phá/bẻ khóa mã (= để hiểu và đọc tin nhắn)"
   },
@@ -1587,7 +1587,8 @@
    "extra_definitions": [],
    "definition_en": "software whose source code is freely available for anyone to view, modify, and share",
    "definition_vi": "mã nguồn mở",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "array",
@@ -1608,8 +1609,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/array_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/array_us.mp3"
    },
-   "definition_vi": "dãy (sắp xếp)",
-   "vi_source": "anhviet",
+   "definition_vi": "một nhóm hoặc một tập hợp đồ vật hoặc con người, thường là lớn hoặc ấn tượng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một loạt các chai có hình dạng và kích cỡ khác nhau"
   },
@@ -1632,8 +1633,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/argument_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/argument_us.mp3"
    },
-   "definition_vi": "đối số; góc cực",
-   "vi_source": "anhviet",
+   "definition_vi": "một cuộc trò chuyện hoặc thảo luận trong đó hai hoặc nhiều người không đồng ý, thường là một cách giận dữ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "thắng/thua một cuộc tranh luận"
   },
@@ -1656,8 +1657,8 @@
    ],
    "definition_en": "a data type with only two possible values: true or false",
    "type_en": "adjective",
-   "definition_vi": "luận lý",
-   "vi_source": "anhviet",
+   "definition_vi": "một kiểu dữ liệu chỉ có hai giá trị có thể: đúng hoặc sai",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -1679,8 +1680,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/bug_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/bug_us.mp3"
    },
-   "definition_vi": "chỗ rối; rối",
-   "vi_source": "anhviet",
+   "definition_vi": "bất kỳ côn trùng nhỏ nào",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Có một con bọ đang bò lên cánh tay của bạn."
   },
@@ -1706,7 +1707,7 @@
    "type_en": "noun",
    "ipa_uk": "/diːˈbʌɡ/",
    "ipa_us": "/diːˈbʌɡ/",
-   "definition_vi": "gỡ rối; hiệu chỉnh lỗi",
+   "definition_vi": "hiệu chỉnh lỗi",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -1730,8 +1731,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/debugger-us.mp3"
    },
-   "definition_vi": "bộ gỡ dối; bộ gỡ lỗi",
-   "vi_source": "anhviet",
+   "definition_vi": "một công cụ cho phép lập trình viên chạy chương trình từng bước để tìm lỗi",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1753,9 +1754,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/build_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/build_us.mp3"
    },
-   "definition_vi": "kiến trúc; lắp ráp",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "tạo ra cái gì đó, đặc biệt là một tòa nhà, bằng cách ghép các bộ phận lại với nhau",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "xây dựng (cái gì đó), Họ được phép xây dựng 200 ngôi nhà mới."
   },
   {
@@ -1782,8 +1783,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/byte-us.mp3"
    },
-   "definition_vi": "byte; nhóm 8 bit",
-   "vi_source": "anhviet",
+   "definition_vi": "Một chuỗi bit ngắn (chữ số nhị phân) có thể được máy tính vận hành như một đơn vị; từ máy nhỏ nhất có thể sử dụng được.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Từ “xin chào” phù hợp với năm byte mã ASCII."
   },
@@ -1806,8 +1807,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/bit_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/bit_us.mp3"
    },
-   "definition_vi": "đơn vị thông tin",
-   "vi_source": "anhviet",
+   "definition_vi": "hơn là; ở một mức độ nào đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Quần này hơi chật."
   },
@@ -1829,8 +1830,8 @@
    ],
    "definition_en": "a function passed to another function to be executed later, when an operation completes",
    "type_en": "noun",
-   "definition_vi": "cuộc gọi lại; cuộc gọi ngược",
-   "vi_source": "anhviet",
+   "definition_vi": "một hàm được truyền cho một hàm khác để được thực thi sau đó, khi một thao tác hoàn thành",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -1852,7 +1853,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/class_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/class_us.mp3"
    },
-   "definition_vi": "lớp (mođulo)",
+   "definition_vi": "lớp, nhóm",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "trong/lớp của bạn, Chúng tôi học cùng lớp ở trường."
@@ -1878,8 +1879,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/comment_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/comment_us.mp3"
    },
-   "definition_vi": "dòng chú giải; sự chú giải",
-   "vi_source": "anhviet",
+   "definition_vi": "điều gì đó bạn nói hoặc viết để đưa ra ý kiến ​​hoặc giải thích về ai/điều gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "nhận xét về điều gì đó, Cô ấy đã đưa ra những nhận xét hữu ích về công việc của tôi."
   },
@@ -1902,8 +1903,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/compile_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/compile_us.mp3"
    },
-   "definition_vi": "biên dịch; biên soạn",
-   "vi_source": "anhviet",
+   "definition_vi": "để tạo ra một cuốn sách, danh sách, báo cáo, v.v. bằng cách tập hợp các mục, bài báo, bài hát, v.v. khác nhau lại với nhau; để thu thập thông tin nhằm tạo ra một cuốn sách, danh sách, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Chúng tôi đang cố gắng lập danh sách những người phù hợp cho công việc."
   },
@@ -1925,7 +1926,7 @@
    "example": "a compiler of poetry anthologies",
    "ipa_uk": "/kəmˈpaɪlə/",
    "ipa_us": "/kəmˈpaɪlə/",
-   "definition_vi": "bộ biên dịch; chương trình biên dịch",
+   "definition_vi": "chương trình biên dịch; trình biên dịch",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một người biên soạn các tuyển tập thơ"
@@ -1949,8 +1950,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/constant_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/constant_us.mp3"
    },
-   "definition_vi": "đại lượng không đổi; số không đổi",
-   "vi_source": "anhviet",
+   "definition_vi": "xảy ra mọi lúc hoặc nhiều lần",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "Có sự gián đoạn liên tục."
   },
@@ -1972,7 +1973,7 @@
    ],
    "definition_en": "a special method that creates and initializes a new object of a class",
    "type_en": "noun",
-   "definition_vi": "hàm dựng; hàm tạo",
+   "definition_vi": "hàm tạo",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -1995,7 +1996,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/declare_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/declare_us.mp3"
    },
-   "definition_vi": "đặt; khai báo",
+   "definition_vi": "khai báo",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "tuyên bố điều gì đó, Chính phủ đã tuyên bố tình trạng khẩn cấp."
@@ -2019,8 +2020,8 @@
    "example": "This library has dependencies on a lot of other libraries. We have to compile all of those other libraries first.",
    "ipa_uk": "/dɪˈpɛndənsi/",
    "ipa_us": "/dɪˈpɛndənsi/",
-   "definition_vi": "phần phụ thuộc; tính phụ thuộc",
-   "vi_source": "anhviet",
+   "definition_vi": "một thư viện hoặc gói bên ngoài mà chương trình cần để hoạt động",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Thư viện này có sự phụ thuộc vào rất nhiều thư viện khác. Trước tiên, chúng tôi phải biên dịch tất cả các thư viện khác."
   },
@@ -2070,8 +2071,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/exception_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/exception_us.mp3"
    },
-   "definition_vi": "sự biệt lệ; sự ngoại lệ",
-   "vi_source": "anhviet",
+   "definition_vi": "một người hoặc vật không được bao gồm trong một tuyên bố chung",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Hầu hết các tòa nhà trong thị trấn đều hiện đại, nhưng nhà thờ là một ngoại lệ."
   },
@@ -2094,8 +2095,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/execute_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/execute_us.mp3"
    },
-   "definition_vi": "chạy; chạy (chương trình)",
-   "vi_source": "anhviet",
+   "definition_vi": "giết ai đó, đặc biệt là như một hình phạt pháp lý",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "bị xử tử (vì điều gì), Ngài bị xử tử vì tội phản quốc."
   },
@@ -2118,8 +2119,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/expression_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/expression_us.mp3"
    },
-   "definition_vi": "biểu thức; sự biểu diễn",
-   "vi_source": "anhviet",
+   "definition_vi": "một từ hoặc cụm từ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Ý nghĩa của cụm từ 'trên chín tầng mây' là gì?"
   },
@@ -2172,8 +2173,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/inheritance-us.mp3"
    },
-   "definition_vi": "kế thừa; sự kế thừa",
-   "vi_source": "anhviet",
+   "definition_vi": "Việc chuyển quyền sở hữu di sản khi qua đời.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Các ngôn ngữ Ấn-Âu có nhiều điểm tương đồng do chúng được thừa hưởng từ một tổ tiên chung."
   },
@@ -2193,7 +2194,7 @@
    ],
    "definition_en": "to set a variable or system to its starting value before use",
    "type_en": "verb",
-   "definition_vi": "chuẩn bị làm việc; khởi chạy",
+   "definition_vi": "thiết lập ban đầu; khởi đầu",
    "vi_source": "anhviet",
    "type_vi": "Động từ"
   },
@@ -2216,8 +2217,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/instance_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/instance_us.mp3"
    },
-   "definition_vi": "phiên bản",
-   "vi_source": "anhviet",
+   "definition_vi": "một ví dụ cụ thể hoặc trường hợp của một cái gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Ví dụ về ai đó/cái gì đó. Báo cáo nêu bật một số trường hợp bất công."
   },
@@ -2265,8 +2266,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/interface_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/interface_us.mp3"
    },
-   "definition_vi": "mạch ghép nối; sự phân giới",
-   "vi_source": "anhviet",
+   "definition_vi": "cách một chương trình máy tính trình bày thông tin cho người dùng hoặc nhận thông tin từ người dùng, đặc biệt là cách bố trí màn hình và các menu",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "giao diện người dùng"
   },
@@ -2295,9 +2296,9 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/iterate-uk.mp3",
     "us": null
    },
-   "definition_vi": "nhắc lại, lặp lại",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "lặp lại một quy trình, đặc biệt là chạy cùng một khối mã một lần cho mỗi mục trong bộ sưu tập",
+   "vi_source": "gtx",
+   "type_vi": "Động từ",
    "example_vi": "Hàm max() lặp qua dữ liệu để tìm giá trị cao nhất."
   },
   {
@@ -2322,7 +2323,7 @@
    "example": "The architect drafted several iterations of the floorplan before deciding on his final design.",
    "ipa_uk": "/ɪtəɹˈeɪʃən/",
    "ipa_us": "/ɪtəɹˈeɪʃən/",
-   "definition_vi": "bước; bước lặp",
+   "definition_vi": "sự lặp lại; lặp lại",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Kiến trúc sư đã phác thảo sơ đồ mặt bằng nhiều lần trước khi quyết định thiết kế cuối cùng của mình."
@@ -2369,8 +2370,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/library_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/library_us.mp3"
    },
-   "definition_vi": "thư viện",
-   "vi_source": "anhviet",
+   "definition_vi": "một tòa nhà trong đó các bộ sưu tập sách, báo, v.v. và đôi khi phim và nhạc được ghi âm được lưu giữ để mọi người đọc, nghiên cứu hoặc mượn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "thư viện công cộng/đại học/trường học"
   },
@@ -2393,8 +2394,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/loop_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/loop_us.mp3"
    },
-   "definition_vi": "thắt nút; vòng lặp",
-   "vi_source": "anhviet",
+   "definition_vi": "một hình dạng giống như một đường cong hoặc hình tròn được tạo bởi một đường cong tròn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Con đường đi thành một vòng lớn quanh hồ."
   },
@@ -2417,7 +2418,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/method_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/method_us.mp3"
    },
-   "definition_vi": "cách thức; hệ thống",
+   "definition_vi": "cách thức",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Phương pháp nào là hiệu quả nhất?"
@@ -2467,8 +2468,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/object_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/object_us.mp3"
    },
-   "definition_vi": "biến đối tuợng",
-   "vi_source": "anhviet",
+   "definition_vi": "một vật có thể được nhìn thấy và chạm vào nhưng không còn sống",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "những vật dụng hàng ngày như cốc, đĩa"
   },
@@ -2491,7 +2492,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/operator_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/operator_us.mp3"
    },
-   "definition_vi": "điện thoại viên; người điều khiển",
+   "definition_vi": "người vận hành; người điều khiển",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "người vận hành máy tính/máy móc"
@@ -2545,7 +2546,7 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/parse-us.mp3"
    },
-   "definition_vi": "phân tách; phân tích cú pháp",
+   "definition_vi": "phân tích cú pháp; phân tách",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "Việc phân tích cú pháp sẽ thất bại nếu chương trình chứa từ khóa không được nhận dạng."
@@ -2580,8 +2581,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pointer-us.mp3"
    },
-   "definition_vi": "con trỏ văn bản; con trỏ, pointer",
-   "vi_source": "anhviet",
+   "definition_vi": "Bất cứ điều gì trỏ hoặc được sử dụng để chỉ.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Người hướng dẫn đã cho tôi một số gợi ý để viết một bài báo tốt."
   },
@@ -2602,8 +2603,8 @@
    "definition_en": "a technique in which a function calls itself to solve a smaller version of the same problem",
    "type_en": "noun",
    "example": "n! = n × (n − 1)! (for n > 0) or 1 (for n = 0) defines the factorial function using recursion.",
-   "definition_vi": "đệ quy; phép truy hồi",
-   "vi_source": "anhviet",
+   "definition_vi": "một kỹ thuật trong đó một hàm gọi chính nó để giải quyết một phiên bản nhỏ hơn của cùng một vấn đề",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "N! = n × (n − 1)! (với n > 0) hoặc 1 (với n = 0) xác định hàm giai thừa bằng cách sử dụng đệ quy."
   },
@@ -2674,7 +2675,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/scope_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/scope_us.mp3"
    },
-   "definition_vi": "dải hợp lệ; phạm vi, vùng",
+   "definition_vi": "độ dài",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "phạm vi cho một cái gì đó, vẫn còn rất nhiều phạm vi để cải thiện."
@@ -2698,7 +2699,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/script_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/script_us.mp3"
    },
-   "definition_vi": "bản gốc; bản thảo",
+   "definition_vi": "kịch bản; bản gốc",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Dòng đó không có trong kịch bản gốc."
@@ -2722,8 +2723,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/statement_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/statement_us.mp3"
    },
-   "definition_vi": "câu lệnh; câu lệnh (trong chương trình)",
-   "vi_source": "anhviet",
+   "definition_vi": "một cái gì đó mà bạn nói hoặc viết cung cấp thông tin hoặc ý kiến",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Những phát biểu sau đây đúng hay sai?"
   },
@@ -2746,8 +2747,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/string_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/string_us.mp3"
    },
-   "definition_vi": "chuỗi; chuỗi ký tự",
-   "vi_source": "anhviet",
+   "definition_vi": "vật liệu dài và mỏng dùng để buộc các đồ vật lại với nhau, được làm từ nhiều sợi chỉ xoắn lại với nhau; một đoạn dây dùng để buộc chặt hoặc kéo một cái gì đó hoặc giữ một cái gì đó tại chỗ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một đoạn/chiều dài/cuộn dây"
   },
@@ -2774,7 +2775,7 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/syntax-uk.mp3",
     "us": null
    },
-   "definition_vi": "cú pháp; ngữ pháp",
+   "definition_vi": "ngữ pháp",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -2823,8 +2824,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/framework_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/framework_us.mp3"
    },
-   "definition_vi": "khuôn khổ",
-   "vi_source": "anhviet",
+   "definition_vi": "các bộ phận của một tòa nhà hoặc một vật thể hỗ trợ trọng lượng của nó và tạo cho nó hình dạng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "được xây dựng trên khung gỗ"
   },
@@ -2872,8 +2873,8 @@
    ],
    "definition_en": "an informal, plain-language description of the steps of an algorithm, written for humans rather than computers",
    "type_en": "noun",
-   "definition_vi": "giả mã",
-   "vi_source": "anhviet",
+   "definition_vi": "một mô tả bằng ngôn ngữ đơn giản, không chính thức về các bước của thuật toán, được viết cho con người chứ không phải máy tính",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -2888,7 +2889,8 @@
    "extra_definitions": [],
    "definition_en": "to write a fixed value directly into source code instead of using a variable or configuration",
    "definition_vi": "để ghi một giá trị cố định trực tiếp vào mã nguồn thay vì sử dụng một biến hoặc cấu hình",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "repository",
@@ -2909,8 +2911,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/repository-us.mp3"
    },
-   "definition_vi": "chỗ chứa; kho chứa",
-   "vi_source": "anhviet",
+   "definition_vi": "Một vị trí để lưu trữ, thường là để đảm bảo an toàn hoặc bảo quản.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -2932,8 +2934,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/commit_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/commit_us.mp3"
    },
-   "definition_vi": "cam kết; thực hiện thỏa hiệp",
-   "vi_source": "anhviet",
+   "definition_vi": "làm điều gì đó sai trái hoặc bất hợp pháp",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "phạm tội/vi phạm"
   },
@@ -2956,8 +2958,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/branch_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/branch_us.mp3"
    },
-   "definition_vi": "cảnh; chi nhánh",
-   "vi_source": "anhviet",
+   "definition_vi": "một bộ phận của cây mọc ra từ thân chính và trên đó lá, hoa và quả mọc lên",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cô trèo lên cây và trốn trong cành cây."
   },
@@ -2980,8 +2982,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/merge_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/merge_us.mp3"
    },
-   "definition_vi": "kết sắp; sự trộn sắp",
-   "vi_source": "anhviet",
+   "definition_vi": "kết hợp hoặc tạo ra hai hoặc nhiều thứ kết hợp để tạo thành một thứ duy nhất",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Hai ngân hàng này dự kiến ​​sẽ sáp nhập vào năm tới."
   },
@@ -2997,7 +2999,8 @@
    "extra_definitions": [],
    "definition_en": "a system that records changes to files over time so you can recall or compare earlier versions, e.g. Git",
    "definition_vi": "một hệ thống ghi lại các thay đổi đối với tệp theo thời gian để bạn có thể gọi lại hoặc so sánh các phiên bản trước đó, ví dụ: Git",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "pull request",
@@ -3011,7 +3014,8 @@
    "extra_definitions": [],
    "definition_en": "a request to merge one branch of code into another, usually reviewed by teammates before acceptance",
    "definition_vi": "yêu cầu hợp nhất một nhánh mã này vào một nhánh mã khác, thường được đồng đội xem xét trước khi chấp nhận",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "code review",
@@ -3025,7 +3029,8 @@
    "extra_definitions": [],
    "definition_en": "the practice of teammates reading and commenting on each other's code changes before they are merged",
    "definition_vi": "việc các thành viên trong nhóm đọc và nhận xét về những thay đổi mã của nhau trước khi chúng được hợp nhất",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "unit test",
@@ -3038,8 +3043,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "an automated test that checks one small piece of a program, such as a single function, in isolation",
-   "definition_vi": "kiểm thử mức đơn vị; kiểm tra đơn thể",
-   "vi_source": "anhviet"
+   "definition_vi": "một thử nghiệm tự động kiểm tra một phần nhỏ của chương trình, chẳng hạn như một chức năng, một cách riêng biệt",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "test case",
@@ -3056,8 +3062,8 @@
    ],
    "definition_en": "a specific set of inputs and expected results used to check that part of a program works correctly",
    "type_en": "noun",
-   "definition_vi": "trường hợp kiểm thử; trường hợp kiểm tra",
-   "vi_source": "anhviet",
+   "definition_vi": "một tập hợp đầu vào cụ thể và kết quả mong đợi được sử dụng để kiểm tra xem phần nào của chương trình có hoạt động chính xác không",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3076,8 +3082,8 @@
    ],
    "definition_en": "a marked place in code where a debugger pauses execution so the programmer can inspect the program state",
    "type_en": "noun",
-   "definition_vi": "điểm chuyển tiếp; điểm dừng",
-   "vi_source": "anhviet",
+   "definition_vi": "một vị trí được đánh dấu trong mã nơi trình gỡ lỗi tạm dừng thực thi để lập trình viên có thể kiểm tra trạng thái chương trình",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3091,8 +3097,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "the list of function calls that were active when an error occurred, used to locate the source of a bug",
-   "definition_vi": "dò ngăn xếp",
-   "vi_source": "anhviet"
+   "definition_vi": "danh sách các lệnh gọi hàm đang hoạt động khi xảy ra lỗi, được sử dụng để xác định nguồn gốc của lỗi",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "legacy",
@@ -3113,8 +3120,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/legacy_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/legacy_us.mp3"
    },
-   "definition_vi": "vật để lại",
-   "vi_source": "anhviet",
+   "definition_vi": "tiền hoặc tài sản được ai đó trao cho bạn khi họ chết",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Mỗi người đều nhận được di sản trị giá 5 000 USD."
   },
@@ -3137,7 +3144,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/documentation_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/documentation_us.mp3"
    },
-   "definition_vi": "bộ hồ sơ; bộ tài liệu",
+   "definition_vi": "bộ tài liệu; sưu liệu",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Tôi không thể nhập cảnh vì không có đủ giấy tờ cần thiết."
@@ -3161,9 +3168,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/implement_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/implement_us.mp3"
    },
-   "definition_vi": "thực thi",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "làm cho điều gì đó đã được quyết định chính thức bắt đầu xảy ra hoặc được sử dụng",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "thực hiện các thay đổi/quyết định/chính sách/cải cách"
   },
   {
@@ -3185,7 +3192,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/integrate_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/integrate_us.mp3"
    },
-   "definition_vi": "hợp nhất lại; làm tròn (thành nguyên)",
+   "definition_vi": "hợp nhất lại",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "tích hợp vào/với thứ gì đó, Các chương trình này sẽ tích hợp với phần mềm hiện có của bạn."
@@ -3233,7 +3240,8 @@
    "extra_definitions": [],
    "definition_en": "the stage when source code is translated into machine code, before the program runs",
    "definition_vi": "thời gian biên dịch",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "type",
@@ -3256,8 +3264,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/type_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/type_us.mp3"
    },
-   "definition_vi": "chữ in; phông chữ",
-   "vi_source": "anhviet",
+   "definition_vi": "một tầng lớp hoặc một nhóm người hoặc những thứ có chung những phẩm chất hoặc đặc điểm cụ thể và là một phần của một nhóm lớn hơn; một loại hoặc một loại",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một nhóm máu hiếm"
   },
@@ -3287,9 +3295,9 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/null-us.mp3"
    },
-   "definition_vi": "giá trị null; làm bằng không",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "Ký tự ASCII hoặc Unicode (␀), được biểu thị bằng giá trị 0, biểu thị không có ký tự nào và đôi khi được sử dụng làm dấu kết thúc chuỗi.",
+   "vi_source": "gtx",
+   "type_vi": "Tính từ",
    "example_vi": "Vì bệnh nhân không nhập ngày sinh nên tuổi của bệnh nhân không có giá trị."
   },
   {
@@ -3311,8 +3319,8 @@
    "example": "Concatenating \"shoe\" with \"string\" yields \"shoestring\".",
    "ipa_uk": "/kənˈkæt.ə.neɪt/",
    "ipa_us": "/kənˈkæt.ə.neɪt/",
-   "definition_vi": "ghép nối (chương trình)",
-   "vi_source": "anhviet",
+   "definition_vi": "nối hai hoặc nhiều chuỗi hoặc chuỗi từ đầu đến cuối",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Nối \"giày\" với \"chuỗi\" sẽ tạo ra \"dây giày\"."
   },
@@ -3345,8 +3353,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/increment-uk.mp3",
     "us": null
    },
-   "definition_vi": "độ lớn; gia số",
-   "vi_source": "anhviet",
+   "definition_vi": "Hành động tăng lên hoặc trở nên lớn hơn.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3368,8 +3376,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/invoke_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/invoke_us.mp3"
    },
-   "definition_vi": "dẫn ra",
-   "vi_source": "anhviet",
+   "definition_vi": "đề cập đến hoặc sử dụng một luật, quy tắc, vv như một lý do để làm điều gì đó",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Khó có khả năng luật phỉ báng sẽ được áp dụng."
   },
@@ -3401,8 +3409,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/abstraction-us.mp3"
    },
-   "definition_vi": "chiết ra; sự lấy ra",
-   "vi_source": "anhviet",
+   "definition_vi": "Bất kỳ kỹ thuật khái quát hóa nào bỏ qua hoặc che giấu các chi tiết nhằm nắm bắt một số loại điểm chung giữa các trường hợp khác nhau nhằm mục đích kiểm soát độ phức tạp trí tuệ của các hệ thống được thiết kế, đặc biệt là hệ thống phần mềm.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Sự trừu tượng là cần thiết cho việc phân loại sự vật thành chi và loài."
   },
@@ -3422,8 +3430,8 @@
    ],
    "definition_en": "the object-oriented principle of hiding an object's internal data behind a public interface",
    "type_en": "noun",
-   "definition_vi": "sự đóng gói",
-   "vi_source": "anhviet",
+   "definition_vi": "nguyên tắc hướng đối tượng để ẩn dữ liệu bên trong của đối tượng đằng sau giao diện công cộng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3444,8 +3452,8 @@
    "type_en": "noun",
    "ipa_uk": "/pɒlɪˈmɔːfɪz(ə)m/",
    "ipa_us": "/pɒlɪˈmɔːfɪz(ə)m/",
-   "definition_vi": "tính đa dạng",
-   "vi_source": "anhviet",
+   "definition_vi": "nguyên tắc hướng đối tượng rằng cùng một hoạt động có thể hoạt động khác nhau trên các lớp khác nhau",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3500,8 +3508,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/asynchronous-uk.mp3",
     "us": null
    },
-   "definition_vi": "kiểu không đồng bộ; thiếu đồng bộ",
-   "vi_source": "anhviet",
+   "definition_vi": "(của một hoạt động) chạy độc lập để chương trình có thể tiếp tục mà không cần đợi nó kết thúc",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -3542,7 +3550,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/thread_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/thread_us.mp3"
    },
-   "definition_vi": "chuỗi; chuỗi, mạch, dòng",
+   "definition_vi": "sợi dây; lắp (băng vào máy)",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một cây kim và một sợi chỉ"
@@ -3568,8 +3576,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/queue_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/queue_us.mp3"
    },
-   "definition_vi": "xếp hàng đợi",
-   "vi_source": "anhviet",
+   "definition_vi": "một dòng người, ô tô, v.v. đang chờ đợi điều gì đó hoặc làm điều gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Có hàng dài người xếp hàng tại các điểm bỏ phiếu."
   },
@@ -3602,8 +3610,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/stack-uk.mp3",
     "us": null
    },
-   "definition_vi": "xếp thành chồng; xếp thành đống",
-   "vi_source": "anhviet",
+   "definition_vi": "(tiêu đề) Trong điện toán.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Họ trả cho anh ta một đống tiền để giữ im lặng."
   },
@@ -3634,8 +3642,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/heap-us.mp3"
    },
-   "definition_vi": "heap; khối xếp",
-   "vi_source": "anhviet",
+   "definition_vi": "Cấu trúc dữ liệu bao gồm các cây trong đó mỗi nút lớn hơn tất cả các nút con của nó.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một đống đất hoặc đá"
   },
@@ -3669,8 +3677,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/hash-uk.mp3",
     "us": null
    },
-   "definition_vi": "dữ liệu hỏng",
-   "vi_source": "anhviet",
+   "definition_vi": "Thức ăn, đặc biệt là thịt và khoai tây, được cắt nhỏ và trộn đều.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Chúng ta cần nhanh chóng thực hiện một số kế hoạch."
   },
@@ -3708,7 +3716,8 @@
    "extra_definitions": [],
    "definition_en": "an unusual situation at the extreme limits of what a program must handle, often the source of bugs",
    "definition_vi": "một tình huống bất thường ở giới hạn cực độ của những gì chương trình phải xử lý, thường là nguồn gốc của lỗi",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "workaround",
@@ -3731,8 +3740,8 @@
    "type_en": "noun",
    "ipa_uk": "/ˈwɜːk.əɹaʊnd/",
    "ipa_us": "/ˈwɜːk.əɹaʊnd/",
-   "definition_vi": "cách giải quyết khác; cách khác",
-   "vi_source": "anhviet",
+   "definition_vi": "một cách tạm thời để tránh một vấn đề mà không khắc phục được nguyên nhân cơ bản của nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3754,8 +3763,8 @@
    "definition_en": "standard sections of code that are repeated in many places with little change",
    "type_en": "noun",
    "example": "They put that boilerplate on all the warning labels.",
-   "definition_vi": "soạn sẵn; thảo sẵn",
-   "vi_source": "anhviet",
+   "definition_vi": "các phần mã tiêu chuẩn được lặp lại ở nhiều nơi với ít thay đổi",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Họ dán bản tóm tắt đó lên tất cả các nhãn cảnh báo."
   },
@@ -3779,8 +3788,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/typo-us.mp3"
    },
-   "definition_vi": "lỗi do gõ phím",
-   "vi_source": "anhviet",
+   "definition_vi": "Một lỗi đánh máy.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -3825,8 +3834,8 @@
    "definition_en": "a single document on the internet displayed in a browser",
    "type_en": "noun",
    "example": "Be sure to check out my web page on the Internet when you get home.",
-   "definition_vi": "trang mạng",
-   "vi_source": "anhviet",
+   "definition_vi": "một tài liệu trên internet được hiển thị trong trình duyệt",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Hãy chắc chắn kiểm tra trang web của tôi trên Internet khi bạn về nhà."
   },
@@ -3851,7 +3860,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/browser_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/browser_us.mp3"
    },
-   "definition_vi": "chế độ Browse; trình duyệt",
+   "definition_vi": "trình duyệt",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Bạn sử dụng gì làm trình duyệt mặc định của mình?"
@@ -3868,7 +3877,8 @@
    "extra_definitions": [],
    "definition_en": "the address of a web page, e.g. https://example.com (Uniform Resource Locator)",
    "definition_vi": "địa chỉ tài nguyên",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "domain",
@@ -3889,7 +3899,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/domain_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/domain_us.mp3"
    },
-   "definition_vi": "vùng (tri thức); vùng định nghĩa",
+   "definition_vi": "lĩnh vực; khu vực",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Vấn đề tài chính là lĩnh vực của cô ấy."
@@ -3921,7 +3931,8 @@
    "extra_definitions": [],
    "definition_en": "the language that describes how web pages look — colors, fonts, and layout (Cascading Style Sheets)",
    "definition_vi": "ngôn ngữ mô tả giao diện của các trang web - màu sắc, phông chữ và bố cục (Bảng định kiểu xếp tầng)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "javascript",
@@ -3935,7 +3946,8 @@
    "extra_definitions": [],
    "definition_en": "the programming language that makes web pages interactive, running in the browser",
    "definition_vi": "ngôn ngữ JavaScript",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "frontend",
@@ -4051,8 +4063,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/cache-1-uk.mp3",
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cache-1-us.mp3"
    },
-   "definition_vi": "bộ nhớ sẵn; cạc nhớ",
-   "vi_source": "anhviet",
+   "definition_vi": "Kho chứa những thứ có thể được yêu cầu trong tương lai, có thể được lấy lại nhanh chóng, được bảo vệ hoặc ẩn giấu theo một cách nào đó.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Các thành viên của nhóm Discovery gồm 29 người đã đặt các kho thực phẩm để cho phép đội vùng cực di chuyển nhẹ nhàng, nhảy từ kho thực phẩm này sang kho thực phẩm khác trong hành trình trở về của họ."
   },
@@ -4075,8 +4087,8 @@
    "definition_en": "a word, phrase, or image on a web page that you can click to go to another page",
    "type_en": "noun",
    "example": "Click the hyperlink to go to the next page.",
-   "definition_vi": "siêu liên kết",
-   "vi_source": "anhviet",
+   "definition_vi": "một từ, cụm từ hoặc hình ảnh trên một trang web mà bạn có thể nhấp vào để chuyển đến một trang khác",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Nhấp vào siêu liên kết để đi tới trang tiếp theo."
   },
@@ -4164,8 +4176,8 @@
    "definition_en": "A record of the address of a file or Internet page serving as a shortcut to it.",
    "ipa_uk": "/ˈbʊkmɑɹk/",
    "ipa_us": "/ˈbʊkmɑɹk/",
-   "definition_vi": "dấu sách; làm dấu",
-   "vi_source": "anhviet",
+   "definition_vi": "Bản ghi địa chỉ của một tập tin hoặc trang Internet đóng vai trò là lối tắt đến nó.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -4185,9 +4197,9 @@
    "definition_en": "a window that appears suddenly on top of a web page, often showing an advertisement or message",
    "type_en": "noun",
    "example": "I packed a pop-up hamper in my suitcase.",
-   "definition_vi": "bật lên; kéo lên",
+   "definition_vi": "xuất hiện",
    "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "type_vi": "Tính từ",
    "example_vi": "Tôi nhét một chiếc hộp đựng đồ bật lên vào vali của mình."
   },
   {
@@ -4209,8 +4221,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/banner_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/banner_us.mp3"
    },
-   "definition_vi": "tựa đề lớn",
-   "vi_source": "anhviet",
+   "definition_vi": "một mảnh vải dài có thông điệp trên đó được treo giữa hai cột hoặc treo ở nơi công cộng để thể hiện sự ủng hộ cho điều gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Một biểu ngữ lớn trên đường có dòng chữ “Chào mừng về nhà”."
   },
@@ -4233,9 +4245,9 @@
    "example": "I ordered a glass of lemonade and a coffee scroll.",
    "ipa_uk": "/skɹoʊl/",
    "ipa_us": "/skɹoʊl/",
-   "definition_vi": "cuộn đường xoáy ốc; đường xoáy ốc",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "Để thay đổi chế độ xem dữ liệu của một người trên màn hình máy tính, thường sử dụng thanh cuộn hoặc bánh xe cuộn để di chuyển theo từng bước.",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "Tôi gọi một ly nước chanh và một cuộn cà phê."
   },
   {
@@ -4257,8 +4269,8 @@
    "example": "How many tabs are open in your Web browser?",
    "ipa_uk": "/tæb/",
    "ipa_us": "/tæb/",
-   "definition_vi": "cữ đích; cữ dừng",
-   "vi_source": "anhviet",
+   "definition_vi": "Một nắp hoặc dải vật liệu nhỏ được gắn vào vật gì đó để giữ, thao tác, nhận dạng, mở, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Có bao nhiêu tab đang mở trong trình duyệt Web của bạn?"
   },
@@ -4281,7 +4293,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/session_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/session_us.mp3"
    },
-   "definition_vi": "cuộc giao tiếp; cuộc liên lạc",
+   "definition_vi": "thời gian giao dịch (giữa người dùng và hệ thống)",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một buổi đào tạo/thực hành"
@@ -4307,8 +4319,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/form_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/form_us.mp3"
    },
-   "definition_vi": "dạng giấy; mẫu (tóm tắt)",
-   "vi_source": "anhviet",
+   "definition_vi": "một loại hoặc nhiều loại của một cái gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "tất cả hàng triệu dạng sống khác nhau trên hành tinh ngày nay"
   },
@@ -4331,8 +4343,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/submit_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/submit_us.mp3"
    },
-   "definition_vi": "chịu phụ thuộc; chịu sự kiểm tra",
-   "vi_source": "anhviet",
+   "definition_vi": "đưa tài liệu, đề nghị, v.v. cho ai đó có thẩm quyền để họ có thể nghiên cứu hoặc xem xét nó",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "nộp cái gì đó, nộp đơn/ yêu cầu/ đề xuất"
   },
@@ -4356,8 +4368,8 @@
    "example": "You will have to convert your photograph to a jpg format if you wish to upload it.",
    "ipa_uk": "/əpˈləʊd/",
    "ipa_us": "/əpˈləʊd/",
-   "definition_vi": "nạp lên; tải ra",
-   "vi_source": "anhviet",
+   "definition_vi": "để gửi tập tin từ thiết bị của bạn đến máy chủ hoặc trang web",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Bạn sẽ phải chuyển đổi ảnh của mình sang định dạng jpg nếu bạn muốn tải nó lên."
   },
@@ -4409,9 +4421,9 @@
    "example": "A flag streams in the wind.",
    "ipa_uk": "/ˈstɹiːmɪŋ/",
    "ipa_us": "/ˈstɹiːmɪŋ/",
-   "definition_vi": "sự chảy (một chiều)",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "phát âm thanh hoặc video trực tiếp từ internet mà không cần tải xuống toàn bộ tệp trước",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "Cờ tung bay trong gió."
   },
   {
@@ -4426,7 +4438,8 @@
    "extra_definitions": [],
    "definition_en": "the box on a website or app where you type what you want to find",
    "definition_vi": "hộp trên trang web hoặc ứng dụng nơi bạn nhập nội dung bạn muốn tìm",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "web app",
@@ -4440,7 +4453,8 @@
    "extra_definitions": [],
    "definition_en": "an application that runs in a web browser instead of being installed on a device",
    "definition_vi": "một ứng dụng chạy trên trình duyệt web thay vì được cài đặt trên thiết bị",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "json",
@@ -4454,7 +4468,8 @@
    "extra_definitions": [],
    "definition_en": "a lightweight text format for exchanging structured data between programs (JavaScript Object Notation)",
    "definition_vi": "một định dạng văn bản nhẹ để trao đổi dữ liệu có cấu trúc giữa các chương trình (Ký hiệu đối tượng JavaScript)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "api",
@@ -4468,7 +4483,8 @@
    "extra_definitions": [],
    "definition_en": "a set of rules that lets one program request data or services from another (Application Programming Interface)",
    "definition_vi": "một bộ quy tắc cho phép một chương trình yêu cầu dữ liệu hoặc dịch vụ từ một chương trình khác (Giao diện lập trình ứng dụng)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "endpoint",
@@ -4486,8 +4502,8 @@
    ],
    "definition_en": "a specific URL where an API receives requests for a particular resource or action",
    "type_en": "noun",
-   "definition_vi": "điểm đầu nút",
-   "vi_source": "anhviet",
+   "definition_vi": "một URL cụ thể nơi API nhận được yêu cầu về một tài nguyên hoặc hành động cụ thể",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -4502,7 +4518,8 @@
    "extra_definitions": [],
    "definition_en": "an automatic message one system sends to another when an event happens, delivered to a URL",
    "definition_vi": "một tin nhắn tự động mà một hệ thống gửi đến hệ thống khác khi một sự kiện xảy ra, được gửi tới một URL",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "seo",
@@ -4516,7 +4533,8 @@
    "extra_definitions": [],
    "definition_en": "the practice of improving a website so it appears higher in search engine results (Search Engine Optimization)",
    "definition_vi": "thực hành cải thiện một trang web để nó xuất hiện cao hơn trong kết quả của công cụ tìm kiếm (Tối ưu hóa công cụ tìm kiếm)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "analytics",
@@ -4596,7 +4614,8 @@
    "extra_definitions": [],
    "definition_en": "buying and selling goods or services over the internet",
    "definition_vi": "mua bán hàng hóa hoặc dịch vụ qua internet",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "newsletter",
@@ -4617,8 +4636,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/newsletter_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/newsletter_us.mp3"
    },
-   "definition_vi": "thư tin tức",
-   "vi_source": "anhviet",
+   "definition_vi": "một báo cáo chứa tin tức về hoạt động của một câu lạc bộ hoặc tổ chức được gửi thường xuyên cho tất cả các thành viên của nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Câu lạc bộ chèo thuyền của chúng tôi sản xuất một bản tin hàng tháng."
   },
@@ -4641,8 +4660,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/spam_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/spam_us.mp3"
    },
-   "definition_vi": "thư rác",
-   "vi_source": "anhviet",
+   "definition_vi": "tài liệu quảng cáo được gửi qua email cho những người chưa yêu cầu; tài liệu quảng cáo trên internet không được mong muốn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "để gửi/chặn thư rác"
   },
@@ -4683,8 +4702,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/database_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/database_us.mp3"
    },
-   "definition_vi": "cơ sở dữ liệu; kho dữ liệu",
-   "vi_source": "anhviet",
+   "definition_vi": "một tập hợp dữ liệu có tổ chức được lưu trữ trong máy tính và có thể được xem xét và sử dụng theo nhiều cách khác nhau",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cơ sở dữ liệu được cập nhật hàng tháng."
   },
@@ -4731,8 +4750,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/query_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/query_us.mp3"
    },
-   "definition_vi": "câu hỏi; câu hỏi, truy vấn",
-   "vi_source": "anhviet",
+   "definition_vi": "một câu hỏi, đặc biệt là một câu hỏi để hỏi thông tin hoặc thể hiện sự nghi ngờ về điều gì đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Trợ lý của chúng tôi sẽ sẵn lòng trả lời các câu hỏi của bạn."
   },
@@ -4755,8 +4774,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/table_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/table_us.mp3"
    },
-   "definition_vi": "bàn; bàn máy",
-   "vi_source": "anhviet",
+   "definition_vi": "một món đồ nội thất bao gồm một mặt phẳng được hỗ trợ bởi chân",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "tại a/cái bàn, Chúng tôi ngồi ở một chiếc bàn tròn trong góc."
   },
@@ -4781,8 +4800,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/record_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/record_us.mp3"
    },
-   "definition_vi": "mẩu tin",
-   "vi_source": "anhviet",
+   "definition_vi": "một tài khoản bằng văn bản của một cái gì đó được lưu giữ để nó có thể được xem xét và sử dụng trong tương lai",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Bạn nên ghi lại các khoản chi tiêu của mình."
   },
@@ -4805,7 +4824,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/field_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/field_us.mp3"
    },
-   "definition_vi": "cột; thể",
+   "definition_vi": "đồng ruộng",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Chúng tôi phải đi bộ qua một cánh đồng đã được cày xới."
@@ -4835,8 +4854,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/schema-us.mp3"
    },
-   "definition_vi": "sơ đồ, lược đồ",
-   "vi_source": "anhviet",
+   "definition_vi": "cấu trúc chính thức của cơ sở dữ liệu: bảng, cột, kiểu dữ liệu và mối quan hệ của nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -4858,7 +4877,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/index_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/index_us.mp3"
    },
-   "definition_vi": "bảng tra chữ cái; chỉ mục",
+   "definition_vi": "bảng tra chữ cái; bảng chỉ dẫn",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Tra cứu nó trong chỉ mục."
@@ -4875,7 +4894,8 @@
    "extra_definitions": [],
    "definition_en": "the column that uniquely identifies each row in a database table",
    "definition_vi": "khóa sơ cấp",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "foreign key",
@@ -4889,7 +4909,8 @@
    "extra_definitions": [],
    "definition_en": "a column in one database table that refers to the primary key of another table, linking them",
    "definition_vi": "khóa phụ",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "transaction",
@@ -4936,7 +4957,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/backup_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/backup_us.mp3"
    },
-   "definition_vi": "bản sao dự trữ; ghi lưu",
+   "definition_vi": "bản sao dự trữ; bản sao",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Cảnh sát đã có sự hỗ trợ từ quân đội."
@@ -4960,8 +4981,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/restore_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/restore_us.mp3"
    },
-   "definition_vi": "hồi phục, khôi phục",
-   "vi_source": "anhviet",
+   "definition_vi": "mang lại một tình huống hoặc cảm giác đã tồn tại trước đó",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "khôi phục lại một cái gì đó, Các biện pháp nhằm khôi phục niềm tin của công chúng vào nền kinh tế."
   },
@@ -4984,8 +5005,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/migration_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/migration_us.mp3"
    },
-   "definition_vi": "sự di chú",
-   "vi_source": "anhviet",
+   "definition_vi": "sự di chuyển hàng năm của một số lượng lớn các loài chim hoặc động vật từ nơi này đến nơi khác",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "sự di cư theo mùa của cá voi xanh"
   },
@@ -5001,7 +5022,8 @@
    "extra_definitions": [],
    "definition_en": "the standard language for storing and retrieving data in relational databases (Structured Query Language)",
    "definition_vi": "ngôn ngữ tiêu chuẩn để lưu trữ và truy xuất dữ liệu trong cơ sở dữ liệu quan hệ (Ngôn ngữ truy vấn có cấu trúc)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "dataset",
@@ -5107,8 +5129,8 @@
    "example": "Log in to the dashboard to change your account settings.",
    "ipa_uk": "/ˈdæʃˌbɔː(ɹ)d/",
    "ipa_us": "/ˈdæʃˌbɔː(ɹ)d/",
-   "definition_vi": "bảng điều khiển",
-   "vi_source": "anhviet",
+   "definition_vi": "màn hình hiển thị thông tin quan trọng nhất về hệ thống hoặc doanh nghiệp trong một chế độ xem",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Đăng nhập vào bảng điều khiển để thay đổi cài đặt tài khoản của bạn."
   },
@@ -5131,8 +5153,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/pipeline_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/pipeline_us.mp3"
    },
-   "definition_vi": "đường liên hợp; đường truyền bằng ống",
-   "vi_source": "anhviet",
+   "definition_vi": "một loạt các đường ống thường nằm dưới lòng đất và được sử dụng để vận chuyển dầu, khí đốt, v.v. trên một quãng đường dài",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Có kế hoạch xây dựng một đường ống dẫn khí xuyên qua khu vực."
   },
@@ -5155,8 +5177,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/warehouse_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/warehouse_us.mp3"
    },
-   "definition_vi": "kho hàng, nhập kho",
-   "vi_source": "anhviet",
+   "definition_vi": "một tòa nhà nơi lưu trữ số lượng lớn hàng hóa, đặc biệt là trước khi chúng được gửi đến các cửa hàng để bán",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cảnh sát đang điều tra vụ cháy tại kho đồ nội thất."
   },
@@ -5182,9 +5204,9 @@
    "type_en": "noun",
    "definition_en": "A mass, assemblage, or sum of particulars; something consisting of elements but considered as a whole.",
    "example": "The aggregated soil.",
-   "definition_vi": "gộp chung",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "Một khối, tập hợp hoặc tổng số chi tiết; một cái gì đó bao gồm các yếu tố nhưng được coi là một tổng thể",
+   "vi_source": "gtx",
+   "type_vi": "Tính từ",
    "example_vi": "Đất tổng hợp."
   },
   {
@@ -5213,7 +5235,7 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/duplicate-us.mp3"
    },
-   "definition_vi": "tăng đôi",
+   "definition_vi": "bản sao; sao lại",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Đây là một bản sao, nhưng là một bản sao rất tốt."
@@ -5244,8 +5266,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/validate-uk.mp3",
     "us": null
    },
-   "definition_vi": "hợp thức hóa; làm hợp lệ",
-   "vi_source": "anhviet",
+   "definition_vi": "để kiểm tra xem dữ liệu có chính xác, đầy đủ và ở định dạng mong muốn không",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Không thể nhập tệp dữ liệu vì nó không xác thực."
   },
@@ -5348,8 +5370,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/sort_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/sort_us.mp3"
    },
-   "definition_vi": "sắp xếp, phân loại",
-   "vi_source": "anhviet",
+   "definition_vi": "một nhóm hoặc loại người hoặc những thứ tương tự nhau theo một cách cụ thể",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "kiểu ai đó/thứ gì đó, ‘Bạn thích thể loại nhạc gì?’ ‘Ồ, đủ thể loại.’"
   },
@@ -5382,8 +5404,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/row_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/row_us.mp3"
    },
-   "definition_vi": "hàng (ma trận); hàng lỗ (đục)",
-   "vi_source": "anhviet",
+   "definition_vi": "Một hàng đồ vật, thường cách đều nhau, chẳng hạn như ghế ngồi trong rạp hát, cây rau trong vườn, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -5405,8 +5427,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/column_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/column_us.mp3"
    },
-   "definition_vi": "cột in; hàng (chữ số)",
-   "vi_source": "anhviet",
+   "definition_vi": "một trong những phần thẳng từ trên xuống dưới mà văn bản trên một trang hoặc màn hình được chia thành",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một từ điển có hai cột trên mỗi trang"
   },
@@ -5431,7 +5453,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/chart_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/chart_us.mp3"
    },
-   "definition_vi": "biểu (đồ)",
+   "definition_vi": "sơ đồ; ảnh mẫu",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Một số cổ phiếu đã mất 2/3 giá trị kể từ khi phát hành (xem biểu đồ)."
@@ -5451,7 +5473,7 @@
    ],
    "definition_en": "presenting data as charts, graphs, or maps so patterns are easy to see",
    "type_en": "noun",
-   "definition_vi": "sự hiện hình hóa; sự làm hiện hình",
+   "definition_vi": "sự hiển thị",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -5467,7 +5489,8 @@
    "extra_definitions": [],
    "definition_en": "a plain-text file format where values are separated by commas, used to exchange tabular data (Comma-Separated Values)",
    "definition_vi": "định dạng tệp văn bản thuần túy trong đó các giá trị được phân tách bằng dấu phẩy, được sử dụng để trao đổi dữ liệu dạng bảng (Giá trị được phân tách bằng dấu phẩy)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "storage",
@@ -5488,7 +5511,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/storage_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/storage_us.mp3"
    },
-   "definition_vi": "cất giữ; lưu trữ, cất trữ",
+   "definition_vi": "sự lưu giữ; bộ lưu trữ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "bàn gấp phẳng để đựng đồ"
@@ -5533,7 +5556,7 @@
    ],
    "definition_en": "a unit of digital information equal to about one thousand gigabytes",
    "type_en": "noun",
-   "definition_vi": "Tb",
+   "definition_vi": "nghìn tỷ byte",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -5568,9 +5591,9 @@
    "example": "The force required to compress a spring varies linearly with the displacement.",
    "ipa_uk": "/kəmˈpɹɛs/",
    "ipa_us": "/kəmˈpɹɛs/",
-   "definition_vi": "bó (dữ liệu); nén ép chặt lại",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "Để làm cho thông tin số nhỏ hơn bằng cách mã hóa nó bằng cách sử dụng ít bit hơn.",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "Lực cần thiết để nén lò xo thay đổi tuyến tính theo độ dịch chuyển."
   },
   {
@@ -5592,8 +5615,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/corrupt_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/corrupt_us.mp3"
    },
-   "definition_vi": "gây lỗi; làm sai lạc",
-   "vi_source": "anhviet",
+   "definition_vi": "sẵn sàng sử dụng quyền lực của mình để làm những việc không trung thực hoặc bất hợp pháp để đổi lấy tiền hoặc để có được lợi thế",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "Nó được coi là cách duy nhất để lật đổ một chế độ tham nhũng."
   },
@@ -5609,7 +5632,8 @@
    "extra_definitions": [],
    "definition_en": "a situation where the same data was changed in two places and the system cannot decide which version to keep",
    "definition_vi": "tình huống trong đó cùng một dữ liệu được thay đổi ở hai nơi và hệ thống không thể quyết định nên giữ phiên bản nào",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "real time",
@@ -5653,7 +5677,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/processor_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/processor_us.mp3"
    },
-   "definition_vi": "cơ cấu xử lý; khối xử lý",
+   "definition_vi": "bộ xử lý",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Công ty này là nhà chế biến sữa lớn nhất Ireland."
@@ -5670,7 +5694,8 @@
    "extra_definitions": [],
    "definition_en": "the central processing unit — the 'brain' of a computer that executes instructions",
    "definition_vi": "bộ xử lý trung tâm - 'bộ não' của máy tính thực hiện các hướng dẫn",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "gpu",
@@ -5684,7 +5709,8 @@
    "extra_definitions": [],
    "definition_en": "a processor specialized for graphics and parallel computation (Graphics Processing Unit)",
    "definition_vi": "bộ xử lý chuyên dụng cho đồ họa và tính toán song song (Bộ xử lý đồ họa)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "ram",
@@ -5708,7 +5734,7 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/ram-us.mp3"
    },
-   "definition_vi": "sự rầm chặt",
+   "definition_vi": "búa thùy động / máy đẩy cốc",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -5731,8 +5757,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/memory_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/memory_us.mp3"
    },
-   "definition_vi": "bộ tích tin",
-   "vi_source": "anhviet",
+   "definition_vi": "khả năng ghi nhớ mọi thứ của bạn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "trí nhớ về cái gì đó, tôi có trí nhớ kém về tên."
   },
@@ -5755,7 +5781,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/disk_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/disk_us.mp3"
    },
-   "definition_vi": "đĩa (máy tính)",
+   "definition_vi": "vật hình đĩa",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Các tế bào hồng cầu có hình dạng gần giống một chiếc đĩa."
@@ -5781,8 +5807,8 @@
    ],
    "definition_en": "the device inside a computer that stores data permanently",
    "type_en": "noun",
-   "definition_vi": "ổ cứng; ổ đĩa cứng",
-   "vi_source": "anhviet",
+   "definition_vi": "thiết bị bên trong máy tính lưu trữ dữ liệu vĩnh viễn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -5831,8 +5857,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/chip_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/chip_us.mp3"
    },
-   "definition_vi": "chíp; con bọ điện tử",
-   "vi_source": "anhviet",
+   "definition_vi": "một miếng khoai tây mỏng dài chiên trong dầu hoặc mỡ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Anh ấy đang ăn bánh mì kẹp thịt và khoai tây chiên."
   },
@@ -5855,7 +5881,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/circuit_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/circuit_us.mp3"
    },
-   "definition_vi": "chu tuyến; dòng",
+   "definition_vi": "đường bao quanh; chu tuyến",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Cuộc đua kết thúc với tám vòng đua ở trung tâm thành phố."
@@ -5881,7 +5907,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/monitor_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/monitor_us.mp3"
    },
-   "definition_vi": "cục giám sát",
+   "definition_vi": "màn hiển thị; màn hình",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Thông tin chi tiết về chuyến bay ngày hôm nay được hiển thị trên màn hình."
@@ -5905,8 +5931,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/keyboard_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/keyboard_us.mp3"
    },
-   "definition_vi": "bấm phím; bàn phím",
-   "vi_source": "anhviet",
+   "definition_vi": "bộ phím để vận hành máy tính hoặc máy đánh chữ hoặc bộ chữ cái mà bạn có thể chạm để viết trên điện thoại thông minh hoặc máy tính bảng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Chương trình khóa bàn phím cho đến khi được cấp mật khẩu."
   },
@@ -5929,8 +5955,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/mouse_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/mouse_us.mp3"
    },
-   "definition_vi": "chuột; chuột (máy tính)",
-   "vi_source": "anhviet",
+   "definition_vi": "một con vật nhỏ có lông và có cái đuôi dài và mỏng. Chuột sống trên đồng ruộng, trong nhà dân hoặc nơi cất giữ thực phẩm.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một con chuột nhà"
   },
@@ -5977,7 +6003,7 @@
    "example": "He put the picture in the scanner, then e-mailed a copy of it to his family.",
    "ipa_uk": "/ˈskænə/",
    "ipa_us": "/ˈskænə/",
-   "definition_vi": "máy quét; máy quét hình",
+   "definition_vi": "thiết bị quét; bộ quét",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Anh cho bức ảnh vào máy scan rồi gửi một bản sao của nó qua e-mail cho gia đình."
@@ -6025,8 +6051,8 @@
    "definition_en": "A device (transducer) used to convert sound waves into a varying electric current; normally fed into an amplifier and either recorded or broadcast.",
    "ipa_uk": "/ˈmaɪ.kɹəˌfəʊn/",
    "ipa_us": "/ˈmaɪ.kɹəˌfəʊn/",
-   "definition_vi": "máy vi âm; micrô",
-   "vi_source": "anhviet",
+   "definition_vi": "Một thiết bị (bộ chuyển đổi) dùng để chuyển đổi sóng âm thanh thành dòng điện biến thiên; thường được đưa vào bộ khuếch đại và được ghi hoặc phát sóng.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6048,8 +6074,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/speaker_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/speaker_us.mp3"
    },
-   "definition_vi": "cái loa; loa",
-   "vi_source": "anhviet",
+   "definition_vi": "một người phát biểu hoặc phát biểu",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Ông là diễn giả khách mời tại hội nghị."
   },
@@ -6097,8 +6123,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/cable_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/cable_us.mp3"
    },
-   "definition_vi": "bức điện báo; cáp bện",
-   "vi_source": "anhviet",
+   "definition_vi": "một bộ dây, được bọc bằng nhựa hoặc cao su, mang điện, tín hiệu điện thoại, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "cáp quang"
   },
@@ -6121,8 +6147,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/port_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/port_us.mp3"
    },
-   "definition_vi": "cổng, mang, chuyển",
-   "vi_source": "anhviet",
+   "definition_vi": "thị trấn hoặc thành phố có bến cảng, đặc biệt là nơi tàu bốc dỡ hàng hóa",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một container/cảng cá"
   },
@@ -6137,8 +6163,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "the standard connector for attaching devices like keyboards and drives to a computer (Universal Serial Bus)",
-   "definition_vi": "USB",
-   "vi_source": "anhviet"
+   "definition_vi": "đầu nối tiêu chuẩn để gắn các thiết bị như bàn phím và ổ đĩa vào máy tính (Universal Serial Bus)",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "battery",
@@ -6159,8 +6186,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/battery_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/battery_us.mp3"
    },
-   "definition_vi": "ắcqui; bình ắcqui",
-   "vi_source": "anhviet",
+   "definition_vi": "một thiết bị được đặt bên trong động cơ ô tô, đồng hồ, radio, v.v. và tạo ra điện để nó hoạt động",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "để thay pin"
   },
@@ -6183,7 +6210,7 @@
    "example": "Put the batteries in the charger overnight so we can use them tomorrow.",
    "ipa_uk": "/ˈtʃɑːdʒə/",
    "ipa_us": "/ˈtʃɑːdʒə/",
-   "definition_vi": "người nạp liệu",
+   "definition_vi": "thiết bị chất tải",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Hãy sạc pin qua đêm để ngày mai chúng ta có thể sử dụng."
@@ -6212,9 +6239,9 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/peripheral-us.mp3"
    },
-   "definition_vi": "biên; ngoại biên",
+   "definition_vi": "thiết bị ngoại vi; ngoại biên",
    "vi_source": "anhviet",
-   "type_vi": "Danh từ"
+   "type_vi": "Tính từ"
   },
   {
    "word": "component",
@@ -6235,9 +6262,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/component_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/component_us.mp3"
    },
-   "definition_vi": "bộ phận; bộ phận cấu thành",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "một trong nhiều phần mà một cái gì đó được tạo ra",
+   "vi_source": "gtx",
+   "type_vi": "Tính từ",
    "example_vi": "các tổ chức khác nhau tham gia vào việc thiết kế các thành phần khác nhau"
   },
   {
@@ -6255,8 +6282,8 @@
    ],
    "definition_en": "permanent low-level software stored inside a hardware device that controls how it works",
    "type_en": "noun",
-   "definition_vi": "phần sụn; vi chương trình",
-   "vi_source": "anhviet",
+   "definition_vi": "phần mềm cấp thấp vĩnh viễn được lưu trữ bên trong một thiết bị phần cứng kiểm soát cách thức hoạt động của nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6277,8 +6304,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sensor-us.mp3"
    },
-   "definition_vi": "bộ nhận biết; bộ phận thụ cảm",
-   "vi_source": "anhviet",
+   "definition_vi": "Một thiết bị hoặc cơ quan phát hiện các kích thích bên ngoài nhất định và phản ứng theo cách đặc biệt.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6335,7 +6362,8 @@
    "extra_definitions": [],
    "definition_en": "a fast storage device with no moving parts, commonly abbreviated SSD",
    "definition_vi": "một thiết bị lưu trữ nhanh không có bộ phận chuyển động, thường được viết tắt là SSD",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "power supply",
@@ -6348,8 +6376,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "the component that converts mains electricity into the power a computer's parts need",
-   "definition_vi": "thiết bị nguồn điện",
-   "vi_source": "anhviet"
+   "definition_vi": "thành phần chuyển đổi điện lưới thành năng lượng mà các bộ phận của máy tính cần",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "cooling fan",
@@ -6362,8 +6391,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "a fan inside a computer that stops the processor and other parts from overheating",
-   "definition_vi": "quạt gió; quạt làm mát",
-   "vi_source": "anhviet"
+   "definition_vi": "một chiếc quạt bên trong máy tính giúp bộ xử lý và các bộ phận khác không bị quá nóng",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "adapter",
@@ -6383,7 +6413,7 @@
    "example": "He was an able adapter, and could easily adjust to the differences when the company changed ownership.",
    "ipa_uk": "/əˈdaptə/",
    "ipa_us": "/əˈdaptə/",
-   "definition_vi": "cạc điều hợp",
+   "definition_vi": "bộ thích ứng; cạc điều hợp",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Anh ấy là một người có khả năng thích nghi và có thể dễ dàng điều chỉnh những khác biệt khi công ty thay đổi quyền sở hữu."
@@ -6404,7 +6434,7 @@
    ],
    "type_en": "noun",
    "definition_en": "Someone who devises or suggests a project; a proposer or planner of something.",
-   "definition_vi": "dụng cụ chiếu",
+   "definition_vi": "người thiết kế",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -6427,7 +6457,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/network_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/network_us.mp3"
    },
-   "definition_vi": "NETWORK",
+   "definition_vi": "hệ thống; mạng đường",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "mạng lưới đường sắt/đường bộ/kênh"
@@ -6478,7 +6508,7 @@
    "definition_en": "A program that provides services to other programs or devices, either in the same computer or over a computer network.",
    "ipa_uk": "/ˈsɜːvə/",
    "ipa_us": "/ˈsɜːvə/",
-   "definition_vi": "chương trình dịch vụ; máy phục vụ",
+   "definition_vi": "chương trình dịch vụ; máy tính phục vụ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -6501,8 +6531,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/client_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/client_us.mp3"
    },
-   "definition_vi": "khách; máy khách",
-   "vi_source": "anhviet",
+   "definition_vi": "người sử dụng dịch vụ hoặc lời khuyên của một cá nhân hoặc tổ chức chuyên nghiệp",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cô ấy là một luật sư nổi tiếng với nhiều khách hàng nổi tiếng."
   },
@@ -6525,8 +6555,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/protocol_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/protocol_us.mp3"
    },
-   "definition_vi": "bản ghi viết; chỉ lệnh",
-   "vi_source": "anhviet",
+   "definition_vi": "một hệ thống các quy tắc cố định và hành vi chính thức được sử dụng tại các cuộc họp chính thức, thường là giữa các chính phủ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "vi phạm giao thức"
   },
@@ -6549,8 +6579,8 @@
    "example": "I think it's a worthy project, but I just don't have the bandwidth right now.",
    "ipa_uk": "/ˈbændwɪdθ/",
    "ipa_us": "/ˈbændwɪdθ/",
-   "definition_vi": "băng thông; độ rộng băng tần",
-   "vi_source": "anhviet",
+   "definition_vi": "lượng dữ liệu tối đa mà kết nối mạng có thể mang theo mỗi giây",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Tôi nghĩ đó là một dự án xứng đáng, nhưng hiện tại tôi không có đủ băng thông."
   },
@@ -6577,8 +6607,8 @@
    "type_en": "noun",
    "ipa_uk": "/ˈleɪ.tən.si/",
    "ipa_us": "/ˈleɪ.tən.si/",
-   "definition_vi": "độ chờ; góc trễ",
-   "vi_source": "anhviet",
+   "definition_vi": "độ trễ trước khi dữ liệu bắt đầu truyền qua mạng; độ trễ thấp có nghĩa là phản hồi nhanh",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6604,8 +6634,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/router-1-uk.mp3",
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/router-1-us.mp3"
    },
-   "definition_vi": "bộ định tuyến; cầu dẫn, router",
-   "vi_source": "anhviet",
+   "definition_vi": "một thiết bị kết nối máy tính với internet và truyền dữ liệu giữa các mạng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Bộ định tuyến chỉ đạo chuyển động của xe tải của công ty."
   },
@@ -6627,8 +6657,8 @@
    "definition_en": "(digital communications) In wireless internet, an access point with additional software capabilities such as providing NAT and DHCP, which may also provide VPN support, roaming, firewalls, various levels of security, etc.",
    "ipa_uk": "/ˈɡeɪtˌweɪ/",
    "ipa_us": "/ˈɡeɪtˌweɪ/",
-   "definition_vi": "cửa ngõ; cửa vào",
-   "vi_source": "anhviet",
+   "definition_vi": "(truyền thông kỹ thuật số) Trong internet không dây, một điểm truy cập có các khả năng phần mềm bổ sung như cung cấp NAT và DHCP, cũng có thể cung cấp hỗ trợ VPN, chuyển vùng, tường lửa, các cấp độ bảo mật khác nhau, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6643,7 +6673,8 @@
    "extra_definitions": [],
    "definition_en": "the internet's address book, which translates domain names like example.com into IP addresses (Domain Name System)",
    "definition_vi": "sổ địa chỉ của Internet, dịch các tên miền như example.com thành địa chỉ IP (Hệ thống tên miền)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "ip address",
@@ -6656,8 +6687,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "the unique number that identifies a device on a network, e.g. 192.168.1.1",
-   "definition_vi": "địa chỉ Internet",
-   "vi_source": "anhviet"
+   "definition_vi": "số duy nhất nhận dạng thiết bị trên mạng, ví dụ: 192.168.1.1",
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "wifi",
@@ -6699,7 +6731,7 @@
    ],
    "definition_en": "the standard technology for connecting computers to a network with cables",
    "type_en": "noun",
-   "definition_vi": "chuẩn Ethernet; Ethernet",
+   "definition_vi": "chuẩn Ethernet",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -6722,8 +6754,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/broadband_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/broadband_us.mp3"
    },
-   "definition_vi": "băng thông rộng",
-   "vi_source": "anhviet",
+   "definition_vi": "một cách kết nối với internet cho phép bạn nhận thông tin, bao gồm cả hình ảnh, v.v., rất nhanh chóng và luôn hoạt động (để người dùng không phải kết nối mỗi lần)",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "có kế hoạch cung cấp cho khu vực nông thôn băng thông rộng nhanh"
   },
@@ -6746,7 +6778,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/packet_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/packet_us.mp3"
    },
-   "definition_vi": "gói tin",
+   "definition_vi": "đống gói; đóng kiện",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một gói bánh quy/thuốc lá/khoai tây chiên giòn"
@@ -6774,8 +6806,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/ping-uk.mp3",
     "us": null
    },
-   "definition_vi": "phát ra tiếng ping",
-   "vi_source": "anhviet",
+   "definition_vi": "để gửi một tin nhắn kiểm tra nhỏ nhằm kiểm tra xem máy tính trên mạng có phản hồi hay không và tốc độ như thế nào",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Xe của tôi thường phát ra tiếng kêu kỳ lạ, nhưng sau lần thay dầu cuối cùng thì nó biến mất."
   },
@@ -6798,8 +6830,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/cloud_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/cloud_us.mp3"
    },
-   "definition_vi": "mây",
-   "vi_source": "anhviet",
+   "definition_vi": "một khối màu xám hoặc trắng lơ lửng trên bầu trời, được tạo thành từ những giọt nước rất nhỏ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Những đám mây đen đang tụ tập ở phía tây."
   },
@@ -6833,7 +6865,8 @@
    "extra_definitions": [],
    "definition_en": "a network of servers around the world that delivers web content from a location near each user (Content Delivery Network)",
    "definition_vi": "một mạng lưới các máy chủ trên khắp thế giới cung cấp nội dung web từ một địa điểm gần mỗi người dùng (Mạng phân phối nội dung)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "vpn",
@@ -6847,7 +6880,8 @@
    "extra_definitions": [],
    "definition_en": "a service that creates a private, encrypted connection over the public internet (Virtual Private Network)",
    "definition_vi": "dịch vụ tạo kết nối riêng tư, được mã hóa qua internet công cộng (Mạng riêng ảo)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "proxy",
@@ -6905,8 +6939,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/socket-us.mp3"
    },
-   "definition_vi": "bạc nối; chỗ lõm",
-   "vi_source": "anhviet",
+   "definition_vi": "Một điểm cuối của liên kết giao tiếp hai chiều, được sử dụng để liên lạc giữa các quá trình trên mạng.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -6930,7 +6964,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/request_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/request_us.mp3"
    },
-   "definition_vi": "nhắc; vấn tin",
+   "definition_vi": "sự yêu cầu; yêu cầu",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "yêu cầu cái gì đó, yêu cầu thông tin"
@@ -6954,8 +6988,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/response_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/response_us.mp3"
    },
-   "definition_vi": "bộ đáp ứng; đặc trưng",
-   "vi_source": "anhviet",
+   "definition_vi": "một câu trả lời nói hoặc viết",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cô ấy không trả lời."
   },
@@ -6978,7 +7012,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/connection_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/connection_us.mp3"
    },
-   "definition_vi": "tính liên thông",
+   "definition_vi": "sự kết nối; sự ghép nối",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "mối liên hệ giữa A và B, Các nhà khoa học đã thiết lập được mối liên hệ giữa mức cholesterol và bệnh tim."
@@ -6999,8 +7033,8 @@
    ],
    "definition_en": "the state or quality of being connected to a network or the internet",
    "type_en": "noun",
-   "definition_vi": "khả năng ghép nối; khả năng liên kết",
-   "vi_source": "anhviet",
+   "definition_vi": "trạng thái hoặc chất lượng của việc được kết nối với mạng hoặc internet",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -7046,8 +7080,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/signal_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/signal_us.mp3"
    },
-   "definition_vi": "báo hiệu; cột tiêu",
-   "vi_source": "anhviet",
+   "definition_vi": "một chuyển động hoặc âm thanh mà bạn thực hiện để cung cấp cho ai đó thông tin, hướng dẫn, cảnh báo, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một tín hiệu nguy hiểm/cảnh báo/cầu cứu"
   },
@@ -7063,7 +7097,8 @@
    "extra_definitions": [],
    "definition_en": "a feature that lets an app keep working without an internet connection",
    "definition_vi": "một tính năng cho phép ứng dụng tiếp tục hoạt động mà không cần kết nối internet",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "peer-to-peer",
@@ -7080,8 +7115,8 @@
    ],
    "definition_en": "(of a network) connecting computers directly to each other without a central server",
    "type_en": "adjective",
-   "definition_vi": "cùng mức; đồng cấp",
-   "vi_source": "anhviet",
+   "definition_vi": "(của một mạng) kết nối các máy tính trực tiếp với nhau mà không cần máy chủ trung tâm",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -7114,7 +7149,8 @@
    "extra_definitions": [],
    "definition_en": "the secure, encrypted version of HTTP, shown with a padlock in the browser",
    "definition_vi": "phiên bản HTTP được mã hóa, an toàn, được hiển thị bằng ổ khóa trong trình duyệt",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "bluetooth",
@@ -7128,7 +7164,8 @@
    "extra_definitions": [],
    "definition_en": "short-range wireless technology for connecting devices such as headphones and keyboards",
    "definition_vi": "công nghệ không dây tầm ngắn để kết nối các thiết bị như tai nghe và bàn phím",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "roaming",
@@ -7177,8 +7214,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/security_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/security_us.mp3"
    },
-   "definition_vi": "bảo mật",
-   "vi_source": "anhviet",
+   "definition_vi": "các hoạt động liên quan đến việc bảo vệ một đất nước, xây dựng hoặc con người chống lại sự tấn công, nguy hiểm, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "an ninh quốc gia/quê hương (= quốc phòng của một quốc gia)"
   },
@@ -7201,8 +7238,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/password_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/password_us.mp3"
    },
-   "definition_vi": "mật khẩu; mật khẩu, mật lệnh",
-   "vi_source": "anhviet",
+   "definition_vi": "một loạt các chữ cái, số, v.v. mà bạn phải nhập vào máy tính hoặc hệ thống máy tính để có thể sử dụng nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Nhập tên người dùng và mật khẩu để vào hệ thống."
   },
@@ -7222,8 +7259,8 @@
    ],
    "definition_en": "the process of verifying who a user is, for example with a password or fingerprint",
    "type_en": "noun",
-   "definition_vi": "xác thực",
-   "vi_source": "anhviet",
+   "definition_vi": "quá trình xác minh người dùng là ai, ví dụ bằng mật khẩu hoặc dấu vân tay",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -7243,7 +7280,7 @@
    "definition_en": "the process of deciding what an authenticated user is allowed to do",
    "type_en": "noun",
    "example": "I've got authorization. Call the office and you'll see.",
-   "definition_vi": "quyền hạn; sự ủy quyền",
+   "definition_vi": "sự cho phép",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Tôi đã được ủy quyền. Hãy gọi đến văn phòng và bạn sẽ thấy."
@@ -7263,7 +7300,7 @@
    ],
    "definition_en": "converting data into a coded form so only authorized people can read it",
    "type_en": "noun",
-   "definition_vi": "sự mật hóa",
+   "definition_vi": "sự mã hóa; sự cài mã",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -7286,9 +7323,9 @@
    "type_en": "noun",
    "ipa_uk": "/diːˈkɹɪpt/",
    "ipa_us": "/diːˈkɹɪpt/",
-   "definition_vi": "giải mật mã",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ"
+   "definition_vi": "để chuyển đổi dữ liệu được mã hóa trở lại dạng có thể đọc được ban đầu",
+   "vi_source": "gtx",
+   "type_vi": "Động từ"
   },
   {
    "word": "token",
@@ -7322,8 +7359,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/token-us.mp3"
    },
-   "definition_vi": "danh tính; mã thông báo",
-   "vi_source": "anhviet",
+   "definition_vi": "Một phần dữ liệu nguyên tử, chẳng hạn như một từ, mà ý nghĩa của nó có thể được suy ra trong quá trình phân tích cú pháp.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Theo Kinh thánh, cầu vồng là biểu tượng cho giao ước của Chúa với Nô-ê."
   },
@@ -7346,8 +7383,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/certificate_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/certificate_us.mp3"
    },
-   "definition_vi": "chứng chỉ người dùng; chứng nhận người dùng",
-   "vi_source": "anhviet",
+   "definition_vi": "một tài liệu chính thức có thể được sử dụng để chứng minh rằng sự thật nó nêu là đúng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "giấy khai sinh/kết hôn/tử vong"
   },
@@ -7390,8 +7427,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/virus_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/virus_us.mp3"
    },
-   "definition_vi": "virút",
-   "vi_source": "anhviet",
+   "definition_vi": "một sinh vật sống quá nhỏ để có thể nhìn thấy nếu không có kính hiển vi, gây bệnh cho người, động vật và thực vật",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "virus cúm/cúm"
   },
@@ -7460,8 +7497,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/firewall-us.mp3"
    },
-   "definition_vi": "bức tường lửa",
-   "vi_source": "anhviet",
+   "definition_vi": "một hệ thống bảo mật giám sát lưu lượng mạng và chặn các kết nối vi phạm quy tắc của nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -7485,8 +7522,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/breach_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/breach_us.mp3"
    },
-   "definition_vi": "chỗ gãy; chỗ rò",
-   "vi_source": "anhviet",
+   "definition_vi": "sự thất bại trong việc làm điều gì đó mà pháp luật phải làm",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "vi phạm hợp đồng/bản quyền/bảo hành"
   },
@@ -7511,8 +7548,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/vulnerability_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/vulnerability_us.mp3"
    },
-   "definition_vi": "độ nhạy cảm",
-   "vi_source": "anhviet",
+   "definition_vi": "điểm yếu trong phần mềm mà kẻ tấn công có thể sử dụng để đột nhập",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "tính dễ bị tổn thương của trẻ sơ sinh trước bệnh tật"
   },
@@ -7535,8 +7572,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/patch_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/patch_us.mp3"
    },
-   "definition_vi": "đắp vá; nối tạm",
-   "vi_source": "anhviet",
+   "definition_vi": "một khu vực nhỏ của một cái gì đó, đặc biệt là một khu vực khác với khu vực xung quanh nó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một con chó đen có đốm trắng trên lưng"
   },
@@ -7565,8 +7602,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/hacker-uk.mp3",
     "us": null
    },
-   "definition_vi": "hacker",
-   "vi_source": "anhviet",
+   "definition_vi": "Một người có chuyên môn về lập trình và giải quyết các vấn đề với máy tính.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một hacker quần vợt"
   },
@@ -7582,7 +7619,8 @@
    "extra_definitions": [],
    "definition_en": "a login method requiring two proofs of identity, such as a password plus a code sent to your phone",
    "definition_vi": "phương thức đăng nhập yêu cầu hai bằng chứng nhận dạng, chẳng hạn như mật khẩu cộng với mã được gửi tới điện thoại của bạn",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "biometric",
@@ -7598,8 +7636,8 @@
    ],
    "definition_en": "using physical characteristics such as fingerprints or face shape to identify a person",
    "type_en": "adjective",
-   "definition_vi": "sinh trắc",
-   "vi_source": "anhviet",
+   "definition_vi": "sử dụng các đặc điểm vật lý như dấu vân tay hoặc hình dạng khuôn mặt để nhận dạng một người",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -7621,8 +7659,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/privacy_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/privacy_us.mp3"
    },
-   "definition_vi": "mã truy nhập; sự bảo mật",
-   "vi_source": "anhviet",
+   "definition_vi": "trạng thái ở một mình và không bị người khác theo dõi hoặc làm phiền",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Cô khao khát một chút bình yên và riêng tư."
   },
@@ -7645,8 +7683,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/permission_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/permission_us.mp3"
    },
-   "definition_vi": "quyền hạn",
-   "vi_source": "anhviet",
+   "definition_vi": "hành động cho phép ai đó làm điều gì đó, đặc biệt khi việc này được thực hiện bởi ai đó ở vị trí có thẩm quyền",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "sự cho phép cho một cái gì đó, Bạn phải xin phép cho tất cả các chi tiêu lớn."
   },
@@ -7719,8 +7757,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/audit_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/audit_us.mp3"
    },
-   "definition_vi": "kiểm nghiệm; kiểm tra",
-   "vi_source": "anhviet",
+   "definition_vi": "kiểm tra chính thức các hồ sơ kinh doanh và tài chính để thấy rằng chúng đúng và chính xác",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "kiểm toán hàng năm"
   },
@@ -7743,7 +7781,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/verify_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/verify_us.mp3"
    },
-   "definition_vi": "thẩm tra",
+   "definition_vi": "kiểm tra; kiểm chứng",
    "vi_source": "anhviet",
    "type_vi": "Động từ",
    "example_vi": "xác minh điều gì đó, Chúng tôi không có cách nào để xác minh câu chuyện của anh ấy."
@@ -7769,8 +7807,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/secure_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/secure_us.mp3"
    },
-   "definition_vi": "an toàn, chắc chắn",
-   "vi_source": "anhviet",
+   "definition_vi": "có khả năng tiếp tục hoặc thành công trong một thời gian dài",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "một công việc/thu nhập ổn định"
   },
@@ -7793,8 +7831,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/threat_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/threat_us.mp3"
    },
-   "definition_vi": "sự đe dọa",
-   "vi_source": "anhviet",
+   "definition_vi": "một tuyên bố trong đó bạn nói với ai đó rằng bạn sẽ trừng phạt hoặc làm hại họ, đặc biệt nếu họ không làm những gì bạn muốn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "đe dọa ai/cái gì, đe dọa ai đó"
   },
@@ -7819,7 +7857,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/attack_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/attack_us.mp3"
    },
-   "definition_vi": "tấn công; thâm nhập",
+   "definition_vi": "sự tác động; sự ăn mòn",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Năm người đã thiệt mạng trong vụ tấn công xảy ra đêm qua."
@@ -7923,8 +7961,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "a duplicate of important data stored separately in case the original is lost",
-   "definition_vi": "bản sao dự phòng",
-   "vi_source": "anhviet"
+   "definition_vi": "bản sao dự trữ; bản sao dự phòng",
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "passcode",
@@ -7958,7 +7997,8 @@
    "extra_definitions": [],
    "definition_en": "the laws and practices that keep personal information safe and private",
    "definition_vi": "bảo vệ dữ liệu",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "deploy",
@@ -8033,8 +8073,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/release_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/release_us.mp3"
    },
-   "definition_vi": "hoạt động bằng rơle",
-   "vi_source": "anhviet",
+   "definition_vi": "hành động giải phóng một người hoặc một động vật; trạng thái được trả tự do",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "thả ai/cái gì đó, Chính phủ đang nỗ lực để đảm bảo việc thả con tin."
   },
@@ -8061,8 +8101,8 @@
    "definition_en": "returning a system to a previous version after a new release causes problems",
    "type_en": "noun",
    "example": "The server is unstable, we need to rollback the changes.",
-   "definition_vi": "hủy giao dịch",
-   "vi_source": "anhviet",
+   "definition_vi": "đưa hệ thống về phiên bản trước sau khi có bản phát hành mới gây ra sự cố",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Máy chủ không ổn định, chúng tôi cần khôi phục các thay đổi."
   },
@@ -8085,8 +8125,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/container_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/container_us.mp3"
    },
-   "definition_vi": "bình chứa; đồ chứa",
-   "vi_source": "anhviet",
+   "definition_vi": "cái hộp, cái chai, v.v... trong đó cái gì đó có thể được cất giữ hoặc vận chuyển",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một thùng nhựa"
   },
@@ -8148,8 +8188,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/scale_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/scale_us.mp3"
    },
-   "definition_vi": "định tỷ lệ",
-   "vi_source": "anhviet",
+   "definition_vi": "kích thước hoặc mức độ của một cái gì đó, đặc biệt là khi so sánh với cái gì khác",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "trên một ... quy mô, Họ giải trí trên quy mô lớn (= họ tổ chức những bữa tiệc đắt tiền với rất nhiều khách)."
   },
@@ -8172,9 +8212,9 @@
    ],
    "definition_en": "continuously watching a system's health and performance to catch problems early",
    "type_en": "verb",
-   "definition_vi": "sự định lượng; sự giám kiểm",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ"
+   "definition_vi": "liên tục theo dõi tình trạng và hiệu suất của hệ thống để sớm phát hiện sự cố",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ"
   },
   {
    "word": "logging",
@@ -8193,9 +8233,9 @@
    "definition_en": "automatically recording events that happen in a system so problems can be investigated later",
    "type_en": "verb",
    "example": "to log the miles travelled by a ship",
-   "definition_vi": "sự đăng ký; sự ghi chép",
+   "definition_vi": "sự ghi chép; sự đăng ký",
    "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "type_vi": "Danh từ",
    "example_vi": "để ghi lại số dặm đã đi của một con tàu"
   },
   {
@@ -8219,7 +8259,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/log_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/log_us.mp3"
    },
-   "definition_vi": "bản ghi vết; ghi sổ",
+   "definition_vi": "đốn gỗ",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "khúc gỗ để chữa cháy"
@@ -8238,7 +8278,7 @@
    ],
    "definition_en": "the amount or percentage of time a system is running and available",
    "type_en": "noun",
-   "definition_vi": "thời gian chạy máy; thời gian máy chạy",
+   "definition_vi": "thời gian vận hành máy (của các hệ thống); thời gian chạy",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -8279,8 +8319,8 @@
    "definition_en": "A temporary suspension of operation, especially of electrical power supply.",
    "ipa_uk": "/ˈaʊtɪd͡ʒ/",
    "ipa_us": "/ˈaʊtɪd͡ʒ/",
-   "definition_vi": "sự ngừng chảy",
-   "vi_source": "anhviet",
+   "definition_vi": "Tạm dừng hoạt động, đặc biệt là cung cấp điện.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -8302,9 +8342,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/incident_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/incident_us.mp3"
    },
-   "definition_vi": "liên thuộc; sự cố",
-   "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "definition_vi": "điều gì đó xảy ra, đặc biệt là điều gì đó bất thường hoặc khó chịu",
+   "vi_source": "gtx",
+   "type_vi": "Tính từ",
    "example_vi": "Hành vi xấu của anh ta chỉ là một sự cố cá biệt."
   },
   {
@@ -8326,8 +8366,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/configuration_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/configuration_us.mp3"
    },
-   "definition_vi": "hình trạng; sự đặt cấu hình",
-   "vi_source": "anhviet",
+   "definition_vi": "sự sắp xếp các bộ phận của một cái gì đó hoặc một nhóm sự vật; hình thức hoặc hình dạng mà sự sắp xếp này tạo ra",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "cấu hình của một cái gì đó, Thiết kế dựa trên bốn cấu hình hình vuông."
   },
@@ -8350,8 +8390,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/environment_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/environment_us.mp3"
    },
-   "definition_vi": "hoàn cảnh; môi trường",
-   "vi_source": "anhviet",
+   "definition_vi": "thế giới tự nhiên nơi con người, động vật và thực vật sinh sống",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Chính phủ nên làm nhiều hơn nữa để bảo vệ môi trường."
   },
@@ -8374,9 +8414,9 @@
    "definition_en": "a copy of the production environment where changes are tested before release",
    "type_en": "verb",
    "example": "The local theater group will stage \"Pride and Prejudice\".",
-   "definition_vi": "sự dịch chuyển (dữ liệu); sự tách chuyển (dữ liệu)",
+   "definition_vi": "sàn làm việc",
    "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "type_vi": "Danh từ",
    "example_vi": "Nhóm kịch địa phương sẽ trình diễn vở \"Kiêu hãnh và định kiến\"."
   },
   {
@@ -8415,7 +8455,8 @@
    "extra_definitions": [],
    "definition_en": "automatically building and testing code every time changes are pushed, so problems appear early",
    "definition_vi": "tự động xây dựng và kiểm tra mã mỗi khi thay đổi được thực hiện, do đó vấn đề sẽ xuất hiện sớm",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "automation",
@@ -8448,7 +8489,8 @@
    "extra_definitions": [],
    "definition_en": "a system that spreads incoming traffic across several servers so no single one is overloaded",
    "definition_vi": "một hệ thống phân bổ lưu lượng truy cập đến trên nhiều máy chủ để không có máy chủ nào bị quá tải",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "microservice",
@@ -8462,7 +8504,8 @@
    "extra_definitions": [],
    "definition_en": "a small independent service that handles one business function and communicates with others over a network",
    "definition_vi": "một dịch vụ độc lập nhỏ xử lý một chức năng kinh doanh và liên lạc với những người khác qua mạng",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "serverless",
@@ -8476,7 +8519,8 @@
    "extra_definitions": [],
    "definition_en": "a cloud model where the provider runs your code on demand and you never manage servers yourself",
    "definition_vi": "mô hình đám mây nơi nhà cung cấp chạy mã của bạn theo yêu cầu và bạn không bao giờ tự mình quản lý máy chủ",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "infrastructure",
@@ -8525,7 +8569,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/provision_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/provision_us.mp3"
    },
-   "definition_vi": "điều khoản; điều khoản hợp đồng",
+   "definition_vi": "điều khoản hợp đồng",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "cung cấp nhà ở"
@@ -8549,7 +8593,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/maintenance_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/maintenance_us.mp3"
    },
-   "definition_vi": "sự gìn giữ",
+   "definition_vi": "sự sửa chữa; bảng bảo trì",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Nhà trường trả tiền sưởi ấm và bảo trì các tòa nhà."
@@ -8580,8 +8624,8 @@
    "example": "The factory managed a throughput of 120 units per hour.",
    "ipa_uk": "/ˈθɹu.pʊt/",
    "ipa_us": "/ˈθɹu.pʊt/",
-   "definition_vi": "công suất; khả năng thông qua",
-   "vi_source": "anhviet",
+   "definition_vi": "số lượng công việc mà hệ thống hoàn thành trong một thời gian nhất định, ví dụ: yêu cầu được xử lý mỗi giây",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Nhà máy quản lý công suất 120 chiếc mỗi giờ."
   },
@@ -8602,7 +8646,7 @@
    "type_en": "noun",
    "definition_en": "The narrow portion that forms the pouring spout of a bottle; the neck of a bottle.",
    "example": "It is easy to create entries; processing the paperwork is the bottleneck.",
-   "definition_vi": "đường thắt nghẽn; lối cổ chai",
+   "definition_vi": "lối cổ chai; lối đi hẹp",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Thật dễ dàng để tạo các mục; xử lý giấy tờ là điểm nghẽn."
@@ -8658,8 +8702,8 @@
    "definition_en": "The state of being redundant",
    "ipa_uk": "/ɹɪˈdʌnd(ə)nsi/",
    "ipa_us": "/ɹɪˈdʌnd(ə)nsi/",
-   "definition_vi": "phần thừa",
-   "vi_source": "anhviet",
+   "definition_vi": "Tình trạng dư thừa",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -8674,7 +8718,8 @@
    "extra_definitions": [],
    "definition_en": "a way of working that combines software development and IT operations, emphasizing automation and fast releases",
    "definition_vi": "cách làm việc kết hợp phát triển phần mềm và hoạt động CNTT, nhấn mạnh vào tự động hóa và phát hành nhanh",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "agile",
@@ -8707,8 +8752,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/agile-us.mp3"
    },
-   "definition_vi": "nhanh nhẹn",
-   "vi_source": "anhviet",
+   "definition_vi": "Thuộc hoặc liên quan đến phát triển phần mềm linh hoạt, một kỹ thuật phát triển phần mềm lặp đi lặp lại và tăng dần liên quan đến sự cộng tác giữa các nhóm.",
+   "vi_source": "gtx",
    "type_vi": "Tính từ",
    "example_vi": "một sinh vật nhanh nhẹn"
   },
@@ -8866,8 +8911,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/ticket_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/ticket_us.mp3"
    },
-   "definition_vi": "nhãn; phiếu",
-   "vi_source": "anhviet",
+   "definition_vi": "một mảnh giấy in, một tin nhắn hay hình ảnh nhận được trên điện thoại hoặc máy tính của bạn, cho phép bạn đi trên một chiếc xe buýt, xe lửa cụ thể, v.v. hoặc đi vào rạp hát, v.v.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một vé máy bay/xe buýt/tàu hỏa"
   },
@@ -8905,7 +8950,7 @@
    ],
    "definition_en": "a branch of AI in which computers learn patterns from data instead of being explicitly programmed",
    "type_en": "noun",
-   "definition_vi": "sự học của máy; sự tập quen của máy",
+   "definition_vi": "sự tự học của máy; sự học của máy",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -8926,8 +8971,8 @@
    ],
    "definition_en": "a computing system inspired by the brain, made of layers of connected nodes that learn from examples",
    "type_en": "noun",
-   "definition_vi": "mạng thần kinh",
-   "vi_source": "anhviet",
+   "definition_vi": "một hệ thống máy tính lấy cảm hứng từ bộ não, được tạo thành từ các lớp nút được kết nối để học từ các ví dụ",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -8993,8 +9038,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/training_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/training_us.mp3"
    },
-   "definition_vi": "huấn luyện; huấn luyện, đào tạo",
-   "vi_source": "anhviet",
+   "definition_vi": "quá trình học tập những kỹ năng bạn cần để thực hiện một công việc",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "đào tạo nhân viên"
   },
@@ -9041,8 +9086,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/prompt_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/prompt_us.mp3"
    },
-   "definition_vi": "dấu chờ lệnh; dấu nhắc",
-   "vi_source": "anhviet",
+   "definition_vi": "làm cho ai đó quyết định làm điều gì đó; gây ra điều gì đó xảy ra",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "nhắc nhở điều gì đó, Việc phát hiện ra quả bom đã thúc đẩy an ninh tăng cường."
   },
@@ -9085,8 +9130,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/classification_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/classification_us.mp3"
    },
-   "definition_vi": "phân loại; sắp xếp",
-   "vi_source": "anhviet",
+   "definition_vi": "hành động hoặc quá trình đưa người hoặc vật vào một nhóm hoặc lớp (= phân loại chúng)",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một phong cách âm nhạc bất chấp sự phân loại (= không giống ai)"
   },
@@ -9143,8 +9188,9 @@
    "antonyms": [],
    "extra_definitions": [],
    "definition_en": "the field of AI that enables computers to understand images and video",
-   "definition_vi": "thị giác máy tính; thị giác nhân tạo",
-   "vi_source": "anhviet"
+   "definition_vi": "thị giác máy tính",
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "speech recognition",
@@ -9160,8 +9206,8 @@
    ],
    "definition_en": "technology that converts spoken words into text",
    "type_en": "noun",
-   "definition_vi": "nhận dạng tiếng nói; sự nhận biết tiếng nói",
-   "vi_source": "anhviet",
+   "definition_vi": "công nghệ chuyển lời nói thành văn bản",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9178,8 +9224,8 @@
    "definition_en": "The science and technology of robots, their design, manufacture, and application",
    "ipa_uk": "/ɹəʊˈbɒt.ɪks/",
    "ipa_us": "/ɹəʊˈbɒt.ɪks/",
-   "definition_vi": "khoa học người máy",
-   "vi_source": "anhviet",
+   "definition_vi": "Khoa học và công nghệ robot, thiết kế, sản xuất và ứng dụng của chúng",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9202,8 +9248,8 @@
    "type_en": "adjective",
    "ipa_uk": "/dʒəˈnɛɹətɪv/",
    "ipa_us": "/dʒəˈnɛɹətɪv/",
-   "definition_vi": "đường sinh",
-   "vi_source": "anhviet",
+   "definition_vi": "(của AI) có thể tạo nội dung mới như văn bản, hình ảnh hoặc âm nhạc thay vì chỉ phân tích dữ liệu",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -9218,7 +9264,8 @@
    "extra_definitions": [],
    "definition_en": "an AI model trained on huge amounts of text that can understand and generate language, such as GPT or Claude",
    "definition_vi": "một mô hình AI được đào tạo trên số lượng lớn văn bản có thể hiểu và tạo ra ngôn ngữ, chẳng hạn như GPT hoặc Claude",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "recommendation",
@@ -9287,7 +9334,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/accuracy_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/accuracy_us.mp3"
    },
-   "definition_vi": "lệnh dịch thanh tổng",
+   "definition_vi": "độ chính xác; mức chính xác",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Họ đặt câu hỏi về tính chính xác của thông tin trong hồ sơ."
@@ -9309,8 +9356,8 @@
    "type_en": "noun",
    "ipa_uk": "/həˌluːsɪˈneɪʃən/",
    "ipa_us": "/həˌluːsɪˈneɪʃən/",
-   "definition_vi": "ảo giác",
-   "vi_source": "anhviet",
+   "definition_vi": "khi hệ thống AI tự tin tạo ra thông tin sai sự thật hoặc bịa đặt",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9328,8 +9375,8 @@
    "definition_en": "to further train an existing AI model on specific data so it performs better at a particular task",
    "type_en": "verb",
    "example": "Jim fine-tuned the radio until the sound was perfect.",
-   "definition_vi": "tinh chỉnh",
-   "vi_source": "anhviet",
+   "definition_vi": "để đào tạo thêm mô hình AI hiện có trên dữ liệu cụ thể để nó thực hiện tốt hơn một nhiệm vụ cụ thể",
+   "vi_source": "gtx",
    "type_vi": "Động từ",
    "example_vi": "Jim tinh chỉnh chiếc radio cho đến khi âm thanh hoàn hảo."
   },
@@ -9345,7 +9392,8 @@
    "extra_definitions": [],
    "definition_en": "machine learning from examples that include the correct answers (labels)",
    "definition_vi": "học máy từ các ví dụ bao gồm câu trả lời đúng (nhãn)",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "algorithmic",
@@ -9393,8 +9441,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/autonomous-us.mp3"
    },
-   "definition_vi": "tự quản",
-   "vi_source": "anhviet",
+   "definition_vi": "Tự quản. Thông minh, có tri giác, tự nhận thức, suy nghĩ, cảm nhận, quản lý độc lập.",
+   "vi_source": "gtx",
    "type_vi": "Tính từ"
   },
   {
@@ -9413,8 +9461,8 @@
    ],
    "definition_en": "everything a user sees and interacts with in an app — screens, buttons, menus (often abbreviated UI)",
    "type_en": "noun",
-   "definition_vi": "giao diện người dùng; giao diện người sử dụng",
-   "vi_source": "anhviet",
+   "definition_vi": "mọi thứ người dùng nhìn thấy và tương tác trong ứng dụng — màn hình, nút, menu (thường được viết tắt là UI)",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9452,8 +9500,8 @@
    "type_en": "noun",
    "ipa_uk": "/ˌjuːzəˈbɪlɪti/",
    "ipa_us": "/ˌjuːzəˈbɪlɪti/",
-   "definition_vi": "tính khả dụng",
-   "vi_source": "anhviet",
+   "definition_vi": "việc sử dụng sản phẩm dễ dàng và hiệu quả như thế nào",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9475,8 +9523,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/layout_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/layout_us.mp3"
    },
-   "definition_vi": "bản mẫu in; bản thiết kế",
-   "vi_source": "anhviet",
+   "definition_vi": "cách sắp xếp các phần của một cái gì đó như trang sách, trang web, khu vườn hoặc tòa nhà",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "cách bố trí đường phố"
   },
@@ -9527,8 +9575,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/prototype-us.mp3"
    },
-   "definition_vi": "bản chạy thử; mẫu đầu",
-   "vi_source": "anhviet",
+   "definition_vi": "Khai báo hàm chỉ định tên, kiểu trả về và tham số nhưng không có nội dung hoặc mã thực.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Nguyên mẫu có dây lỏng lẻo và các cạnh thô ráp, nhưng nó vẫn hoạt động."
   },
@@ -9571,7 +9619,7 @@
    "type_en": "noun",
    "ipa_uk": "/ækˌsɛs.əˈbɪl.ət.i/",
    "ipa_us": "/ækˌsɛs.əˈbɪl.ət.i/",
-   "definition_vi": "khả năng truy cập",
+   "definition_vi": "có thể vào được, có thể đi (đến) được",
    "vi_source": "anhviet",
    "type_vi": "Danh từ"
   },
@@ -9598,8 +9646,8 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/font-uk.mp3",
     "us": null
    },
-   "definition_vi": "font; phông chữ",
-   "vi_source": "anhviet",
+   "definition_vi": "Một thùng đựng nước thánh trong nhà thờ, đặc biệt là một thùng dùng trong lễ rửa tội.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9621,8 +9669,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/button_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/button_us.mp3"
    },
-   "definition_vi": "cái bấm; cái khuy",
-   "vi_source": "anhviet",
+   "definition_vi": "một miếng kim loại, nhựa tròn nhỏ, v.v. được khâu vào một mảnh quần áo và dùng để buộc hai phần lại với nhau",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "(tiếng Anh Anh), để thực hiện/hủy bỏ các nút của bạn"
   },
@@ -9645,8 +9693,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/menu_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/menu_us.mp3"
    },
-   "definition_vi": "lệnh đơn; thanh thực đơn",
-   "vi_source": "anhviet",
+   "definition_vi": "danh sách các món ăn có sẵn ở nhà hàng hoặc được phục vụ trong bữa ăn",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "Chúng tôi có thể có thực đơn được không?"
   },
@@ -9669,8 +9717,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/navigation_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/navigation_us.mp3"
    },
-   "definition_vi": "điều hướng; ngành hàng hải",
-   "vi_source": "anhviet",
+   "definition_vi": "kỹ năng hoặc quá trình lập kế hoạch lộ trình cho một con tàu hoặc phương tiện khác và đưa nó đến đó",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "nhà sản xuất hệ thống định vị trong ô tô"
   },
@@ -9695,8 +9743,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/click_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/click_us.mp3"
    },
-   "definition_vi": "ấn phím chuột",
-   "vi_source": "anhviet",
+   "definition_vi": "hành động nhấn nút trên chuột máy tính hoặc bàn di chuột",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "một cú click chuột"
   },
@@ -9719,9 +9767,9 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/drag_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/drag_us.mp3"
    },
-   "definition_vi": "băng cáo; trở lực",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "kéo ai/cái gì theo cùng với sự nỗ lực và khó khăn",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "kéo ai đó/thứ gì đó. Cái bao nặng quá không nhấc nổi—bạn sẽ phải kéo nó."
   },
   {
@@ -9749,7 +9797,7 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/swipe-us.mp3"
    },
-   "definition_vi": "đòn bẩy; tay quay",
+   "definition_vi": "tay quay",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Hãy lướt qua câu trả lời ngay cả khi bạn không chắc chắn."
@@ -9775,8 +9823,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/tap_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/tap_us.mp3"
    },
-   "definition_vi": "bàn ren; bulông đầu vuông",
-   "vi_source": "anhviet",
+   "definition_vi": "một thiết bị để kiểm soát dòng nước từ đường ống vào bồn tắm hoặc bồn rửa",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "vòi tắm"
   },
@@ -9833,8 +9881,8 @@
     "uk": null,
     "us": "https://api.dictionaryapi.dev/media/pronunciations/en/template-us.mp3"
    },
-   "definition_vi": "bạc dẫn; cái đục",
-   "vi_source": "anhviet",
+   "definition_vi": "Một vật thể vật lý có hình dạng được sử dụng làm hướng dẫn để tạo ra các vật thể khác.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -9873,7 +9921,8 @@
    "extra_definitions": [],
    "definition_en": "a display option that uses a dark background with light text, easier on the eyes at night",
    "definition_vi": "tùy chọn hiển thị sử dụng nền tối với văn bản sáng, dễ nhìn hơn vào ban đêm",
-   "vi_source": "gtx"
+   "vi_source": "gtx",
+   "type_vi": null
   },
   {
    "word": "animation",
@@ -9894,8 +9943,8 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/animation_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/animation_us.mp3"
    },
-   "definition_vi": "hoạt ảnh; hoạt hình",
-   "vi_source": "anhviet",
+   "definition_vi": "quá trình làm phim, video và trò chơi máy tính trong đó các bức vẽ, mô hình hoặc hình ảnh của con người và động vật dường như đang chuyển động",
+   "vi_source": "gtx",
    "type_vi": "Danh từ",
    "example_vi": "máy tính/hoạt hình hoạt hình"
   },
@@ -9953,7 +10002,8 @@
    "extra_definitions": [],
    "definition_en": "a shared library of reusable components and rules that keeps a product's design consistent",
    "definition_vi": "hệ thống thiết kế",
-   "vi_source": "anhviet"
+   "vi_source": "anhviet",
+   "type_vi": null
   },
   {
    "word": "placeholder",
@@ -10076,9 +10126,9 @@
     "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/zoom-uk.mp3",
     "us": null
    },
-   "definition_vi": "sự thu; phóng (của biểu diễn ảnh)",
-   "vi_source": "anhviet",
-   "type_vi": "Động từ",
+   "definition_vi": "Để liên lạc với ai đó bằng phần mềm hội nghị truyền hình Zoom.",
+   "vi_source": "gtx",
+   "type_vi": "Danh từ",
    "example_vi": "giá phóng to"
   },
   {
@@ -10102,8 +10152,8 @@
    "definition_en": "An experience of something in advance.",
    "ipa_uk": "/ˈpɹiːvjʉː/",
    "ipa_us": "/ˈpɹiːvjʉː/",
-   "definition_vi": "xem trước (trang in)",
-   "vi_source": "anhviet",
+   "definition_vi": "Một kinh nghiệm về một cái gì đó trước.",
+   "vi_source": "gtx",
    "type_vi": "Danh từ"
   },
   {
@@ -10156,7 +10206,7 @@
    },
    "definition_vi": "trực giác",
    "vi_source": "anhviet",
-   "type_vi": "Danh từ",
+   "type_vi": "Tính từ",
    "example_vi": "Phản ứng trực quan hóa ra là chính xác."
   },
   {
@@ -10204,7 +10254,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/brand_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/brand_us.mp3"
    },
-   "definition_vi": "loại; nhãn",
+   "definition_vi": "loại",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "một nhãn hiệu kem đánh răng nổi tiếng"
@@ -10228,7 +10278,7 @@
     "uk": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/logo_uk.mp3",
     "us": "https://raw.githubusercontent.com/winterdl/oxford-5000-vocabulary-audio-definition/main/audio/logo_us.mp3"
    },
-   "definition_vi": "biểu tượng; lôgô",
+   "definition_vi": "biểu tượng",
    "vi_source": "anhviet",
    "type_vi": "Danh từ",
    "example_vi": "Trên khắp thế giới đều có những chiếc cốc giấy màu đỏ và trắng mang logo công ty."
