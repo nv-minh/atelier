@@ -124,7 +124,7 @@ export function LibraryClient({
               className="card-atelier p-4 sm:p-5 flex items-start gap-4 hover:border-ember/25 transition-colors"
             >
               {isRealImage(w.imageUrl) && (
-                <WordImage imageUrl={w.imageUrl} word={w.word} className="!w-20 !max-h-20 shrink-0" maxH="max-h-20" />
+                <WordImage imageUrl={w.imageUrl} word={w.word} className="!w-20 !h-20 shrink-0" maxH="max-h-20" />
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 flex-wrap">
