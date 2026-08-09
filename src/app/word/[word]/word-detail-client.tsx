@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
-import { WordImage } from "@/components/word-image";
+import { WordImage, isRealImage } from "@/components/word-image";
 import { StarButton } from "@/components/star-button";
 import { NoteEditor } from "@/components/note-editor";
 import { useI18n } from "@/components/i18n-provider";
@@ -71,7 +71,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
               <StarButton wordId={w.id} initialStarred={detail.mark.starred} />
             </div>
 
-            {w.imageUrl && (
+            {isRealImage(w.imageUrl) && (
               <div className="mt-5 max-w-xs">
                 <WordImage imageUrl={w.imageUrl} word={w.word} />
               </div>
