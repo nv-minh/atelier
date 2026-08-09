@@ -17,3 +17,6 @@ dev.db
 data/raw/
 data/cache/
 data/backups/
+
+# transient parallel-crawl monitoring logs
+.crawl-w*.log

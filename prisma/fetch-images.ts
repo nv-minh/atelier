@@ -1,7 +1,10 @@
 /* eslint-disable */
 // Fetch a real thumbnail image URL per word from Wikipedia/Wikimedia Commons.
-// Stores the URL in Word.imageUrl (overwriting the old Google-search link).
-// Resumable: skips words that already have a real Wikimedia image.
+// Stores the URL in Word.imageUrl on a hit; never clobbers an existing value
+// (Pexels or legacy) on a miss. Resumable: skips words that already have a
+// real image (Wikimedia or Pexels). Superseded as the primary source by
+// scripts/images/fetch-pexels.ts, which covers words with no Wikipedia article;
+// this script is still useful to prefer a real photo over a stock one.
 import { PrismaClient } from "@prisma/client";
 import https from "https";
 import { readFileSync, writeFileSync, existsSync } from "fs";
@@ -11,6 +14,7 @@ const PROGRESS_FILE = "/tmp/img-progress.json";
 const CONCURRENCY = 4;
 const DELAY_MS = 250;
 const WM = "https://upload.wikimedia.org";
+const PEXELS = "https://images.pexels.com/";
 
 process.on("unhandledRejection", (e) => console.error("unhandledRejection:", e));
 process.on("uncaughtException", (e) => console.error("uncaughtException:", e));
@@ -66,22 +70,27 @@ if (existsSync(PROGRESS_FILE)) {
 }
 const save = () => writeFileSync(PROGRESS_FILE, JSON.stringify([...done]));
 
-async function processWord(w: { id: string; word: string; imageUrl: string | null }) {
+async function processWord(w: { id: string; word: string; imageUrl: string | null }): Promise<boolean> {
   const img = await fetchImage(w.word);
-  await prisma.word.update({ where: { id: w.id }, data: { imageUrl: img } });
+  // Only write on a hit — a miss must not clobber a Pexels image (or anything
+  // else) already stored for this word.
+  if (img) await prisma.word.update({ where: { id: w.id }, data: { imageUrl: img } });
   done.add(w.id);
+  return !!img;
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 async function main() {
   console.log("🖼️  Fetching real image URLs from Wikipedia...\n");
-  // Only words lacking a real Wikimedia image.
-  const words = await prisma.word.findMany({
-    where: { id: { notIn: [...done] }, OR: [{ imageUrl: null }, { imageUrl: { not: { startsWith: WM } } }] },
-    select: { id: true, word: true, imageUrl: true },
-    orderBy: { word: "asc" },
-  });
+  // Only words lacking a real image (Wikimedia or Pexels).
+  const words = (
+    await prisma.word.findMany({
+      where: { id: { notIn: [...done] }, OR: [{ imageUrl: null }, { imageUrl: { not: { startsWith: WM } } }] },
+      select: { id: true, word: true, imageUrl: true },
+      orderBy: { word: "asc" },
+    })
+  ).filter((w) => !w.imageUrl?.startsWith(PEXELS));
   const total = words.length;
   console.log(`   ${total} words to process.`);
   if (!total) return console.log("✅ nothing to do");
@@ -94,8 +103,7 @@ async function main() {
     while (idx < words.length) {
       const w = words[idx++];
       try {
-        await processWord(w);
-        if (w.id in done) found++;
+        if (await processWord(w)) found++;
       } catch {}
       processed++;
       if (processed % 25 === 0) {

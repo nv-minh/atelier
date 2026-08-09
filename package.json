@@ -21,6 +21,10 @@
     "packs:translate": "tsx scripts/packs/translate-packs.ts",
     "packs:import": "tsx prisma/import-packs.ts",
     "packs:verify": "tsx scripts/packs/verify.ts",
+    "images:fetch": "tsx scripts/images/fetch-pexels.ts",
+    "images:merge": "tsx scripts/images/merge-parts.ts",
+    "images:apply": "tsx prisma/apply-images.ts",
+    "images:fetch-wikimedia": "tsx prisma/fetch-images.ts",
     "postinstall": "prisma generate"
   },
   "dependencies": {

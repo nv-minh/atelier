@@ -46,7 +46,7 @@ Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch
 - **Tóm tắt phiên học** chi tiết: % đúng, thời gian, phân bổ 4 nút Again/Hard/Good/Easy
 
 ### 🖼️ Ảnh & âm thanh
-- **Ảnh thật trực tiếp** trên thẻ (lấy từ Wikimedia Commons cho ~670 danh từ cụ thể).
+- **Ảnh thật trực tiếp** trên thẻ — Wikimedia Commons cho danh từ cụ thể có bài Wikipedia, **Pexels** phủ toàn bộ số còn lại (từ trừu tượng lấy kết quả tìm kiếm phù hợp nhất).
 - **Phát âm thật** (bản ghi từ dictionaryapi.dev) + fallback Web Speech API đọc đúng từ.
 
 ### 🎨 Thiết kế
@@ -65,6 +65,7 @@ npx prisma generate          # sinh Prisma client
 npx prisma db push           # tạo schema trên Postgres (cần DATABASE_URL)
 npm run db:seed              # nạp 3.677 từ nền (A1–B2) từ data/vocabulary.json
 npm run packs:import         # nạp thêm 5 bộ từ chuyên đề (→ 6.394 từ, có C1)
+npm run images:apply         # nạp ảnh đã crawl sẵn (data/images.json) vào DB
 npm run dev                  # http://localhost:3000
 ```
 
@@ -78,6 +79,7 @@ NEXTAUTH_URL="http://localhost:3000"
 GITHUB_CLIENT_ID="..."                  # GitHub OAuth app
 GITHUB_CLIENT_SECRET="..."
 AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cần login
+PEXELS_API_KEY="..."                    # (chỉ cần khi chạy images:fetch) key miễn phí tại pexels.com/api
 ```
 
 > Muốn setup Neon + GitHub OAuth đầy đủ, xem `DEPLOY.md`.
@@ -99,12 +101,13 @@ AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cầ
 
 ### Cấu trúc
 ```
-prisma/         schema.prisma + seed/translate/assign-topics/fetch-images/import-packs scripts
+prisma/         schema.prisma + seed/translate/assign-topics/fetch-images/apply-images/import-packs scripts
 scripts/packs/  pipeline dựng bộ từ chuyên đề: fetch-sources → build-wordlists → enrich → translate
+scripts/images/ fetch-pexels: crawl ảnh Pexels cho từ chưa có ảnh → data/images.json
 src/app/        routes: study (flashcard/quiz/typing/dictation/cram), stats, topics, browse, settings, login + api/
 src/components/ study/*, stats/*, nav, i18n, theme, audio, word-image
 src/lib/        fsrs, study-engine, stats, auth, session, topics-data, tts, cloze, i18n dictionaries
-data/           vocabulary.json (3.677 từ nền) · packs/*.json (5 bộ chuyên đề) · SOURCES.md (giấy phép nguồn)
+data/           vocabulary.json (3.677 từ nền) · packs/*.json (5 bộ chuyên đề) · images.json (word→ảnh, durable) · SOURCES.md (giấy phép nguồn)
 ```
 
 ---
@@ -116,7 +119,7 @@ data/           vocabulary.json (3.677 từ nền) · packs/*.json (5 bộ chuy�
 - Nghĩa tiếng Anh + **dịch tiếng Việt** (từ điển mở OVDP Anh–Việt, fallback Google Translate)
 - Câu ví dụ + dịch VI
 - Từ đồng nghĩa / trái nghĩa
-- Audio phát âm (UK/US) · Ảnh thật (Wikimedia, ~670 từ)
+- Audio phát âm (UK/US) · Ảnh thật (Wikimedia + Pexels, phủ gần như toàn bộ)
 
 | Cấp | Số từ |
 |---|---|
@@ -149,13 +152,24 @@ npm run packs:import         # nạp vào DB (idempotent, hỗ trợ --dry-run)
 npm run packs:verify         # kiểm tra chất lượng dữ liệu trong DB (chỉ đọc)
 ```
 
+### 🖼️ Ảnh (image backfill)
+
+Ảnh thật lưu ở `Word.imageUrl`, nguồn kép: **Wikimedia** (bài Wikipedia trùng tên từ, không cần key) và **Pexels** (phủ toàn bộ số còn lại, cần `PEXELS_API_KEY` miễn phí — [pexels.com/api](https://www.pexels.com/api/)). Artifact bền `data/images.json` (đã commit) là nguồn thật của mapping từ → ảnh, tách khỏi DB nên reset DB không mất ảnh.
+
+```bash
+npm run images:fetch-wikimedia  # crawl Wikipedia trước (ưu tiên ảnh thật hơn stock)
+npm run images:fetch            # crawl Pexels cho từ còn thiếu → data/images.json (resumable)
+npm run images:apply            # nạp data/images.json vào Word.imageUrl (--dry-run để xem trước)
+```
+
+`images:fetch` tự đồng bộ ảnh Wikimedia đã có trong DB vào `images.json`, không bao giờ ghi đè ảnh Wikimedia bằng Pexels, và cache mọi kết quả (kể cả rỗng) dưới `data/cache/pexels/` nên chạy lại không tốn quota. Tốc độ tự điều tiết theo phản hồi thực tế của API (backoff cố định khi gặp 429, **không** tin theo header `x-ratelimit-reset` — đã quan sát thấy header này trả giá trị vô nghĩa); chạy nền, Ctrl-C/chạy lại thoải mái, tiến độ không mất.
+
 ---
 
 ## 🔧 Mở rộng
 - **Multi-user:** đã per-user (mọi bảng scope theo `userId` qua session GitHub).
 - **Tối ưu FSRS:** `ts-fsrs` hỗ trợ optimize tham số từ lịch sử ôn → scheduler cá nhân hoá.
 - **Thêm ngôn ngữ UI:** thêm entry vào `src/lib/i18n/dictionaries.ts`.
-- **Ảnh AI 100%:** thay Wikimedia bằng nguồn AI (Lexica/…) khi API ổn định để phủ mọi từ.
 
 ---
 

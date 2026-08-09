@@ -16,6 +16,8 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Free Vietnamese Dictionary Project (Hồ Ngọc Đức) / OVDP Anh-Việt data, via `iamstevendao/superfast-dictionary` JSON conversion | Free for non-commercial use per FVDP terms — see swap path below | `definition_vi`/`type_vi` on pack words (`vi_source: "anhviet"`) | https://www.informatik.uni-leipzig.de/~duc/Dict/ | 2026-07-26 |
 | Words-CEFR-Dataset (Maximax67; CEFR-J derived) | MIT | CEFR estimation for words outside Oxford 5000 (`cefr_source: "cefr-dataset"`) | https://github.com/Maximax67/Words-CEFR-Dataset | 2026-07-26 |
 | Google Translate (unofficial gtx endpoint) | Best-effort, unofficial | Fallback `definition_vi` + all `example_vi` (`vi_source: "gtx"`); same endpoint as `prisma/translate-vi.ts` | — | 2026-07-26 |
+| Wikimedia Commons (via Wikipedia PageImages API) | Varies by file, generally free-use/CC; `prisma/fetch-images.ts` only accepts `upload.wikimedia.org` thumbnails | `Word.imageUrl` for words with a matching Wikipedia article (`source: "wikimedia"` in `data/images.json`) | https://en.wikipedia.org/w/api.php | 2026-07-26 |
+| Pexels API | Pexels License — free to use, no attribution required, hotlinking via `images.pexels.com` allowed: https://www.pexels.com/license/ | `Word.imageUrl` for the remaining words (`scripts/images/fetch-pexels.ts`, `source: "pexels"` in `data/images.json`); `photographer`/`pexelsUrl` recorded per entry for optional credit | https://www.pexels.com/api/ | 2026-08-08 |
 
 ## Commercialization note
 
@@ -35,10 +37,14 @@ npm run packs:translate  # anhviet dictionary first, gtx fallback (cached)
 npm run packs:import     # upsert into Word (add --dry-run first)
 npm run db:translate-vi  # safety net for any definitionVi still null
 npm run db:topics        # keyword topics (curated pack tags preserved)
-npm run packs:verify     # counts + quality gates + samples
+npm run images:fetch-wikimedia  # Wikipedia PageImages, no key needed
+npm run images:fetch     # Pexels for words still missing an image (needs PEXELS_API_KEY)
+npm run images:apply     # push data/images.json into Word.imageUrl
+npm run packs:verify     # counts + quality gates + samples + image coverage
 ```
 
-Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics`.
+Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics → images:apply`.
+`images:apply` alone is enough on a fresh DB if `data/images.json` is already committed — no re-crawl needed; only rerun `images:fetch-wikimedia`/`images:fetch` to backfill *new* words that have no entry yet.
 
 ## Backups
 

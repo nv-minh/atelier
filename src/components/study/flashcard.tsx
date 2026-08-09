@@ -224,7 +224,7 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
         <AudioButton word={card.word} accent="uk" size="sm" />
         <AudioButton word={card.word} accent="us" size="sm" />
         <StarButton wordId={card.id} initialStarred={!!card.starred} size="sm" className="ml-auto" />
-        <ImageSearchLink imageUrl={card.imageUrl} />
+        <ImageSearchLink word={card.word} imageUrl={card.imageUrl} />
       </div>
     </div>
   );

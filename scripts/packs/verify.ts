@@ -26,6 +26,23 @@ async function main() {
   });
   console.log(`Total words: ${words.length}\n`);
 
+  const wikimedia = await prisma.word.count({ where: { imageUrl: { startsWith: "https://upload.wikimedia.org" } } });
+  const pexels = await prisma.word.count({ where: { imageUrl: { startsWith: "https://images.pexels.com/" } } });
+  const withImage = wikimedia + pexels;
+  const legacyJunk = await prisma.word.count({
+    where: {
+      imageUrl: { not: null },
+      NOT: [
+        { imageUrl: { startsWith: "https://upload.wikimedia.org" } },
+        { imageUrl: { startsWith: "https://images.pexels.com/" } },
+      ],
+    },
+  });
+  const noImage = words.length - withImage - legacyJunk;
+  console.log(
+    `Image coverage: wikimedia ${wikimedia} · pexels ${pexels} · legacy-junk ${legacyJunk} (expect 0 after images:apply) · null ${noImage} → coverage ${((withImage / words.length) * 100).toFixed(1)}%\n`
+  );
+
   console.log("Per CEFR level:");
   for (const lvl of CEFR_LEVELS) {
     console.log(`  ${lvl}: ${words.filter((w) => w.cefr === lvl).length}`);
