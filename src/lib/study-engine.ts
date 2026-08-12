@@ -112,7 +112,101 @@ export async function getLeechWordIds(userId: string): Promise<string[]> {
   return rows.map((r) => r.wordId);
 }
 
+// The cefr/topic word sub-filter, shared by buildStudyQueue and buildSessionPlan
+// so the "how many are due" count and the actual fetch can never disagree.
+export function studyWordFilter(opts: { cefr?: string; topic?: string }): Record<string, unknown> {
+  const f: Record<string, unknown> = {};
+  const cefr = opts.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
+  const topic = opts.topic && opts.topic !== "ALL" ? opts.topic : undefined;
+  if (cefr) f.cefr = cefr;
+  if (topic) f.topics = { contains: `"${topic}"` };
+  return f;
+}
+
+// How many NEW cards the user has already studied today. Counted from ReviewLog
+// (state 0), not from Card rows — a card stub can exist without having been seen.
+export async function countNewStudiedToday(userId: string): Promise<number> {
+  const today = todayStr();
+  return prisma.reviewLog.count({
+    where: {
+      userId,
+      state: 0,
+      reviewedAt: { gte: new Date(today + "T00:00:00"), lte: new Date(today + "T23:59:59") },
+    },
+  });
+}
+
+// Due review cards (state >= 1, due <= now), soonest first.
+export async function fetchDueCards(where: any, limit: number): Promise<StudyCard[]> {
+  if (limit <= 0) return [];
+  const rows = await prisma.card.findMany({
+    where: { ...where, due: { lte: new Date() }, state: { gte: 1 } },
+    include: { word: true },
+    take: limit,
+    orderBy: { due: "asc" },
+  });
+  return rows.map((c) => toStudyCard(c, false));
+}
+
+// New cards, up to `limit`: first any card already sitting in New state and due,
+// then freshly created stubs for words never seen.
+//
+// `limit` is ABSOLUTE — this function does no daily-allowance accounting. The
+// caller subtracts countNewStudiedToday. That split is what lets buildSessionPlan
+// pass an already-net limit without it being subtracted a second time.
+export async function fetchNewCards(
+  userId: string,
+  where: any,
+  wordFilter: Record<string, unknown>,
+  starredIds: string[] | null,
+  limit: number
+): Promise<StudyCard[]> {
+  if (limit <= 0) return [];
+  const now = new Date();
+  const out: StudyCard[] = [];
+
+  const existingNew = await prisma.card.findMany({
+    where: { ...where, state: 0, due: { lte: now } },
+    include: { word: true },
+    take: limit,
+  });
+  for (const c of existingNew) out.push(toStudyCard(c, true));
+
+  const stillNeeded = limit - existingNew.length;
+  if (stillNeeded > 0) {
+    const seenWordIds = (
+      await prisma.card.findMany({ where: { userId }, select: { wordId: true } })
+    ).map((c) => c.wordId);
+
+    // Intersect the starred scope with "not yet seen" so scope=starred is never
+    // padded with arbitrary unseen words (spreading wordFilter would otherwise let
+    // `id: { notIn }` clobber `id: { in: starredIds }`).
+    const freshWordFilter: any = { ...wordFilter };
+    if (starredIds) {
+      const seen = new Set(seenWordIds);
+      freshWordFilter.id = { in: starredIds.filter((id) => !seen.has(id)) };
+    } else {
+      freshWordFilter.id = { notIn: seenWordIds };
+    }
+
+    const freshWords = await prisma.word.findMany({
+      where: freshWordFilter,
+      take: stillNeeded,
+      orderBy: [{ cefr: "asc" }, { word: "asc" }],
+    });
+    for (const w of freshWords) {
+      const card = await prisma.card.create({
+        data: { userId, wordId: w.id, due: now, state: 0 },
+        include: { word: true },
+      });
+      out.push(toStudyCard(card, true));
+    }
+  }
+  return out;
+}
+
 // Build the study queue: due reviews first, then new cards up to the daily limit.
+// Now a thin composition of the primitives above — public behaviour unchanged.
 export async function buildStudyQueue(
   userId: string,
   opts?: {
@@ -126,102 +220,26 @@ export async function buildStudyQueue(
   const settings = await getSettings(userId);
   const newLimit = opts?.newLimit ?? settings.newCardsPerDay;
   const reviewLimit = opts?.reviewLimit ?? settings.reviewsPerDay;
-  const cefr = opts?.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
-  const topic = opts?.topic && opts.topic !== "ALL" ? opts.topic : undefined;
-  const now = new Date();
 
-  // build the word sub-filter (cefr + topic + scope) once
-  const wordFilter: any = {};
-  if (cefr) wordFilter.cefr = cefr;
-  if (topic) wordFilter.topics = { contains: `"${topic}"` };
-  // Track a starred-id restriction separately so the new-card branch can
-  // intersect with it instead of overwriting wordFilter.id (see below).
+  const wordFilter = studyWordFilter(opts ?? {});
+  // "leeches" scope has no SRS path by design — leeches are usually not due, and
+  // off-schedule Good ratings would corrupt FSRS stability. Leech review is
+  // cram-only (see buildCramQueue); no-op fallthrough here on purpose.
   let starredIds: string[] | null = null;
   if (opts?.scope === "starred") {
     starredIds = await getStarredWordIds(userId);
     wordFilter.id = { in: starredIds };
   }
-  // "leeches" scope has no SRS path by design — leeches are usually not due, and
-  // off-schedule Good ratings would corrupt FSRS stability. Leech review is
-  // cram-only (see buildCramQueue); no-op fallthrough here on purpose.
   const where = Object.keys(wordFilter).length ? { userId, word: wordFilter } : { userId };
 
-  // 1. Due review cards (state >= 1 and due <= now)
-  const dueCards = await prisma.card.findMany({
-    where: { ...where, due: { lte: now }, state: { gte: 1 } },
-    include: { word: true },
-    take: reviewLimit,
-    orderBy: { due: "asc" },
-  });
+  const newRemaining = Math.max(0, newLimit - (await countNewStudiedToday(userId)));
+  const dueStudy = await fetchDueCards(where, reviewLimit);
+  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, newRemaining);
 
-  // 2. Count how many NEW cards studied today (to respect daily new limit)
-  const today = todayStr();
-  const newStudiedToday = await prisma.reviewLog.count({
-    where: {
-      userId,
-      state: 0,
-      reviewedAt: { gte: new Date(today + "T00:00:00"), lte: new Date(today + "T23:59:59") },
-    },
-  });
-  const newRemaining = Math.max(0, newLimit - newStudiedToday);
-
-  // 3. New cards: words that have no card yet, or cards in New state (state=0) that are due
-  const newCards: StudyCard[] = [];
-
-  // Cards already created but still in New state and "due"
-  const existingNew = await prisma.card.findMany({
-    where: { ...where, state: 0, due: { lte: now } },
-    include: { word: true },
-    take: newRemaining,
-  });
-
-  for (const c of existingNew) {
-    newCards.push(toStudyCard(c, true));
-  }
-
-  // Still need more new cards? Create card stubs for unseen words
-  const stillNeeded = newRemaining - existingNew.length;
-  if (stillNeeded > 0) {
-    const seenWordIds = (
-      await prisma.card.findMany({ where: { userId }, select: { wordId: true } })
-    ).map((c) => c.wordId);
-
-    // Intersect the scope's starred ids with "not yet seen" so scope=starred
-    // never gets padded with arbitrary unseen words (spreading wordFilter would
-    // otherwise let `id: { notIn }` clobber the `id: { in: starredIds }` filter).
-    const freshWordFilter: any = { ...wordFilter };
-    if (starredIds) {
-      const seenSet = new Set(seenWordIds);
-      freshWordFilter.id = { in: starredIds.filter((id) => !seenSet.has(id)) };
-    } else {
-      freshWordFilter.id = { notIn: seenWordIds };
-    }
-
-    const freshWords = await prisma.word.findMany({
-      where: freshWordFilter,
-      take: stillNeeded,
-      orderBy: [{ cefr: "asc" }, { word: "asc" }],
-    });
-
-    for (const w of freshWords) {
-      const card = await prisma.card.create({
-        data: { userId, wordId: w.id, due: now, state: 0 },
-        include: { word: true },
-      });
-      newCards.push(toStudyCard(card, true));
-    }
-  }
-
-  const dueStudy: StudyCard[] = dueCards.map((c) => toStudyCard(c, false));
   const queue = [...dueStudy, ...newCards].slice(0, reviewLimit + newLimit);
-
   return {
     queue,
-    counts: {
-      new: newCards.length,
-      due: dueStudy.length,
-      total: queue.length,
-    },
+    counts: { new: newCards.length, due: dueStudy.length, total: queue.length },
   };
 }
 
