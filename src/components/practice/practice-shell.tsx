@@ -233,14 +233,17 @@ export function PracticeShell({
   );
 
   // ---- tap or key advances immediately while an answer is revealed (D4) ----
-  // Target filter: interactive controls (audio buttons, quiz's answer options,
-  // dictation's replay/speed buttons) must handle their own click and NOT also
-  // advance the card — without this, tapping typing/dictation's answer-audio
-  // buttons (which render ONLY during the reveal) plays audio and instantly
-  // advances past the answer the user just tapped to hear. `closest()` exempts
-  // any <button>/<a>/<input>/<textarea>/<select>/[role=button] automatically,
-  // so a future in-reveal control (e.g. a rating-adjust chip) needs no
-  // stopPropagation of its own — it is covered by construction.
+  // Target filter: genuinely interactive controls (audio buttons, dictation's
+  // replay/speed buttons, typing/dictation's `disabled`-locked input) must
+  // handle their own click and NOT also advance the card — without this,
+  // tapping typing/dictation's answer-audio buttons (which render ONLY during
+  // the reveal) plays audio and instantly advances past the answer the user
+  // just tapped to hear. `closest()` matches any
+  // <button>/<a>/<input>/<textarea>/<select>/[role=button], so a future
+  // in-reveal control (e.g. a rating-adjust chip) needs no stopPropagation of
+  // its own by construction — but the match is only honoured when that
+  // control is not `aria-disabled` (see below): quiz's revealed answer
+  // options are `<button>`s too, yet must still advance on tap/key.
   //
   // e.repeat filter: a held Enter/Space auto-repeats keydown, so without this
   // a user holding the submit key never sees the reveal at all.
@@ -249,7 +252,18 @@ export function PracticeShell({
     const h = (e: Event) => {
       if (e instanceof KeyboardEvent && e.repeat) return;
       const el = e.target;
-      if (el instanceof Element && el.closest("button,a,input,textarea,select,[role='button']")) {
+      const control =
+        el instanceof Element ? el.closest("button,a,input,textarea,select,[role='button']") : null;
+      // A matched control only earns the exemption if it is actually
+      // interactive. `aria-disabled="true"` is quiz's revealed-option state
+      // (it deliberately avoids the `disabled` attribute so the option still
+      // emits pointerdown — see the comment on that button) and is inert by
+      // contract, so tapping/keying it should fall through and advance, same
+      // as tapping empty space. Do NOT also gate on `disabled` here: a truly
+      // `disabled` control emits no pointerdown at all, and can never hold
+      // focus, so it can never be `e.target` for a keydown either — there is
+      // no path through which one could reach this handler as `control`.
+      if (control && control.getAttribute("aria-disabled") !== "true") {
         return;
       }
       advance();
