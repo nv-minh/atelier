@@ -72,10 +72,22 @@ export function PracticeShell({
   const View = MODE_VIEWS[mode];
 
   // ---- session row (defect D1: quiz/typing/dictation never created one) ----
+  // sessionStartedRef alone guarantees at most one POST per mounted shell, even
+  // under Strict Mode's dev-only double-invoke (the ref persists across that
+  // synthetic unmount+remount, so invocation #2 returns early before starting
+  // its own request). There is deliberately no `cancelled` flag any more: a
+  // `cancelled` guard on the response handler used to combine with this ref in
+  // a way that meant the ONE POST that ever fired had its own response ignored
+  // (invocation #1's cleanup — fired by Strict Mode's synthetic unmount — set
+  // `cancelled = true` before invocation #1's fetch resolved, since invocation
+  // #2 short-circuited and never created its own `cancelled = false`). That
+  // left `sessionIdRef.current` permanently null in dev, so the completion
+  // PATCH below could never fire. Writing these refs after a genuine unmount
+  // is harmless — they are refs, not state, so there is nothing to warn about
+  // and nothing observable happens.
   useEffect(() => {
     if (sessionStartedRef.current) return;
     sessionStartedRef.current = true;
-    let cancelled = false;
     (async () => {
       try {
         const res = await fetch("/api/study/session", {
@@ -84,15 +96,12 @@ export function PracticeShell({
           body: JSON.stringify({ mode }),
         });
         const d = await res.json();
-        if (!cancelled && d?.sessionId) {
+        if (d?.sessionId) {
           sessionIdRef.current = d.sessionId;
           startedAtRef.current = Date.now();
         }
       } catch {}
     })();
-    return () => {
-      cancelled = true;
-    };
   }, [mode]);
 
   // ---- reset the per-item hidden flag whenever the item changes ----
@@ -310,7 +319,14 @@ export function PracticeShell({
         </div>
       </div>
 
-      <div className="shell flex-1 flex flex-col justify-center py-6 sm:py-10 pb-28 md:pb-10">
+      {/* `w-full` is load-bearing: .shell sets `margin-inline: auto`, and on a flex
+          item auto cross-axis margins absorb the free space and override
+          `align-items: stretch`, leaving the box content-sized. Without this the
+          flashcard collapses to a ~150px strip (its front face's in-flow text is
+          short and breakable, so min-content is tiny) and the other three modes
+          render narrower than they should. The superseded study-session.tsx carried
+          the same `w-full` for exactly this reason. */}
+      <div className="shell w-full flex-1 flex flex-col justify-center py-6 sm:py-10 pb-28 md:pb-10">
         {notice && <p className="text-center text-xs text-soft mb-4">{notice}</p>}
         <AnimatePresence mode="wait">
           <motion.div
