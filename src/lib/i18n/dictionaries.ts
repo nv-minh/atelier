@@ -178,6 +178,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       practiceAgain: "Luyện lại",
       noCards: "Chưa có thẻ nào",
       noCardsDesc: "Mọi thẻ đến hạn đều đã ôn. Thử flashcard hoặc quay lại sau.",
+      itemSkipped: "Đã bỏ qua một thẻ (không tải được đáp án).",
+      unsavedN: "{n} thẻ chưa lưu được — kiểm tra kết nối.",
+      onlyN: "Phiên này chỉ có {n} thẻ.",
+      continueN: "Học tiếp {n} thẻ",
+      comboBest: "Combo dài nhất",
       accepted: "Chấp nhận",
     },
     stats: {
@@ -585,6 +590,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       practiceAgain: "Practice again",
       noCards: "No cards ready",
       noCardsDesc: "All due cards are cleared. Try flashcards or come back later.",
+      itemSkipped: "Skipped a card (couldn't load its answers).",
+      unsavedN: "{n} cards couldn't be saved — check your connection.",
+      onlyN: "Only {n} cards in this session.",
+      continueN: "Study {n} more",
+      comboBest: "Best combo",
       accepted: "Accepted",
     },
     stats: {
