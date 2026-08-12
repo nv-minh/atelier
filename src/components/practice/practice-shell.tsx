@@ -105,9 +105,12 @@ export function PracticeShell({
   }, [mode]);
 
   // ---- reset the per-item hidden flag whenever the item changes ----
+  // Keyed on state.index, NOT current?.cardId: flashcard requeues the same
+  // cardId later in the same run (Again), so keying on cardId would leave a
+  // stale wasHidden flag from the FIRST attempt attached to the retry.
   useEffect(() => {
     hiddenRef.current = false;
-  }, [current?.cardId]);
+  }, [state.index]);
 
   useEffect(() => {
     const h = () => {
@@ -152,7 +155,28 @@ export function PracticeShell({
   );
 
   // ---- advance: commit the pending review and move on ----
+  // Idempotency guard: two advance() calls landing in the same task (a
+  // two-finger tap during the reveal, or a tap that lands in the same frame
+  // as the REVEAL_MS timeout) must only commit ONCE. The reducer intentionally
+  // allows commit-with-no-pending (see session-state.ts), so without this guard
+  // a second same-frame call silently skips a card — it never renders, and is
+  // recorded in neither `results` nor `skipped`.
+  //
+  // advancedAtRef remembers which index was last committed. state.index MUST
+  // be a dependency here: both calls in a same-frame double-fire share the
+  // SAME `advance` closure (attached once by the reveal-advance effect below),
+  // so the ref-vs-index comparison only works if that closure's `state.index`
+  // is the value current at the time the listener was attached. Leaving
+  // state.index out of the deps would freeze `advance` on a stale index after
+  // the first render, and reveal/index update in the same batch (setReveal and
+  // dispatch({type:"commit"}) below run together), so the reveal-advance
+  // effect below only ever re-attaches its listener while reveal is "hidden" —
+  // i.e. never mid-reveal — so this extra dependency does not cause a second
+  // listener to be attached while one is already live.
+  const advancedAtRef = useRef(-1);
   const advance = useCallback(() => {
+    if (advancedAtRef.current === state.index) return;
+    advancedAtRef.current = state.index;
     if (advanceTimer.current) {
       clearTimeout(advanceTimer.current);
       advanceTimer.current = null;
@@ -163,7 +187,7 @@ export function PracticeShell({
     setReveal("hidden");
     setNotice(null);
     dispatch({ type: "commit" });
-  }, [postReview]);
+  }, [postReview, state.index]);
 
   const onAnswer = useCallback(
     (r: { correct: boolean; signals: GradeSignals }) => {
@@ -209,9 +233,27 @@ export function PracticeShell({
   );
 
   // ---- tap or key advances immediately while an answer is revealed (D4) ----
+  // Target filter: interactive controls (audio buttons, quiz's answer options,
+  // dictation's replay/speed buttons) must handle their own click and NOT also
+  // advance the card — without this, tapping typing/dictation's answer-audio
+  // buttons (which render ONLY during the reveal) plays audio and instantly
+  // advances past the answer the user just tapped to hear. `closest()` exempts
+  // any <button>/<a>/<input>/<textarea>/<select>/[role=button] automatically,
+  // so a future in-reveal control (e.g. a rating-adjust chip) needs no
+  // stopPropagation of its own — it is covered by construction.
+  //
+  // e.repeat filter: a held Enter/Space auto-repeats keydown, so without this
+  // a user holding the submit key never sees the reveal at all.
   useEffect(() => {
     if (reveal === "hidden") return;
-    const h = () => advance();
+    const h = (e: Event) => {
+      if (e instanceof KeyboardEvent && e.repeat) return;
+      const el = e.target;
+      if (el instanceof Element && el.closest("button,a,input,textarea,select,[role='button']")) {
+        return;
+      }
+      advance();
+    };
     window.addEventListener("pointerdown", h);
     window.addEventListener("keydown", h);
     return () => {
@@ -243,7 +285,16 @@ export function PracticeShell({
   // every re-render, and flushPending is itself stable (its only changing
   // input, pendingRef, is a ref and always current).
   useEffect(() => {
-    return () => flushPending();
+    return () => {
+      flushPending();
+      // Also clear the REVEAL_MS auto-advance timer: harmless today (it only
+      // calls advance(), which is a no-op on an unmounted shell's refs), but
+      // left running it fires ~1.2s after unmount for no reason.
+      if (advanceTimer.current) {
+        clearTimeout(advanceTimer.current);
+        advanceTimer.current = null;
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

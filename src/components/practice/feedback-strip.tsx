@@ -3,9 +3,11 @@
 import { motion } from "motion/react";
 import { useI18n } from "@/components/i18n-provider";
 
-// Shared reveal strip for the auto-graded modes (quiz, typing, dictation). Modeled
-// on the FeedbackStrip in src/components/study/practice-session.tsx so the visual
-// result is unchanged — same container, same moss/red variants, same entrance.
+// Shared reveal strip for the auto-graded modes (quiz, typing, dictation). This
+// supersedes the FeedbackStrip that used to live in
+// src/components/study/practice-session.tsx (removed in the final cleanup) —
+// same container, same moss/red variants, same entrance, kept visually
+// unchanged from that predecessor.
 export function FeedbackStrip({
   reveal,
   message,

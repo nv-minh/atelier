@@ -85,16 +85,27 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
             const isPicked = selected === i;
             const shown = selected !== null;
             return (
+              // No `disabled` attribute here on purpose: a genuinely disabled
+              // control emits no `pointerdown` at all, which would make this —
+              // the largest tap target on screen — unable to satisfy "tap
+              // anywhere to advance" during the reveal. `pick()` already
+              // guards re-submission internally (`if (selected !== null...)
+              // return`), so `aria-disabled` + a reveal-only style branch that
+              // drops the hover affordance stands in for it: still reads as
+              // locked, still cannot be re-submitted, but a tap still reaches
+              // window and advances the card.
               <button
                 key={i}
-                disabled={shown}
+                aria-disabled={shown}
                 onClick={() => pick(i)}
                 className={`text-left rounded-2xl border p-4 transition-all flex items-start gap-3 ${
                   shown && isCorrect
-                    ? "border-moss-500 bg-moss-500/10"
+                    ? "border-moss-500 bg-moss-500/10 cursor-default"
                     : shown && isPicked
-                      ? "border-red-400 bg-red-400/10"
-                      : "border-line hover:border-ink/30 hover:bg-paper-200/40"
+                      ? "border-red-400 bg-red-400/10 cursor-default"
+                      : shown
+                        ? "border-line opacity-60 cursor-default"
+                        : "border-line hover:border-ink/30 hover:bg-paper-200/40"
                 }`}
               >
                 <span className="text-xs font-mono text-soft mt-0.5">{LETTERS[i]}</span>
