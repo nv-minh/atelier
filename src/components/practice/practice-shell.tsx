@@ -60,6 +60,10 @@ export function PracticeShell({
   const pendingRef = useRef<PendingPost | null>(null);
   const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const skipCountRef = useRef<Map<string, number>>(new Map());
+  // Guards against Strict Mode's dev-only double-invoke of the mount effect
+  // below, which would otherwise POST /api/study/session twice per real mount
+  // and leave an orphaned StudySession row (0 cards, no endedAt).
+  const sessionStartedRef = useRef(false);
   // Was the tab hidden at any point during the CURRENT item? A phone call or an
   // app switch makes elapsedMs meaningless, so grading must not read it as fast.
   const hiddenRef = useRef(false);
@@ -69,6 +73,8 @@ export function PracticeShell({
 
   // ---- session row (defect D1: quiz/typing/dictation never created one) ----
   useEffect(() => {
+    if (sessionStartedRef.current) return;
+    sessionStartedRef.current = true;
     let cancelled = false;
     (async () => {
       try {
@@ -103,6 +109,9 @@ export function PracticeShell({
   }, []);
 
   // ---- review POST, one retry, then surfaced rather than swallowed ----
+  // `apply` is shared by the first attempt AND the retry so a retry that
+  // succeeds still feeds its xpGained/unlocked through — a successful retry
+  // must not be worse than a normal success (spec §11: never silently drop).
   const postReview = useCallback(
     async (p: PendingPost, keepalive = false) => {
       const send = () =>
@@ -112,18 +121,19 @@ export function PracticeShell({
           body: JSON.stringify(p),
           keepalive,
         });
-      try {
-        const res = await send();
+      const apply = async (res: Response) => {
         if (!res.ok) throw new Error(String(res.status));
         const d = await res.json().catch(() => null);
         if (d) {
           if (typeof d.xpGained === "number") setXpGained((x) => x + d.xpGained);
           if (Array.isArray(d.unlocked) && d.unlocked.length) pushToast(d.unlocked);
         }
+      };
+      try {
+        await apply(await send());
       } catch {
         try {
-          const retry = await send();
-          if (!retry.ok) throw new Error(String(retry.status));
+          await apply(await send());
         } catch {
           setUnsaved((n) => n + 1);
         }
@@ -201,17 +211,32 @@ export function PracticeShell({
     };
   }, [reveal, advance]);
 
+  // ---- flush a pending review rather than lose it: shared by the tab-close
+  // path (pagehide) and the in-app-navigation path (unmount) below. Clears
+  // pendingRef BEFORE sending, same as advance(), so neither path can double-send.
+  const flushPending = useCallback(() => {
+    const p = pendingRef.current;
+    if (!p) return;
+    pendingRef.current = null;
+    void postReview(p, true);
+  }, [postReview]);
+
   // ---- flush a pending review if the tab goes away mid-reveal ----
   useEffect(() => {
-    const h = () => {
-      const p = pendingRef.current;
-      if (!p) return;
-      pendingRef.current = null;
-      void postReview(p, true);
-    };
-    window.addEventListener("pagehide", h);
-    return () => window.removeEventListener("pagehide", h);
-  }, [postReview]);
+    window.addEventListener("pagehide", flushPending);
+    return () => window.removeEventListener("pagehide", flushPending);
+  }, [flushPending]);
+
+  // ---- flush a pending review if the shell unmounts mid-reveal via ordinary
+  // in-app <Link> navigation (defect: pagehide does NOT fire for client-side
+  // routing, so a review answered just before a nav click was silently lost).
+  // Deliberately an empty dep array: this must run on UNMOUNT only, not on
+  // every re-render, and flushPending is itself stable (its only changing
+  // input, pendingRef, is a ref and always current).
+  useEffect(() => {
+    return () => flushPending();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ---- completion: drain requeued/retried items, then end the session ----
   useEffect(() => {
