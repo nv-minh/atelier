@@ -1,7 +1,7 @@
 import "server-only";
 import { prisma } from "./db";
 import { previewCard, Rating, STATES } from "./fsrs";
-import { addDays, formatInterval, normalizeWord, pick, shuffle, todayStr } from "./utils";
+import { addDays, formatInterval, normalizeWord, shuffle, todayStr } from "./utils";
 import { awardForReview, awardForSessionEnd } from "./gamification";
 
 export type StudyWord = {
@@ -368,17 +368,6 @@ export async function recordReview(userId: string, cardId: string, rating: Ratin
     console.error("awardForReview failed (review already recorded):", e);
   }
   return { ...updated, ...award };
-}
-
-// ---------- Quiz distractor generation ----------
-export async function getQuizDistractors(correct: StudyWord, n = 3): Promise<string[]> {
-  const pool = await prisma.word.findMany({
-    where: { cefr: correct.cefr, word: { not: correct.word } },
-    select: { definitionEn: true, word: true },
-    take: 60,
-  });
-  const valid = pool.filter((p) => p.definitionEn && p.definitionEn.length > 8);
-  return pick(valid, n).map((p) => truncateDef(p.definitionEn!));
 }
 
 // Canonical short definition for quiz options and matching tiles: first clause,
