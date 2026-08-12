@@ -20,3 +20,6 @@ data/backups/
 
 # transient parallel-crawl monitoring logs
 .crawl-w*.log
+
+# subagent-driven-development scratch: ledgers, task briefs, review packages
+.superpowers
