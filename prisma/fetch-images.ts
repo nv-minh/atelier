@@ -5,6 +5,7 @@
 // real image (Wikimedia or Pexels). Superseded as the primary source by
 // scripts/images/fetch-pexels.ts, which covers words with no Wikipedia article;
 // this script is still useful to prefer a real photo over a stock one.
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import https from "https";
 import { readFileSync, writeFileSync, existsSync } from "fs";
