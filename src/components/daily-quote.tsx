@@ -4,7 +4,10 @@
 //
 // The rules that keep it from becoming nagware:
 //   • It is never a modal, a toast, or an interstitial. It sits in the page
-//     flow, below the fold-line of what the visitor came to do.
+//     flow and can be dismissed in one tap. On the home page it is placed high
+//     enough to actually be read (the point of a daily quote is that the reader
+//     sees it), which makes the two rules below load-bearing rather than
+//     decorative: nothing about it may shift the page or demand a response.
 //   • It renders NOTHING until the text is in hand, then fades in. No skeleton
 //     that shifts the layout, no spinner competing for attention.
 //   • Any failure — offline, ZenQuotes down, malformed body — is silent: the
@@ -20,9 +23,9 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Volume2, X } from "lucide-react";
+import { Volume2, VolumeX, X } from "lucide-react";
 import { useI18n } from "./i18n-provider";
-import { speak } from "@/lib/tts";
+import { speak, stopSpeaking } from "@/lib/tts";
 import { cn } from "@/lib/utils";
 import {
   isDismissed,
@@ -74,7 +77,32 @@ export function DailyQuote({ className }: { className?: string }) {
     };
   }, []);
 
+  // Reading the quote aloud is the one part of this card that can fail in a way
+  // worth showing: a button that answers a tap with nothing is indistinguishable
+  // from a broken one. "playing" comes from the utterance actually starting, and
+  // "failed" from it never doing so — see the watchdog in lib/tts.ts.
+  const [audio, setAudio] = useState<"idle" | "playing" | "failed">("idle");
+
+  const toggleSpeak = useCallback(() => {
+    if (!quote) return;
+    if (audio === "playing") {
+      stopSpeaking();
+      setAudio("idle");
+      return;
+    }
+    setAudio("playing");
+    speak(quote.text, {
+      rate: 0.88,
+      onEnd: () => setAudio("idle"),
+      onFail: () => setAudio("failed"),
+    });
+  }, [audio, quote]);
+
+  // Never leave the page still talking.
+  useEffect(() => () => stopSpeaking(), []);
+
   const dismiss = useCallback(() => {
+    stopSpeaking();
     setHidden(true);
     recordDismissed();
   }, []);
@@ -114,14 +142,25 @@ export function DailyQuote({ className }: { className?: string }) {
 
             <div className="mt-5 flex items-center justify-between gap-4">
               <cite className="not-italic text-sm text-soft">— {quote.author}</cite>
-              <div className="flex items-center gap-1 shrink-0">
+              {/* data-nosound: the listen button starts its own audio, so the
+                  shell's tap tone would just double up on it. */}
+              <div className="flex items-center gap-1 shrink-0" data-nosound>
                 <button
-                  onClick={() => speak(`${quote.text}`, { rate: 0.88 })}
-                  aria-label={t("quote.listen")}
-                  title={t("quote.listen")}
-                  className="rounded-full p-2 text-soft hover:text-ember hover:bg-ink/5 transition-colors"
+                  onClick={toggleSpeak}
+                  aria-label={audio === "failed" ? t("quote.listenFailed") : t("quote.listen")}
+                  title={audio === "failed" ? t("quote.listenFailed") : t("quote.listen")}
+                  className={cn(
+                    "rounded-full p-2 transition-colors hover:bg-ink/5",
+                    audio === "playing" && "text-ember",
+                    audio === "failed" && "text-soft/50",
+                    audio === "idle" && "text-soft hover:text-ember"
+                  )}
                 >
-                  <Volume2 size={15} />
+                  {audio === "failed" ? (
+                    <VolumeX size={15} />
+                  ) : (
+                    <Volume2 size={15} className={audio === "playing" ? "animate-pulse" : undefined} />
+                  )}
                 </button>
                 <button
                   onClick={dismiss}

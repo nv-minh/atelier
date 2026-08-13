@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, BarChart3, Library, Settings, Layers, Compass, NotebookPen } from "lucide-react";
+import { BookOpen, BarChart3, Library, Settings, Layers, Compass, NotebookPen, Trophy } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
 import { LangToggle } from "./lang-toggle";
 import { UserMenu } from "./user-menu";
@@ -23,9 +23,10 @@ export function Nav() {
   const links = [
     { href: "/", label: t("nav.studio"), icon: Layers, mobile: true, locked: false },
     { href: "/topics", label: t("nav.topics"), icon: Compass, mobile: true, locked: false },
-    { href: "/browse", label: t("nav.library"), icon: Library, mobile: true, locked: false },
+    { href: "/browse", label: t("nav.library"), icon: Library, mobile: false, locked: false },
     { href: "/notebook", label: t("nav.notebook"), icon: NotebookPen, mobile: true, locked: true },
     { href: "/stats", label: t("nav.progress"), icon: BarChart3, mobile: true, locked: true },
+    { href: "/leaderboard", label: t("nav.leaderboard"), icon: Trophy, mobile: true, locked: true },
     // Settings stays in the desktop nav / user menu; dropped from the mobile bottom bar to avoid crowding.
     { href: "/settings", label: t("nav.settings"), icon: Settings, mobile: false, locked: true },
   ];

@@ -1,6 +1,6 @@
 import "server-only";
 import { prisma } from "./db";
-import { todayStr, addDays } from "./utils";
+import { todayStr, addDays, isoWeekMonday } from "./utils";
 import { totalXp } from "./gamification-defs";
 import { computeStreakFromDb } from "./gamification-checks";
 import { CEFR_LEVELS } from "./export-format";
@@ -161,15 +161,6 @@ export type WeeklyRecap = {
   lastWeek: WeekTotals;
   delta: { reviews: number; newCards: number; timeSec: number; xp: number; accuracy: number };
 };
-
-// Monday of the ISO week containing `d`, in UTC (matches todayStr's UTC
-// convention). getUTCDay: Sun=0..Sat=6; shift so Monday is the anchor.
-function isoWeekMonday(d = new Date()): Date {
-  const base = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
-  const dow = base.getUTCDay(); // 0=Sun
-  const back = dow === 0 ? 6 : dow - 1; // days since Monday
-  return addDays(base, -back);
-}
 
 function emptyWeek(): WeekTotals {
   return { reviews: 0, newCards: 0, timeSec: 0, xp: 0, correct: 0, total: 0, accuracy: 0 };

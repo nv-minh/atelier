@@ -25,6 +25,24 @@ export function addDays(date: Date, days: number): Date {
   return d;
 }
 
+// Day arithmetic on the UTC axis. addDays() above uses local setDate/getDate,
+// which is correct for a UTC-midnight base in every timezone EXCEPT across a
+// DST transition, where the ±1h shift can push toISOString().slice(0,10) back
+// a day. Everything date-keyed in this app (DailyStat.dateStr, streaks, the
+// leaderboard week) is UTC, so new code uses this instead.
+export function addUtcDays(date: Date, days: number): Date {
+  return new Date(date.getTime() + days * 86400000);
+}
+
+// Monday (UTC midnight) of the ISO week containing `d`. Moved here from
+// stats.ts so pure modules can use it without importing a server-only file.
+export function isoWeekMonday(d = new Date()): Date {
+  const base = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  const dow = base.getUTCDay(); // 0=Sun
+  const back = dow === 0 ? 6 : dow - 1; // days since Monday
+  return addUtcDays(base, -back);
+}
+
 // Human-readable interval preview
 export function formatInterval(due: Date, now = new Date()): string {
   const diffMs = due.getTime() - now.getTime();
