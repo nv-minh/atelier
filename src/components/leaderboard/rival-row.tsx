@@ -20,9 +20,13 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
     if (!entry.lastActiveAt) return null;
     const mins = Math.max(0, (Date.parse(nowIso) - Date.parse(entry.lastActiveAt)) / 60000);
     if (mins < 5) return t("leaderboard.activeNow");
-    if (mins < 60) return t("leaderboard.activeMinutes", { n: Math.round(mins) });
+    // Floor, not round, on these two boundary-adjacent branches: rounding can
+    // carry a value that still belongs to this unit (59.9 minutes, 23.6 hours)
+    // up to the next unit's threshold number (60, 24) before the label
+    // actually rolls over.
+    if (mins < 60) return t("leaderboard.activeMinutes", { n: Math.floor(mins) });
     const hours = mins / 60;
-    if (hours < 24) return t("leaderboard.activeHours", { n: Math.round(hours) });
+    if (hours < 24) return t("leaderboard.activeHours", { n: Math.floor(hours) });
     const days = Math.round(hours / 24);
     return days <= 1 ? t("leaderboard.activeYesterday") : t("leaderboard.activeDays", { n: days });
   })();
@@ -51,7 +55,10 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
             {isUser ? t("leaderboard.you") : entry.name}
           </span>
           {entry.streak > 0 && (
-            <span className="inline-flex shrink-0 items-center gap-0.5 text-xs text-soft">
+            <span
+              className="inline-flex shrink-0 items-center gap-0.5 text-xs text-soft"
+              aria-label={t("leaderboard.streakLabel", { n: entry.streak })}
+            >
               <Flame size={11} className="text-ember" />
               {entry.streak}
             </span>
@@ -77,7 +84,10 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
         </span>
       )}
 
-      <span className="w-16 shrink-0 text-right font-mono text-sm tabular-nums">
+      <span
+        className="w-16 shrink-0 text-right font-mono text-sm tabular-nums"
+        aria-label={`${entry.weeklyXp.toLocaleString()} ${t("leaderboard.xpUnit")}`}
+      >
         {entry.weeklyXp.toLocaleString()}
       </span>
     </li>
