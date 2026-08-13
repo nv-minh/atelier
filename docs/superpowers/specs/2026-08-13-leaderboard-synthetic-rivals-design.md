@@ -55,7 +55,9 @@ Ngoại lệ duy nhất: dấu **"hoạt động X giờ trước"** là cảm n
 
 ### Tiêu chí thành công
 
-1. User học đều theo nhịp thường lệ → nằm **hạng 4–8** sau khi đã bắt kịp nhịp (measured: trung vị hạng 6, 87/100 swept ids in band, 0 at rank 1); trước khi bắt kịp nhịp thì thấp hơn, median 8.5, khoảng 3% rơi cuối bảng — **hiệp định chấp nhận** thay vì open defect. **Lý do:** "không bao giờ cuối bảng" là artifact của calibration bug — `restProb` âm thầm làm yếu rival thường xuyên, tạo slack giúp user không rơi cuối; sửa calibration (phân chia `1/(1−restProb)`) khôi phục bias nhưng mất slack ở trước-phiên. Alternatives bị từ chối: cắt buộc rival yếu theo roster tuần (gây instability R9 xóa), hoặc shift mean rival xuống (undo calibration fix). Sự rơi cuối là earned, không assigned.
+1. User học đều theo nhịp thường lệ, **đã học hôm nay** → nằm **hạng 4–8**. Đo trên 100 userId: trung vị hạng 6, 87/100 nằm trong dải, 0/100 lên hạng 1.
+
+   **Khi chưa học hôm nay** thì thấp hơn: trung vị hạng 8,5 và khoảng 3% xuống chót bảng. Đây là **trade-off được chấp nhận**, không phải lỗi còn mở. Lý do: "không bao giờ chót" chưa từng được bảo đảm về mặt cấu trúc — `paceFactor` rút độc lập cho từng rival trong `[0.55, 1.6]` và không có gì ép một rival phải yếu; nó chỉ đúng nhờ khoảng lỏng mà chính bug hiệu chuẩn tạo ra (`restProb` âm thầm làm rival hụt ~25% sản lượng danh nghĩa). Hai cách khôi phục đều tệ hơn: ép một rival yếu theo roster từng tuần là tái lập đúng kiểu bất ổn mà ruling R9 đã xoá (tính cách rival lật giữa các tuần), còn kéo mean rival xuống thì phá luôn phần bias vừa sửa. Chót bảng khi đang chậm một ngày, với đường leo lên nhìn thấy được, vẫn là hạng **kiếm được** chứ không phải bị gán — và nó tự hết ngay khi user học.
 2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào. **Đã đo lại sau hiệu chuẩn theo sản lượng tuần:** vế "cày hơn → top 3" vẫn đúng (cày gấp đôi nhịp cả tuần đưa user vào top 3 cho 60/60 id đo được, không đổi). Vế "nghỉ 2 ngày → tụt khỏi top 8" giờ ĐÚNG rõ hơn nhiều: ở mức nghỉ đúng 2/7 ngày (5/7 ngày hoạt động), chỉ còn 23/60 id ở trong 4–8 (từ 49/60) — tức 37/60 id giờ tụt khỏi top 8 như tiêu chí mô tả, trung vị hạng chuyển từ trong-khoảng sang hạng 9. Cùng nguyên nhân với tiêu chí 1: paceFactor không còn bị `restProb` che bớt.
 3. Mở bảng trên 2 thiết bị, hoặc refresh 5 lần → **cùng một bảng**, cùng số.
 4. Lúc 2h sáng giờ VN, **dưới 25%** tổng số dòng rival (gộp trên nhiều user) đọc là "vừa hoạt động" (dưới 6 giờ) — đo được ≈12.4% — và không user nào có ≥ 7/10 rival cùng "vừa hoạt động" một lúc. (Cách diễn đạt cũ — "hoạt động từ hôm qua trở về trước" — vượt quá những gì formatter thực sự hiển thị: 12 giờ trước hiện đúng "12 giờ trước", không bao giờ "hôm qua"; câu trên diễn đạt đúng cận mà test khẳng định.)
@@ -173,12 +175,12 @@ Vitest thuần, không cần mock Prisma (chỉ `pace.ts` chạm DB và nó mỏ
 
 | File | Khẳng định chính |
 |---|---|
-| `rng.test.ts` | cùng seed → cùng dãy; đổi `userId` hoặc `weekKey` → dãy khác |
-| `week.test.ts` | `weekKey` khớp mốc **UTC** của `todayStr()`; tuần bắt đầu thứ Hai; ngày giao tuần không nhảy hai lần |
+| `rng.test.ts` | cùng seed → cùng dãy; đổi `userId` hoặc chỉ số tuần → dãy khác |
+| `week.test.ts` | `weekIndex` tăng đúng 1 mỗi tuần, khớp mốc **UTC** của `todayStr()`; tuần bắt đầu thứ Hai; ngày giao tuần không nhảy hai lần |
 | `rivals.test.ts` | 10 tên không trùng, đều thuộc pool Việt; giữ lại 4–5 rival của tuần trước; mọi tham số trong khoảng |
-| `board.test.ts` | học đều → hạng 4–8; nghỉ 2 ngày → tụt khỏi top 8; cày mạnh → top 3; không ai vượt cap 2.2×; không XP tròn chục; mỗi ngày ≥ 1 rival XP 0 (kể cả khi không rival nào tự nghỉ — luật cưỡng chế); thứ Hai không có Δ |
-| `last-active.test.ts` | 2h sáng VN → ≥ 8/10 là "hôm qua" trở về trước; không bao giờ 10/10 dưới 30 phút |
-| `pace.test.ts` | median chứ không mean (một ngày 600 XP không kéo cả bảng); < 3 ngày dữ liệu → fallback `dailyGoalXp` |
+| `board.test.ts` | quét 100 id: học đều (đã học hôm nay) → trung vị hạng 4–8, không ai hạng 1; cày mạnh → top 3; Δ của user đi theo XP thật của họ (chặt `> 0` / `< 0`, không phải `>= 0`); không rival nào vượt cap; không XP tròn chục; mỗi ngày ≥ 1 rival XP 0 (kể cả khi không rival nào tự nghỉ — luật cưỡng chế); thứ Hai không có Δ; tổng XP rival tăng dần trong tuần |
+| `activity.test.ts` | 2h sáng VN: gộp 25 user thì < 25% dòng rival là "vừa hoạt động" (< 6 giờ), và không user nào có ≥ 7/10; không bao giờ 10/10 dưới 30 phút; bảng đêm im hơn bảng chiều; rival nghỉ liên tục → fallback đúng 4 ngày |
+| `pace.test.ts` | `sessionPace` là median chứ không mean (một ngày 600 XP không kéo cả bảng); `dailyPace = round(sessionPace × activeDays / 7)`; < 3 ngày dữ liệu → fallback `dailyGoalXp` **nguyên giá trị**, không bị nhân xuống |
 
 Nghiệm bằng tay: tiêu chí 1, 2, 9 của mục 1 — đặc biệt **tiêu chí 9** (XP tuần trên bảng khớp tổng 7 `DailyStat`), vì đó là chỗ hai mốc thời gian có thể lệch nhau.
 
