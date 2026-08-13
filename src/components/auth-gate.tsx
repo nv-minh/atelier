@@ -22,7 +22,14 @@ import { useI18n } from "./i18n-provider";
 
 // Reasons map to auth.reasons.* copy — one sentence explaining what the
 // login unlocks, so the prompt answers "why" instead of just demanding.
-export type GateReason = "topic" | "library" | "word" | "star" | "study" | "generic";
+export type GateReason =
+  | "topic"
+  | "library"
+  | "word"
+  | "star"
+  | "study"
+  | "placement"
+  | "generic";
 
 type OpenOpts = { callbackUrl?: string; reason?: GateReason };
 
