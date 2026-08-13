@@ -36,6 +36,36 @@ Thêm cùng 2 giá trị vào `.env` (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`
 
 Sau khi xong: nút **Đăng nhập với GitHub** trên `/login` sẽ active → đăng nhập → data học sync qua Neon trên mọi thiết bị.
 
+## Bước cuối — bật Google Sign-in (cần bạn làm, tôi không thể tạo credentials)
+
+Đăng nhập Google đang **disabled**: nút Google trên `/login` hiển thị nhưng bị khoá (disabled), kèm thông báo, cho tới khi cả `GOOGLE_CLIENT_ID` và `GOOGLE_CLIENT_SECRET` đều được cấu hình. Để bật:
+
+### 1. Tạo Google OAuth Client
+1. Vào Google Cloud Console → **APIs & Services → Credentials** → **Create Credentials → OAuth 2.0 Client ID** → chọn loại **Web application**.
+2. Thêm **Authorized redirect URIs**:
+   - `http://localhost:3000/api/auth/callback/google` (dev)
+   - `https://<production-domain>/api/auth/callback/google` (prod — thay bằng domain thật, vd `vocab-master-dusky.vercel.app`)
+3. Create → copy **Client ID** + sinh **Client Secret**.
+
+> Thiếu redirect URI production là nguyên nhân phổ biến nhất của lỗi `redirect_uri_mismatch` — local chạy được nhưng prod báo lỗi.
+
+### 2. Thêm vào Vercel
+```bash
+printf '%s' 'PASTE_CLIENT_ID'     | vercel env add GOOGLE_CLIENT_ID production
+printf '%s' 'PASTE_CLIENT_SECRET' | vercel env add GOOGLE_CLIENT_SECRET production
+vercel --prod --yes
+```
+(Hoặc Vercel dashboard → project → Settings → Environment Variables.)
+
+Không cần set `NEXT_PUBLIC_GOOGLE_ENABLED` bằng tay — biến này được `next.config.js` tự suy ra từ `GOOGLE_CLIENT_ID` lúc build, set tay sẽ không có tác dụng và có thể khiến hai biến lệch nhau.
+
+### 3. (Tùy chọn) Chạy local
+Thêm cùng 2 giá trị vào `.env` (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`), rồi `npm run dev`.
+
+Sau khi xong: nút **Tiếp tục với Google** trên `/login` sẽ active. Nhờ `allowDangerousEmailAccountLinking`, tài khoản Google sẽ gắn vào đúng User đã tạo qua GitHub trước đó (theo email đã verify), giữ nguyên card/XP thay vì tạo user mới.
+
+> GitHub provider vẫn được đăng ký trong `authOptions` dù nút đã gỡ khỏi `/login` — `GITHUB_CLIENT_ID`/`GITHUB_CLIENT_SECRET` có thể giữ nguyên hoặc xoá khỏi env mà không phá gì, vì không còn nút nào gọi tới provider đó nữa.
+
 ## Kiến trúc
 - NextAuth v4 (JWT session) + Prisma Adapter + GitHub provider.
 - Mọi route học/ôn/thống kê bảo vệ bằng middleware → redirect `/login`.
