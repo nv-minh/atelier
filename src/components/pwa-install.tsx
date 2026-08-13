@@ -29,6 +29,52 @@ export function PwaInstall() {
   const [visible, setVisible] = useState(false);
   const [iosMode, setIosMode] = useState(false);
 
+  // The single decision of whether to show something right now. Called on
+  // mount, whenever a real install event arrives, whenever a session
+  // finishes, and whenever the route changes — that last one matters because
+  // a first-time user can cross the session threshold mid-visit, well after
+  // the page's one shot at beforeinstallprompt has already come and gone.
+  const recheck = useCallback(() => {
+    // Decide nothing while the banner is suppressed: recording a dismissal for
+    // a card that cannot render would burn the one invite this user gets.
+    if (pathname?.startsWith("/study/")) return;
+    if (deferredRef.current) {
+      if (shouldOffer(Date.now())) setVisible(true);
+      return;
+    }
+    if (isIos() && shouldOffer(Date.now())) {
+      // Safari never fires appinstalled and navigator.standalone stays
+      // false inside a Safari tab even after the app is added to the home
+      // screen, so showing these steps is the only "did they ask" signal
+      // we get — count it as a dismissal, or the card reappears forever.
+      recordDismissed(Date.now());
+      setIosMode(true);
+      setVisible(true);
+    }
+  }, [pathname]);
+
+  // recheck's identity changes with pathname; the event-listener effect below
+  // only runs once, so it reaches the latest version through this ref rather
+  // than resubscribing on every route change.
+  const recheckRef = useRef(recheck);
+  useEffect(() => {
+    recheckRef.current = recheck;
+  }, [recheck]);
+
+  // Re-evaluate whenever the route changes — leaving a study route can
+  // reveal a decision that the pathname gate above previously suppressed.
+  // The mount effect below already performs the initial check (after seeding
+  // the pre-hydration stash), so this skips that first run to avoid an
+  // unseeded duplicate.
+  const isFirstPathnameRun = useRef(true);
+  useEffect(() => {
+    if (isFirstPathnameRun.current) {
+      isFirstPathnameRun.current = false;
+      return;
+    }
+    recheck();
+  }, [recheck]);
+
   useEffect(() => {
     // Seed from the pre-hydration stash (see the inline script in
     // layout.tsx): on a repeat visit the install criteria can already be met
@@ -40,27 +86,6 @@ export function PwaInstall() {
       win.__bip = null;
     }
 
-    // The single decision of whether to show something right now. Called on
-    // mount, whenever a real install event arrives, and whenever a session
-    // finishes — that last one matters because a first-time user can cross
-    // the session threshold mid-visit, well after the page's one shot at
-    // beforeinstallprompt has already come and gone.
-    const recheck = () => {
-      if (deferredRef.current) {
-        if (shouldOffer(Date.now())) setVisible(true);
-        return;
-      }
-      if (isIos() && shouldOffer(Date.now())) {
-        // Safari never fires appinstalled and navigator.standalone stays
-        // false inside a Safari tab even after the app is added to the home
-        // screen, so showing these steps is the only "did they ask" signal
-        // we get — count it as a dismissal, or the card reappears forever.
-        recordDismissed(Date.now());
-        setIosMode(true);
-        setVisible(true);
-      }
-    };
-
     const onBeforeInstall = (e: Event) => {
       // Without preventDefault, Chrome shows its own mini-infobar and this
       // banner would be a second, redundant prompt.
@@ -69,23 +94,24 @@ export function PwaInstall() {
       // A real install event beats UA guessing — if this fires, the platform
       // is not iOS, whatever the user agent looked like.
       setIosMode(false);
-      recheck();
+      recheckRef.current();
     };
     const onInstalled = () => {
       // Installed — nothing left to ask for, now or later.
       setVisible(false);
       deferredRef.current = null;
     };
+    const onSessionDone = () => recheckRef.current();
 
     window.addEventListener("beforeinstallprompt", onBeforeInstall);
     window.addEventListener("appinstalled", onInstalled);
-    window.addEventListener(SESSION_DONE_EVENT, recheck);
-    recheck();
+    window.addEventListener(SESSION_DONE_EVENT, onSessionDone);
+    recheckRef.current();
 
     return () => {
       window.removeEventListener("beforeinstallprompt", onBeforeInstall);
       window.removeEventListener("appinstalled", onInstalled);
-      window.removeEventListener(SESSION_DONE_EVENT, recheck);
+      window.removeEventListener(SESSION_DONE_EVENT, onSessionDone);
     };
   }, []);
 
