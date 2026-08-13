@@ -14,7 +14,7 @@
 
 - **Mốc ngày là UTC.** `todayStr()` = `d.toISOString().slice(0, 10)`. Mọi khái niệm "hôm nay"/"tuần này" phải suy từ mốc này. Không dùng giờ VN cho tuần/ngày. Ngoại lệ duy nhất: `peakHour` của rival đặt theo **giờ VN** (`VN_UTC_OFFSET_HOURS = 7`) rồi đổi sang UTC, vì nó mô phỏng đồng hồ sinh hoạt của người Việt.
 - **XP tổng luôn qua `totalXp(row)`** từ `@/lib/gamification-defs`. Không cộng tay `xp + bonusXp` ở bất kỳ đâu.
-- **XP tuần của user lấy từ `getWeeklyRecap(userId).thisWeek.xp`** (`@/lib/stats`) — cùng con số `/stats` hiển thị. Không tự viết query tổng tuần thứ hai.
+- **XP tuần HIỂN THỊ của user luôn lấy từ `getWeeklyRecap(userId).thisWeek.xp`** (`@/lib/stats`) — cùng con số `/stats` hiển thị. *(Sửa sau final review, 2026-08-13: bản gốc cấm mọi "query tổng tuần thứ hai", nhưng R12's `getUserXpThroughYesterday` — cần cho Δ hạng — kỹ thuật là một query thứ hai, dù là tập con chặt của cùng phép tính. Ràng buộc thật sự cần bảo vệ là điều dưới đây.)* Bất kỳ read bổ sung nào (như XP tính đến hết hôm qua cho Δ hạng) phải dùng lại CÙNG rows, CÙNG helper `totalXp`, và CÙNG mốc đầu tuần với phép tính trên — một tập con chặt, không phải một định nghĩa "tổng tuần" song song có thể lệch.
 - **Không thêm model Prisma nào.** Không migration, không `db:push`.
 - **Không dùng `Math.random()`, `Date.now()`, `new Date()` không tham số** trong bất kỳ module thuần nào của `src/lib/leaderboard/`. Mọi hàm nhận `now: Date` hoặc seed. Đây là điều kiện để bảng tất định (tiêu chí 3) và test được.
 - **Chỉ tên Việt** trong pool persona. Không tên nước ngoài.

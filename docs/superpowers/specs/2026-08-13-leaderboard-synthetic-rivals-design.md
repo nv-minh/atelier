@@ -55,13 +55,13 @@ Ngoại lệ duy nhất: dấu **"hoạt động X giờ trước"** là cảm n
 
 ### Tiêu chí thành công
 
-1. User học đều theo nhịp thường lệ → nằm **hạng 4–8**, không phải hạng 1 và không phải chót.
-2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào.
+1. User học đều theo nhịp thường lệ → nằm **hạng 4–8**, không phải hạng 1 và không phải chót. **Đã đo, còn bỏ ngỏ (final review, 2026-08-13):** trên sweep 100 id, NGAY TRƯỚC phiên học hôm nay user nằm 4–8 cho 83/100 id (trung vị hạng 6); NGAY SAU phiên học hôm nay chỉ còn 55/100 id, với 45/100 lọt hẳn top 3. Đóng khoảng cách này nghĩa là phải đưa nhịp/tần suất hoạt động của chính user vào công thức hiệu chuẩn rival (hiện chỉ dùng median XP/ngày, không phân biệt "vừa học xong hôm nay" hay chưa) — các hằng số liên quan vẫn là **giá trị khởi điểm** theo §9.1, chưa phải kết quả đo.
+2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào. **Đã đo, còn bỏ ngỏ:** vế "cày hơn → top 3" đúng (cày gấp đôi nhịp cả tuần đưa user vào top 3). Vế "nghỉ 2 ngày → tụt khỏi top 8" thì KHÔNG đúng với hiệu chuẩn hiện tại: ở mức nghỉ đúng 2/7 ngày (5/7 ngày hoạt động), 49/60 id vẫn ở trong 4–8. Cùng nguyên nhân với tiêu chí 1 — xem lưu ý "giá trị khởi điểm" ở §9.1.
 3. Mở bảng trên 2 thiết bị, hoặc refresh 5 lần → **cùng một bảng**, cùng số.
-4. Lúc 2h sáng giờ VN, **≥ 8/10** rival hiển thị "hoạt động" từ hôm qua trở về trước.
+4. Lúc 2h sáng giờ VN, **dưới 25%** tổng số dòng rival (gộp trên nhiều user) đọc là "vừa hoạt động" (dưới 6 giờ) — đo được ≈12.4% — và không user nào có ≥ 7/10 rival cùng "vừa hoạt động" một lúc. (Cách diễn đạt cũ — "hoạt động từ hôm qua trở về trước" — vượt quá những gì formatter thực sự hiển thị: 12 giờ trước hiện đúng "12 giờ trước", không bao giờ "hôm qua"; câu trên diễn đạt đúng cận mà test khẳng định.)
 5. Không rival nào có XP tuần vượt `2.2 ×` (nhịp user × 7).
 6. Mỗi ngày trong tuần, **≥ 1** rival có XP = 0.
-7. Không XP nào của rival là số tròn chục.
+7. Không XP nào của rival là số tròn chục. **Ghi nhận:** đây là một đơn giản hoá có chủ đích, không miễn phí — cấm số tròn chục cho CẢ 10 rival MỌI tuần tự nó cũng là một tín hiệu, vì XP thật của người thật tận cùng bằng 0 (tròn chục) khoảng 10% thời gian. Chưa cần sửa, chỉ ghi lại để không mất.
 8. Sang tuần mới, **4–5** rival của tuần trước còn ở lại.
 9. "XP tuần" của user trên bảng **khớp chính xác** tổng `totalXp` của 7 `DailyStat` trong tuần.
 
@@ -130,7 +130,7 @@ Không rival nào có XP tuần vượt `2.2 × (pace × 7)`. Bảng mà ngườ
 | **Tên + avatar** | Chỉ tên Việt (`Thu Hà`, `Minh Quân`, `Duy Anh`…) từ `personas.ts`; vòng tròn chữ cái đầu, màu từ seed. **Không dùng ảnh người.** Dùng token màu của repo — nhớ gotcha DEFAULT key (util màu bare/opacity không emit gì nếu thiếu key `DEFAULT`) |
 | **Streak 🔥** | Suy từ `restProb` của chính tính cách đó → rival hay nghỉ có streak thấp. Tự nhất quán, không cần luật riêng |
 | **Δ hạng ▲▼** | Sinh lại bảng của **hôm qua** rồi so thứ hạng. "Bảng hôm qua" = XP tuần **tích luỹ đến hết hôm qua** cho cả rival và user (không phải XP của riêng ngày hôm qua). Miễn phí vì mọi thứ tất định. **Thứ Hai ẩn Δ**: tuần mới nên mọi người bằng 0, so với hạng của tuần trước là so hai thang khác nhau |
-| **"Hoạt động X giờ trước"** | Sinh một **instant tuyệt đối** từ `peakHour` + ngày; rival nghỉ hôm nay → instant của hôm qua/hôm trước. Client render tương đối theo đồng hồ người xem |
+| **"Hoạt động X giờ trước"** | Sinh một **instant tuyệt đối** từ `peakHour` + ngày; rival nghỉ hôm nay → instant của hôm qua/hôm trước. **Đã build:** client render tương đối theo `nowIso` — thời điểm `now` phía SERVER lúc render trang, truyền xuống làm prop — chứ không phải đồng hồ riêng của trình duyệt. Chọn vậy để tránh **hydration mismatch** (server và client tự gọi `Date.now()` sẽ ra hai số "X phút trước" khác nhau) và để không lệch theo đồng hồ máy người xem chỉnh sai giờ. Đánh đổi: nhãn đứng yên tại thời điểm render, không tự đếm tiến nếu để tab mở lâu — chấp nhận được vì trang không tự refresh |
 
 ---
 
@@ -139,7 +139,7 @@ Không rival nào có XP tuần vượt `2.2 × (pace × 7)`. Bảng mà ngườ
 1. **XP không bao giờ tròn chục** — jitter luôn khác 0. Người thật không dừng ở đúng 200 XP.
 2. **Mỗi ngày ≥ 1 rival có XP = 0.** Bảng mà cả 10 người học đủ 7/7 ngày là bảng máy. Đây là **ràng buộc phải cưỡng chế**, không phải thứ tự rơi ra từ `restProb`: sau khi sinh XP cho một ngày, nếu không rival nào nghỉ thì buộc rival có `restProb` cao nhất ngày đó nghỉ. Tất định vì thứ tự so sánh cố định.
 3. **Cap `2.2 × pace`** (mục 3.3).
-4. **`lastActive` phân tán theo `peakHour`.** Lúc 2h sáng VN phải có ≥ 8/10 rival là "hôm qua" trở về trước. Bảo đảm bằng **cách lấy mẫu `peakHour`**, không phải bằng luật hậu kiểm: `peakHour` rút từ phân bố lệch về ban ngày/buổi tối giờ VN, và **tối đa 2 rival** được phép có `peakHour` trong khoảng 00:00–05:00 VN (rival thứ 3 rơi vào đó bị dịch sang giờ tối). Đây là **test quan trọng nhất của cả spec**: "10 người vừa học 10 phút trước" lúc 3h sáng là chỗ user bắt được ngay, và bắt được một lần là mất tin cả bảng.
+4. **`lastActive` tự nhiên thưa vào ban đêm nhờ lệch trục VN/UTC — không cần quota** *(sửa theo ruling R9, thay cho bản gốc bên dưới)*. Lúc 2h sáng giờ VN, dấu "hoạt động X trước" của một rival KHÔNG nghỉ hôm đó cách khoảng `26 − peakHourVn` giờ (vì `now` = hôm nay 19:00 UTC, còn instant đỉnh không-nghỉ = hôm nay 00:00 UTC + (`peakHourVn` − 7) giờ). Rival đỉnh giờ khuya VN (`peakHourVn` nhỏ) vì vậy đọc STALE NHẤT bảng, không phải mới nhất — nên không cần luật hậu kiểm lẫn quota giới hạn số rival đỉnh đêm (bản gốc: **tối đa 2 rival** trong khoảng 00:00–05:00 VN, rival thứ 3 bị dịch sang giờ tối — **ruling R9 bỏ quota này** vì độ lệch trục đã tự đạt hiệu quả tương đương). Tính chất được khẳng định bằng hai test: **(a) cận tổng hợp** — dưới 25% tổng số dòng rival trên 25 user là "vừa hoạt động" (<6 giờ) lúc 2h sáng, đo được ≈12.4%; **(b) cận theo từng user** — không user nào có ≥ 7/10 rival "vừa hoạt động" cùng lúc. Đây vẫn là **test quan trọng nhất của cả spec**: "10 người vừa học 10 phút trước" lúc 3h sáng là chỗ user bắt được ngay, và bắt được một lần là mất tin cả bảng.
 5. **Liên tục giữa các tuần: giữ 4–5 rival của tuần trước**, thay phần còn lại. Subset giữ lại chọn bằng `hash(userId, weekKey)` nên vẫn tất định. Đổi cả 10 người mỗi tuần là dấu hiệu máy — league của người thật thì có người quen.
 6. **Không trùng tên trong cùng một tuần.**
 
