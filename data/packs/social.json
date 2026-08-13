@@ -1,0 +1,3127 @@
+{
+ "metadata": {
+  "pack": "social",
+  "topic_slugs": [
+   "social"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.599Z",
+  "count": 124
+ },
+ "words": [
+  {
+   "word": "one-on-one",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "adjective",
+   "definition_en": "Being a system of play in which an individual defensive player guards an individual offensive player.",
+   "extra_definitions": [
+    "[noun] A contest involving only one player on each side, especially of an activity often involving teams.",
+    "[adjective] Involving direct communication between two people.",
+    "[adjective] Involving one attacker and one defender"
+   ],
+   "synonyms": [
+    "man-to-man"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "One-on-one defense.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=one-on-one",
+   "type_vi": "Tính từ",
+   "definition_vi": "Là một hệ thống chơi trong đó một cầu thủ phòng thủ riêng lẻ bảo vệ một cầu thủ tấn công riêng lẻ.",
+   "vi_source": "gtx",
+   "example_vi": "Phòng thủ một chọi một."
+  },
+  {
+   "word": "game",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A single play of a sport or other contest.",
+   "extra_definitions": [
+    "[noun] A playful or competitive activity.",
+    "[noun] A video game.",
+    "[noun] (nearly always singular) A field of gainful activity, as an industry or profession."
+   ],
+   "synonyms": [
+    "racket",
+    "line",
+    "match",
+    "wargame",
+    "amusement",
+    "diversion"
+   ],
+   "antonyms": [
+    "drudgery",
+    "toil",
+    "work",
+    "cautious",
+    "disinclined"
+   ],
+   "topics": [
+    "social"
+   ],
+   "example": "The game lasted two hours.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=game",
+   "ipa_uk": "/ɡeɪm/",
+   "ipa_us": "/ɡeɪm/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/game-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(số nhiều) cuộc thi điền kinh, cuộc thi đấu; trò chơi (như bóng đá, quần vợt, bài lá...)",
+   "vi_source": "anhviet",
+   "example_vi": "Trò chơi kéo dài hai giờ."
+  },
+  {
+   "word": "in play",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "adjective",
+   "definition_en": "Of a ball.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The ball is still in play.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=in+play",
+   "type_vi": "Tính từ",
+   "definition_vi": "Của một quả bóng.",
+   "vi_source": "gtx",
+   "example_vi": "Bóng vẫn đang trong cuộc."
+  },
+  {
+   "word": "party",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An organization to gain political power.",
+   "extra_definitions": [
+    "[noun] A person or group of people constituting a particular side in a contract or legal action.",
+    "[noun] A person.",
+    "[noun] A group of people forming one side in a given dispute, contest etc."
+   ],
+   "synonyms": [
+    "political party"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "In 1992 Perot tried to organize a third party at the national level.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=party",
+   "ipa_uk": "/ˈpɑː.ti/",
+   "ipa_us": "/ˈpɑɹ.ti/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/party-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/party-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tổ chức để đạt được quyền lực chính trị.",
+   "vi_source": "gtx",
+   "example_vi": "Năm 1992 Perot cố gắng tổ chức đảng thứ ba ở cấp quốc gia."
+  },
+  {
+   "word": "talk",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An exchange of ideas via conversation.",
+   "extra_definitions": [
+    "[verb] To communicate, usually by means of speech.",
+    "[verb] To discuss; to talk about.",
+    "[verb] To speak (a certain language)."
+   ],
+   "synonyms": [
+    "talking"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "Let's have more work and less talk around here.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=talk",
+   "ipa_uk": "/toːk/",
+   "ipa_us": "/toːk/",
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc chuyện trò, cuộc mạn đàm; bài nói chuyện",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng ta hãy làm việc nhiều hơn và ít nói chuyện hơn ở đây."
+  },
+  {
+   "word": "friend",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A person you know well and regard with affection and trust.",
+   "extra_definitions": [
+    "[noun] A person other than a family member, spouse or lover whose company one enjoys and towards whom one feels affection.",
+    "[noun] An associate who provides assistance.",
+    "[noun] A person with whom one is vaguely or indirectly acquainted."
+   ],
+   "synonyms": [
+    "buddy",
+    "buster",
+    "mate",
+    "pal",
+    "sonny",
+    "admirer"
+   ],
+   "antonyms": [
+    "enemy",
+    "foe",
+    "stranger",
+    "defriend",
+    "unfriend"
+   ],
+   "topics": [
+    "social"
+   ],
+   "example": "He was my best friend at the university.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=friend",
+   "ipa_uk": "/fɹɛnd/",
+   "ipa_us": "/fɹɛnd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/friend-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/friend-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người mà bạn biết rõ và coi trọng bằng tình cảm và sự tin tưởng.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy là người bạn thân nhất của tôi ở trường đại học."
+  },
+  {
+   "word": "good morning",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A conventional expression of greeting or farewell.",
+   "extra_definitions": [
+    "[noun] An exercise performed by bending forward at the waist and then returning to a standing posture, while bearing a barbell across the shoulders.",
+    "[interjection] Used as a greeting when meeting somebody for the first time in the morning.",
+    "[interjection] (by extension) Used to greet someone who has just awakened (irrespective of the time of day)."
+   ],
+   "synonyms": [
+    "morning"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=good+morning",
+   "example": "\"Good morning, Joan,\" said Judy at 9:00 AM.",
+   "ipa_uk": "/ˌɡʊd ˈmɔː.nɪŋ/",
+   "ipa_us": "/ˌɡʊd ˈmɔːɹ.nɪŋ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/good%20morning-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/good%20morning-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một biểu hiện thông thường của lời chào hoặc lời tạm biệt.",
+   "vi_source": "gtx",
+   "example_vi": "\"Chào buổi sáng, Joan,\" Judy nói lúc 9 giờ sáng."
+  },
+  {
+   "word": "save",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of preventing the opposition from scoring.",
+   "extra_definitions": [
+    "[noun] In various sports, a block that prevents an opponent from scoring.",
+    "[noun] When a relief pitcher comes into a game leading by 3 points (runs) or less, and his team wins while continually being ahead.",
+    "[noun] A point in a professional wrestling match when one or more wrestlers run to the ring to aid a fellow wrestler who is being beaten."
+   ],
+   "synonyms": [
+    "barring",
+    "except for",
+    "save for"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The goalie made a brilliant save.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=save",
+   "ipa_uk": "/seɪv/",
+   "ipa_us": "/seɪv/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/save-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) sự phá bóng cứu nguy (chặn không cho đối phương ghi bàn) (bóng đá)",
+   "vi_source": "anhviet",
+   "example_vi": "Thủ môn đã có pha cứu thua xuất sắc."
+  },
+  {
+   "word": "match",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A formal contest in which two or more persons or teams compete.",
+   "extra_definitions": [
+    "[noun] A competitive sporting event such as a boxing meet, a baseball game, or a cricket match.",
+    "[noun] Any contest or trial of strength or skill, or to determine superiority.",
+    "[noun] Someone with a measure of an attribute equaling or exceeding the object of comparison."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=match",
+   "example": "My local team are playing in a match against their arch-rivals today.",
+   "ipa_uk": "/mæt͡ʃ/",
+   "ipa_us": "/mæt͡ʃ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/match-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/match-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi chính thức trong đó có hai hoặc nhiều người hoặc đội cạnh tranh.",
+   "vi_source": "gtx",
+   "example_vi": "Hôm nay đội bóng địa phương của tôi đang thi đấu với đối thủ truyền kiếp của họ."
+  },
+  {
+   "word": "shot put",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athletic competition in which a heavy metal ball is hurled as far as possible.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=shot+put",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi thể thao trong đó một quả bóng kim loại nặng được ném càng xa càng tốt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "race",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A contest of speed.",
+   "extra_definitions": [
+    "[noun] A contest between people, animals, vehicles, etc. where the goal is to be the first to reach some objective. Example: Several horses run in a horse race, and the first one to reach the finishing post wins",
+    "[noun] Swift progress; rapid motion; an instance of moving or driving at high speed.",
+    "[noun] A race condition."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The race is to the swift.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=race",
+   "ipa_uk": "/ɹeɪs/",
+   "ipa_us": "/ɹeɪs/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/race-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "chạy ở tốc độ cao (không cài số)",
+   "vi_source": "anhviet",
+   "example_vi": "Cuộc đua là nhanh chóng."
+  },
+  {
+   "word": "home stand",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A series of successive games played at a team's home field or court.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=home+stand",
+   "type_vi": "Danh từ",
+   "definition_vi": "Là chuỗi trận đấu liên tiếp được diễn ra trên sân nhà hoặc sân của một đội.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "follow through",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Carry a stroke to natural completion after hitting or releasing a ball.",
+   "extra_definitions": [
+    "[verb] To execute or complete a commitment.",
+    "[verb] To continue moving the arms (and any held implements, such as a bat or club) or legs after striking e.g. a ball"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=follow+through",
+   "type_vi": "Động từ",
+   "definition_vi": "Thực hiện cú đánh đến mức hoàn thành tự nhiên sau khi đánh hoặc thả bóng.",
+   "vi_source": "gtx",
+   "example": "I don't appreciate salesmen who make promises and then fail to follow through."
+  },
+  {
+   "word": "professional",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays for pay.",
+   "extra_definitions": [
+    "[noun] A person who belongs to a profession",
+    "[noun] A person who earns their living from a specified activity",
+    "[noun] A reputation known by name"
+   ],
+   "synonyms": [
+    "pro"
+   ],
+   "antonyms": [
+    "amateur"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=professional",
+   "type_vi": "Tính từ",
+   "definition_vi": "Một vận động viên chơi để được trả tiền.",
+   "vi_source": "gtx",
+   "ipa_uk": "/pɹəˈfɛʃənəl/",
+   "ipa_us": "/pɹəˈfɛʃənəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/professional-us.mp3"
+   }
+  },
+  {
+   "word": "ball",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Round object that is hit or thrown or kicked in games.",
+   "extra_definitions": [
+    "[noun] A solid or hollow sphere, or roughly spherical mass.",
+    "[noun] A round or ellipsoidal object.",
+    "[noun] (mildly, usually in the plural) A testicle."
+   ],
+   "synonyms": [
+    "chutzpah",
+    "guts",
+    "nerve",
+    "globe",
+    "sphere",
+    "roll"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The ball travelled 90 mph on his serve.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ball",
+   "type_vi": "Danh từ",
+   "definition_vi": "Vật tròn được đánh hoặc ném hoặc đá trong trò chơi.",
+   "vi_source": "gtx",
+   "example_vi": "Quả bóng đã di chuyển với tốc độ 90 mph trong cú giao bóng của anh ấy.",
+   "ipa_uk": "/bɔːl/",
+   "ipa_us": "/bɔːl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/ball-us.mp3"
+   }
+  },
+  {
+   "word": "heart-to-heart",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An intimate talk in private.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "He took me aside for a little heart-to-heart.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=heart-to-heart",
+   "type_vi": "Tính từ",
+   "definition_vi": "heart talk+ chuyện thành thật, chuyện chân tình",
+   "vi_source": "anhviet",
+   "example_vi": "Anh đưa tôi sang một bên để tâm sự một chút."
+  },
+  {
+   "word": "match play",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Golf scoring by holes won.",
+   "extra_definitions": [
+    "[noun] A scoring system in which points are awarded for each hole won, as opposed to stroke play.",
+    "[noun] A knockout competition between two single bowlers.",
+    "[noun] The playing of a competitive match, as opposed to training and practice."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=match+play",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tính điểm gôn bằng lỗ đã thắng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "welcome",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A greeting or reception.",
+   "extra_definitions": [
+    "[noun] The act of greeting someone’s arrival, especially by saying \"Welcome!\"; reception.",
+    "[noun] The utterance of such a greeting.",
+    "[noun] Kind reception of a guest or newcomer."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The proposal got a warm welcome.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=welcome",
+   "ipa_uk": "/ˈwɛlkəm/",
+   "ipa_us": "/ˈwɛlkəm/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/welcome-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/welcome-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "sự được tiếp đ i ân cần, sự đón tiếp ân cần; sự hoan nghênh",
+   "vi_source": "anhviet",
+   "example_vi": "Lời đề nghị đã nhận được sự chào đón nồng nhiệt."
+  },
+  {
+   "word": "coach",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Someone in charge of training an athlete or a team.",
+   "extra_definitions": [
+    "[noun] A wheeled vehicle, generally drawn by horse power.",
+    "[noun] A passenger car, either drawn by a locomotive or part of a multiple unit.",
+    "[noun] (originally Oxford University slang) A trainer or instructor."
+   ],
+   "synonyms": [
+    "manager",
+    "handler"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=coach",
+   "example": "John flew coach to Vienna, but first-class back home.",
+   "ipa_uk": "/kəʊtʃ/",
+   "ipa_us": "/koʊtʃ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/coach-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) huấn luyện viên; người kèm học, thầy dạy tư (luyện thi...)",
+   "vi_source": "anhviet",
+   "example_vi": "John bay xe khách tới Vienna nhưng lại ngồi khoang hạng nhất ở quê nhà."
+  },
+  {
+   "word": "double-team",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Cover with two defensive players.",
+   "extra_definitions": [
+    "[verb] In sports involving offensive and defensive teams, to use two defensive players to guard against the movements of a single offensive player.",
+    "[verb] (by extension) To deal with or handle a task or individual person by using a team of two people.",
+    "[verb] (of two people) To double penetrate someone."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double-team",
+   "type_vi": "Động từ",
+   "definition_vi": "Che chắn với hai người chơi phòng thủ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "in-fighting",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Boxing at close quarters.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=in-fighting",
+   "type_vi": "Danh từ",
+   "definition_vi": "Quyền anh ở cự ly gần.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "field event",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A competition that takes place on a field rather than on a running track.",
+   "extra_definitions": [
+    "[noun] An athletics discipline that takes place on the field, such as hammer, javelin, triple jump"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=field+event",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi diễn ra trên sân chứ không phải trên đường chạy.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "table talk",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Conversation during a meal.",
+   "extra_definitions": [
+    "[noun] Conversation, especially of an informal or somewhat gossipy nature, among a group seated together for a meal or other social activity.",
+    "[noun] (games) Conversation that illicitly conveys information or suggestions to another player."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=table+talk",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc trò chuyện trong bữa ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "football player",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays American football.",
+   "extra_definitions": [
+    "[noun] One who plays American football.",
+    "[noun] One who plays soccer, that is, football.",
+    "[noun] A large intimidating male."
+   ],
+   "synonyms": [
+    "footballer"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=football+player",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vận động viên chơi bóng đá Mỹ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "exchange",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A mutual expression of views (especially an unpleasant one).",
+   "extra_definitions": [
+    "[noun] An act of exchanging or trading.",
+    "[noun] A place for conducting trading.",
+    "[noun] A telephone exchange."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "They had a bitter exchange.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=exchange",
+   "ipa_uk": "/ɛksˈtʃeɪndʒ/",
+   "ipa_us": "/ɛksˈtʃeɪndʒ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/exchange-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự đổi tiền; nghề đổi tiền; sự hối đoái; cơ quan hối đoái; sự đổi, sự đổi chác, sự trao đổi; vật trao đổi",
+   "vi_source": "anhviet",
+   "example_vi": "Họ đã có một cuộc trao đổi cay đắng."
+  },
+  {
+   "word": "track meet",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A track and field competition between two or more teams.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=track+meet",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi điền kinh giữa hai hoặc nhiều đội.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "four-minute man",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Someone who has run the mile in less that 4 minutes.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=four-minute+man",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người đã chạy một dặm trong vòng chưa đầy 4 phút.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "political campaign",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A race between candidates for elective office.",
+   "extra_definitions": [],
+   "synonyms": [
+    "campaign",
+    "run"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "I managed his campaign for governor.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=political+campaign",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc chạy đua giữa các ứng cử viên vào chức vụ bầu cử.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi đã quản lý chiến dịch tranh cử thống đốc của anh ấy."
+  },
+  {
+   "word": "country-dance",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A type of folk dance in which couples are arranged in sets or face one another in a line.",
+   "extra_definitions": [
+    "[noun] Used as a generic name for many native British dances, especially where partners face each other in a long line."
+   ],
+   "synonyms": [
+    "country dancing",
+    "contredanse",
+    "contra danse",
+    "contradance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=country-dance",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại hình múa dân gian trong đó các cặp đôi được sắp xếp thành từng bộ hoặc đối mặt với nhau thành một hàng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "free agency",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The state of a professional athlete who is free to negotiate a contract to play for any team.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=free+agency",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trạng thái của một vận động viên chuyên nghiệp được tự do đàm phán hợp đồng để thi đấu cho bất kỳ đội nào.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "track event",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A footrace performed on a track (indoor or outdoor).",
+   "extra_definitions": [
+    "[noun] An athletics discipline that takes place on the track, such as a sprint, steeplechase"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=track+event",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc chạy bộ được thực hiện trên đường đua (trong nhà hoặc ngoài trời).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "glad hand",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A warm welcome; may be insincere.",
+   "extra_definitions": [
+    "[noun] A warm welcome offered to a guest by a host.",
+    "[noun] A coupling device used on semi-trailer trucks for attaching air brake lines from the tractor to the trailer."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=glad+hand",
+   "type_vi": "Danh từ",
+   "definition_vi": "Sự chào đón nồng nhiệt; có thể không thành thật.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "free agent",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A professional athlete who is free to sign a contract to play for any team.",
+   "extra_definitions": [
+    "[noun] A professional athlete who is free to play for or sign a contract to play for any team.",
+    "[noun] A person who acts freely, or without constraint to a higher power."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=free+agent",
+   "type_vi": "Danh từ",
+   "definition_vi": "người không bị ràng buộc khi hành động",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "conversation",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The use of speech for informal exchange of views or ideas or information etc.",
+   "extra_definitions": [
+    "[noun] Expression and exchange of individual ideas through talking with other people; also, a set instance or occasion of such talking.",
+    "[noun] The back-and-forth play of the blades in a bout.",
+    "[noun] The protocol-based interaction between systems processing a transaction."
+   ],
+   "synonyms": [
+    "banter",
+    "chat",
+    "chinwag",
+    "dialogue",
+    "discussion",
+    "interlocution"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=conversation",
+   "example": "I had an interesting conversation with Nicolas yesterday about how much he's getting paid.",
+   "ipa_uk": "/ˌkɒn.vəˈseɪ.ʃən/",
+   "ipa_us": "/ˌkɑn.vəɹˈseɪ.ʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/conversation-us.ogg"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự nói chuyện; cuộc nói chuyện, cuộc chuyện trò, cuộc đàm luận; (pháp lý) sự giao cấu; sự giao hợp",
+   "vi_source": "anhviet",
+   "example_vi": "Hôm qua tôi đã có cuộc trò chuyện thú vị với Nicolas về số tiền anh ấy được trả."
+  },
+  {
+   "word": "guard",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The person who plays that position on a football team.",
+   "extra_definitions": [
+    "[noun] A person who, or thing that, protects or watches over something.",
+    "[noun] A garda; a police officer.",
+    "[noun] A squad responsible for protecting something."
+   ],
+   "synonyms": [
+    "fender",
+    "protection",
+    "quillon"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The left guard was injured on the play.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=guard",
+   "ipa_uk": "/ɡɑːd/",
+   "ipa_us": "/ɡɑɹd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/guard-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Người chơi vị trí đó trong một đội bóng đá.",
+   "vi_source": "gtx",
+   "example_vi": "Người bảo vệ bên trái đã bị thương trong trận đấu."
+  },
+  {
+   "word": "closer",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A relief pitcher who can protect a lead in the last inning or two of the game.",
+   "extra_definitions": [
+    "[adjective] Closed, shut.",
+    "[adjective] Narrow; confined.",
+    "[adjective] At a little distance; near."
+   ],
+   "synonyms": [
+    "finisher"
+   ],
+   "antonyms": [
+    "open",
+    "distant",
+    "far",
+    "far off",
+    "faraway",
+    "remote"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=closer",
+   "example": "a close alley; close quarters",
+   "ipa_uk": "/ˈkloʊsɚ/",
+   "ipa_us": "/ˈkloʊsɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/closer-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người ném bóng cứu trợ có thể bảo vệ vị trí dẫn đầu trong một hoặc hai hiệp cuối cùng của trận đấu.",
+   "vi_source": "gtx",
+   "example_vi": "một con hẻm gần gũi; đóng khu"
+  },
+  {
+   "word": "sport",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An active diversion requiring physical exertion and competition.",
+   "extra_definitions": [
+    "[noun] Any activity that uses physical exertion or skills competitively under a set of rules that is not based on aesthetics.",
+    "[noun] Something done for fun, regardless of its design or intended purpose.",
+    "[noun] A person who exhibits either good or bad sportsmanship."
+   ],
+   "synonyms": [
+    "athletics"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sport",
+   "example": "Joe was banned from getting legal help. He seemed to view lawsuits as a sport.",
+   "ipa_uk": "/spɔːt/",
+   "ipa_us": "/spɔɹt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sport-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự giải trí; sự chơi đùa, sự nô đùa; trò đùa, trò cười, trò trớ trêu",
+   "vi_source": "anhviet",
+   "example_vi": "Joe bị cấm nhận trợ giúp pháp lý. Anh ta dường như coi các vụ kiện như một môn thể thao."
+  },
+  {
+   "word": "field trial",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A contest between gun dogs to determine their proficiency in pointing and retrieving.",
+   "extra_definitions": [
+    "[noun] A contest between gun dogs",
+    "[noun] A practical test, especially one conducted in the wild"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=field+trial",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi giữa những chú chó săn để xác định trình độ của chúng trong việc chỉ điểm và thu hồi.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hello",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An expression of greeting.",
+   "extra_definitions": [
+    "[noun] \"Hello!\" or an equivalent greeting.",
+    "[verb] To greet with \"hello\".",
+    "[interjection] A greeting (salutation) said when meeting someone or acknowledging someone’s arrival or presence."
+   ],
+   "synonyms": [
+    "hullo",
+    "hi",
+    "howdy",
+    "how-do-you-do"
+   ],
+   "antonyms": [
+    "bye",
+    "goodbye"
+   ],
+   "topics": [
+    "social"
+   ],
+   "example": "Every morning they exchanged polite hellos.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hello",
+   "ipa_uk": "/həˈləʊ/",
+   "ipa_us": "/həˈləʊ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/hello-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Thán từ",
+   "definition_vi": "tiếng chào",
+   "vi_source": "anhviet",
+   "example_vi": "Mỗi buổi sáng họ trao nhau những lời chào lịch sự."
+  },
+  {
+   "word": "religious song",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Religious music for singing.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=religious+song",
+   "type_vi": "Danh từ",
+   "definition_vi": "Âm nhạc tôn giáo để ca hát.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "iron man",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A strong man of exceptional physical endurance.",
+   "extra_definitions": [
+    "[noun] A self-acting spinning mule used in cotton manufacture.",
+    "[noun] Someone who is performing a very complex, complicated, or strenuous task without assistance.",
+    "[noun] An extremely tough and strong athlete, especially one who competes in extreme athletic competitions or in a large number of games consecutively."
+   ],
+   "synonyms": [
+    "ironman"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=iron+man",
+   "example": "You don't have to be an iron man and do all the work yourself, there are people here who can help you.",
+   "type_vi": "Danh từ",
+   "definition_vi": "người xương đồng da sắt, người có thể làm việc nặng lâu không biết mỏi; máy làm thay người",
+   "vi_source": "anhviet",
+   "example_vi": "Bạn không cần phải là người sắt và tự mình làm mọi công việc, ở đây luôn có những người có thể giúp đỡ bạn."
+  },
+  {
+   "word": "good afternoon",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A conventional expression of greeting or farewell.",
+   "extra_definitions": [],
+   "synonyms": [
+    "afternoon"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=good+afternoon",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một biểu hiện thông thường của lời chào hoặc lời tạm biệt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "calling card",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A printed or written greeting that is left to indicate that you have visited.",
+   "extra_definitions": [
+    "[noun] A small printed card which identifies the bearer, traditionally presented for introduction when making a social visit to a home or when attending a formal social event or business meeting.",
+    "[noun] An attribute, object, or behavior which is distinctly characteristic of someone or something.",
+    "[noun] Excrement, especially of a domestic animal."
+   ],
+   "synonyms": [
+    "visiting card",
+    "card"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=calling+card",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một lời chào được in hoặc viết để lại để cho biết rằng bạn đã ghé thăm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "second-hand speech",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Overheard conversation (especially overheard cellphone conversation).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=second-hand+speech",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc trò chuyện tình cờ nghe được (đặc biệt là cuộc trò chuyện tình cờ nghe được trên điện thoại di động).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "modern dance",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A style of theatrical dancing that is not as restricted as classical ballet; movements are expressive of feelings.",
+   "extra_definitions": [
+    "[noun] A modern form of ballet that is more informal than classical ballet."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=modern+dance",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một phong cách múa sân khấu không bị hạn chế như múa ba lê cổ điển; các chuyển động đều biểu lộ cảm xúc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "girlfriend",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any female friend.",
+   "extra_definitions": [
+    "[noun] A female partner in an unmarried romantic relationship.",
+    "[noun] A female friend."
+   ],
+   "synonyms": [
+    "chickfriend"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "Mary and her girlfriend organized the party.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=girlfriend",
+   "ipa_uk": "/ˈɡɜːlfɹɛnd/",
+   "ipa_us": "/ˈɡɝlfɹɛnd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/girlfriend-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Bạn nữ nào cũng được.",
+   "vi_source": "gtx",
+   "example_vi": "Mary và bạn gái của cô ấy đã tổ chức bữa tiệc."
+  },
+  {
+   "word": "arms race",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A competition between nations to have the most powerful armaments.",
+   "extra_definitions": [
+    "[noun] A competition for military supremacy between two powers, especially for the most weapons and the best military technology."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=arms+race",
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc chạy đua vũ trang",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "split end",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An offensive end who lines up at a distance from the other linemen.",
+   "extra_definitions": [
+    "[noun] A hair which has split at the end, usually from dryness or poor nutrition.",
+    "[noun] (in the plural) The condition of having hairs with split ends.",
+    "[noun] The position which lines up wide and on the offensive line of scrimmage whose primary job is to serve as a wide receiver."
+   ],
+   "synonyms": [
+    "schizotrichia",
+    "trichoptilosis"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=split+end",
+   "example": "I've got so many split ends – I think I must be working too hard.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một kết thúc tấn công xếp hàng ở khoảng cách xa với những người xếp hàng khác.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi có rất nhiều tóc chẻ ngọn – tôi nghĩ chắc hẳn mình đã phải làm việc quá sức."
+  },
+  {
+   "word": "senate campaign",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A race for election to the senate.",
+   "extra_definitions": [],
+   "synonyms": [
+    "senate race"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=senate+campaign",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc chạy đua vào Thượng viện.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "horse race",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A contest of speed between horses; usually held for the purpose of betting.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=horse+race",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc thi tốc độ giữa các con ngựa; thường được tổ chức với mục đích cá cược.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "heavy metal",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Loud and harsh sounding rock music with a strong beat; lyrics usually involve violent or fantastic imagery.",
+   "extra_definitions": [
+    "[noun] Any metal that has a specific gravity greater than about 5, especially one, such as lead, that is poisonous and may be a hazard in the environment.",
+    "[noun] A genre descended from rock music, characterized by massive sound, highly amplified distortion, and overall loudness, often with extended guitar solos, and lyrics that involve violent or fantastic imagery.",
+    "[noun] Guns or shot of large size."
+   ],
+   "synonyms": [
+    "heavy metal music"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=heavy+metal",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nhạc rock to và gay gắt với nhịp điệu mạnh mẽ; lời bài hát thường liên quan đến hình ảnh bạo lực hoặc kỳ ảo.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "square dance",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "American country dancing in which couples form squares.",
+   "extra_definitions": [
+    "[noun] Square dancing.",
+    "[noun] A particular instance of square dancing.",
+    "[verb] To take part in square dancing; to dance this type of dancing."
+   ],
+   "synonyms": [
+    "square dancing"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=square+dance",
+   "example": "Square dance is America's folk dance.",
+   "type_vi": "Danh từ",
+   "definition_vi": "<Mỹ> điệu nhảy có bốn đôi cùng nhảy ở bốn phía, mặt hướng về phía trong lúc bắt đầu",
+   "vi_source": "anhviet",
+   "example_vi": "Điệu nhảy vuông là điệu múa dân gian của Mỹ."
+  },
+  {
+   "word": "chat",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An informal conversation.",
+   "extra_definitions": [
+    "[noun] Informal conversation.",
+    "[noun] A conversation to stop an argument or settle situations.",
+    "[noun] (totum pro parte, typically with definite article) The entirety of users in a chatroom or a single member thereof."
+   ],
+   "synonyms": [
+    "confab",
+    "confabulation",
+    "schmooze",
+    "schmoose"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chat",
+   "example": "The Chat just made a joke about my skills.",
+   "ipa_uk": "/tʃæt/",
+   "ipa_us": "/tʃæt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/chat-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "chuyện phiếm, chuyện gẫu; chuyện thân thuộc",
+   "vi_source": "anhviet",
+   "example_vi": "Trò chuyện chỉ nói đùa về kỹ năng của tôi."
+  },
+  {
+   "word": "golf",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A game played on a large open course with 9 or 18 holes.",
+   "extra_definitions": [
+    "[noun] A ball game played by individuals competing against one another in which the object is to hit a ball into each of a series of (usually 18 or nine) holes in the minimum number of strokes.",
+    "[noun] The letter G in the ICAO spelling alphabet.",
+    "[verb] To play the game of golf."
+   ],
+   "synonyms": [
+    "golf game"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=golf",
+   "ipa_uk": "/ɡɒlf/",
+   "ipa_us": "/ɡɑlf/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/golf-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Trò chơi được chơi trên một sân rộng mở có 9 hoặc 18 lỗ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "basketball",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A game played on a court by two opposing teams of 5 players; points are scored by throwing the ball through an elevated horizontal hoop.",
+   "extra_definitions": [
+    "[noun] A sport in which two opposing teams of five players strive to put a ball through a hoop.",
+    "[noun] The particular kind of ball used in the sport of basketball."
+   ],
+   "synonyms": [
+    "basketball game",
+    "hoops"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=basketball",
+   "ipa_uk": "/ˈbɑːs.kɪt.bɔːl/",
+   "ipa_us": "/ˈbæs.kɪt.bɔːl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/basketball-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "<thể> bóng rổ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "tournament",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sporting competition in which contestants play a series of games to decide the winner.",
+   "extra_definitions": [
+    "[noun] During the Middle Ages, a series of battles and other contests designed to prepare knights for war.",
+    "[noun] A series of games; either the same game played many times, or a succession of games related by a single theme; played competitively to determine a single winning team or individual.",
+    "[noun] A digraph obtained by assigning a direction to each edge in an undirected complete graph."
+   ],
+   "synonyms": [
+    "tourney"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tournament",
+   "ipa_uk": "/ˈtɔːnəmənt/",
+   "ipa_us": "/ˈtɔːnəmənt/",
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) cuộc đấu; (sử học) cuộc đấu thương trên ngựa ((như) tourney)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "tight end",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An offensive end who lines up close to the tackle.",
+   "extra_definitions": [
+    "[noun] The position at the end of the offensive line whose primary jobs are to block and serve as a short receiver.",
+    "[noun] A player playing the position of tight end.",
+    "[noun] Historically, the position at the end of the offensive line whose primary jobs are to block and serve as a short receiver; this position is no longer used today in Canadian football."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tight+end",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cầu thủ tấn công xếp hàng gần để giải quyết.",
+   "vi_source": "gtx",
+   "example": "Jones played tight end."
+  },
+  {
+   "word": "baseball",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A ball game played with a bat and ball between two teams of nine players; teams take turns at bat trying to score runs.",
+   "extra_definitions": [
+    "[noun] A sport common in North America, the Caribbean, and Japan, in which the object is to strike a ball so that one of a nine-person team can run counter-clockwise among four bases, resulting in the scoring of a run. The team with the most runs after termination of play, usually nine innings, wins.",
+    "[noun] The ball used to play the sport of baseball.",
+    "[noun] A variant of poker in which cards with baseball-related values have special significance."
+   ],
+   "synonyms": [
+    "baseball game"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "He played baseball in high school.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=baseball",
+   "ipa_uk": "/ˈbeɪs.bɔːl/",
+   "ipa_us": "/ˈbeɪs.bɑl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/baseball-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) bóng chày",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy chơi bóng chày ở trường trung học."
+  },
+  {
+   "word": "racing",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sport of engaging in contests of speed.",
+   "extra_definitions": [
+    "[verb] To take part in a race (in the sense of a contest).",
+    "[verb] To compete against in such a race.",
+    "[verb] To move or drive at high speed; to hurry or speed."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=racing",
+   "example": "The drivers were racing around the track.",
+   "ipa_uk": "/ˈɹeɪsɪŋ/",
+   "ipa_us": "/ˈɹeɪsɪŋ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc đua",
+   "vi_source": "anhviet",
+   "example_vi": "Các tay đua đang chạy đua quanh đường đua."
+  },
+  {
+   "word": "dancing",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Taking a series of rhythmical steps (and movements) in time to music.",
+   "extra_definitions": [
+    "[verb] To move with rhythmic steps or movements, especially in time to music.",
+    "[verb] To leap or move lightly and rapidly.",
+    "[verb] To perform the steps to."
+   ],
+   "synonyms": [
+    "dance",
+    "terpsichore",
+    "saltation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dancing",
+   "example": "I danced with her all night long.",
+   "ipa_uk": "/ˈdæn.sɪŋ/",
+   "ipa_us": "/ˈdæn.sɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dancing-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thực hiện một loạt các bước (và chuyển động) nhịp nhàng theo nhạc.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi đã khiêu vũ với cô ấy suốt đêm."
+  },
+  {
+   "word": "most-valuable",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "adjective",
+   "definition_en": "Designating the player judged to be the most important to the sport.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The most-valuable player award.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=most-valuable",
+   "type_vi": "Tính từ",
+   "definition_vi": "Chỉ định cầu thủ được đánh giá là quan trọng nhất đối với môn thể thao này.",
+   "vi_source": "gtx",
+   "example_vi": "Giải thưởng cầu thủ giá trị nhất."
+  },
+  {
+   "word": "riding",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sport of siting on the back of a horse while controlling its movements.",
+   "extra_definitions": [
+    "[verb] To transport oneself by sitting on and directing a horse, later also a bicycle etc.",
+    "[verb] To be transported in a vehicle; to travel as a passenger.",
+    "[verb] (chiefly US and South Africa) To transport (someone) in a vehicle."
+   ],
+   "synonyms": [
+    "horseback riding",
+    "equitation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=riding",
+   "example": "The cab rode him downtown.",
+   "ipa_uk": "/ˈɹaɪdɪŋ/",
+   "ipa_us": "/ˈɹaɪdɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/riding-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "môn cưỡi ngựa; sự cưỡi lên (lưng...)",
+   "vi_source": "anhviet",
+   "example_vi": "Chiếc taxi chở anh vào trung tâm thành phố."
+  },
+  {
+   "word": "soccer",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A football game in which two teams of 11 players try to kick or head a ball into the opponents' goal.",
+   "extra_definitions": [
+    "[noun] Association football",
+    "[verb] To kick the football directly off the ground, without using one's hands."
+   ],
+   "synonyms": [
+    "association football"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soccer",
+   "ipa_uk": "/ˈsɒk.ə/",
+   "ipa_us": "/ˈsɒk.ə/",
+   "type_vi": "Danh từ",
+   "definition_vi": "(thông tục) môn bóng đá",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "fishing",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of someone who fishes as a diversion.",
+   "extra_definitions": [
+    "[noun] The act of catching fish.",
+    "[noun] The act of catching other forms of seafood, separately or together with fish.",
+    "[noun] Commercial fishing: the business or industry of catching fish and other seafood for sale."
+   ],
+   "synonyms": [
+    "sportfishing"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fishing",
+   "example": "We had a good day's fishing at the weekend.",
+   "ipa_uk": "/ˈfɪʃɪŋ/",
+   "ipa_us": "/ˈfɪʃɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/fishing-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự đánh cá, sự câu cá; nghề cá",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng tôi đã có một ngày câu cá vui vẻ vào cuối tuần."
+  },
+  {
+   "word": "basketball player",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays basketball.",
+   "extra_definitions": [],
+   "synonyms": [
+    "basketeer",
+    "cager"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=basketball+player",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vận động viên chơi bóng rổ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "rock 'n' roll",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A genre of popular music originating in the 1950s; a blend of black rhythm-and-blues with white country-and-western.",
+   "extra_definitions": [
+    "[noun] A genre of popular music that evolved in the 1950s from a combination of rhythm and blues and country music, characterized by electric guitars, strong rhythms, and youth-oriented lyrics.",
+    "[noun] A style of vigorous dancing associated with this genre of music.",
+    "[noun] An intangible feeling, philosophy, belief or allegiance relating to rock music (generally from the 1970s–1980s), and heavy metal bearing certain elements of this music, pertaining to unbridled enthusiasm, cynical regard for certain Christian and authoritarian bodies, and attitudes befitting some degree of youthful debauchery. This meaning is sometimes used as an exclamation, in describing traits of certain people, and so on."
+   ],
+   "synonyms": [
+    "rock'n'roll",
+    "rock-and-roll",
+    "rock and roll",
+    "rock",
+    "rock music"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "Rock is a generic term for the range of styles that evolved out of rock'n'roll.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rock+'n'+roll",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thể loại âm nhạc đại chúng có nguồn gốc từ những năm 1950; sự pha trộn giữa nhịp điệu đen và xanh với màu trắng đồng quê và phương Tây.",
+   "vi_source": "gtx",
+   "example_vi": "Rock là một thuật ngữ chung để chỉ nhiều phong cách phát triển từ rock'n'roll."
+  },
+  {
+   "word": "singles",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Badminton played with one person on each side.",
+   "extra_definitions": [
+    "[noun] A 45 RPM vinyl record with one song on side A and one on side B.",
+    "[noun] A popular song released and sold (on any format) nominally on its own though usually having at least one extra track.",
+    "[noun] One who is not married or does not have a romantic partner."
+   ],
+   "synonyms": [
+    "sew-ups",
+    "singles",
+    "sprints",
+    "tubies"
+   ],
+   "antonyms": [
+    "album",
+    "married"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=singles",
+   "example": "The Offspring released four singles from their most recent album.",
+   "type_vi": "Danh từ",
+   "definition_vi": "trò chơi (quần vợt...) mỗi bên chỉ một người",
+   "vi_source": "anhviet",
+   "example_vi": "The Offspring đã phát hành bốn đĩa đơn trong album gần đây nhất của họ."
+  },
+  {
+   "word": "cup tie",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An eliminating game between teams in a cup competition.",
+   "extra_definitions": [
+    "[noun] A match in a cup competition"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cup+tie",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một trận đấu loại trực tiếp giữa các đội trong một giải đấu cúp.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "steal",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A stolen base.",
+   "extra_definitions": [
+    "[noun] The act of stealing.",
+    "[noun] A piece of merchandise available at a very attractive price.",
+    "[noun] A situation in which a defensive player actively takes possession of the ball or puck from the opponent's team."
+   ],
+   "synonyms": [
+    "bargain",
+    "sneak"
+   ],
+   "antonyms": [
+    "bestow",
+    "donate",
+    "grant",
+    "buy",
+    "earn",
+    "purchase"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=steal",
+   "example": "At this price, this car is a steal.",
+   "ipa_uk": "/stiːl/",
+   "ipa_us": "/stiːl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/steal-us.mp3"
+   },
+   "type_vi": "Động từ",
+   "definition_vi": "ăn cắp, ăn trộm",
+   "vi_source": "anhviet",
+   "example_vi": "Với mức giá này, chiếc xe này là một món ăn trộm."
+  },
+  {
+   "word": "rugby",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A form of football played with an oval ball.",
+   "extra_definitions": [
+    "[noun] (usually uncountable) A form of football in which players can hold or kick an ovoid ball. The ball cannot be handled forwards and points are scored by touching the ball to the ground in the area past their opponent’s territory or kicking the ball between goalposts and over a crossbar.",
+    "[noun] A loose fitting shirt with a collar, as worn by rugby players."
+   ],
+   "synonyms": [
+    "rugby football",
+    "rugger"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rugby",
+   "example": "The scrum is a distinctive element of rugby.",
+   "ipa_uk": "/ˈɹʌɡbi/",
+   "ipa_us": "/ˈɹʌɡbi/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/rugby-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) môn bóng bầu dục ((cũng) rugby fooball)",
+   "vi_source": "anhviet",
+   "example_vi": "Scrum là một yếu tố đặc biệt của bóng bầu dục."
+  },
+  {
+   "word": "buddy",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A close friend who accompanies his buddies in their activities.",
+   "extra_definitions": [
+    "[noun] A friend or casual acquaintance.",
+    "[noun] A partner for a particular activity.",
+    "[noun] An informal and friendly address to a stranger; a friendly (or occasionally antagonistic) placeholder name for a person one does not know."
+   ],
+   "synonyms": [
+    "brother",
+    "chum",
+    "crony",
+    "pal",
+    "sidekick"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=buddy",
+   "example": "They have been buddies since they were in school.",
+   "ipa_uk": "/bʌd.i/",
+   "ipa_us": "/bʌd.i/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/buddy-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ), (thông tục) bạn thân",
+   "vi_source": "anhviet",
+   "example_vi": "Họ là bạn thân từ khi còn đi học."
+  },
+  {
+   "word": "soccer player",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays soccer.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soccer+player",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vận động viên chơi bóng đá.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "spiritual",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A kind of religious song originated by Blacks in the southern United States.",
+   "extra_definitions": [
+    "[noun] A Christian religious song, especially one in an African-American style, or a similar non-religious song.",
+    "[noun] Any spiritual function, office, or affair.",
+    "[adjective] Of or pertaining to the spirit or the soul."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=spiritual",
+   "example": "He assigns supremacy to the pope in spirituals, and to the emperor in temporals. — Lowell.",
+   "ipa_uk": "/ˈspɪɹɪtjʊəl/",
+   "ipa_us": "/ˈspɪɹɪtʃuəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/spiritual-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "bài hát tôn giáo của người Mỹ da đen ((cũng) Negro spiritual)",
+   "vi_source": "anhviet",
+   "example_vi": "Ông giao quyền tối cao cho giáo hoàng về mặt tinh thần và cho hoàng đế về mặt tạm thời. - Lowell."
+  },
+  {
+   "word": "dog racing",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A race between dogs; usually an occasion for betting on the outcome.",
+   "extra_definitions": [
+    "[noun] The sport of greyhound racing"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dog+racing",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc đua giữa những con chó; thường là một dịp để đặt cược vào kết quả.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cricket",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A game played with a ball and bat by two teams of 11 players; teams take turns trying to score runs.",
+   "extra_definitions": [
+    "[noun] An insect in the order Orthoptera, especially family Gryllidae, that makes a chirping sound by rubbing its wing casings against combs on its hind legs.",
+    "[noun] A wooden footstool.",
+    "[noun] A signalling device used by soldiers in hostile territory to identify themselves to a friendly in low visibility conditions."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cricket",
+   "ipa_uk": "/ˈkɹɪk.ɪt/",
+   "ipa_us": "/ˈkɹɪk.ɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cricket-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Trò chơi dùng bóng và gậy của hai đội gồm 11 người chơi; các đội thay phiên nhau cố gắng ghi điểm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "regulation time",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The normal prescribed duration of a game.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [
+    "overtime"
+   ],
+   "topics": [
+    "social"
+   ],
+   "example": "The game was finished in regulation time.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=regulation+time",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thời lượng quy định bình thường của một trò chơi.",
+   "vi_source": "gtx",
+   "example_vi": "Trận đấu kết thúc đúng thời gian quy định."
+  },
+  {
+   "word": "swimming meet",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A swimming competition between two or more teams.",
+   "extra_definitions": [],
+   "synonyms": [
+    "swim meet"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=swimming+meet",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi bơi lội giữa hai hoặc nhiều đội.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sudden death",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Overtime in which play is stopped as soon as one contestant scores; e.",
+   "extra_definitions": [
+    "[noun] Instantaneous, unexpected death not caused by violence or trauma.",
+    "[noun] (games) A period or mode of play in which the next player or team to score wins instantly; often in an extra period of time following a tie at the end of the regular period of play."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sudden+death",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thời gian bù giờ trong đó trận đấu bị dừng ngay khi một thí sinh ghi điểm; đ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "swimming event",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athletic competition that involves swimming.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=swimming+event",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi thể thao có liên quan đến bơi lội.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hockey player",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays hockey.",
+   "extra_definitions": [
+    "[noun] An ice hockey player.",
+    "[noun] A field hockey player."
+   ],
+   "synonyms": [
+    "ice-hockey player"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hockey+player",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vận động viên chơi khúc côn cầu.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tennis",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A game played with rackets by two or four players who hit a ball back and forth over a net that divides the court.",
+   "extra_definitions": [
+    "[noun] A sport played by two players (or four in doubles), who alternately strike the ball over a net using racquets.",
+    "[noun] A match in this sport.",
+    "[noun] An earlier game in which a ball is driven to and fro, or kept in motion by striking it with a racquet or with the open hand."
+   ],
+   "synonyms": [
+    "lawn tennis"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tennis",
+   "ipa_uk": "/ˈtɛn.ɪs/",
+   "ipa_us": "/ˈtɛn.ɪs/",
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) quần vợt",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "blues",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A type of folksong that originated among Black Americans at the beginning of the 20th century.",
+   "extra_definitions": [
+    "[noun] The colour of the clear sky or the deep sea, between green and violet in the visible spectrum, and one of the primary additive colours for transmitted light; the colour obtained by subtracting red and green from white light using magenta and cyan filters; or any colour resembling this.",
+    "[noun] A blue dye or pigment.",
+    "[noun] Any of several processes to protect metal against rust."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=blues",
+   "example": "The boys in blue marched to the pipers.",
+   "ipa_uk": "/bluːz/",
+   "ipa_us": "/bluːz/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại dân ca có nguồn gốc từ người Mỹ da đen vào đầu thế kỷ 20.",
+   "vi_source": "gtx",
+   "example_vi": "Những chàng trai mặc áo xanh tiến về phía những người thổi sáo."
+  },
+  {
+   "word": "jazz",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A genre of popular music that originated in New Orleans around 1900 and developed through increasingly complex styles.",
+   "extra_definitions": [
+    "[noun] A musical art form rooted in West African cultural and musical expression and in the African American blues tradition, with diverse influences over time, commonly characterized by blue notes, syncopation, swing, call and response, polyrhythms and improvisation.",
+    "[noun] Energy, excitement, excitability.",
+    "[noun] The substance or makeup of a thing."
+   ],
+   "synonyms": [
+    "complexify",
+    "confuscate",
+    "annihilate",
+    "ravage",
+    "invigorate",
+    "vitalise"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=jazz",
+   "example": "What is all this jazz lying around?",
+   "ipa_uk": "/d͡ʒæz/",
+   "ipa_us": "/d͡ʒæz/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thể loại âm nhạc đại chúng có nguồn gốc từ New Orleans vào khoảng năm 1900 và phát triển theo những phong cách ngày càng phức tạp.",
+   "vi_source": "gtx",
+   "example_vi": "Tất cả những thứ nhạc jazz này nằm xung quanh là gì?"
+  },
+  {
+   "word": "dialogue",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A conversation between two persons.",
+   "extra_definitions": [
+    "[noun] A conversation or other form of discourse between two or more individuals.",
+    "[noun] (authorship) In a dramatic or literary presentation, the verbal parts of the script or text; the verbalizations of the actors or characters.",
+    "[noun] A literary form, where the presentation resembles a conversation."
+   ],
+   "synonyms": [
+    "dialog",
+    "duologue"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dialogue",
+   "example": "Bill and Melinda maintained a dialogue via email over the course of their long-distance relationship.",
+   "ipa_uk": "/ˈdaɪəlɑɡ/",
+   "ipa_us": "/ˈdaɪəlɔɡ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dialogue-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc đối thoại",
+   "vi_source": "anhviet",
+   "example_vi": "Bill và Melinda duy trì đối thoại qua email trong suốt thời gian yêu xa của họ."
+  },
+  {
+   "word": "celebration",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A joyful occasion for special festivities to mark some happy event.",
+   "extra_definitions": [
+    "[noun] The formal performance of a solemn rite, such as Christian sacrament.",
+    "[noun] The observance of a holiday or feast day, as by solemnities.",
+    "[noun] The act, process of showing appreciation, gratitude and/or remembrance, notably as a social event."
+   ],
+   "synonyms": [
+    "jubilation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=celebration",
+   "ipa_uk": "/ˌsɛlɪˈbɹeiʃən/",
+   "ipa_us": "/ˌsɛlɪˈbɹeiʃən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/celebration-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự kỷ niệm; lễ kỷ niệm; sự tán dương, sự ca tụng",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "tennis player",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays tennis.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tennis+player",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vận động viên chơi quần vợt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fly-fishing",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Angling with an artificial fly as a lure.",
+   "extra_definitions": [
+    "[noun] A form of angling whereby the weight of the line is used to cast the lure, i.e. the fly"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fly-fishing",
+   "type_vi": "Danh từ",
+   "definition_vi": "cách câu cá bằng ruồi nhân tạo",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "knight",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A chessman shaped to resemble the head of a horse; can move two squares horizontally and one vertically (or vice versa).",
+   "extra_definitions": [
+    "[noun] A young servant or follower; a trained military attendant in service of a lord.",
+    "[noun] A minor nobleman with an honourable military rank who had served as a page and squire.",
+    "[noun] (by extension) An armored and mounted warrior of the Middle Ages."
+   ],
+   "synonyms": [
+    "horse"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=knight",
+   "example": "King Arthur and the Knights of the Round Table",
+   "ipa_uk": "/naɪt/",
+   "ipa_us": "/naɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/knight-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một quân cờ có hình dáng giống đầu ngựa; có thể di chuyển hai hình vuông theo chiều ngang và một hình vuông theo chiều dọc (hoặc ngược lại).",
+   "vi_source": "gtx",
+   "example_vi": "Vua Arthur và các hiệp sĩ bàn tròn"
+  },
+  {
+   "word": "twin bill",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Two games instead of one (especially in baseball when the same two teams play two games on the same day).",
+   "extra_definitions": [],
+   "synonyms": [
+    "doubleheader",
+    "double feature"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=twin+bill",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hai trận thay vì một (đặc biệt là trong môn bóng chày khi hai đội giống nhau chơi hai trận trong cùng một ngày).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "opera",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A drama set to music; consists of singing with orchestral accompaniment and an orchestral overture and interludes.",
+   "extra_definitions": [
+    "[noun] A theatrical work, combining drama, music, song and sometimes dance.",
+    "[noun] The score for such a work.",
+    "[noun] A building designed for the performance of such works; an opera house."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=opera",
+   "ipa_uk": "/ˈɒp.əɹ.ə/",
+   "ipa_us": "/ˈɑ.pəɹ.ə/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/opera-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vở kịch có nhạc; bao gồm hát với phần đệm của dàn nhạc và một đoạn overture và interlude của dàn nhạc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "stroke",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of swinging or striking at a ball with a club or racket or bat or cue or hand.",
+   "extra_definitions": [
+    "[noun] An act of stroking (moving one's hand over a surface).",
+    "[noun] A blow or hit.",
+    "[noun] A single movement with a tool."
+   ],
+   "synonyms": [
+    "shot"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "It took two strokes to get out of the bunker.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=stroke",
+   "ipa_uk": "/stɹəʊk/",
+   "ipa_us": "/stɹoʊk/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/stroke-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Hành động vung hoặc đánh vào một quả bóng bằng gậy hoặc vợt hoặc gậy hoặc gậy hoặc tay.",
+   "vi_source": "gtx",
+   "example_vi": "Phải mất hai cú đánh mới ra khỏi boong-ke."
+  },
+  {
+   "word": "round robin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tournament in which every contestant plays every other contestant.",
+   "extra_definitions": [
+    "[noun] The part of a tournament in which every player or team competes against each of the others in turn.",
+    "[noun] A petition signed in a circular fashion to disguise the order in which it was done.",
+    "[noun] A letter, with copies to multiple recipients, usually at Christmastime and often enclosed with a card, giving family news of interest to the sender."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=round+robin",
+   "type_vi": "Danh từ",
+   "definition_vi": "bản kiến nghị ký tên theo vòng tròn (cốt để không cho biết ai là người ký tên đầu tiên)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "utility man",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A baseball player valued for the ability to play at several positions.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=utility+man",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cầu thủ bóng chày được đánh giá cao về khả năng chơi ở nhiều vị trí.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "ride the bench",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Be out of the game.",
+   "extra_definitions": [],
+   "synonyms": [
+    "warm the bench"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "Miller was riding the bench in Saturday's game.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ride+the+bench",
+   "type_vi": "Động từ",
+   "definition_vi": "Hãy ra khỏi trò chơi.",
+   "vi_source": "gtx",
+   "example_vi": "Miller đã ngồi dự bị trong trận đấu hôm thứ Bảy."
+  },
+  {
+   "word": "tennis pro",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Someone who earns a living playing or teaching tennis.",
+   "extra_definitions": [],
+   "synonyms": [
+    "professional tennis player"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tennis+pro",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người kiếm sống bằng cách chơi hoặc dạy quần vợt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "reception",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The manner in which something is greeted.",
+   "extra_definitions": [
+    "[noun] The act of receiving.",
+    "[noun] The act or ability to receive radio or similar signals.",
+    "[noun] A social engagement, usually to formally welcome someone."
+   ],
+   "synonyms": [
+    "response"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "She did not expect the cold reception she received from her superiors.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=reception",
+   "ipa_uk": "/ɹɪˈsɛp.ʃn̩/",
+   "ipa_us": "/ɹɪˈsɛp.ʃn̩/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/reception-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Cách thức mà một cái gì đó được chào đón.",
+   "vi_source": "gtx",
+   "example_vi": "Cô không ngờ mình lại nhận được sự đón tiếp lạnh lùng từ cấp trên."
+  },
+  {
+   "word": "jumping",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of participating in an athletic competition in which you must jump.",
+   "extra_definitions": [
+    "[verb] To propel oneself rapidly upward, downward and/or in any horizontal direction such that momentum causes the body to become airborne.",
+    "[verb] To cause oneself to leave an elevated location and fall downward.",
+    "[verb] To pass by a spring or leap; to overleap."
+   ],
+   "synonyms": [
+    "ambush",
+    "assail",
+    "jump down",
+    "jump off",
+    "skydive",
+    "hump"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=jumping",
+   "example": "Kangaroos are known for their ability to jump high.",
+   "ipa_uk": "/ˈdʒʌmpɪŋ/",
+   "ipa_us": "/ˈdʒʌmpɪŋ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hành động tham gia một cuộc thi thể thao mà bạn phải nhảy.",
+   "vi_source": "gtx",
+   "example_vi": "Kanguru được biết đến với khả năng nhảy cao."
+  },
+  {
+   "word": "ball carrier",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The player who is carrying (and trying to advance) the ball on an offensive play.",
+   "extra_definitions": [
+    "[noun] A player who carries the football."
+   ],
+   "synonyms": [
+    "runner"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ball+carrier",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cầu thủ đang mang (và cố gắng tiến lên) bóng trong một pha tấn công.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "amateur",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who does not play for pay.",
+   "extra_definitions": [
+    "[noun] A lover of something.",
+    "[noun] A person attached to a particular pursuit, study, or science as to music or painting; especially one who cultivates any study or art, from taste or attachment, without pursuing it professionally.",
+    "[noun] Someone who is unqualified or insufficiently skillful."
+   ],
+   "synonyms": [
+    "dabbler",
+    "dilettante",
+    "punk",
+    "hobbyist"
+   ],
+   "antonyms": [
+    "professional"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=amateur",
+   "example": "The contest is only open to amateurs.",
+   "ipa_uk": "/ˈæ.mə.tə/",
+   "ipa_us": "/ˈæ.mə.tɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/amateur-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(định ngữ) có tính chất tài tử, nghiệp dư, không chuyên",
+   "vi_source": "anhviet",
+   "example_vi": "Cuộc thi chỉ dành cho những người nghiệp dư."
+  },
+  {
+   "word": "substitute",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athlete who plays only when a starter on the team is replaced.",
+   "extra_definitions": [
+    "[noun] A replacement or stand-in for something that achieves a similar result or purpose.",
+    "[noun] A player who is available to replace another if the need arises, and who may or may not actually do so.",
+    "[noun] One who enlists for military service in the place of a conscript."
+   ],
+   "synonyms": [
+    "reserve",
+    "second-stringer"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=substitute",
+   "example": "I had no shallots so I substituted onion.",
+   "ipa_uk": "/ˈsʌbstɪtjut/",
+   "ipa_us": "/ˈsʌbstɪtjut/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/substitute-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "người thay thế, vật thay thế",
+   "vi_source": "anhviet",
+   "example_vi": "Tôi không có hẹ nên tôi thay thế bằng hành tây."
+  },
+  {
+   "word": "boxing",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fighting with the fists.",
+   "extra_definitions": [
+    "[verb] To place inside a box; to pack in one or more boxes.",
+    "[verb] Usually followed by in: to surround and enclose in a way that restricts movement; to corner, to hem in.",
+    "[verb] To mix two containers of paint of similar colour to ensure that the color is identical."
+   ],
+   "synonyms": [
+    "pugilism",
+    "fisticuffs"
+   ],
+   "antonyms": [
+    "unbox",
+    "uncase",
+    "unpack"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=boxing",
+   "example": "Leave this place before I box you!",
+   "ipa_uk": "/ˈbɒksɪŋ/",
+   "ipa_us": "/ˈbɒksɪŋ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chiến đấu bằng nắm đấm.",
+   "vi_source": "gtx",
+   "example_vi": "Rời khỏi nơi này trước khi tôi đấm cậu!"
+  },
+  {
+   "word": "do-si-do",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A square-dance figure; two dancers approach each other and circle back to back before returning to their original places.",
+   "extra_definitions": [
+    "[noun] A move in square dancing in which two dancers face each other, then step forward and left until they have right shoulders adjacent, then move to a position where they are back to back, then move to have left shoulders adjacent, then return to facing each other.",
+    "[noun] A sofa, open carriage, etc. constructed so that the occupants sit back to back."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=do-si-do",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một hình múa vuông; Hai vũ công tiến lại gần nhau và quay lại vòng trước khi trở về vị trí ban đầu.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "marathon",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A footrace of 26 miles 385 yards.",
+   "extra_definitions": [
+    "[noun] A 42.195 kilometre (26 mile 385 yard) road race.",
+    "[noun] (by extension) Any extended or sustained activity.",
+    "[verb] To run a marathon."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=marathon",
+   "example": "He had a cleaning marathon the night before his girlfriend came over.",
+   "ipa_uk": "/ˈmæɹəθən/",
+   "ipa_us": "/ˈmæɹəθən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/marathon-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) cuộc chạy đua maratông ((cũng) marathon race)",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đã tổ chức một cuộc chạy marathon dọn dẹp vào đêm trước khi bạn gái anh ấy đến."
+  },
+  {
+   "word": "preliminary",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A minor match preceding the main event.",
+   "extra_definitions": [
+    "[noun] A preparation for a main matter; an introduction.",
+    "[noun] Any of a series of sports events that determine the finalists",
+    "[noun] A relatively minor contest that precedes a major one, especially in boxing"
+   ],
+   "synonyms": [
+    "prelim"
+   ],
+   "antonyms": [
+    "definitive",
+    "final"
+   ],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=preliminary",
+   "example": "These are just the preliminary results.",
+   "ipa_uk": "/pɹɪˈlɪmɪnəɹi/",
+   "ipa_us": "/pɹɪˈlɪmɪnəɹi/",
+   "type_vi": "Tính từ",
+   "definition_vi": "((thường) số nhiều) công việc chuẩn bị, sự sắp đặt mở đầu; biện pháp sơ bộ",
+   "vi_source": "anhviet",
+   "example_vi": "Đây chỉ là những kết quả sơ bộ."
+  },
+  {
+   "word": "sporting man",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Someone who enjoys outdoor activities.",
+   "extra_definitions": [],
+   "synonyms": [
+    "outdoor man"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sporting+man",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người thích các hoạt động ngoài trời.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tackle",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The person who plays that position on a football team.",
+   "extra_definitions": [
+    "[noun] A device for grasping an object and an attached means of moving it, as a rope and hook.",
+    "[noun] A block and tackle.",
+    "[noun] Equipment (rod, reel, line, lure, etc.) used when angling."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "The right tackle is a straight A student.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tackle",
+   "ipa_uk": "/ˈtækəl/",
+   "ipa_us": "/ˈtækəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/tackle-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) sự chặn, sự cản (đối phương đang dắt bóng...); đồ dùng, dụng cụ",
+   "vi_source": "anhviet",
+   "example_vi": "Người giải quyết đúng là một học sinh đạt điểm A."
+  },
+  {
+   "word": "music genre",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An expressive style of music.",
+   "extra_definitions": [],
+   "synonyms": [
+    "musical genre",
+    "genre",
+    "musical style"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=music+genre",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một phong cách biểu cảm của âm nhạc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "wrestling",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sport of hand-to-hand struggle between unarmed contestants who try to throw each other down.",
+   "extra_definitions": [
+    "[verb] To contend, with an opponent, by grappling and attempting to throw, immobilize or otherwise defeat him, depending on the specific rules of the contest",
+    "[verb] To struggle or strive",
+    "[verb] To take part in a wrestling match with someone"
+   ],
+   "synonyms": [
+    "rassling",
+    "grappling"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wrestling",
+   "ipa_uk": "/ˈɹɛs.lɪŋ/",
+   "ipa_us": "/ˈɹɛs.lɪŋ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/wrestling-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thể dục,thể thao) sự đấu vật; (nghĩa bóng) sự vật lộn với, sự chiến đấu chống lại",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "ski",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Move along on skis.",
+   "extra_definitions": [
+    "[noun] One of a pair of long flat runners designed for gliding over snow or water",
+    "[noun] One of a pair of long flat runners under some flying machines, used for landing",
+    "[verb] To move on skis"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "example": "We love to ski the Rockies.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ski",
+   "ipa_uk": "/ʃiː/",
+   "ipa_us": "/ʃiː/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/ski-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "trượt tuyết; đi xki",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng tôi thích trượt tuyết ở Rockies."
+  },
+  {
+   "word": "playoff",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any final competition to determine a championship.",
+   "extra_definitions": [
+    "[noun] A final game in a series needed to break a tie.",
+    "[noun] A short series of games to select a league champion."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=playoff",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bất kỳ cuộc thi cuối cùng nào để xác định chức vô địch.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "base runner",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A baseball player on the team at bat who is on base (or attempting to reach a base).",
+   "extra_definitions": [],
+   "synonyms": [
+    "runner"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=base+runner",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cầu thủ bóng chày trong đội đánh bóng đang ở trên căn cứ (hoặc đang cố gắng tiếp cận căn cứ).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "dive",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A headlong plunge into water.",
+   "extra_definitions": [
+    "[noun] A jump or plunge into water.",
+    "[noun] A headfirst jump toward the ground or into another substance.",
+    "[noun] A downward swooping motion."
+   ],
+   "synonyms": [
+    "diving"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dive",
+   "example": "the dive of a hawk after prey",
+   "ipa_uk": "/ˈdaɪv/",
+   "ipa_us": "/ˈdaɪv/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dive-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự nhảy lao đầu xuống (nước...); sự lặn; (hàng không) sự đâm bổ xuống, sự bổ nhào xuống (máy bay)",
+   "vi_source": "anhviet",
+   "example_vi": "sự bổ nhào của một con diều hâu sau con mồi"
+  },
+  {
+   "word": "water ski",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Ride water skis.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=water+ski",
+   "type_vi": "Động từ",
+   "definition_vi": "Đi ván trượt nước.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "athlete",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A person trained to compete in sports.",
+   "extra_definitions": [
+    "[noun] A participant in a group of sporting activities which includes track and field, road running, cross country running and racewalking.",
+    "[noun] A person who actively participates in physical sports, especially with great skill; a sportsperson.",
+    "[noun] An exceptionally physically fit person."
+   ],
+   "synonyms": [
+    "jock"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=athlete",
+   "example": "She's the first athlete in her sport to obtain a corporate sponsor.",
+   "ipa_uk": "/ˈæθ.lit/",
+   "ipa_us": "/ˈæθ.lit/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/athlete-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "vận động viên (điền kinh, thể dục thể thao)",
+   "vi_source": "anhviet",
+   "example_vi": "Cô ấy là vận động viên đầu tiên trong môn thể thao của mình nhận được nhà tài trợ của công ty."
+  },
+  {
+   "word": "soft-shoe",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Tap dancing wearing shoes that have soft soles.",
+   "extra_definitions": [
+    "[noun] A kind of tap dancing performed in soft-soled shoes, popular in vaudeville.",
+    "[noun] A speech, explanation, sales pitch, or other set of remarks delivered in a restrained or conciliatory manner in order to persuade, distract, or otherwise influence someone."
+   ],
+   "synonyms": [
+    "soft-shoe shuffle",
+    "soft-shoe dancing"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soft-shoe",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tập nhảy mang giày có đế mềm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cycling",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sport of traveling on a bicycle or motorcycle.",
+   "extra_definitions": [
+    "[verb] To ride a bicycle or other cycle.",
+    "[verb] To go through a cycle or to put through a cycle.",
+    "[verb] To turn power off and back on"
+   ],
+   "synonyms": [
+    "biking",
+    "cyclism"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cycling",
+   "example": "Avoid cycling the device unnecessarily.",
+   "ipa_uk": "/ˈsaɪk(ə)lɪŋ/",
+   "ipa_us": "/ˈsaɪk(ə)lɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cycling-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự đi xe đạp",
+   "vi_source": "anhviet",
+   "example_vi": "Tránh đạp thiết bị một cách không cần thiết."
+  },
+  {
+   "word": "deck tennis",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Game played mainly on board ocean liners; players toss a ring back and forth over a net that is stretched across a small court.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=deck+tennis",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trò chơi chủ yếu chơi trên tàu viễn dương; người chơi ném một chiếc nhẫn qua lại trên một tấm lưới trải dài trên một sân nhỏ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tap dancing",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A dance step tapped out audibly with the feet.",
+   "extra_definitions": [],
+   "synonyms": [
+    "tap dance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tap+dancing",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một bước nhảy vang lên rõ ràng bằng đôi chân.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hammer throw",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An athletic competition in which a heavy metal ball that is attached to a flexible wire is hurled as far as possible.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hammer+throw",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc thi đấu thể thao trong đó một quả bóng kim loại nặng được gắn vào một sợi dây dẻo được ném xa nhất có thể.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "rock climbing",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sport or pastime of scaling rock masses on mountain sides (especially with the help of ropes and special equipment).",
+   "extra_definitions": [
+    "[noun] The sport of scaling rock faces, either with or without ropes and other equipment."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rock+climbing",
+   "type_vi": "Danh từ",
+   "definition_vi": "Môn thể thao hoặc trò tiêu khiển leo khối đá trên sườn núi (đặc biệt với sự hỗ trợ của dây thừng và thiết bị đặc biệt).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "foul",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An act that violates the rules of a sport.",
+   "extra_definitions": [
+    "[adjective] Covered with, or containing unclean matter; dirty.",
+    "[adjective] (of words or a way of speaking) obscene, vulgar or abusive.",
+    "[adjective] Detestable, unpleasant, loathsome."
+   ],
+   "synonyms": [
+    "odious",
+    "shameful",
+    "wretched"
+   ],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=foul",
+   "example": "A ship's bottom is foul when overgrown with barnacles",
+   "ipa_uk": "/faʊl/",
+   "ipa_us": "/faʊl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/foul-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "Một hành vi vi phạm các quy tắc của một môn thể thao.",
+   "vi_source": "gtx",
+   "example_vi": "Đáy tàu hôi hám khi hà bám đầy"
+  },
+  {
+   "word": "skin-dive",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Swim underwater with no breathing apparatus other than a snorkel.",
+   "extra_definitions": [
+    "[verb] To swim underwater with equipment."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=skin-dive",
+   "type_vi": "Động từ",
+   "definition_vi": "Bơi dưới nước không có thiết bị thở nào khác ngoài ống thở.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "carol",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Joyful religious song celebrating the birth of Christ.",
+   "extra_definitions": [
+    "[noun] A small closet or enclosure built against a window on the inner side, to sit in for study.",
+    "[noun] Hence, a partially partitioned space for studying or reading, often in a library."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=carol",
+   "example": "He was busy writing his report in a small library carrel.",
+   "type_vi": "Danh từ",
+   "definition_vi": "bài hát mừng ((thường) vào dịp lễ Nô",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đang bận viết báo cáo trong một thư viện nhỏ."
+  },
+  {
+   "word": "rap session",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Conversation in a situation where feelings can be expressed and criticized or supported.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "social"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rap+session",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hội thoại trong tình huống có thể bày tỏ cảm xúc, phê bình hoặc ủng hộ.",
+   "vi_source": "gtx"
+  }
+ ]
+}

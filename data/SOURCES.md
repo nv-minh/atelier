@@ -18,6 +18,8 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Google Translate (unofficial gtx endpoint) | Best-effort, unofficial | Fallback `definition_vi` + all `example_vi` (`vi_source: "gtx"`); same endpoint as `prisma/translate-vi.ts` | — | 2026-07-26 |
 | Wikimedia Commons (via Wikipedia PageImages API) | Varies by file, generally free-use/CC; `prisma/fetch-images.ts` only accepts `upload.wikimedia.org` thumbnails | `Word.imageUrl` for words with a matching Wikipedia article (`source: "wikimedia"` in `data/images.json`) | https://en.wikipedia.org/w/api.php | 2026-07-26 |
 | Pexels API | Pexels License — free to use, no attribution required, hotlinking via `images.pexels.com` allowed: https://www.pexels.com/license/ | `Word.imageUrl` for the remaining words (`scripts/images/fetch-pexels.ts`, `source: "pexels"` in `data/images.json`); `photographer`/`pexelsUrl` recorded per entry for optional credit | https://www.pexels.com/api/ | 2026-08-08 |
+| Princeton WordNet 3.0 | WordNet 3.0 License (BSD-style; reuse and commercial use permitted) | Word lists **and verbatim glosses** (`definition_en`), synonyms and the few examples in the 2026-08-13 domain packs: `medical`, `legal`, `finance`, `logistics`, `daily-life`, `social`, `travel`, `office-skills`, `daily-communication` | https://wordnet.princeton.edu/ | 2026-08-13 |
+| `wordfreq` (Robyn Speer) | MIT (underlying corpora CC BY-SA / public domain) | Zipf frequency used to select and to **estimate CEFR** for the 2026-08-13 packs (`cefr_source: "inferred"`) | https://github.com/rspeer/wordfreq | 2026-08-13 |
 
 ## Commercialization note
 
@@ -32,19 +34,43 @@ its `vi_source`, so the swap is mechanical.
 ```
 npm run packs:fetch      # download raw sources -> data/raw/
 npm run packs:build      # normalize -> data/packs/*.json skeletons
+npm run packs:build-crawl # convert an aggregated crawl file -> per-pack files (see below)
 npm run packs:enrich     # dictionaryapi.dev + kaikki fallback (cached, resumable)
 npm run packs:translate  # anhviet dictionary first, gtx fallback (cached)
 npm run packs:import     # upsert into Word (add --dry-run first)
 npm run db:translate-vi  # safety net for any definitionVi still null
 npm run db:topics        # keyword topics (curated pack tags preserved)
+npm run db:backfill-freq # Word.freqPct percentiles from the rank lists in data/raw/
 npm run images:fetch-wikimedia  # Wikipedia PageImages, no key needed
 npm run images:fetch     # Pexels for words still missing an image (needs PEXELS_API_KEY)
 npm run images:apply     # push data/images.json into Word.imageUrl
 npm run packs:verify     # counts + quality gates + samples + image coverage
 ```
 
-Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics → images:apply`.
+Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics → db:backfill-freq → images:apply`.
 `images:apply` alone is enough on a fresh DB if `data/images.json` is already committed — no re-crawl needed; only rerun `images:fetch-wikimedia`/`images:fetch` to backfill *new* words that have no entry yet.
+
+## Crawl batches (`packs:build-crawl`)
+
+`packs:build` normalizes the five original sources. A batch crawled outside the
+repo arrives instead as one aggregated JSON array of `{ metadata, words }`, and
+`scripts/packs/build-crawl-batch.ts` converts it into per-pack `PackFile`s —
+mapping `freq_rank`→`rank`, keeping `source_ref`, and assigning taxonomy slugs.
+It also applies that batch's dedupe/quality filter, and every word it removes is
+recorded with a reason in `data/crawl-batches/<date>-dropped.json` so the call
+can be reviewed or reversed. Input lives in gitignored `data/raw/incoming/`.
+
+The 2026-08-13 batch: 2,996 words in → 2,930 out (66 dropped, 3 renamed to the
+spelling already in the DB). Rationale for each decision is in
+`docs/superpowers/plans/2026-08-13-crawl-batch-and-freq-migration.md`.
+
+**A crawl batch does not carry frequency data.** `freq_rank` was null on all
+2,996 rows, so those words keep `freqPct = null` and the selection engine scores
+them neutrally. `db:backfill-freq` can only reach words present in NGSL-Spoken /
+BSL / TSL; there is no *general* NGSL list in `packs:fetch`, so if you want
+broad frequency coverage, add an NGSL 1.2 stats CSV as
+`data/raw/NGSL_12_stats.csv` (picked up automatically as the top-priority
+`ngsl` tier) or emit Zipf values from `wordfreq` during the crawl.
 
 ## Backups
 

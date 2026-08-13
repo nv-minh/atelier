@@ -8,8 +8,13 @@ import { resolve } from "path";
 export type PackWord = {
   word: string; // lowercase; may contain spaces/apostrophes/hyphens
   cefr: string; // A1 | A2 | B1 | B2 | C1
-  cefr_source: "oxford" | "cefr-dataset" | "rank-estimate" | "seed" | "default";
+  // "inferred" = derived from a corpus frequency measure (wordfreq Zipf) rather
+  // than a published CEFR list. Treat it as the weakest signal: import never
+  // overwrites an existing cefr, so a curated value always wins over this one.
+  cefr_source: "oxford" | "cefr-dataset" | "rank-estimate" | "seed" | "default" | "inferred";
   rank?: number;
+  /** provenance URL for a single entry (e.g. the WordNet synset page) */
+  source_ref?: string | null;
   type_en?: string | null;
   type_vi?: string | null;
   ipa_uk?: string | null;
@@ -41,7 +46,26 @@ export type PackFile = {
 export const PACKS_DIR = resolve(process.cwd(), "data/packs");
 export const RAW_DIR = resolve(process.cwd(), "data/raw");
 
-export const PACK_NAMES = ["oxford-c1", "conversation", "business", "toeic", "it-programming"] as const;
+export const PACK_NAMES = [
+  "oxford-c1",
+  "conversation",
+  "business",
+  "toeic",
+  "it-programming",
+  // 2026-08-13 crawl batch (WordNet 3.0 senses + wordfreq Zipf → inferred CEFR).
+  // `daily-communication` is a general frequency band (rank ~2.5k–25k), not a
+  // domain, so it ships with topic_slugs: [] like oxford-c1 and gets its topics
+  // from keyword matching in db:topics.
+  "medical",
+  "legal",
+  "finance",
+  "logistics",
+  "daily-life",
+  "social",
+  "travel",
+  "office-skills",
+  "daily-communication",
+] as const;
 export type PackName = (typeof PACK_NAMES)[number];
 
 export function packPath(name: string): string {

@@ -26,30 +26,42 @@ export type NotebookEntry = {
 };
 
 // Upsert a user's mark for a word. When the resulting row carries no signal
-// (not starred and no note), delete it to keep the table clean.
+// (not starred, no note, not marked known), delete it to keep the table clean.
+// `known` MUST be part of that predicate: a bare "I already know this word"
+// mark is the only signal on its row, so leaving it out would delete the row
+// immediately after writing it.
 export async function setWordMark(
   userId: string,
   wordId: string,
-  patch: { starred?: boolean; note?: string }
-): Promise<{ starred: boolean; note: string }> {
-  const data: { starred?: boolean; note?: string } = {};
+  patch: { starred?: boolean; note?: string; known?: boolean }
+): Promise<{ starred: boolean; note: string; known: boolean }> {
+  const data: { starred?: boolean; note?: string; known?: boolean } = {};
   if (typeof patch.starred === "boolean") data.starred = patch.starred;
   if (typeof patch.note === "string") data.note = patch.note;
+  if (typeof patch.known === "boolean") data.known = patch.known;
 
   const mark = await prisma.wordMark.upsert({
     where: { userId_wordId: { userId, wordId } },
     update: data,
-    create: { userId, wordId, starred: data.starred ?? false, note: data.note ?? "" },
+    create: {
+      userId,
+      wordId,
+      starred: data.starred ?? false,
+      note: data.note ?? "",
+      known: data.known ?? false,
+    },
   });
 
-  if (!mark.starred && mark.note === "") {
+  if (!mark.starred && mark.note === "" && !mark.known) {
     // Conditional delete: only remove the row if it's still empty, so a
-    // concurrent star/note write racing this cleanup isn't wiped out.
-    await prisma.wordMark.deleteMany({ where: { id: mark.id, starred: false, note: "" } });
-    return { starred: false, note: "" };
+    // concurrent star/note/known write racing this cleanup isn't wiped out.
+    await prisma.wordMark.deleteMany({
+      where: { id: mark.id, starred: false, note: "", known: false },
+    });
+    return { starred: false, note: "", known: false };
   }
 
-  return { starred: mark.starred, note: mark.note };
+  return { starred: mark.starred, note: mark.note, known: mark.known };
 }
 
 // Starred words with the word content + the user's card state per word.
