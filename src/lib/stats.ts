@@ -4,6 +4,7 @@ import { todayStr, addDays, isoWeekMonday } from "./utils";
 import { totalXp } from "./gamification-defs";
 import { computeStreakFromDb } from "./gamification-checks";
 import { CEFR_LEVELS } from "./export-format";
+import { LEARNED_STATES } from "./fsrs";
 
 export async function getDashboardStats(userId: string) {
   const now = new Date();
@@ -18,7 +19,7 @@ export async function getDashboardStats(userId: string) {
   const stateCount: Record<number, number> = {};
   for (const s of cardsByState) stateCount[s.state] = s._count;
   const totalCards = await prisma.card.count({ where: { userId } });
-  const learnedCards = (stateCount[2] ?? 0) + (stateCount[3] ?? 0); // Review + Relearning
+  const learnedCards = LEARNED_STATES.reduce((n, s) => n + (stateCount[s] ?? 0), 0);
   const learningCards = stateCount[1] ?? 0;
   const newCardsSeen = stateCount[0] ?? 0; // still new (seen but not graduated)
 
@@ -40,9 +41,10 @@ export async function getDashboardStats(userId: string) {
   for (const g of wordByCefr) wordTotals[g.cefr] = g._count;
   const learnedByCefr: Record<string, number> = {};
   const learningByCefr: Record<string, number> = {};
+  const LEARNED = new Set<number>(LEARNED_STATES);
   for (const c of cardsWithCefr) {
     const lvl = c.word.cefr;
-    if (c.state === 2 || c.state === 3) learnedByCefr[lvl] = (learnedByCefr[lvl] ?? 0) + 1;
+    if (LEARNED.has(c.state)) learnedByCefr[lvl] = (learnedByCefr[lvl] ?? 0) + 1;
     else learningByCefr[lvl] = (learningByCefr[lvl] ?? 0) + 1;
   }
   const cefrStats = cefrLevels.map((level) => {

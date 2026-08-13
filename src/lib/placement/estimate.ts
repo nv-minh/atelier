@@ -156,3 +156,11 @@ export function estimatePlacement(input: PlacementInput): PlacementEstimate {
     estimatorVersion: ESTIMATOR_VERSION,
   };
 }
+
+// Band is a float on the A1=0 … C1=4 scale. Four places in the app used to
+// inline CEFR_LEVELS[clamp(round(band))]; centralized here so a fifth place
+// (the vocab vault) doesn't copy it again.
+export function bandToCefr(band: number): string {
+  const i = Number.isFinite(band) ? Math.round(band) : 0;
+  return CEFR_LEVELS[Math.min(CEFR_LEVELS.length - 1, Math.max(0, i))];
+}

@@ -24,6 +24,11 @@ export const STATES = {
   Relearning: State.Relearning,
 } as const;
 
+// "Learned" = a card has left the learning phase (Review or Relearning). One
+// constant for stats, export, and the vocab vault — stats.ts used to hand-roll
+// `state === 2 || state === 3` while export.ts wrote [STATES.Review, ...].
+export const LEARNED_STATES = [STATES.Review, STATES.Relearning] as const;
+
 let _f: ReturnType<typeof fsrs> | null = null;
 
 export function getFsrs(requestRetention = 0.9) {

@@ -4,7 +4,7 @@ import { getLeechCount } from "@/lib/notebook";
 import { getGamificationSummary } from "@/lib/gamification";
 import { getCurrentUser } from "@/lib/session";
 import { TOPICS, topicBySlug } from "@/lib/topic-taxonomy";
-import { CEFR_LEVELS } from "@/lib/export-format";
+import { bandToCefr } from "@/lib/placement/estimate";
 import { getLearnerProfile } from "@/lib/selection/candidates";
 import { HomeView } from "./home-view";
 import { LandingView } from "./landing-view";
@@ -80,10 +80,7 @@ export default async function Home() {
   // the app looks like it hands out words at random.
   const cefrBand = profile
     ? {
-        band:
-          CEFR_LEVELS[
-            Math.min(CEFR_LEVELS.length - 1, Math.max(0, Math.round(profile.band)))
-          ],
+        band: bandToCefr(profile.band),
         topics: profile.topics
           .map((slug) => topicBySlug(slug)?.name)
           .filter((n): n is string => !!n)

@@ -12,7 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CheckCheck, Loader2 } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
-import { CEFR_LEVELS } from "@/lib/export-format";
+import { bandToCefr } from "@/lib/placement/estimate";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { cn } from "@/lib/utils";
 
@@ -52,9 +52,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
     }
   };
 
-  const bandLabel = profile
-    ? CEFR_LEVELS[Math.min(CEFR_LEVELS.length - 1, Math.max(0, Math.round(profile.band)))]
-    : null;
+  const bandLabel = profile ? bandToCefr(profile.band) : null;
 
   return (
     <section className="card-atelier p-6 sm:p-7 mb-4">

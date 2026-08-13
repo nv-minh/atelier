@@ -5,6 +5,7 @@ import { addDays, formatInterval, normalizeWord, shuffle, todayStr } from "./uti
 import { awardForReview, awardForSessionEnd } from "./gamification";
 import { selectNewWordIds } from "./selection/candidates";
 import { applyDrift } from "./selection/apply-drift";
+import { LEECH_THRESHOLD, leechCardWhere } from "./leech";
 
 export type StudyWord = {
   id: string;
@@ -90,18 +91,13 @@ export async function getStarredWordIds(userId: string): Promise<string[]> {
   return rows.map((r) => r.wordId);
 }
 
-// A "leech" is a word the user keeps forgetting: enough lapses on a card that has
-// left the New state. Derived, never stored. Kept here (with getStarredWordIds) so
-// notebook.ts and study-engine.ts share the constant without a circular import.
-export const LEECH_THRESHOLD = 4;
+// Re-exported so notebook.ts and every existing caller don't have to change
+// their import.
+export { LEECH_THRESHOLD };
 
-// Single source of truth for the leech predicate — reused by getLeechWordIds,
-// getLeeches, and getLeechCount so the definition never drifts between them.
-export const leechWhere = (userId: string) => ({
-  userId,
-  lapses: { gte: LEECH_THRESHOLD },
-  state: { gte: 1 },
-});
+// Single source of truth for the leech predicate now lives in ./leech (pure,
+// tested); this is just the userId-scoped version used for queries on Card.
+export const leechWhere = (userId: string) => ({ userId, ...leechCardWhere() });
 
 // Returns leech word ids worst-first (highest lapses), so callers that cap the
 // list drill the actual worst offenders rather than an arbitrary slice.

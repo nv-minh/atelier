@@ -1,7 +1,7 @@
 import "server-only";
 import { prisma } from "./db";
 import { getStarredWordIds } from "./study-engine";
-import { STATES } from "./fsrs";
+import { LEARNED_STATES } from "./fsrs";
 import { CEFR_LEVELS, type ExportRow } from "./export-format";
 
 export type { ExportRow };
@@ -87,7 +87,7 @@ export async function getExportRows(userId: string, scope: ExportScope): Promise
   if (scope === "learned") {
     // "Learned" = the user's card has left the learning phase (Review or Relearning).
     const cards = await prisma.card.findMany({
-      where: { userId, state: { in: [STATES.Review, STATES.Relearning] } },
+      where: { userId, state: { in: [...LEARNED_STATES] } },
       select: { wordId: true },
     });
     const ids = cards.map((c) => c.wordId);

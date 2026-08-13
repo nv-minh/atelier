@@ -16,10 +16,9 @@ import { useRouter } from "next/navigation";
 import { Check, Loader2, Sparkles, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAuthGate } from "@/components/auth-gate";
-import { CEFR_LEVELS } from "@/lib/export-format";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { BLOCK_SIZE, type BlockResult, nextLadderStep } from "@/lib/placement/ladder";
-import { estimatePlacement } from "@/lib/placement/estimate";
+import { bandToCefr, estimatePlacement } from "@/lib/placement/estimate";
 import { clearDraft, readDraft, writeDraft } from "@/lib/placement/storage";
 import { cn } from "@/lib/utils";
 
@@ -90,7 +89,7 @@ export function OnboardingFlow() {
   const drawReal = useCallback(
     (band: number): Item | null => {
       if (!bank) return null;
-      const label = CEFR_LEVELS[Math.min(CEFR_LEVELS.length - 1, Math.max(0, band))];
+      const label = bandToCefr(band);
       return bank.items.find((i) => i.cefr === label && !usedIds.current.has(i.id)) ?? null;
     },
     [bank]
@@ -269,7 +268,7 @@ export function OnboardingFlow() {
     };
   }, [router]);
 
-  const bandLabel = CEFR_LEVELS[Math.round(estimate.band)] ?? "A1";
+  const bandLabel = bandToCefr(estimate.band);
   const knownWords = answers
     .filter((a) => a.known)
     .map((a) => bank?.items.find((i) => i.id === a.wordId)?.word)
