@@ -16,11 +16,6 @@ export const WEEKLY_CAP_MULTIPLIER = 2.2;
 export const WINDOW_STEP_MIN = 5;
 export const WINDOW_STEP_MAX = 6;
 
-// At most this many rivals may have a small-hours peak, so opening the app at
-// 3am never shows ten people who "just studied".
-export const NIGHT_PEAK_MAX = 2;
-export const NIGHT_HOURS_VN: readonly [number, number] = [0, 5];
-
 // The app's day axis is UTC; rival body clocks are Vietnamese.
 export const VN_UTC_OFFSET_HOURS = 7;
 

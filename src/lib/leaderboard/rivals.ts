@@ -1,12 +1,12 @@
 // The ten rivals: a pure function of (userId, week). No DB rows, no cron, no
 // stored state — see the spec's section 2 for why.
 
-import { hashSeed, makeRng, rngFloat, rngInt, rngShuffle } from "./rng";
+import { hashSeed, makeRng, rngFloat, rngInt, rngPick, rngShuffle } from "./rng";
 import { weekIndex } from "./week";
 import { PERSONA_NAMES, AVATAR_COLORS } from "./personas";
 import {
   RIVAL_COUNT, PACE_FACTOR_MIN, PACE_FACTOR_MAX,
-  WINDOW_STEP_MIN, WINDOW_STEP_MAX, NIGHT_PEAK_MAX, NIGHT_HOURS_VN,
+  WINDOW_STEP_MIN, WINDOW_STEP_MAX,
   REST_PROB_MIN, REST_PROB_MAX, REGULARITY_MIN, REGULARITY_MAX,
   WEEKEND_BIAS_MAX, FORM_TREND_MAX,
 } from "./constants";
@@ -32,33 +32,32 @@ function namePermutation(userId: string): string[] {
 }
 
 // Window start for a given week. Step alternates 5/6 so consecutive weeks share
-// 5 or 4 names — familiar faces, but not the same league forever.
+// 5 or 4 names — familiar faces, but not the same league forever. Closed form
+// of the alternating walk: ceil(wIndex/2) even-indexed steps of MIN, the rest
+// of MAX (carryover tests are the check that this matches the walk).
 function windowStart(userId: string, wIndex: number): number {
   const stepRng = makeRng(hashSeed("step", userId));
-  let start = rngInt(stepRng, 0, PERSONA_NAMES.length - 1);
-  for (let w = 0; w < wIndex; w++) {
-    const step = (w % 2 === 0) ? WINDOW_STEP_MIN : WINDOW_STEP_MAX;
-    start = (start + step) % PERSONA_NAMES.length;
-  }
-  return start;
+  const start = rngInt(stepRng, 0, PERSONA_NAMES.length - 1);
+  const evenSteps = Math.ceil(wIndex / 2);
+  const oddSteps = Math.floor(wIndex / 2);
+  const advance = evenSteps * WINDOW_STEP_MIN + oddSteps * WINDOW_STEP_MAX;
+  return (start + advance) % PERSONA_NAMES.length;
 }
 
 // Personality is seeded from (userId, rival name) so a rival carried across
 // weeks keeps their character; only formTrend varies by week.
-function buildOne(userId: string, name: string, wIndex: number, allowNight: boolean): Rival {
+function buildOne(userId: string, name: string, wIndex: number): Rival {
   const rng = makeRng(hashSeed("rival", userId, name));
   const paceFactor = rngFloat(rng, PACE_FACTOR_MIN, PACE_FACTOR_MAX);
   const regularity = rngFloat(rng, REGULARITY_MIN, REGULARITY_MAX);
   const restProb = rngFloat(rng, REST_PROB_MIN, REST_PROB_MAX);
   const weekendBias = rngFloat(rng, -WEEKEND_BIAS_MAX, WEEKEND_BIAS_MAX);
-  const colorClass = AVATAR_COLORS[Math.floor(rng() * AVATAR_COLORS.length)];
-  let peakHourVn = rngInt(rng, 0, 23);
-  // Night-peak quota (spec 5.4): a rival over quota is moved to the evening
-  // rather than resampled, so the shift stays deterministic.
-  const [nightLo, nightHi] = NIGHT_HOURS_VN;
-  if (!allowNight && peakHourVn >= nightLo && peakHourVn <= nightHi) {
-    peakHourVn = 17 + (peakHourVn % 3); // 17..19
-  }
+  const colorClass = rngPick(rng, AVATAR_COLORS);
+  const peakHourVn = rngInt(rng, 0, 23);
+  // No night-peak quota: at 02:00 VN a rival's "active X ago" stamp is
+  // (26 − peakHourVn) hours old, so a small-hours peak reads STALE, not
+  // freshly active — the VN offset plus the walk-back rule already keeps the
+  // board plausible at 3am without singling out any hour range (ruling R9).
   // formTrend is the only week-varying trait: form comes and goes.
   const formRng = makeRng(hashSeed("form", userId, name, wIndex));
   const formTrend = rngFloat(formRng, -FORM_TREND_MAX, FORM_TREND_MAX);
@@ -83,19 +82,5 @@ export function buildRivals(userId: string, now: Date): Rival[] {
     { length: RIVAL_COUNT },
     (_, i) => perm[(start + i) % perm.length]
   );
-
-  // Two passes: build with night peaks allowed, then re-build the ones over
-  // quota with them disallowed. Order is fixed, so the result is deterministic.
-  const [nightLo, nightHi] = NIGHT_HOURS_VN;
-  const first = names.map((n) => buildOne(userId, n, wIndex, true));
-  let nightUsed = 0;
-  return first.map((r) => {
-    const isNight = r.peakHourVn >= nightLo && r.peakHourVn <= nightHi;
-    if (!isNight) return r;
-    if (nightUsed < NIGHT_PEAK_MAX) {
-      nightUsed++;
-      return r;
-    }
-    return buildOne(userId, r.name, wIndex, false);
-  });
+  return names.map((n) => buildOne(userId, n, wIndex));
 }
