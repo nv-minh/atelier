@@ -74,10 +74,12 @@ export function FlashcardMode({ item, reveal, onAnswer, direction = "forward" }:
       if (reveal !== "hidden") return;
       if (e.key === " " || e.key === "Enter") {
         e.preventDefault();
-        setFlipped((f) => {
-          playSound("flip");
-          return !f;
-        });
+        // Fire the sound OUTSIDE the updater: state-updater functions must be
+        // pure, and React Strict Mode double-invokes them in dev precisely to
+        // catch side effects like this one — playSound inside setFlipped's
+        // updater used to fire the tone twice per flip in development.
+        playSound("flip");
+        setFlipped((f) => !f);
         return;
       }
       if (!flipped) return;
@@ -93,12 +95,10 @@ export function FlashcardMode({ item, reveal, onAnswer, direction = "forward" }:
         card={card}
         direction={direction}
         flipped={flipped}
-        onFlip={() =>
-          setFlipped((f) => {
-            playSound("flip");
-            return !f;
-          })
-        }
+        onFlip={() => {
+          playSound("flip");
+          setFlipped((f) => !f);
+        }}
         previews={previews}
         onRate={(r) => rate(r as Rating)}
         ratingDisabled={reveal !== "hidden"}
