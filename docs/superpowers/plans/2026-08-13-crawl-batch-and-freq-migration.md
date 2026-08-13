@@ -179,6 +179,46 @@ Trần IPA của từng pack tỉ lệ nghịch gần như tuyệt đối với 
 
 Một lưu ý vận hành: `db:topics` bị kill giữa chừng ở lần chạy đầu (2.800/8.011). Chạy lại là an toàn — nó tính lại topic từ đầu cho mọi từ và chỉ giữ slug curated, nên không có trạng thái nửa vời nào tồn tại sau lần chạy hoàn chỉnh.
 
+## 8c. Plan A2 — engine chọn từ (đã thực thi)
+
+Làm theo TDD: test trước, xem nó đỏ, rồi mới viết code.
+
+| Module | Loại | Việc |
+|---|---|---|
+| `selection/constants.ts` | thuần | mọi con số tune được, một chỗ |
+| `selection/score.ts` | thuần | `bandFit × topicBoost × freqScore × knownPenalty` |
+| `selection/sample.ts` | thuần | chia slot (probe/core/topic) + lấy mẫu có trọng số, `rng` truyền vào |
+| `selection/widen.ts` | thuần | thang nới 4 bậc + map cửa sổ band → tập CEFR |
+| `selection/resolve.ts` | thuần | filter tường minh vs profile; compile filter thành `where` |
+| `selection/candidates.ts` | mỏng | 3 query pool + ghép các module trên |
+
+Điểm nối: **chỉ** `fetchNewCards`. Thay `orderBy: [{cefr:"asc"},{word:"asc"}]` — thứ phát `a`, `abandon`, `ability`… cho mọi người bất kể trình độ.
+
+**59 test mới, tổng 174 test xanh, `tsc` sạch.**
+
+### Ba quyết định lệch khỏi spec, có lý do
+
+1. **`topicBoost` không đọc `Topic.curated`** (như mục 5 đã cảnh báo). Tier "curated" chỉ dành cho topic **curated VÀ không có keyword** — chỉ khi đó slug mới chứng minh là do người gán lúc import. `travel` vừa curated vừa có keyword nên bị xếp tier keyword. Đọc `Topic.curated` trơn sẽ âm thầm boost quá tay mọi topic hybrid.
+2. **`bandWindow` là OFFSET quanh target, không phải vị trí tuyệt đối.** Test bắt được đúng lỗi này lúc tôi trộn hai quy ước — tên tham số giờ là `offsets` để không lặp lại.
+3. **Skew `+0.3` không làm band trên vượt band hiện tại.** Với σ=0.8, user B1 thì B1 = 0.93 còn B2 = 0.68. Skew chỉ phá đối xứng (band trên hơn band dưới), chứ không đổi đỉnh sang band trên. Test đầu tiên của tôi kỳ vọng sai, đã sửa test chứ không sửa code.
+
+### Một lỗi thật do nghiệm trên DB thật bắt được
+
+`selectNewWordIds` ban đầu tin caller đã compile filter của user vào `baseWhere`. `fetchNewCards` có làm, nhưng gọi trực tiếp với `{cefr:"A1"}` thì trả về cả A2/B1/B2 — **vỡ đúng cái bất biến quan trọng nhất**, chỉ vì một caller quên. Giờ module tự compile qua `explicitWordWhere` và áp lên **mọi** pool. Có test regression.
+
+### Nghiệm 6 tiêu chí trên DB thật (8.011 từ)
+
+| Tiêu chí | Kết quả |
+|---|---|
+| 1. User C1 không filter → 20 từ đầu không có A1 | ✅ A1 = **0** (B1 1 / B2 1 / C1 18) |
+| 2. User A2 vẫn nhận từ dễ, không bị đẩy sang C1 | ✅ A1+A2+B1 = 20/20, C1 = 0 |
+| 3. Chọn `it-programming` → ≥60% đúng lĩnh vực nhưng <100% | ✅ **70%** |
+| 4. `C1 × daily-life` (ô rỗng thật — pack này không có từ C1) | ✅ trả **đủ 20/20**, không phải 0 |
+| 5. `cefr=A1` tường minh thắng profile C1 | ✅ **20/20 đều là A1** |
+| 6. Không có profile (guest / user cũ) | ✅ 20/20 theo thứ tự tần suất |
+
+**Hạn chế về khả năng nghiệm lại:** `candidates.ts` có `import "server-only"` nên `tsx` không load được, và nó chạm DB thật nên không thuộc `npm test` (suite phải hermetic). Lần nghiệm này chạy bằng cách tạm shim `server-only` trong `node_modules` rồi xoá đi. Muốn có harness lâu dài thì thêm alias `server-only` trong `vitest.config.ts` — chưa làm vì chưa có test nào cần, và repo chưa có hạ tầng mock Prisma.
+
 ## 9. Nghiệm
 
 - `src/lib/freq.test.ts` — percentile: đỉnh list ≈ 1, cuối list = 0, rank 0 clamp về 1, input vô dụng ra `null` chứ không bịa số; `mister` rank 1 ở cả BSL và TSL ra hai percentile theo hai thang riêng; pack không có nguồn rank ra null ở **cả hai** field.

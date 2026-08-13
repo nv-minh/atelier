@@ -104,7 +104,10 @@ export async function buildSessionPlan(
     newAllowanceToday,
     dailyReviewLimit: settings.reviewsPerDay,
   });
-  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, budget.newLimit);
+  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, budget.newLimit, {
+    cefr: opts.cefr,
+    topic: opts.topic,
+  });
   const actual = deriveSessionLimits({
     size: opts.size,
     dueAvailable,
