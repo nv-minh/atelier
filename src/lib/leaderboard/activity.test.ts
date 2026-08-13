@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { buildRivals } from "./rivals";
+import { addUtcDays } from "@/lib/utils";
+import { buildRivals, type Rival } from "./rivals";
 import { lastActiveAt } from "./activity";
 
 const U = "user_abc";
@@ -63,5 +64,27 @@ describe("lastActiveAt", () => {
 
   it("buổi chiều thì bảng có người vừa hoạt động", () => {
     expect(USERS.some((u) => freshCount(u, AFTERNOON_VN, 6) > 0)).toBe(true);
+  });
+
+  it("cả 4 ngày walk-back đều là ngày nghỉ → rơi vào nhánh fallback, trả về đúng 4 ngày trước now", () => {
+    // restProb: 1 làm cho rng() < restProb luôn đúng — makeRng() không bao giờ
+    // trả về đúng 1 (numerator tối đa là 4294967295 / 4294967296 < 1) — nên
+    // mọi ngày trong 4 ngày walk-back đều là ngày nghỉ, bất kể id hay ngày cụ
+    // thể nào. Nhánh này KHÔNG phải lý thuyết: đo được ở ~1.1% rival trên
+    // roster thật (xem comment trong activity.ts).
+    const alwaysRests: Rival = {
+      id: "r_test_always_rests",
+      name: "Test Rival",
+      colorClass: "bg-ember/12 text-ember",
+      paceFactor: 1,
+      peakHourVn: 12,
+      regularity: 0.2,
+      restProb: 1,
+      weekendBias: 0,
+      formTrend: 0,
+    };
+    expect(lastActiveAt(alwaysRests, AFTERNOON_VN).getTime()).toBe(
+      addUtcDays(AFTERNOON_VN, -4).getTime()
+    );
   });
 });

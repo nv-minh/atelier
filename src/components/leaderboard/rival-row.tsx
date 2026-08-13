@@ -35,10 +35,21 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
     <li
       className={cn(
         "flex items-center gap-3 sm:gap-4 rounded-2xl px-3 sm:px-4 py-3",
-        isUser && "bg-ember/8 border border-ember/20"
+        // Hairline separator between rows, replacing `divide-y` on the <ul>.
+        // Deliberately border-color as an important utility below: a divide-y
+        // divider is a >0 specificity(0,3,0) rule that always beats a plain
+        // `border-<colour>` utility (0,1,0), which is exactly what silently
+        // grey-washed the user row's ember border at every rank but 1st. This
+        // sibling-combinator hairline compiles to (0,1,1) — still higher than
+        // a plain utility — so the user row's own border needs `!` to win.
+        "[&+li]:border-t [&+li]:border-line",
+        isUser && "bg-ember/8 border !border-ember/20"
       )}
     >
-      <span className={cn("w-6 text-right font-mono text-sm", isUser ? "text-ember" : "text-soft")}>
+      <span
+        className={cn("w-6 text-right font-mono text-sm", isUser ? "text-ember" : "text-soft")}
+        aria-label={`${t("leaderboard.rank")} ${entry.rank}`}
+      >
         {entry.rank}
       </span>
 
@@ -64,7 +75,7 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
             </span>
           )}
         </span>
-        {activeLabel && <span className="block text-xs text-soft/70">{activeLabel}</span>}
+        {activeLabel && <span className="block text-xs text-soft opacity-70">{activeLabel}</span>}
       </span>
 
       {entry.delta !== null && entry.delta !== 0 && (

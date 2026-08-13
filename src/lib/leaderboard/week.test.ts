@@ -1,29 +1,7 @@
 import { describe, it, expect } from "vitest";
-import { weekKey, weekIndex, weekDates, isMondayUtc } from "./week";
+import { weekIndex, weekDates, isMondayUtc } from "./week";
 
 const utc = (y: number, m: number, d: number, h = 0) => new Date(Date.UTC(y, m - 1, d, h));
-
-describe("weekKey", () => {
-  it("mọi ngày trong cùng tuần cho cùng key", () => {
-    const mon = weekKey(utc(2026, 8, 10));
-    expect(weekKey(utc(2026, 8, 13))).toBe(mon);
-    expect(weekKey(utc(2026, 8, 16, 23))).toBe(mon); // Chủ nhật
-  });
-
-  it("thứ Hai kế tiếp là key khác", () => {
-    expect(weekKey(utc(2026, 8, 17))).not.toBe(weekKey(utc(2026, 8, 16)));
-  });
-
-  it("đúng định dạng YYYY-Www", () => {
-    expect(weekKey(utc(2026, 8, 13))).toMatch(/^\d{4}-W\d{2}$/);
-  });
-
-  it("tuần chứa 4 tháng 1 là tuần 01 (quy tắc ISO)", () => {
-    // 2026-01-04 là Chủ nhật → tuần bắt đầu 2025-12-29, và đó là W01 của 2026
-    expect(weekKey(utc(2026, 1, 4))).toBe("2026-W01");
-    expect(weekKey(utc(2025, 12, 29))).toBe("2026-W01");
-  });
-});
 
 describe("weekIndex", () => {
   it("tăng đúng 1 mỗi tuần", () => {

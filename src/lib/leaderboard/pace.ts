@@ -9,7 +9,10 @@ function median(sorted: number[]): number {
 // Median over the days the user ACTUALLY studied, not over all seven. Including
 // rest days as zeros drags the median to 0 for anyone who studies 3-4 days a
 // week — which is most people — and rival XP scaled from 0 makes an empty board.
-// Rest days are reflected in activeDays instead.
+// activeDays is returned alongside pace and is currently only consulted for the
+// < PACE_MIN_ACTIVE_DAYS fallback below — it is NOT fed into rival scaling, so
+// a user's rest days have no separate effect on how hard the rivals are. That's
+// available for a future calibration change, not forgotten.
 export function derivePace(
   dailyXps: number[],
   dailyGoalXp: number

@@ -5,6 +5,7 @@ import { prisma } from "@/lib/db";
 import { AuthRequired } from "@/components/auth-required";
 import { getUserPace, getUserXpThroughYesterday } from "@/lib/leaderboard/pace-server";
 import { buildBoard } from "@/lib/leaderboard/board";
+import { isMondayUtc } from "@/lib/leaderboard/week";
 import { LeaderboardView } from "./leaderboard-view";
 
 export const dynamic = "force-dynamic";
@@ -33,5 +34,7 @@ export default async function LeaderboardPage() {
     now,
   });
 
-  return <LeaderboardView board={board} nowIso={now.toISOString()} />;
+  return (
+    <LeaderboardView board={board} nowIso={now.toISOString()} isMonday={isMondayUtc(now)} />
+  );
 }
