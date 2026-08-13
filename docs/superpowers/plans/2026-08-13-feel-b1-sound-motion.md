@@ -978,24 +978,30 @@ To toggle the layer for the "without" run, set `--grain-opacity: 0` on `:root` i
 
 - [ ] **Step 2: Record the numbers in this file**
 
-Write the measured values into a table right here, replacing this instruction, e.g.:
+**Measurement could not be completed — the automation tab never became visible to Chrome's compositor, which suppresses `requestAnimationFrame` entirely.** This is a real, reproducible finding, not a skipped step; the evidence is below.
+
+Setup: dev server started with `AUTH_BYPASS=1` (temp `.env.local`, deleted afterward — not committed) so `/browse` would render without a real session. Opened `/browse` (6,394 rows, `scrollHeight` 5819px) via `mcp__claude-in-chrome__*`, injected the rAF-driven scroll/FPS meter described in Step 1.
+
+What happened:
+- The first scripted run (`window.scrollBy` + `requestAnimationFrame`, 600-frame cap) never returned — the tool's own CDP `Runtime.evaluate` call timed out at 45s with zero frames counted.
+- `document.visibilityState` read `"hidden"` (`document.hidden === true`) for the entire session, even immediately after navigation.
+- Tried to clear it: a real `left_click` on the page (this did flip `document.hasFocus()` to `true`), `resize_window` to 1280×900, `resize_window` to the full display size 1680×1050 (silently had no effect — `window.outerWidth/outerHeight` stayed 1445×840), and an `F11` key press (no fullscreen transition). None changed `visibilityState`.
+- Installed a bare rAF counter (`requestAnimationFrame` recursively incrementing a counter, no scrolling involved) and let it run **~130 seconds** of real wall-clock time (two separate waits, 40s then 90s, both confirmed via a background monitor, not guessed). Result: **0 callbacks**, both times. Ordinary background-tab timer throttling caps at roughly 1 Hz, not zero — a persistent zero over two full minutes means rAF is not merely throttled here, it is not scheduled at all, consistent with the tab being occluded at the OS/compositor level (Chrome only produces a compositor frame — and only then fires rAF — for a frame that is actually going to be displayed).
+- The page was otherwise fully functional throughout: `document.title`, DOM queries, and `window.scrollBy`/`window.scrollTo` (`scrollY` updated correctly) all worked normally, and `mcp__claude-in-chrome__computer`'s `screenshot` action rendered the real page correctly (grain texture visible in the capture) — screenshot capture forces a one-off render through a separate CDP path that bypasses the occlusion optimization, which is exactly why the page *looks* fine in a screenshot while `requestAnimationFrame` still never fires for it.
+- No CDP performance-tracing tool is exposed by the available tools either (checked), so there was no fallback instrumentation path to fall back on within this environment.
+- Net effect: the grain-on and grain-off conditions were never actually differentiated by data, because no run — under either condition — produced a single completed frame to measure. This is a measurement-infrastructure ceiling in this sandboxed browser-automation session, not evidence about the grain layer's cost one way or the other.
 
 ```
-| Condition | Avg FPS | Paint+composite (ms) |
-|---|---|---|
-| Grain on  | ...     | ...                  |
-| Grain off | ...     | ...                  |
+| Condition | Avg FPS | Dropped frames | Elapsed | Result |
+|---|---|---|---|---|
+| Grain on (default)              | not measurable | not measurable | 45s timeout, 0 frames | rAF never fired (tab occluded) |
+| Grain off (`--grain-opacity: 0`) | not measurable | not measurable | not reached           | blocked before this condition was ever reached |
+| rAF-only probe (no scroll, either condition) | n/a | n/a | ~130s observed | 0 callbacks both times |
 ```
 
 - [ ] **Step 3: Decide from the numbers**
 
-- **If the difference is negligible** (< ~10% on both metrics, or both conditions hold ~60fps): **change nothing.** Commit the measurement note only, and say so plainly in the commit message. This is a valid, successful outcome for this task.
-- **If the difference is real**, apply the least destructive fix that recovers it, in this order of preference:
-  1. Drop `mix-blend-mode` on small viewports only (keep plain opacity) — preserves the texture everywhere, removes the blend cost where devices are weakest.
-  2. Lower `--grain-opacity` on small viewports.
-  3. Disable the grain layer below a width breakpoint.
-
-Then re-measure to confirm the fix actually recovered the cost, and record both numbers.
+There are no numbers to weigh a real-vs-negligible difference against — this is the plan's explicitly anticipated "too noisy/inconclusive to draw a conclusion" outcome, just total rather than partial (zero usable samples rather than noisy ones). Per the plan's own instruction for that case: **change nothing.** The grain layer is Atelier's signature texture and a failed measurement is not grounds to touch it. If someone re-runs this in an environment where the automated tab is actually visible to the compositor (a real interactive browser window, not an automation session kept off-screen), the rAF-based method in Step 1 should work as designed and can produce the real table this step originally asked for.
 
 - [ ] **Step 4: Commit**
 
@@ -1004,11 +1010,18 @@ If no change was warranted:
 ```bash
 git add docs/superpowers/plans/2026-08-13-feel-b1-sound-motion.md
 git commit -m "$(cat <<'EOF'
-perf(ui): measure the grain overlay's scroll cost, leave it in place
+perf(ui): attempt to measure the grain overlay's scroll cost, leave it in place
 
-Profiled sustained scrolling on /browse with and without the layer. The
-numbers are in the plan. The difference did not justify touching Atelier's
-signature texture.
+Tried to profile sustained scrolling on /browse with and without the layer
+using the rAF-driven scroll/FPS meter, per plan. The automation tab never
+became visible to the compositor (document.visibilityState stayed "hidden"
+through clicks, resizes, and a fullscreen attempt), which suppresses
+requestAnimationFrame entirely — confirmed with a bare rAF counter that saw
+zero callbacks over ~130s of wall-clock time. No comparative numbers were
+obtainable in this environment; details are in the plan's Task 5 section.
+
+A failed measurement is not grounds to touch Atelier's signature texture, so
+nothing changed.
 
 Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
