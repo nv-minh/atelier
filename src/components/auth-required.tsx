@@ -21,7 +21,8 @@ export type WallContext =
   | "library"
   | "word"
   | "settings"
-  | "home";
+  | "home"
+  | "leaderboard";
 
 export function AuthRequired({
   context,
