@@ -55,6 +55,7 @@ function deRound(value: number, seedKey: string): number {
 }
 
 export function rivalWeeklyXp(rivals: Rival[], dates: string[], pace: number): number[] {
+  if (pace <= 0) return new Array(rivals.length).fill(0);
   const totals = new Array(rivals.length).fill(0) as number[];
   for (const d of dates) {
     const day = dailyXpForAll(rivals, d, pace);

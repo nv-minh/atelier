@@ -62,6 +62,33 @@ describe("dailyXpForAll — luật ngày nghỉ", () => {
       dailyXpForAll(rivals, "2026-08-12", PACE)
     );
   });
+
+  it("1(a) pins the tie-break: all restProb=0, zero lands on lowest id", () => {
+    const rivals = [
+      { id: "r_aaa", name: "A", colorClass: "c1", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0, weekendBias: 0, formTrend: 0 },
+      { id: "r_bbb", name: "B", colorClass: "c2", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0, weekendBias: 0, formTrend: 0 },
+      { id: "r_ccc", name: "C", colorClass: "c3", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0, weekendBias: 0, formTrend: 0 },
+    ];
+    const xps = dailyXpForAll(rivals, "2026-08-11", PACE);
+    const zeros = xps.filter((x) => x === 0);
+    expect(zeros).toHaveLength(1);
+    const zeroIdx = xps.indexOf(0);
+    expect(rivals[zeroIdx].id).toBe("r_aaa");
+  });
+
+  it("1(b) pins restProb ordering: highest restProb forced to rest", () => {
+    // 2026-08-10: no rival rests naturally (all rng() >= restProb for this seed)
+    const rivals = [
+      { id: "r_001", name: "Low", colorClass: "c1", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0.001, weekendBias: 0, formTrend: 0 },
+      { id: "r_002", name: "Mid", colorClass: "c2", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0.002, weekendBias: 0, formTrend: 0 },
+      { id: "r_003", name: "High", colorClass: "c3", paceFactor: 1, peakHourVn: 12, regularity: 0.3, restProb: 0.003, weekendBias: 0, formTrend: 0 },
+    ];
+    const xps = dailyXpForAll(rivals, "2026-08-10", PACE);
+    const zeros = xps.filter((x) => x === 0);
+    expect(zeros).toHaveLength(1);
+    const zeroIdx = xps.indexOf(0);
+    expect(rivals[zeroIdx].restProb).toBe(0.003);
+  });
 });
 
 describe("rivalWeeklyXp", () => {
@@ -94,5 +121,18 @@ describe("rivalWeeklyXp", () => {
     expect(rivalWeeklyXp(rivals, weekDates(NOW), PACE)).toEqual(
       rivalWeeklyXp(rivals, weekDates(NOW), PACE)
     );
+  });
+
+  it("Finding 2: returns all non-negative when pace <= 0", () => {
+    const rivals = buildRivals(U, NOW);
+    const dates = weekDates(NOW);
+    for (const pace of [0, -10]) {
+      const xps = rivalWeeklyXp(rivals, dates, pace);
+      expect(xps).toHaveLength(rivals.length);
+      for (const x of xps) {
+        expect(Number.isInteger(x)).toBe(true);
+        expect(x).toBeGreaterThanOrEqual(0);
+      }
+    }
   });
 });
