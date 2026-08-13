@@ -3,10 +3,10 @@
 [![CI](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml)
 [![Live demo](https://img.shields.io/badge/demo-Vercel-ember)](https://vocab-master-dusky.vercel.app)
 
-Web app **full-stack** luyện từ vựng tiếng Anh (A1–C1) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập GitHub + đồng bộ dữ liệu học giữa các thiết bị.
+Web app **full-stack** luyện từ vựng tiếng Anh (A1–C1) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập Google + đồng bộ dữ liệu học giữa các thiết bị.
 
 ```
-6.394 từ · 5 chế độ học · 5 bộ từ chuyên đề · FSRS scheduler · song ngữ Anh–Vi · đăng nhập GitHub
+6.394 từ · 5 chế độ học · 5 bộ từ chuyên đề · FSRS scheduler · song ngữ Anh–Vi · đăng nhập Google
 ```
 
 👉 **Demo chạy thật:** https://vocab-master-dusky.vercel.app
@@ -53,7 +53,7 @@ Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch
 "Aesthetic Atelier" — nền giấy ấm, font **Fraunces** (serif) + **Hanken Grotesk**, accent saffron-ember & moss, texture giấy nhẹ, animation mượt (Motion). Light/Dark theme, responsive đầy đủ (mobile bottom-tab nav). Loading mượt: **progress bar + skeleton** khi chuyển trang.
 
 ### 🔐 Đăng nhập & đồng bộ
-**GitHub OAuth** (NextAuth v4 + Prisma adapter). Dữ liệu học lưu trên **Neon Postgres** → sync giữa các thiết bị theo tài khoản.
+**Google OAuth** (NextAuth v4 + Prisma adapter). Dữ liệu học lưu trên **Neon Postgres** → sync giữa các thiết bị theo tài khoản.
 
 ---
 
@@ -76,13 +76,13 @@ Cần file `.env` (KHÔNG commit):
 DATABASE_URL="postgresql://..."        # Neon / Postgres
 NEXTAUTH_SECRET="..."                   # openssl rand -base64 32
 NEXTAUTH_URL="http://localhost:3000"
-GITHUB_CLIENT_ID="..."                  # GitHub OAuth app
-GITHUB_CLIENT_SECRET="..."
+GOOGLE_CLIENT_ID="..."                  # Google OAuth client
+GOOGLE_CLIENT_SECRET="..."
 AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cần login
 PEXELS_API_KEY="..."                    # (chỉ cần khi chạy images:fetch) key miễn phí tại pexels.com/api
 ```
 
-> Muốn setup Neon + GitHub OAuth đầy đủ, xem `DEPLOY.md`.
+> Muốn setup Neon + Google OAuth đầy đủ, xem `DEPLOY.md`.
 
 ---
 
@@ -92,7 +92,7 @@ PEXELS_API_KEY="..."                    # (chỉ cần khi chạy images:fetch) 
 |---|---|
 | Framework | Next.js 14 (App Router) + TypeScript |
 | DB | PostgreSQL (Neon) + Prisma ORM |
-| Auth | NextAuth v4 + GitHub + Prisma adapter |
+| Auth | NextAuth v4 + Google + Prisma adapter |
 | SRS | [`ts-fsrs`](https://github.com/open-spaced-repetition/ts-fsrs) |
 | UI | Tailwind CSS + Motion (Framer Motion) + lucide-react |
 | Charts | Recharts |
@@ -167,7 +167,7 @@ npm run images:apply            # nạp data/images.json vào Word.imageUrl (--d
 ---
 
 ## 🔧 Mở rộng
-- **Multi-user:** đã per-user (mọi bảng scope theo `userId` qua session GitHub).
+- **Multi-user:** đã per-user (mọi bảng scope theo `userId` qua session Google).
 - **Tối ưu FSRS:** `ts-fsrs` hỗ trợ optimize tham số từ lịch sử ôn → scheduler cá nhân hoá.
 - **Thêm ngôn ngữ UI:** thêm entry vào `src/lib/i18n/dictionaries.ts`.
 

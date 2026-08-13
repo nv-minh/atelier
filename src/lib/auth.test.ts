@@ -78,9 +78,18 @@ describe("authOptions.providers", () => {
     // caller-supplied option — including this flag — under `.options` on the
     // raw config object; NextAuth only flattens it to the top level later, at
     // request time, inside its own parseProviders() step. Since this test
-    // inspects the pre-merge `authOptions.providers` array directly, it reads
-    // the flag from where it actually lives at this stage.
-    expect(google.options.allowDangerousEmailAccountLinking).toBe(true);
-    expect(github.options?.allowDangerousEmailAccountLinking).toBeFalsy();
+    // inspects the pre-merge `authOptions.providers` array directly, it
+    // currently reads the flag from `.options`. next-auth is caret-pinned
+    // (^4.24.15) though, so a minor bump could flatten it to the top level
+    // before that step ever runs — check both shapes so the assertion stays
+    // meaningful instead of silently reading undefined off a stale path.
+    expect(
+      google.allowDangerousEmailAccountLinking ??
+        google.options?.allowDangerousEmailAccountLinking
+    ).toBe(true);
+    expect(
+      github.allowDangerousEmailAccountLinking ??
+        github.options?.allowDangerousEmailAccountLinking
+    ).toBeFalsy();
   });
 });

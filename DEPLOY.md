@@ -1,4 +1,4 @@
-# Deployment — Vercel + Neon + GitHub OAuth
+# Deployment — Vercel + Neon + Google OAuth
 
 ## Đã deploy
 - **App**: https://vocab-master-dusky.vercel.app
@@ -21,7 +21,7 @@
    - **Authorization callback URL**: `https://vocab-master-dusky.vercel.app/api/auth/callback/github`
 3. Register → copy **Client ID** + sinh **Client Secret**.
 
-> Muốn dùng cả local: thêm callback thứ 2 `http://localhost:3939/api/auth/callback/github` (hoặc tạo 1 OAuth app riêng cho dev).
+> Muốn dùng cả local: thêm callback thứ 2 `http://localhost:3000/api/auth/callback/github` (hoặc tạo 1 OAuth app riêng cho dev).
 
 ### 2. Thêm vào Vercel
 ```bash
@@ -57,7 +57,7 @@ vercel --prod --yes
 ```
 (Hoặc Vercel dashboard → project → Settings → Environment Variables.)
 
-Không cần set `NEXT_PUBLIC_GOOGLE_ENABLED` bằng tay — biến này được `next.config.js` tự suy ra từ `GOOGLE_CLIENT_ID` lúc build, set tay sẽ không có tác dụng và có thể khiến hai biến lệch nhau.
+Không cần set `NEXT_PUBLIC_GOOGLE_ENABLED` bằng tay — biến này được `next.config.js` tự suy ra từ `GOOGLE_CLIENT_ID` **và** `GOOGLE_CLIENT_SECRET` lúc build (thiếu 1 trong 2 là tắt), set tay sẽ không có tác dụng và có thể khiến hai biến lệch nhau.
 
 ### 3. (Tùy chọn) Chạy local
 Thêm cùng 2 giá trị vào `.env` (`GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`), rồi `npm run dev`.
@@ -67,7 +67,7 @@ Sau khi xong: nút **Tiếp tục với Google** trên `/login` sẽ active. Nh�
 > GitHub provider vẫn được đăng ký trong `authOptions` dù nút đã gỡ khỏi `/login` — `GITHUB_CLIENT_ID`/`GITHUB_CLIENT_SECRET` có thể giữ nguyên hoặc xoá khỏi env mà không phá gì, vì không còn nút nào gọi tới provider đó nữa.
 
 ## Kiến trúc
-- NextAuth v4 (JWT session) + Prisma Adapter + GitHub provider.
+- NextAuth v4 (JWT session) + Prisma Adapter + Google provider.
 - Mọi route học/ôn/thống kê bảo vệ bằng middleware → redirect `/login`.
 - Data per-user (Card/ReviewLog/StudySession/DailyStat/Settings scope theo `userId`).
 - Neon dùng chung cho dev + prod (đây chính là cơ chế sync).
