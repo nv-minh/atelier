@@ -24,7 +24,15 @@ export function rivalDailyXp(rival: Rival, dateStr: string, pace: number): numbe
   const jitter = 1 + rngFloat(rng, -rival.regularity, rival.regularity);
   const weekend = 1 + (isWeekend(dateStr) ? rival.weekendBias : 0);
   const form = 1 + rival.formTrend;
-  const raw = pace * rival.paceFactor * jitter * weekend * form;
+  // paceFactor is meant to read as "this rival's weekly output relative to
+  // the user's", but a rival only produces XP on the days it doesn't rest —
+  // so without this division, restProb silently eats into paceFactor's
+  // promise and doubles as a hidden strength knob. Dividing by the active
+  // fraction (1 - restProb) puts that output back onto the days that remain:
+  // a rival who studies three days a week does more on each of those days.
+  // restProb is capped at REST_PROB_MAX = 0.45 (< 1), so 1 - rival.restProb
+  // is always in [0.55, 0.95] here — never zero, never negative.
+  const raw = (pace * rival.paceFactor * jitter * weekend * form) / (1 - rival.restProb);
   return Math.max(0, Math.round(raw));
 }
 

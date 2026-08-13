@@ -12,7 +12,7 @@ import { weekDates } from "./week";
 export async function getUserPace(
   userId: string,
   now: Date
-): Promise<{ pace: number; activeDays: number }> {
+): Promise<{ sessionPace: number; dailyPace: number; activeDays: number }> {
   const start = todayStr(addUtcDays(now, -(PACE_WINDOW_DAYS - 1)));
   const [rows, settings] = await Promise.all([
     prisma.dailyStat.findMany({

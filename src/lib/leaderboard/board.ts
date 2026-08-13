@@ -127,6 +127,11 @@ export function buildBoard(input: {
    */
   userWeeklyXpThroughYesterday: number;
   userStreak: number;
+  /**
+   * The daily figure rivals are scaled to — the caller's dailyPace (weekly
+   * output spread over the week), not their sessionPace (per-session
+   * intensity). See pace.ts for why the distinction matters.
+   */
   pace: number;
   now: Date;
 }): BoardEntry[] {

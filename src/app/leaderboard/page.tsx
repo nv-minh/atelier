@@ -30,7 +30,7 @@ export default async function LeaderboardPage() {
     userWeeklyXp: recap.thisWeek.xp,
     userWeeklyXpThroughYesterday: throughYesterday,
     userStreak: streak,
-    pace: pace.pace,
+    pace: pace.dailyPace,
     now,
   });
 
