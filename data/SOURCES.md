@@ -7,6 +7,7 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Source | License | Used for | URL | Retrieved |
 |---|---|---|---|---|
 | Oxford 3000/5000 word list (via `winterdl/oxford-5000-vocabulary-audio-definition`) | Oxford University Press word list; community repo (also serves the app's runtime audio via `AUDIO_BASE`) | Base A1–B2 dataset, C1 pack (`oxford-c1`), CEFR levels, IPA, definitions, examples, UK/US audio | https://github.com/winterdl/oxford-5000-vocabulary-audio-definition | 2026-07-26 |
+| NGSL 1.2 (New General Service List) — Browne, C., Culligan, B. & Phillips, J. | CC BY 3.0 (attribution required) | **`Word.freqPct` general frequency percentiles** (top-priority source in `prisma/backfill-freq.ts`) | https://www.newgeneralservicelist.com/new-general-service-list | 2026-08-13 |
 | NGSL-Spoken 1.2 — Browne, C., Culligan, B. & Phillips, J. | CC BY 3.0 (attribution required) | `conversation` pack word list + ranks | https://www.newgeneralservicelist.com/ngsl-spoken | 2026-07-26 |
 | Business Service List (BSL) 1.2 — Browne, C. & Culligan, B. | CC BY 3.0 | `business` pack word list + ranks | https://www.newgeneralservicelist.com/business-service-list | 2026-07-26 |
 | TOEIC Service List (TSL) 1.2 — Browne, C. & Culligan, B. | CC BY 3.0 | `toeic` pack word list + ranks | https://www.newgeneralservicelist.com/toeic-service-list | 2026-07-26 |
@@ -65,12 +66,29 @@ spelling already in the DB). Rationale for each decision is in
 `docs/superpowers/plans/2026-08-13-crawl-batch-and-freq-migration.md`.
 
 **A crawl batch does not carry frequency data.** `freq_rank` was null on all
-2,996 rows, so those words keep `freqPct = null` and the selection engine scores
-them neutrally. `db:backfill-freq` can only reach words present in NGSL-Spoken /
-BSL / TSL; there is no *general* NGSL list in `packs:fetch`, so if you want
-broad frequency coverage, add an NGSL 1.2 stats CSV as
-`data/raw/NGSL_12_stats.csv` (picked up automatically as the top-priority
-`ngsl` tier) or emit Zipf values from `wordfreq` during the crawl.
+2,996 rows of the 2026-08-13 batch, so those words get their percentile from
+`db:backfill-freq` or not at all. A future crawl should emit Zipf values from
+`wordfreq` (which it already uses to pick words) straight into `freq_rank`.
+
+## Frequency sources and priority
+
+`Word.freqPct` is a percentile, never a raw rank — ranks are per-source and not
+comparable (`mister` is rank 1 in both BSL and TSL, `be` is rank 1 in
+NGSL-Spoken but rank 2 in NGSL general). `prisma/backfill-freq.ts` prefers the
+most general scale available, in this order:
+
+1. `NGSL_12_stats.csv` — general English, 2,809 lemmas
+2. `NGSL_Spoken_12_stats.csv`
+3. `BSL_120_stats.csv`
+4. `TSL_12_stats.csv`
+
+The three specialist lists are built to *supplement* NGSL rather than repeat it,
+so they overlap it very little — the union is 5,252 distinct ranked words.
+`--force` recomputes every row against this priority (use it after changing the
+order); the default fills only nulls and is safe to re-run.
+
+Words in none of the lists keep `freqPct = null` on purpose, and the selection
+engine scores null neutrally rather than inventing a rank.
 
 ## Backups
 

@@ -24,6 +24,15 @@ const SOURCES: Source[] = [
     note: "CEFR level lookup for words outside Oxford 5000 (MIT, CEFR-J based)",
   },
   {
+    // The GENERAL frequency list, and the top-priority source for Word.freqPct.
+    // It is what makes a percentile comparable across the whole vocabulary
+    // rather than only within one domain pack — see prisma/backfill-freq.ts.
+    file: "NGSL_12_stats.csv",
+    url: "https://www.newgeneralservicelist.com/s/NGSL_12_stats.csv",
+    ua: BROWSER_UA,
+    note: "NGSL 1.2 — general high-frequency English, with frequency ranks (CC BY 3.0)",
+  },
+  {
     file: "NGSL_Spoken_12_stats.csv",
     url: "https://www.newgeneralservicelist.com/s/NGSL-Spoken_12_stats.csv",
     ua: BROWSER_UA, // Squarespace 404s non-browser UAs on /s/ static links

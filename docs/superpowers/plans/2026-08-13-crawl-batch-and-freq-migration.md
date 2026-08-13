@@ -62,9 +62,11 @@ Cả 2.996 từ đều `freq_rank: null`, dù `notes` của pack nói việc ch�
 
 Nên: **1.685 từ mới sẽ có `freqPct = null`**, và engine cho điểm trung tính (đúng tầng 3 của spec mục 2.1 — không bịa số).
 
-`db:backfill-freq` cũng không cứu được nhiều: nó chỉ với tới từ nằm trong NGSL-Spoken / BSL / TSL, mà **`packs:fetch` không tải NGSL bản tổng quát** — spec mục 2.1 giả định có `data/raw/NGSL.json`, thực tế nguồn đó chưa bao giờ nằm trong pipeline. Script đã để sẵn tầng ưu tiên cao nhất: đặt file vào `data/raw/NGSL_12_stats.csv` là nó tự dùng.
+**ĐÃ XỬ LÝ (cùng ngày).** Ban đầu `db:backfill-freq` chỉ với tới NGSL-Spoken / BSL / TSL vì `packs:fetch` không tải NGSL bản tổng quát — spec mục 2.1 giả định `data/raw/NGSL.json`, nguồn đó chưa bao giờ nằm trong pipeline. Đã thêm `NGSL_12_stats.csv` (2.809 lemma, CC BY 3.0) vào `fetch-sources.ts` làm **tầng ưu tiên cao nhất**, đúng tên file mà `backfill-freq.ts` đã chờ sẵn.
 
-**Việc còn treo:** muốn phủ tần suất rộng thì cần một trong hai — thêm URL NGSL tổng quát vào `fetch-sources.ts`, hoặc cho lô crawl sau xuất luôn Zipf từ `wordfreq` (nguồn nó đã dùng) thành `freq_rank`.
+Kết quả: **freqPct 39,2% → 64,9%** (3.140 → 5.198/8.011). Chạy `--force` để tôn trọng thứ tự ưu tiên của spec: 697 từ đang giữ percentile theo thang pack (bsl/tsl) được gán lại theo thang tổng quát. BSL/TSL gần như không giao với NGSL vì chúng được thiết kế để **bổ sung** NGSL chứ không lặp lại — hợp lại chỉ 5.252 từ có rank.
+
+2.813 từ còn lại vẫn `null` và được chấm trung tính — đúng tầng 3 của spec. Muốn phủ tiếp thì lô crawl sau xuất luôn Zipf từ `wordfreq` (nguồn nó đã dùng để chọn từ) thành `freq_rank`.
 
 ---
 
@@ -230,10 +232,10 @@ Làm theo TDD: test trước, xem nó đỏ, rồi mới viết code.
 
 ## 10. Còn treo sau lượt này
 
-1. **Tầng tần suất tổng quát** — xem mục 4. Đây là việc còn lại lớn nhất của A1.
+1. ~~Tầng tần suất tổng quát~~ **xong** — xem mục 4. `freqPct` giờ phủ 64,9%; phần còn lại cần Zipf từ lô crawl sau.
 2. `blister`/`cortex` sai nghĩa (gloss thực vật) — sửa tay hoặc `--refresh definitionEn`.
 3. A2 phải quyết `topicBoost` theo từng từ, không đọc `Topic.curated`, vì `travel` là hybrid (mục 5).
-4. Ảnh cho từ mới: `images:fetch-wikimedia` / `images:fetch` chưa chạy cho 1.617 từ này (phủ ảnh tụt 100% → 79,6%).
+4. Ảnh: đã chạy `images:fetch-wikimedia` (+293) và Pexels tới 1.150/1.325 → phủ **97,2%**. `images.json` là artifact bền nên phần còn lại resume đúng chỗ bằng `npm run images:fetch`; trần thực tế là burst limiter của Pexels (6s/request + ngủ 20s mỗi 429), không phải lỗi.
 5. **Nhiễu keyword có sẵn của topic `travel`** — `packs:verify` lôi ra `optic radiation` nằm trong "Travel & Transport". Nguyên nhân: stem là **tiền tố không có biên cuối**, nên `path` khớp `pathway`, `drive` khớp `hard drive`/`flash drive`, `visit` khớp `website`. Đây là hành vi **có từ trước**, không phải do lô này sinh ra — chỉ là import thêm từ y khoa có "pathway" nên nhìn thấy rõ. Đo cụ thể: mỗi keyword lỏng kéo 6–17 từ (`path` 14, `visit` 17, `drive` 12, `park` 11, `guest` 11), tổng ~40/1.197 từ của travel. Chưa sửa vì phải đụng keyword cũ và có nguy cơ làm lệch 965 từ đang có; muốn sửa thì viết `path\b` (matcher nối chuỗi vào regex nên `\b` nhúng được).
 
    Chuyện này chính là lý do 6 topic lĩnh vực mới để `keywords: []` (mục 5) — nó cho thấy chi phí thật của việc gán topic bằng keyword.
