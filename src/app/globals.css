@@ -34,13 +34,33 @@
   html {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Kill the grey/blue flash box Android and iOS paint over every tapped
+       link and button. The app draws its own press states (Motion whileTap,
+       active: utilities), so the native overlay is pure noise. */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Opt controls out of double-tap-to-zoom, which is what makes taps feel
+     ~300ms late on mobile. Restricted to controls so pinch-zoom on content
+     (word images, definitions) keeps working. */
+  button,
+  a,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
   }
 
   body {
     background-color: rgb(var(--paper));
     color: rgb(var(--ink));
     font-feature-settings: "ss01", "cv01", "cv11";
+    /* 100vh on mobile Safari counts the address bar, so the page jumps as the
+       bar hides and shows. dvh tracks the real viewport. The vh line stays as
+       a fallback for browsers without dvh. */
     min-height: 100vh;
+    min-height: 100dvh;
     position: relative;
   }
 
@@ -157,4 +177,21 @@
   .preserve-3d { transform-style: preserve-3d; }
   .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
   .rotate-y-180 { transform: rotateY(180deg); }
+}
+
+/* Respect the OS "reduce motion" setting for plain CSS transitions and
+   animations. Motion/react components are handled separately by
+   <MotionConfig reducedMotion="user"> in providers.tsx — this block covers
+   everything Motion does not own (Tailwind transition-* utilities, the
+   nprogress bar, CSS keyframes). Outside any @layer so it wins on specificity
+   ties regardless of layer order. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

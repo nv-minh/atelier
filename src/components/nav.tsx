@@ -31,7 +31,7 @@ export function Nav() {
       {/* Top bar */}
       <header
         className={cn(
-          "sticky top-0 z-40 backdrop-blur-xl bg-paper/75 border-b border-line",
+          "sticky top-0 z-40 backdrop-blur-xl bg-paper/75 border-b border-line pt-[env(safe-area-inset-top)]",
           isStudying && "opacity-0 pointer-events-none"
         )}
       >
