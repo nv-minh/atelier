@@ -35,8 +35,7 @@ export const authOptions: NextAuthOptions = {
         ]
       : []),
     // GitHub stays registered even though its button is gone from the login
-    // page: removing it would orphan the existing github Account rows, and
-    // re-enabling it later would mean rewriting the provider from scratch.
+    // page: removing it would orphan the existing github Account rows.
     // Restoring the button is the only step needed to bring it back.
     ...(ghId && ghSecret
       ? [GitHubProvider({ clientId: ghId, clientSecret: ghSecret })]

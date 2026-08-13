@@ -34,7 +34,7 @@ vercel --prod --yes
 ### 3. (Tùy chọn) Chạy local
 Thêm cùng 2 giá trị vào `.env` (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`), rồi `npm run dev`.
 
-Sau khi xong: nút **Đăng nhập với GitHub** trên `/login` sẽ active → đăng nhập → data học sync qua Neon trên mọi thiết bị.
+> **Lưu ý:** phần GitHub ở trên giờ là **lịch sử**. Nút GitHub đã gỡ khỏi `/login`, nên cấu hình hai biến này **không** làm hiện nút nào cả — provider vẫn đăng ký chỉ để 3 `Account` row cũ không thành mồ côi. Đường đăng nhập hiện tại là Google, xem mục dưới.
 
 ## Bước cuối — bật Google Sign-in (cần bạn làm, tôi không thể tạo credentials)
 
