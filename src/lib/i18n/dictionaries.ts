@@ -428,6 +428,16 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         toeic: "Trọng tâm TOEIC",
       },
     },
+    pwa: {
+      title: "Cài Atelier vào máy",
+      body: "Mở nhanh từ màn hình chính, chạy toàn màn hình, dùng được cả khi mạng chập chờn.",
+      install: "Cài đặt",
+      later: "Để sau",
+      iosTitle: "Thêm Atelier vào màn hình chính",
+      iosStep1: "Bấm nút Chia sẻ ở thanh dưới Safari",
+      iosStep2: 'Chọn "Thêm vào MH chính"',
+      dismiss: "Đóng",
+    },
   },
 
   en: {
@@ -845,6 +855,16 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         business: "Business English",
         toeic: "TOEIC Essentials",
       },
+    },
+    pwa: {
+      title: "Install Atelier",
+      body: "Open it straight from your home screen, full screen, and keep working when the network drops.",
+      install: "Install",
+      later: "Not now",
+      iosTitle: "Add Atelier to your home screen",
+      iosStep1: "Tap the Share button in Safari's bottom bar",
+      iosStep2: 'Choose "Add to Home Screen"',
+      dismiss: "Dismiss",
     },
   },
 };

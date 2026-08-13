@@ -12,6 +12,7 @@ import { SessionSummary } from "./session-summary";
 import { MODE_VIEWS } from "./modes";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
+import { recordSessionDone } from "@/lib/pwa-prefs";
 
 // How long the answer stays revealed before auto-advancing, per mode. This is a
 // LAZY PATH, not a lock: any pointer or key input advances immediately (D4).
@@ -346,6 +347,10 @@ export function PracticeShell({
     endedRef.current = true;
     setDone(true);
     playSound("complete");
+    // Counted here rather than on the summary screen's render: endedRef makes
+    // this run exactly once per finished session, and a remount of the summary
+    // must not inflate the count.
+    recordSessionDone();
 
     const sid = sessionIdRef.current;
     if (!sid) return;

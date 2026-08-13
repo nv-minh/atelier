@@ -7,6 +7,7 @@ import { Providers } from "@/components/providers";
 import { ProgressBar } from "@/components/progress-bar";
 import { Nav } from "@/components/nav";
 import { SwRegister } from "@/components/sw-register";
+import { PwaInstall } from "@/components/pwa-install";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({
               <Nav />
               <div className="relative z-10">{children}</div>
               <SwRegister />
+              <PwaInstall />
             </Providers>
           </I18nProvider>
         </ThemeProvider>
