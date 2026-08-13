@@ -2,6 +2,8 @@ import { prisma } from "@/lib/db";
 import { parseJsonArray } from "@/lib/utils";
 import { getCurrentUser } from "@/lib/session";
 import { AuthRequired } from "@/components/auth-required";
+import { parseFilter, filterWhere, BROWSE_SCOPES } from "@/lib/vault/scope";
+import { getVaultSummary } from "@/lib/vault/summary-server";
 import { LibraryClient } from "./library-client";
 
 export const dynamic = "force-dynamic";
@@ -9,12 +11,11 @@ export const dynamic = "force-dynamic";
 export default async function BrowsePage({
   searchParams,
 }: {
-  searchParams: { q?: string; cefr?: string; page?: string };
+  searchParams: { q?: string; cefr?: string; topic?: string; scope?: string; page?: string };
 }) {
   const user = await getCurrentUser();
   const userId = user?.id;
-  const q = searchParams.q?.toLowerCase() || "";
-  const cefr = searchParams.cefr || "ALL";
+  const filter = parseFilter(searchParams, BROWSE_SCOPES);
   const page = Math.max(1, Number(searchParams.page || "1"));
   const perPage = 40;
 
@@ -22,17 +23,16 @@ export default async function BrowsePage({
   // intercepts the "next" tap, so this only fires on a direct/bookmarked URL.
   if (!userId && page > 1) {
     const sp = new URLSearchParams();
-    if (searchParams.q) sp.set("q", searchParams.q);
-    if (cefr && cefr !== "ALL") sp.set("cefr", cefr);
+    if (filter.q) sp.set("q", filter.q);
+    if (filter.cefr) sp.set("cefr", filter.cefr);
+    if (filter.topic) sp.set("topic", filter.topic);
     sp.set("page", String(page));
     return <AuthRequired context="library" callbackUrl={`/browse?${sp.toString()}`} />;
   }
 
-  const where: any = {};
-  if (cefr && cefr !== "ALL") where.cefr = cefr;
-  if (q) where.word = { contains: q };
+  const where = filterWhere(filter, userId ?? null);
 
-  const [words, total] = await Promise.all([
+  const [words, total, summary] = await Promise.all([
     prisma.word.findMany({
       where,
       orderBy: { word: "asc" },
@@ -43,6 +43,7 @@ export default async function BrowsePage({
       },
     }),
     prisma.word.count({ where }),
+    userId ? getVaultSummary(userId) : Promise.resolve(null),
   ]);
 
   // Per-user marks (star + note presence) for the words on this page.
@@ -84,9 +85,12 @@ export default async function BrowsePage({
       items={items}
       total={total}
       page={page}
-      totalPages={Math.ceil(total / perPage)}
-      q={q}
-      cefr={cefr}
+      totalPages={Math.max(1, Math.ceil(total / perPage))}
+      q={filter.q ?? ""}
+      cefr={filter.cefr ?? "ALL"}
+      topic={filter.topic ?? "ALL"}
+      scope={filter.scope}
+      summary={summary}
       authed={!!userId}
     />
   );
