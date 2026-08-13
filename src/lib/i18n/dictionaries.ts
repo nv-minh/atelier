@@ -37,6 +37,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       study: "Học",
       login: "Đăng nhập",
       logout: "Đăng xuất",
+      leaderboard: "Xếp hạng",
     },
     home: {
       streakActive: "Chuỗi {n} ngày — giữ nhịp nhé",
@@ -613,6 +614,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       study: "Study",
       login: "Sign in",
       logout: "Sign out",
+      leaderboard: "Ranks",
     },
     home: {
       streakActive: "{n}-day streak — keep it alive",
