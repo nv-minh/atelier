@@ -36,6 +36,12 @@ export function HomeView({
 
   return (
     <main className="shell pb-28 md:pb-16">
+      {/* DAILY QUOTE — first thing on the page, so it is read rather than
+          scrolled past. It renders nothing until the text has arrived and
+          nothing at all once dismissed, so on the days it is absent the hero
+          simply sits at the top as before. */}
+      <DailyQuote className="mt-6 sm:mt-10" />
+
       {/* HERO */}
       <section className="pt-10 sm:pt-16 pb-12 sm:pb-16 relative">
         <div className="max-w-3xl">
@@ -128,11 +134,6 @@ export function HomeView({
           <CefrProgress stats={stats.cefrStats} />
         </div>
       </section>
-
-      {/* DAILY QUOTE — placed after the numbers and before the mode grid: a
-          beat of reading between "here is where you stand" and "pick a mode".
-          Low enough that it never blocks the study CTA at the top. */}
-      <DailyQuote className="mb-6 sm:mb-8" />
 
       {/* MODE GRID */}
       <section>

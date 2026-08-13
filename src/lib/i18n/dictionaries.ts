@@ -453,6 +453,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       label: "Trích dẫn hôm nay",
       dismiss: "Ẩn hôm nay",
       listen: "Nghe",
+      listenFailed: "Trình duyệt không đọc được câu này",
     },
     // Trang giới thiệu cho khách chưa đăng nhập ("/").
     landing: {
@@ -1031,6 +1032,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       label: "Today's quote",
       dismiss: "Hide for today",
       listen: "Listen",
+      listenFailed: "Your browser could not read this aloud",
     },
     // The guest landing page at "/".
     landing: {
