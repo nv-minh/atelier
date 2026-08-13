@@ -70,7 +70,11 @@ describe("buildBoard", () => {
   // làm yếu đi. Ghi nhận là câu hỏi hiệu chuẩn còn bỏ ngỏ (xem §9.1 của spec),
   // không phải bug — nhưng cũng không phải free lunch: cải thiện tình huống
   // "sau phiên" đã đẩy giá gánh nặng sang tình huống "trước phiên". Ngưỡng bên
-  // dưới nới rộng theo đúng số đo (không phải số đo bị nới cho vừa ngưỡng).
+  // dưới là regression guard xung quanh ~3% hiệp định (không phải bar nới để
+  // vừa output): chỉ số 5 là measured +margin, không derived. Alternatives bị
+  // từ chối: (1) force one weak rival per roster (decided strength from week's
+  // composition, instability like R9 removed); (2) shift paceFactor mean down
+  // (undo calibration fix).
   it("user học đều theo nhịp: sau phiên hôm nay hầu như không chót bảng và trung vị nằm 4–8 (sweep 100 id); trước phiên hôm nay có đánh đổi đo được, xem comment", () => {
     const N = 100;
     const preRanks: number[] = [];

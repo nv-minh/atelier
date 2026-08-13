@@ -55,7 +55,7 @@ Ngoại lệ duy nhất: dấu **"hoạt động X giờ trước"** là cảm n
 
 ### Tiêu chí thành công
 
-1. User học đều theo nhịp thường lệ → nằm **hạng 4–8**, không phải hạng 1 và không phải chót. **Đã đo lại sau hiệu chuẩn theo sản lượng tuần (2026-08-13, xem §3.1/§3.2):** trên cùng sweep 100 id, NGAY SAU phiên học hôm nay (đã bắt kịp nhịp) user nằm 4–8 cho 87/100 id — TĂNG từ 55/100 — trung vị hạng 6 (từ 4), lọt top 3 chỉ còn 6/100 (từ 45/100), hạng 1 chỉ 0/100 (từ 5/100): đúng bias mà bản đo final-review 2026-08-13 nêu ra, và số đo xác nhận đã sửa. Nhưng NGAY TRƯỚC phiên học hôm nay (thiếu đúng một buổi so với nhịp) lại xấu đi: chỉ còn 50/100 id trong 4–8 (từ 83/100), trung vị hạng 8.5 (từ 6), và 3/100 id rơi hẳn xuống chót bảng (từ 0/100) — xem `board.test.ts`. Đây là đánh đổi đo được, chưa xử lý, không phải bug: hiệu chuẩn đúng hơn (paceFactor phản ánh đúng sản lượng tuần thay vì bị `restProb` âm thầm giảm nhẹ) khiến thiếu một buổi so với nhịp mất hạng rõ hơn. Câu hỏi hiệu chuẩn coi như đã đóng ở nhánh "sau phiên", còn mở ở nhánh "trước phiên".
+1. User học đều theo nhịp thường lệ → nằm **hạng 4–8** sau khi đã bắt kịp nhịp (measured: trung vị hạng 6, 87/100 swept ids in band, 0 at rank 1); trước khi bắt kịp nhịp thì thấp hơn, median 8.5, khoảng 3% rơi cuối bảng — **hiệp định chấp nhận** thay vì open defect. **Lý do:** "không bao giờ cuối bảng" là artifact của calibration bug — `restProb` âm thầm làm yếu rival thường xuyên, tạo slack giúp user không rơi cuối; sửa calibration (phân chia `1/(1−restProb)`) khôi phục bias nhưng mất slack ở trước-phiên. Alternatives bị từ chối: cắt buộc rival yếu theo roster tuần (gây instability R9 xóa), hoặc shift mean rival xuống (undo calibration fix). Sự rơi cuối là earned, không assigned.
 2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào. **Đã đo lại sau hiệu chuẩn theo sản lượng tuần:** vế "cày hơn → top 3" vẫn đúng (cày gấp đôi nhịp cả tuần đưa user vào top 3 cho 60/60 id đo được, không đổi). Vế "nghỉ 2 ngày → tụt khỏi top 8" giờ ĐÚNG rõ hơn nhiều: ở mức nghỉ đúng 2/7 ngày (5/7 ngày hoạt động), chỉ còn 23/60 id ở trong 4–8 (từ 49/60) — tức 37/60 id giờ tụt khỏi top 8 như tiêu chí mô tả, trung vị hạng chuyển từ trong-khoảng sang hạng 9. Cùng nguyên nhân với tiêu chí 1: paceFactor không còn bị `restProb` che bớt.
 3. Mở bảng trên 2 thiết bị, hoặc refresh 5 lần → **cùng một bảng**, cùng số.
 4. Lúc 2h sáng giờ VN, **dưới 25%** tổng số dòng rival (gộp trên nhiều user) đọc là "vừa hoạt động" (dưới 6 giờ) — đo được ≈12.4% — và không user nào có ≥ 7/10 rival cùng "vừa hoạt động" một lúc. (Cách diễn đạt cũ — "hoạt động từ hôm qua trở về trước" — vượt quá những gì formatter thực sự hiển thị: 12 giờ trước hiện đúng "12 giờ trước", không bao giờ "hôm qua"; câu trên diễn đạt đúng cận mà test khẳng định.)
@@ -81,9 +81,9 @@ Không bảng bot, không cron, không job. 10 rival là **hàm thuần của `(
 
 | Module | Loại | Việc |
 |---|---|---|
-| `rng.ts` | thuần | hash chuỗi (cyrb128) + PRNG (mulberry32); `(userId, weekKey, i)` → seed → dãy số |
+| `rng.ts` | thuần | hash chuỗi (cyrb128) + PRNG (mulberry32); `(userId, weekIndex, i)` → seed → dãy số |
 | `personas.ts` | data | pool ~60 tên gọi Việt + bảng màu avatar |
-| `rivals.ts` | thuần | sinh 10 persona + tính cách cho một `(userId, weekKey)` |
+| `rivals.ts` | thuần | sinh 10 persona + tính cách cho một `(userId, weekIndex)` |
 | `pace.ts` | server mỏng | đo nhịp user từ `DailyStat` |
 | `board.ts` | thuần | `(rivals, pace, userWeeklyXp, now)` → bảng đã sort + Δ hạng + lastActive |
 
