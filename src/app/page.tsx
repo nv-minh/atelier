@@ -78,7 +78,7 @@ export default async function Home() {
 
   // Shown as a chip in the hero so level-aware selection is visible. Without it
   // the app looks like it hands out words at random.
-  const level = profile
+  const cefrBand = profile
     ? {
         band:
           CEFR_LEVELS[
@@ -91,5 +91,5 @@ export default async function Home() {
       }
     : null;
 
-  return <HomeView stats={stats} leechCount={leechCount} gamify={gamify} level={level} />;
+  return <HomeView stats={stats} leechCount={leechCount} gamify={gamify} cefrBand={cefrBand} />;
 }
