@@ -94,15 +94,28 @@ export async function buildSessionPlan(
     settings.newCardsPerDay - (await countNewStudiedToday(userId))
   );
 
-  const limits = deriveSessionLimits({
+  // Two-pass derive: the floor can promise new slots that no new cards exist
+  // to fill (user has learned every word in the filter scope). Fetch new
+  // FIRST with the budget, then re-derive with the REAL count so review fills
+  // any slots the new cards couldn't — a floor must never shrink a session.
+  const budget = deriveSessionLimits({
     size: opts.size,
     dueAvailable,
     newAllowanceToday,
     dailyReviewLimit: settings.reviewsPerDay,
   });
-
-  const dueCards = await fetchDueCards(where, limits.reviewLimit);
-  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, limits.newLimit);
+  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, budget.newLimit);
+  const actual = deriveSessionLimits({
+    size: opts.size,
+    dueAvailable,
+    newAllowanceToday: newCards.length,
+    dailyReviewLimit: settings.reviewsPerDay,
+  });
+  const dueCards = await fetchDueCards(where, actual.reviewLimit);
+  // Display order is due-first: the join order decides what the user sees,
+  // not the fetch order. (`size: "all"` is safe here — its branch ignores
+  // newAllowanceToday when computing reviewLimit, so the second call returns
+  // the same limits as the first; no special-case needed.)
   const queue = [...dueCards, ...newCards];
 
   const starred = new Set(
