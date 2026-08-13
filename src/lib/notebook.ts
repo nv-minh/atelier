@@ -22,34 +22,48 @@ export type NotebookEntry = {
   imageUrl: string | null;
   note: string;
   starred: boolean;
+  /** Only set on the known list; other lists leave it undefined. */
+  known?: boolean;
   card: NotebookCardState;
 };
 
 // Upsert a user's mark for a word. When the resulting row carries no signal
-// (not starred and no note), delete it to keep the table clean.
+// (not starred, no note, not marked known), delete it to keep the table clean.
+// `known` MUST be part of that predicate: a bare "I already know this word"
+// mark is the only signal on its row, so leaving it out would delete the row
+// immediately after writing it.
 export async function setWordMark(
   userId: string,
   wordId: string,
-  patch: { starred?: boolean; note?: string }
-): Promise<{ starred: boolean; note: string }> {
-  const data: { starred?: boolean; note?: string } = {};
+  patch: { starred?: boolean; note?: string; known?: boolean }
+): Promise<{ starred: boolean; note: string; known: boolean }> {
+  const data: { starred?: boolean; note?: string; known?: boolean } = {};
   if (typeof patch.starred === "boolean") data.starred = patch.starred;
   if (typeof patch.note === "string") data.note = patch.note;
+  if (typeof patch.known === "boolean") data.known = patch.known;
 
   const mark = await prisma.wordMark.upsert({
     where: { userId_wordId: { userId, wordId } },
     update: data,
-    create: { userId, wordId, starred: data.starred ?? false, note: data.note ?? "" },
+    create: {
+      userId,
+      wordId,
+      starred: data.starred ?? false,
+      note: data.note ?? "",
+      known: data.known ?? false,
+    },
   });
 
-  if (!mark.starred && mark.note === "") {
+  if (!mark.starred && mark.note === "" && !mark.known) {
     // Conditional delete: only remove the row if it's still empty, so a
-    // concurrent star/note write racing this cleanup isn't wiped out.
-    await prisma.wordMark.deleteMany({ where: { id: mark.id, starred: false, note: "" } });
-    return { starred: false, note: "" };
+    // concurrent star/note/known write racing this cleanup isn't wiped out.
+    await prisma.wordMark.deleteMany({
+      where: { id: mark.id, starred: false, note: "", known: false },
+    });
+    return { starred: false, note: "", known: false };
   }
 
-  return { starred: mark.starred, note: mark.note };
+  return { starred: mark.starred, note: mark.note, known: mark.known };
 }
 
 // Starred words with the word content + the user's card state per word.
@@ -85,6 +99,53 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
       card: c ? { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due } : null,
     };
   });
+}
+
+/**
+ * Words the learner marked "I already know this".
+ *
+ * Exists so the mark is REVERSIBLE in practice, not just in theory: a mark you
+ * cannot find is a mark you cannot undo, and the selection engine drops these
+ * words to 2% weight. Shaped as NotebookEntry so the notebook renders it with
+ * the same list component as starred and leeches.
+ */
+export async function getKnownWords(userId: string): Promise<NotebookEntry[]> {
+  const marks = await prisma.wordMark.findMany({
+    where: { userId, known: true },
+    include: { word: true },
+    orderBy: { updatedAt: "desc" },
+  });
+
+  const wordIds = marks.map((m) => m.wordId);
+  const cards = wordIds.length
+    ? await prisma.card.findMany({
+        where: { userId, wordId: { in: wordIds } },
+        select: { wordId: true, state: true, reps: true, lapses: true, due: true },
+      })
+    : [];
+  const cardByWord = new Map(cards.map((c) => [c.wordId, c]));
+
+  return marks.map((m) => {
+    const c = cardByWord.get(m.wordId);
+    return {
+      wordId: m.wordId,
+      word: m.word.word,
+      cefr: m.word.cefr,
+      typeVi: m.word.typeVi,
+      typeEn: m.word.typeEn,
+      definitionEn: m.word.definitionEn,
+      definitionVi: m.word.definitionVi,
+      imageUrl: m.word.imageUrl,
+      note: m.note,
+      starred: m.starred,
+      known: true,
+      card: c ? { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due } : null,
+    };
+  });
+}
+
+export async function getKnownCount(userId: string): Promise<number> {
+  return prisma.wordMark.count({ where: { userId, known: true } });
 }
 
 // Leeches: cards the user keeps forgetting (lapses >= LEECH_THRESHOLD, state >= 1).
@@ -137,7 +198,7 @@ export type WordDetail = {
     due: Date;
   } | null;
   reviews: { rating: number; reviewedAt: Date }[];
-  mark: { starred: boolean; note: string };
+  mark: { starred: boolean; note: string; known: boolean };
   topics: string[];
   // synonyms/antonyms filtered to entries that actually exist in the Word table
   synonyms: string[];
@@ -170,7 +231,7 @@ export async function getWordDetail(userId: string, word: string): Promise<WordD
     })(),
     prisma.wordMark.findUnique({
       where: { userId_wordId: { userId, wordId: w.id } },
-      select: { starred: true, note: true },
+      select: { starred: true, note: true, known: true },
     }),
     // Only link synonyms/antonyms that are real entries in the Word table.
     relatedNames.length
@@ -184,7 +245,7 @@ export async function getWordDetail(userId: string, word: string): Promise<WordD
     word: mapWord(w),
     card: card ? { state: card.state, reps: card.reps, lapses: card.lapses, due: card.due } : null,
     reviews,
-    mark: mark ?? { starred: false, note: "" },
+    mark: mark ?? { starred: false, note: "", known: false },
     topics: safeJson(w.topics),
     synonyms: safeJson(w.synonyms).filter((s) => existingSet.has(s)),
     antonyms: safeJson(w.antonyms).filter((a) => existingSet.has(a)),

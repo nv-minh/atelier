@@ -48,7 +48,22 @@ export const TOPICS: Topic[] = [
       "ticket", "luggage", "baggage", "suitcase", "hotel", "guest", "guide",
       "abroad", "foreign", "border", "station", "airport", "drive", "ride",
       "park", "route", "distance", "passenger",
+      // Merged from the 2026-08-13 `travel` pack rather than adding a second
+      // travel slug: the pack's 60 words join the 965 already matched here.
+      "boarding", "terminal", "customs", "check-in", "reservation",
+      "booking", "receptionist", "checkout", "landmark", "bargain",
+      "souvenir", "currency", "itinerary", "sightseeing",
+      // Dropped from the proposal's list on purpose: "corner", "straight",
+      // "opposite", "map", "direction", "distance" match any definition that
+      // happens to use the word, which would flood travel with unrelated words.
     ],
+    // The one hybrid topic: keyword-matched AND explicitly tagged at import.
+    // `curated` is what makes the pack's explicit tags survive a db:topics
+    // re-run; the keywords keep the ~965 words already matched here. Because
+    // both paths feed this slug, a `travel` tag alone does not prove the word
+    // was deliberately assigned — the one exception to the rule the domain
+    // packs below rely on.
+    curated: true,
   },
   {
     slug: "family",
@@ -348,6 +363,72 @@ export const TOPICS: Topic[] = [
     emoji: "🎯",
     blurb: "Core vocabulary for the TOEIC test.",
     accent: "text-ember",
+    keywords: [],
+    curated: true,
+  },
+  // ── Domain packs, 2026-08-13 crawl ─────────────────────────────────
+  // Pack-tagged only, like the four above. The proposal shipped keyword lists
+  // for these, and they were dry-run against the 6,394 words already in the DB
+  // before being dropped: they pulled in 18–79 extra words each, but with the
+  // kind of false positive that is worse than a thin pool — `cat`/`act` into
+  // legal, `html`/`auditorium` into finance, `television` into medical. A pack
+  // of 500 hand-scoped words is a better pool than 560 with 40 lies in it, and
+  // spec §3.5's widen path already covers a pool that comes up short.
+  //
+  // Keeping keywords empty also preserves the spec §3.1 boost split: a curated
+  // slug means "deliberately assigned", so it can carry the higher topicBoost
+  // without amplifying mis-assignment.
+  {
+    slug: "medical",
+    name: "Medical & Healthcare",
+    emoji: "🩺",
+    blurb: "Thuật ngữ lâm sàng, bệnh lý và chăm sóc sức khỏe.",
+    accent: "text-cefr-b2",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "legal",
+    name: "Legal & Law",
+    emoji: "⚖️",
+    blurb: "Ngôn ngữ hợp đồng, tố tụng và luật hình sự – dân sự.",
+    accent: "text-cefr-c1",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "finance",
+    name: "Finance & Accounting",
+    emoji: "📊",
+    blurb: "Kế toán, thuế, đầu tư và báo cáo tài chính.",
+    accent: "text-cefr-b2",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "daily-life",
+    name: "Sinh hoạt hằng ngày",
+    emoji: "🏡",
+    blurb: "Gia đình, thời tiết, đồ ăn và nấu nướng.",
+    accent: "text-cefr-a1",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "social",
+    name: "Giao tiếp xã hội",
+    emoji: "👋",
+    blurb: "Chào hỏi, sở thích, thể thao và mạng xã hội.",
+    accent: "text-cefr-a2",
+    keywords: [],
+    curated: true,
+  },
+  {
+    slug: "office-skills",
+    name: "Kỹ năng văn phòng",
+    emoji: "💼",
+    blurb: "Viết email, thuyết trình, đàm phán và phỏng vấn.",
+    accent: "text-moss-500",
     keywords: [],
     curated: true,
   },

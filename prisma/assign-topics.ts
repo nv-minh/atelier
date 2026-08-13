@@ -1,4 +1,5 @@
 /* eslint-disable */
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import { assignTopics, TOPICS } from "../src/lib/topic-taxonomy";
 

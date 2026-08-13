@@ -1,0 +1,1561 @@
+{
+ "metadata": {
+  "pack": "office-skills",
+  "topic_slugs": [
+   "office-skills"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.600Z",
+  "count": 65
+ },
+ "words": [
+  {
+   "word": "found",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Food and lodging provided in addition to money.",
+   "extra_definitions": [
+    "[verb] To encounter or discover by accident; to happen upon.",
+    "[verb] To encounter or discover something being searched for; to locate.",
+    "[verb] (ditransitive) To discover by study or experiment direct to an object or end."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "lose"
+   ],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "They worked for $30 and found.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=found",
+   "ipa_uk": "/faʊnd/",
+   "ipa_us": "/faʊnd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/found-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "Ngoài tiền, còn được cung cấp thực phẩm và chỗ ở.",
+   "vi_source": "gtx",
+   "example_vi": "Họ làm việc với giá 30 đô la và đã tìm thấy."
+  },
+  {
+   "word": "report",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A written document describing the findings of some individual or group.",
+   "extra_definitions": [
+    "[noun] A piece of information describing, or an account of certain events given or presented to someone, with the most common adpositions being by (referring to creator of the report) and on (referring to the subject).",
+    "[noun] Reputation.",
+    "[noun] The sharp, loud sound from a gun or explosion."
+   ],
+   "synonyms": [
+    "study",
+    "written report"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=report",
+   "example": "A report by the telecommunications ministry on the phone network revealed a severe capacity problem.",
+   "ipa_uk": "/ɹəˈpoːt/",
+   "ipa_us": "/ɹɪˈpɔɹt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/report-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bản tin, bản dự báo; phiếu thành tích học tập (hằng tháng hoặc từng học kỳ của học sinh); bản báo cáo; biên bản",
+   "vi_source": "anhviet",
+   "example_vi": "Báo cáo của Bộ Viễn thông về mạng điện thoại cho thấy có vấn đề nghiêm trọng về dung lượng."
+  },
+  {
+   "word": "public office",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A position concerning the people as a whole.",
+   "extra_definitions": [
+    "[noun] A position or occupation established by law or by the act of a government body, for the purpose of exercising the authority of the government in the service of the public."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=public+office",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vị trí liên quan đến toàn thể người dân.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "take-home pay",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "What is left of your pay after deductions for taxes and dues and insurance etc.",
+   "extra_definitions": [
+    "[noun] The net earnings of a salary or wage earner."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=take-home+pay",
+   "example": "Their take-home pay was half their gross, but fifteen percent was for retirement.",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền lương còn lại sau khi đã khấu trừ các khoản (thuế )",
+   "vi_source": "anhviet",
+   "example_vi": "Tiền lương mang về nhà của họ chỉ bằng một nửa tổng thu nhập, nhưng 15% là dành cho việc nghỉ hưu."
+  },
+  {
+   "word": "performance",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of presenting a play or a piece of music or other entertainment.",
+   "extra_definitions": [
+    "[noun] The act of performing; carrying into execution or action; execution; achievement; accomplishment; representation by action.",
+    "[noun] That which is performed or accomplished; a thing done or carried through; an achievement; a deed; an act; a feat; especially, an action of an elaborate or public character.",
+    "[noun] A live show or concert."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "We congratulated him on his performance at the rehearsal.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=performance",
+   "ipa_uk": "[pə.ˈfɔː.məns]",
+   "ipa_us": "[pɚ.ˈfɔɹ.məns]",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/performance-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "việc diễn, việc đóng (phim, kịch...); cuộc biểu diễn; sự làm; sự thực hiện; sự thi hành (lệnh...); sự cử hành (lễ...); sự hoàn thành (nhiệm vụ)",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng tôi chúc mừng anh ấy về màn trình diễn của anh ấy tại buổi diễn tập."
+  },
+  {
+   "word": "source",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A document (or organization) from which information is obtained.",
+   "extra_definitions": [
+    "[noun] The person, place or thing from which something (information, goods, etc.) comes or is acquired.",
+    "[noun] Spring; fountainhead; wellhead; any collection of water on or under the surface of the ground in which a stream originates.",
+    "[noun] A reporter's informant."
+   ],
+   "synonyms": [
+    "wellspring"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "The reporter had two sources for the story.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=source",
+   "ipa_uk": "/sɔːs/",
+   "ipa_us": "/sɔɹs/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/source-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/source-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tài liệu (hoặc tổ chức) mà thông tin được lấy từ đó.",
+   "vi_source": "gtx",
+   "example_vi": "Người phóng viên có hai nguồn tin cho câu chuyện."
+  },
+  {
+   "word": "meeting",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small informal social gathering.",
+   "extra_definitions": [
+    "[noun] (gerund) The act of persons or things that meet.",
+    "[noun] A gathering of persons for a purpose; an assembly.",
+    "[noun] (collective) The people at such a gathering."
+   ],
+   "synonyms": [
+    "get together"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "There was an informal meeting in my living room.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=meeting",
+   "ipa_uk": "/ˈmiːtɪŋ/",
+   "ipa_us": "/ˈmitɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/meeting-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc gặp gỡ, cuộc hội họp, hội nghị; (chính trị) cuộc mít tinh, cuộc biểu tình",
+   "vi_source": "anhviet",
+   "example_vi": "Có một cuộc họp không chính thức trong phòng khách của tôi."
+  },
+  {
+   "word": "trade",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The skilled practice of a practical occupation.",
+   "extra_definitions": [
+    "[noun] Buying and selling of goods and services on a market.",
+    "[noun] A particular instance of buying or selling.",
+    "[noun] An instance of bartering items in exchange for one another."
+   ],
+   "synonyms": [
+    "craft"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "He learned his trade as an apprentice.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=trade",
+   "ipa_uk": "/tɹeɪd/",
+   "ipa_us": "/tɹeɪd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/trade-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/trade-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Sự thực hành lành nghề của một nghề nghiệp thực tế.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy học nghề khi còn là một người học việc."
+  },
+  {
+   "word": "half-pay",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Reduced wage paid to someone who is not working full time.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=half-pay",
+   "type_vi": "Danh từ",
+   "definition_vi": "Giảm lương trả cho người không làm việc toàn thời gian.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "technology",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The practical application of science to commerce or industry.",
+   "extra_definitions": [
+    "[noun] The organization of knowledge for practical purposes.",
+    "[noun] All the different and usable technologies developed by a culture or people.",
+    "[noun] A discourse or treatise on the arts."
+   ],
+   "synonyms": [
+    "engineering"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=technology",
+   "ipa_uk": "/tɛkˈnɒlədʒi/",
+   "ipa_us": "/tɛkˈnɒlədʒi/",
+   "type_vi": "Danh từ",
+   "definition_vi": "công nghệ học; kỹ thuật; kỹ thuật học",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "career",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The particular occupation for which you are trained.",
+   "extra_definitions": [
+    "[noun] One's calling in life; a person's occupation; one's profession.",
+    "[noun] General course of action or conduct in life, or in a particular part of it.",
+    "[noun] Speed."
+   ],
+   "synonyms": [
+    "calling",
+    "vocation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=career",
+   "example": "Washington's career as a soldier",
+   "ipa_uk": "/kəˈɹɪə/",
+   "ipa_us": "/kəˈɹɪɹ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/career-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Nghề nghiệp cụ thể mà bạn được đào tạo.",
+   "vi_source": "gtx",
+   "example_vi": "Sự nghiệp quân nhân của Washington"
+  },
+  {
+   "word": "walk of life",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Careers in general.",
+   "extra_definitions": [
+    "[noun] An occupation, role, social class, or lifestyle."
+   ],
+   "synonyms": [
+    "walk"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "It happens in all walks of life.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=walk+of+life",
+   "type_vi": "Danh từ",
+   "definition_vi": "Sự nghiệp nói chung.",
+   "vi_source": "gtx",
+   "example_vi": "Nó xảy ra ở mọi tầng lớp xã hội."
+  },
+  {
+   "word": "one-night stand",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A performance in one place on one night only.",
+   "extra_definitions": [
+    "[noun] An occasion when a performer or team of them (especially in vaudeville) expects to perform at a theater for a single evening.",
+    "[noun] A single sexual encounter between two individuals, where at least one of the partners has no immediate intention or expectation of establishing a longer-term sexual or romantic relationship. As the phrase implies, the relationship lasts for only one night.",
+    "[noun] Either of the two partners involved in such a single sexual encounter."
+   ],
+   "synonyms": [
+    "pump and dump",
+    "wham, bam, thank you ma'am"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=one-night+stand",
+   "type_vi": "Danh từ",
+   "definition_vi": "nơi có cuộc biểu diễn một tối duy nhất (của một gánh hát rong...); (từ Mỹ,nghĩa Mỹ) cuộc biểu diễn một tối duy nhất (của một gánh hát rong...)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "advice",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A proposal for an appropriate course of action.",
+   "extra_definitions": [
+    "[noun] An opinion offered in an effort to be helpful.",
+    "[noun] Deliberate consideration; knowledge.",
+    "[noun] (commonly in plural) Information or news given; intelligence"
+   ],
+   "synonyms": [
+    "admonition",
+    "counsel",
+    "exhortation",
+    "information",
+    "notice",
+    "recommendation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=advice",
+   "example": "She was offered various piece of advice on what to do with her new-found wealth.",
+   "ipa_uk": "/ədˈvaɪs/",
+   "ipa_us": "/ædˈvaɪs/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/advice-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một đề xuất cho một quá trình hành động thích hợp.",
+   "vi_source": "gtx",
+   "example_vi": "Cô đã được đưa ra nhiều lời khuyên khác nhau về việc phải làm gì với khối tài sản mới tìm được của mình."
+  },
+  {
+   "word": "interview",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The questioning of a person (or a conversation in which information is elicited); often conducted by journalists.",
+   "extra_definitions": [
+    "[noun] An official face-to-face meeting of monarchs or other important figures.",
+    "[noun] Any face-to-face meeting, especially of an official nature.",
+    "[noun] A conversation in person (or, by extension, over the telephone, Internet etc.) between a journalist and someone whose opinion or statements he or she wishes to record for publication, broadcast etc."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "My interviews with teenagers revealed a weakening of religious bonds.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=interview",
+   "ipa_uk": "/ˈɪntəvjuː/",
+   "ipa_us": "/ˈɪntɚvjuː/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/interview-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Việc đặt câu hỏi cho một người (hoặc một cuộc trò chuyện trong đó gợi ra thông tin); thường được thực hiện bởi các nhà báo.",
+   "vi_source": "gtx",
+   "example_vi": "Những cuộc phỏng vấn của tôi với thanh thiếu niên cho thấy mối liên kết tôn giáo đang suy yếu."
+  },
+  {
+   "word": "position paper",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A report that explains or justifies or recommends some particular policy.",
+   "extra_definitions": [
+    "[noun] (public policy) An essay or report which expresses a position, conclusion, or recommendation concerning a contested issue or undecided question and which usually contains arguments or reasons in support of this position."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=position+paper",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một báo cáo giải thích, biện minh hoặc đề xuất một số chính sách cụ thể.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "green paper",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A preliminary report of government proposals that is published in order to stimulate discussion.",
+   "extra_definitions": [
+    "[noun] A tentative government report of a proposal without any commitment to action, being the first step in changing the law; a discussion document.",
+    "[noun] An official document sponsored by the Crown of propositions put before the nation for discussion."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=green+paper",
+   "type_vi": "Danh từ",
+   "definition_vi": "một loạt đề nghị chính phủ đưa ra để nhân dân bàn trước khi chuyển thành pháp luật; sách xanh",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "round table",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A meeting of peers for discussion and exchange of views.",
+   "extra_definitions": [
+    "[noun] A conference at which participants of similar status discuss and exchange views.",
+    "[noun] A television show segment in which pundits or reporters discuss current events."
+   ],
+   "synonyms": [
+    "roundtable",
+    "round-table conference"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "A roundtable on the future of computing.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=round+table",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc gặp gỡ của các đồng nghiệp để thảo luận và trao đổi quan điểm.",
+   "vi_source": "gtx",
+   "example_vi": "Hội nghị bàn tròn về tương lai của điện toán"
+  },
+  {
+   "word": "power politics",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Diplomacy in which the nations threaten to use force in order to obtain their objectives.",
+   "extra_definitions": [
+    "[noun] A form of international relations in which sovereign entities protect their own interests by threatening one another with military, economic or political aggression."
+   ],
+   "synonyms": [
+    "gunboat diplomacy"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=power+politics",
+   "type_vi": "Danh từ",
+   "definition_vi": "Ngoại giao trong đó các quốc gia đe dọa sử dụng vũ lực để đạt được mục tiêu của mình.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sick pay",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Wages paid to an employee who is on sick leave.",
+   "extra_definitions": [
+    "[noun] Money paid to an employee during his or her sick leave."
+   ],
+   "synonyms": [
+    "incapacity benefit",
+    "sick benefit",
+    "sickness allowance",
+    "sickness benefit"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sick+pay",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền lương trả cho một nhân viên nghỉ ốm",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "computer technology",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The activity of designing and constructing and programming computers.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=computer+technology",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hoạt động thiết kế, xây dựng và lập trình máy tính.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "session",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A meeting for execution of a group's functions.",
+   "extra_definitions": [
+    "[noun] An informal gathering of musicians to play music, especially improvised jazz or a similar genre.",
+    "[noun] A period devoted to a particular activity, e.g. the annual or semiannual periods of a legislative body (that together comprise the legislative term) whose individual meetings are also called sessions.",
+    "[noun] A meeting of a council, court, school, or legislative body to conduct its business."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "It was the opening session of the legislature.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=session",
+   "ipa_uk": "/ˈsɛʃən/",
+   "ipa_us": "/ˈsɛʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "buổi họp, phiên họp, kỳ họp; hội nghị",
+   "vi_source": "anhviet",
+   "example_vi": "Đó là phiên khai mạc của cơ quan lập pháp."
+  },
+  {
+   "word": "discussion",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An exchange of views on some topic.",
+   "extra_definitions": [
+    "[noun] Conversation or debate concerning a particular topic.",
+    "[noun] Text giving further detail on a subject.",
+    "[noun] The dispersion of a tumour."
+   ],
+   "synonyms": [
+    "give-and-take",
+    "word"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "We had a good discussion.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=discussion",
+   "ipa_uk": "/dɪsˈkʊʃən/",
+   "ipa_us": "/dɪˈskʌʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/discussion-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Trao đổi quan điểm về một số chủ đề.",
+   "vi_source": "gtx",
+   "example_vi": "Chúng tôi đã có một cuộc thảo luận tốt."
+  },
+  {
+   "word": "hot seat",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A difficult position where you are subjected to stress and criticism.",
+   "extra_definitions": [
+    "[noun] The electric chair.",
+    "[noun] The seat occupied by a game show contestant at a stage where they are answering questions alone.",
+    "[noun] (by extension) Any stressful situation."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hot+seat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vị trí khó khăn nơi bạn phải chịu căng thẳng và chỉ trích.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "source materials",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Publications from which information is obtained.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=source+materials",
+   "type_vi": "Danh từ",
+   "definition_vi": "Các ấn phẩm mà thông tin được thu thập.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "whole-word method",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Teaching reading by training beginners to associate printed words with spoken words.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=whole-word+method",
+   "type_vi": "Danh từ",
+   "definition_vi": "Dạy đọc bằng cách đào tạo người mới bắt đầu liên kết các từ được in với các từ được nói.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "resolution",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A formal expression by a meeting; agreed to by a vote.",
+   "extra_definitions": [
+    "[noun] A strong will, determination.",
+    "[noun] The state of being resolute.",
+    "[noun] A statement of intent, a vow"
+   ],
+   "synonyms": [
+    "declaration",
+    "resolve"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=resolution",
+   "example": "His stalwart resolution is perhaps admirable, perhaps foolish.",
+   "ipa_uk": "/ˌɹɛzəˈluːʃ(ə)n/",
+   "ipa_us": "/ˌɹɛzəˈl(j)uʃ(ə)n/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/resolution-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(văn học) sự thay thế hai âm tiết ngắn bằng một âm tiết dài",
+   "vi_source": "anhviet",
+   "example_vi": "Quyết tâm kiên quyết của anh ấy có lẽ đáng ngưỡng mộ, có lẽ là ngu ngốc."
+  },
+  {
+   "word": "strike pay",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money paid to strikers from union funds.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=strike+pay",
+   "type_vi": "Danh từ",
+   "definition_vi": "trợ cấp đình công",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "part-singing",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Singing with three or more voice parts.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=part-singing",
+   "type_vi": "Danh từ",
+   "definition_vi": "<nhạc> hát bài hát theo bè",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "employment",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The occupation for which you are paid.",
+   "extra_definitions": [
+    "[noun] The work or occupation for which one is used, and often paid",
+    "[noun] The act of employing",
+    "[noun] A use, purpose"
+   ],
+   "synonyms": [
+    "work"
+   ],
+   "antonyms": [
+    "underemployment",
+    "unemployment"
+   ],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "He is looking for employment.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=employment",
+   "ipa_uk": "/ɛmˈplɔɪmənt/",
+   "ipa_us": "/ɛmˈplɔɪmənt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/employment-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Nghề nghiệp mà bạn được trả lương.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy đang tìm kiếm việc làm."
+  },
+  {
+   "word": "paper route",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The job of delivering newspapers regularly.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=paper+route",
+   "type_vi": "Danh từ",
+   "definition_vi": "Công việc giao báo thường xuyên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "double entry",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Bookkeeper debits the transaction to one account and credits it to another.",
+   "extra_definitions": [],
+   "synonyms": [
+    "double-entry bookkeeping"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double+entry",
+   "type_vi": "Danh từ",
+   "definition_vi": "<thương> kế toán kép",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "document",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Writing that provides information (especially information of an official nature).",
+   "extra_definitions": [
+    "[noun] An original or official paper used as the basis, proof, or support of anything else, including any writing, book, or other instrument conveying information pertinent to such proof or support.",
+    "[noun] Any material substance on which the information is represented by writing.",
+    "[noun] A file that contains text."
+   ],
+   "synonyms": [
+    "written document",
+    "papers"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=document",
+   "example": "He documented each step of the process as he did it, which was good when the investigation occurred.",
+   "ipa_uk": "/ˈdɒkjʊmɛnt/",
+   "ipa_us": "/ˈdɑkjʊmənt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/document-uk-verb.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/document-us-noun.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Viết cung cấp thông tin (đặc biệt là thông tin có tính chất chính thức).",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy ghi lại từng bước của quy trình khi anh ấy thực hiện, điều này rất tốt khi cuộc điều tra diễn ra."
+  },
+  {
+   "word": "combat pay",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Extra pay for soldiers engaged in active combat.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=combat+pay",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trả thêm tiền cho những người lính tham gia chiến đấu tích cực.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "communications technology",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The activity of designing and constructing and maintaining communication systems.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=communications+technology",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hoạt động thiết kế, xây dựng và bảo trì hệ thống thông tin liên lạc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "wage",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Something that remunerates.",
+   "extra_definitions": [
+    "[noun] (often in plural) An amount of money paid to a worker for a specified quantity of work, usually calculated on an hourly basis and expressed in an amount of money per hour."
+   ],
+   "synonyms": [
+    "pay",
+    "earnings",
+    "remuneration",
+    "salary"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "Wages were paid by check.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wage",
+   "ipa_uk": "/weɪd͡ʒ/",
+   "ipa_us": "/weɪd͡ʒ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/wage-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cái gì đó trả thù lao.",
+   "vi_source": "gtx",
+   "example_vi": "Tiền lương được trả bằng séc."
+  },
+  {
+   "word": "re-introduction",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A proposal of something previously rejected.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "They avoided a re-introduction of the old terminology.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=re-introduction",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một đề xuất về một cái gì đó trước đây đã bị từ chối.",
+   "vi_source": "gtx",
+   "example_vi": "Họ tránh việc giới thiệu lại thuật ngữ cũ."
+  },
+  {
+   "word": "tool-and-die work",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The craft of making special tools and dies.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tool-and-die+work",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nghề chế tạo các công cụ đặc biệt và khuôn dập.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "electrical work",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The craft of an electrician.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=electrical+work",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nghề của thợ điện.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "horse trading",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Negotiation accompanied by mutual concessions and shrewd bargaining.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=horse+trading",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đàm phán đi kèm với sự nhượng bộ lẫn nhau và thương lượng khôn ngoan.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "language lesson",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A period of instruction learning a language.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=language+lesson",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thời gian giảng dạy học một ngôn ngữ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "chemical engineering",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The activity of applying chemistry to the solution of practical problems.",
+   "extra_definitions": [
+    "[noun] The branch of engineering that deals with the design, construction and operation of industrial process plants, and the physical, chemical and biological processes to create substances or energy in a useful and economic form."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chemical+engineering",
+   "type_vi": "Danh từ",
+   "definition_vi": "kỹ thuật hóa học",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "dramatic production",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of performing a drama.",
+   "extra_definitions": [],
+   "synonyms": [
+    "dramatic performance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "The group joined together in a dramatic production.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dramatic+production",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hành động biểu diễn một vở kịch.",
+   "vi_source": "gtx",
+   "example_vi": "Nhóm đã cùng nhau tạo nên một vở kịch đầy kịch tính."
+  },
+  {
+   "word": "rail technology",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The activity of designing and constructing and operating railroads.",
+   "extra_definitions": [],
+   "synonyms": [
+    "railroading"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rail+technology",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hoạt động thiết kế, xây dựng và vận hành đường sắt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "magic trick",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An illusory feat; considered magical by naive observers.",
+   "extra_definitions": [],
+   "synonyms": [
+    "conjuring trick",
+    "trick",
+    "magic",
+    "legerdemain",
+    "conjuration"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=magic+trick",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một kỳ công viển vông; được coi là kỳ diệu bởi những người quan sát ngây thơ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "agenda",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A temporally organized plan for matters to be attended to.",
+   "extra_definitions": [
+    "[noun] A list of matters to be taken up (as at a meeting).",
+    "[noun] A notebook used to organize and maintain such plans or lists, an agenda book, an agenda planner.",
+    "[noun] A hidden agenda."
+   ],
+   "synonyms": [
+    "docket",
+    "schedule"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=agenda",
+   "ipa_uk": "/əˈdʒɛn.də/",
+   "ipa_us": "/əˈdʒɛn.də/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/agenda-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một kế hoạch được tổ chức theo thời gian cho các vấn đề cần giải quyết.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "certificate",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A document attesting to the truth of certain stated facts.",
+   "extra_definitions": [
+    "[noun] A document containing a certified statement.",
+    "[noun] A document evidencing ownership or debt.",
+    "[noun] A document serving as evidence as a person has completed an educational course, issued either by an institution not authorised to grant diplomas, or to a student not qualifying for a diploma."
+   ],
+   "synonyms": [
+    "certification",
+    "credential",
+    "credentials"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=certificate",
+   "example": "The film is certificate 15.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tài liệu chứng thực sự thật của một số sự kiện đã nêu.",
+   "vi_source": "gtx",
+   "example_vi": "Bộ phim được chứng nhận 15."
+  },
+  {
+   "word": "copyright",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A document granting exclusive right to publish and sell literary or musical or artistic work.",
+   "extra_definitions": [
+    "[noun] The right by law to be the entity which determines who may publish, copy and distribute a piece of writing, music, picture or other work of authorship.",
+    "[noun] Such an exclusive right as it pertains to one or more specific works.",
+    "[verb] To obtain or secure a copyright for some literary or other artistic work."
+   ],
+   "synonyms": [
+    "right of first publication"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=copyright",
+   "example": "Copyright is a separate legal area from trademarks.",
+   "ipa_uk": "/ˈkɒpiˌɹaɪt/",
+   "ipa_us": "/ˈkɑpiˌɹaɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/copyright-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bản quyền, quyền tác giả",
+   "vi_source": "anhviet",
+   "example_vi": "Bản quyền là một lĩnh vực pháp lý riêng biệt với nhãn hiệu."
+  },
+  {
+   "word": "suggestion",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A proposal offered for acceptance or rejection.",
+   "extra_definitions": [
+    "[noun] Something suggested (with subsequent adposition being for)",
+    "[noun] The act of suggesting.",
+    "[noun] Something implied, which the mind is liable to take as fact."
+   ],
+   "synonyms": [
+    "proposition",
+    "proffer"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "It was a suggestion we couldn't refuse.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=suggestion",
+   "ipa_uk": "/səˈd͡ʒɛstjən/",
+   "ipa_us": "/səɡˈd͡ʒɛstʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/suggestion-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "ý kiến (lý thuyết...) đề nghị",
+   "vi_source": "anhviet",
+   "example_vi": "Đó là một lời đề nghị mà chúng tôi không thể từ chối."
+  },
+  {
+   "word": "charter",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A document incorporating an institution and specifying its rights; includes the articles of incorporation and the certificate of incorporation.",
+   "extra_definitions": [
+    "[noun] A document issued by some authority, creating a public or private institution, and defining its purposes and privileges.",
+    "[noun] A similar document conferring rights and privileges on a person, corporation etc.",
+    "[noun] A contract for the commercial leasing of a vessel, or space on a vessel."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=charter",
+   "example": "2005 November 30, Stephen Foley \"The market where 'caveat emptor' has become a charter for fraud\" The Independent, London",
+   "ipa_uk": "/ˈt͡ʃɑːtə/",
+   "ipa_us": "/ˈt͡ʃɑːtə/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/charter-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tài liệu hợp nhất một tổ chức và xác định các quyền của nó; bao gồm các điều khoản của công ty và giấy chứng nhận thành lập.",
+   "vi_source": "gtx",
+   "example_vi": "2005 Ngày 30 tháng 11, Stephen Foley \"Thị trường nơi 'người báo trước' đã trở thành điều lệ cho sự lừa đảo\" The Independent, London"
+  },
+  {
+   "word": "clinic",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Meeting for diagnosis of problems and instruction or remedial work in a particular activity.",
+   "extra_definitions": [
+    "[noun] A medical facility, such as a hospital, especially one for the treatment and diagnosis of outpatients.",
+    "[noun] (by extension) A hospital session to diagnose or treat patients.",
+    "[noun] A school, or a session of a school or class, in which medicine or surgery is taught by the examination and treatment of patients in the presence of the pupils."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=clinic",
+   "ipa_uk": "/ˈklɪnɪk/",
+   "ipa_us": "/ˈklɪnɪk/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cuộc họp để chẩn đoán các vấn đề và hướng dẫn hoặc khắc phục vấn đề trong một hoạt động cụ thể.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "farming",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Agriculture considered as an occupation or way of life.",
+   "extra_definitions": [
+    "[verb] To work on a farm, especially in the growing and harvesting of crops.",
+    "[verb] To devote (land) to farming.",
+    "[verb] To grow (a particular crop)."
+   ],
+   "synonyms": [
+    "land"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "Farming is a strenuous life.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=farming",
+   "ipa_uk": "/ˈfɑːmɪŋ/",
+   "ipa_us": "/ˈfɑɹmɪŋ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/farming-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "nông nghiệp",
+   "vi_source": "anhviet",
+   "example_vi": "Làm nông là một cuộc sống vất vả."
+  },
+  {
+   "word": "occupation",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The principal activity in your life that you do to earn money.",
+   "extra_definitions": [
+    "[noun] An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job.",
+    "[noun] The act, process or state of possessing a place.",
+    "[noun] The control of a country or region by a hostile army."
+   ],
+   "synonyms": [
+    "business",
+    "job",
+    "line of work",
+    "line"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=occupation",
+   "ipa_uk": "/ɒkjəˈpeɪʃən/",
+   "ipa_us": "/ɑkjəˈpeɪʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/occupation-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Hoạt động chính trong cuộc sống mà bạn làm là để kiếm tiền.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bull session",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An informal discussion (usually among men).",
+   "extra_definitions": [
+    "[noun] An informal discursive group discussion, often one where politics, economics or current events are discussed."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bull+session",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ), (thông tục) cuộc thảo luận trong nhóm nhỏ, cuộc toạ đàm thân mật trong nhóm nhỏ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "birth certificate",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A copy of the official document giving details of a person's birth.",
+   "extra_definitions": [
+    "[noun] An official document certifying the details of a person's birth. Name, date, and parents' names are always present; details such as parents' occupation and religion may be included."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=birth+certificate",
+   "type_vi": "Danh từ",
+   "definition_vi": "giấy khai sinh",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "profession",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An occupation requiring special education (especially in the liberal arts or sciences).",
+   "extra_definitions": [
+    "[noun] A declaration of belief, faith or one's opinion, whether genuine or pretended.",
+    "[noun] An occupation, trade, craft, or activity in which one has a professed expertise in a particular area; a job, especially one requiring a high level of skill or training.",
+    "[noun] The practitioners of such an occupation collectively."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=profession",
+   "example": "Despite his continued professions of innocence, the court eventually sentenced him to five years.",
+   "ipa_uk": "/pɹəˈfɛʃən/",
+   "ipa_us": "/pɹəˈfɛʃən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/profession-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/profession-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một nghề nghiệp đòi hỏi giáo dục đặc biệt (đặc biệt là trong nghệ thuật tự do hoặc khoa học).",
+   "vi_source": "gtx",
+   "example_vi": "Mặc dù anh ta tiếp tục khẳng định mình vô tội nhưng cuối cùng tòa án vẫn kết án anh ta 5 năm."
+  },
+  {
+   "word": "journalism",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The profession of reporting or photographing or editing news stories for one of the media.",
+   "extra_definitions": [
+    "[noun] The activity or profession of being a journalist.",
+    "[noun] The aggregating, writing, editing, and presenting of news or news articles for widespread distribution, typically in electronic publications and broadcast news media, for the purpose of informing the audience.",
+    "[noun] The style of writing characteristic of material in periodical print publications and broadcast news media, consisting of direct presentation of facts or events with an attempt to minimize analysis or interpretation."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=journalism",
+   "ipa_uk": "/ˈdʒɜːn(ə)lɪzəm/",
+   "ipa_us": "/ˈdʒɜːn(ə)lɪzəm/",
+   "type_vi": "Danh từ",
+   "definition_vi": "nghề làm báo, nghề viết báo",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "ballot",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A document listing the alternatives that is used in voting.",
+   "extra_definitions": [
+    "[noun] Originally, a small ball placed in a container to cast a vote; now, by extension, a piece of paper or card used for this purpose, or some other means used to signify a vote.",
+    "[noun] The process of voting, especially in secret; a round of voting.",
+    "[noun] The total of all the votes cast in an election."
+   ],
+   "synonyms": [
+    "ballot paper",
+    "voting slip"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ballot",
+   "example": "to ballot for a candidate",
+   "ipa_uk": "/ˈbalət/",
+   "ipa_us": "/ˈbalət/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự bỏ phiếu kín; tổng số phiếu (bỏ vào thùng)",
+   "vi_source": "anhviet",
+   "example_vi": "bỏ phiếu cho một ứng cử viên"
+  },
+  {
+   "word": "jam session",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An impromptu jazz concert.",
+   "extra_definitions": [
+    "[noun] An informal gathering of musicians to play music, especially improvised jazz or a similar genre."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=jam+session",
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc biểu diễn nhạc Jazz ứng tấu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "vice-presidency",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The office and function of a vice president.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=vice-presidency",
+   "type_vi": "Danh từ",
+   "definition_vi": "chức phó chủ tịch, chức phó tổng thống; nhiệm kỳ phó chủ tịch, nhiệm kỳ phó tổng thống",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "basketball clinic",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A meeting at which basketball players receive special evaluation and instruction.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=basketball+clinic",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc họp trong đó các cầu thủ bóng rổ nhận được sự đánh giá và hướng dẫn đặc biệt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "baseball clinic",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A meeting at which baseball players receive special evaluation and instruction.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "A summer baseball clinic for promising young players.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=baseball+clinic",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc họp trong đó các cầu thủ bóng chày nhận được sự đánh giá và hướng dẫn đặc biệt.",
+   "vi_source": "gtx",
+   "example_vi": "Phòng khám bóng chày mùa hè dành cho các cầu thủ trẻ đầy triển vọng."
+  },
+  {
+   "word": "consultation",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A conference (usually with someone important).",
+   "extra_definitions": [
+    "[noun] The act of consulting.",
+    "[noun] A conference for the exchange of information and advice.",
+    "[noun] An appointment or meeting with a professional person, such as a doctor."
+   ],
+   "synonyms": [
+    "audience",
+    "interview"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "He had a consultation with the judge.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=consultation",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc họp (thường là với một người quan trọng).",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy đã có cuộc trao đổi với thẩm phán.",
+   "ipa_uk": "/ˌkɒnsl̩ˈteɪʃən/",
+   "ipa_us": "/ˌkɒnsl̩ˈteɪʃən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/consultation-uk.mp3",
+    "us": null
+   }
+  },
+  {
+   "word": "hockey clinic",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A meeting at which hockey players receive special evaluation and instruction.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hockey+clinic",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc họp trong đó các vận động viên khúc côn cầu nhận được sự đánh giá và hướng dẫn đặc biệt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "personality inventory",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A questionnaire that is supposed to yield a description of a person's personality traits.",
+   "extra_definitions": [],
+   "synonyms": [
+    "personality assessment"
+   ],
+   "antonyms": [],
+   "topics": [
+    "office-skills"
+   ],
+   "example": "A personality inventory is a direct test of personality, as contrasted with a projective test.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=personality+inventory",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một bảng câu hỏi được cho là mang lại sự mô tả về đặc điểm tính cách của một người.",
+   "vi_source": "gtx",
+   "example_vi": "Bản kiểm kê tính cách là một bài kiểm tra trực tiếp về tính cách, trái ngược với bài kiểm tra phóng chiếu."
+  }
+ ]
+}

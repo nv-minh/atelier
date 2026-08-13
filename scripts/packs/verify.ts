@@ -2,6 +2,7 @@
 // Post-import verification report — read-only. Checks counts per CEFR level
 // and per curated topic, data-quality gates, and prints random samples per
 // pack for a human spot-check of Vietnamese translation quality.
+import "../../prisma/load-env";
 import { PrismaClient } from "@prisma/client";
 import { TOPICS } from "../../src/lib/topic-taxonomy";
 import { CEFR_LEVELS } from "../../src/lib/export-format";

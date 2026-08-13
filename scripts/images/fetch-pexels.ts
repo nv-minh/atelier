@@ -22,6 +22,7 @@
 //   npm run images:fetch -- --limit 20    # smoke test
 //   npm run images:fetch -- --word cat    # single-word debug
 //   npm run images:fetch -- --retry-misses  # re-try words Pexels had 0 results for
+import "../../prisma/load-env";
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { resolve } from "path";

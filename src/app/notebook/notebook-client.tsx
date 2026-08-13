@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { GraduationCap, Zap, StickyNote, Star, Flame } from "lucide-react";
+import { GraduationCap, Zap, StickyNote, Star, Flame, CheckCheck } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { StarButton } from "@/components/star-button";
+import { KnownButton } from "@/components/known-button";
 import { useI18n } from "@/components/i18n-provider";
 import { cn, formatInterval } from "@/lib/utils";
 
@@ -18,6 +19,7 @@ type Entry = {
   imageUrl: string | null;
   note: string;
   starred: boolean;
+  known?: boolean;
   card: { state: number; reps: number; lapses: number; due: string } | null;
 };
 
@@ -32,11 +34,13 @@ export function NotebookClient({
   tab,
   entries,
   leeches,
+  known,
   gate,
 }: {
-  tab: "starred" | "leeches";
+  tab: "starred" | "leeches" | "known";
   entries: Entry[];
   leeches: Entry[];
+  known: Entry[];
   /** Sign-in panel rendered in place of the entries when nobody is signed in. */
   gate?: React.ReactNode;
 }) {
@@ -60,13 +64,19 @@ export function NotebookClient({
         <TabLink href="/notebook?tab=leeches" active={tab === "leeches"}>
           <Flame size={14} /> {t("notebook.tabLeeches")} ({leeches.length})
         </TabLink>
+        <TabLink href="/notebook?tab=known" active={tab === "known"}>
+          <CheckCheck size={14} /> {t("known.filter")} ({known.length})
+        </TabLink>
       </div>
 
-      {gate ?? (tab === "starred" ? (
-        <StarredPanel entries={entries} />
-      ) : (
-        <LeechesPanel leeches={leeches} />
-      ))}
+      {gate ??
+        (tab === "starred" ? (
+          <StarredPanel entries={entries} />
+        ) : tab === "leeches" ? (
+          <LeechesPanel leeches={leeches} />
+        ) : (
+          <KnownPanel known={known} />
+        ))}
     </main>
   );
 }
@@ -187,7 +197,36 @@ function LeechesPanel({ leeches }: { leeches: Entry[] }) {
   );
 }
 
-function WordRow({ w, leech }: { w: Entry; leech?: boolean }) {
+function KnownPanel({ known }: { known: Entry[] }) {
+  const { t } = useI18n();
+
+  if (!known.length) {
+    return (
+      <div className="card-atelier p-8 text-center">
+        <span className="grid h-11 w-11 place-items-center rounded-full bg-moss-500/10 text-moss-500 mx-auto mb-4">
+          <CheckCheck size={18} strokeWidth={2} />
+        </span>
+        <h2 className="display text-xl mb-2">{t("known.filter")}</h2>
+        <p className="text-soft text-sm">{t("known.mark")}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {/* Says out loud that the mark comes off — a one-way "I know this" would
+          lose the word to a mistap, since selection drops it to 2% weight. */}
+      <p className="text-soft mb-5 max-w-2xl text-sm">{t("known.unmarkHint")}</p>
+      <div className="space-y-2.5">
+        {known.map((w) => (
+          <WordRow key={w.wordId} w={w} showKnown />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown?: boolean }) {
   const { t, lang } = useI18n();
   const st = w.card ? stateLabel[w.card.state] : null;
   const typeLabel = lang === "vi" ? w.typeVi : w.typeEn;
@@ -213,7 +252,11 @@ function WordRow({ w, leech }: { w: Entry; leech?: boolean }) {
             <Flame size={11} /> {t("notebook.lapsesLabel", { n: w.card.lapses })}
           </span>
         ) : null}
-        <StarButton wordId={w.wordId} initialStarred={w.starred} size="sm" />
+        {showKnown ? (
+          <KnownButton wordId={w.wordId} initialKnown={w.known ?? true} />
+        ) : (
+          <StarButton wordId={w.wordId} initialStarred={w.starred} size="sm" />
+        )}
         {st ? (
           <span className={cn("pill text-[9px]", st.c)}>{t(st.key)}</span>
         ) : (

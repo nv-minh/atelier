@@ -1,0 +1,3006 @@
+{
+ "metadata": {
+  "pack": "finance",
+  "topic_slugs": [
+   "finance"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.597Z",
+  "count": 125
+ },
+ "words": [
+  {
+   "word": "resource",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A source of aid or support that may be drawn upon when needed.",
+   "extra_definitions": [
+    "[noun] Something that one uses to achieve an objective, e.g. raw materials or personnel.",
+    "[noun] A person's capacity to deal with difficulty.",
+    "[verb] To supply with resources."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "The local library is a valuable resource.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=resource",
+   "ipa_uk": "/ɹɪˈsɔːs/",
+   "ipa_us": "/ɹɪˈsɔɹs/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/resource-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/resource-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(số nhiều) tiềm lực kinh tế và quân sự (của một nước); sự giải trí, sự tiêu khiển",
+   "vi_source": "anhviet",
+   "example_vi": "Thư viện địa phương là một nguồn tài nguyên có giá trị."
+  },
+  {
+   "word": "banking",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Transacting business with a bank; depositing or withdrawing funds or requesting a loan etc.",
+   "extra_definitions": [
+    "[verb] To deal with a bank or financial institution, or for an institution to provide financial services to a client.",
+    "[verb] To put into a bank.",
+    "[verb] To conceal in the rectum for use in prison."
+   ],
+   "synonyms": [
+    "bankerage"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=banking",
+   "example": "He banked with Barclays.",
+   "type_vi": "Danh từ",
+   "definition_vi": "nghiệp vụ kinh doanh ngân hàng; hoạt động ngân hàng",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy giao dịch ngân hàng với Barclays."
+  },
+  {
+   "word": "soil bank",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Land retired from crop cultivation and planted with soil-building crops; government subsidies are paid to farmers for their retired land.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soil+bank",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đất nghỉ trồng trọt và trồng cây tạo đất; trợ cấp của chính phủ được trả cho nông dân đối với đất đã nghỉ hưu của họ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "gross sales",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Income (at invoice values) received for goods and services over some given period of time.",
+   "extra_definitions": [],
+   "synonyms": [
+    "gross revenue",
+    "sales"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=gross+sales",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thu nhập (theo giá trị hóa đơn) nhận được từ hàng hóa và dịch vụ trong một khoảng thời gian nhất định.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "premium",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment for insurance.",
+   "extra_definitions": [
+    "[noun] A prize or award.",
+    "[noun] Something offered at a reduced price as an inducement to buy something else.",
+    "[noun] A bonus paid in addition to normal payments."
+   ],
+   "synonyms": [
+    "insurance premium"
+   ],
+   "antonyms": [
+    "discount"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=premium",
+   "ipa_uk": "/ˈpɹimiəm/",
+   "ipa_us": "/ˈpɹimiəm/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thanh toán phí bảo hiểm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "reward",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment made in return for a service rendered.",
+   "extra_definitions": [
+    "[noun] Something of value given in return for an act.",
+    "[noun] A prize promised for a certain deed or catch",
+    "[noun] The result of an action, whether good or bad."
+   ],
+   "synonyms": [
+    "bounty",
+    "consequence",
+    "meed",
+    "payment",
+    "recompense",
+    "tithing"
+   ],
+   "antonyms": [
+    "punishment"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=reward",
+   "example": "For catching the thief, you'll get a nice reward.",
+   "ipa_uk": "/ɹəˈwɔːd/",
+   "ipa_us": "/ɹiˈwɔɹd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/reward-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền thưởng, vật thưởng (cho ai bắt được tội phạm...)",
+   "vi_source": "anhviet",
+   "example_vi": "Để bắt được tên trộm, bạn sẽ nhận được phần thưởng hậu hĩnh."
+  },
+  {
+   "word": "poll tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax of a fixed amount per person and payable as a requirement for the right to vote.",
+   "extra_definitions": [
+    "[noun] A tax determined as a uniform, fixed amount per individual.",
+    "[noun] A tax that must be paid in order to vote."
+   ],
+   "synonyms": [
+    "capitation",
+    "head money",
+    "head tax"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=poll+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản thuế cố định cho mỗi người và phải nộp theo yêu cầu để có quyền bầu cử.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "progressive tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any tax in which the rate increases as the amount subject to taxation increases.",
+   "extra_definitions": [],
+   "synonyms": [
+    "graduated tax"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=progressive+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế lũy tiến",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "seed stock",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A supply of seeds (or tubers) reserved for planting.",
+   "extra_definitions": [
+    "[noun] A stock of seed.",
+    "[noun] Any supply for planting in general.",
+    "[noun] Any source of new (notably young) individuals, especially those used for breeding"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=seed+stock",
+   "example": "The estate's present seed stock comprises seedlings, bulbs and various nuts.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nguồn cung cấp hạt (hoặc củ) dành riêng cho việc trồng trọt.",
+   "vi_source": "gtx",
+   "example_vi": "Kho hạt giống hiện tại của khu đất bao gồm cây giống, củ và các loại hạt khác nhau."
+  },
+  {
+   "word": "gross profit",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The net sales minus the cost of goods and services sold.",
+   "extra_definitions": [],
+   "synonyms": [
+    "gross profit margin",
+    "margin"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=gross+profit",
+   "type_vi": "Danh từ",
+   "definition_vi": "Doanh thu thuần trừ đi giá vốn hàng hóa và dịch vụ đã bán.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "export",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Sell or transfer abroad.",
+   "extra_definitions": [
+    "[noun] Something that is exported",
+    "[noun] The act of exporting",
+    "[verb] To carry away"
+   ],
+   "synonyms": [
+    "exportation",
+    "remove"
+   ],
+   "antonyms": [
+    "import"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "example": "We export less than we import and have a negative trade balance.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=export",
+   "ipa_uk": "/ˈɛks.pɔːt/",
+   "ipa_us": "/ˈɛks.pɔːt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/export-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bán ra nước ngoài",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng ta xuất khẩu ít hơn nhập khẩu và có cán cân thương mại âm."
+  },
+  {
+   "word": "asset",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A useful or valuable quality.",
+   "extra_definitions": [
+    "[noun] Something or someone of any value; any portion of one's property or effects so considered.",
+    "[noun] Any component, model, process or framework of value that can be leveraged or reused.",
+    "[noun] An intelligence asset."
+   ],
+   "synonyms": [
+    "plus"
+   ],
+   "antonyms": [
+    "liability"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=asset",
+   "example": "These shares are a valuable asset.",
+   "ipa_uk": "/ˈæsɪt/",
+   "ipa_us": "/ˈæsɪt/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một chất lượng hữu ích hoặc có giá trị.",
+   "vi_source": "gtx",
+   "example_vi": "Những cổ phiếu này là tài sản có giá trị."
+  },
+  {
+   "word": "franchise tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax that is imposed by states on corporations.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=franchise+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại thuế được áp đặt bởi các tiểu bang đối với các tập đoàn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hire-purchase",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Installment plan.",
+   "extra_definitions": [
+    "[adjective] Alternative spelling of hire purchase"
+   ],
+   "synonyms": [
+    "never-never"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hire-purchase",
+   "type_vi": "Danh từ",
+   "definition_vi": "trả góp; trả dần",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "pension",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A regular payment to a person that is intended to allow them to subsist without working.",
+   "extra_definitions": [
+    "[noun] An annuity paid regularly as benefit due to a retired employee, serviceman etc. in consideration of past services, originally and chiefly by a government but also by various private pension schemes.",
+    "[noun] A boarding house or small hotel, especially in continental Europe, which typically offers lodging and certain meals and services.",
+    "[noun] A wage or fee."
+   ],
+   "synonyms": [
+    "bed and breakfast",
+    "hostel",
+    "hotel",
+    "rent",
+    "superannuation",
+    "pension off"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pension",
+   "example": "Many old people depend on their pension to pay the bills.",
+   "ipa_uk": "/ˈpɛnʃ(ə)n/",
+   "ipa_us": "/ˈpɛnʃ(ə)n/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pension-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản thanh toán thường xuyên cho một người nhằm mục đích giúp họ tồn tại mà không cần làm việc.",
+   "vi_source": "gtx",
+   "example_vi": "Nhiều người già phụ thuộc vào lương hưu để trả các hóa đơn."
+  },
+  {
+   "word": "privilege",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A special advantage or immunity or benefit not enjoyed by all.",
+   "extra_definitions": [
+    "[noun] (ecclesiastical law) An exemption from certain laws granted by the Pope.",
+    "[noun] A particular benefit, advantage, or favor; a right or immunity enjoyed by some but not others; a prerogative, preferential treatment.",
+    "[noun] An especially rare or fortunate opportunity; the good fortune (to do something)."
+   ],
+   "synonyms": [
+    "advantage",
+    "foredeal",
+    "claim",
+    "liberty",
+    "franchise",
+    "freelage"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=privilege",
+   "example": "All first-year professors here must teach four courses a term, yet you're only teaching one! What entitled you to such a privilege?",
+   "ipa_uk": "/ˈpɹɪv(ɪ)lɪdʒ/",
+   "ipa_us": "/ˈpɹɪv(ɪ)lɪdʒ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/privilege-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "đặc quyền, đặc ân",
+   "vi_source": "anhviet",
+   "example_vi": "Tất cả các giáo sư năm thứ nhất ở đây phải dạy bốn môn một học kỳ, vậy mà cậu chỉ dạy một môn thôi! Điều gì khiến bạn có được đặc quyền như vậy?"
+  },
+  {
+   "word": "customs",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money collected under a tariff.",
+   "extra_definitions": [
+    "[noun] (in the plural) The duties or taxes imposed on imported or exported goods.",
+    "[noun] (in the singular) The government department or agency that is authorised to collect the taxes imposed on imported goods."
+   ],
+   "synonyms": [
+    "customs duty",
+    "custom",
+    "impost"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=customs",
+   "example": "Customs of £200 were due on all the wine we took back from France.",
+   "ipa_uk": "/ˈkʌstəmz/",
+   "ipa_us": "/ˈkʌstəmz/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/customs-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cơ quan chính phủ thu sắc thuế này; hải quan; thuế đánh vào hàng nhập từ nước ngoài vào; thuế nhập khẩu",
+   "vi_source": "anhviet",
+   "example_vi": "Số tiền hải quan 200 bảng Anh phải nộp đối với tất cả số rượu chúng tôi mang về từ Pháp."
+  },
+  {
+   "word": "disability check",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A monthly payment made to someone who has become disabled and is unable to work.",
+   "extra_definitions": [],
+   "synonyms": [
+    "disability payment"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=disability+check",
+   "type_vi": "Danh từ",
+   "definition_vi": "Khoản thanh toán hàng tháng được trả cho người bị khuyết tật và không thể làm việc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "interest expense",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Interest paid on loans.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=interest+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "Lãi trả cho các khoản vay.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "medical expense",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Amount spent for diagnosis or treatment or prevention of medical problems.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=medical+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "Số tiền chi cho việc chẩn đoán, điều trị hoặc phòng ngừa các vấn đề y tế.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "soap",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money offered as a bribe.",
+   "extra_definitions": [
+    "[noun] A substance able to mix with both oil and water, used for cleaning, often in the form of a solid bar or in liquid form, derived from fats or made synthetically.",
+    "[noun] A metallic salt derived from a fatty acid",
+    "[noun] Flattery or excessively complacent conversation."
+   ],
+   "synonyms": [
+    "downplay",
+    "soft soap",
+    "soft-pedal",
+    "sugar soap"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soap",
+   "example": "I tried washing my hands with soap, but the stain wouldn't go away.",
+   "ipa_uk": "/səʊp/",
+   "ipa_us": "/soʊp/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/soap-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/soap-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Tiền được đưa ra như một khoản hối lộ.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi đã thử rửa tay bằng xà phòng nhưng vết bẩn vẫn không biến mất."
+  },
+  {
+   "word": "personal expense",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The cost of personal or family living.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Some personal expenses are tax deductible.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=personal+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chi phí sinh hoạt cá nhân hoặc gia đình.",
+   "vi_source": "gtx",
+   "example_vi": "Một số chi phí cá nhân được khấu trừ thuế."
+  },
+  {
+   "word": "old-age pension",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A monthly payment made to someone who is retired from work.",
+   "extra_definitions": [],
+   "synonyms": [
+    "retirement pension",
+    "retirement check",
+    "retirement benefit",
+    "retirement fund",
+    "superannuation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=old-age+pension",
+   "type_vi": "Danh từ",
+   "definition_vi": "Khoản thanh toán hàng tháng được trả cho người đã nghỉ việc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "departure tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax that is levied when you are departing a country by land or sea or air.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=departure+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại thuế được đánh khi bạn rời khỏi một quốc gia bằng đường bộ, đường biển hoặc đường hàng không.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "moving expense",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The cost of moving your residence from one location to another.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=moving+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chi phí di chuyển nơi cư trú của bạn từ nơi này đến nơi khác.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "mutual fund",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The pooled money that is invested in assets.",
+   "extra_definitions": [
+    "[noun] A form of collective investment in which money from many investors is pooled and invested in stocks, bonds, short-term money market instruments, and/or other securities under the direction of a fund manager."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=mutual+fund",
+   "type_vi": "Danh từ",
+   "definition_vi": "Số tiền gộp lại được đầu tư vào tài sản.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "organization expense",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The cost (over a period of five years) of organizing a new corporation or partnership.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=organization+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "chi phí tổ chức",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "capital gains tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax on capital gains.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He avoided the capital gains tax by short selling.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=capital+gains+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế lãi vốn; thuế tăng trị vốn",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ta tránh thuế lãi vốn bằng cách bán khống."
+  },
+  {
+   "word": "damages",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sum of money paid in compensation for loss or injury.",
+   "extra_definitions": [
+    "[verb] To impair the soundness, goodness, or value of; to harm or cause destruction.",
+    "[verb] To undergo damage.",
+    "[noun] The money paid or awarded to a claimant (in England), a pursuer (in Scotland) or a plaintiff (in the US) in a civil action as compensation for a loss suffered by the same."
+   ],
+   "synonyms": [
+    "amends",
+    "indemnity",
+    "indemnification",
+    "restitution",
+    "redress"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=damages",
+   "example": "Be careful not to damage any of the fragile items while unpacking them.",
+   "ipa_uk": "/ˈdæmɪdʒɪz/",
+   "ipa_us": "/ˈdæmɪdʒɪz/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/damages-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản tiền được trả để bồi thường cho sự mất mát hoặc thương tích.",
+   "vi_source": "gtx",
+   "example_vi": "Hãy cẩn thận để không làm hỏng bất kỳ đồ vật dễ vỡ nào trong khi mở gói chúng."
+  },
+  {
+   "word": "pension fund",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A financial institution that collects regular contributions from employers to provide retirement income for employees.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pension+fund",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tổ chức tài chính thu thập các khoản đóng góp thường xuyên từ người sử dụng lao động để cung cấp thu nhập hưu trí cho nhân viên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "double damages",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Twice the amount that a court would normally find the injured party entitled to.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double+damages",
+   "type_vi": "Danh từ",
+   "definition_vi": "Gấp đôi số tiền mà tòa án thường cho rằng bên bị thương có quyền được hưởng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "stamp tax",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax collected by requiring a stamp to be purchased and attached (usually on documents or publications).",
+   "extra_definitions": [],
+   "synonyms": [
+    "stamp duty"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=stamp+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thuế được thu bằng cách yêu cầu mua và dán tem (thường là trên các tài liệu hoặc ấn phẩm).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "subscription",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A payment for consecutive issues of a newspaper or magazine for a given period of time.",
+   "extra_definitions": [
+    "[noun] Access to a resource for a period of time, generally for payment.",
+    "[noun] The formal acceptance of something, especially when verified with a signature.",
+    "[noun] The signing of one's name."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=subscription",
+   "example": "I have a monthly subscription to the Daily Telegraph newspaper.",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự tán thành (một ý kiến...); sự quyên góp (tiền); số tiền quyên góp, số tiền đóng",
+   "vi_source": "anhviet",
+   "example_vi": "Tôi đặt mua dài hạn tờ báo Daily Telegraph."
+  },
+  {
+   "word": "merit pay",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Extra pay awarded to an employee on the basis of merit (especially to school teachers).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=merit+pay",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trả thêm tiền cho nhân viên dựa trên thành tích (đặc biệt là giáo viên trong trường).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "clearing house",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A central collection place where banks exchange checks or drafts; participants maintain an account against which credits or debits are posted.",
+   "extra_definitions": [
+    "[noun] A central point where clearing banks and other financial firms exchange checks, settle accounts, etc.",
+    "[noun] (by extension) A hub of goods traffic",
+    "[noun] (GIS) A repository structure, physical or virtual, that collects, stores, and disseminates information, metadata, and data"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=clearing+house",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nơi thu tập trung nơi các ngân hàng trao đổi séc hoặc hối phiếu; người tham gia duy trì một tài khoản để ghi có hoặc ghi nợ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bucket shop",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An unethical or overly aggressive brokerage firm.",
+   "extra_definitions": [
+    "[noun] A stockbroking firm which takes small orders from clients and takes them on its own account rather than actually transmitting them to the market. Prevalent in the US 1870s to 1920s; often set up as shop-fronts in the 1920s.",
+    "[noun] A stockbroking firm which sells stock to clients when it has an undisclosed relationship with that company or its owners.",
+    "[noun] (travel) A travel agency selling discounted airfares, usually in defiance of existing minimum fare arrangements. Now usually refers to any small cheap agency."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bucket+shop",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một công ty môi giới phi đạo đức hoặc quá tích cực.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fast buck",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Quick or easy earnings.",
+   "extra_definitions": [],
+   "synonyms": [
+    "quick buck"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "They are traders out to make a fast buck.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fast+buck",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền dễ kiếm",
+   "vi_source": "anhviet",
+   "example_vi": "Họ là những người buôn bán để kiếm tiền nhanh chóng."
+  },
+  {
+   "word": "green thumb",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A special ability to make plants grow.",
+   "extra_definitions": [
+    "[noun] A natural skill for gardening.",
+    "[noun] A person with this skill."
+   ],
+   "synonyms": [
+    "green fingers"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=green+thumb",
+   "example": "I should ask the green thumb next door what she recommends for my droopy daffodils.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khả năng đặc biệt để làm cho thực vật phát triển.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi nên hỏi ngón tay cái màu xanh lá cây bên cạnh xem cô ấy khuyên gì cho những bông thủy tiên vàng rũ xuống của tôi."
+  },
+  {
+   "word": "indirect tax",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax levied on goods or services rather than on persons or organizations.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=indirect+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế gián thu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "wholesale",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Sell in large quantities.",
+   "extra_definitions": [
+    "[noun] The sale of products, often in large quantities, to retailers or other merchants.",
+    "[verb] To sell at wholesale.",
+    "[adjective] Of or relating to sale in large quantities, for resale."
+   ],
+   "synonyms": [
+    "bulk supply"
+   ],
+   "antonyms": [
+    "retail"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wholesale",
+   "example": "The bombing resulted in wholesale destruction.",
+   "ipa_uk": "/ˈhoʊlseɪl/",
+   "ipa_us": "/ˈhoʊlseɪl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/wholesale-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "số lượng lớn; bán buôn",
+   "vi_source": "anhviet",
+   "example_vi": "Vụ đánh bom dẫn đến sự tàn phá toàn diện."
+  },
+  {
+   "word": "conscience money",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment made voluntarily to reduce guilt over dishonest dealings.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=conscience+money",
+   "type_vi": "Danh từ",
+   "definition_vi": "Việc thanh toán được thực hiện một cách tự nguyện để giảm bớt cảm giác tội lỗi về những giao dịch không trung thực.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "refund",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money returned to a payer.",
+   "extra_definitions": [
+    "[noun] An amount of money returned.",
+    "[verb] To return (money) to (someone); to reimburse.",
+    "[verb] To supply again with funds."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=refund",
+   "example": "If the camera is faulty, you can return it to the store where you bought it for a full refund.",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/refund-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự trả lại (tiền vay mượn, tiền đã chi trước...)",
+   "vi_source": "anhviet",
+   "example_vi": "Nếu máy ảnh bị lỗi, bạn có thể trả lại cho cửa hàng nơi bạn đã mua để được hoàn lại toàn bộ số tiền."
+  },
+  {
+   "word": "sales incentive",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Remuneration offered to a salesperson for exceeding some predetermined sales goal.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sales+incentive",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thù lao được cung cấp cho nhân viên bán hàng để vượt quá một số mục tiêu bán hàng được xác định trước.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "leverage",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Strategic advantage; power to act effectively.",
+   "extra_definitions": [
+    "[noun] A force compounded by means of a lever rotating around a pivot; see torque.",
+    "[noun] By extension, any influence which is compounded or used to gain an advantage.",
+    "[noun] The use of borrowed funds with a contractually determined return to increase the ability of a business to invest and earn an expected higher return, but usually at high risk."
+   ],
+   "synonyms": [
+    "operating leverage",
+    "mechanical advantage",
+    "financial leverage",
+    "exploit",
+    "use"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Relatively small groups can sometimes exert immense political leverage.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=leverage",
+   "ipa_uk": "/ˈliːv(ə)ɹɪdʒ/",
+   "ipa_us": "/ˈliːv(ə)ɹɪdʒ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/leverage-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Lợi thế chiến lược; sức mạnh để hành động một cách hiệu quả.",
+   "vi_source": "gtx",
+   "example_vi": "Các nhóm tương đối nhỏ đôi khi có thể phát huy được đòn bẩy chính trị to lớn."
+  },
+  {
+   "word": "highway robbery",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An exorbitant price.",
+   "extra_definitions": [
+    "[noun] The act of robbing a traveler on a public road.",
+    "[noun] Said of excessive or exorbitant prices."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "bargain",
+    "steal"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "example": "What they are asking for gas these days is highway robbery.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=highway+robbery",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một mức giá cắt cổ.",
+   "vi_source": "gtx",
+   "example_vi": "Những gì họ yêu cầu đổ xăng ngày nay là cướp đường cao tốc."
+  },
+  {
+   "word": "moral hazard",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The lack of any incentive to guard against a risk when you are protected against it (as by insurance).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Insurance companies are exposed to a moral hazard if the insured party is not honest.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=moral+hazard",
+   "type_vi": "Danh từ",
+   "definition_vi": "Việc thiếu bất kỳ động cơ nào để đề phòng rủi ro khi bạn được bảo vệ chống lại nó (như bằng bảo hiểm).",
+   "vi_source": "gtx",
+   "example_vi": "Các công ty bảo hiểm sẽ gặp phải rủi ro đạo đức nếu bên được bảo hiểm không trung thực."
+  },
+  {
+   "word": "allowance",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sum granted as reimbursement for expenses.",
+   "extra_definitions": [
+    "[noun] Permission; granting, conceding, or admitting",
+    "[noun] Acknowledgment.",
+    "[noun] That which is allowed; a share or portion allotted or granted; a sum granted as a reimbursement, a bounty, or as appropriate for any purpose; a stated quantity."
+   ],
+   "synonyms": [
+    "authorization",
+    "permission",
+    "sanction",
+    "tolerance",
+    "remedy",
+    "stipend"
+   ],
+   "antonyms": [
+    "penalty"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=allowance",
+   "example": "her meagre allowance of food or drink",
+   "ipa_uk": "/əˈlaʊəns/",
+   "ipa_us": "/əˈlaʊəns/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/allowance-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền trợ cấp; tiền cấp phát; tiền bỏ túi, tiền tiêu vặt; phần tiền, khẩu phần, phần ăn",
+   "vi_source": "anhviet",
+   "example_vi": "số tiền trợ cấp ít ỏi của cô ấy là đồ ăn thức uống"
+  },
+  {
+   "word": "monopoly",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A market in which there are many buyers but only one seller.",
+   "extra_definitions": [
+    "[noun] A situation, by legal privilege or other agreement, in which solely one party (company, cartel etc.) exclusively provides a particular product or service, dominating that market and generally exerting powerful control over it.",
+    "[noun] An exclusive control over the trade or production of a commodity or service through exclusive possession.",
+    "[noun] The privilege granting the exclusive right to exert such control."
+   ],
+   "synonyms": [
+    "monopolist"
+   ],
+   "antonyms": [
+    "monopsony"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "example": "A monopoly on silver.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=monopoly",
+   "ipa_uk": "/məˈnɒpəˌli/",
+   "ipa_us": "/məˈnɑpəˌli/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/monopoly-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "độc quyền một người mua",
+   "vi_source": "anhviet",
+   "example_vi": "Độc quyền về bạc."
+  },
+  {
+   "word": "gasoline tax",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax on every gallon of gasoline sold.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=gasoline+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế xăng",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "redemption",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Repayment of the principal amount of a debt or security at or before maturity (as when a corporation repurchases its own stock).",
+   "extra_definitions": [
+    "[noun] The act of redeeming or something redeemed.",
+    "[noun] The recovery, for a fee, of a pawned article.",
+    "[noun] Salvation from sin."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=redemption",
+   "ipa_uk": "/ɹɪˈdɛmpʃən/",
+   "ipa_us": "/ɹɪˈdɛmpʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/redemption-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự mua lại, sự chuộc lại (vật cầm thế); sự trả hết (nợ); sự chuộc (lỗi); sự bỏ tiền ra chuộc (một tù nhân)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "dividend",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "That part of the earnings of a corporation that is distributed to its shareholders; usually paid quarterly.",
+   "extra_definitions": [
+    "[noun] A number or expression that is to be divided by another.",
+    "[noun] A pro rata payment of money by a company to its shareholders, usually made periodically (eg, quarterly or annually).",
+    "[noun] Beneficial results from a metaphorical investment (of time, effort, etc.)"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dividend",
+   "example": "In \"42 ÷ 3\" the dividend is the 42.",
+   "ipa_uk": "/ˈdɪvɪdɛnd/",
+   "ipa_us": "/ˈdɪvɪdɛnd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dividend-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(tài chính) tiền lãi cổ phần",
+   "vi_source": "anhviet",
+   "example_vi": "Trong \"42 `3\" số bị chia là 42."
+  },
+  {
+   "word": "capital levy",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax on capital or property.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=capital+levy",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế đánh vào của cải hoặc tài sản riêng; thuế vốn",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "token money",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Coins of regular issue whose face value is greater than their intrinsic value.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=token+money",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tiền xu phát hành thường xuyên có mệnh giá lớn hơn giá trị nội tại của chúng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "royalty",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment to the holder of a patent or copyright or resource for the right to use their property.",
+   "extra_definitions": [
+    "[noun] The rank, status, power or authority of a monarch.",
+    "[noun] People of royal rank, plus their families, treated as a group.",
+    "[noun] A royal right or prerogative, such as the exploitation of a natural resource; the granting of such a right; payment received for such a right."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He received royalties on his book.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=royalty",
+   "ipa_uk": "/ˈɹɔɪəlti/",
+   "ipa_us": "/ˈɹɔɪəlti/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/royalty-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền bản quyền tác giả (theo từng cuốn sách bán ra; theo mỗi lần diễn lại một vở kịch...), tiền bản quyền phát minh (tiền phải trả để được sử dụng phát minh của người nào); (số nhiều) đặc quyền đặc lợi của nhà vua",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đã nhận được tiền bản quyền cho cuốn sách của mình."
+  },
+  {
+   "word": "pork barrel",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A legislative appropriation designed to ingratiate legislators with their constituents.",
+   "extra_definitions": [
+    "[noun] A barrel used to store pork.",
+    "[noun] A ready supply of income; one's livelihood.",
+    "[noun] State funds as assigned for local or regional expenditure; especially, central money used for regional projects which are eyecatching or designed to appeal to voters."
+   ],
+   "synonyms": [
+    "pork"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pork+barrel",
+   "ipa_uk": "/ˈpɔːkˌbaɹəl/",
+   "ipa_us": "/ˈpɔːkˌbaɹəl/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một sự chiếm đoạt lập pháp được thiết kế để lấy lòng các nhà lập pháp với các cử tri của họ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "inheritance tax",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax on the estate of the deceased person.",
+   "extra_definitions": [
+    "[noun] A tax based on the value of the property of a deceased person, and charged on the beneficiaries of the estate."
+   ],
+   "synonyms": [
+    "estate tax",
+    "death tax",
+    "death duty"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=inheritance+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "thuế thừa kế di sản; thuế di dản",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "valuation",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Assessed price.",
+   "extra_definitions": [
+    "[noun] An estimation of something's worth.",
+    "[noun] The process of estimating the value of a financial asset or liability.",
+    "[noun] (propositional logic, model theory) An assignment of truth values to propositional variables, with a corresponding assignment of truth values to all propositional formulas with those variables (obtained through the recursive application of truth-valued functions corresponding to the logical connectives making up those formulas)."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "The valuation of this property is much too high.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=valuation",
+   "ipa_uk": "/ˌvæ.ljuːˈeɪ.ʃən/",
+   "ipa_us": "/ˌvæ.ljuːˈeɪ.ʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự định giá, sự đánh giá; giá",
+   "vi_source": "anhviet",
+   "example_vi": "Định giá tài sản này quá cao."
+  },
+  {
+   "word": "bounty",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment or reward (especially from a government) for acts such as catching criminals or killing predatory animals or enlisting in the military.",
+   "extra_definitions": [
+    "[noun] Generosity; also an act of generosity.",
+    "[noun] Something given liberally; a gift.",
+    "[noun] A reward for some specific act, especially one given by an authority or a government."
+   ],
+   "synonyms": [
+    "premium"
+   ],
+   "antonyms": [
+    "frugality",
+    "parsimony",
+    "sparingness",
+    "stinginess"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bounty",
+   "ipa_uk": "/ˈbaʊnti/",
+   "ipa_us": "/ˈbaʊnti/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/bounty-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(quân sự) tiền thưởng nhập ngũ; vật tặng",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "promotional expense",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The cost of promoting a product.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=promotional+expense",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chi phí quảng bá sản phẩm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hedge fund",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A flexible investment company for a small number of large investors (usually the minimum investment is $1 million).",
+   "extra_definitions": [
+    "[noun] Any unregistered investment fund, often characterised by unconventional strategies (i.e., strategies other than investing long only in bonds, equities or money markets). All hedge funds are supposed to be hedged from risk; hence the name."
+   ],
+   "synonyms": [
+    "hedgefund"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hedge+fund",
+   "type_vi": "Danh từ",
+   "definition_vi": "hội đầu tư (chủ yếu là mua bán đầu cơ)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "disadvantage",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The quality of having an inferior or less favorable position.",
+   "extra_definitions": [
+    "[noun] A weakness or undesirable characteristic; a con.",
+    "[noun] A setback or handicap.",
+    "[noun] Loss; detriment; hindrance."
+   ],
+   "synonyms": [
+    "afterdeal",
+    "weakness",
+    "con",
+    "downside",
+    "drawback",
+    "tell against"
+   ],
+   "antonyms": [
+    "advantage"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=disadvantage",
+   "example": "The disadvantage to owning a food processor is that you have to store it somewhere.",
+   "ipa_uk": "/ˌdɪsədˈvɑːntɪdʒ/",
+   "ipa_us": "/ˌdɪsədˈvɑːntɪdʒ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự bất lợi; thế bất lợi",
+   "vi_source": "anhviet",
+   "example_vi": "Nhược điểm của việc sở hữu một chiếc máy chế biến thực phẩm là bạn phải cất nó ở đâu đó."
+  },
+  {
+   "word": "defect",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A failing or deficiency.",
+   "extra_definitions": [
+    "[noun] A fault or malfunction.",
+    "[noun] The quantity or amount by which anything falls short.",
+    "[noun] A part by which a figure or quantity is wanting or deficient."
+   ],
+   "synonyms": [
+    "shortcoming"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "That interpretation is an unfortunate defect of our lack of information.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=defect",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/defect-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/defect-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự thiếu sót; thiếu sót",
+   "vi_source": "anhviet",
+   "example_vi": "Cách giải thích đó là một khiếm khuyết đáng tiếc do chúng ta thiếu thông tin."
+  },
+  {
+   "word": "game misconduct",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A penalty that suspends a player for the remainder of a game (but allows the team to send in a substitute for the suspended player).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=game+misconduct",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một hình phạt đình chỉ một cầu thủ trong thời gian còn lại của trận đấu (nhưng cho phép đội cử cầu thủ thay thế vào sân).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "exemption",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A deduction allowed to a taxpayer because of his status (having certain dependents or being blind or being over 65 etc.",
+   "extra_definitions": [
+    "[noun] An act of exempting.",
+    "[noun] The state of being exempt; immunity.",
+    "[noun] A deduction from the normal amount of taxes."
+   ],
+   "synonyms": [
+    "free pass",
+    "get out of jail free card",
+    "immunity"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Additional exemptions are allowed for each dependent.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=exemption",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự miễn (thuế...)",
+   "vi_source": "anhviet",
+   "example_vi": "Miễn trừ bổ sung được phép cho mỗi người phụ thuộc."
+  },
+  {
+   "word": "lump sum",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A complete payment consisting of a single sum of money.",
+   "extra_definitions": [
+    "[noun] A relatively large single payment of money often paid and received instead of, or in addition to, a sequence of smaller payments."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=lump+sum",
+   "example": "When he retired, he received a lump sum plus a pension.",
+   "type_vi": "Danh từ",
+   "definition_vi": "khoản tiền trả chung một lần; giá bao khoán",
+   "vi_source": "anhviet",
+   "example_vi": "Khi nghỉ hưu, ông nhận được một khoản tiền cộng với tiền trợ cấp."
+  },
+  {
+   "word": "handicap",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Advantage given to a competitor to equalize chances of winning.",
+   "extra_definitions": [
+    "[noun] Something that prevents, hampers, or hinders.",
+    "[noun] An allowance of a certain amount of time or distance in starting, granted in a race (or other contest of skill) to the competitor possessing disadvantages; or an additional weight or other hindrance imposed upon the one possessing advantages, in order to equalize, as much as possible, the chances of success.",
+    "[noun] (sometimes considered offensive) The disadvantage itself, in particular physical or mental disadvantages of people."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=handicap",
+   "example": "Age is often a handicap.",
+   "ipa_uk": "/ˈhændɪkæp/",
+   "ipa_us": "/ˈhændɪkæp/",
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc thi có chấp (đẻ cho hai bên cân sức); (nghĩa bóng) sự cản trở; điều bất lợi",
+   "vi_source": "anhviet",
+   "example_vi": "Tuổi tác thường là một khuyết tật."
+  },
+  {
+   "word": "anti-dumping duty",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tariff imposed to prevent dumping.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=anti-dumping+duty",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thuế quan được áp đặt để ngăn chặn việc bán phá giá.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "proportional tax",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any tax in which the rate is constant as the amount subject to taxation increases.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=proportional+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bất kỳ loại thuế nào có thuế suất không đổi khi số tiền chịu thuế tăng lên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "superiority",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The quality of being at a competitive advantage.",
+   "extra_definitions": [
+    "[noun] The state of being superior.",
+    "[noun] The right which the superior enjoys in the land held by the vassal."
+   ],
+   "synonyms": [
+    "favorable position",
+    "favourable position"
+   ],
+   "antonyms": [
+    "inferiority"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=superiority",
+   "example": "Many US colleges want to achieve superiority in the sport of football.",
+   "ipa_uk": "/ˈsʊu.pɪə(ɹ)ˌi.ɒ.ɹɪ.ti/",
+   "ipa_us": "/ˈsʊu.pɪə(ɹ)ˌi.ɒ.ɹɪ.ti/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/superiority-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Chất lượng của lợi thế cạnh tranh.",
+   "vi_source": "gtx",
+   "example_vi": "Nhiều trường đại học ở Mỹ muốn đạt được sự vượt trội trong môn thể thao bóng đá."
+  },
+  {
+   "word": "installment",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A payment of part of a debt; usually paid at regular intervals.",
+   "extra_definitions": [
+    "[noun] One of a series of parts, whether equal or unequal to the other parts of the series, of a given entity or a given process, which part presents or is presented at a particular scheduled interval.",
+    "[noun] One member of a series of portions of a debt or sum of money, which portions may or may not be equated (depending in part on whether the interest rate is fixed or variable), payment of which portions are serially exacted at regularly scheduled intervals toward satisfaction of the total. Payments of installments are generally mensual, quarterly, triannual, biannual, or annual.",
+    "[noun] A part of a published or broadcast serial."
+   ],
+   "synonyms": [
+    "episode",
+    "part"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=installment",
+   "ipa_uk": "/ɪnˈstɔːlmənt/",
+   "ipa_us": "/ɪnˈstɔːlmənt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/installment-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "phần trả mỗi lần (của một số tiền); phần cung cấp mỗi lần, phần đăng (báo...) mỗi lần",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "installment plan",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A system for paying for goods by installments.",
+   "extra_definitions": [],
+   "synonyms": [
+    "installment buying",
+    "time plan"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=installment+plan",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một hệ thống thanh toán hàng hóa theo từng đợt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "installment credit",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A loan repaid with interest in equal periodic payments.",
+   "extra_definitions": [],
+   "synonyms": [
+    "installment loan"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=installment+credit",
+   "type_vi": "Danh từ",
+   "definition_vi": "tín dụng trả dần dần, trả từng kỳ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "bargaining chip",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Leverage in the form of an inducement or a concession useful in successful negotiations.",
+   "extra_definitions": [
+    "[noun] Something or someone used as a leverage in negotiations."
+   ],
+   "synonyms": [
+    "bargaining counter"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bargaining+chip",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đòn bẩy dưới hình thức khuyến khích hoặc nhượng bộ có ích trong các cuộc đàm phán thành công.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "convertible",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A corporate security (usually bonds or preferred stock) that can be exchanged for another form of security (usually common stock).",
+   "extra_definitions": [
+    "[noun] (in plural) Interchangeable things or terms.",
+    "[noun] A convertible car: a car with a removable or foldable roof able to convert from a closed to open vehicle and back again.",
+    "[noun] A convertible security: a stock, bond, etc. that can be turned into another (usually common stock) under certain set terms."
+   ],
+   "synonyms": [
+    "convertible security"
+   ],
+   "antonyms": [
+    "inconvertible"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=convertible",
+   "ipa_uk": "/kənˈvəːtɪbəl/",
+   "ipa_us": "/kənˈvəːtɪbəl/",
+   "type_vi": "Tính từ",
+   "definition_vi": "Một chứng khoán doanh nghiệp (thường là trái phiếu hoặc cổ phiếu ưu đãi) có thể đổi lấy một dạng chứng khoán khác (thường là cổ phiếu phổ thông).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bracket creep",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A movement into a higher tax bracket as taxable income increases.",
+   "extra_definitions": [
+    "[noun] The move towards increased taxation when an inflation adjustment to a wage or salary pushes a taxpayer into a higher tax bracket (or, in a progressive taxation regime, further into a bracket)."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bracket+creep",
+   "type_vi": "Danh từ",
+   "definition_vi": "chuyển nhóm thuế",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "residual",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A payment that is made to a performer or writer or director of a television show or commercial that is paid for every repeat showing.",
+   "extra_definitions": [
+    "[noun] A remainder left over at the end of some process.",
+    "[noun] (in the plural) Payments made to performers, writers and directors when a recorded broadcast is repeated.",
+    "[noun] The difference between the observed value and the estimated value of the quantity of interest"
+   ],
+   "synonyms": [
+    "residuary"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He could retire on his residuals.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=residual",
+   "ipa_uk": "/ɹɪˈzɪdjəl/",
+   "ipa_us": "/ɹɪˈzɪdjəl/",
+   "type_vi": "Tính từ",
+   "definition_vi": "Khoản thanh toán được trả cho người biểu diễn, nhà văn hoặc đạo diễn của một chương trình truyền hình hoặc quảng cáo được trả cho mỗi lần chiếu lặp lại.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ta có thể nghỉ hưu với số tiền còn lại của mình."
+  },
+  {
+   "word": "hush money",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A bribe paid to someone to insure that something is kept secret.",
+   "extra_definitions": [
+    "[noun] A bribe to maintain secrecy (to prevent bad publicity or to prevent the discovery of a crime)."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hush+money",
+   "example": "The scandal was even greater when it was announced that hush money had been paid to keep the faulty products unannounced.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản hối lộ được trả cho ai đó để đảm bảo rằng điều gì đó được giữ bí mật.",
+   "vi_source": "gtx",
+   "example_vi": "Vụ bê bối càng lớn hơn khi có thông tin trả tiền bưng bít để giữ sản phẩm bị lỗi không báo trước."
+  },
+  {
+   "word": "double dipping",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Two incomes received from the same source (as by holding a government job and receiving a government pension).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double+dipping",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hai khoản thu nhập nhận được từ cùng một nguồn (như làm việc cho chính phủ và nhận lương hưu của chính phủ).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "business deduction",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Tax write-off for expenses of doing business.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=business+deduction",
+   "type_vi": "Danh từ",
+   "definition_vi": "Khấu trừ thuế đối với chi phí kinh doanh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "repayment",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment of a debt or obligation.",
+   "extra_definitions": [
+    "[noun] The act of repaying.",
+    "[noun] The money or other resource that is repaid."
+   ],
+   "synonyms": [
+    "quittance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=repayment",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự trả nợ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "appropriation",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money set aside (as by a legislature) for a specific purpose.",
+   "extra_definitions": [
+    "[noun] An act or instance of appropriating.",
+    "[noun] That which is appropriated.",
+    "[noun] Public funds set aside for a specific purpose."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=appropriation",
+   "ipa_uk": "/əˌpɹoʊpɹiˈeɪʃən/",
+   "ipa_us": "/əˌpɹoʊpɹiˈeɪʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự dành riêng (để dùng vào việc gì); sự chiếm hữu, sự chiếm đoạt (làm của riêng)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "retribution",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A justly deserved penalty.",
+   "extra_definitions": [
+    "[noun] Punishment inflicted in the spirit of moral outrage or personal vengeance."
+   ],
+   "synonyms": [
+    "requital"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=retribution",
+   "ipa_uk": "/ˌɹɛtɹɪˈbjuʃən/",
+   "ipa_us": "/ˌɹɛtɹɪˈbjuʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một quả phạt đền xứng đáng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "depreciation",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Decrease in value of an asset due to obsolescence or use.",
+   "extra_definitions": [
+    "[noun] The state of being depreciated; disparagement.",
+    "[noun] The decline in value of assets.",
+    "[noun] The measurement of the decline in value of assets. Not to be confused with impairment, which is the measurement of the unplanned, extraordinary decline in value of assets."
+   ],
+   "synonyms": [
+    "wear and tear"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=depreciation",
+   "ipa_uk": "/dɪˌpɹiːʃɪˈeɪʃən/",
+   "ipa_us": "/dɪˌpɹiːʃɪˈeɪʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự gièm pha, sự nói xấu, sự làm giảm giá trị; sự chê bai, sự coi khinh, sự đánh giá thấp; sự sụt giá, sự giảm giá",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "withholding",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of deducting from an employee's salary.",
+   "extra_definitions": [
+    "[verb] To keep (a physical object that one has obtained) to oneself rather than giving it back to its owner.",
+    "[verb] To keep (information, assent etc) to oneself rather than revealing it.",
+    "[verb] To stay back."
+   ],
+   "synonyms": [
+    "retain"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=withholding",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hành vi khấu trừ tiền lương của nhân viên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "marriage brokerage",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A business that arranges marriage contracts.",
+   "extra_definitions": [],
+   "synonyms": [
+    "marriage mart"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=marriage+brokerage",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một doanh nghiệp sắp xếp hợp đồng hôn nhân.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "reimbursement",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Compensation paid (to someone) for damages or losses or money already spent etc.",
+   "extra_definitions": [
+    "[noun] The act of compensating someone for an expense."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He received reimbursement for his travel expenses.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=reimbursement",
+   "ipa_uk": "/ˌɹiː.ɪmˈbɜːs.mənt/",
+   "ipa_us": "/ˌɹiː.ɪmˈbɜːs.mənt/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự hoàn lại, sự trả lại (số tiền đã tiêu)",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đã nhận được tiền bồi hoàn cho chi phí đi lại của mình."
+  },
+  {
+   "word": "withholding tax",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Income tax withheld from employees' wages and paid directly to the government by the employer.",
+   "extra_definitions": [
+    "[noun] A withholding; a tax withheld from employees' salary and paid to the government. The withheld amount is considered a credit in final taxation."
+   ],
+   "synonyms": [
+    "withholding"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=withholding+tax",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thuế thu nhập được khấu trừ từ tiền lương của người lao động và được người sử dụng lao động trả trực tiếp cho chính phủ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "annuity",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Income from capital investment paid in a series of regular payments.",
+   "extra_definitions": [
+    "[noun] A right to receive amounts of money regularly over a certain fixed period, in perpetuity, or, especially, over the remaining life or lives of one or more beneficiaries."
+   ],
+   "synonyms": [
+    "rente"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "His retirement fund was set up to be paid as an annuity.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=annuity",
+   "ipa_uk": "/əˈn(j)uɪti/",
+   "ipa_us": "/əˈn(j)uɪti/",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền góp hằng năm, tiền trả hằng năm, tiền trợ cấp hàng năm",
+   "vi_source": "anhviet",
+   "example_vi": "Quỹ hưu trí của ông được lập ra để trả dưới dạng niên kim."
+  },
+  {
+   "word": "annuity in advance",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An annuity paid in a series of more or less equal payments at the beginning of equally spaced periods.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Rent payable in advance constitutes an annuity in advance for the landlord.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=annuity+in+advance",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một niên kim được trả thành một loạt các khoản thanh toán ít nhiều bằng nhau vào đầu các khoảng thời gian cách đều nhau.",
+   "vi_source": "gtx",
+   "example_vi": "Tiền thuê trả trước tạo thành một khoản trả trước hàng năm cho chủ nhà."
+  },
+  {
+   "word": "forfeit",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A penalty for a fault or mistake that involves losing or giving up something.",
+   "extra_definitions": [
+    "[noun] A penalty for or consequence of a misdemeanor.",
+    "[noun] A thing forfeited; that which is taken from somebody in requital of a misdeed committed; that which is lost, or the right to which is alienated, by a crime, breach of contract, etc.",
+    "[noun] Something deposited and redeemable by a sportive fine as part of a game."
+   ],
+   "synonyms": [
+    "forfeiture"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "The contract specified forfeits if the work was not completed on time.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=forfeit",
+   "ipa_uk": "/ˈfɔː.fɪt/",
+   "ipa_us": "/ˈfɔɹ.fɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/forfeit-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "vật bị mất, vật bị thiệt (vì có lỗi...); tiền phạt, tiền bồi thường",
+   "vi_source": "anhviet",
+   "example_vi": "Hợp đồng quy định sẽ bị hủy bỏ nếu công việc không được hoàn thành đúng thời hạn."
+  },
+  {
+   "word": "rebate",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A refund of some fraction of the amount paid.",
+   "extra_definitions": [
+    "[noun] A deduction from an amount that is paid; an abatement.",
+    "[noun] The return of part of an amount already paid.",
+    "[noun] The edge of a roll of film, from which no image can be developed."
+   ],
+   "synonyms": [
+    "discount"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rebate",
+   "ipa_uk": "/ɹəˈbeɪt/",
+   "ipa_us": "/ɹəˈbeɪt/",
+   "type_vi": "Danh từ",
+   "definition_vi": "việc hạ giá, việc giảm bớt (số tiền trả); số tiền được hạ, số tiền được giảm bớt",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "recourse",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Something or someone turned to for assistance or security.",
+   "extra_definitions": [
+    "[noun] The act of seeking assistance or advice.",
+    "[noun] A coursing back, or coursing again; renewed course; return; retreat; recurrence.",
+    "[noun] Access; admittance."
+   ],
+   "synonyms": [
+    "refuge",
+    "resort"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "His only recourse was the police.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=recourse",
+   "ipa_uk": "/ɹɪˈkɔːs/",
+   "ipa_us": "/ɹɪˈkɔːs/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/recourse-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự nhờ đến, sự cầu đến, sự trông cậy vào",
+   "vi_source": "anhviet",
+   "example_vi": "Cách duy nhất của anh ta là cảnh sát."
+  },
+  {
+   "word": "payback",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Financial return or reward (especially returns equal to the initial investment).",
+   "extra_definitions": [
+    "[noun] An act of revenge.",
+    "[noun] A benefit, reward, a form of recompense.",
+    "[noun] A return on investment"
+   ],
+   "synonyms": [
+    "just deserts",
+    "poetic justice"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=payback",
+   "example": "They beat us last year, so this year's win was payback.",
+   "ipa_uk": "/ˈpeɪbæk/",
+   "ipa_us": "/ˈpeɪbæk/",
+   "type_vi": "Danh từ",
+   "definition_vi": "lợi tức thu được từ một cuộc đầu tư",
+   "vi_source": "anhviet",
+   "example_vi": "Họ đã đánh bại chúng tôi năm ngoái nên chiến thắng năm nay là sự đền đáp xứng đáng."
+  },
+  {
+   "word": "rent-rebate",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A rebate on rent given by a local government authority.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rent-rebate",
+   "type_vi": "Danh từ",
+   "definition_vi": "Giảm giá tiền thuê nhà do chính quyền địa phương đưa ra.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "treble damages",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Three times the amount that a court would normally find the injured party entitled to.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=treble+damages",
+   "type_vi": "Danh từ",
+   "definition_vi": "Gấp ba lần số tiền mà tòa án thường cho rằng bên bị thương có quyền được hưởng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "excise",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A tax that is measured by the amount of business done (not on property or income from real estate).",
+   "extra_definitions": [
+    "[noun] A tax charged on goods produced within the country (as opposed to customs duties, charged on goods from outside the country).",
+    "[verb] To impose an excise tax on something."
+   ],
+   "synonyms": [
+    "excise tax"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=excise",
+   "ipa_uk": "/ˈɛkˌsaɪz/",
+   "ipa_us": "/ˈɛkˌsaɪz/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/excise-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sở thu thuế hàng hoá, sở thu thuế môn bài; thuế hàng hoá, thuế môn bài",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "payoff",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The final payment of a debt.",
+   "extra_definitions": [
+    "[noun] A payment.",
+    "[noun] A reward.",
+    "[noun] A bribe."
+   ],
+   "synonyms": [
+    "final payment"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=payoff",
+   "type_vi": "Danh từ",
+   "definition_vi": "Việc thanh toán cuối cùng của một khoản nợ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "winnings",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Something won (especially money).",
+   "extra_definitions": [
+    "[noun] The act of obtaining something, as in a contest or by competition.",
+    "[noun] (chiefly in the plural) The money, etc., gained by success in competition or contest, especially in gambling.",
+    "[noun] A new opening."
+   ],
+   "synonyms": [
+    "win",
+    "profits"
+   ],
+   "antonyms": [
+    "losings"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=winnings",
+   "ipa_uk": "/ˈwɪnɪŋz/",
+   "ipa_us": "/ˈwɪnɪŋz/",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền được cuộc, được bạc",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "forte",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An asset of special worth or utility.",
+   "extra_definitions": [
+    "[noun] A strength or talent.",
+    "[noun] The strong part of a sword blade, close to the hilt."
+   ],
+   "synonyms": [
+    "strong suit",
+    "long suit",
+    "metier",
+    "specialty",
+    "speciality"
+   ],
+   "antonyms": [
+    "weak point"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "example": "Cooking is his forte.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=forte",
+   "ipa_uk": "/fɔːt/",
+   "ipa_us": "/fɔːt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/forte-1-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "sở trường, điểm mạnh (của một người)",
+   "vi_source": "anhviet",
+   "example_vi": "Nấu ăn là sở trường của anh ấy."
+  },
+  {
+   "word": "hoard",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A secret store of valuables or money.",
+   "extra_definitions": [
+    "[noun] A hidden supply or fund.",
+    "[noun] A cache of valuable objects or artefacts; a trove.",
+    "[verb] To amass, usually for one's own private collection."
+   ],
+   "synonyms": [
+    "cache",
+    "stash"
+   ],
+   "antonyms": [
+    "declutter"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hoard",
+   "example": "a hoard of provisions; a hoard of money",
+   "ipa_uk": "/hɔːd/",
+   "ipa_us": "/hɔɹd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/hoard-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(khảo cổ học) nơi chôn giấu vật quí; kho tích trữ, kho dự trữ; chỗ cất giấu; của dành dụm",
+   "vi_source": "anhviet",
+   "example_vi": "một kho dự trữ; một kho tiền"
+  },
+  {
+   "word": "drawback",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The quality of being a hindrance.",
+   "extra_definitions": [
+    "[noun] A disadvantage; something that detracts or takes away.",
+    "[noun] A partial refund of an import fee, as when goods are re-exported from the country that collected the fee.",
+    "[noun] The inhalation of a lungful of smoke from a cigarette."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He pointed out all the drawbacks to my plan.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=drawback",
+   "ipa_uk": "/ˈdɹɔːˌbæk/",
+   "ipa_us": "/ˈdɹɔːˌbæk/",
+   "type_vi": "Danh từ",
+   "definition_vi": "điều trở ngại, mặt hạn chế, mặt không thuận lợi",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đã chỉ ra tất cả những hạn chế trong kế hoạch của tôi."
+  },
+  {
+   "word": "unsecured bond",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The ability of a customer to obtain goods or services before payment, based on the trust that payment will be made in the future.",
+   "extra_definitions": [],
+   "synonyms": [
+    "debenture",
+    "debenture bond"
+   ],
+   "antonyms": [
+    "secured bond"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=unsecured+bond",
+   "type_vi": "Danh từ",
+   "definition_vi": "Khả năng khách hàng có được hàng hóa hoặc dịch vụ trước khi thanh toán, dựa trên sự tin tưởng rằng việc thanh toán sẽ được thực hiện trong tương lai.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "flotation",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Financing a commercial enterprise by bond or stock shares.",
+   "extra_definitions": [
+    "[noun] A state of floating, or being afloat.",
+    "[noun] The ability (as of a tire or snowshoes) to stay on the surface of soft ground or snow.",
+    "[noun] (chemical engineering) A process of separating minerals by agitating a mixture with water and detergents etc; selected substances being carried to the surface in air bubbles."
+   ],
+   "synonyms": [
+    "floatation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=flotation",
+   "ipa_uk": "/fləʊˈteɪʃən/",
+   "ipa_us": "/fləʊˈteɪʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tài trợ cho doanh nghiệp thương mại bằng trái phiếu hoặc cổ phiếu.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "atonement",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Compensation for a wrong.",
+   "extra_definitions": [
+    "[noun] Making amends to restore a damaged relationship; expiation.",
+    "[noun] (often with capitalized initial) The reconciliation of God and mankind through the death of Jesus.",
+    "[noun] Reconciliation; restoration of friendly relations; concord."
+   ],
+   "synonyms": [
+    "expiation",
+    "satisfaction"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=atonement",
+   "ipa_uk": "/əˈtoʊnmənt/",
+   "ipa_us": "/əˈtoʊnmənt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/atonement-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Bồi thường cho một sai lầm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "alimony",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Court-ordered support paid by one spouse to another after they are separated.",
+   "extra_definitions": [
+    "[noun] A court-mandated allowance made to a former spouse by a divorced or legally separated person.",
+    "[noun] The means to support life."
+   ],
+   "synonyms": [
+    "maintenance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=alimony",
+   "type_vi": "Danh từ",
+   "definition_vi": "(pháp lý) tiền cấp dưỡng cho vợ (sau khi vợ chồng đã cách ly vì một lý do gì); sự cấp dưỡng",
+   "vi_source": "anhviet",
+   "ipa_uk": "/ˈæ.lɪ.mə.ni/",
+   "ipa_us": "/ˈæ.lɪ.moʊ.ni/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/alimony-us.mp3"
+   }
+  },
+  {
+   "word": "markup",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The amount added to the cost to determine the asking price.",
+   "extra_definitions": [
+    "[noun] The notation that is used to indicate the meaning of the elements in an electronic document, or to dictate how text should be displayed.",
+    "[noun] The percentage or amount by which a seller hikes up his buy-in price when determining his selling price.",
+    "[noun] An increase in price."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=markup",
+   "type_vi": "Danh từ",
+   "definition_vi": "số tiền cộng vào giá vốn (gồm kinh phí và lãi); <thương> sự tăng giá",
+   "vi_source": "anhviet",
+   "example": "You don’t make much money selling gas because the markup is so low.",
+   "ipa_uk": "/ˈmɑː(ɹ)k.ʌp/",
+   "ipa_us": "/ˈmɑː(ɹ)k.ʌp/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/markup-us.mp3"
+   }
+  },
+  {
+   "word": "barter away",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Trade in in a bartering transaction.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=barter+away",
+   "type_vi": "Động từ",
+   "definition_vi": "Tham gia vào một giao dịch trao đổi hàng hóa.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "per diem",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A daily allowance for living expenses (especially while traveling in connection with your job).",
+   "extra_definitions": [
+    "[noun] A daily stipend.",
+    "[noun] A daily allowable limit for expendables.",
+    "[adjective] Per day; daily."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=per+diem",
+   "type_vi": "Tính từ",
+   "definition_vi": "trợ cấp sinh hoạt hàng ngày",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "stipend",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sum of money allotted on a regular basis; usually for some specific purpose.",
+   "extra_definitions": [
+    "[noun] A scholarship granted to a student.",
+    "[noun] A fixed payment, generally small and occurring at regular intervals; a modest allowance.",
+    "[verb] To provide (someone) with a stipend."
+   ],
+   "synonyms": [
+    "allowance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=stipend",
+   "type_vi": "Tính từ",
+   "definition_vi": "(thực vật học) lương, tiền thù lao thường kỳ (mục sư, quan toà...)",
+   "vi_source": "anhviet",
+   "example": "My stipend for doing public service is barely enough to cover living expenses.",
+   "ipa_uk": "/-pn̩d/",
+   "ipa_us": "/-pn̩d/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/stipend-uk.mp3",
+    "us": null
+   }
+  },
+  {
+   "word": "awkwardness",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The quality of an embarrassing situation.",
+   "extra_definitions": [
+    "[noun] The state or quality of being awkward; clumsiness; unskillfulness."
+   ],
+   "synonyms": [
+    "nuisance value"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "He sensed the awkwardness of his proposal.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=awkwardness",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chất lượng của một tình huống xấu hổ.",
+   "vi_source": "gtx",
+   "example_vi": "Anh cảm nhận được sự lúng túng trong lời đề nghị của mình."
+  },
+  {
+   "word": "regressive",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "adjective",
+   "definition_en": "Adjusted so that the rate decreases as the amount of income increases.",
+   "extra_definitions": [
+    "[adjective] That tends to return, revert or regress.",
+    "[adjective] (of a tax) Whose rate decreases as the taxed amount increases."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "progressive"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=regressive",
+   "type_vi": "Tính từ",
+   "definition_vi": "Được điều chỉnh để tỷ lệ này giảm khi số tiền thu nhập tăng lên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "resell",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Sell (something) again after having bought it.",
+   "extra_definitions": [
+    "[verb] To sell again."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=resell",
+   "ipa_uk": "/ɹiːˈsɛl/",
+   "ipa_us": "/ɹiːˈsɛl/",
+   "type_vi": "Động từ",
+   "definition_vi": "bán lại",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "breakage",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Reimbursement for goods damaged while in transit or in use.",
+   "extra_definitions": [
+    "[noun] The act of breaking.",
+    "[noun] Something that has been broken.",
+    "[noun] A service which is unused by a customer, such as an unredeemed gift card, which therefore represents a pure profit to the seller."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=breakage",
+   "example": "At the end of the party, there were two reported breakages.",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền bồi thường hàng bị vỡ; đồ vật bị vỡ",
+   "vi_source": "anhviet",
+   "example_vi": "Vào cuối bữa tiệc, có hai vụ vỡ được báo cáo."
+  },
+  {
+   "word": "arbitrage",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A kind of hedged investment meant to capture slight differences in price.",
+   "extra_definitions": [
+    "[noun] A market activity in which a security, commodity, currency or other tradable item is bought in one market and sold simultaneously in another, in order to profit from price differences between the markets.",
+    "[noun] Arbitration.",
+    "[verb] To employ arbitrage"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=arbitrage",
+   "ipa_uk": "/ˈɑːɹ.bɪ.tɹɪdʒ/",
+   "ipa_us": "/ˈɑːɹ.bɪ.tɹɪdʒ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại hình đầu tư phòng ngừa rủi ro nhằm nắm bắt những khác biệt nhỏ về giá.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "kickback",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A commercial bribe paid by a seller to a purchasing agent in order to induce the agent to enter into the transaction.",
+   "extra_definitions": [
+    "[noun] A backward kick, a retrograde movement of an extremity.",
+    "[noun] A covert – often illegal – payment in return for a favor consisting of providing an opportunity of chargeable transaction.",
+    "[noun] (machinery) Recoil; a sudden backward motion, usually in the direction of the operator."
+   ],
+   "synonyms": [
+    "kicker"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=kickback",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ) sự trả lại (của ăn cắp hoặc một phần số tiền do bị ép buộc hay thoả thuận riêng mà phải nhận...)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "transact",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Conduct business.",
+   "extra_definitions": [
+    "[verb] To do, carry through, conduct or perform some action.",
+    "[verb] To carry over, hand over or transfer something.",
+    "[verb] To conduct business."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "Transact with foreign governments.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=transact",
+   "type_vi": "Động từ",
+   "definition_vi": "(+ with) kinh doanh với; thương lượng công việc với",
+   "vi_source": "anhviet",
+   "example_vi": "Giao dịch với chính phủ nước ngoài."
+  },
+  {
+   "word": "gratuity",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A relatively small amount of money given for services rendered (as by a waiter).",
+   "extra_definitions": [
+    "[noun] Something (usually money) given in exchange for influence or as an inducement to dishonesty.",
+    "[noun] That which seduces; seduction; allurement.",
+    "[noun] (feudal law) A right to the use of a superior's land, as a stipend for services to be performed; also, the land so held; a fief."
+   ],
+   "synonyms": [
+    "tip",
+    "pourboire",
+    "baksheesh",
+    "bakshish",
+    "bakshis"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=gratuity",
+   "ipa_uk": "/ɡɹəˈtjuːətɪ/",
+   "ipa_us": "/ɡɹəˈtjuːətɪ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền thưởng thêm, tiền chè lá (thường cho người hầu bàn ở các tiệm ăn); tiền thưởng (khi) về hưu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "recompense",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Payment or reward (as for service rendered).",
+   "extra_definitions": [
+    "[noun] An equivalent returned for anything given, done, or suffered; compensation; reward; amends; requital.",
+    "[noun] That which compensates for an injury, or other type of harm or damage.",
+    "[verb] To reward or repay (someone) for something done, given etc."
+   ],
+   "synonyms": [
+    "meed",
+    "payback",
+    "recompence",
+    "restitution"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=recompense",
+   "example": "He offered money as recompense for the damage, but what the injured party wanted was an apology.",
+   "ipa_uk": "/ˌɹɛkəmˈpɛns/",
+   "ipa_us": "/ˌɹɛkəmˈpɛns/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/recompense-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thanh toán hoặc khen thưởng (đối với dịch vụ được cung cấp).",
+   "vi_source": "gtx",
+   "example_vi": "Anh ta đề nghị bồi thường thiệt hại bằng tiền nhưng điều mà bên bị thiệt hại mong muốn là một lời xin lỗi."
+  },
+  {
+   "word": "remittance",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A payment of money sent to a person in another place.",
+   "extra_definitions": [
+    "[noun] The act of transmitting money, bills, etc. to a distant place, in return or payment for goods purchased.",
+    "[noun] That which is remitted; a payment to a remote recipient."
+   ],
+   "synonyms": [
+    "remittal",
+    "remission",
+    "remitment"
+   ],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=remittance",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản thanh toán tiền được gửi cho một người ở một nơi khác.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "pittance",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An inadequate payment.",
+   "extra_definitions": [
+    "[noun] A small allowance of food and drink; a scanty meal.",
+    "[noun] A meagre allowance of money or wages.",
+    "[noun] A small amount."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "example": "They work all day for a mere pittance.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pittance",
+   "ipa_uk": "/ˈpɪtəns/",
+   "ipa_us": "/ˈpɪtəns/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khoản thanh toán không thỏa đáng.",
+   "vi_source": "gtx",
+   "example_vi": "Họ làm việc cả ngày chỉ để kiếm một đồng lương nhỏ."
+  },
+  {
+   "word": "unearned increment",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An unearned rise in the market value of property resulting from general market factors.",
+   "extra_definitions": [
+    "[noun] Any exceptional increase in the value of land, houses, etc., not due to the owner's labour or outlay."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=unearned+increment",
+   "type_vi": "Danh từ",
+   "definition_vi": "Sự gia tăng không thể đạt được trong giá trị thị trường của tài sản do các yếu tố thị trường chung.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "spillover",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any indirect effect of public expenditure.",
+   "extra_definitions": [
+    "[noun] That which overflows; the excess or side effect.",
+    "[noun] The spread of infectious disease between different species of animal and particularly to humans."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=spillover",
+   "example": "The spillover from the dam due to the heavy rains will run down this channel and harmlessly dump into that river, we hope.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bất kỳ tác động gián tiếp nào của chi tiêu công.",
+   "vi_source": "gtx",
+   "example_vi": "Chúng tôi hy vọng nước tràn từ đập do mưa lớn sẽ chảy xuống kênh này và đổ ra sông kia một cách vô hại."
+  },
+  {
+   "word": "deflationary",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "adjective",
+   "definition_en": "Associated with or tending to cause decreases in consumer prices or increases in the purchasing power of money.",
+   "extra_definitions": [
+    "[adjective] Associated with or tending to cause deflation.",
+    "[adjective] Belonging or relating to a family of theories claiming that assertions that predicate truth of a statement do not attribute a property called truth to such a statement."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "inflationary"
+   ],
+   "topics": [
+    "finance"
+   ],
+   "example": "Deflationary measures.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=deflationary",
+   "ipa_uk": "/dɪˈfleɪʃənɹi/",
+   "ipa_us": "/dɪˈfleɪʃənɹi/",
+   "type_vi": "Tính từ",
+   "definition_vi": "giải lạm phát, làm giảm phát",
+   "vi_source": "anhviet",
+   "example_vi": "Các biện pháp giảm phát"
+  },
+  {
+   "word": "acquirer",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A corporation gaining financial control over another corporation or financial institution through a payment in cash or an exchange of stock.",
+   "extra_definitions": [
+    "[noun] One who acquires.",
+    "[noun] A bank or financial institution that processes credit card or debit card payments on behalf of a merchant."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=acquirer",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một công ty giành quyền kiểm soát tài chính đối với một công ty hoặc tổ chức tài chính khác thông qua thanh toán bằng tiền mặt hoặc trao đổi cổ phiếu.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tare",
+   "cefr": "C1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An adjustment made for the weight of the packaging in order to determine the net weight of the goods.",
+   "extra_definitions": [
+    "[noun] A vetch, or the seed of a vetch (genus Vicia, esp. Vicia sativa)",
+    "[noun] Any of the tufted grasses of genus Lolium; darnel.",
+    "[noun] A damaging weed growing in fields of grain."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "finance"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tare",
+   "ipa_uk": "/teə/",
+   "ipa_us": "/tɛɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/tare-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự xác định trọng lượng bì; xác định trọng lượng bì",
+   "vi_source": "anhviet"
+  }
+ ]
+}

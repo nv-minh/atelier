@@ -7,6 +7,7 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Source | License | Used for | URL | Retrieved |
 |---|---|---|---|---|
 | Oxford 3000/5000 word list (via `winterdl/oxford-5000-vocabulary-audio-definition`) | Oxford University Press word list; community repo (also serves the app's runtime audio via `AUDIO_BASE`) | Base A1–B2 dataset, C1 pack (`oxford-c1`), CEFR levels, IPA, definitions, examples, UK/US audio | https://github.com/winterdl/oxford-5000-vocabulary-audio-definition | 2026-07-26 |
+| NGSL 1.2 (New General Service List) — Browne, C., Culligan, B. & Phillips, J. | CC BY 3.0 (attribution required) | **`Word.freqPct` general frequency percentiles** (top-priority source in `prisma/backfill-freq.ts`) | https://www.newgeneralservicelist.com/new-general-service-list | 2026-08-13 |
 | NGSL-Spoken 1.2 — Browne, C., Culligan, B. & Phillips, J. | CC BY 3.0 (attribution required) | `conversation` pack word list + ranks | https://www.newgeneralservicelist.com/ngsl-spoken | 2026-07-26 |
 | Business Service List (BSL) 1.2 — Browne, C. & Culligan, B. | CC BY 3.0 | `business` pack word list + ranks | https://www.newgeneralservicelist.com/business-service-list | 2026-07-26 |
 | TOEIC Service List (TSL) 1.2 — Browne, C. & Culligan, B. | CC BY 3.0 | `toeic` pack word list + ranks | https://www.newgeneralservicelist.com/toeic-service-list | 2026-07-26 |
@@ -18,6 +19,8 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Google Translate (unofficial gtx endpoint) | Best-effort, unofficial | Fallback `definition_vi` + all `example_vi` (`vi_source: "gtx"`); same endpoint as `prisma/translate-vi.ts` | — | 2026-07-26 |
 | Wikimedia Commons (via Wikipedia PageImages API) | Varies by file, generally free-use/CC; `prisma/fetch-images.ts` only accepts `upload.wikimedia.org` thumbnails | `Word.imageUrl` for words with a matching Wikipedia article (`source: "wikimedia"` in `data/images.json`) | https://en.wikipedia.org/w/api.php | 2026-07-26 |
 | Pexels API | Pexels License — free to use, no attribution required, hotlinking via `images.pexels.com` allowed: https://www.pexels.com/license/ | `Word.imageUrl` for the remaining words (`scripts/images/fetch-pexels.ts`, `source: "pexels"` in `data/images.json`); `photographer`/`pexelsUrl` recorded per entry for optional credit | https://www.pexels.com/api/ | 2026-08-08 |
+| Princeton WordNet 3.0 | WordNet 3.0 License (BSD-style; reuse and commercial use permitted) | Word lists **and verbatim glosses** (`definition_en`), synonyms and the few examples in the 2026-08-13 domain packs: `medical`, `legal`, `finance`, `logistics`, `daily-life`, `social`, `travel`, `office-skills`, `daily-communication` | https://wordnet.princeton.edu/ | 2026-08-13 |
+| `wordfreq` (Robyn Speer) | MIT (underlying corpora CC BY-SA / public domain) | Zipf frequency used to select and to **estimate CEFR** for the 2026-08-13 packs (`cefr_source: "inferred"`) | https://github.com/rspeer/wordfreq | 2026-08-13 |
 
 ## Commercialization note
 
@@ -32,19 +35,60 @@ its `vi_source`, so the swap is mechanical.
 ```
 npm run packs:fetch      # download raw sources -> data/raw/
 npm run packs:build      # normalize -> data/packs/*.json skeletons
+npm run packs:build-crawl # convert an aggregated crawl file -> per-pack files (see below)
 npm run packs:enrich     # dictionaryapi.dev + kaikki fallback (cached, resumable)
 npm run packs:translate  # anhviet dictionary first, gtx fallback (cached)
 npm run packs:import     # upsert into Word (add --dry-run first)
 npm run db:translate-vi  # safety net for any definitionVi still null
 npm run db:topics        # keyword topics (curated pack tags preserved)
+npm run db:backfill-freq # Word.freqPct percentiles from the rank lists in data/raw/
 npm run images:fetch-wikimedia  # Wikipedia PageImages, no key needed
 npm run images:fetch     # Pexels for words still missing an image (needs PEXELS_API_KEY)
 npm run images:apply     # push data/images.json into Word.imageUrl
 npm run packs:verify     # counts + quality gates + samples + image coverage
 ```
 
-Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics → images:apply`.
+Fresh-DB bootstrap order: `db:push → db:seed → packs:import → db:translate-vi → db:topics → db:backfill-freq → images:apply`.
 `images:apply` alone is enough on a fresh DB if `data/images.json` is already committed — no re-crawl needed; only rerun `images:fetch-wikimedia`/`images:fetch` to backfill *new* words that have no entry yet.
+
+## Crawl batches (`packs:build-crawl`)
+
+`packs:build` normalizes the five original sources. A batch crawled outside the
+repo arrives instead as one aggregated JSON array of `{ metadata, words }`, and
+`scripts/packs/build-crawl-batch.ts` converts it into per-pack `PackFile`s —
+mapping `freq_rank`→`rank`, keeping `source_ref`, and assigning taxonomy slugs.
+It also applies that batch's dedupe/quality filter, and every word it removes is
+recorded with a reason in `data/crawl-batches/<date>-dropped.json` so the call
+can be reviewed or reversed. Input lives in gitignored `data/raw/incoming/`.
+
+The 2026-08-13 batch: 2,996 words in → 2,930 out (66 dropped, 3 renamed to the
+spelling already in the DB). Rationale for each decision is in
+`docs/superpowers/plans/2026-08-13-crawl-batch-and-freq-migration.md`.
+
+**A crawl batch does not carry frequency data.** `freq_rank` was null on all
+2,996 rows of the 2026-08-13 batch, so those words get their percentile from
+`db:backfill-freq` or not at all. A future crawl should emit Zipf values from
+`wordfreq` (which it already uses to pick words) straight into `freq_rank`.
+
+## Frequency sources and priority
+
+`Word.freqPct` is a percentile, never a raw rank — ranks are per-source and not
+comparable (`mister` is rank 1 in both BSL and TSL, `be` is rank 1 in
+NGSL-Spoken but rank 2 in NGSL general). `prisma/backfill-freq.ts` prefers the
+most general scale available, in this order:
+
+1. `NGSL_12_stats.csv` — general English, 2,809 lemmas
+2. `NGSL_Spoken_12_stats.csv`
+3. `BSL_120_stats.csv`
+4. `TSL_12_stats.csv`
+
+The three specialist lists are built to *supplement* NGSL rather than repeat it,
+so they overlap it very little — the union is 5,252 distinct ranked words.
+`--force` recomputes every row against this priority (use it after changing the
+order); the default fills only nulls and is safe to re-run.
+
+Words in none of the lists keep `freqPct = null` on purpose, and the selection
+engine scores null neutrally rather than inventing a rank.
 
 ## Backups
 

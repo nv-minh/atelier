@@ -1,6 +1,7 @@
 /* eslint-disable */
 // Batch-translate definitionEn + example to Vietnamese via Google Translate (free gtx endpoint).
 // Resumable: progress saved to /tmp/vi-progress.json. Rate-limited with concurrency + delay.
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { gtxTranslate as translate } from "../scripts/packs/lib/gtx";

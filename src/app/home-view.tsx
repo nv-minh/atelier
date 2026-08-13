@@ -27,10 +27,17 @@ export function HomeView({
   stats,
   leechCount,
   gamify,
+  cefrBand,
 }: {
   stats: HomeStats;
   leechCount: number;
   gamify: GamificationSummary;
+  /**
+   * CEFR band + field labels, or null when nobody has taken the level check.
+   * NOT `gamify.level`, which is the XP level — two different meanings of
+   * "level" render in this component, so this one says which it is.
+   */
+  cefrBand: { band: string; topics: string[] } | null;
 }) {
   const { t } = useI18n();
 
@@ -50,6 +57,16 @@ export function HomeView({
               <Sparkles size={14} className="text-ember" />
               {stats.streak > 0 ? t("home.streakActive", { n: stats.streak }) : t("home.newDay")}
             </p>
+            {cefrBand && (
+              <Link
+                href="/settings"
+                className="inline-flex items-center gap-1.5 rounded-full bg-ember/10 text-ember px-3 py-1 text-xs font-semibold hover:bg-ember/15 transition-colors"
+                title={t("profile.sectionTitle")}
+              >
+                {t("profile.homeLine")} {cefrBand.band}
+                {cefrBand.topics.length > 0 && ` · ${cefrBand.topics.join(" · ")}`}
+              </Link>
+            )}
             {leechCount > 0 && (
               <Link
                 href="/notebook?tab=leeches"

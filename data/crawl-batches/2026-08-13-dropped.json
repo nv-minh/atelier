@@ -1,0 +1,492 @@
+{
+  "batch": "2026-08-13",
+  "input": "data/raw/incoming/vocab-all-packs.json",
+  "generated": "2026-08-13T09:00:26.605Z",
+  "totals": {
+    "in": 2996,
+    "out": 2930,
+    "dropped": 66,
+    "aliased": 3
+  },
+  "aliased": [
+    {
+      "from": "road map",
+      "to": "roadmap",
+      "pack": "travel"
+    },
+    {
+      "from": "filmmaker",
+      "to": "film-maker",
+      "pack": "daily-communication"
+    },
+    {
+      "from": "makeup",
+      "to": "make-up",
+      "pack": "daily-communication"
+    }
+  ],
+  "dropped": [
+    {
+      "word": "air bladder",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "An air-filled sac near the spinal column in many fishes that helps maintain buoyancy."
+    },
+    {
+      "word": "air sac",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Any of the thin-walled extensions of the tracheae of insects."
+    },
+    {
+      "word": "ala",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "A flat wing-shaped process or winglike part of an organism."
+    },
+    {
+      "word": "assets",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Anything of material value or usefulness that is owned by a person or company."
+    },
+    {
+      "word": "bars",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Gymnastic apparatus consisting of two parallel wooden rods supported on uprights."
+    },
+    {
+      "word": "beak",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Horny projecting mouth of a bird."
+    },
+    {
+      "word": "beard",
+      "pack": "medical",
+      "cefr": "B1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A tuft or growth of hairs or bristles on certain plants such as iris or grasses."
+    },
+    {
+      "word": "boards",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "The stage of a theater."
+    },
+    {
+      "word": "book lung",
+      "pack": "medical",
+      "cefr": "B1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Organ in many arachnids containing many thin folds of membrane resembling the leaves of a book."
+    },
+    {
+      "word": "claw",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Sharp curved horny process on the toe of a bird or some mammals or reptiles."
+    },
+    {
+      "word": "colors",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A flag that shows its nationality."
+    },
+    {
+      "word": "comb",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The fleshy red crest on the head of the domestic fowl and other gallinaceous birds."
+    },
+    {
+      "word": "compound eye",
+      "pack": "medical",
+      "cefr": "B1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "In insects and some crustaceans: composed of many light-sensitive elements each forming a portion of an image."
+    },
+    {
+      "word": "congratulations",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "An expression of approval and commendation."
+    },
+    {
+      "word": "cos",
+      "pack": "daily-life",
+      "cefr": "B2",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "Lettuce with long dark-green leaves in a loosely packed elongated head."
+    },
+    {
+      "word": "costa",
+      "pack": "medical",
+      "cefr": "B1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A riblike part of a plant or animal (such as a middle rib of a leaf or a thickened vein of an insect wing)."
+    },
+    {
+      "word": "dated",
+      "pack": "daily-communication",
+      "cefr": "B2",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Marked by features of the immediate and usually discounted past."
+    },
+    {
+      "word": "dorsal fin",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Unpaired median fin on the backs of fishes and some other aquatic vertebrates that help to maintain balance."
+    },
+    {
+      "word": "dug",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "An udder or breast or teat."
+    },
+    {
+      "word": "edged",
+      "pack": "daily-communication",
+      "cefr": "C1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Having a specified kind of border or edge."
+    },
+    {
+      "word": "eggs",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Oval reproductive body of a fowl (especially a hen) used as food."
+    },
+    {
+      "word": "external gill",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Occurs in some mollusks and in tadpoles and other immature amphibians."
+    },
+    {
+      "word": "faced",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Having a face or facing especially of a specified kind or number; often used in combination."
+    },
+    {
+      "word": "famed",
+      "pack": "daily-communication",
+      "cefr": "C1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Widely known and esteemed."
+    },
+    {
+      "word": "fang",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "An appendage of insects that is capable of injecting venom; usually evolved from the legs."
+    },
+    {
+      "word": "findings",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A collection of tools and other articles used by an artisan to make jewelry or clothing or shoes."
+    },
+    {
+      "word": "folks",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Your parents."
+    },
+    {
+      "word": "gen",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "Informal term for information."
+    },
+    {
+      "word": "haw",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The nictitating membrane of a horse."
+    },
+    {
+      "word": "hind leg",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The back limb of a quadruped."
+    },
+    {
+      "word": "hind limb",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A posterior appendage such as a leg or the homologous structure in other animals."
+    },
+    {
+      "word": "hired",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Having services engaged for a fee."
+    },
+    {
+      "word": "hoof",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The foot of an ungulate mammal."
+    },
+    {
+      "word": "hooks",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Large strong hand (as of a fighter)."
+    },
+    {
+      "word": "horse's foot",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The hoof of a horse."
+    },
+    {
+      "word": "instructions",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A manual usually accompanying a technical device and explaining how to install or operate it."
+    },
+    {
+      "word": "kat",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The leaves of the shrub Catha edulis which are chewed like tobacco or used to make tea; has the effect of a euphoric stimulant."
+    },
+    {
+      "word": "keel",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The median ridge on the breastbone of birds that fly."
+    },
+    {
+      "word": "lateral line",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Sense organs of fish and amphibians; believed to detect pressure changes in the water."
+    },
+    {
+      "word": "losses",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Something lost (especially money lost at gambling)."
+    },
+    {
+      "word": "mac",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "A waterproof raincoat made of rubberized fabric."
+    },
+    {
+      "word": "muzzle",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Forward projecting part of the head of certain animals; includes the jaws and nose."
+    },
+    {
+      "word": "os",
+      "pack": "medical",
+      "cefr": "B1",
+      "reason": "obscure abbreviation or Latin stub",
+      "definition_en": "A mouth or mouthlike opening."
+    },
+    {
+      "word": "paw",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A clawed foot of an animal especially a quadruped."
+    },
+    {
+      "word": "pelvic fin",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Either of a pair of fins attached to the pelvic girdle in fishes that help control the direction of movement."
+    },
+    {
+      "word": "profits",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "The excess of revenues over outlays in a given period of time (including depreciation and other non-cash expenses)."
+    },
+    {
+      "word": "rings",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Gymnastic apparatus consisting of a pair of heavy metal circles (usually covered with leather) suspended by ropes; used for gymnastic exercises."
+    },
+    {
+      "word": "roads",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A partly sheltered anchorage."
+    },
+    {
+      "word": "ruled",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Subject to a ruling authority."
+    },
+    {
+      "word": "scores",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A large number or amount."
+    },
+    {
+      "word": "seats",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "An area that includes places where several people can sit."
+    },
+    {
+      "word": "siphon",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A tubular organ in an aquatic animal (especially in mollusks) through which water can be taken in or expelled."
+    },
+    {
+      "word": "snout",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A long projecting or anterior elongation of an animal's head; especially the nose."
+    },
+    {
+      "word": "stifle",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Joint between the femur and tibia in a quadruped; corresponds to the human knee."
+    },
+    {
+      "word": "stocks",
+      "pack": "daily-communication",
+      "cefr": "B2",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A frame that supports a boat while it is under construction."
+    },
+    {
+      "word": "talon",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A sharp hooked claw especially on a bird of prey."
+    },
+    {
+      "word": "taps",
+      "pack": "daily-communication",
+      "cefr": "C1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "Signal to turn the lights out."
+    },
+    {
+      "word": "taxis",
+      "pack": "medical",
+      "cefr": "B2",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "The surgical procedure of manually restoring a displaced body part."
+    },
+    {
+      "word": "tied",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Bound or secured closely."
+    },
+    {
+      "word": "timed",
+      "pack": "daily-communication",
+      "cefr": "C1",
+      "reason": "participial adjective, base verb already in the DB",
+      "definition_en": "Regularly spaced in time."
+    },
+    {
+      "word": "tons",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A large number or amount."
+    },
+    {
+      "word": "trotter",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Foot of a pig or sheep especially one used as food."
+    },
+    {
+      "word": "tusk",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "A long pointed tooth specialized for fighting or digging; especially in an elephant or walrus or hog."
+    },
+    {
+      "word": "wings",
+      "pack": "daily-communication",
+      "cefr": "B1",
+      "reason": "marginal-sense duplicate of a word already in the DB",
+      "definition_en": "A means of flight or ascent."
+    },
+    {
+      "word": "withers",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "The highest part of the back at the base of the neck of various animals especially draft animals."
+    },
+    {
+      "word": "yolk sac",
+      "pack": "medical",
+      "cefr": "C1",
+      "reason": "zoology/botany, not clinical vocabulary",
+      "definition_en": "Membranous structure that functions as the circulatory system in mammalian embryos until the heart becomes functional."
+    }
+  ]
+}

@@ -14,6 +14,7 @@
 //   npm run images:apply                # apply + clean legacy junk
 //   npm run images:apply -- --dry-run   # report counts only
 //   npm run images:apply -- --keep-legacy
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import { readFileSync } from "fs";
 import { resolve } from "path";

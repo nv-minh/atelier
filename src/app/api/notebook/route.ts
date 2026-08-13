@@ -12,9 +12,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "wordId required" }, { status: 400 });
   }
 
-  const patch: { starred?: boolean; note?: string } = {};
+  const patch: { starred?: boolean; note?: string; known?: boolean } = {};
   if (typeof body.starred === "boolean") patch.starred = body.starred;
   if (typeof body.note === "string") patch.note = body.note.slice(0, 2000);
+  // `known` is reversible by design — sending false clears the mark.
+  if (typeof body.known === "boolean") patch.known = body.known;
 
   if (Object.keys(patch).length === 0) {
     return NextResponse.json({ error: "nothing to update" }, { status: 400 });

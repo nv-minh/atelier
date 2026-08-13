@@ -8,6 +8,7 @@
 // external storage (Drive, etc.) for real disaster recovery.
 //
 // Usage: npm run db:backup
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import { mkdirSync, writeFileSync } from "fs";
 import { resolve } from "path";

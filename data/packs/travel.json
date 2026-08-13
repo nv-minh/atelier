@@ -1,0 +1,1581 @@
+{
+ "metadata": {
+  "pack": "travel",
+  "topic_slugs": [
+   "travel"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.599Z",
+  "count": 60
+ },
+ "words": [
+  {
+   "word": "house",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A dwelling that serves as living quarters for one or more families.",
+   "extra_definitions": [
+    "[noun] A structure built or serving as an abode of human beings.",
+    "[noun] The people who live in a house; a household.",
+    "[noun] A building used for something other than a residence (typically with qualifying word)."
+   ],
+   "synonyms": [
+    "shop"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "He has a house on Cape Cod.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=house",
+   "ipa_uk": "/haʊs/",
+   "ipa_us": "/hʌʊs/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/house-1-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/house-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một ngôi nhà phục vụ như là nơi sinh sống cho một hoặc nhiều gia đình.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy có một ngôi nhà ở Cape Cod."
+  },
+  {
+   "word": "street",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The part of a thoroughfare between the sidewalks; the part of the thoroughfare on which vehicles travel.",
+   "extra_definitions": [
+    "[noun] A paved part of road, usually in a village or a town.",
+    "[noun] A road as above but including the sidewalks (pavements) and buildings.",
+    "[noun] The people who live in such a road, as a neighborhood."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "Be careful crossing the street.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=street",
+   "ipa_uk": "/stɹiːt/",
+   "ipa_us": "/ʃtɹiːt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/street-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/street-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Phần đường đi giữa vỉa hè; phần đường mà các phương tiện đi lại",
+   "vi_source": "gtx",
+   "example_vi": "Hãy cẩn thận khi băng qua đường."
+  },
+  {
+   "word": "road",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An open way (generally public) for travel or transportation.",
+   "extra_definitions": [
+    "[noun] A way used for travelling between places, originally one wide enough to allow foot passengers and horses to travel, now (US) usually one surfaced with asphalt or concrete and designed to accommodate many vehicles travelling in both directions. In the UK both senses are heard: a country road is the same as a country lane.",
+    "[noun] A road; or particularly a car, as a means of transportation.",
+    "[noun] A path chosen in life or career."
+   ],
+   "synonyms": [
+    "route"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=road",
+   "example": "We travelled to the seaside by road.",
+   "ipa_uk": "/ɹəʊd/",
+   "ipa_us": "/ɹoʊd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/road-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/road-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một con đường rộng mở (nói chung là công cộng) cho việc đi lại hoặc vận chuyển.",
+   "vi_source": "gtx",
+   "example_vi": "Chúng tôi đi đến bờ biển bằng đường bộ."
+  },
+  {
+   "word": "on the road",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Travelling about.",
+   "extra_definitions": [],
+   "synonyms": [
+    "on tour"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "They took the show on the road.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=on+the+road",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đi du lịch về.",
+   "vi_source": "gtx",
+   "example_vi": "Họ đã biểu diễn trên đường."
+  },
+  {
+   "word": "small change",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A trifling sum of money.",
+   "extra_definitions": [
+    "[noun] Coins of little value kept in one's pocket or bag.",
+    "[noun] A minor or insignificant amount of money.",
+    "[noun] (by extension) A person or thing of little importance or value."
+   ],
+   "synonyms": [
+    "chickenfeed",
+    "chump change"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=small+change",
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền nhỏ, tiền lẻ (tiền xu, tiền cắc...)",
+   "vi_source": "anhviet",
+   "example": "The cost of toothpaste is small change compared to the cost of dental work."
+  },
+  {
+   "word": "local road",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A street that is primarily used to gain access to the property bordering it.",
+   "extra_definitions": [],
+   "synonyms": [
+    "local street"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=local+road",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đường phố được sử dụng chủ yếu để tiếp cận khu đất giáp ranh với nó.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "travel",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of going from one place to another.",
+   "extra_definitions": [
+    "[noun] The act of traveling; passage from place to place.",
+    "[noun] (in the plural) A series of journeys.",
+    "[noun] (in the plural) An account of one's travels."
+   ],
+   "synonyms": [
+    "traveling",
+    "travelling"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "He enjoyed selling but he hated the travel.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=travel",
+   "ipa_uk": "/ˈtɹævəl/",
+   "ipa_us": "/ˈtɹævəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/travel-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự đi du lịch; cuộc du hành; sự chạy đi chạy lại; đường chạy (của máy, pittông...)",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy thích bán hàng nhưng lại ghét việc đi du lịch."
+  },
+  {
+   "word": "tour",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A journey or route all the way around a particular place or area.",
+   "extra_definitions": [
+    "[noun] A journey through a particular building, estate, country, etc.",
+    "[noun] A guided visit to a particular place, or virtual place.",
+    "[noun] A journey through a given list of places, such as by an entertainer performing concerts."
+   ],
+   "synonyms": [
+    "circuit"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "They took an extended tour of Europe.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tour",
+   "ipa_uk": "/tɔː(ɹ)/",
+   "ipa_us": "/tɔː(ɹ)/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/tour-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cuộc hành trình hoặc tuyến đường đi vòng quanh một địa điểm hoặc khu vực cụ thể.",
+   "vi_source": "gtx",
+   "example_vi": "Họ đã có một chuyến du lịch kéo dài đến châu Âu."
+  },
+  {
+   "word": "paper money",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Currency issued by a government or central bank and consisting of printed paper that can circulate as a substitute for specie.",
+   "extra_definitions": [
+    "[noun] Cash in the form of banknotes."
+   ],
+   "synonyms": [
+    "folding money",
+    "paper currency"
+   ],
+   "antonyms": [
+    "commodity money"
+   ],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=paper+money",
+   "ipa_uk": "/ˌpeɪpə ˈmʌni/",
+   "ipa_us": "/ˌpeɪpə ˈmʌni/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tiền tệ do chính phủ hoặc ngân hàng trung ương phát hành và bao gồm giấy in có thể lưu hành để thay thế cho tiền tệ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hotel",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A building where travelers can pay for lodging and meals and other services.",
+   "extra_definitions": [
+    "[noun] A large town house or mansion; a grand private residence, especially in France.",
+    "[noun] An establishment that provides accommodation and other services for paying guests; normally larger than a guesthouse, and often one of a chain.",
+    "[noun] A restaurant; any dining establishment."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hotel",
+   "ipa_uk": "/(h)əʊˈtɛl/",
+   "ipa_us": "/hoʊˈtɛl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/hotel-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "khách sạn",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "cash",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money in the form of bills or coins.",
+   "extra_definitions": [
+    "[noun] Money in the form of notes/bills and coins, as opposed to cheques/checks or electronic transactions.",
+    "[noun] Liquid assets, money that can be traded quickly, as distinct from assets that are invested and cannot be easily exchanged.",
+    "[noun] Money."
+   ],
+   "synonyms": [
+    "hard cash",
+    "hard currency"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "There is a desperate shortage of hard cash.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cash",
+   "ipa_uk": "/kæʃ/",
+   "ipa_us": "/kæʃ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cash-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tiền, tiền mặt",
+   "vi_source": "anhviet",
+   "example_vi": "Tiền mặt đang thiếu trầm trọng."
+  },
+  {
+   "word": "shop",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A mercantile establishment for the retail sale of goods or services.",
+   "extra_definitions": [
+    "[noun] An establishment that sells goods or services to the public; originally only a physical location, but now a virtual establishment as well.",
+    "[noun] A place where things are manufactured or crafted; a workshop.",
+    "[noun] A large garage where vehicle mechanics work."
+   ],
+   "synonyms": [
+    "store"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "He bought it at a shop on Cape Cod.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=shop",
+   "ipa_uk": "/ʃɒp/",
+   "ipa_us": "/ʃɑp/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/shop-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ lóng) cơ sở, trường sở nghề nghiệp, công việc làm ăn; cửa hàng, cửa hiệu",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy mua nó ở một cửa hàng ở Cape Cod."
+  },
+  {
+   "word": "flight",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An instance of traveling by air.",
+   "extra_definitions": [
+    "[noun] The act of flying.",
+    "[noun] An instance of flying.",
+    "[noun] The act of fleeing."
+   ],
+   "synonyms": [
+    "flying"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=flight",
+   "example": "Most birds are capable of flight.",
+   "ipa_uk": "/flaɪt/",
+   "ipa_us": "/flaɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/flight-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một ví dụ về du lịch bằng đường hàng không.",
+   "vi_source": "gtx",
+   "example_vi": "Hầu hết các loài chim đều có khả năng bay."
+  },
+  {
+   "word": "airport",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An airfield equipped with control tower and hangars as well as accommodations for passengers and cargo.",
+   "extra_definitions": [
+    "[noun] An airfield (an area designated for the takeoff and landing of aircraft), including one or more runways and (for commercial airports) one or more passenger terminals."
+   ],
+   "synonyms": [
+    "airdrome",
+    "aerodrome",
+    "drome"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=airport",
+   "example": "Because of this, and contrary to popular belief, British airports primarily act as giant wealth extractors, transporting our richest citizens out of the country as often as possible to take their money overseas. ― The Independent, Heathrow expansion to mainly benefit wealthy frequent fliers, research finds, 23 june 2018.",
+   "ipa_uk": "/ˈɛə.pɔːt/",
+   "ipa_us": "/ˈɛɹ.pɔɹt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/airport-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/airport-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sân bay, phi trường",
+   "vi_source": "anhviet",
+   "example_vi": "Vì điều này, và trái ngược với niềm tin phổ biến, các sân bay ở Anh chủ yếu đóng vai trò là những kẻ bòn rút tài sản khổng lồ, vận chuyển những công dân giàu nhất của chúng ta ra khỏi đất nước thường xuyên nhất có thể để mang tiền của họ ra nước ngoài. ― The Independent, việc mở rộng Heathrow chủ yếu mang lại lợi ích cho những người giàu có thường xuyên bay, nghiên cứu cho thấy, ngày 23 tháng 6 năm 2018."
+  },
+  {
+   "word": "camp",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Temporary living quarters specially built by the army for soldiers.",
+   "extra_definitions": [
+    "[noun] An outdoor place acting as temporary accommodation in tents or other temporary structures.",
+    "[noun] An organised event, often taking place in tents or temporary accommodation.",
+    "[noun] A base of a military group, not necessarily temporary."
+   ],
+   "synonyms": [
+    "encampment",
+    "cantonment",
+    "bivouac"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "Wherever he went in the camp the men were grumbling.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=camp",
+   "ipa_uk": "[kʰɛəmp]",
+   "ipa_us": "[kʰɛəmp]",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/camp-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "đời sông quân đội; (quân sự) chỗ đóng quân, chỗ đóng trại",
+   "vi_source": "anhviet",
+   "example_vi": "Bất cứ nơi nào anh đi trong trại đều có người phàn nàn."
+  },
+  {
+   "word": "map",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A diagrammatic representation of the earth's surface (or part of it).",
+   "extra_definitions": [
+    "[noun] A visual representation of an area, whether real or imaginary.",
+    "[noun] A graphical representation of the relationships between objects, components or themes.",
+    "[noun] A function."
+   ],
+   "synonyms": [
+    "function",
+    "mapping",
+    "level",
+    "stage",
+    "chart",
+    "plan"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=map",
+   "example": "I don't want to play this map again!",
+   "ipa_uk": "/mæp/",
+   "ipa_us": "/mæp/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/map-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/map-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Sơ đồ biểu diễn bề mặt trái đất (hoặc một phần của nó).",
+   "vi_source": "gtx",
+   "example_vi": "Tôi không muốn chơi bản đồ này nữa!"
+  },
+  {
+   "word": "field trip",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A group excursion (to a museum or the woods or some historic place) for firsthand examination.",
+   "extra_definitions": [
+    "[noun] A trip, usually in a group and especially by students, to a place of special interest for education, research or exploration; a trip into the field."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=field+trip",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một chuyến tham quan theo nhóm (đến bảo tàng, khu rừng hoặc địa điểm lịch sử nào đó) để trực tiếp kiểm tra.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "louis d'or",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A former French gold coin.",
+   "extra_definitions": [
+    "[noun] Any of the gold coins first introduced in France under Louis XIII in 1640, based upon the Spanish doubloon."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=louis+d'or",
+   "ipa_uk": "/ˌluːɪ ˈdɔː/",
+   "ipa_us": "/ˌluːɪ ˈdɔː/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một đồng tiền vàng cũ của Pháp.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "shopping",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Searching for or buying goods or services.",
+   "extra_definitions": [
+    "[verb] To visit stores or shops to browse or explore merchandise, especially with the intention of buying such merchandise.",
+    "[verb] To purchase products from (a range or catalogue, etc.).",
+    "[verb] To report the criminal activities or whereabouts of someone to an authority."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "Went shopping for a reliable plumber.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=shopping",
+   "ipa_uk": "/ˈʃɒpɪŋ/",
+   "ipa_us": "/ˈʃɒpɪŋ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự đi mua hàng",
+   "vi_source": "anhviet",
+   "example_vi": "Đã đi mua một thợ sửa ống nước đáng tin cậy."
+  },
+  {
+   "word": "bear down on",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Sail towards another vessel, of a ship.",
+   "extra_definitions": [],
+   "synonyms": [
+    "bear down upon"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bear+down+on",
+   "type_vi": "Động từ",
+   "definition_vi": "Đi về phía một con tàu khác, của một con tàu.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "journey",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of traveling from one place to another.",
+   "extra_definitions": [
+    "[noun] A set amount of travelling, seen as a single unit; a discrete trip, a voyage.",
+    "[noun] Any process or progression likened to a journey, especially one that involves difficulties or personal development.",
+    "[noun] A day."
+   ],
+   "synonyms": [
+    "journeying"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=journey",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự di chuyển",
+   "vi_source": "anhviet",
+   "example": "my journey of dealing with grief",
+   "ipa_uk": "/ˈd͡ʒɜːni/",
+   "ipa_us": "/ˈd͡ʒɝni/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/journey-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/journey-us.mp3"
+   }
+  },
+  {
+   "word": "roadmap",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A map showing roads (for automobile travel).",
+   "extra_definitions": [
+    "[noun] A map with a visual representation of roads used for automobile travel and navigation. A road map may contain other relevant data, such as terrain or rail roads.",
+    "[noun] A plan of action, laying out the future actions of participants.",
+    "[noun] A structured representation of objects to display a development plan. Road maps are used in business for strategic planning and communications."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=road+map",
+   "type_vi": "Danh từ",
+   "definition_vi": "bản đồ chỉ dẫn đường sá; bản đồ đường bộ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "wear ship",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "verb",
+   "definition_en": "Turn away from the wind.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "The sailors decided it was time to wear ship.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wear+ship",
+   "type_vi": "Động từ",
+   "definition_vi": "Hãy tránh gió.",
+   "vi_source": "gtx",
+   "example_vi": "Các thủy thủ quyết định đã đến lúc phải lên tàu."
+  },
+  {
+   "word": "small stores",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Personal items conforming to regulations that are sold aboard ship or at a naval base and charged to the person's pay.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=small+stores",
+   "type_vi": "Danh từ",
+   "definition_vi": "(hàng hải) hàng lặt vặt (thuốc lá, xà phòng...) bán cho thuỷ thủ trên tàu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "last mile",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The last walk of a condemned person to the execution place.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=last+mile",
+   "type_vi": "Danh từ",
+   "definition_vi": "dặm đường cuối cùng (của người bị kết án tử hình đi từ xà lim ra pháp trường)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "weather map",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A map showing the principal meteorological elements at a given time and over an extended region.",
+   "extra_definitions": [
+    "[noun] A map that shows the analysis of meteorological quantities at various levels of the atmosphere"
+   ],
+   "synonyms": [
+    "weather chart"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=weather+map",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bản đồ thể hiện các yếu tố khí tượng chính tại một thời điểm nhất định và trên một khu vực mở rộng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cold-water flat",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An apartment without modern conveniences.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cold-water+flat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một căn hộ không có tiện nghi hiện đại.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "highway",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A major road for any form of motor transport.",
+   "extra_definitions": [
+    "[noun] A motor vehicle for transporting large numbers of people along roads.",
+    "[noun] An electrical conductor or interface serving as a common connection for two or more circuits or components.",
+    "[noun] (medical industry) An ambulance."
+   ],
+   "synonyms": [
+    "main road"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=highway",
+   "ipa_uk": "/ˈhaɪweɪ/",
+   "ipa_us": "/ˈhaɪweɪ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/highway-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "con đường chính (bộ hoặc thuỷ); (nghĩa bóng) con đường, đường lối (hành động...)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "trail",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A path or track roughly blazed through wild or hilly country.",
+   "extra_definitions": [
+    "[noun] The track or indication marking the route followed by something that has passed, such as the footprints of animal on land or the contrail of an airplane in the sky.",
+    "[noun] A route for travel over land, especially a narrow, unpaved pathway for use by hikers, horseback riders, etc.",
+    "[noun] A trailer broadcast on television for a forthcoming film or programme."
+   ],
+   "synonyms": [
+    "dirt track",
+    "footpath",
+    "path",
+    "track",
+    "sign",
+    "spoor"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=trail",
+   "example": "The hunters trailed their prey deep into the woods.",
+   "ipa_uk": "/tɹeɪl/",
+   "ipa_us": "/tɹeɪl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/trail-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "đường, đường mòn; (nghĩa bóng) vết chân, đường đi",
+   "vi_source": "anhviet",
+   "example_vi": "Những người thợ săn kéo con mồi vào sâu trong rừng."
+  },
+  {
+   "word": "pocket money",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cash for day-to-day spending on incidental expenses.",
+   "extra_definitions": [
+    "[noun] A small sum of money given to a child, by a parent or guardian.",
+    "[noun] A small sum of cash, carried on the person, for small, daily expenses."
+   ],
+   "synonyms": [
+    "pin money",
+    "spending money"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pocket+money",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tiền mặt để chi tiêu hàng ngày cho các chi phí phát sinh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "avenue",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A wide street or thoroughfare.",
+   "extra_definitions": [
+    "[noun] A broad street, especially one bordered by trees.",
+    "[noun] A way or opening for entrance into a place; a passage by which a place may be reached; a way of approach or of exit.",
+    "[noun] The principal walk or approach to a house which is withdrawn from the road, especially, such approach bordered on each side by trees; any broad passageway thus bordered."
+   ],
+   "synonyms": [
+    "boulevard"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=avenue",
+   "example": "There are several avenues by which we can approach this problem.",
+   "ipa_uk": "/ˈæv.əˌnjuː/",
+   "ipa_us": "/ˈæv.əˌn(j)u/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/avenue-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/avenue-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Đường phố hoặc đường rộng.",
+   "vi_source": "gtx",
+   "example_vi": "Có một số con đường mà chúng ta có thể tiếp cận vấn đề này."
+  },
+  {
+   "word": "vacation",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Leisure time away from work devoted to rest or pleasure.",
+   "extra_definitions": [
+    "[noun] Freedom from some business or activity.",
+    "[noun] Free time given over to a specific purpose; occupation, activity.",
+    "[noun] A period during which official activity or business is formally suspended; an official holiday from university, law courts etc."
+   ],
+   "synonyms": [
+    "holiday"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "We get two weeks of vacation every summer.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=vacation",
+   "ipa_uk": "/veɪˈkeɪʃ(ə)n/",
+   "ipa_us": "/veɪˈkeɪʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/vacation-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ) thời gian nghỉ việc; sự bỏ, sự thôi",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng tôi có hai tuần nghỉ hè vào mỗi mùa hè."
+  },
+  {
+   "word": "currency",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The metal or paper medium of exchange that is presently used.",
+   "extra_definitions": [
+    "[noun] Money or other items used to facilitate transactions.",
+    "[noun] (more specifically) Paper money.",
+    "[noun] The state of being current; general acceptance or recognition."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=currency",
+   "example": "Wampum was used as a currency by Amerindians.",
+   "ipa_uk": "/ˈkʌɹ.ən.si/",
+   "ipa_us": "/ˈkɝ.ən.si/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/currency-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự lưu hành; thời gian lưu hành ((thường) nói về tiền tệ); tiền, tiền tệ",
+   "vi_source": "anhviet",
+   "example_vi": "Wampum được người Mỹ bản địa sử dụng làm tiền tệ."
+  },
+  {
+   "word": "constitutional",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A regular walk taken as a form of exercise.",
+   "extra_definitions": [
+    "[noun] A walk that is taken regularly for good health and wellbeing.",
+    "[adjective] Relating to a legal or political constitution.",
+    "[adjective] In compliance with or valid under a legal or political constitution."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "unconstitutional",
+    "anticonstitutional"
+   ],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=constitutional",
+   "example": "Brexit has rocked the foundations and plunged everyone into a state of heightened constitutional anxiety.",
+   "ipa_uk": "/ˌkɒnstɪˈtjuːʃənəl/",
+   "ipa_us": "/ˌkɑnstɪˈtuːʃənəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/constitutional-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "sự đi dạo, sự đi tản bộ (cho khoẻ người)",
+   "vi_source": "anhviet",
+   "example_vi": "Brexit đã làm rung chuyển nền tảng và đẩy mọi người vào trạng thái lo lắng cao độ về hiến pháp."
+  },
+  {
+   "word": "loop-line",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A railway branch line that branches from the trunk line and then rejoins it later on.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=loop-line",
+   "type_vi": "Danh từ",
+   "definition_vi": "đường nhánh, đường vòng (đường xe lửa, đường dây điện báo)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "garage",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A repair shop where cars and trucks are serviced and repaired.",
+   "extra_definitions": [
+    "[noun] A building (or section of a building) used to store a car or cars, tools and other miscellaneous items.",
+    "[noun] (20th century) A place where cars are serviced and repaired.",
+    "[noun] A petrol filling station."
+   ],
+   "synonyms": [
+    "service department"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=garage",
+   "example": "We garaged the convertible during the monsoon months.",
+   "ipa_uk": "/ˈɡæɹɑː(d)ʒ/",
+   "ipa_us": "/ɡəˈɹɑː(d)ʒ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/garage-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/garage-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "chỗ chữa ô tô",
+   "vi_source": "anhviet",
+   "example_vi": "Chúng tôi để xe mui trần trong những tháng có gió mùa."
+  },
+  {
+   "word": "hall of residence",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A university dormitory.",
+   "extra_definitions": [
+    "[noun] A building for college or university students to live in."
+   ],
+   "synonyms": [
+    "residence hall"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hall+of+residence",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một ký túc xá đại học.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "main drag",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The main street of a town or city.",
+   "extra_definitions": [
+    "[noun] The main street of a town or suburb, or the principal highway passing through a rural area."
+   ],
+   "synonyms": [
+    "high street"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=main+drag",
+   "example": "2008, Shay A. Mace, Smithsburg Historical Society, Smithsburg, Chapter Two: Main Street: The Main Drag, page 21.",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ, nghĩa Mỹ; (từ lóng)) đường phố lớn",
+   "vi_source": "anhviet",
+   "example_vi": "2008, Shay A. Mace, Hiệp hội Lịch sử Smithsburg, Smithsburg, Chương Hai: Main Street: The Main Drag, trang 21."
+  },
+  {
+   "word": "cruise",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An ocean trip taken for pleasure.",
+   "extra_definitions": [
+    "[noun] A sea or lake voyage, especially one taken for pleasure.",
+    "[noun] Portion of aircraft travel at a constant airspeed and altitude between ascent and descent phases.",
+    "[noun] A period spent in the Marine Corps."
+   ],
+   "synonyms": [
+    "sail"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cruise",
+   "example": "Germany cruised to a World Cup victory over the short-handed Australians.",
+   "ipa_uk": "/kɹuːz/",
+   "ipa_us": "/kɹuːz/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/cruise-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cuộc đi chơi biển (bằng tàu thuỷ); cuộc tuần tra trên biển",
+   "vi_source": "anhviet",
+   "example_vi": "Đức đã giành chiến thắng tại World Cup trước đội Úc tay ngắn."
+  },
+  {
+   "word": "imperial",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A piece of luggage carried on top of a coach.",
+   "extra_definitions": [
+    "[noun] A bottle of wine (usually Bordeaux) containing 6 liters of fluid, eight times the volume of a standard bottle.",
+    "[noun] A writing paper size measuring 30 × 22 inches, or printing paper measuring 32 × 22 inches.",
+    "[noun] A card game differing from piquet in some minor details, and in having a trump."
+   ],
+   "synonyms": [
+    "royal",
+    "old money"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=imperial",
+   "ipa_uk": "/ɪmˈpɪ.ɹi.əl/",
+   "ipa_us": "/ɪmˈpɪ.ɹi.əl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/imperial-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "mui xe ngựa dùng để hành lý",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "tourist",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Someone who travels for pleasure.",
+   "extra_definitions": [
+    "[noun] Someone who travels for pleasure rather than for business.",
+    "[noun] One who visits a place or attends a social event out of curiosity, wanting to watch without commitment or involvement.",
+    "[noun] A member of the visiting team in a match."
+   ],
+   "synonyms": [
+    "tourer",
+    "holidaymaker"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tourist",
+   "ipa_uk": "/ˈtʊəɹɪst/",
+   "ipa_us": "/ˈtʊəɹɪst/",
+   "type_vi": "Danh từ",
+   "definition_vi": "nhà du lịch, khách du lịch",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "living quarters",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Housing available for people to live in.",
+   "extra_definitions": [
+    "[noun] The rooms where people live"
+   ],
+   "synonyms": [
+    "quarters"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "example": "He found quarters for his family.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=living+quarters",
+   "type_vi": "Danh từ",
+   "definition_vi": "Có sẵn nhà ở cho người dân ở.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ấy đã tìm được chỗ ở cho gia đình mình."
+  },
+  {
+   "word": "villa",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Detached or semidetached suburban house.",
+   "extra_definitions": [
+    "[noun] (plural \"villas\") A house, often larger and more expensive than average, in the countryside or on the coast, often used as a retreat.",
+    "[noun] (plural \"villas\") A family house, often semi-detached, in a middle class street.",
+    "[noun] (plural \"villae\") A country house, with farm buildings around a courtyard."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=villa",
+   "ipa_uk": "/ˈvɪlə/",
+   "ipa_us": "/ˈvɪlə/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/villa-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "biệt thự; biệt thự ở ngoại ô",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "exploration",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "To travel for the purpose of discovery.",
+   "extra_definitions": [
+    "[noun] The process of exploring.",
+    "[noun] The process of penetrating, or ranging over for purposes of (especially geographical) discovery.",
+    "[noun] The (pre-)mining process of finding and determining commercially viable ore deposits (after prospecting), also called mineral exploration."
+   ],
+   "synonyms": [
+    "geographic expedition"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=exploration",
+   "example": "The exploration of unknown areas was often the precursor to colonization.",
+   "ipa_uk": "/ˌɛkspləˈɹeɪʃən/",
+   "ipa_us": "/ˌɛkspləˈɹeɪʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/exploration-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Đi du lịch với mục đích khám phá.",
+   "vi_source": "gtx",
+   "example_vi": "Việc khám phá những khu vực chưa biết thường là tiền thân của quá trình thuộc địa hóa."
+  },
+  {
+   "word": "coin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A flat metal piece (usually a disc) used as money.",
+   "extra_definitions": [
+    "[noun] (money) A piece of currency, usually metallic and in the shape of a disc, but sometimes polygonal, or with a hole in the middle.",
+    "[noun] A token used in a special establishment like a casino.",
+    "[noun] That which serves for payment or recompense."
+   ],
+   "synonyms": [
+    "chip",
+    "money",
+    "quoin",
+    "wedge",
+    "invent",
+    "originate"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=coin",
+   "example": "She spent some serious coin on that car!",
+   "ipa_uk": "/kɔɪn/",
+   "ipa_us": "/kɔɪn/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/coin-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "đồng tiền (tiền đồng, tiền kim loại); tiền",
+   "vi_source": "anhviet",
+   "example_vi": "Cô ấy đã chi một số tiền lớn cho chiếc xe đó!"
+  },
+  {
+   "word": "suite",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Apartment consisting of a series of connected rooms used as a living unit (as in a hotel).",
+   "extra_definitions": [
+    "[noun] A retinue or company of attendants, as of a distinguished personage",
+    "[noun] A connected series or succession of objects; a number of things used or classed together",
+    "[noun] A group of connected rooms, usually separable from other rooms by means of access."
+   ],
+   "synonyms": [
+    "rooms"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=suite",
+   "example": "the ambassador's suite",
+   "ipa_uk": "/swiːt/",
+   "ipa_us": "/swiːt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/suite-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Căn hộ bao gồm một loạt các phòng thông nhau được sử dụng làm đơn vị sinh hoạt (như trong khách sạn).",
+   "vi_source": "gtx",
+   "example_vi": "phòng của đại sứ"
+  },
+  {
+   "word": "silver certificate",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Formerly a bank note issued by the United States Treasury and redeemable in silver.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=silver+certificate",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trước đây là giấy bạc ngân hàng do Kho bạc Hoa Kỳ phát hành và có thể đổi bằng bạc.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "railroad flat",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An apartment whose rooms are all in a line with doors between them.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=railroad+flat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một căn hộ có các phòng đều thẳng hàng và có cửa ở giữa.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tourist class",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Inexpensive accommodations on a ship or train.",
+   "extra_definitions": [],
+   "synonyms": [
+    "third class"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tourist+class",
+   "type_vi": "Danh từ",
+   "definition_vi": "ghế hạng hai (trên máy bay, trên tàu biển)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "dressing case",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small piece of luggage for carrying brushes and bottles and toilet articles while traveling.",
+   "extra_definitions": [
+    "[noun] A small luggage bag used to carry various toiletry or first aid items while travelling."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dressing+case",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một kiện hành lý nhỏ để mang theo bàn chải, chai lọ và vật dụng vệ sinh khi đi du lịch.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cabin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small house built of wood; usually in a wooded area.",
+   "extra_definitions": [
+    "[noun] A small dwelling characteristic of the frontier, especially when built from logs with simple tools and not constructed by professional builders, but by those who meant to live in it.",
+    "[noun] A chalet or lodge, especially one that can hold large groups of people.",
+    "[noun] A private room on a ship."
+   ],
+   "synonyms": [
+    "cell",
+    "chamber",
+    "hut",
+    "pod",
+    "shack",
+    "shed"
+   ],
+   "antonyms": [
+    "hall",
+    "palace",
+    "villa"
+   ],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cabin",
+   "example": "Abraham Lincoln was born in a log cabin.",
+   "ipa_uk": "/ˈkæbɪn/",
+   "ipa_us": "/ˈkæbɪn/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cabin-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "nhà gỗ nhỏ, túp lều",
+   "vi_source": "anhviet",
+   "example_vi": "Abraham Lincoln sinh ra trong một căn nhà gỗ."
+  },
+  {
+   "word": "half eagle",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A former gold coin in United States worth 5 dollars.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=half+eagle",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một đồng xu vàng cũ ở Hoa Kỳ trị giá 5 đô la.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "ski run",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Trail or slope prepared for skiing.",
+   "extra_definitions": [
+    "[noun] A trail or slope used for skiing"
+   ],
+   "synonyms": [
+    "ski trail"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ski+run",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đường mòn hoặc con dốc được chuẩn bị để trượt tuyết.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "double eagle",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A former gold coin in the United States worth 20 dollars.",
+   "extra_definitions": [
+    "[noun] A gold coin with a face value of $20 formerly used in the United States, the double of the US eagle coin.",
+    "[noun] Three under par, one stroke short of an ace (a hole in one) on a par-five hole.",
+    "[noun] A representation of an eagle with two heads, as in the heraldic arms of Russia and Austria and in iconography from Antiquity onward (especially in the Roman Empire)."
+   ],
+   "synonyms": [
+    "albatross"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double+eagle",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồng 20 đô",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "penny",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A coin worth one-hundredth of the value of the basic unit.",
+   "extra_definitions": [
+    "[noun] In the United Kingdom and Ireland, a copper coin worth 1/240 of a pound sterling or Irish pound before decimalisation. Abbreviation: d.",
+    "[noun] In the United Kingdom, a copper coin worth 1/100 of a pound sterling. Abbreviation: p.",
+    "[noun] In Ireland, a coin worth 1/100 of an Irish pound before the introduction of the euro. Abbreviation: p."
+   ],
+   "synonyms": [
+    "cent",
+    "centime"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=penny",
+   "example": "to turn an honest penny",
+   "ipa_uk": "/pəni/",
+   "ipa_us": "/pəni/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/penny-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một đồng xu có giá trị bằng một phần trăm giá trị của đơn vị cơ bản.",
+   "vi_source": "gtx",
+   "example_vi": "để kiếm được một đồng xu lương thiện"
+  },
+  {
+   "word": "new penny",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A coin used in Great Britain since 1971 worth one hundredth of a pound.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=new+penny",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồng xu penny mới",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "guinea",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A former British gold coin worth 21 shillings.",
+   "extra_definitions": [
+    "[noun] A person of Italian descent.",
+    "[noun] A gold coin originally worth twenty shillings; later (from 1717 until the adoption of decimal currency) standardised at a value of twenty-one shillings.",
+    "[noun] Any of several African birds of the family Numididae (6 species) resembling partridges."
+   ],
+   "synonyms": [
+    "Eyetie",
+    "dago",
+    "goombah",
+    "greaseball",
+    "guido",
+    "wog"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=guinea",
+   "ipa_uk": "/ˈɡɪni/",
+   "ipa_us": "/ˈɡɪni/",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồng ghinê (tiền vàng của nước Anh xưa, giá trị tương đương 21 silinh)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "trunk",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Luggage consisting of a large strong case used when traveling or for storage.",
+   "extra_definitions": [
+    "[noun] (heading, biological) Part of a body.",
+    "[noun] (heading) A container.",
+    "[noun] (heading) A channel for flow of some kind."
+   ],
+   "synonyms": [
+    "boot",
+    "dicky",
+    "proboscis",
+    "tree trunk"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=trunk",
+   "example": "the trunk of a vein or of an artery, as distinct from the branches",
+   "ipa_uk": "/tɹʌŋk/",
+   "ipa_us": "/tɹʌŋk/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/trunk-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cốp xe (để hành lý)",
+   "vi_source": "anhviet",
+   "example_vi": "thân của tĩnh mạch hoặc động mạch, khác biệt với các nhánh"
+  },
+  {
+   "word": "mansion",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A large and imposing house.",
+   "extra_definitions": [
+    "[noun] A large house or building, usually built for the wealthy.",
+    "[noun] A luxurious flat (apartment).",
+    "[noun] A house provided for a clergyman; a manse."
+   ],
+   "synonyms": [
+    "mansion house",
+    "manse",
+    "hall",
+    "residence"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=mansion",
+   "ipa_uk": "/ˈmæn(t)ʃən/",
+   "ipa_us": "/ˈmæn(t)ʃən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/mansion-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(số nhiều) khu nhà lớn",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "shooting lodge",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small country house used by hunters during the shooting season.",
+   "extra_definitions": [],
+   "synonyms": [
+    "shooting box"
+   ],
+   "antonyms": [],
+   "topics": [
+    "travel"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=shooting+lodge",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một ngôi nhà nhỏ ở nông thôn được thợ săn sử dụng trong mùa bắn súng.",
+   "vi_source": "gtx"
+  }
+ ]
+}

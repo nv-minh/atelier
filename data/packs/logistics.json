@@ -1,0 +1,375 @@
+{
+ "metadata": {
+  "pack": "logistics",
+  "topic_slugs": [
+   "business"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.598Z",
+  "count": 15
+ },
+ "words": [
+  {
+   "word": "bill",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An itemized statement of money owed for goods shipped or services rendered.",
+   "extra_definitions": [
+    "[noun] Any of various bladed or pointed hand weapons, originally designating an Anglo-Saxon sword, and later a weapon of infantry, especially in the 14th and 15th centuries, commonly consisting of a broad, heavy, double-edged, hook-shaped blade, with a short pike at the back and another at the top, attached to the end of a long staff.",
+    "[noun] A cutting instrument, with hook-shaped point, and fitted with a handle, used in pruning, etc.; a billhook.",
+    "[noun] Somebody armed with a bill; a billman."
+   ],
+   "synonyms": [
+    "account",
+    "invoice"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "example": "He paid his bill and left.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bill",
+   "ipa_uk": "/bɪl/",
+   "ipa_us": "/bɪl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/bill-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một báo cáo chi tiết về số tiền còn nợ đối với hàng hóa được vận chuyển hoặc dịch vụ được cung cấp.",
+   "vi_source": "gtx",
+   "example_vi": "Anh ta thanh toán hóa đơn và rời đi."
+  },
+  {
+   "word": "phone bill",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Statement of charges for telephone service.",
+   "extra_definitions": [],
+   "synonyms": [
+    "telephone bill"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=phone+bill",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bảng kê cước phí dịch vụ điện thoại.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "medical bill",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Statement of charges for medical services.",
+   "extra_definitions": [],
+   "synonyms": [
+    "doctor's bill"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=medical+bill",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bảng kê chi phí dịch vụ y tế.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tax bill",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Money owed for taxes.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tax+bill",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tiền nợ thuế.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hotel bill",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Statement of charges for staying in a hotel.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hotel+bill",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bảng kê chi phí lưu trú tại khách sạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "mail order",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A purchase negotiated by mail.",
+   "extra_definitions": [
+    "[noun] A system of commerce in which one orders goods from a remote store which are then shipped by mail."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=mail+order",
+   "type_vi": "Danh từ",
+   "definition_vi": "thư đặt hàng (gửi bằng đường bưu điện)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "ticket",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A commercial document showing that the holder is entitled to something (as to ride on public transportation or to enter a public entertainment).",
+   "extra_definitions": [
+    "[noun] A pass entitling the holder to admission to a show, concert, etc.",
+    "[noun] A pass entitling the holder to board a train, a bus, a plane, or other means of transportation",
+    "[noun] A citation for a traffic violation."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ticket",
+   "example": "Joe has joined the party's ticket for the county elections.",
+   "ipa_uk": "/ˈtɪkɪt/",
+   "ipa_us": "/ˈtɪkɪt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/ticket-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tài liệu thương mại cho thấy người nắm giữ có quyền được hưởng một điều gì đó (như đi trên phương tiện giao thông công cộng hoặc tham gia các hoạt động giải trí công cộng).",
+   "vi_source": "gtx",
+   "example_vi": "Joe đã tham gia vào tấm vé của đảng cho cuộc bầu cử quận."
+  },
+  {
+   "word": "transportation",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of moving something from one location to another.",
+   "extra_definitions": [
+    "[noun] The act of transporting, or the state of being transported; conveyance, often of people, goods etc.",
+    "[noun] Deportation to a penal colony.",
+    "[noun] A means of conveyance."
+   ],
+   "synonyms": [
+    "transport",
+    "transfer",
+    "transferral",
+    "conveyance"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=transportation",
+   "example": "We have to get people out of their cars and encourage them to use alternative forms of transportation.",
+   "ipa_uk": "/tɹænspɔːˈteɪʃən/",
+   "ipa_us": "/tɹænspɔːˈteɪʃən/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hành động di chuyển một cái gì đó từ vị trí này sang vị trí khác.",
+   "vi_source": "gtx",
+   "example_vi": "Chúng ta phải đưa mọi người ra khỏi ô tô và khuyến khích họ sử dụng các hình thức vận chuyển thay thế."
+  },
+  {
+   "word": "software package",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Merchandise consisting of a computer program that is offered for sale.",
+   "extra_definitions": [],
+   "synonyms": [
+    "software product"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=software+package",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hàng hóa bao gồm một chương trình máy tính được chào bán.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "yard goods",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Merchandise in the form of fabrics sold by the yard.",
+   "extra_definitions": [],
+   "synonyms": [
+    "piece goods"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=yard+goods",
+   "type_vi": "Danh từ",
+   "definition_vi": "hàng dệt theo yard",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "meal ticket",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Coupon redeemable at a restaurant and entitling the holder to a meal.",
+   "extra_definitions": [
+    "[noun] A ticket or voucher that can be exchanged for food.",
+    "[noun] Someone or something that provides income or livelihood, especially as an exploited source."
+   ],
+   "synonyms": [
+    "luncheon voucher"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=meal+ticket",
+   "example": "Volunteers are provided with a meal ticket for every four hours of service.",
+   "type_vi": "Danh từ",
+   "definition_vi": "người chu cấp; người bao ăn",
+   "vi_source": "anhviet",
+   "example_vi": "Các tình nguyện viên được cung cấp một phiếu ăn cho mỗi bốn giờ làm việc."
+  },
+  {
+   "word": "cargo",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Goods carried by a large vehicle.",
+   "extra_definitions": [
+    "[noun] Freight carried by a ship, aircraft, or motor vehicle.",
+    "[noun] (Papua New Guinea) Western material goods."
+   ],
+   "synonyms": [
+    "lading",
+    "freight",
+    "load",
+    "loading",
+    "payload"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cargo",
+   "ipa_uk": "/ˈkɑːɡəʊ/",
+   "ipa_us": "/ˈkɑɹɡoʊ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cargo-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "hàng hóa (trên tàu, xe ...); hàng hóa",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "warehouse",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A storehouse for goods and merchandise.",
+   "extra_definitions": [
+    "[noun] A place for storing large amounts of products. In logistics, a place where products go to from the manufacturer before going to the retailer.",
+    "[verb] To store in a warehouse or similar.",
+    "[verb] To confine (a person) to an institution for a long period."
+   ],
+   "synonyms": [
+    "storage warehouse"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=warehouse",
+   "example": "the warehousing of syndicated TV shows",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một kho chứa hàng hóa và hàng hóa.",
+   "vi_source": "gtx",
+   "example_vi": "kho lưu trữ các chương trình truyền hình tổng hợp"
+  },
+  {
+   "word": "navigation",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Ship traffic.",
+   "extra_definitions": [
+    "[noun] The theory, practice and technology of charting a course for a ship, aircraft or spaceship or (colloquially) road vehicle.",
+    "[noun] Traffic or travel by vessel, especially commercial shipping.",
+    "[noun] A canal."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "example": "The channel will be open to navigation as soon as the ice melts.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=navigation",
+   "ipa_uk": "/nævɪˈɡeɪʃən/",
+   "ipa_us": "/nævɪˈɡeɪʃən/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/navigation-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tàu bè qua lại",
+   "vi_source": "anhviet",
+   "example_vi": "Kênh sẽ được mở để điều hướng ngay khi băng tan."
+  },
+  {
+   "word": "ferry",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Transport by boat or aircraft.",
+   "extra_definitions": [
+    "[noun] A ship used to transport people, smaller vehicles and goods from one port to another, usually on a regular schedule.",
+    "[noun] A place where passengers are transported across water in such a ship.",
+    "[noun] The legal right or franchise that entitles a corporate body or an individual to operate such a service."
+   ],
+   "synonyms": [
+    "ferrying"
+   ],
+   "antonyms": [],
+   "topics": [
+    "business"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ferry",
+   "example": "Trucks plowed through the water to ferry flood victims to safety.",
+   "ipa_uk": "/ˈfɛɹɪ/",
+   "ipa_us": "/ˈfɛɹi/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/ferry-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Vận chuyển bằng tàu hoặc máy bay.",
+   "vi_source": "gtx",
+   "example_vi": "Xe tải lội qua dòng nước để đưa người dân bị lũ lụt đến nơi an toàn."
+  }
+ ]
+}

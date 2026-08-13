@@ -1,0 +1,4817 @@
+{
+ "metadata": {
+  "pack": "daily-life",
+  "topic_slugs": [
+   "daily-life"
+  ],
+  "source": "Princeton WordNet 3.0 + wordfreq",
+  "license": "WordNet 3.0 License (Princeton, BSD-style, cho phep reuse va thuong mai hoa) | MIT (corpus nguon: CC BY-SA / public domain)",
+  "generated": "2026-08-13T09:00:26.598Z",
+  "count": 194
+ },
+ "words": [
+  {
+   "word": "must",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Grape juice before or during fermentation.",
+   "extra_definitions": [
+    "[noun] Something that is mandatory or required.",
+    "[verb] (modal auxiliary, defective) To do with certainty; indicates that the speaker is certain that the subject will have executed the predicate.",
+    "[verb] (modal auxiliary, defective) To do as a requirement; indicates that the sentence subject is required as an imperative or directive to execute the sentence predicate, with failure to do so resulting in a negative consequence."
+   ],
+   "synonyms": [
+    "imperative"
+   ],
+   "antonyms": [
+    "no-no"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=must",
+   "example": "If you'll be out all day, a map is a must.",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/must-us.mp3"
+   },
+   "type_vi": "Động từ",
+   "definition_vi": "hèm rượu nho",
+   "vi_source": "anhviet",
+   "example_vi": "Nếu bạn đi chơi cả ngày thì phải có bản đồ."
+  },
+  {
+   "word": "family",
+   "cefr": "A1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A social unit living together.",
+   "extra_definitions": [
+    "[noun] A group of people who are closely related to one another (by blood, marriage or adoption); kin; for example, a set of parents and their children; an immediate family.",
+    "[noun] An extended family; a group of people who are related to one another by blood or marriage.",
+    "[noun] A (close-knit) group of people related by blood, friendship, marriage, law, or custom, especially if they live or work together."
+   ],
+   "synonyms": [
+    "household",
+    "house",
+    "home",
+    "menage"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "He moved his family to Virginia.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=family",
+   "ipa_uk": "/ˈfæm(ɪ)li/",
+   "ipa_us": "/ˈfæm(ə)li/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/family-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/family-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "chủng tộc",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy chuyển gia đình đến Virginia."
+  },
+  {
+   "word": "in-law",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A relative by marriage.",
+   "extra_definitions": [
+    "[noun] A relative by marriage (or through affinity). Affinal relative; affine.",
+    "[noun] Sometimes specifically a parent-in-law of one's child, for which the dedicated terms co-mother-in-law, co-father-in-law are rare"
+   ],
+   "synonyms": [
+    "relative-in-law"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=in-law",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người họ hàng theo hôn nhân.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "family man",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A man whose family is of major importance in his life.",
+   "extra_definitions": [
+    "[noun] An adult male with a spouse and children to whose well-being he is dedicated."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=family+man",
+   "type_vi": "Danh từ",
+   "definition_vi": "người có gia đình; người chỉ thích sống trong gia đình; người hy sinh hết cho gia đình",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "food",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any substance that can be metabolized by an animal to give energy and build tissue.",
+   "extra_definitions": [
+    "[noun] Any solid substance that can be consumed by living organisms, especially by eating, in order to sustain life.",
+    "[noun] A foodstuff.",
+    "[noun] Anything that nourishes or sustains."
+   ],
+   "synonyms": [
+    "nutrient"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=food",
+   "example": "The innkeeper brought them food and drink.",
+   "ipa_uk": "/fuːd/",
+   "ipa_us": "/fuːd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/food-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Bất kỳ chất nào có thể được động vật chuyển hóa để cung cấp năng lượng và xây dựng mô.",
+   "vi_source": "gtx",
+   "example_vi": "Người chủ quán mang đồ ăn thức uống đến cho họ."
+  },
+  {
+   "word": "special",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A dish or meal given prominence in e.",
+   "extra_definitions": [
+    "[noun] A reduction in consumer cost (usually for a limited time) for items or services rendered.",
+    "[noun] One of a rotation of meals systematically offered for a lower price at a restaurant.",
+    "[noun] Unusual or exceptional episode of a series."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "common",
+    "non-special",
+    "ordinary",
+    "usual"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=special",
+   "example": "We're running a special on turkey for Thanksgiving.",
+   "ipa_uk": "/ˈspɛ.ʃəl/",
+   "ipa_us": "/ˈspɛ.ʃəl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/special-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "Một món ăn hoặc bữa ăn nổi bật trong e.",
+   "vi_source": "gtx",
+   "example_vi": "Chúng tôi đang thực hiện chương trình đặc biệt về gà tây cho Lễ tạ ơn."
+  },
+  {
+   "word": "low",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An air mass of lower pressure; often brings precipitation.",
+   "extra_definitions": [
+    "[noun] Something that is low; a low point.",
+    "[noun] The minimum value attained by some quantity within a specified period.",
+    "[noun] A depressed mood or situation."
+   ],
+   "synonyms": [
+    "depression"
+   ],
+   "antonyms": [
+    "high",
+    "tall"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "A low moved in over night bringing sleet and snow.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=low",
+   "ipa_uk": "/ləʊ/",
+   "ipa_us": "/loʊ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/low-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một khối không khí có áp suất thấp hơn; thường mang lại lượng mưa.",
+   "vi_source": "gtx",
+   "example_vi": "Một vùng thấp di chuyển qua đêm mang theo mưa đá và tuyết."
+  },
+  {
+   "word": "child",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A human offspring (son or daughter) of any age.",
+   "extra_definitions": [
+    "[noun] A person who has not yet reached adulthood, whether natural (puberty), cultural (initiation), or legal (majority)",
+    "[noun] (specifically) A female child, a girl.",
+    "[noun] (with possessive) One's direct descendant by birth, regardless of age; a son or daughter."
+   ],
+   "synonyms": [
+    "kid"
+   ],
+   "antonyms": [
+    "parent"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "They had three children.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=child",
+   "ipa_uk": "/t͡ʃaɪld/",
+   "ipa_us": "/t͡ʃaɪld/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/child-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/child-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "người lớn mà tính như trẻ con; đứa con",
+   "vi_source": "anhviet",
+   "example_vi": "Họ có ba đứa con."
+  },
+  {
+   "word": "son",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A male human offspring.",
+   "extra_definitions": [
+    "[noun] One's male offspring.",
+    "[noun] A male adopted person in relation to his adoptive parents.",
+    "[noun] A male person who has such a close relationship with an older or otherwise more authoritative person that he can be regarded as a son of the other person."
+   ],
+   "synonyms": [
+    "boy"
+   ],
+   "antonyms": [
+    "daughter",
+    "girl"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Their son became a famous judge.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=son",
+   "ipa_uk": "/sɒn/",
+   "ipa_us": "/sɒn/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/son-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/son-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "người con, người dân (một nước); con trai",
+   "vi_source": "anhviet",
+   "example_vi": "Con trai của họ đã trở thành một thẩm phán nổi tiếng."
+  },
+  {
+   "word": "baby",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The youngest member of a group (not necessarily young).",
+   "extra_definitions": [
+    "[noun] A very young human, particularly from birth to a couple of years old or until walking is fully mastered.",
+    "[noun] Any very young animal, especially a vertebrate; many species have specific names for their babies, such as kittens for the babies of cats, puppies for the babies of dogs, and chickens for the babies of birds. See for more.",
+    "[noun] Unborn young; a fetus."
+   ],
+   "synonyms": [
+    "big baby",
+    "love",
+    "babbie",
+    "babby",
+    "babe",
+    "infant"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "The baby of the family.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=baby",
+   "ipa_uk": "/ˈbeɪbi/",
+   "ipa_us": "/ˈbeɪbi/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/baby-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/baby-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thành viên trẻ nhất trong nhóm (không nhất thiết phải trẻ).",
+   "vi_source": "gtx",
+   "example_vi": "Đứa con cưng của gia đình."
+  },
+  {
+   "word": "wife",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A married woman; a man's partner in marriage.",
+   "extra_definitions": [
+    "[noun] A married woman, especially in relation to her spouse.",
+    "[noun] The female of a pair of mated animals.",
+    "[verb] (said of men) to marry"
+   ],
+   "synonyms": [
+    "married woman"
+   ],
+   "antonyms": [
+    "husband"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wife",
+   "example": "A new wife for the gander is introduced into the pen.",
+   "ipa_uk": "/waɪf/",
+   "ipa_us": "/waɪf/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/wife-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/wife-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ cổ,nghĩa cổ) người đàn bà; bà già",
+   "vi_source": "anhviet",
+   "example_vi": "Một người vợ mới của giang hồ được đưa vào chuồng."
+  },
+  {
+   "word": "cup",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small open container usually used for drinking; usually has a handle.",
+   "extra_definitions": [
+    "[noun] A concave vessel for drinking from, usually made of opaque material (as opposed to a glass) and with a handle.",
+    "[noun] The contents of said vessel; a cupful.",
+    "[noun] A customary unit of measure"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "He put the cup back in the saucer.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cup",
+   "ipa_uk": "/kʌp/",
+   "ipa_us": "/kʌp/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/cup-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cup-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thùng nhỏ mở nắp thường dùng để uống; thường có tay cầm.",
+   "vi_source": "gtx",
+   "example_vi": "Anh đặt chiếc cốc lại vào đĩa."
+  },
+  {
+   "word": "brother",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A male with the same parents as someone else.",
+   "extra_definitions": [
+    "[noun] Son of the same parents as another person.",
+    "[noun] A male having at least one parent in common with another (see half-brother, stepbrother).",
+    "[noun] A male fellow member of a religious community, church, trades union etc."
+   ],
+   "synonyms": [
+    "blood brother"
+   ],
+   "antonyms": [
+    "sister"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "My brother still lives with our parents.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=brother",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người đàn ông có cùng cha mẹ với một người khác.",
+   "vi_source": "gtx",
+   "example_vi": "Anh trai tôi vẫn sống với bố mẹ chúng tôi.",
+   "ipa_uk": "/ˈbɹʌðə(ɹ)/",
+   "ipa_us": "/ˈbɹʌðɚ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/brother-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/brother-us.mp3"
+   }
+  },
+  {
+   "word": "daughter",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A female human offspring.",
+   "extra_definitions": [
+    "[noun] One’s female offspring.",
+    "[noun] A female descendant.",
+    "[noun] A daughter language."
+   ],
+   "synonyms": [
+    "girl"
+   ],
+   "antonyms": [
+    "son",
+    "boy"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Her daughter cared for her in her old age.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=daughter",
+   "type_vi": "Danh từ",
+   "definition_vi": "con gái",
+   "vi_source": "anhviet",
+   "example_vi": "Con gái bà đã chăm sóc bà lúc tuổi già.",
+   "ipa_uk": "/ˈdɔːtə(ɹ)/",
+   "ipa_us": "/ˈdɔ.tɚ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/daughter-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/daughter-us.mp3"
+   }
+  },
+  {
+   "word": "son-in-law",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The husband of your daughter.",
+   "extra_definitions": [
+    "[noun] The husband of one's child."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=son-in-law",
+   "type_vi": "Danh từ",
+   "definition_vi": "con rể",
+   "vi_source": "anhviet",
+   "ipa_uk": "/ˈsʌnɪnˌlɔː/",
+   "ipa_us": "/ˈsʌnɪnˌlɔː/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/son-in-law-us.mp3"
+   }
+  },
+  {
+   "word": "light air",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Wind moving 1-3 knots; 1 on the Beaufort scale.",
+   "extra_definitions": [
+    "[noun] A light wind with wind speed between 0.3 and 1.5 m/s; a Force 1 wind strength on the Beaufort scale."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=light+air",
+   "type_vi": "Danh từ",
+   "definition_vi": "gió nhẹ (từ 1 đến 5 kilômet giờ)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "war baby",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Conceived or born during war.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=war+baby",
+   "type_vi": "Danh từ",
+   "definition_vi": "Được thụ thai hoặc sinh ra trong chiến tranh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "husband",
+   "cefr": "A2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A married man; a woman's partner in marriage.",
+   "extra_definitions": [
+    "[noun] The master of a house; the head of a family; a householder.",
+    "[noun] A tiller of the ground; a husbandman.",
+    "[noun] A prudent or frugal manager."
+   ],
+   "synonyms": [
+    "hubby",
+    "married man"
+   ],
+   "antonyms": [
+    "wife"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=husband",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người đàn ông đã có gia đình; bạn đời của một người phụ nữ trong hôn nhân.",
+   "vi_source": "gtx",
+   "example": "You should start dating so you can find a suitable husband.",
+   "ipa_uk": "/ˈhʌz.bənd/",
+   "ipa_us": "/ˈhʌz.bənd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/husband-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/husband-us.mp3"
+   }
+  },
+  {
+   "word": "dad",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An informal term for a father; probably derived from baby talk.",
+   "extra_definitions": [
+    "[noun] A father, a male parent.",
+    "[noun] (familiar) Used to address one's father",
+    "[noun] Used to address an older adult male"
+   ],
+   "synonyms": [
+    "dada",
+    "daddy",
+    "pa",
+    "papa",
+    "pappa"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dad",
+   "example": "His dad was always there for him.",
+   "ipa_uk": "/dæd/",
+   "ipa_us": "/dæd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dad-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(thông tục) ba, cha, bố, thầy",
+   "vi_source": "anhviet",
+   "example_vi": "Bố anh luôn ở đó vì anh."
+  },
+  {
+   "word": "sister",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A female person who has the same parents as another person.",
+   "extra_definitions": [
+    "[noun] A daughter of the same parents as another person; a female sibling.",
+    "[noun] A female member of a religious order; especially one devoted to more active service; (informally) a nun.",
+    "[noun] Any butterfly in the genus Adelpha, so named for the resemblance of the dark-colored wings to the black habit traditionally worn by nuns."
+   ],
+   "synonyms": [
+    "sis"
+   ],
+   "antonyms": [
+    "brother"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "My sister married a musician.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sister",
+   "ipa_uk": "/ˈsɪs.tə/",
+   "ipa_us": "/ˈsɪs.tɚ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/sister-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sister-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "nữ tu sĩ, ni cô; bà chị, cô em (vật được nhân cách hoá coi như chị em gần gũi)",
+   "vi_source": "anhviet",
+   "example_vi": "Em gái tôi kết hôn với một nhạc sĩ."
+  },
+  {
+   "word": "half blood",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "One of siblings who have only one parent in common.",
+   "extra_definitions": [
+    "[noun] A person who shares one parent with another; a half-sibling.",
+    "[noun] A person whose father and mother are of different races; a half-breed"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=half+blood",
+   "type_vi": "Danh từ",
+   "definition_vi": "anh (chị em) cùng cha khác mẹ hoặc cùng mẹ khác cha",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "daughter-in-law",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The wife of your son.",
+   "extra_definitions": [
+    "[noun] The wife of one's child."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=daughter-in-law",
+   "type_vi": "Danh từ",
+   "definition_vi": "con gái riêng (của vợ, của chồng); con dấu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "first lady",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The wife of a chief executive.",
+   "extra_definitions": [
+    "[noun] The wife (or woman of similar rank) of a male chief executive of a nation; especially the wife of the President of a country.",
+    "[noun] The wife of a male pastor.",
+    "[noun] The leading woman in a specified field of endeavor."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=first+lady",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ) vợ tổng thống; vợ thông đốc bang",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "old lady",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Your own wife.",
+   "extra_definitions": [
+    "[noun] An elderly woman.",
+    "[noun] One's mother.",
+    "[noun] One's girlfriend, wife or significant other."
+   ],
+   "synonyms": [
+    "girlfriend",
+    "old woman",
+    "wife"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Meet my old lady.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=old+lady",
+   "type_vi": "Danh từ",
+   "definition_vi": "Vợ của chính bạn.",
+   "vi_source": "gtx",
+   "example_vi": "Gặp lại bà già của tôi."
+  },
+  {
+   "word": "blue baby",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An infant born with a bluish color; usually has a defective heart.",
+   "extra_definitions": [
+    "[noun] A baby born with cyanosis as a result of a congenital defect"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=blue+baby",
+   "type_vi": "Danh từ",
+   "definition_vi": "đứa bé có da tái xanh từ lúc mới sinh ra",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "water ice",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An ice containing no milk but having a mushy consistency; usually made from fruit juice.",
+   "extra_definitions": [
+    "[noun] Ordinary frozen water, especially when a distinction needs to be made from other frozen substances.",
+    "[noun] A dessert made from crushed ice that has been sweetened and flavoured."
+   ],
+   "synonyms": [
+    "sorbet"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=water+ice",
+   "type_vi": "Danh từ",
+   "definition_vi": "nước đá",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "weather",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The atmospheric conditions that comprise the state of the atmosphere in terms of temperature and wind and clouds and precipitation.",
+   "extra_definitions": [
+    "[noun] The short term state of the atmosphere at a specific time and place, including the temperature, relative humidity, cloud cover, precipitation, wind, etc.",
+    "[noun] Unpleasant or destructive atmospheric conditions, and their effects.",
+    "[noun] The direction from which the wind is blowing; used attributively to indicate the windward side."
+   ],
+   "synonyms": [
+    "weather condition",
+    "conditions",
+    "atmospheric condition"
+   ],
+   "antonyms": [
+    "lee"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "They were hoping for good weather.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=weather",
+   "ipa_uk": "/ˈwɛðə/",
+   "ipa_us": "/ˈwɛðɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/weather-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bản thông báo thời tiết (đăng trên báo)",
+   "vi_source": "anhviet",
+   "example_vi": "Họ đã hy vọng thời tiết tốt."
+  },
+  {
+   "word": "wind",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Air moving (sometimes with considerable force) from an area of high pressure to an area of low pressure.",
+   "extra_definitions": [
+    "[noun] Real or perceived movement of atmospheric air usually caused by convection or differences in air pressure.",
+    "[noun] Air artificially put in motion by any force or action.",
+    "[noun] The ability to breathe easily."
+   ],
+   "synonyms": [
+    "air current",
+    "current of air"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Trees bent under the fierce winds.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wind",
+   "ipa_uk": "/ˈwaɪnd/",
+   "ipa_us": "/ˈwaɪnd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/wind-1-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/wind-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "lời rỗng tuếch; chuyện rỗng tuếch",
+   "vi_source": "anhviet",
+   "example_vi": "Cây cối uốn cong dưới những cơn gió dữ dội."
+  },
+  {
+   "word": "training table",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Planned meals for athletes in training (usually served in a mess hall).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=training+table",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bữa ăn theo kế hoạch dành cho vận động viên đang tập luyện (thường được phục vụ trong nhà ăn).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "dinner",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The main meal of the day served in the evening or at midday.",
+   "extra_definitions": [
+    "[noun] A midday meal (in a context in which the evening meal is called supper or tea).",
+    "[noun] The main meal of the day, often eaten in the evening.",
+    "[noun] An evening meal."
+   ],
+   "synonyms": [
+    "evening meal",
+    "supper",
+    "tea",
+    "banquet",
+    "feast",
+    "luncheon"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Dinner will be at 8.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dinner",
+   "ipa_uk": "/ˈdɪnə/",
+   "ipa_us": "/ˈdɪnəɹ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/dinner-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dinner-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bữa cơm (trưa, chiều)",
+   "vi_source": "anhviet",
+   "example_vi": "Bữa tối sẽ diễn ra lúc 8 giờ."
+  },
+  {
+   "word": "produce",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fresh fruits and vegetable grown for the market.",
+   "extra_definitions": [
+    "[verb] To yield, make or manufacture; to generate.",
+    "[verb] To make (a thing) available to a person, an authority, etc.; to provide for inspection.",
+    "[verb] To sponsor and present (a motion picture, etc) to an audience or to the public."
+   ],
+   "synonyms": [
+    "green goods",
+    "green groceries",
+    "garden truck"
+   ],
+   "antonyms": [
+    "destroy",
+    "ruin"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=produce",
+   "example": "to produce a side of a triangle",
+   "ipa_uk": "/pɹəˈdjuːs/",
+   "ipa_us": "/pɹəˈdjuːs/",
+   "type_vi": "Danh từ",
+   "definition_vi": "kết quả",
+   "vi_source": "anhviet",
+   "example_vi": "để tạo ra một cạnh của một tam giác"
+  },
+  {
+   "word": "apple",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fruit with red or yellow or green skin and sweet to tart crisp whitish flesh.",
+   "extra_definitions": [
+    "[noun] A common, round fruit produced by the tree Malus domestica, cultivated in temperate climates.",
+    "[noun] Any of various tree-borne fruits or vegetables especially considered as resembling an apple; also (with qualifying words) used to form the names of other specific fruits such as custard apple, rose apple, thorn apple etc.",
+    "[noun] The fruit of the Tree of Knowledge, eaten by Adam and Eve according to post-Biblical Christian tradition; the forbidden fruit."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=apple",
+   "ipa_uk": "/ˈæp.əl/",
+   "ipa_us": "/ˈæp.əl/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/apple-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/apple-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "quả táo",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "date bar",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fruit bar containing chopped dates.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=date+bar",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thanh trái cây chứa chà là xắt nhỏ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "frank",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A smooth-textured sausage of minced beef or pork usually smoked; often served on a bread roll.",
+   "extra_definitions": [
+    "[noun] Free postage, a right exercised by governments (usually with definite article).",
+    "[noun] The notice on an envelope where a stamp would normally be found.",
+    "[verb] To place a frank on an envelope."
+   ],
+   "synonyms": [
+    "frankfurter",
+    "hotdog",
+    "hot dog",
+    "dog",
+    "wiener"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=frank",
+   "example": "May I be frank with you?",
+   "ipa_uk": "/fɹæŋk/",
+   "ipa_us": "/fɹæŋk/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/frank-us.mp3"
+   },
+   "type_vi": "Động từ",
+   "definition_vi": "Xúc xích có kết cấu mịn làm từ thịt bò hoặc thịt lợn bằm thường hun khói; thường được phục vụ trên bánh mì cuộn.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi có thể thẳng thắn với bạn được không?"
+  },
+  {
+   "word": "tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A light midafternoon meal of tea and sandwiches or cakes.",
+   "extra_definitions": [
+    "[noun] A drug smoked or ingested for euphoric effect, cannabis.",
+    "[noun] The hemp plant itself, Cannabis sativa.",
+    "[noun] Food consumed before going to bed."
+   ],
+   "synonyms": [
+    "afternoon tea",
+    "teatime"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "An Englishman would interrupt a war to have his afternoon tea.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tea",
+   "ipa_uk": "/tiː/",
+   "ipa_us": "/ti/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/tea-1-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/tea-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tiệc trà, bữa trà; chè, trà; nước chè, nước trà",
+   "vi_source": "anhviet",
+   "example_vi": "Một người Anh sẽ gián đoạn chiến tranh để uống trà chiều."
+  },
+  {
+   "word": "place setting",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A table service for one person.",
+   "extra_definitions": [
+    "[noun] Items of cutlery, crockery and glassware, and sometimes a place mat, arranged for a person at a dining table."
+   ],
+   "synonyms": [
+    "setting"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "A place setting of sterling flatware.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=place+setting",
+   "type_vi": "Danh từ",
+   "definition_vi": "Phục vụ bàn cho một người.",
+   "vi_source": "gtx",
+   "example_vi": "Một nơi đặt đồ dùng bằng phẳng."
+  },
+  {
+   "word": "mix",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A commercially prepared mixture of dry ingredients.",
+   "extra_definitions": [
+    "[verb] To stir together.",
+    "[verb] To combine (items from two or more sources normally kept separate).",
+    "[verb] To form by mingling; to produce by the stirring together of ingredients; to concoct from different parts."
+   ],
+   "synonyms": [
+    "premix"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=mix",
+   "example": "Mix the eggs and milk with the flour until the consistency is smooth.",
+   "ipa_uk": "/ˈmɪks/",
+   "ipa_us": "/ˈmɪks/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/mix-us.mp3"
+   },
+   "type_vi": "Động từ",
+   "definition_vi": "((thường) + with) dính dáng, giao thiệp, hợp tác",
+   "vi_source": "anhviet",
+   "example_vi": "Trộn trứng và sữa với bột mì cho đến khi hỗn hợp mịn."
+  },
+  {
+   "word": "rain",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Water falling in drops from vapor condensed in the atmosphere.",
+   "extra_definitions": [
+    "[noun] Condensed water falling from a cloud.",
+    "[noun] Any matter moving or falling, usually through air, and especially if liquid or otherwise figuratively identifiable with raindrops.",
+    "[noun] An instance of particles or larger pieces of matter moving or falling through air."
+   ],
+   "synonyms": [
+    "rainfall"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rain",
+   "example": "The rains came late that year.",
+   "ipa_uk": "/ɹeɪn/",
+   "ipa_us": "/ɹeɪn/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/rain-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/rain-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Nước rơi thành giọt từ hơi nước ngưng tụ trong khí quyển.",
+   "vi_source": "gtx",
+   "example_vi": "Năm đó mưa đến muộn."
+  },
+  {
+   "word": "hot weather",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A period of unusually high temperatures.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hot+weather",
+   "type_vi": "Danh từ",
+   "definition_vi": "thời tiết nóng",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "high tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Substantial early evening meal including tea.",
+   "extra_definitions": [
+    "[noun] A late afternoon or early evening meal, typically consisting of a cooked dish with bread and butter and tea.",
+    "[noun] Formal afternoon tea."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=high+tea",
+   "ipa_uk": "/ˌhʌɪ ˈtiː/",
+   "ipa_us": "/ˌhʌɪ ˈtiː/",
+   "type_vi": "Danh từ",
+   "definition_vi": "bữa trà mặn (uống trà có kèm món ăn mặn)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "sugar",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A white crystalline carbohydrate used as a sweetener and preservative.",
+   "extra_definitions": [
+    "[noun] Sucrose in the form of small crystals, obtained from sugar cane or sugar beet and used to sweeten food and drink.",
+    "[noun] A specific variety of sugar.",
+    "[noun] Any of various small carbohydrates that are used by organisms to store energy."
+   ],
+   "synonyms": [
+    "refined sugar"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sugar",
+   "example": "He usually has his coffee white with one sugar.",
+   "ipa_uk": "/ˈʃʊɡə(ɹ)/",
+   "ipa_us": "/ˈʃʊɡɚ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/sugar-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sugar-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "làm ngọt",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy thường uống cà phê trắng với một đường."
+  },
+  {
+   "word": "feed",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Food for domestic livestock.",
+   "extra_definitions": [
+    "[noun] Food given to (especially herbivorous) animals.",
+    "[noun] Something supplied continuously.",
+    "[noun] The part of a machine that supplies the material to be operated upon."
+   ],
+   "synonyms": [
+    "provender"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=feed",
+   "example": "They sell feed, riding helmets, and everything else for horses.",
+   "ipa_uk": "/ˈfiːd/",
+   "ipa_us": "/ˈfiːd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/feed-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "sự nuôi",
+   "vi_source": "anhviet",
+   "example_vi": "Họ bán thức ăn, mũ bảo hiểm cưỡi ngựa và mọi thứ khác cho ngựa."
+  },
+  {
+   "word": "coffee cup",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A cup from which coffee is drunk.",
+   "extra_definitions": [
+    "[noun] A cup, typically a small one, in which coffee can be served."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=coffee+cup",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một tách cà phê được uống.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "snow",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Precipitation falling from clouds in the form of ice crystals.",
+   "extra_definitions": [
+    "[noun] The frozen, crystalline state of water that falls as precipitation.",
+    "[noun] Any similar frozen form of a gas or liquid.",
+    "[noun] A snowfall; a blanket of frozen, crystalline water."
+   ],
+   "synonyms": [
+    "snowfall"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=snow",
+   "example": "We have had several heavy snows this year.",
+   "ipa_uk": "/snəʊ/",
+   "ipa_us": "/snoʊ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/snow-1-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/snow-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(số nhiều) đống tuyết rơi; lượng tuyết rơi; (từ lóng) chất côcain",
+   "vi_source": "anhviet",
+   "example_vi": "Năm nay chúng ta đã có nhiều đợt tuyết rơi dày đặc."
+  },
+  {
+   "word": "milk",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A white nutritious liquid secreted by mammals and used as food by human beings.",
+   "extra_definitions": [
+    "[noun] A white liquid produced by the mammary glands of female mammals to nourish their young. From certain animals, especially cows, it is also called dairy milk and is a common food for humans as a beverage or used to produce various dairy products such as butter, cheese, and yogurt.",
+    "[noun] A white (or whitish) liquid obtained from a vegetable source such as almonds, coconuts, oats, rice, and/or soy beans. Also called non-dairy milk.",
+    "[noun] An individual serving of milk."
+   ],
+   "synonyms": [
+    "cow milk",
+    "cow's milk",
+    "cowmilk"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=milk",
+   "example": "Table three ordered three milks. (Formally: The guests at table three ordered three glasses of milk.)",
+   "ipa_uk": "/mɪlk/",
+   "ipa_us": "/mɪlk/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/milk-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/milk-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một chất lỏng dinh dưỡng màu trắng do động vật có vú tiết ra và được con người sử dụng làm thực phẩm.",
+   "vi_source": "gtx",
+   "example_vi": "Bàn ba gọi ba ly sữa. (Chính thức: Khách ở bàn thứ ba gọi ba ly sữa.)"
+  },
+  {
+   "word": "black tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fermented tea leaves.",
+   "extra_definitions": [
+    "[noun] Tea leaves which have been \"fermented\" (actually, oxidized) before drying to enhance their flavour (cf. green tea).",
+    "[noun] A cup of tea served without milk."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=black+tea",
+   "type_vi": "Danh từ",
+   "definition_vi": "Lá trà lên men.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "lunch",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A midday meal.",
+   "extra_definitions": [
+    "[noun] A light meal usually eaten around midday, notably when not as main meal of the day.",
+    "[noun] A break in play between the first and second sessions.",
+    "[noun] (Minnesota) Any small meal, especially one eaten at a social gathering."
+   ],
+   "synonyms": [
+    "luncheon",
+    "tiffin",
+    "dejeuner"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=lunch",
+   "example": "After the funeral there was a lunch for those who didn't go to the cemetery.",
+   "ipa_uk": "/lʌnt͡ʃ/",
+   "ipa_us": "/lʌnt͡ʃ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/lunch-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/lunch-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một bữa ăn giữa trưa.",
+   "vi_source": "gtx",
+   "example_vi": "Sau đám tang có bữa trưa dành cho những người không đến nghĩa trang."
+  },
+  {
+   "word": "honest woman",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A wife who has married a man with whom she has been living for some time (especially if she is pregnant at the time).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "He made an honest woman of her.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=honest+woman",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người vợ đã kết hôn với một người đàn ông mà cô ấy đã chung sống một thời gian (đặc biệt nếu cô ấy đang mang thai vào thời điểm đó).",
+   "vi_source": "gtx",
+   "example_vi": "Anh đã biến cô thành một người phụ nữ lương thiện."
+  },
+  {
+   "word": "meat",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The flesh of animals (including fishes and birds and snails) used as food.",
+   "extra_definitions": [
+    "[noun] The flesh (muscle tissue) of an animal used as food.",
+    "[noun] A type of meat, by anatomic position and provenance.",
+    "[noun] Food, for animals or humans, especially solid food. See also meat and drink."
+   ],
+   "synonyms": [
+    "flesh",
+    "crux",
+    "gist"
+   ],
+   "antonyms": [
+    "drink"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=meat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt động vật (kể cả cá, chim và ốc) được dùng làm thực phẩm.",
+   "vi_source": "gtx",
+   "example": "A large portion of domestic meat production comes from animals raised on factory farms.",
+   "ipa_uk": "/miːt/",
+   "ipa_us": "/mit/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/meat-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/meat-us.mp3"
+   }
+  },
+  {
+   "word": "ma",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Informal terms for a mother.",
+   "extra_definitions": [
+    "[noun] (usually in the plural) Abbreviation of milli-arcsecond."
+   ],
+   "synonyms": [
+    "mama",
+    "mamma",
+    "mom",
+    "momma",
+    "mommy"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ma",
+   "type_vi": "Danh từ",
+   "definition_vi": "((viết tắt) của mamma) má, mẹ",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "cream",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The part of milk containing the butterfat.",
+   "extra_definitions": [
+    "[noun] The butterfat/milkfat part of milk which rises to the top; this part when separated from the remainder.",
+    "[noun] A yellowish white colour; the colour of cream.",
+    "[noun] Frosting, custard, creamer or another substance similar to the oily part of milk or to whipped cream."
+   ],
+   "synonyms": [
+    "ream"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cream",
+   "type_vi": "Danh từ",
+   "definition_vi": "Phần sữa có chứa butterfat.",
+   "vi_source": "gtx",
+   "example": "Take 100 ml of cream and 50 grams of sugar…",
+   "ipa_uk": "/kɹiːm/",
+   "ipa_us": "/kɹiːm/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cream-us.mp3"
+   }
+  },
+  {
+   "word": "draft",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A current of air (usually coming into a chimney or room or vehicle).",
+   "extra_definitions": [
+    "[noun] A current of air, usually coming into a room or vehicle.",
+    "[noun] Draw through a flue of gasses (smoke) resulting from a combustion process.",
+    "[noun] An act of drinking."
+   ],
+   "synonyms": [
+    "draught"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=draft",
+   "type_vi": "Danh từ",
+   "definition_vi": "Dòng không khí (thường đi vào ống khói, phòng hoặc xe cộ).",
+   "vi_source": "gtx",
+   "example": "She took a deep draft from the bottle of water.",
+   "ipa_uk": "/dɹæft/",
+   "ipa_us": "/dɹæft/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/draft-us.mp3"
+   }
+  },
+  {
+   "word": "breakfast",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The first meal of the day (usually in the morning).",
+   "extra_definitions": [
+    "[noun] The first meal of the day, usually eaten in the morning.",
+    "[noun] (by extension) A meal consisting of food normally eaten in the morning, which may typically include eggs, sausages, toast, bacon, etc.",
+    "[noun] The celebratory meal served after a wedding (and occasionally after other solemnities e.g. a funeral)."
+   ],
+   "synonyms": [
+    "break one's fast"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=breakfast",
+   "example": "You should put more protein in her breakfast so she will grow.",
+   "ipa_uk": "/ˈbɹɛkfəst/",
+   "ipa_us": "/ˈbɹɛkfəst/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/breakfast-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/breakfast-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bữa ăn sáng, bữa điểm tâm",
+   "vi_source": "anhviet",
+   "example_vi": "Bạn nên bổ sung thêm chất đạm vào bữa sáng để bé phát triển."
+  },
+  {
+   "word": "ready-mix",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A commercial preparation containing most of the ingredients for a dish.",
+   "extra_definitions": [
+    "[noun] Ready-mixed concrete"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ready-mix",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một chế phẩm thương mại có chứa hầu hết các thành phần cho một món ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "salt",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "White crystalline form of especially sodium chloride used to season and preserve food.",
+   "extra_definitions": [
+    "[noun] A common substance, chemically consisting mainly of sodium chloride (NaCl), used extensively as a condiment and preservative.",
+    "[noun] One of the compounds formed from the reaction of an acid with a base, where a positive ion replaces a hydrogen of the acid.",
+    "[noun] A salt marsh, a saline marsh at the shore of a sea."
+   ],
+   "synonyms": [
+    "table salt",
+    "common salt"
+   ],
+   "antonyms": [
+    "desalt"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=salt",
+   "example": "Attic salt",
+   "ipa_uk": "/sɒlt/",
+   "ipa_us": "/sɑlt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/salt-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/salt-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(sử học) lọ đựng muối để bàn",
+   "vi_source": "anhviet",
+   "example_vi": "muối gác mái"
+  },
+  {
+   "word": "kiss",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A cookie made of egg whites and sugar.",
+   "extra_definitions": [
+    "[verb] To touch with the lips or press the lips against, usually to show love or affection or passion, or as part of a greeting.",
+    "[verb] To (cause to) touch lightly or slightly; to come into contact.",
+    "[verb] Of two or more people, to touch each other's lips together, usually to express love or affection or passion."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=kiss",
+   "example": "His ball kissed the black into the corner pocket.",
+   "ipa_uk": "/kɪs/",
+   "ipa_us": "/kɪs/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/kiss-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "kẹo bi đường",
+   "vi_source": "anhviet",
+   "example_vi": "Quả bóng của anh hôn quân đen vào túi góc."
+  },
+  {
+   "word": "green tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Tea leaves that have been steamed and dried without fermenting.",
+   "extra_definitions": [
+    "[noun] Leaves of the tea plant which are treated with steam or roasted to denature the enzymes that cause the leaves to darken and change taste. (Without this step they would become oolong tea or black tea).",
+    "[noun] A beverage brewed from green tea leaves."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=green+tea",
+   "type_vi": "Danh từ",
+   "definition_vi": "Lá trà được hấp và sấy khô không lên men.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "diet",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A prescribed selection of foods.",
+   "extra_definitions": [
+    "[noun] The food and beverage a person or animal consumes.",
+    "[noun] A controlled regimen of food and drink, as to gain or lose weight or otherwise influence health.",
+    "[noun] (by extension) Any habitual intake or consumption."
+   ],
+   "synonyms": [
+    "lite"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=diet",
+   "example": "The diet of the Giant Panda consists mainly of bamboo.",
+   "ipa_uk": "/ˈdaɪət/",
+   "ipa_us": "/ˈdaɪət/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/diet-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "thức ăn",
+   "vi_source": "anhviet",
+   "example_vi": "Chế độ ăn của Gấu trúc khổng lồ chủ yếu bao gồm tre."
+  },
+  {
+   "word": "cheese",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A solid food prepared from the pressed curd of milk.",
+   "extra_definitions": [
+    "[noun] A dairy product made from curdled or cultured milk.",
+    "[noun] Any particular variety of cheese.",
+    "[noun] A piece of cheese, especially one moulded into a large round shape during manufacture."
+   ],
+   "synonyms": [],
+   "antonyms": [
+    "fill"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cheese",
+   "example": "Say \"cheese\"! ... and there we are!",
+   "ipa_uk": "/t͡ʃiz/",
+   "ipa_us": "/t͡ʃiz/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/cheese-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại thực phẩm rắn được chế biến từ sữa đông ép.",
+   "vi_source": "gtx",
+   "example_vi": "Nói \"phô mai\"! ... và chúng ta đây rồi!"
+  },
+  {
+   "word": "parent",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A father or mother.",
+   "extra_definitions": [
+    "[noun] One of the two persons from whom one is immediately biologically descended; a mother or father.",
+    "[noun] A surrogate mother",
+    "[noun] A third person who has provided DNA samples in an IVF procedure in order to alter faulty genetic material"
+   ],
+   "synonyms": [
+    "mother",
+    "progenitor",
+    "raise",
+    "rear"
+   ],
+   "antonyms": [
+    "child"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=parent",
+   "ipa_uk": "/ˈpɛəɹənt/",
+   "ipa_us": "/ˈpeəɹənt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/parent-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người cha hoặc người mẹ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fruit",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The ripened reproductive body of a seed plant.",
+   "extra_definitions": [
+    "[noun] (often in the plural) In general, a product of plant growth useful to man or animals.",
+    "[noun] Specifically, a sweet, edible part of a plant that resembles seed-bearing fruit (see next sense), even if it does not develop from a floral ovary; also used in a technically imprecise sense for some sweet or sweetish vegetables, such as the petioles of rhubarb, that resemble a true fruit or are used in cookery as if they were a fruit.",
+    "[noun] A product of fertilization in a plant, specifically:"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fruit",
+   "example": "His long nights in the office eventually bore fruit when his business boomed and he was given a raise.",
+   "ipa_uk": "/fɹuːt/",
+   "ipa_us": "/fɹut/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/fruit-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/fruit-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "quả, trái cây",
+   "vi_source": "anhviet",
+   "example_vi": "Những đêm dài làm việc ở văn phòng của anh cuối cùng cũng có kết quả khi công việc kinh doanh của anh phát đạt và anh được tăng lương."
+  },
+  {
+   "word": "white goods",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Large electrical home appliances (refrigerators or washing machines etc.",
+   "extra_definitions": [
+    "[noun] Domestic textiles, such as tablecloths, bedding, towels, etc. that were traditionally white in color.",
+    "[noun] The large household appliances such as refrigerators, stoves, washing machines and driers as a group.",
+    "[noun] (beverage industry) Colorless spirits, such as gin and vodka."
+   ],
+   "synonyms": [
+    "appliances",
+    "large",
+    "dry goods"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=white+goods",
+   "type_vi": "Danh từ",
+   "definition_vi": "hàng trắng, hàng vải trắng, (các loại) đồ điện gia dụng",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "rice",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Grains used as food either unpolished or more often polished.",
+   "extra_definitions": [
+    "[noun] Cereal plants, Oryza sativa of the grass family whose seeds are used as food.",
+    "[noun] A specific variety of this plant.",
+    "[noun] The seeds of this plant used as food."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rice",
+   "ipa_uk": "/ɹaɪs/",
+   "ipa_us": "/ɹaɪs/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/rice-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/rice-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Các loại ngũ cốc được sử dụng làm thực phẩm hoặc chưa được đánh bóng hoặc thường được đánh bóng hơn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "ice tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Strong tea served over ice.",
+   "extra_definitions": [
+    "[noun] Cold tea, a beverage.",
+    "[noun] Sweetened iced tea, flavoured with lemon.",
+    "[noun] A serving of cold tea."
+   ],
+   "synonyms": [
+    "iced tea"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ice+tea",
+   "example": "Could you bring me some iced tea please?",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trà mạnh phục vụ trên đá.",
+   "vi_source": "gtx",
+   "example_vi": "Bạn có thể mang cho tôi một ít trà đá được không?"
+  },
+  {
+   "word": "sun tea",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Tea made by exposing tea leaves steeped in water to the direct rays of the sun; usually served with ice.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sun+tea",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trà được pha bằng cách phơi lá trà ngâm trong nước dưới ánh nắng trực tiếp; thường dùng kèm với đá.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "white rice",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Having husk or outer brown layers removed.",
+   "extra_definitions": [],
+   "synonyms": [
+    "polished rice"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=white+rice",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đã loại bỏ lớp trấu hoặc lớp màu nâu bên ngoài.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bread",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Food made from dough of flour or meal and usually raised with yeast or baking powder and then baked.",
+   "extra_definitions": [
+    "[noun] A foodstuff made by baking dough made from cereals.",
+    "[noun] Any variety of bread.",
+    "[noun] Money."
+   ],
+   "synonyms": [
+    "breadstuff",
+    "staff of life"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bread",
+   "ipa_uk": "/bɹɛd/",
+   "ipa_us": "/bɹɛd/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/bread-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/bread-us.mp3"
+   },
+   "type_vi": "Động từ",
+   "definition_vi": "bánh mì",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "tea-like drink",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A beverage that resembles tea but is not made from tea leaves.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tea-like+drink",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại đồ uống tương tự như trà nhưng không được làm từ lá trà.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "shoulder",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A cut of meat including the upper joint of the foreleg.",
+   "extra_definitions": [
+    "[noun] The part of an animal's body between the base of the neck and forearm socket.",
+    "[noun] Anything forming a shape resembling a human shoulder.",
+    "[noun] (topography) A shelf between two levels."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=shoulder",
+   "example": "shoulder the blame",
+   "ipa_uk": "/ˈʃəʊldə/",
+   "ipa_us": "/ˈʃoʊldɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/shoulder-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "miếng thịt vai (thịt lợn...)",
+   "vi_source": "anhviet",
+   "example_vi": "gánh trách nhiệm"
+  },
+  {
+   "word": "rose apple",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fragrant oval yellowish tropical fruit used in jellies and confections.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rose+apple",
+   "type_vi": "Danh từ",
+   "definition_vi": "Trái cây nhiệt đới màu vàng hình bầu dục thơm được sử dụng trong thạch và bánh kẹo.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "dark meat",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The flesh of the legs of fowl used as food.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dark+meat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt chân gà dùng làm thực phẩm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "chocolate",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A food made from roasted ground cacao beans.",
+   "extra_definitions": [
+    "[noun] A food made from ground roasted cocoa beans.",
+    "[noun] A drink made by dissolving this food in boiling milk or water.",
+    "[noun] A single, small piece of confectionery made from chocolate."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chocolate",
+   "example": "Chocolate is a very popular treat.",
+   "ipa_uk": "/t͡ʃɔk(ə)lət/",
+   "ipa_us": "/ˈt͡ʃɔk(ə)lɪt/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/chocolate-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/chocolate-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một món ăn làm từ hạt cacao rang xay.",
+   "vi_source": "gtx",
+   "example_vi": "Sô cô la là một món ăn rất phổ biến."
+  },
+  {
+   "word": "meal",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The food served and eaten at one time.",
+   "extra_definitions": [
+    "[noun] Food that is prepared and eaten, usually at a specific time, and usually in a comparatively large quantity (as opposed to a snack).",
+    "[noun] Food served or eaten as a repast.",
+    "[noun] A time or an occasion."
+   ],
+   "synonyms": [
+    "repast"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=meal",
+   "example": "Breakfast is the morning meal, lunch is the noon meal, and dinner, or supper, is the evening meal.",
+   "ipa_uk": "/miːl/",
+   "ipa_us": "[miːʟ̩]",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/meal-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/meal-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "lượng sữa vắt (vắt một lần ở bò sữa)",
+   "vi_source": "anhviet",
+   "example_vi": "Bữa sáng là bữa sáng, bữa trưa là bữa trưa và bữa tối hay bữa tối là bữa tối."
+  },
+  {
+   "word": "soft drink",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Nonalcoholic beverage (usually carbonated).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soft+drink",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồ uống không có rượu",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "calm air",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Wind moving at less than 1 knot; 0 on the Beaufort scale.",
+   "extra_definitions": [],
+   "synonyms": [
+    "calm"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=calm+air",
+   "type_vi": "Danh từ",
+   "definition_vi": "Gió di chuyển với tốc độ dưới 1 hải lý/giờ; 0 trên thang đo Beaufort.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "culture medium",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A nutrient substance (solid or liquid) that is used to cultivate micro-organisms.",
+   "extra_definitions": [],
+   "synonyms": [
+    "medium"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=culture+medium",
+   "type_vi": "Danh từ",
+   "definition_vi": "môi trường nuôi cấy",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "double cream",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fresh soft French cheese containing at least 60% fat.",
+   "extra_definitions": [
+    "[noun] A relatively thick cream suitable for pouring, whipping and piping."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=double+cream",
+   "type_vi": "Danh từ",
+   "definition_vi": "kem đặc chất béo của sữa",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "heavy cream",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Contains more than 36% butterfat.",
+   "extra_definitions": [
+    "[noun] A rich cream, at least 36 percent of which is milkfat.",
+    "[noun] Pasteurized cream at least 36 percent of which is milkfat, optionally homogenized, and optionally containing added flavor, nutritive sweetener, emulsifier or stabilizer."
+   ],
+   "synonyms": [
+    "double cream"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=heavy+cream",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chứa hơn 36% chất béo bơ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "egg",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Oval reproductive body of a fowl (especially a hen) used as food.",
+   "extra_definitions": [
+    "[noun] An approximately spherical or ellipsoidal body produced by birds, reptiles, insects and other animals, housing the embryo during its development.",
+    "[noun] The egg of a domestic fowl (especially a hen) or its contents, used as food.",
+    "[noun] The female primary cell, the ovum."
+   ],
+   "synonyms": [
+    "eggs"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=egg",
+   "example": "I also determine the minimal amount of egg required to make good mayonnaise.",
+   "ipa_uk": "/eɪɡ/",
+   "ipa_us": "/eɪɡ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/egg-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Cơ thể sinh sản hình bầu dục của gà (đặc biệt là gà mái) dùng làm thức ăn.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi cũng xác định lượng trứng tối thiểu cần thiết để làm sốt mayonnaise ngon."
+  },
+  {
+   "word": "tea bag",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A measured amount of tea in a bag for an individual serving of tea.",
+   "extra_definitions": [
+    "[noun] A cloth or paper sachet containing tea leaves or herbal tea, designed to act as an infuser when submerged in hot water.",
+    "[verb] To lower one’s testicles into the mouth of another person, or onto the face or head of another person.",
+    "[verb] To sit or crouch repeatedly on the head of another player's character after they are dead."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tea+bag",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một lượng trà đo được trong túi cho một khẩu phần trà riêng lẻ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hot plate",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A portable electric appliance for heating or cooking or keeping food warm.",
+   "extra_definitions": [],
+   "synonyms": [
+    "hotplate"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hot+plate",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thiết bị điện cầm tay để sưởi ấm, nấu nướng hoặc giữ ấm thức ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cooking",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The act of preparing something (as food) by the application of heat.",
+   "extra_definitions": [
+    "[verb] To prepare (food) for eating by heating it, often by combining it with other ingredients.",
+    "[verb] To prepare (unspecified) food for eating by heating it, often by combining it with other ingredients.",
+    "[verb] To be cooked."
+   ],
+   "synonyms": [
+    "cookery",
+    "preparation"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "Cooking can be a great art.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cooking",
+   "ipa_uk": "/ˈkʊ.kɪŋ/",
+   "ipa_us": "/ˈkʊ.kɪŋ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "sự nấu; cách nấu ăn; (từ lóng) sự giả mạo, sự khai gian",
+   "vi_source": "anhviet",
+   "example_vi": "Nấu ăn có thể là một nghệ thuật tuyệt vời."
+  },
+  {
+   "word": "uncle",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The brother of your father or mother; the husband of your aunt.",
+   "extra_definitions": [
+    "[noun] The brother or brother-in-law of one’s parent.",
+    "[noun] The male cousin of one’s parent.",
+    "[noun] A companion to one's (usually unmarried) mother."
+   ],
+   "synonyms": [
+    "eam",
+    "eme"
+   ],
+   "antonyms": [
+    "aunt"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=uncle",
+   "ipa_uk": "/ˈʌŋ.kəl/",
+   "ipa_us": "/ˈʌŋ.kəl/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/uncle-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/uncle-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Anh trai của bố hoặc mẹ bạn; chồng của dì bạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "white chocolate",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A blend of cocoa butter and milk solids and sugar and vanilla.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=white+chocolate",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một sự pha trộn của bơ ca cao và chất rắn sữa, đường và vani.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "grace cup",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cup to be passed around for the final toast after a meal.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=grace+cup",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chiếc cốc sẽ được chuyền đi khắp nơi để nâng ly chúc mừng lần cuối sau bữa ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "pizza",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Italian open pie made of thin bread dough spread with a spiced mixture of e.",
+   "extra_definitions": [
+    "[noun] A baked Italian dish of a thinly rolled bread dough crust typically topped before baking with tomato sauce, cheese and other ingredients such as meat, vegetables or fruit",
+    "[noun] A single instance of this dish"
+   ],
+   "synonyms": [
+    "pizza pie"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pizza",
+   "example": "Want to go out for pizza tonight?",
+   "ipa_uk": "/ˈpiːt.sə/",
+   "ipa_us": "/ˈpiːt.sə/",
+   "type_vi": "Danh từ",
+   "definition_vi": "món pitsa (món ăn của ă, làm bằng bột nhão bẹt (tròn) được phủ phó mát, cá cơm và nướng trong bếp lò)",
+   "vi_source": "anhviet",
+   "example_vi": "Bạn muốn đi ăn pizza tối nay?"
+  },
+  {
+   "word": "great-uncle",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An uncle of your father or mother.",
+   "extra_definitions": [
+    "[noun] An uncle of one's parent (i.e. a brother or brother-in-law of one's grandparent)."
+   ],
+   "synonyms": [
+    "granduncle"
+   ],
+   "antonyms": [
+    "great-aunt",
+    "great-nephew",
+    "great-niece"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=great-uncle",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người chú của cha hoặc mẹ của bạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fruit bar",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cookies containing chopped fruits either mixed in the dough or spread between layers of dough then baked and cut in bars.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fruit+bar",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bánh quy chứa trái cây cắt nhỏ trộn trong bột hoặc trải giữa các lớp bột sau đó nướng và cắt thành từng thanh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cousin",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The child of your aunt or uncle.",
+   "extra_definitions": [
+    "[noun] The child of a person's uncle or aunt; a first cousin.",
+    "[noun] Any relation who is not a direct ancestor or descendant but part of one's extended family; one more distantly related than an uncle, aunt, granduncle, grandaunt, nephew, niece, grandnephew, grandniece, etc.",
+    "[noun] A title formerly given by a king to a nobleman, particularly to those of the council. In English writs, etc., issued by the crown, it signifies any earl."
+   ],
+   "synonyms": [
+    "first cousin",
+    "cousin-german",
+    "full cousin"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cousin",
+   "example": "I think my cousin is a good man.",
+   "ipa_uk": "/ˈkʌz.n̩/",
+   "ipa_us": "/ˈkʌz.n̩/",
+   "type_vi": "Danh từ",
+   "definition_vi": "anh (em họ); anh con bác, em con chú; anh (em) con cô con cậu; anh (em) con dì; anh cháu bác, em cháu chú",
+   "vi_source": "anhviet",
+   "example_vi": "Tôi nghĩ anh họ tôi là một người đàn ông tốt."
+  },
+  {
+   "word": "fruit drink",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sweetened beverage of diluted fruit juice.",
+   "extra_definitions": [],
+   "synonyms": [
+    "ade"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fruit+drink",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồ uống từ hoa quả",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "butter",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An edible emulsion of fat globules made by churning milk or cream; for cooking and table use.",
+   "extra_definitions": [
+    "[noun] A soft, fatty foodstuff made by churning the cream of milk (generally cow's milk).",
+    "[noun] Any of various foodstuffs made from other foods or oils, similar in consistency to, eaten like or intended as a substitute for butter (preceded by the name of the food used to make it).",
+    "[noun] Any specific soft substance."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=butter",
+   "example": "peanut butter",
+   "ipa_uk": "/ˈbʊtə/",
+   "ipa_us": "/ˈbʊtə/",
+   "type_vi": "Danh từ",
+   "definition_vi": "lời nịnh hót; sự bợ đỡ, sự nịnh nọt đê tiện",
+   "vi_source": "anhviet",
+   "example_vi": "bơ đậu phộng"
+  },
+  {
+   "word": "pot",
+   "cefr": "B1",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid.",
+   "extra_definitions": [
+    "[noun] A flat-bottomed vessel (usually metal) used for cooking food.",
+    "[noun] Various similar open-topped vessels, particularly",
+    "[noun] Pothole, sinkhole, vertical cave e.g. Rowten Pot"
+   ],
+   "synonyms": [
+    "cooking pot",
+    "cookpot",
+    "kitty",
+    "pool",
+    "kettlebelly",
+    "lib"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pot",
+   "example": "After his arrest, his prospects went to pot.",
+   "ipa_uk": "/pɒt/",
+   "ipa_us": "/pɑt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pot-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Nồi nấu bằng kim loại hoặc đất nung thường có hình tròn và sâu; thường có tay cầm và nắp đậy.",
+   "vi_source": "gtx",
+   "example_vi": "Sau khi bị bắt, triển vọng của anh ta trở nên tồi tệ."
+  },
+  {
+   "word": "variety meat",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Edible viscera of a butchered animal.",
+   "extra_definitions": [
+    "[noun] Offal"
+   ],
+   "synonyms": [
+    "organs"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=variety+meat",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nội tạng ăn được của động vật bị giết mổ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "pan",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cooking utensil consisting of a wide metal vessel.",
+   "extra_definitions": [
+    "[noun] A wide, flat receptacle used around the house, especially for cooking.",
+    "[noun] The contents of such a receptacle.",
+    "[noun] A cylindrical receptacle about as tall as it is wide, with one long handle, usually made of metal, used for cooking in the home."
+   ],
+   "synonyms": [
+    "cooking pan"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pan",
+   "ipa_uk": "/pæn/",
+   "ipa_us": "/pæn/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pan-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Dụng cụ nấu ăn bao gồm một bình kim loại rộng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "blood meal",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The dried and powdered blood of animals.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=blood+meal",
+   "type_vi": "Danh từ",
+   "definition_vi": "bột huyết",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "oil meal",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Ground oil cake.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=oil+meal",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bánh dầu đất.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fish cake",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A fried ball or patty of flaked fish and mashed potatoes.",
+   "extra_definitions": [],
+   "synonyms": [
+    "fish ball"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fish+cake",
+   "type_vi": "Danh từ",
+   "definition_vi": "bánh gồm có cá luộc và khoai tây ghém",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "case knife",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A metal blade with a handle; used as cutlery.",
+   "extra_definitions": [
+    "[noun] A knife carried in a sheath or case.",
+    "[noun] A large table knife of a kind formerly kept in a case."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=case+knife",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một lưỡi kim loại có tay cầm; dùng làm dao kéo.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "wish-wash",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any thin watery drink.",
+   "extra_definitions": [
+    "[noun] Any weak, thin drink."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wish-wash",
+   "type_vi": "Danh từ",
+   "definition_vi": "đồ uống nhạt (rượu, trà, cà phê lo ng)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "seed",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A small hard fruit.",
+   "extra_definitions": [
+    "[noun] A fertilized and ripened ovule, containing an embryonic plant.",
+    "[noun] Any small seed-like fruit.",
+    "[noun] Any propagative portion of a plant which may be sown, such as true seeds, seed-like fruits, tubers, or bulbs."
+   ],
+   "synonyms": [
+    "germ"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=seed",
+   "example": "If you plant a seed in the spring, you may have a pleasant surprise in the autumn.",
+   "ipa_uk": "/siːd/",
+   "ipa_us": "/siːd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/seed-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Quả nhỏ cứng.",
+   "vi_source": "gtx",
+   "example_vi": "Nếu bạn gieo hạt vào mùa xuân, bạn có thể nhận được một bất ngờ thú vị vào mùa thu."
+  },
+  {
+   "word": "piece de resistance",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The most important dish of a meal.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=piece+de+resistance",
+   "type_vi": "Danh từ",
+   "definition_vi": "Món quan trọng nhất của bữa ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "honey",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sweet yellow liquid produced by bees.",
+   "extra_definitions": [
+    "[noun] A viscous, sweet fluid produced from plant nectar by bees. Often used to sweeten tea or to spread on baked goods.",
+    "[noun] A variety of this substance.",
+    "[noun] Nectar."
+   ],
+   "synonyms": [
+    "mel",
+    "darling",
+    "sweetie"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=honey",
+   "example": "Honey, I'm home.",
+   "ipa_uk": "/ˈhʌni/",
+   "ipa_us": "/ˈhʌni/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/honey-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "mật ong; mật (của một vài loài sâu bọ khác); (nghĩa bóng) sự dịu dàng, sự ngọt ngào",
+   "vi_source": "anhviet",
+   "example_vi": "Em yêu, anh về rồi."
+  },
+  {
+   "word": "bell apple",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The edible yellow fruit of the Jamaica honeysuckle.",
+   "extra_definitions": [],
+   "synonyms": [
+    "sweet cup",
+    "water lemon",
+    "yellow granadilla"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bell+apple",
+   "type_vi": "Danh từ",
+   "definition_vi": "Quả màu vàng ăn được của cây kim ngân Jamaica.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "juice",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The liquid part that can be extracted from plant or animal tissue by squeezing or cooking.",
+   "extra_definitions": [
+    "[noun] A liquid from a plant, especially fruit.",
+    "[noun] A beverage made of juice.",
+    "[noun] Any liquid resembling juice."
+   ],
+   "synonyms": [
+    "cut",
+    "take",
+    "vig",
+    "vigorish"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=juice",
+   "example": "Squeeze the orange and some juice will come out.",
+   "ipa_uk": "/d͡ʒuːs/",
+   "ipa_us": "/d͡ʒus/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/juice-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ lóng) xăng, dầu; điện; nước ép (của quả, thịt, rau)",
+   "vi_source": "anhviet",
+   "example_vi": "Vắt cam và một ít nước sẽ chảy ra."
+  },
+  {
+   "word": "chocolate bar",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A bar of chocolate candy.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chocolate+bar",
+   "type_vi": "Danh từ",
+   "definition_vi": "thanh socola",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "wild rice",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Grains of aquatic grass of North America.",
+   "extra_definitions": [
+    "[noun] Any one of the four species of grasses which form the genus Zizania, which have edible grains and edible stems.",
+    "[noun] The edible grain (the edible rice) which is harvested from these grasses.",
+    "[noun] Oryza rufipogon"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wild+rice",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hạt cỏ thủy sinh của Bắc Mỹ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "chicken feed",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Dry mash for poultry.",
+   "extra_definitions": [
+    "[noun] Food (usually grain) given to poultry.",
+    "[noun] A very small or insignificant quantity, especially of money."
+   ],
+   "synonyms": [
+    "scratch"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chicken+feed",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bột khô dành cho gia cầm.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bird feed",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Food given to birds; usually mixed seeds.",
+   "extra_definitions": [],
+   "synonyms": [
+    "bird food",
+    "birdseed"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bird+feed",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thức ăn cho chim; thường trộn hạt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sugar bowl",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A dish in which sugar is served.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sugar+bowl",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một món ăn có phục vụ đường.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fish meal",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Ground dried fish used as fertilizer and as feed for domestic livestock.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fish+meal",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cá khô xay dùng làm phân bón và thức ăn cho vật nuôi.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "twin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Either of two offspring born at the same time from the same pregnancy.",
+   "extra_definitions": [
+    "[noun] Either of two people (or, less commonly, animals) who shared the same uterus at the same time; one who was born at the same birth as a sibling.",
+    "[noun] Either of two similar or closely related objects, entities etc.",
+    "[noun] A room in a hotel, guesthouse, etc. with two beds; a twin room."
+   ],
+   "synonyms": [
+    "doublet",
+    "twindle",
+    "twinling"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=twin",
+   "example": "Coventry twinned with Dresden as an act of peace and reconciliation, both cities having been heavily bombed during the war.",
+   "ipa_uk": "/twɪn/",
+   "ipa_us": "/twɪn/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/twin-us.mp3"
+   },
+   "type_vi": "Tính từ",
+   "definition_vi": "trẻ sinh đôi",
+   "vi_source": "anhviet",
+   "example_vi": "Coventry kết nghĩa với Dresden như một hành động hòa bình và hòa giải, cả hai thành phố đều bị ném bom nặng nề trong chiến tranh."
+  },
+  {
+   "word": "hot pot",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A stew of meat and potatoes cooked in a tightly covered pot.",
+   "extra_definitions": [],
+   "synonyms": [
+    "hotpot"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hot+pot",
+   "type_vi": "Danh từ",
+   "definition_vi": "Món thịt hầm và khoai tây nấu trong nồi đậy kín.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "foster home",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A household in which an orphaned or delinquent child is placed (usually by a social-service agency).",
+   "extra_definitions": [
+    "[noun] A household in which a child is raised by someone other than their natural or adoptive parent."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=foster+home",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hộ gia đình có trẻ mồ côi hoặc trẻ phạm pháp được nhận vào ở (thường là do cơ quan dịch vụ xã hội cung cấp).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cold cuts",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Sliced assorted cold meats.",
+   "extra_definitions": [
+    "[noun] Cooked, sliced meat served cold, as in a sandwich or a tray of finger food."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cold+cuts",
+   "type_vi": "Danh từ",
+   "definition_vi": "món thịt nguội với phó mát (cắt thành khoanh)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "cake mix",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A commercial mix for making a cake.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cake+mix",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một hỗn hợp thương mại để làm bánh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "mother's boy",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A boy excessively attached to his mother; lacking normal masculine interests.",
+   "extra_definitions": [],
+   "synonyms": [
+    "mamma's boy",
+    "mama's boy"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=mother's+boy",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một cậu bé quá gắn bó với mẹ; thiếu sở thích nam tính bình thường.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sauce",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Flavorful relish or dressing or topping served as an accompaniment to food.",
+   "extra_definitions": [
+    "[noun] A liquid (often thickened) condiment or accompaniment to food.",
+    "[noun] Tomato sauce (similar to US tomato ketchup), as in:",
+    "[noun] (usually “the”) Alcohol, booze."
+   ],
+   "synonyms": [
+    "sowl",
+    "wellspring"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sauce",
+   "example": "apple sauce; mint sauce",
+   "ipa_uk": "/sɔːs/",
+   "ipa_us": "/sɑs/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sauce-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Hương vị thơm ngon, nước sốt hoặc lớp phủ được dùng làm món ăn kèm.",
+   "vi_source": "gtx",
+   "example_vi": "sốt táo; nước sốt bạc hà"
+  },
+  {
+   "word": "tea bread",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Sweetened buns to be eaten with tea.",
+   "extra_definitions": [
+    "[noun] Light spongy bread or buns to accompany tea (the drink)."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tea+bread",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bánh ngọt ăn với trà.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "candy",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A rich sweet made of flavored sugar and often combined with fruit or nuts.",
+   "extra_definitions": [
+    "[noun] Edible, sweet-tasting confectionery containing sugar, or sometimes artificial sweeteners, and often flavored with fruit, chocolate, nuts, herbs and spices, or artificial flavors.",
+    "[noun] A piece of confectionery of this kind.",
+    "[noun] (slang, chiefly US) crack cocaine."
+   ],
+   "synonyms": [
+    "confect"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=candy",
+   "example": "Fruits preserved in sugar candy after a time.",
+   "ipa_uk": "/ˈkændi/",
+   "ipa_us": "/ˈkændi/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/candy-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một vị ngọt đậm đà làm từ đường có hương vị và thường kết hợp với trái cây hoặc các loại hạt.",
+   "vi_source": "gtx",
+   "example_vi": "Quả được bảo quản bằng kẹo đường sau một thời gian."
+  },
+  {
+   "word": "sole",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Lean flesh of any of several flatfish.",
+   "extra_definitions": [
+    "[noun] A wooden band or yoke put around the neck of an ox or cow in the stall."
+   ],
+   "synonyms": [
+    "fillet of sole"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sole",
+   "ipa_uk": "/səʊl/",
+   "ipa_us": "/soʊl/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sole-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "(động vật học) cá bơn",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "beef",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Meat from an adult domestic bovine.",
+   "extra_definitions": [
+    "[noun] The meat from a cow, bull or other bovine.",
+    "[noun] (plural: beefs) A grudge; dislike (of something or someone); lack of faith or trust (in something or someone); a reason for a dislike or grudge. (often + with)",
+    "[verb] To complain."
+   ],
+   "synonyms": [
+    "boeuf"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=beef",
+   "example": "I love eating beef.",
+   "ipa_uk": "/biːf/",
+   "ipa_us": "/biːf/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/beef-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt từ một con bò trưởng thành trong nhà.",
+   "vi_source": "gtx",
+   "example_vi": "Tôi thích ăn thịt bò."
+  },
+  {
+   "word": "egg roll",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Minced vegetables and meat wrapped in a pancake and fried.",
+   "extra_definitions": [
+    "[noun] A food made made by wrapping a combination of chopped vegetables, possibly meat, and sometimes noodles, in a sheet of dough, dipping the dough in egg or an egg wash, then deep frying it.",
+    "[noun] In many Asian countries and among their emigrants, an egg-based, flute-shaped pastry, with typically yellowish, flaky crust, often eaten as a sweet snack or dessert; a crispy biscuit roll.",
+    "[noun] An instance of the egg rolling tradition."
+   ],
+   "synonyms": [
+    "spring roll"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=egg+roll",
+   "type_vi": "Danh từ",
+   "definition_vi": "Rau và thịt băm bọc trong bánh kếp rồi chiên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hard sauce",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Butter and sugar creamed together with brandy or other flavoring and served with rich puddings.",
+   "extra_definitions": [
+    "[noun] A rich sweet dessert sauce for puddings, made by creaming or beating butter and sugar with rum, brandy, whiskey, sherry, vanilla, or other flavourings."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hard+sauce",
+   "type_vi": "Danh từ",
+   "definition_vi": "kem bơ đường cho vào rượu mạnh hoặc rum ăn cùng bánh put",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "white sauce",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Milk thickened with a butter and flour roux.",
+   "extra_definitions": [
+    "[noun] A simple sauce made from flour, milk and butter; Béchamel sauce.",
+    "[noun] Mayonnaise."
+   ],
+   "synonyms": [
+    "bechamel sauce",
+    "bechamel"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=white+sauce",
+   "type_vi": "Danh từ",
+   "definition_vi": "Sữa đặc với bơ và bột mì roux.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "menu",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The dishes making up a meal.",
+   "extra_definitions": [
+    "[noun] The details of the food to be served at a banquet; a bill of fare.",
+    "[noun] A list of dishes offered in a restaurant.",
+    "[noun] A list from which the user may select an operation to be performed, often done with a keyboard, mouse, or controller under a graphical user interface"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=menu",
+   "ipa_uk": "/ˈmɛnju/",
+   "ipa_us": "/ˈmɛnju/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/menu-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Các món ăn tạo nên một bữa ăn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "emperor",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Red table grape of California.",
+   "extra_definitions": [
+    "[noun] The male monarch or ruler of an empire.",
+    "[noun] Any monarch ruling an empire, irrespective of gender, with \"empress\" contrasting to mean when consort to emperor",
+    "[noun] (political theory) Specifically, the ruler of the Holy Roman Empire; the world-monarch."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=emperor",
+   "example": "The Investiture Controversy was a conflict between the Emperor and the Pope.",
+   "ipa_uk": "/ˈempɘɹɘ/",
+   "ipa_us": "/ˈɛmpəɹɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/emperor-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Nho bảng đỏ của California.",
+   "vi_source": "gtx",
+   "example_vi": "Cuộc tranh cãi về phong tước là cuộc xung đột giữa Hoàng đế và Giáo hoàng."
+  },
+  {
+   "word": "apple butter",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Thick dark spicy puree of apples.",
+   "extra_definitions": [
+    "[noun] Preserved apple purée with spices."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=apple+butter",
+   "type_vi": "Danh từ",
+   "definition_vi": "Táo nghiền nhuyễn đậm vị cay.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "won ton",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A Chinese dumpling filled with spiced minced pork; usually served in soup.",
+   "extra_definitions": [],
+   "synonyms": [
+    "wonton"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=won+ton",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại bánh bao Trung Quốc chứa đầy thịt lợn bằm tẩm gia vị; thường được phục vụ trong súp.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "grandfather",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The father of your father or mother.",
+   "extra_definitions": [
+    "[noun] A father of someone's parent.",
+    "[noun] (by extension) A male forefather.",
+    "[verb] To be, or act as, a grandfather to."
+   ],
+   "synonyms": [
+    "gramps",
+    "granddad",
+    "grandad",
+    "granddaddy",
+    "grandpa"
+   ],
+   "antonyms": [
+    "grandchild",
+    "granddaughter",
+    "grandmother",
+    "grandson"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=grandfather",
+   "ipa_uk": "/ˈɡɹæn(d)ˌfɑːðə(r)/",
+   "ipa_us": "/ˈɡɹæn(d)ˌfɑðɚ/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/grandfather-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/grandfather-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Cha của cha hoặc mẹ của bạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "root beer",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Carbonated drink containing extracts of roots and herbs.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=root+beer",
+   "type_vi": "Danh từ",
+   "definition_vi": "<Mỹ> đồ uống không có cồn, có hương vị của rễ vài thứ cây",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "egg cream",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Made of milk and flavored syrup with soda water.",
+   "extra_definitions": [
+    "[noun] A drink consisting of milk and soda water with vanilla or chocolate syrup."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=egg+cream",
+   "type_vi": "Danh từ",
+   "definition_vi": "Được làm từ sữa và xi-rô có hương vị với nước soda.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "brown sauce",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Bouillon or beef stock thickened with butter and flour roux and variously seasoned with herbs or Worcestershire etc.",
+   "extra_definitions": [
+    "[noun] A sauce made by the addition of stock to a heated and browned mixture of butter and flour.",
+    "[noun] Gravy",
+    "[noun] Any of many brands of bottled sauce based on malt vinegar, fruit and spices."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=brown+sauce",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nước dùng hoặc thịt bò hầm được làm đặc với bơ và bột mì roux và được nêm nhiều loại thảo mộc hoặc Worcestershire, v.v.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "rock candy",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Sugar in large hard clear crystals on a string.",
+   "extra_definitions": [
+    "[noun] A form of confectionery made by crystallizing sugar around a string."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rock+candy",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đường ở dạng tinh thể lớn, cứng và trong suốt trên một sợi dây.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "charlotte",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A mold lined with cake or crumbs and filled with fruit or whipped cream or custard.",
+   "extra_definitions": [
+    "[noun] A dessert consisting of sponge cake filled with fruit, and cream or custard."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=charlotte",
+   "ipa_uk": "/ˈʃɑːlət/",
+   "ipa_us": "/ˈʃɑɹlət/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/charlotte-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Khuôn có lót bánh hoặc vụn bánh và chứa đầy trái cây, kem tươi hoặc sữa trứng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sea bass",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The lean flesh of a saltwater fish of the family Serranidae.",
+   "extra_definitions": [
+    "[noun] Any of various species of saltwater fish in various families, or a specimen thereof, in several families in order Perciformes"
+   ],
+   "synonyms": [
+    "bass"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sea+bass",
+   "ipa_uk": "/ˈsiːbæs/",
+   "ipa_us": "/ˈsiːbæs/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt nạc của một loài cá nước mặn thuộc họ Serranidae.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "dish",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A particular item of prepared food.",
+   "extra_definitions": [
+    "[noun] A vessel such as a plate for holding or serving food, often flat with a depressed region in the middle.",
+    "[noun] The contents of such a vessel.",
+    "[noun] (metonym) A specific type of prepared food."
+   ],
+   "synonyms": [
+    "dishful",
+    "plate",
+    "plateful",
+    "babe",
+    "fox"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "example": "She prepared a special dish for dinner.",
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dish",
+   "ipa_uk": "/dɪʃ/",
+   "ipa_us": "/dɪʃ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/dish-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "đĩa (đựng thức ăn)",
+   "vi_source": "anhviet",
+   "example_vi": "Cô ấy đã chuẩn bị một món ăn đặc biệt cho bữa tối."
+  },
+  {
+   "word": "wrap",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A sandwich in which the filling is rolled up in a soft tortilla.",
+   "extra_definitions": [
+    "[verb] To enclose (an object) completely in any flexible, thin material such as fabric or paper.",
+    "[verb] To enclose or coil around an object or organism, as a form of grasping.",
+    "[verb] To conceal by enveloping or enfolding; to hide."
+   ],
+   "synonyms": [
+    "enfold",
+    "lap"
+   ],
+   "antonyms": [
+    "unwrap"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=wrap",
+   "example": "A snake wraps itself around its prey.",
+   "ipa_uk": "/ɹæp/",
+   "ipa_us": "/ɹæp/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/wrap-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại bánh sandwich có nhân được cuộn lại thành một chiếc bánh tortilla mềm.",
+   "vi_source": "gtx",
+   "example_vi": "Một con rắn quấn quanh con mồi."
+  },
+  {
+   "word": "candy bar",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A candy shaped as a bar.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=candy+bar",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một viên kẹo có hình dạng như một thanh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "pie",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Dish baked in pastry-lined pan often with a pastry top.",
+   "extra_definitions": [
+    "[noun] A type of pastry that consists of an outer crust and a filling.",
+    "[noun] Any of various other, non-pastry dishes that maintain the general concept of a shell with a filling.",
+    "[noun] (Northeastern US) A pizza."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pie",
+   "example": "The family had steak and kidney pie for dinner and cherry pie for dessert.",
+   "ipa_uk": "/paɪ/",
+   "ipa_us": "/paɪ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pie-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "tê; bánh nướng nhân ngọt; bánh pa",
+   "vi_source": "anhviet",
+   "example_vi": "Bữa tối cả gia đình ăn bít tết và bánh thận, tráng miệng là bánh anh đào."
+  },
+  {
+   "word": "chuck",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The part of a forequarter from the neck to the ribs and including the shoulder blade.",
+   "extra_definitions": [
+    "[noun] Meat from the shoulder of a cow or other animal.",
+    "[noun] Food.",
+    "[noun] A mechanical device that holds an object firmly in place, for example holding a drill bit in a high-speed rotating drill or grinder."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chuck",
+   "ipa_uk": "/tʃʌk/",
+   "ipa_us": "/tʃʌk/",
+   "type_vi": "Danh từ",
+   "definition_vi": "phần bả cổ con thịt (cừu); phần bả con thịt (bò)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "jam",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Preserve of crushed fruit.",
+   "extra_definitions": [
+    "[noun] A sweet mixture of fruit boiled with sugar and allowed to congeal. Often spread on bread or toast or used in jam tarts.",
+    "[noun] A difficult situation.",
+    "[noun] Blockage, congestion."
+   ],
+   "synonyms": [
+    "conserve",
+    "jelly",
+    "preserve",
+    "ram"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=jam",
+   "example": "A traffic jam caused us to miss the game's first period.",
+   "ipa_uk": "/ˈdʒæm/",
+   "ipa_us": "/ˈdʒæm/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/jam-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/jam-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Bảo quản trái cây nghiền.",
+   "vi_source": "gtx",
+   "example_vi": "Tắc đường khiến chúng tôi bỏ lỡ hiệp đầu tiên của trận đấu."
+  },
+  {
+   "word": "chocolate egg",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Egg-shaped chocolate candy.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=chocolate+egg",
+   "type_vi": "Danh từ",
+   "definition_vi": "Kẹo sôcôla hình quả trứng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "ice maker",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An appliance included in some electric refrigerators for making ice cubes.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ice+maker",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một thiết bị có trong một số tủ lạnh điện để làm đá viên.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "aunt",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The sister of your father or mother; the wife of your uncle.",
+   "extra_definitions": [
+    "[noun] The sister or sister-in-law of one’s parent.",
+    "[noun] The female cousin of one’s parent.",
+    "[noun] A woman of an older generation than oneself, especially a friend of one's parents, by means of fictive kin."
+   ],
+   "synonyms": [
+    "auntie",
+    "aunty"
+   ],
+   "antonyms": [
+    "uncle"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=aunt",
+   "ipa_uk": "/ɑ(ː)nt/",
+   "ipa_us": "/eɪnt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/aunt-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cô, dì, thím, mợ, bác gái",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "salad",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Food mixtures either arranged on a plate or tossed and served with a moist dressing; usually consisting of or including greens.",
+   "extra_definitions": [
+    "[noun] A food made primarily of a mixture of raw or cold ingredients, typically vegetables, usually served with a dressing such as vinegar or mayonnaise.",
+    "[noun] A raw vegetable of the kind used in salads."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=salad",
+   "ipa_uk": "/ˈsæləd/",
+   "ipa_us": "/ˈsæləd/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/salad-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Hỗn hợp thực phẩm được bày trên đĩa hoặc được trộn và dùng kèm với nước sốt ẩm; thường bao gồm hoặc bao gồm rau xanh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "bacon",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Back and sides of a hog salted and dried or smoked; usually sliced thin and fried.",
+   "extra_definitions": [
+    "[noun] Cured meat from the sides, belly or back of a pig.",
+    "[noun] Thin slices of the above in long strips.",
+    "[noun] The police or spies."
+   ],
+   "synonyms": [
+    "ham",
+    "pork"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bacon",
+   "type_vi": "Danh từ",
+   "definition_vi": "thịt lưng lợn muối xông khói; thịt hông lợn muối xông khói",
+   "vi_source": "anhviet",
+   "example": "Run! It's the bacon!",
+   "ipa_uk": "/ˈbeɪ.kən/",
+   "ipa_us": "/ˈbeɪ.kən/"
+  },
+  {
+   "word": "great-aunt",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An aunt of your father or mother.",
+   "extra_definitions": [
+    "[noun] An aunt of one's parent (i.e. a sister or sister-in-law of one's grandparent)."
+   ],
+   "synonyms": [
+    "grandaunt"
+   ],
+   "antonyms": [
+    "great-nephew",
+    "great-niece",
+    "great-uncle"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=great-aunt",
+   "type_vi": "Danh từ",
+   "definition_vi": "bà cô; bà dì; bà bác",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "soup",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Liquid food especially of meat or fish or vegetable stock often containing pieces of solid food.",
+   "extra_definitions": [
+    "[noun] Any of various dishes commonly made by combining liquids, such as water or stock with other ingredients, such as meat and vegetables, that contribute flavor and texture.",
+    "[noun] Any mixture or substance suggestive of soup consistency.",
+    "[verb] To feed: to provide with soup or a meal."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soup",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ), (từ lóng) trời mây mù dày đặc và có mưa (máy bay không bay được...); (từ Mỹ,nghĩa Mỹ), (từ lóng) Nitroglyxerin",
+   "vi_source": "anhviet",
+   "example": "Pho is a traditional Vietnamese soup.",
+   "ipa_uk": "/suːp/",
+   "ipa_us": "/sup/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/soup-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/soup-us.mp3"
+   }
+  },
+  {
+   "word": "fruit juice",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Drink produced by squeezing or crushing fruit.",
+   "extra_definitions": [
+    "[noun] The juice of one or more fruits."
+   ],
+   "synonyms": [
+    "fruit crush"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fruit+juice",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đồ uống được sản xuất bằng cách ép hoặc nghiền trái cây.",
+   "vi_source": "gtx",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/fruit%20juice-uk.mp3",
+    "us": null
+   }
+  },
+  {
+   "word": "sugar candy",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Made by boiling pure sugar until it hardens.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sugar+candy",
+   "type_vi": "Danh từ",
+   "definition_vi": "Được làm bằng cách đun sôi đường nguyên chất cho đến khi cứng lại.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "coffee maker",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A kitchen appliance for brewing coffee automatically.",
+   "extra_definitions": [
+    "[noun] Any of several different types of kitchen apparatus used to brew and filter coffee."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=coffee+maker",
+   "type_vi": "Danh từ",
+   "definition_vi": "máy rang cà phê",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "triple cream",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fresh soft French cheese containing at least 72% fat.",
+   "extra_definitions": [],
+   "synonyms": [
+    "triple creme"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=triple+cream",
+   "type_vi": "Danh từ",
+   "definition_vi": "Phô mai Pháp mềm tươi chứa ít nhất 72% chất béo.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fine spray",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Precipitation in very small drops.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fine+spray",
+   "type_vi": "Danh từ",
+   "definition_vi": "Lượng mưa ở những giọt rất nhỏ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "sandwich",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Two (or more) slices of bread with a filling between them.",
+   "extra_definitions": [
+    "[noun] A dish or foodstuff where two or more slices of bread serve as the wrapper or container of some other food.",
+    "[noun] (by extension) Any combination formed by layering one type of material between two layers of some other material.",
+    "[noun] A layer cake or sandwich cake."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=sandwich",
+   "ipa_uk": "/ˈsæmwɪd͡ʒ/",
+   "ipa_us": "/ˈsæmˌwɪt͡ʃ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/sandwich-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "lát bánh mì có kẹp nhân",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "fish and chips",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fried fish and french-fried potatoes.",
+   "extra_definitions": [
+    "[noun] A meal of fish fried in batter and served with chips (fried potato pieces), popular throughout the Anglosphere, especially in coastal regions."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fish+and+chips",
+   "type_vi": "Danh từ",
+   "definition_vi": "cá tẩm bột chiên dùng với khoai tây chiên",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "ham",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Meat cut from the thigh of a hog (usually smoked).",
+   "extra_definitions": [
+    "[noun] The region back of the knee joint; the popliteal space; the hock.",
+    "[noun] A thigh and buttock of an animal slaughtered for meat.",
+    "[noun] Meat from the thigh of a hog cured for food."
+   ],
+   "synonyms": [
+    "jambon",
+    "gammon"
+   ],
+   "antonyms": [
+    "spam"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ham",
+   "example": "a little piece of ham for the cat",
+   "ipa_uk": "/ˈhæm/",
+   "ipa_us": "/ˈhæm/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/ham-1-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/ham-1-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt cắt từ đùi lợn (thường hun khói).",
+   "vi_source": "gtx",
+   "example_vi": "một ít giăm bông cho con mèo"
+  },
+  {
+   "word": "half-and-half dressing",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Half mayonnaise and half vinaigrette seasoned with minced garlic and mashed anchovies and grated Parmesan cheese; especially good for combination salads.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=half-and-half+dressing",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một nửa sốt mayonnaise và một nửa dầu giấm trộn với tỏi băm, cá cơm nghiền và phô mai Parmesan bào; đặc biệt tốt cho món salad kết hợp.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "ash-key",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Winged seed of the ash tree.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=ash-key",
+   "type_vi": "Danh từ",
+   "definition_vi": "Hạt có cánh của cây tần bì.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "tea maker",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A covered spoon with perforations.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=tea+maker",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một chiếc thìa có nắp đậy có đục lỗ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "grandma",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "The mother of your father or mother.",
+   "extra_definitions": [
+    "[noun] Grandmother"
+   ],
+   "synonyms": [
+    "grandmother",
+    "granny",
+    "grannie",
+    "gran",
+    "nan"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=grandma",
+   "ipa_uk": "/ˈɡɹænmɑː/",
+   "ipa_us": "/ˈɡɹænmɑː/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Mẹ của bố hoặc mẹ của bạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "potato",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "An edible tuber native to South America; a staple food of Ireland.",
+   "extra_definitions": [
+    "[noun] The tuber of a plant, Solanum tuberosum, eaten as a starchy vegetable, particularly in the Americas and Europe; this plant.",
+    "[noun] A conspicuous hole in a sock or stocking",
+    "[noun] A camera that takes poor-quality pictures."
+   ],
+   "synonyms": [
+    "white potato",
+    "murphy",
+    "spud",
+    "tater"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=potato",
+   "ipa_uk": "/pəˈteɪ.təʊ/",
+   "ipa_us": "/pəˈteɪ.təʊ/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại củ ăn được có nguồn gốc từ Nam Mỹ; một món ăn chủ yếu của Ireland.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "hot pepper",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any of various pungent capsicum fruits.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=hot+pepper",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bất kỳ loại trái cây ớt cay nồng nào.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "lemon",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Yellow oval fruit with juicy acidic flesh.",
+   "extra_definitions": [
+    "[noun] A yellowish citrus fruit.",
+    "[noun] A semitropical evergreen tree, Citrus limon, that bears such fruits.",
+    "[noun] A taste or flavour/flavor of lemons."
+   ],
+   "synonyms": [
+    "bomb",
+    "PWP",
+    "smutfic"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=lemon",
+   "example": "He didn’t realise until he’d paid for it that the car was a lemon.",
+   "ipa_uk": "/ˈlɛmən/",
+   "ipa_us": "/ˈlɛmən/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/lemon-uk.mp3",
+    "us": null
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "màu vàng nhạt; quả chanh; cây chanh",
+   "vi_source": "anhviet",
+   "example_vi": "Anh ấy đã không nhận ra cho đến khi trả tiền rằng chiếc xe đó là một quả chanh."
+  },
+  {
+   "word": "apple pie",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Pie (with a top crust) containing sliced apples and sugar.",
+   "extra_definitions": [
+    "[noun] A pie or tart made with a filling of cooked apples.",
+    "[noun] Anything positive that is quintessentially American.",
+    "[verb] Of a bed, to make an apple-pie bed."
+   ],
+   "synonyms": [
+    "shortsheet"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=apple+pie",
+   "type_vi": "Danh từ",
+   "definition_vi": "Bánh nướng (có lớp vỏ trên cùng) chứa táo thái lát và đường.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "club sandwich",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Made with three slices of usually toasted bread.",
+   "extra_definitions": [
+    "[noun] A type of sandwich, often served as a double-decker and usually cut into quarters; traditionally made with turkey, bacon, lettuce, and tomato."
+   ],
+   "synonyms": [
+    "three-decker",
+    "triple-decker"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=club+sandwich",
+   "type_vi": "Danh từ",
+   "definition_vi": "bánh mì xăng úych kẹp thịt và gia vịchua",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "bride",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A woman who has recently been married.",
+   "extra_definitions": [
+    "[noun] A woman in the context of her own wedding; one who is going to marry or has just been married.",
+    "[noun] An object ardently loved.",
+    "[verb] To make a bride of"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=bride",
+   "ipa_uk": "/bɹaɪd/",
+   "ipa_us": "/bɹaɪd/",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một người phụ nữ vừa mới kết hôn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "grey sole",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Greyish-white flesh of a flatfish.",
+   "extra_definitions": [],
+   "synonyms": [
+    "gray sole"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=grey+sole",
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt cá dẹt có màu trắng xám.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "spotted dick",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A suet pudding containing currants.",
+   "extra_definitions": [
+    "[noun] A steamed suet pudding containing dried fruit, usually currants; traditional in England."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=spotted+dick",
+   "type_vi": "Danh từ",
+   "definition_vi": "bánh putdinh ngọt có nho khô",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "corn sugar",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Dextrose used as sweetening agent.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=corn+sugar",
+   "type_vi": "Danh từ",
+   "definition_vi": "Dextrose được sử dụng làm chất làm ngọt.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "cookie",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any of various small flat sweet cakes (`biscuit' is the British term).",
+   "extra_definitions": [
+    "[noun] A small, flat, baked good which is either crisp or soft but firm.",
+    "[noun] A sweet baked good (as in the previous sense) usually having chocolate chips, fruit, nuts etc. baked into it.",
+    "[noun] A bun."
+   ],
+   "synonyms": [
+    "cooky",
+    "biscuit"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cookie",
+   "ipa_uk": "/ˈkuːki/",
+   "ipa_us": "/ˈkuːki/",
+   "type_vi": "Danh từ",
+   "definition_vi": "(từ Mỹ,nghĩa Mỹ) bánh dẹt nhỏ, bánh quy; cốt) bánh bao",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "candy egg",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Egg-shaped candy.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=candy+egg",
+   "type_vi": "Danh từ",
+   "definition_vi": "Kẹo hình quả trứng.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "lemon oil",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fragrant yellow oil obtained from the lemon peel.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=lemon+oil",
+   "type_vi": "Danh từ",
+   "definition_vi": "dầu chanh",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "meat pie",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Pie made with meat or fowl enclosed in pastry or covered with pastry or biscuit dough.",
+   "extra_definitions": [
+    "[noun] (non-idiomatic usage) A pie containing meat.",
+    "[noun] A hand-sized pot pie containing largely minced meat and gravy and typically consumed as a takeaway food snack."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=meat+pie",
+   "example": "My sister-in-law from Corsica makes the best quiche and the best meat pie in the world.",
+   "type_vi": "Danh từ",
+   "definition_vi": "bánh nhân thịt",
+   "vi_source": "anhviet",
+   "example_vi": "Chị dâu của tôi đến từ Corsica làm món bánh quiche ngon nhất và bánh nhân thịt ngon nhất thế giới."
+  },
+  {
+   "word": "deep-freeze",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Electric refrigerator (trade name Deepfreeze) in which food is frozen and stored for long periods of time.",
+   "extra_definitions": [
+    "[noun] A freezer",
+    "[verb] To freeze at very low temperatures."
+   ],
+   "synonyms": [
+    "deep freezer",
+    "freezer"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=deep-freeze",
+   "type_vi": "Động từ",
+   "definition_vi": "Tủ lạnh điện (tên thương mại Deepfreeze) dùng để đông lạnh và bảo quản thực phẩm trong thời gian dài.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "rolling pin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Utensil consisting of a cylinder (usually of wood) with a handle at each end; used to roll out dough.",
+   "extra_definitions": [
+    "[noun] A food preparation utensil consisting of a cylinder with a handle at each end, used to flatten dough"
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rolling+pin",
+   "type_vi": "Danh từ",
+   "definition_vi": "Dụng cụ bao gồm một hình trụ (thường bằng gỗ) có tay cầm ở mỗi đầu; dùng để cán bột.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "lemon drop",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A hard candy with lemon flavor and a yellow color and (usually) the shape of a lemon.",
+   "extra_definitions": [
+    "[noun] A yellow lemon-flavored and lemon-shaped candy.",
+    "[noun] A cocktail of vodka with lemon juice and sugar."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=lemon+drop",
+   "type_vi": "Danh từ",
+   "definition_vi": "Một loại kẹo cứng có vị chanh, màu vàng và (thường) có hình quả chanh.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "oven",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Kitchen appliance used for baking or roasting.",
+   "extra_definitions": [
+    "[noun] A chamber used for baking or heating."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=oven",
+   "ipa_uk": "/ˈʌ.vn̩/",
+   "ipa_us": "/ˈʌ.vn̩/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/oven-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "lò (để hấp bánh, để dùng trong thí nghiệm hoá học)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "potato skin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Crisp fried potato peeling.",
+   "extra_definitions": [],
+   "synonyms": [
+    "potato peel",
+    "potato peelings"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=potato+skin",
+   "type_vi": "Danh từ",
+   "definition_vi": "Khoai tây gọt vỏ chiên giòn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "thermal",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Rising current of warm air.",
+   "extra_definitions": [
+    "[noun] A column of rising air in the lower atmosphere created by uneven heating of Earth's surface.",
+    "[verb] (stone) To create a rough finish on stone by treating it with a high-temperature blow-torch.",
+    "[verb] (gliding, often in the present participle) To fly an unpowered aircraft in a (thermal) column of rising air."
+   ],
+   "synonyms": [
+    "thermal column"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=thermal",
+   "ipa_uk": "/ˈθɝməl/",
+   "ipa_us": "/ˈθɝməl/",
+   "type_vi": "Tính từ",
+   "definition_vi": "Dòng không khí ấm áp dâng cao.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "nut",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Usually large hard-shelled seed.",
+   "extra_definitions": [
+    "[noun] A hard-shelled seed.",
+    "[noun] A piece of metal, usually square or hexagonal in shape, with a hole through it having machined internal threads, intended to be screwed onto a bolt or other threaded shaft.",
+    "[noun] A crazy person."
+   ],
+   "synonyms": [
+    "ball",
+    "bollock",
+    "nads",
+    "bonce",
+    "noodle",
+    "loony"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=nut",
+   "example": "There are many sort of nuts: peanuts, cashews, pistachios, Brazil nuts and more.",
+   "ipa_uk": "[nɐt]",
+   "ipa_us": "/nʌt/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/nut-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "hạt",
+   "vi_source": "anhviet",
+   "example_vi": "Có rất nhiều loại hạt: đậu phộng, hạt điều, quả hồ trăn, hạt Brazil và nhiều loại khác."
+  },
+  {
+   "word": "pork",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Meat from a domestic hog or pig.",
+   "extra_definitions": [
+    "[noun] The meat of a pig; swineflesh.",
+    "[noun] Funding proposed or requested by a member of Congress for special interests or his or her constituency as opposed to the good of the country as a whole.",
+    "[verb] (usually of a male) To have sex with (someone)."
+   ],
+   "synonyms": [
+    "porc"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=pork",
+   "example": "The cafeteria serves pork on Tuesdays.",
+   "ipa_uk": "/pɔːk/",
+   "ipa_us": "/pɔɹk/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/pork-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/pork-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "Thịt từ lợn nhà hoặc lợn.",
+   "vi_source": "gtx",
+   "example_vi": "Quán cà phê phục vụ thịt lợn vào các ngày thứ Ba."
+  },
+  {
+   "word": "dairy product",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Milk and butter and cheese.",
+   "extra_definitions": [
+    "[noun] Any foodstuff made from milk, such as cheese or yogurt."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=dairy+product",
+   "type_vi": "Danh từ",
+   "definition_vi": "sản phẩm sữa",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "soda water",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Effervescent beverage artificially charged with carbon dioxide.",
+   "extra_definitions": [
+    "[noun] Carbonated water, water that has carbon dioxide dissolved in it and has been stored under pressure in a bottle. Usually mixed before drinking with another beverage."
+   ],
+   "synonyms": [
+    "carbonated water",
+    "club soda",
+    "seltzer",
+    "sparkling water"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=soda+water",
+   "example": "\"Scotch and soda\" is a mixture of Scotch whisky and soda water.",
+   "type_vi": "Danh từ",
+   "definition_vi": "Đồ uống sủi bọt được tích điện nhân tạo bằng carbon dioxide.",
+   "vi_source": "gtx",
+   "example_vi": "\"Scotch and soda\" là hỗn hợp của rượu whisky Scotch và nước soda."
+  },
+  {
+   "word": "rat cheese",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Informal names for American cheddar.",
+   "extra_definitions": [],
+   "synonyms": [
+    "store cheese"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=rat+cheese",
+   "type_vi": "Danh từ",
+   "definition_vi": "Tên không chính thức cho phô mai cheddar của Mỹ.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "corn cake",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Baked in a pan or on a griddle (southern and midland).",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=corn+cake",
+   "type_vi": "Danh từ",
+   "definition_vi": "Nướng trên chảo hoặc trên vỉ (miền Nam và trung du).",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "fork",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cutlery used for serving and eating food.",
+   "extra_definitions": [
+    "[noun] A pronged tool having a long straight handle, used for digging, lifting, throwing etc.",
+    "[noun] A pronged tool for use in the garden; a smaller hand fork for weeding etc., or larger for turning over the soil.",
+    "[noun] A gallows."
+   ],
+   "synonyms": [
+    "branch",
+    "pitchfork",
+    "pommel",
+    "swell",
+    "annihilate",
+    "obliterate"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=fork",
+   "example": "West Fork White River and East Fork White River join together to form the White River of Indiana.",
+   "ipa_uk": "/fɔːk/",
+   "ipa_us": "/fɔɹk/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/fork-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/fork-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cái chĩa (dùng để gảy rơm...); cái nĩa (để xiên thức ăn)",
+   "vi_source": "anhviet",
+   "example_vi": "Sông White West Fork và East Fork White River hợp lại với nhau để tạo thành sông White của Indiana."
+  },
+  {
+   "word": "side of pork",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Dressed half of a hog carcass.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=side+of+pork",
+   "type_vi": "Danh từ",
+   "definition_vi": "Mặc quần áo bằng một nửa xác lợn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "combination salad",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Containing meat or chicken or cheese in addition to greens and vegetables.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=combination+salad",
+   "type_vi": "Danh từ",
+   "definition_vi": "Chứa thịt hoặc thịt gà hoặc phô mai ngoài rau xanh và rau quả.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "vitamin",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Any of a group of organic substances essential in small quantities to normal metabolism.",
+   "extra_definitions": [
+    "[noun] Any of a specific group of organic compounds essential in small quantities for healthy human growth, metabolism, development, and body function; found in minute amounts in plant and animal foods or sometimes produced synthetically; deficiencies of specific vitamins produce specific disorders."
+   ],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=vitamin",
+   "ipa_uk": "/ˈvɑet.ə.mən/",
+   "ipa_us": "/ˈvaɪ.tə.mɪn/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/vitamin-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "nhóm chất cần với số lượng rất nhỏ cho việc tăng trưởng và phát triển bình thường",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "nephew",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A son of your brother or sister.",
+   "extra_definitions": [
+    "[noun] A son of one's sibling, brother-in-law, or sister-in-law; either a son of one's brother (fraternal nephew) or a son of one's sister (sororal nephew).",
+    "[noun] A son of one's child."
+   ],
+   "synonyms": [
+    "grandson",
+    "neve"
+   ],
+   "antonyms": [
+    "niece"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=nephew",
+   "ipa_uk": "/ˈnɛf.ju/",
+   "ipa_us": "/ˈnɛf.ju/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/nephew-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "cháu trai (con của anh, chị, em)",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "banana",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Elongated crescent-shaped yellow fruit with soft sweet flesh.",
+   "extra_definitions": [
+    "[noun] An elongated curved tropical fruit that grows in bunches and has a creamy flesh and a smooth skin.",
+    "[noun] The tropical tree-like plant which bears clusters of bananas. The plant, usually of the genus Musa but sometimes also including plants from Ensete, has large, elongated leaves and is related to the plantain.",
+    "[noun] A yellow colour, like that of a banana's skin."
+   ],
+   "synonyms": [
+    "Twinkie",
+    "jook-sing"
+   ],
+   "antonyms": [
+    "egg"
+   ],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=banana",
+   "ipa_uk": "/bəˈnɑːnə/",
+   "ipa_us": "/bəˈnænə/",
+   "audio": {
+    "uk": "https://api.dictionaryapi.dev/media/pronunciations/en/banana-uk.mp3",
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/banana-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "quả chuối",
+   "vi_source": "anhviet"
+  },
+  {
+   "word": "great-nephew",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "A son of your niece or nephew.",
+   "extra_definitions": [
+    "[noun] A grandson of one's sibling; a son of one's nephew or niece. (Brother's grandson: fraternal grandnephew. Sister's grandson: sororal grandnephew.)"
+   ],
+   "synonyms": [
+    "grandnephew"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=great-nephew",
+   "type_vi": "Danh từ",
+   "definition_vi": "Con trai của cháu gái hoặc cháu trai của bạn.",
+   "vi_source": "gtx"
+  },
+  {
+   "word": "flour",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Fine powdery foodstuff obtained by grinding and sifting the meal of a cereal grain.",
+   "extra_definitions": [
+    "[noun] Powder obtained by grinding or milling cereal grains, especially wheat, or other foodstuffs such as soybeans and potatoes, and used to bake bread, cakes, and pastry.",
+    "[noun] The food made by grinding and bolting cleaned wheat (not durum or red durum) until it meets specified levels of fineness, dryness and freedom from bran and germ, also containing any of certain enzymes, ascorbic acid and certain bleaching agents.",
+    "[noun] Powder of other material."
+   ],
+   "synonyms": [
+    "plain flour",
+    "smeddum",
+    "wheat flour",
+    "white flour",
+    "cream",
+    "prime"
+   ],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=flour",
+   "example": "mustard flour",
+   "ipa_uk": "/ˈflaʊə/",
+   "ipa_us": "/ˈflaʊɚ/",
+   "audio": {
+    "uk": null,
+    "us": "https://api.dictionaryapi.dev/media/pronunciations/en/flour-us.mp3"
+   },
+   "type_vi": "Danh từ",
+   "definition_vi": "bột, bột mì",
+   "vi_source": "anhviet",
+   "example_vi": "bột mù tạt"
+  },
+  {
+   "word": "cut of pork",
+   "cefr": "B2",
+   "cefr_source": "inferred",
+   "type_en": "noun",
+   "definition_en": "Cut of meat from a hog or pig.",
+   "extra_definitions": [],
+   "synonyms": [],
+   "antonyms": [],
+   "topics": [
+    "daily-life"
+   ],
+   "source_ref": "http://wordnetweb.princeton.edu/perl/webwn?s=cut+of+pork",
+   "type_vi": "Danh từ",
+   "definition_vi": "Cắt thịt từ một con lợn hoặc lợn.",
+   "vi_source": "gtx"
+  }
+ ]
+}

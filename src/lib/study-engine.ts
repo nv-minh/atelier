@@ -3,6 +3,8 @@ import { prisma } from "./db";
 import { previewCard, Rating, STATES } from "./fsrs";
 import { addDays, formatInterval, normalizeWord, shuffle, todayStr } from "./utils";
 import { awardForReview, awardForSessionEnd } from "./gamification";
+import { selectNewWordIds } from "./selection/candidates";
+import { applyDrift } from "./selection/apply-drift";
 
 export type StudyWord = {
   id: string;
@@ -159,7 +161,11 @@ export async function fetchNewCards(
   where: any,
   wordFilter: Record<string, unknown>,
   starredIds: string[] | null,
-  limit: number
+  limit: number,
+  // The raw filter the learner applied, needed because it must WIN over their
+  // stored profile (a C1 learner clicking cefr=A1 gets A1 words). It cannot be
+  // recovered from `wordFilter`, which is already compiled to Prisma clauses.
+  filter: { cefr?: string; topic?: string } = {}
 ): Promise<StudyCard[]> {
   if (limit <= 0) return [];
   const now = new Date();
@@ -174,29 +180,39 @@ export async function fetchNewCards(
 
   const stillNeeded = limit - existingNew.length;
   if (stillNeeded > 0) {
-    const seenWordIds = (
-      await prisma.card.findMany({ where: { userId }, select: { wordId: true } })
-    ).map((c) => c.wordId);
+    let freshIds: string[];
 
-    // Intersect the starred scope with "not yet seen" so scope=starred is never
-    // padded with arbitrary unseen words (spreading wordFilter would otherwise let
-    // `id: { notIn }` clobber `id: { in: starredIds }`).
-    const freshWordFilter: any = { ...wordFilter };
     if (starredIds) {
+      // scope=starred keeps its original behaviour verbatim, including the
+      // intersect of "starred" with "not yet seen" — spreading wordFilter would
+      // let `id: { notIn }` clobber `id: { in: starredIds }`.
+      const seenWordIds = (
+        await prisma.card.findMany({ where: { userId }, select: { wordId: true } })
+      ).map((c) => c.wordId);
       const seen = new Set(seenWordIds);
+      const freshWordFilter: any = { ...wordFilter };
       freshWordFilter.id = { in: starredIds.filter((id) => !seen.has(id)) };
+      const freshWords = await prisma.word.findMany({
+        where: freshWordFilter,
+        take: stillNeeded,
+        orderBy: [{ cefr: "asc" }, { word: "asc" }],
+      });
+      freshIds = freshWords.map((w) => w.id);
     } else {
-      freshWordFilter.id = { notIn: seenWordIds };
+      // Level- and interest-aware selection. Replaces the old
+      // `orderBy: [{ cefr: "asc" }, { word: "asc" }]`, which handed every
+      // learner `a`, `abandon`, `ability`… regardless of their level.
+      freshIds = await selectNewWordIds({
+        userId,
+        limit: stillNeeded,
+        filter,
+        baseWhere: wordFilter,
+      });
     }
 
-    const freshWords = await prisma.word.findMany({
-      where: freshWordFilter,
-      take: stillNeeded,
-      orderBy: [{ cefr: "asc" }, { word: "asc" }],
-    });
-    for (const w of freshWords) {
+    for (const wordId of freshIds) {
       const card = await prisma.card.create({
-        data: { userId, wordId: w.id, due: now, state: 0 },
+        data: { userId, wordId, due: now, state: 0 },
         include: { word: true },
       });
       out.push(toStudyCard(card, true));
@@ -234,7 +250,10 @@ export async function buildStudyQueue(
 
   const newRemaining = Math.max(0, newLimit - (await countNewStudiedToday(userId)));
   const dueStudy = await fetchDueCards(where, reviewLimit);
-  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, newRemaining);
+  const newCards = await fetchNewCards(userId, where, wordFilter, starredIds, newRemaining, {
+    cefr: opts?.cefr,
+    topic: opts?.topic,
+  });
 
   const queue = [...dueStudy, ...newCards].slice(0, reviewLimit + newLimit);
   return {
@@ -560,6 +579,16 @@ export async function endSession(
   } catch (e) {
     console.error("awardForSessionEnd failed (session already ended):", e);
   }
+
+  // Band drift, same best-effort contract as the award above: the session is
+  // already ended, and a band nudge is never worth failing the request over. It
+  // rate-limits itself to once a day, so calling it on every session end is safe.
+  try {
+    await applyDrift(userId);
+  } catch (e) {
+    console.error("applyDrift failed (session already ended):", e);
+  }
+
   return { ok: true, xpGained: award.xpGained, unlocked: award.unlocked };
 }
 

@@ -16,9 +16,11 @@
 //
 // Usage: tsx prisma/import-packs.ts [--pack <name>] [--dry-run]
 //                                   [--refresh <fields>] [--refresh-baseline <ref>]
+import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import { execFileSync } from "child_process";
 import { packsFromArgv, packExists, readPack, packPath, PackWord, PackFile } from "../scripts/packs/lib/formats";
+import { freqForPackWord } from "../src/lib/freq";
 
 const prisma = new PrismaClient();
 const DRY_RUN = process.argv.includes("--dry-run");
@@ -86,7 +88,16 @@ type ExistingWord = {
   topics: string;
   audioUk: string | null;
   audioUs: string | null;
+  freqPct: number | null;
+  freqSource: string | null;
 };
+
+// rank → percentile, normalized against the pack's own size. The rule and the
+// reasoning live in src/lib/freq.ts (pure + unit-tested); this is the thin
+// binding from a PackFile to it.
+function freqFrom(w: PackWord, pack: PackFile) {
+  return freqForPackWord(pack.metadata.pack, w.rank, pack.metadata.count);
+}
 
 function parseArr(s: string): string[] {
   try {
@@ -97,10 +108,11 @@ function parseArr(s: string): string[] {
   }
 }
 
-function toCreateRow(w: PackWord) {
+function toCreateRow(w: PackWord, pack: PackFile) {
   return {
     word: w.word,
     cefr: w.cefr,
+    ...freqFrom(w, pack),
     typeEn: w.type_en ?? null,
     typeVi: w.type_vi ?? null,
     ipaUk: w.ipa_uk ?? null,
@@ -132,8 +144,17 @@ const REFRESH_COLUMN: Record<keyof typeof REFRESHABLE, keyof ExistingWord> = {
 // fields, union for topics. With --refresh, also overwrite the named fields when
 // the DB still holds the baseline (import-written) value. Returns null when
 // nothing would change.
-function buildUpdate(ex: ExistingWord, w: PackWord, base?: PackWord): Record<string, unknown> | null {
+function buildUpdate(ex: ExistingWord, w: PackWord, pack: PackFile, base?: PackWord): Record<string, unknown> | null {
   const data: Record<string, unknown> = {};
+
+  // Frequency is fill-only-if-empty like the other scalars: the first pack to
+  // supply a percentile for a word wins, so re-running an import never shuffles
+  // a word between two incomparable scales.
+  const freq = freqFrom(w, pack);
+  if (freq.freqPct !== null && ex.freqPct === null) {
+    data.freqPct = freq.freqPct;
+    data.freqSource = freq.freqSource;
+  }
 
   const packTopics = w.topics ?? [];
   if (packTopics.length) {
@@ -198,6 +219,7 @@ async function main() {
       id: true, word: true, cefr: true, typeEn: true, typeVi: true, ipaUk: true, ipaUs: true,
       definitionEn: true, definitionVi: true, extraDefs: true, example: true, exampleVi: true,
       synonyms: true, antonyms: true, topics: true, audioUk: true, audioUs: true,
+      freqPct: true, freqSource: true,
     },
   });
   const byWord = new Map<string, ExistingWord>(rows.map((r) => [r.word, r]));
@@ -218,15 +240,22 @@ async function main() {
     for (const w of pack.words) {
       const ex = byWord.get(w.word);
       if (!ex) {
-        creates.push(toCreateRow(w));
+        creates.push(toCreateRow(w, pack));
         created++;
       } else {
-        const data = buildUpdate(ex, w, baseline?.get(w.word));
+        const data = buildUpdate(ex, w, pack, baseline?.get(w.word));
         if (data) {
           updates.push({ word: w.word, data });
           updated++;
           // Reflect the merge locally so later packs union against fresh state.
           if (data.topics) ex.topics = data.topics as string;
+          // Same reason, but for fill-once: without this a word carried by two
+          // ranked packs would be updated twice and end up on whichever scale
+          // happened to run last, instead of the first one to claim it.
+          if (data.freqPct !== undefined) {
+            ex.freqPct = data.freqPct as number;
+            ex.freqSource = data.freqSource as string;
+          }
         } else {
           unchanged++;
         }
