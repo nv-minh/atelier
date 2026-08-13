@@ -10,6 +10,8 @@ import { RATING } from "@/lib/practice/types";
 import type { GradeSignals, PracticeItem, PracticeMode } from "@/lib/practice/types";
 import { SessionSummary } from "./session-summary";
 import { MODE_VIEWS } from "./modes";
+import { playSound } from "@/lib/sound";
+import { vibrate } from "@/lib/haptics";
 
 // How long the answer stays revealed before auto-advancing, per mode. This is a
 // LAZY PATH, not a lock: any pointer or key input advances immediately (D4).
@@ -219,6 +221,15 @@ export function PracticeShell({
         },
       });
       setReveal(r.correct ? "correct" : "wrong");
+      // One wiring point covers all four modes: every mode reports its result
+      // through onAnswer (the shell↔mode contract, practice-modes spec §4).
+      if (r.correct) {
+        playSound("correct");
+        vibrate(10);
+      } else {
+        playSound("wrong");
+        vibrate([20, 40, 20]);
+      }
       if (rating === RATING.Again && REQUEUE_ON_AGAIN[mode]) {
         setExtra((e) => [...e, current]);
       }
@@ -334,6 +345,7 @@ export function PracticeShell({
     if (endedRef.current) return;
     endedRef.current = true;
     setDone(true);
+    playSound("complete");
 
     const sid = sessionIdRef.current;
     if (!sid) return;

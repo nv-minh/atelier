@@ -29,7 +29,7 @@ export function RatingButtons({
 }) {
   const { t } = useI18n();
   return (
-    <div className="grid grid-cols-4 gap-2 sm:gap-3">
+    <div className="grid grid-cols-4 gap-2 sm:gap-3" data-nosound>
       {previews.map((p, i) => {
         const s = styles[i];
         return (

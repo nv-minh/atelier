@@ -79,7 +79,7 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
           ))}
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 gap-2.5">
+        <div className="grid sm:grid-cols-2 gap-2.5" data-nosound>
           {opts.options.map((opt, i) => {
             const isCorrect = i === opts.correctIndex;
             const isPicked = selected === i;

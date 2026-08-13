@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "@/components/i18n-provider";
 import { ACHIEVEMENT_BY_KEY } from "@/lib/gamification-defs";
+import { playSound } from "@/lib/sound";
 import { iconFor } from "./badge-icons";
 
 const AUTO_DISMISS_MS = 4000;
@@ -29,6 +30,7 @@ export function useAchievementToasts() {
       if (room <= 0) return cur; // at cap — drop extras
       const known = keys.filter((k) => ACHIEVEMENT_BY_KEY[k]);
       const added = known.slice(0, room).map((key) => ({ id: nextId.current++, key }));
+      if (added.length > 0) playSound("achievement");
       return [...cur, ...added];
     });
   }, []);

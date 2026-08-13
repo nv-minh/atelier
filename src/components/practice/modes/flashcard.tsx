@@ -5,6 +5,7 @@ import { Flashcard, type Card } from "@/components/study/flashcard";
 import { getRatingPreviewsClient } from "@/components/study/preview-client";
 import type { RatingPreview } from "@/components/study/rating-buttons";
 import type { ModeViewProps, PracticeItem, Rating } from "@/lib/practice/types";
+import { playSound } from "@/lib/sound";
 
 // The Flashcard component predates PracticeItem and is shared with cram-session
 // and topic-viewer, so its `Card` shape is left alone and adapted here. The only
@@ -73,7 +74,10 @@ export function FlashcardMode({ item, reveal, onAnswer, direction = "forward" }:
       if (reveal !== "hidden") return;
       if (e.key === " " || e.key === "Enter") {
         e.preventDefault();
-        setFlipped((f) => !f);
+        setFlipped((f) => {
+          playSound("flip");
+          return !f;
+        });
         return;
       }
       if (!flipped) return;
@@ -89,7 +93,12 @@ export function FlashcardMode({ item, reveal, onAnswer, direction = "forward" }:
         card={card}
         direction={direction}
         flipped={flipped}
-        onFlip={() => setFlipped((f) => !f)}
+        onFlip={() =>
+          setFlipped((f) => {
+            playSound("flip");
+            return !f;
+          })
+        }
         previews={previews}
         onRate={(r) => rate(r as Rating)}
         ratingDisabled={reveal !== "hidden"}
