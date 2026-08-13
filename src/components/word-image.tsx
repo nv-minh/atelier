@@ -13,6 +13,9 @@ export function isRealImage(url: string | null | undefined): boolean {
 }
 
 // Shows the word's image inline when a real image URL exists; otherwise nothing.
+// object-contain (no crop) inside a self-drawn frame: the wrapper centers the
+// image, caps its height via `maxH`, and fills any letterbox area with a subtle
+// bg so off-ratio photos read as intentional rather than broken.
 export function WordImage({
   imageUrl,
   word,
@@ -27,14 +30,21 @@ export function WordImage({
   const [err, setErr] = useState(false);
   if (!isRealImage(imageUrl) || err) return null;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={imageUrl!}
-      alt={word}
-      loading="lazy"
-      onError={() => setErr(true)}
-      className={cn("rounded-2xl object-cover w-full border border-line", maxH, className)}
-    />
+    <div
+      className={cn(
+        "flex items-center justify-center w-full overflow-hidden rounded-2xl border border-line bg-ink/5",
+        className
+      )}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={imageUrl!}
+        alt={word}
+        loading="lazy"
+        onError={() => setErr(true)}
+        className={cn("object-contain max-w-full h-auto", maxH)}
+      />
+    </div>
   );
 }
 
