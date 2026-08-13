@@ -6,23 +6,28 @@ import { BookOpen, BarChart3, Library, Settings, Layers, Compass, NotebookPen } 
 import { ThemeToggle } from "./theme-toggle";
 import { LangToggle } from "./lang-toggle";
 import { UserMenu } from "./user-menu";
+import { useAuthGate } from "./auth-gate";
 import { useI18n } from "./i18n-provider";
 import { cn } from "@/lib/utils";
 
 export function Nav() {
   const pathname = usePathname();
   const { t } = useI18n();
+  const { knownGuest } = useAuthGate();
   // hide nav during active study for focus
   const isStudying = pathname?.startsWith("/study/") && pathname !== "/study";
 
+  // `locked` tabs are the ones a guest cannot see the contents of. They stay
+  // tappable — the destination now renders <AuthRequired> — but carry a dot so
+  // the lock is visible before the tap, not discovered after it.
   const links = [
-    { href: "/", label: t("nav.studio"), icon: Layers, mobile: true },
-    { href: "/topics", label: t("nav.topics"), icon: Compass, mobile: true },
-    { href: "/browse", label: t("nav.library"), icon: Library, mobile: true },
-    { href: "/notebook", label: t("nav.notebook"), icon: NotebookPen, mobile: true },
-    { href: "/stats", label: t("nav.progress"), icon: BarChart3, mobile: true },
+    { href: "/", label: t("nav.studio"), icon: Layers, mobile: true, locked: false },
+    { href: "/topics", label: t("nav.topics"), icon: Compass, mobile: true, locked: false },
+    { href: "/browse", label: t("nav.library"), icon: Library, mobile: true, locked: false },
+    { href: "/notebook", label: t("nav.notebook"), icon: NotebookPen, mobile: true, locked: true },
+    { href: "/stats", label: t("nav.progress"), icon: BarChart3, mobile: true, locked: true },
     // Settings stays in the desktop nav / user menu; dropped from the mobile bottom bar to avoid crowding.
-    { href: "/settings", label: t("nav.settings"), icon: Settings, mobile: false },
+    { href: "/settings", label: t("nav.settings"), icon: Settings, mobile: false, locked: true },
   ];
   const mobileLinks = links.filter((l) => l.mobile);
 
@@ -101,7 +106,15 @@ export function Nav() {
                   active ? "text-ember" : "text-soft"
                 )}
               >
-                <Icon size={20} strokeWidth={active ? 2.4 : 1.8} />
+                <span className="relative">
+                  <Icon size={20} strokeWidth={active ? 2.4 : 1.8} />
+                  {knownGuest && l.locked && (
+                    <span
+                      aria-hidden
+                      className="absolute -right-1 -top-0.5 h-1.5 w-1.5 rounded-full bg-ember/70 ring-2 ring-paper"
+                    />
+                  )}
+                </span>
                 {l.label}
               </Link>
             );

@@ -4,7 +4,7 @@
 - **App**: https://vocab-master-dusky.vercel.app
 - **DB**: Neon Postgres (project `sparkling-bird-30788729`, database `neondb`), đã seed 3.677 từ.
 - **Env trên Vercel (production)**: `DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`.
-- **Auth**: GitHub OAuth (NextAuth v4) — đang BẬT. `AUTH_BYPASS` đã tắt trên prod (mọi route yêu cầu đăng nhập).
+- **Auth**: GitHub OAuth (NextAuth v4) — đang BẬT. `AUTH_BYPASS` đã tắt trên prod (khách chưa đăng nhập xem được landing page, danh sách chủ đề và trang đầu thư viện; phần còn lại hiện màn hình yêu cầu đăng nhập — xem mục Kiến trúc).
 
 > Local dev (`.env`) vẫn giữ `AUTH_BYPASS="1"` để chạy nhanh không cần login (GitHub OAuth app callback trỏ về prod, nên local sẽ mismatch — dùng bypass khi dev).
 
@@ -68,7 +68,16 @@ Sau khi xong: nút **Tiếp tục với Google** trên `/login` sẽ active. Nh�
 
 ## Kiến trúc
 - NextAuth v4 (JWT session) + Prisma Adapter + Google provider.
-- Mọi route học/ôn/thống kê bảo vệ bằng middleware → redirect `/login`.
+- **Cổng đăng nhập 2 lớp.** `middleware.ts` chỉ còn chặn `/study/*` → redirect `/login`.
+  Các route còn lại tự gọi `getCurrentUser()` rồi render `<AuthRequired>` (hoặc phần
+  công khai của trang) thay vì redirect: khách thấy nội dung giải thích tại chỗ, không
+  bị đá về `/login` — trước đây bị đá về chính trang họ đang đứng nên thao tác trông
+  như không có phản hồi. Công khai: `/`, `/topics`, `/browse` trang 1. Yêu cầu đăng
+  nhập: `/topics/[slug]`, `/browse` từ trang 2, `/word/*`, `/notebook`, `/stats`,
+  `/settings`. Thao tác chặn được ở client (mở chủ đề, sang trang 2, bấm sao) mở modal
+  trong `components/auth-gate.tsx`.
+- Cổng này là UX, không phải hàng rào dữ liệu: mọi route `/api/*` tự kiểm tra auth
+  (`requireUserId`), middleware chưa bao giờ phủ `/api`.
 - Data per-user (Card/ReviewLog/StudySession/DailyStat/Settings scope theo `userId`).
 - Neon dùng chung cho dev + prod (đây chính là cơ chế sync).
 

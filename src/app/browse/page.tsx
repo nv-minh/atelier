@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db";
 import { parseJsonArray } from "@/lib/utils";
 import { getCurrentUser } from "@/lib/session";
+import { AuthRequired } from "@/components/auth-required";
 import { LibraryClient } from "./library-client";
 
 export const dynamic = "force-dynamic";
@@ -16,6 +17,16 @@ export default async function BrowsePage({
   const cefr = searchParams.cefr || "ALL";
   const page = Math.max(1, Number(searchParams.page || "1"));
   const perPage = 40;
+
+  // Page 1 is the free sample; anything past it needs an account. The client
+  // intercepts the "next" tap, so this only fires on a direct/bookmarked URL.
+  if (!userId && page > 1) {
+    const sp = new URLSearchParams();
+    if (searchParams.q) sp.set("q", searchParams.q);
+    if (cefr && cefr !== "ALL") sp.set("cefr", cefr);
+    sp.set("page", String(page));
+    return <AuthRequired context="library" callbackUrl={`/browse?${sp.toString()}`} />;
+  }
 
   const where: any = {};
   if (cefr && cefr !== "ALL") where.cefr = cefr;
@@ -58,8 +69,11 @@ export default async function BrowsePage({
       imageUrl: w.imageUrl,
       synonyms: parseJsonArray(w.synonyms),
       example: w.example,
-      cardState: w.cards[0]?.state ?? null,
-      reps: w.cards[0]?.reps ?? 0,
+      // `cards` is omitted from the query entirely for a guest (include:false),
+      // so the relation is undefined rather than an empty array — optional
+      // chaining, not just an index guard.
+      cardState: w.cards?.[0]?.state ?? null,
+      reps: w.cards?.[0]?.reps ?? 0,
       starred: mark?.starred ?? false,
       hasNote: !!mark && mark.note !== "",
     };
@@ -73,6 +87,7 @@ export default async function BrowsePage({
       totalPages={Math.ceil(total / perPage)}
       q={q}
       cefr={cefr}
+      authed={!!userId}
     />
   );
 }

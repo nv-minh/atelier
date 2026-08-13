@@ -9,10 +9,13 @@ export function UserMenu() {
   const { data: session, status } = useSession();
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
   // When auth is bypassed (no real login), hide the user/login controls entirely.
   const bypass = process.env.NEXT_PUBLIC_AUTH_BYPASS === "1";
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     const h = (e: MouseEvent) => {
@@ -24,7 +27,11 @@ export function UserMenu() {
 
   if (bypass) return null;
 
-  if (status === "loading") {
+  // Server render and first client render must emit the SAME element. Session
+  // state is only known in the browser, so anything auth-dependent rendered
+  // before mount changes the shape of the nav row and React throws out the
+  // whole server tree ("hydration failed"), flashing the page for every guest.
+  if (!mounted || status === "loading") {
     return <div className="h-9 w-9 rounded-full bg-ink/10 animate-pulse" />;
   }
 

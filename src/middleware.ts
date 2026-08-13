@@ -14,6 +14,17 @@ export default function middleware(req: any) {
   return guard(req);
 }
 
+// Only /study is bounced to /login by the middleware. Every other gated route
+// —/topics, /browse, /notebook, /stats, /word, /settings— now renders its own
+// <AuthRequired> screen (or a partly-public page), and a middleware redirect
+// would preempt that: the guest would be thrown back to /login before the page
+// ever ran, which is exactly the "tapping the tab does nothing" bug, since
+// /login is usually where they already were.
+//
+// This does not loosen data access. Those pages call getCurrentUser() and show
+// the wall instead of user data, and every /api/* route enforces auth itself
+// (the matcher never covered /api). /study keeps the redirect because a study
+// session has no meaningful guest state to render at all.
 export const config = {
-  matcher: ["/study/:path*", "/stats/:path*", "/browse/:path*", "/settings/:path*", "/topics/:path*", "/notebook/:path*", "/word/:path*"],
+  matcher: ["/study/:path*"],
 };
