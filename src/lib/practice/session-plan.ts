@@ -114,8 +114,8 @@ export async function buildSessionPlan(
   const dueCards = await fetchDueCards(where, actual.reviewLimit);
   // Display order is due-first: the join order decides what the user sees,
   // not the fetch order. (`size: "all"` is safe here — its branch ignores
-  // newAllowanceToday when computing reviewLimit, so the second call returns
-  // the same limits as the first; no special-case needed.)
+  // newAllowanceToday when computing reviewLimit, so actual.reviewLimit equals
+  // budget.reviewLimit; actual.newLimit is never read. No special-case needed.)
   const queue = [...dueCards, ...newCards];
 
   const starred = new Set(
