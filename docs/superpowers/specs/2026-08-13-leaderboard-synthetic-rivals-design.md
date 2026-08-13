@@ -55,8 +55,8 @@ Ngoại lệ duy nhất: dấu **"hoạt động X giờ trước"** là cảm n
 
 ### Tiêu chí thành công
 
-1. User học đều theo nhịp thường lệ → nằm **hạng 4–8**, không phải hạng 1 và không phải chót. **Đã đo, còn bỏ ngỏ (final review, 2026-08-13):** trên sweep 100 id, NGAY TRƯỚC phiên học hôm nay user nằm 4–8 cho 83/100 id (trung vị hạng 6); NGAY SAU phiên học hôm nay chỉ còn 55/100 id, với 45/100 lọt hẳn top 3. Đóng khoảng cách này nghĩa là phải đưa nhịp/tần suất hoạt động của chính user vào công thức hiệu chuẩn rival (hiện chỉ dùng median XP/ngày, không phân biệt "vừa học xong hôm nay" hay chưa) — các hằng số liên quan vẫn là **giá trị khởi điểm** theo §9.1, chưa phải kết quả đo.
-2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào. **Đã đo, còn bỏ ngỏ:** vế "cày hơn → top 3" đúng (cày gấp đôi nhịp cả tuần đưa user vào top 3). Vế "nghỉ 2 ngày → tụt khỏi top 8" thì KHÔNG đúng với hiệu chuẩn hiện tại: ở mức nghỉ đúng 2/7 ngày (5/7 ngày hoạt động), 49/60 id vẫn ở trong 4–8. Cùng nguyên nhân với tiêu chí 1 — xem lưu ý "giá trị khởi điểm" ở §9.1.
+1. User học đều theo nhịp thường lệ → nằm **hạng 4–8**, không phải hạng 1 và không phải chót. **Đã đo lại sau hiệu chuẩn theo sản lượng tuần (2026-08-13, xem §3.1/§3.2):** trên cùng sweep 100 id, NGAY SAU phiên học hôm nay (đã bắt kịp nhịp) user nằm 4–8 cho 87/100 id — TĂNG từ 55/100 — trung vị hạng 6 (từ 4), lọt top 3 chỉ còn 6/100 (từ 45/100), hạng 1 chỉ 0/100 (từ 5/100): đúng bias mà bản đo final-review 2026-08-13 nêu ra, và số đo xác nhận đã sửa. Nhưng NGAY TRƯỚC phiên học hôm nay (thiếu đúng một buổi so với nhịp) lại xấu đi: chỉ còn 50/100 id trong 4–8 (từ 83/100), trung vị hạng 8.5 (từ 6), và 3/100 id rơi hẳn xuống chót bảng (từ 0/100) — xem `board.test.ts`. Đây là đánh đổi đo được, chưa xử lý, không phải bug: hiệu chuẩn đúng hơn (paceFactor phản ánh đúng sản lượng tuần thay vì bị `restProb` âm thầm giảm nhẹ) khiến thiếu một buổi so với nhịp mất hạng rõ hơn. Câu hỏi hiệu chuẩn coi như đã đóng ở nhánh "sau phiên", còn mở ở nhánh "trước phiên".
+2. User cày hơn thường lệ trong tuần → **leo được** top 3. User nghỉ 2 ngày → **tụt** khỏi top 8. Cả hai không cần luật riêng nào. **Đã đo lại sau hiệu chuẩn theo sản lượng tuần:** vế "cày hơn → top 3" vẫn đúng (cày gấp đôi nhịp cả tuần đưa user vào top 3 cho 60/60 id đo được, không đổi). Vế "nghỉ 2 ngày → tụt khỏi top 8" giờ ĐÚNG rõ hơn nhiều: ở mức nghỉ đúng 2/7 ngày (5/7 ngày hoạt động), chỉ còn 23/60 id ở trong 4–8 (từ 49/60) — tức 37/60 id giờ tụt khỏi top 8 như tiêu chí mô tả, trung vị hạng chuyển từ trong-khoảng sang hạng 9. Cùng nguyên nhân với tiêu chí 1: paceFactor không còn bị `restProb` che bớt.
 3. Mở bảng trên 2 thiết bị, hoặc refresh 5 lần → **cùng một bảng**, cùng số.
 4. Lúc 2h sáng giờ VN, **dưới 25%** tổng số dòng rival (gộp trên nhiều user) đọc là "vừa hoạt động" (dưới 6 giờ) — đo được ≈12.4% — và không user nào có ≥ 7/10 rival cùng "vừa hoạt động" một lúc. (Cách diễn đạt cũ — "hoạt động từ hôm qua trở về trước" — vượt quá những gì formatter thực sự hiển thị: 12 giờ trước hiện đúng "12 giờ trước", không bao giờ "hôm qua"; câu trên diễn đạt đúng cận mà test khẳng định.)
 5. Không rival nào có XP tuần vượt `2.2 ×` (nhịp user × 7).
@@ -83,7 +83,6 @@ Không bảng bot, không cron, không job. 10 rival là **hàm thuần của `(
 |---|---|---|
 | `rng.ts` | thuần | hash chuỗi (cyrb128) + PRNG (mulberry32); `(userId, weekKey, i)` → seed → dãy số |
 | `personas.ts` | data | pool ~60 tên gọi Việt + bảng màu avatar |
-| `week.ts` | thuần | `weekKey(date)` → `"YYYY-Www"` theo **UTC**, tuần bắt đầu thứ Hai; danh sách 7 `dateStr` của tuần |
 | `rivals.ts` | thuần | sinh 10 persona + tính cách cho một `(userId, weekKey)` |
 | `pace.ts` | server mỏng | đo nhịp user từ `DailyStat` |
 | `board.ts` | thuần | `(rivals, pace, userWeeklyXp, now)` → bảng đã sort + Δ hạng + lastActive |
@@ -98,10 +97,15 @@ Trang `/leaderboard` là **server component đọc Prisma trực tiếp** (theo 
 
 ### 3.1 Nhịp user
 
-`pace.ts`: median XP/ngày của **7 ngày gần nhất**, mỗi ngày lấy qua `totalXp(row)`. Ngày không có row tính là 0.
+`pace.ts` đo HAI nhịp khác nhau từ cùng **7 ngày `DailyStat` gần nhất** (mỗi ngày lấy qua `totalXp(row)`, ngày không có row tính là 0), và chỉ một trong hai được đưa vào hiệu chuẩn rival:
 
-- User mới (< 3 ngày có dữ liệu) → dùng `Settings.dailyGoalXp` làm nhịp giả định. Không có nhánh này thì user mới có `pace = 0` và toàn bộ rival sinh ra XP 0.
-- Dùng **median** chứ không phải mean: một hôm cày 600 XP không được phép đẩy cả bảng lên rồi làm user tụt hạng suốt tuần sau.
+- `sessionPace` — median XP/ngày, tính CHỈ trên những ngày có hoạt động. Đo độ NẶNG của một buổi học — không phân biệt buổi đó có hiếm hay không.
+- `dailyPace` = `round(sessionPace × activeDays / 7)` — nhịp đó dàn đều ra cả tuần, tức **sản lượng tuần thật** của user quy về một con số/ngày. Đây là con số đưa vào `buildBoard` để hiệu chuẩn rival, **không phải** `sessionPace`.
+
+**Vì sao tách hai nhịp (sửa 2026-08-13):** một user học 2 buổi/tuần rất nặng và một user học nhẹ đều 7 ngày có thể có cùng `sessionPace`, nhưng sản lượng tuần khác hẳn nhau. Hiệu chuẩn rival theo `sessionPace` (bản gốc) có lỗi hệ thống hai chiều: rival của user học 2 buổi/tuần bị đặt ở đúng cường độ buổi học đó **mỗi ngày trong tuần** (phạt nặng — sản lượng tuần thật của user chỉ ~2 buổi, rival chạy như 7 buổi); còn rival của user học đều 7 ngày lại (do một lỗi hiệu chuẩn khác, xem 3.2) chạy dưới `sessionPace` một chút mỗi ngày, nên user "học đều mỗi ngày" thắng rival một cách không do thực lực. `dailyPace` sửa lỗi thứ nhất.
+
+- User mới (< 3 ngày có dữ liệu) → CẢ HAI nhịp cùng dùng `Settings.dailyGoalXp` làm giả định, và `dailyPace` **không** bị chia nhỏ theo `activeDays` ở đây — một goal đã là mục tiêu MỖI NGÀY, chia nhỏ nó theo 1-2 ngày dữ liệu ít ỏi sẽ làm rival của user mới gần như miễn phí. Không có nhánh này thì user mới có pace = 0 và toàn bộ rival sinh ra XP 0.
+- Dùng **median** cho `sessionPace`, chứ không phải mean: một hôm cày 600 XP không được phép đẩy cả bảng lên rồi làm user tụt hạng suốt tuần sau.
 
 ### 3.2 Năm tham số tất định mỗi rival
 
@@ -116,6 +120,14 @@ Trang `/leaderboard` là **server component đọc Prisma trực tiếp** (theo 
 Cộng `formTrend` trôi theo tuần (phong độ lên/xuống giữa các tuần).
 
 `XP ngày = f(tính cách, hash(rivalId, dateStr))`. Các hành vi "người" — cày cuối tuần, mất 2 ngày rồi quay lại mạnh — **rơi ra từ tham số**, không cần luật riêng cho từng kiểu.
+
+**Phép chia `1 / (1 − restProb)` (sửa 2026-08-13):** `paceFactor` phải mang nghĩa "sản lượng TUẦN của rival này so với `dailyPace` của user", nhưng rival chỉ tạo XP vào những ngày không nghỉ — nên XP mỗi ngày hoạt động được chia cho phần trăm ngày hoạt động, `(1 − restProb)`, để bù lại đúng phần ngày nghỉ:
+
+```
+rivalDailyXp = round(dailyPace × paceFactor × jitter × weekend × form / (1 − restProb))
+```
+
+Không có phép chia này, `restProb` âm thầm biến thành một tham số SỨC MẠNH ẩn: một rival nghỉ nhiều (restProb cao) có sản lượng tuần thật thấp hơn hẳn `paceFactor` hứa hẹn, bất kể `paceFactor` của nó là bao nhiêu — nghĩa là rival "thất thường" luôn yếu hơn rival "đều đặn" cùng `paceFactor`, một hiệu ứng phụ không ai chủ ý thiết kế. `restProb` bị chặn ở `REST_PROB_MAX = 0.45` (< 1) nên mẫu số `(1 − restProb)` luôn nằm trong `[0.55, 0.95]` — không bao giờ bằng 0. Luật cưỡng chế nghỉ của `dailyXpForAll` (mục 5.2) vẫn trừ thêm một rival-ngày mỗi ngày, nên sản lượng tuần thật của rival vẫn thấp hơn danh nghĩa vài phần trăm — có chủ đích, giữ user "đúng nhịp" nhỉnh hơn trung vị một chút thay vì nằm đúng giữa.
 
 ### 3.3 Cap
 
@@ -186,7 +198,7 @@ D1 → D2 → D3 tuần tự, nhưng cả ba đều **không phụ thuộc gói 
 
 ## 9. Giả định do tác giả spec quyết, không do người dùng chọn
 
-1. **Mọi con số tune được nằm trong một `constants.ts`**: cap 2.2, khoảng `paceFactor` 0.55–1.6, số rival giữ lại 4–5, ngưỡng "≥8/10 lúc đêm", số rival = 10. Giá trị **khởi điểm**, không phải kết quả đo.
+1. **Mọi con số tune được nằm trong một `constants.ts`**: cap 2.2, khoảng `paceFactor` 0.55–1.6, số rival giữ lại 4–5, số rival = 10. Giá trị **khởi điểm**, không phải kết quả đo. (Ngưỡng "≥8/10 lúc đêm" của bản gốc bị bỏ theo ruling R9 — mục 5.4 — và không còn là hằng số nào trong `constants.ts`; luật thay thế của nó là một tính chất đo được của lệch trục VN/UTC, không phải một tunable.)
 2. **10 rival + user = 11 dòng.** Đủ để có top 3 đáng leo và có đáy đáng tránh, vừa một màn mobile không cần scroll.
 3. **Pool tên ~60**, tất cả tên gọi Việt hai âm. Đủ để 10 tên/tuần không trùng và không lặp lại sớm. Tên do người viết, không sinh bằng thuật toán ghép âm — ghép âm dễ ra tên nghe sai.
 4. **Streak của rival suy từ `restProb`, không lưu.** Nghĩa là nó là con số nhất quán với hành vi chứ không phải lịch sử thật; nếu sau này có drill-down "7 ngày qua của rival này" thì phải sinh từ cùng seed để hai chỗ không lệch.
