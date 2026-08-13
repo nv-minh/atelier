@@ -360,10 +360,10 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     login: {
       title1: "Chào mừng đến",
       title2: "Atelier",
-      subtitle: "Đăng nhập để đồng bộ tiến độ học của bạn qua GitHub trên mọi thiết bị.",
+      subtitle: "Đăng nhập để đồng bộ tiến độ học của bạn trên mọi thiết bị.",
       google: "Tiếp tục với Google",
       github: "Đăng nhập với GitHub",
-      notice: "Đăng nhập GitHub chưa được bật trên server. Cần cấu hình GITHUB_CLIENT_ID/SECRET.",
+      notice: "Đăng nhập Google chưa được bật trên server. Cần cấu hình GOOGLE_CLIENT_ID/SECRET.",
     },
     topics: {
       header: "— Học theo chủ đề",
@@ -789,10 +789,10 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     login: {
       title1: "Welcome to",
       title2: "Atelier",
-      subtitle: "Sign in to sync your learning progress across devices via GitHub.",
+      subtitle: "Sign in to sync your learning progress across devices.",
       google: "Continue with Google",
       github: "Sign in with GitHub",
-      notice: "GitHub sign-in is not enabled on the server yet. Configure GITHUB_CLIENT_ID/SECRET.",
+      notice: "Google sign-in is not enabled on the server yet. Configure GOOGLE_CLIENT_ID/SECRET.",
     },
     topics: {
       header: "— Browse by theme",
