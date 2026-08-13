@@ -2,6 +2,7 @@
 
 import { Star } from "lucide-react";
 import { useState } from "react";
+import { useAuthGate } from "./auth-gate";
 import { cn } from "@/lib/utils";
 
 export function StarButton({
@@ -17,11 +18,15 @@ export function StarButton({
 }) {
   const [starred, setStarred] = useState(initialStarred);
   const [saving, setSaving] = useState(false);
+  const { requireAuth } = useAuthGate();
 
   const toggle = async (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (saving) return;
+    // A guest starring a word would optimistically fill the star, then have it
+    // snap back when /api/notebook rejects the write. Ask for the login first.
+    if (!requireAuth({ reason: "star" })) return;
     const next = !starred;
     setStarred(next); // optimistic
     setSaving(true);

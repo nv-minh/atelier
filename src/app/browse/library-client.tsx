@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { Search, StickyNote } from "lucide-react";
+import { Search, StickyNote, Lock } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
 import { StarButton } from "@/components/star-button";
+import { useAuthGate, useGuestGuard } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { cn } from "@/lib/utils";
@@ -45,6 +46,7 @@ export function LibraryClient({
   totalPages,
   q,
   cefr,
+  authed = true,
 }: {
   items: Item[];
   total: number;
@@ -52,11 +54,25 @@ export function LibraryClient({
   totalPages: number;
   q: string;
   cefr: string;
+  authed?: boolean;
 }) {
   const router = useRouter();
   const { t } = useI18n();
+  const { open: openGate } = useAuthGate();
+  const guard = useGuestGuard(authed);
   const [search, setSearch] = useState(q);
   const [isPending, startTransition] = useTransition();
+
+  // Guests read page 1 freely; paging deeper raises the prompt instead of
+  // navigating to a wall they did not ask for.
+  const goToPage = (next: number) => {
+    const href = `/browse?${mkQs(q, cefr, next)}`;
+    if (!authed) {
+      openGate({ callbackUrl: href, reason: "library" });
+      return;
+    }
+    router.push(href);
+  };
 
   const update = (params: Record<string, string | undefined>) => {
     const sp = new URLSearchParams();
@@ -128,7 +144,11 @@ export function LibraryClient({
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 flex-wrap">
-                  <Link href={`/word/${encodeURIComponent(w.word)}`} className="display text-lg hover:text-ember transition-colors">
+                  <Link
+                    href={`/word/${encodeURIComponent(w.word)}`}
+                    onClick={guard(`/word/${encodeURIComponent(w.word)}`, "word")}
+                    className="display text-lg hover:text-ember transition-colors"
+                  >
                     {w.word}
                   </Link>
                   {w.ipaUk && <span className="font-mono text-xs text-soft">{w.ipaUk}</span>}
@@ -165,7 +185,7 @@ export function LibraryClient({
         <div className="flex items-center justify-center gap-2 mt-8">
           <button
             disabled={page <= 1}
-            onClick={() => router.push(`/browse?${mkQs(q, cefr, page - 1)}`)}
+            onClick={() => goToPage(page - 1)}
             className="rounded-full border border-line px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
           >
             {t("browse.prev")}
@@ -175,10 +195,11 @@ export function LibraryClient({
           </span>
           <button
             disabled={page >= totalPages}
-            onClick={() => router.push(`/browse?${mkQs(q, cefr, page + 1)}`)}
-            className="rounded-full border border-line px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
+            onClick={() => goToPage(page + 1)}
+            className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
           >
             {t("browse.next")}
+            {!authed && <Lock size={12} className="text-ember" aria-hidden />}
           </button>
         </div>
       )}

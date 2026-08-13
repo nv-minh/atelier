@@ -32,10 +32,13 @@ export function NotebookClient({
   tab,
   entries,
   leeches,
+  gate,
 }: {
   tab: "starred" | "leeches";
   entries: Entry[];
   leeches: Entry[];
+  /** Sign-in panel rendered in place of the entries when nobody is signed in. */
+  gate?: React.ReactNode;
 }) {
   const { t } = useI18n();
 
@@ -48,7 +51,8 @@ export function NotebookClient({
         </h1>
       </header>
 
-      {/* Tabs */}
+      {/* Tabs — kept visible for guests so the page reads as the notebook,
+          just empty, rather than as a generic access-denied screen. */}
       <div className="flex gap-2 mb-8 border-b border-line">
         <TabLink href="/notebook" active={tab === "starred"}>
           <Star size={14} /> {t("notebook.tabStarred")} ({entries.length})
@@ -58,11 +62,11 @@ export function NotebookClient({
         </TabLink>
       </div>
 
-      {tab === "starred" ? (
+      {gate ?? (tab === "starred" ? (
         <StarredPanel entries={entries} />
       ) : (
         <LeechesPanel leeches={leeches} />
-      )}
+      ))}
     </main>
   );
 }

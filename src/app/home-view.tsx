@@ -6,6 +6,7 @@ import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { LevelCard } from "@/components/gamification/level-card";
 import { GoalRing } from "@/components/gamification/goal-ring";
+import { DailyQuote } from "@/components/daily-quote";
 import { useI18n } from "@/components/i18n-provider";
 import type { GamificationSummary } from "@/lib/gamification";
 
@@ -127,6 +128,11 @@ export function HomeView({
           <CefrProgress stats={stats.cefrStats} />
         </div>
       </section>
+
+      {/* DAILY QUOTE — placed after the numbers and before the mode grid: a
+          beat of reading between "here is where you stand" and "pick a mode".
+          Low enough that it never blocks the study CTA at the top. */}
+      <DailyQuote className="mb-6 sm:mb-8" />
 
       {/* MODE GRID */}
       <section>

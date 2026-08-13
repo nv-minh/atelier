@@ -41,8 +41,10 @@ export async function GET(req: NextRequest) {
     definitionVi: w.definitionVi,
     synonyms: parseJsonArray(w.synonyms),
     example: w.example,
-    cardState: w.cards[0]?.state ?? null,
-    reps: w.cards[0]?.reps ?? 0,
+    // Same guest case as /browse: with no user the relation is not included
+    // at all, so `cards` is undefined rather than [].
+    cardState: w.cards?.[0]?.state ?? null,
+    reps: w.cards?.[0]?.reps ?? 0,
   }));
 
   return NextResponse.json({ items, total, page, perPage, totalPages: Math.ceil(total / perPage) });
