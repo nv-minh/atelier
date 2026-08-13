@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Sun, Moon, Monitor, Download } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { useI18n } from "@/components/i18n-provider";
+import { ProfileSection, type ProfileView } from "./profile-section";
 import { LangToggle } from "@/components/lang-toggle";
 import { cn } from "@/lib/utils";
 import { CEFR_LEVELS } from "@/lib/export-format";
@@ -16,12 +17,14 @@ export function SettingsClient({
   reviewsPerDay,
   theme,
   dailyGoalXp,
+  profile,
 }: {
   requestRetention: number;
   newCardsPerDay: number;
   reviewsPerDay: number;
   theme: string;
   dailyGoalXp: number;
+  profile: ProfileView;
 }) {
   const { theme: active, set } = useTheme();
   const { t } = useI18n();
@@ -81,6 +84,8 @@ export function SettingsClient({
         </h1>
         <p className="text-soft">{t("settings.subtitle")}</p>
       </header>
+
+      <ProfileSection profile={profile} />
 
       {/* Appearance */}
       <section className="card-atelier p-6 sm:p-7 mb-4">

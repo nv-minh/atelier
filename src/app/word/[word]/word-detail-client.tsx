@@ -6,6 +6,7 @@ import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { StarButton } from "@/components/star-button";
+import { KnownButton } from "@/components/known-button";
 import { NoteEditor } from "@/components/note-editor";
 import { useI18n } from "@/components/i18n-provider";
 import { formatInterval } from "@/lib/utils";
@@ -16,7 +17,7 @@ type Detail = {
   word: StudyWord;
   card: { state: number; reps: number; lapses: number; due: string } | null;
   reviews: { rating: number; reviewedAt: string }[];
-  mark: { starred: boolean; note: string };
+  mark: { starred: boolean; note: string; known: boolean };
   topics: string[];
   synonyms: string[];
   antonyms: string[];
@@ -68,7 +69,10 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                   </div>
                 </div>
               </div>
-              <StarButton wordId={w.id} initialStarred={detail.mark.starred} />
+              <div className="flex items-center gap-1">
+                <KnownButton wordId={w.id} initialKnown={detail.mark.known} />
+                <StarButton wordId={w.id} initialStarred={detail.mark.starred} />
+              </div>
             </div>
 
             {isRealImage(w.imageUrl) && (

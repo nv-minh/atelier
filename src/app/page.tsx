@@ -3,7 +3,9 @@ import { getDashboardStats } from "@/lib/stats";
 import { getLeechCount } from "@/lib/notebook";
 import { getGamificationSummary } from "@/lib/gamification";
 import { getCurrentUser } from "@/lib/session";
-import { TOPICS } from "@/lib/topic-taxonomy";
+import { TOPICS, topicBySlug } from "@/lib/topic-taxonomy";
+import { CEFR_LEVELS } from "@/lib/export-format";
+import { getLearnerProfile } from "@/lib/selection/candidates";
 import { HomeView } from "./home-view";
 import { LandingView } from "./landing-view";
 import type { DemoWord } from "@/components/landing/try-cards";
@@ -67,10 +69,27 @@ export default async function Home() {
     );
   }
 
-  const [stats, leechCount, gamify] = await Promise.all([
+  const [stats, leechCount, gamify, profile] = await Promise.all([
     getDashboardStats(user.id),
     getLeechCount(user.id),
     getGamificationSummary(user.id),
+    getLearnerProfile(user.id),
   ]);
-  return <HomeView stats={stats} leechCount={leechCount} gamify={gamify} />;
+
+  // Shown as a chip in the hero so level-aware selection is visible. Without it
+  // the app looks like it hands out words at random.
+  const level = profile
+    ? {
+        band:
+          CEFR_LEVELS[
+            Math.min(CEFR_LEVELS.length - 1, Math.max(0, Math.round(profile.band)))
+          ],
+        topics: profile.topics
+          .map((slug) => topicBySlug(slug)?.name)
+          .filter((n): n is string => !!n)
+          .slice(0, 2),
+      }
+    : null;
+
+  return <HomeView stats={stats} leechCount={leechCount} gamify={gamify} level={level} />;
 }

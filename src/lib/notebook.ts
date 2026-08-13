@@ -22,6 +22,8 @@ export type NotebookEntry = {
   imageUrl: string | null;
   note: string;
   starred: boolean;
+  /** Only set on the known list; other lists leave it undefined. */
+  known?: boolean;
   card: NotebookCardState;
 };
 
@@ -99,6 +101,53 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
   });
 }
 
+/**
+ * Words the learner marked "I already know this".
+ *
+ * Exists so the mark is REVERSIBLE in practice, not just in theory: a mark you
+ * cannot find is a mark you cannot undo, and the selection engine drops these
+ * words to 2% weight. Shaped as NotebookEntry so the notebook renders it with
+ * the same list component as starred and leeches.
+ */
+export async function getKnownWords(userId: string): Promise<NotebookEntry[]> {
+  const marks = await prisma.wordMark.findMany({
+    where: { userId, known: true },
+    include: { word: true },
+    orderBy: { updatedAt: "desc" },
+  });
+
+  const wordIds = marks.map((m) => m.wordId);
+  const cards = wordIds.length
+    ? await prisma.card.findMany({
+        where: { userId, wordId: { in: wordIds } },
+        select: { wordId: true, state: true, reps: true, lapses: true, due: true },
+      })
+    : [];
+  const cardByWord = new Map(cards.map((c) => [c.wordId, c]));
+
+  return marks.map((m) => {
+    const c = cardByWord.get(m.wordId);
+    return {
+      wordId: m.wordId,
+      word: m.word.word,
+      cefr: m.word.cefr,
+      typeVi: m.word.typeVi,
+      typeEn: m.word.typeEn,
+      definitionEn: m.word.definitionEn,
+      definitionVi: m.word.definitionVi,
+      imageUrl: m.word.imageUrl,
+      note: m.note,
+      starred: m.starred,
+      known: true,
+      card: c ? { state: c.state, reps: c.reps, lapses: c.lapses, due: c.due } : null,
+    };
+  });
+}
+
+export async function getKnownCount(userId: string): Promise<number> {
+  return prisma.wordMark.count({ where: { userId, known: true } });
+}
+
 // Leeches: cards the user keeps forgetting (lapses >= LEECH_THRESHOLD, state >= 1).
 // Leech status is derived from card counters, never stored. Shaped as NotebookEntry
 // so the notebook UI can render starred and leech lists the same way.
@@ -149,7 +198,7 @@ export type WordDetail = {
     due: Date;
   } | null;
   reviews: { rating: number; reviewedAt: Date }[];
-  mark: { starred: boolean; note: string };
+  mark: { starred: boolean; note: string; known: boolean };
   topics: string[];
   // synonyms/antonyms filtered to entries that actually exist in the Word table
   synonyms: string[];
@@ -182,7 +231,7 @@ export async function getWordDetail(userId: string, word: string): Promise<WordD
     })(),
     prisma.wordMark.findUnique({
       where: { userId_wordId: { userId, wordId: w.id } },
-      select: { starred: true, note: true },
+      select: { starred: true, note: true, known: true },
     }),
     // Only link synonyms/antonyms that are real entries in the Word table.
     relatedNames.length
@@ -196,7 +245,7 @@ export async function getWordDetail(userId: string, word: string): Promise<WordD
     word: mapWord(w),
     card: card ? { state: card.state, reps: card.reps, lapses: card.lapses, due: card.due } : null,
     reviews,
-    mark: mark ?? { starred: false, note: "" },
+    mark: mark ?? { starred: false, note: "", known: false },
     topics: safeJson(w.topics),
     synonyms: safeJson(w.synonyms).filter((s) => existingSet.has(s)),
     antonyms: safeJson(w.antonyms).filter((a) => existingSet.has(a)),

@@ -1,4 +1,4 @@
-import { getNotebook, getLeeches } from "@/lib/notebook";
+import { getNotebook, getLeeches, getKnownWords } from "@/lib/notebook";
 import { getCurrentUser } from "@/lib/session";
 import { AuthRequired } from "@/components/auth-required";
 import { NotebookClient } from "./notebook-client";
@@ -11,7 +11,8 @@ export default async function NotebookPage({
   searchParams: { tab?: string };
 }) {
   const user = await getCurrentUser();
-  const tab = searchParams.tab === "leeches" ? "leeches" : "starred";
+  const tab =
+    searchParams.tab === "leeches" ? "leeches" : searchParams.tab === "known" ? "known" : "starred";
 
   // A guest has no notebook to show, so the page renders its own shell with
   // the sign-in panel where the entries would be — the tab tap now lands
@@ -22,14 +23,16 @@ export default async function NotebookPage({
         tab={tab}
         entries={[]}
         leeches={[]}
+        known={[]}
         gate={<AuthRequired context="notebook" variant="panel" callbackUrl="/notebook" />}
       />
     );
   }
 
-  const [entries, leeches] = await Promise.all([
+  const [entries, leeches, known] = await Promise.all([
     getNotebook(user.id),
     getLeeches(user.id),
+    getKnownWords(user.id),
   ]);
 
   const serialize = (list: typeof entries) =>
@@ -43,6 +46,7 @@ export default async function NotebookPage({
       tab={tab}
       entries={serialize(entries)}
       leeches={serialize(leeches)}
+      known={serialize(known)}
     />
   );
 }

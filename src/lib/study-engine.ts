@@ -4,6 +4,7 @@ import { previewCard, Rating, STATES } from "./fsrs";
 import { addDays, formatInterval, normalizeWord, shuffle, todayStr } from "./utils";
 import { awardForReview, awardForSessionEnd } from "./gamification";
 import { selectNewWordIds } from "./selection/candidates";
+import { applyDrift } from "./selection/apply-drift";
 
 export type StudyWord = {
   id: string;
@@ -578,6 +579,16 @@ export async function endSession(
   } catch (e) {
     console.error("awardForSessionEnd failed (session already ended):", e);
   }
+
+  // Band drift, same best-effort contract as the award above: the session is
+  // already ended, and a band nudge is never worth failing the request over. It
+  // rate-limits itself to once a day, so calling it on every session end is safe.
+  try {
+    await applyDrift(userId);
+  } catch (e) {
+    console.error("applyDrift failed (session already ended):", e);
+  }
+
   return { ok: true, xpGained: award.xpGained, unlocked: award.unlocked };
 }
 
