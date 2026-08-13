@@ -23,6 +23,10 @@ export const VN_UTC_OFFSET_HOURS = 7;
 export const PACE_WINDOW_DAYS = 7;
 export const PACE_MIN_ACTIVE_DAYS = 3;
 
+// How many days back rivalStreaks() walks when counting a consecutive-day
+// streak. 60 is generous headroom over any realistic streak length.
+export const STREAK_LOOKBACK_DAYS = 60;
+
 // Personality ranges.
 export const REST_PROB_MIN = 0.05;
 export const REST_PROB_MAX = 0.45;
