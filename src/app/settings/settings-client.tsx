@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sun, Moon, Monitor, Download } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
 import { useI18n } from "@/components/i18n-provider";
 import { LangToggle } from "@/components/lang-toggle";
 import { cn } from "@/lib/utils";
 import { CEFR_LEVELS } from "@/lib/export-format";
+import { isEnabled, setEnabled } from "@/lib/feedback-prefs";
+import { playSound } from "@/lib/sound";
 
 export function SettingsClient({
   requestRetention,
@@ -29,6 +31,16 @@ export function SettingsClient({
   const [goalXp, setGoalXp] = useState(dailyGoalXp);
   const [saved, setSaved] = useState(false);
   const [exportScope, setExportScope] = useState("all");
+
+  // Read on mount, not during render: localStorage does not exist on the server,
+  // and reading it during render would desync the first client paint from the
+  // server-rendered HTML (hydration mismatch). Start from the module default.
+  const [soundOn, setSoundOn] = useState(true);
+  const [hapticOn, setHapticOn] = useState(true);
+  useEffect(() => {
+    setSoundOn(isEnabled("sound"));
+    setHapticOn(isEnabled("haptic"));
+  }, []);
 
   const save = async () => {
     await fetch("/api/settings", {
@@ -105,6 +117,33 @@ export function SettingsClient({
         <h2 className="display text-xl mb-1">{t("settings.language")}</h2>
         <p className="text-xs text-soft mb-5">{t("settings.languageDesc")}</p>
         <LangToggle variant="full" />
+      </section>
+
+      {/* Sound & haptics */}
+      <section className="card-atelier p-6 sm:p-7 mb-4">
+        <h2 className="display text-xl mb-1">{t("settings.feedback")}</h2>
+        <p className="text-xs text-soft mb-5">{t("settings.feedbackDesc")}</p>
+        <Toggle
+          label={t("settings.soundToggle")}
+          desc={t("settings.soundToggleDesc")}
+          checked={soundOn}
+          onChange={(on) => {
+            setEnabled("sound", on);
+            setSoundOn(on);
+            // Preview the change immediately — turning sound ON should be
+            // audible proof it worked.
+            if (on) playSound("correct");
+          }}
+        />
+        <Toggle
+          label={t("settings.hapticToggle")}
+          desc={t("settings.hapticToggleDesc")}
+          checked={hapticOn}
+          onChange={(on) => {
+            setEnabled("haptic", on);
+            setHapticOn(on);
+          }}
+        />
       </section>
 
       {/* SRS */}
@@ -253,6 +292,44 @@ function Slider({
         className="w-full h-1.5 rounded-full appearance-none cursor-pointer bg-ink/10 accent-ember"
         style={{ accentColor: "rgb(var(--ember))" }}
       />
+    </div>
+  );
+}
+
+function Toggle({
+  label,
+  desc,
+  checked,
+  onChange,
+}: {
+  label: string;
+  desc: string;
+  checked: boolean;
+  onChange: (on: boolean) => void;
+}) {
+  return (
+    <div className="flex items-start justify-between gap-4 mb-5 last:mb-0">
+      <div className="min-w-0">
+        <p className="text-sm font-medium">{label}</p>
+        <p className="text-xs text-soft mt-0.5">{desc}</p>
+      </div>
+      <button
+        role="switch"
+        aria-checked={checked}
+        aria-label={label}
+        onClick={() => onChange(!checked)}
+        className={cn(
+          "shrink-0 relative h-6 w-11 rounded-full transition-colors",
+          checked ? "bg-ember" : "bg-ink/15"
+        )}
+      >
+        <span
+          className={cn(
+            "absolute top-0.5 h-5 w-5 rounded-full bg-surface shadow transition-transform",
+            checked ? "translate-x-[1.375rem]" : "translate-x-0.5"
+          )}
+        />
+      </button>
     </div>
   );
 }
