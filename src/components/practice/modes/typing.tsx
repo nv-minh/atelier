@@ -68,6 +68,7 @@ export function TypingMode({ item, reveal, onAnswer }: ModeViewProps) {
         {!shown && (
           <button
             type="submit"
+            data-nosound
             className="mt-3 w-full rounded-2xl bg-ink text-paper py-3 font-medium hover:opacity-90"
           >
             {t("practice.check")} <span className="opacity-50 ml-1">↵</span>

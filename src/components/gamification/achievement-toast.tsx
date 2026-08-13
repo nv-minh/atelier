@@ -22,6 +22,16 @@ type ToastItem = { id: number; key: string };
 export function useAchievementToasts() {
   const [items, setItems] = useState<ToastItem[]>([]);
   const nextId = useRef(0);
+  const prevCount = useRef(0);
+
+  // Play the tone from an effect keyed on the visible count, NOT from inside
+  // setItems' updater: state updaters must be pure, and React Strict Mode
+  // double-invokes them in dev precisely to catch side effects like this one
+  // — playSound inside the updater used to fire the tone twice per unlock.
+  useEffect(() => {
+    if (items.length > prevCount.current) playSound("achievement");
+    prevCount.current = items.length;
+  }, [items.length]);
 
   const push = useCallback((keys: string[]) => {
     if (!keys || keys.length === 0) return;
@@ -30,7 +40,6 @@ export function useAchievementToasts() {
       if (room <= 0) return cur; // at cap — drop extras
       const known = keys.filter((k) => ACHIEVEMENT_BY_KEY[k]);
       const added = known.slice(0, room).map((key) => ({ id: nextId.current++, key }));
-      if (added.length > 0) playSound("achievement");
       return [...cur, ...added];
     });
   }, []);

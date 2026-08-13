@@ -72,6 +72,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
         <p className="text-xs text-soft font-mono mb-3">{t("practice.listenType")}</p>
         <button
           onClick={play}
+          data-nosound
           className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-ink text-paper hover:opacity-90 transition-opacity"
         >
           <Volume2 size={28} />
@@ -112,6 +113,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
         {!shown && (
           <button
             type="submit"
+            data-nosound
             className="mt-3 w-full rounded-2xl bg-ink text-paper py-3 font-medium hover:opacity-90"
           >
             {t("practice.check")} <span className="opacity-50 ml-1">↵</span>

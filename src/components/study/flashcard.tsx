@@ -76,6 +76,7 @@ export function Flashcard({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             onClick={onFlip}
+            data-nosound
             className="w-full rounded-2xl bg-ink text-paper py-3.5 font-medium hover:opacity-90 transition-opacity"
           >
             {t("study.revealAnswer")} <span className="opacity-50 ml-1">↵</span>
