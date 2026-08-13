@@ -56,7 +56,7 @@ export default function RootLayout({
         {/* Prevent FOUC: set theme + lang before paint */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&m)){document.documentElement.classList.add('dark')}}catch(e){}})();try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}var l2=localStorage.getItem('lang');`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&m)){document.documentElement.classList.add('dark')}}catch(e){}})();try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}var l2=localStorage.getItem('lang');window.__bip=null;addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e});`,
           }}
         />
       </head>

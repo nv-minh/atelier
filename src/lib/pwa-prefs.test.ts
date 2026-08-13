@@ -5,6 +5,7 @@ import {
   recordDismissed,
   isDismissalActive,
   isStandalone,
+  isIos,
   shouldOffer,
   DISMISS_DAYS,
 } from "./pwa-prefs";
@@ -69,6 +70,13 @@ describe("pwa-prefs", () => {
     expect(isDismissalActive(1_000_000_000_000)).toBe(false);
   });
 
+  it("ignores a future-dated dismissal stamp instead of silencing the invite forever", () => {
+    stubStorage();
+    const t0 = 1_000_000_000_000;
+    recordDismissed(t0 + DAY); // clock was ahead when "Not now" was tapped
+    expect(isDismissalActive(t0)).toBe(false);
+  });
+
   it("detects standalone via display-mode", () => {
     stubStorage();
     stubDisplayMode({ standalone: true });
@@ -79,6 +87,21 @@ describe("pwa-prefs", () => {
     stubStorage();
     stubDisplayMode({ iosStandalone: true });
     expect(isStandalone()).toBe(true);
+  });
+
+  it("recognizes an iPhone UA as iOS", () => {
+    vi.stubGlobal("navigator", { userAgent: "iPhone", maxTouchPoints: 5 });
+    expect(isIos()).toBe(true);
+  });
+
+  it("recognizes iPadOS masquerading as a Mac by its touch points", () => {
+    vi.stubGlobal("navigator", { userAgent: "Macintosh", maxTouchPoints: 5 });
+    expect(isIos()).toBe(true);
+  });
+
+  it("does not mistake an actual Mac (no touch points) for iOS", () => {
+    vi.stubGlobal("navigator", { userAgent: "Macintosh", maxTouchPoints: 0 });
+    expect(isIos()).toBe(false);
   });
 
   it("does not offer before the session threshold is met", () => {

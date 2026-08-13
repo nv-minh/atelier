@@ -1,9 +1,15 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Download, Share, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
-import { isIos, isStandalone, recordDismissed, shouldOffer } from "@/lib/pwa-prefs";
+import {
+  isIos,
+  recordDismissed,
+  SESSION_DONE_EVENT,
+  shouldOffer,
+} from "@/lib/pwa-prefs";
 
 // The event Chrome fires when the app qualifies for installation. It is not in
 // TypeScript's DOM lib, so it is declared here rather than pulled from a
@@ -15,40 +21,72 @@ type BeforeInstallPromptEvent = Event & {
 
 export function PwaInstall() {
   const { t } = useI18n();
-  const [deferred, setDeferred] = useState<BeforeInstallPromptEvent | null>(null);
+  const pathname = usePathname();
+  // Never read during render — only the effect and the install handler touch
+  // it — so a ref avoids re-rendering on every beforeinstallprompt/appinstalled
+  // event for no visual reason.
+  const deferredRef = useRef<BeforeInstallPromptEvent | null>(null);
   const [visible, setVisible] = useState(false);
   const [iosMode, setIosMode] = useState(false);
 
-  // ---- capture the browser's install offer before it shows its own UI ----
   useEffect(() => {
+    // Seed from the pre-hydration stash (see the inline script in
+    // layout.tsx): on a repeat visit the install criteria can already be met
+    // at load, so Chrome may fire beforeinstallprompt before this bundle
+    // executes, and the event is unusable once its turn passes.
+    const win = window as unknown as { __bip?: BeforeInstallPromptEvent | null };
+    if (win.__bip) {
+      deferredRef.current = win.__bip;
+      win.__bip = null;
+    }
+
+    // The single decision of whether to show something right now. Called on
+    // mount, whenever a real install event arrives, and whenever a session
+    // finishes — that last one matters because a first-time user can cross
+    // the session threshold mid-visit, well after the page's one shot at
+    // beforeinstallprompt has already come and gone.
+    const recheck = () => {
+      if (deferredRef.current) {
+        if (shouldOffer(Date.now())) setVisible(true);
+        return;
+      }
+      if (isIos() && shouldOffer(Date.now())) {
+        // Safari never fires appinstalled and navigator.standalone stays
+        // false inside a Safari tab even after the app is added to the home
+        // screen, so showing these steps is the only "did they ask" signal
+        // we get — count it as a dismissal, or the card reappears forever.
+        recordDismissed(Date.now());
+        setIosMode(true);
+        setVisible(true);
+      }
+    };
+
     const onBeforeInstall = (e: Event) => {
       // Without preventDefault, Chrome shows its own mini-infobar and this
       // banner would be a second, redundant prompt.
       e.preventDefault();
-      setDeferred(e as BeforeInstallPromptEvent);
-      if (shouldOffer(Date.now())) setVisible(true);
+      deferredRef.current = e as BeforeInstallPromptEvent;
+      // A real install event beats UA guessing — if this fires, the platform
+      // is not iOS, whatever the user agent looked like.
+      setIosMode(false);
+      recheck();
     };
     const onInstalled = () => {
       // Installed — nothing left to ask for, now or later.
       setVisible(false);
-      setDeferred(null);
+      deferredRef.current = null;
     };
+
     window.addEventListener("beforeinstallprompt", onBeforeInstall);
     window.addEventListener("appinstalled", onInstalled);
+    window.addEventListener(SESSION_DONE_EVENT, recheck);
+    recheck();
+
     return () => {
       window.removeEventListener("beforeinstallprompt", onBeforeInstall);
       window.removeEventListener("appinstalled", onInstalled);
+      window.removeEventListener(SESSION_DONE_EVENT, recheck);
     };
-  }, []);
-
-  // ---- iOS branch: Safari never fires beforeinstallprompt ----
-  // There is no API to trigger installation there, so the only honest option is
-  // to show the manual steps. Gated on the same rules as the Chrome branch.
-  useEffect(() => {
-    if (!isIos() || isStandalone()) return;
-    if (!shouldOffer(Date.now())) return;
-    setIosMode(true);
-    setVisible(true);
   }, []);
 
   const dismiss = useCallback(() => {
@@ -57,11 +95,11 @@ export function PwaInstall() {
   }, []);
 
   const install = useCallback(async () => {
-    const evt = deferred;
+    const evt = deferredRef.current;
     if (!evt) return;
     // The stashed event is single-use: once prompt() has been called, the
     // browser will not accept it again.
-    setDeferred(null);
+    deferredRef.current = null;
     setVisible(false);
     try {
       await evt.prompt();
@@ -72,13 +110,17 @@ export function PwaInstall() {
     } catch {
       // Browser refused to show it (already installed, or a stale event).
     }
-  }, [deferred]);
+  }, []);
 
+  // Live study routes get the achievement toast in the same fixed corner —
+  // stay out of its way rather than paint over it.
+  if (pathname?.startsWith("/study/")) return null;
   if (!visible) return null;
 
   return (
     <div
-      role="dialog"
+      role="region"
+      aria-live="polite"
       aria-label={iosMode ? t("pwa.iosTitle") : t("pwa.title")}
       className="fixed inset-x-0 bottom-20 md:bottom-6 z-50 px-4 pb-[env(safe-area-inset-bottom)]"
     >

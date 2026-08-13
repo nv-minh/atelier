@@ -8,6 +8,10 @@
 const KEY_SESSIONS = "atelier.sessionsDone";
 const KEY_DISMISSED = "atelier.installDismissedAt";
 
+// Fired when a session completes, so a mounted install banner can re-evaluate
+// its gate without a page reload — see recordSessionDone below.
+export const SESSION_DONE_EVENT = "atelier:session-done";
+
 // Ask only after the app has proved useful at least once. An install prompt on
 // first paint is the kind people dismiss reflexively.
 export const MIN_SESSIONS = 1;
@@ -42,6 +46,14 @@ export function sessionsDone(): number {
 
 export function recordSessionDone(): void {
   write(KEY_SESSIONS, String(sessionsDone() + 1));
+  // Announce it so a mounted install banner can re-evaluate its gate without a
+  // page reload — finishing a session is exactly when the invite becomes due.
+  try {
+    window.dispatchEvent(new Event(SESSION_DONE_EVENT));
+  } catch {
+    // No window (SSR) or a stubbed one in tests — the gate still works on the
+    // next page load.
+  }
 }
 
 export function recordDismissed(nowMs: number): void {
@@ -51,6 +63,9 @@ export function recordDismissed(nowMs: number): void {
 export function isDismissalActive(nowMs: number): boolean {
   const at = Number(read(KEY_DISMISSED));
   if (!Number.isFinite(at) || at <= 0) return false;
+  // A clock that was ahead when "Not now" was tapped must not silence the
+  // invite forever — treat a future-dated stamp as no dismissal at all.
+  if (at > nowMs) return false;
   return nowMs - at < DISMISS_DAYS * DAY_MS;
 }
 
