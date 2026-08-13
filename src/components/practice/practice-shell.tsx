@@ -11,9 +11,20 @@ import type { GradeSignals, PracticeItem, PracticeMode } from "@/lib/practice/ty
 import { SessionSummary } from "./session-summary";
 import { MODE_VIEWS } from "./modes";
 
-// How long the answer stays revealed before auto-advancing. This is a LAZY PATH,
-// not a lock: any pointer or key input advances immediately (defect D4).
-const REVEAL_MS = 1200;
+// How long the answer stays revealed before auto-advancing, per mode. This is a
+// LAZY PATH, not a lock: any pointer or key input advances immediately (D4).
+// Flashcard is short (180ms): the card is already flipped and there is nothing
+// new to read, so a long pause just reads as a frozen UI. The auto-graded modes
+// keep 1200ms so the correct answer + FeedbackStrip stay readable.
+const REVEAL_MS: Record<PracticeMode, number> = {
+  flashcard: 180,
+  quiz: 1200,
+  typing: 1200,
+  dictation: 1200,
+  // Not yet implemented (Plan 3); filled so the Record is exhaustive.
+  cloze: 1200,
+  "image-word": 1200,
+};
 
 // Only flashcard requeues an Again card inside the same run — that is its
 // learning-step behaviour. The auto-graded modes move on, as they do today.
@@ -211,7 +222,7 @@ export function PracticeShell({
       if (rating === RATING.Again && REQUEUE_ON_AGAIN[mode]) {
         setExtra((e) => [...e, current]);
       }
-      advanceTimer.current = setTimeout(advance, REVEAL_MS);
+      advanceTimer.current = setTimeout(advance, REVEAL_MS[mode]);
     },
     [current, mode, advance]
   );
@@ -303,7 +314,7 @@ export function PracticeShell({
       flushPending();
       // Also clear the REVEAL_MS auto-advance timer: harmless today (it only
       // calls advance(), which is a no-op on an unmounted shell's refs), but
-      // left running it fires ~1.2s after unmount for no reason.
+      // left running it fires up to ~1.2s after unmount for no reason.
       if (advanceTimer.current) {
         clearTimeout(advanceTimer.current);
         advanceTimer.current = null;
