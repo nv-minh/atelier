@@ -68,6 +68,18 @@ Kết quả: **freqPct 39,2% → 64,9%** (3.140 → 5.198/8.011). Chạy `--forc
 
 2.813 từ còn lại vẫn `null` và được chấm trung tính — đúng tầng 3 của spec. Muốn phủ tiếp thì lô crawl sau xuất luôn Zipf từ `wordfreq` (nguồn nó đã dùng để chọn từ) thành `freq_rank`.
 
+**Percentile chỉ chữa được một nửa vấn đề — A2 cần biết chỗ này.** Đo thật sau backfill:
+
+| từ | freqPct | nguồn |
+|---|---|---|
+| `the` | 0,9996 | ngsl |
+| **`mister`** | **0,9994** | bsl |
+| `be` | 0,9993 | ngsl |
+
+Percentile chặn được thảm hoạ **rank thô** (`mister` không còn là từ thông dụng nhất tiếng Anh), nhưng **không** làm đỉnh của hai list so sánh được với nhau: đứng số 1 trong list business 1.744 từ chuẩn hoá về đúng chỗ như đứng số 1 của tiếng Anh tổng quát. Nên `mister` gần như **ngang** `the` — chênh 0,0002, thuần là hệ quả kích thước list.
+
+Spec mục 2.1 đã **chấp nhận** đánh đổi này ("percentile-trong-pack và percentile-NGSL không cùng nghĩa… khi từ được chọn qua đường có `topicBoost` thì 'từ trung tâm của list lĩnh vực này' chính là tín hiệu muốn có"). Ghi lại vì: đừng đọc `freqPct` như một thang tần suất tuyệt đối xuyên nguồn. Muốn thế thì phải nén percentile của list lĩnh vực vào một dải con (VD ≤0,8) hoặc chỉ dùng nó để xếp hạng **trong** lĩnh vực — cả hai đều là thay đổi thiết kế, chưa làm.
+
 ---
 
 ## 5. Taxonomy — bốn quyết định
@@ -235,7 +247,7 @@ Làm theo TDD: test trước, xem nó đỏ, rồi mới viết code.
 1. ~~Tầng tần suất tổng quát~~ **xong** — xem mục 4. `freqPct` giờ phủ 64,9%; phần còn lại cần Zipf từ lô crawl sau.
 2. `blister`/`cortex` sai nghĩa (gloss thực vật) — sửa tay hoặc `--refresh definitionEn`.
 3. A2 phải quyết `topicBoost` theo từng từ, không đọc `Topic.curated`, vì `travel` là hybrid (mục 5).
-4. Ảnh: đã chạy `images:fetch-wikimedia` (+293) và Pexels tới 1.150/1.325 → phủ **97,2%**. `images.json` là artifact bền nên phần còn lại resume đúng chỗ bằng `npm run images:fetch`; trần thực tế là burst limiter của Pexels (6s/request + ngủ 20s mỗi 429), không phải lỗi.
+4. ~~Ảnh~~ **xong**: `images:fetch-wikimedia` (+293) rồi Pexels chạy hết → phủ **99,7%** (chỉ 24/8.011 từ không có ảnh). Tổng cộng ~5,5 tiếng cho 1.350 từ với hit-rate 99,5%; trần thực tế là burst limiter của Pexels (tự tụt xuống 6s/request + ngủ 20s mỗi 429), không phải lỗi. `images.json` phủ đủ 8.011 entry nên DB mới chỉ cần `images:apply`, không phải crawl lại.
 5. **Nhiễu keyword có sẵn của topic `travel`** — `packs:verify` lôi ra `optic radiation` nằm trong "Travel & Transport". Nguyên nhân: stem là **tiền tố không có biên cuối**, nên `path` khớp `pathway`, `drive` khớp `hard drive`/`flash drive`, `visit` khớp `website`. Đây là hành vi **có từ trước**, không phải do lô này sinh ra — chỉ là import thêm từ y khoa có "pathway" nên nhìn thấy rõ. Đo cụ thể: mỗi keyword lỏng kéo 6–17 từ (`path` 14, `visit` 17, `drive` 12, `park` 11, `guest` 11), tổng ~40/1.197 từ của travel. Chưa sửa vì phải đụng keyword cũ và có nguy cơ làm lệch 965 từ đang có; muốn sửa thì viết `path\b` (matcher nối chuỗi vào regex nên `\b` nhúng được).
 
    Chuyện này chính là lý do 6 topic lĩnh vực mới để `keywords: []` (mục 5) — nó cho thấy chi phí thật của việc gán topic bằng keyword.
