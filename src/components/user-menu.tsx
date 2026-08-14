@@ -3,6 +3,8 @@
 import { useSession, signOut } from "next-auth/react";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Mail } from "lucide-react";
+import { feedbackMailto } from "@/lib/contact";
 import { useI18n } from "./i18n-provider";
 
 export function UserMenu() {
@@ -81,6 +83,17 @@ export function UserMenu() {
                 <p className="text-xs text-soft truncate">{session.user.email}</p>
               )}
             </div>
+            {/* The one feedback entry point that follows the reader onto every
+                page — /topics, /browse, /notebook and the rest carry no footer
+                and no banner of their own. */}
+            <a
+              href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-soft hover:bg-ink/5 hover:text-ink transition-colors"
+            >
+              <Mail size={14} />
+              {t("contribute.label")}
+            </a>
             <button
               onClick={() => signOut({ callbackUrl: "/login" })}
               className="w-full text-left px-3 py-2 rounded-xl text-sm text-soft hover:bg-ink/5 hover:text-ink transition-colors"

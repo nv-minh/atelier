@@ -9,6 +9,7 @@ import { GoalRing } from "@/components/gamification/goal-ring";
 import { DailyQuote } from "@/components/daily-quote";
 import { useI18n } from "@/components/i18n-provider";
 import { ReminderBanner } from "@/components/reminder-banner";
+import { ContributeBanner } from "@/components/contribute-card";
 import type { GamificationSummary } from "@/lib/gamification";
 import type { Reminder } from "@/lib/reminders/pick";
 
@@ -170,6 +171,10 @@ export function HomeView({
           <ModeCard href="/study/pronunciation" title={t("home.pron")} desc={t("home.pronDesc")} emoji="🎤" />
         </div>
       </section>
+
+      {/* FEEDBACK — the dashboard has no footer, so without this the only way
+          to reach the feedback address was user menu -> settings -> scroll. */}
+      <ContributeBanner className="mt-14 sm:mt-20" />
     </main>
   );
 

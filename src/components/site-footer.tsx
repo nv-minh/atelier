@@ -5,6 +5,7 @@
 // it — wiring this site-wide is a separate change with its own layout work.
 
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { feedbackMailto } from "@/lib/contact";
 
@@ -18,12 +19,15 @@ export function SiteFooter() {
           {t("footer.tagline")}
         </p>
         <nav className="flex items-center gap-5 text-sm text-soft">
-          {/* Signed-out readers never see the settings page, so this mailto is
-              the only route they have to send anything back. */}
+          {/* Carries an icon and the ember hover the legal links don't: it is an
+              action, not a document. The prominent ask is ContributeBanner,
+              directly above this footer — this is the version for someone
+              already down here scanning the small print. */}
           <a
             href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
-            className="hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 hover:text-ember transition-colors"
           >
+            <Mail size={13} />
             {t("footer.feedback")}
           </a>
           <Link href="/privacy" className="hover:text-ink transition-colors">
