@@ -121,3 +121,80 @@ Hành vi service worker không kiểm thử được bằng build tĩnh. Sau khi
 4. Đăng xuất → bật Offline → điều hướng: KHÔNG được thấy vỏ giao diện đã đăng nhập (chứng minh HTML điều hướng không bị cache).
 5. Đổi `CACHE_VERSION`, deploy lại, reload 2 lần → cache version cũ bị xoá (kiểm tra **Application → Cache Storage**).
 6. **Tab cũ xuyên deploy:** mở 1 tab, GIỮ nguyên (không reload), deploy phiên có bump `CACHE_VERSION`, rồi trong tab cũ đó điều hướng sang 1 route lazy (vd `/study/flashcard`) → nếu gặp ChunkLoadError thì reload là hết (đúng như cảnh báo trên); không bump version thì tab cũ vẫn chạy bình thường nhờ static cache còn nguyên.
+
+## Nhắc học (Web Push + cron)
+
+### 1. Năm biến môi trường mới
+Sinh cặp VAPID một lần rồi dán vào Vercel → Project Settings → Environment Variables
+(và `.env.local` để chạy máy mình):
+
+```bash
+npx web-push generate-vapid-keys
+openssl rand -hex 32   # CRON_SECRET
+```
+
+| Biến | Ghi chú |
+|---|---|
+| `VAPID_PUBLIC_KEY` | từ lệnh trên |
+| `VAPID_PRIVATE_KEY` | từ lệnh trên — **bí mật**, không commit |
+| `VAPID_SUBJECT` | `mailto:<email của bạn>` |
+| `NEXT_PUBLIC_VAPID_PUBLIC_KEY` | **cùng giá trị** với `VAPID_PUBLIC_KEY`; client phải đọc được |
+| `CRON_SECRET` | endpoint cron chỉ nhận `Authorization: Bearer <giá trị này>` |
+
+Đổi cặp VAPID sau khi đã có người đăng ký = mọi subscription cũ chết (push service từ chối),
+và chúng chỉ bị dọn dần khi cron gặp 404/410. Sinh một lần rồi giữ nguyên.
+
+### 2. `db:push` phải chạy TRƯỚC khi deploy
+Code mới đọc ba cột mới của `Settings` (`remindHour`, `tz`, `nextRemindAt`) và bảng
+`PushSubscription`. Deploy trước khi push schema = 500 trên `/` và `/settings`.
+
+### 3. Cron chạy bằng gì
+Repo giờ có `vercel.json` với `"schedule": "0 * * * *"` (mỗi giờ, đúng phút 0).
+
+Đã kiểm bằng `npx vercel crons ls`: CLI **nhận** lịch mỗi giờ và liệt kê nó ở trạng thái
+`not deployed`. Tài liệu Vercel nêu cú pháp (kể cả ví dụ `* * * * *`) nhưng **không** nói
+giới hạn tần suất theo plan, nên điều này chỉ được chứng minh dứt điểm ở lần deploy đầu.
+Sau `vercel --prod`, chạy lại `npx vercel crons ls` và xác nhận trạng thái đổi sang deployed.
+
+Nếu plan từ chối tần suất này thì **đừng sửa code** — endpoint chỉ cần `CRON_SECRET`, nên xoá
+`vercel.json` và chuyển sang GitHub Actions:
+
+```yaml
+# .github/workflows/reminders.yml
+name: reminders
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sS -f -X GET "$URL" -H "Authorization: Bearer $SECRET"
+        env:
+          URL: ${{ secrets.REMINDERS_CRON_URL }}
+          SECRET: ${{ secrets.CRON_SECRET }}
+```
+
+### 4. Sau deploy: gọi tay một lần trước khi tin cron
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" https://<domain>/api/cron/reminders
+```
+Trả về `{"scanned":n,"sent":n,"silent":n,"skipped":n,"pruned":n}`. `scanned: 0` ngay sau khi
+bật nhắc là **bình thường** — `nextRemindAt` mới đang ở tương lai.
+
+### Nhắc học — test thủ công (KHÔNG test được headless)
+Cả hai lý do: quyền thông báo phải do người thật cấp, và service worker chỉ đăng ký ở
+production (`npm run dev` không đăng ký được push). Ngoài ra `.env` bật `AUTH_BYPASS=1` chỉ
+có tác dụng khi `NODE_ENV !== "production"`, nên `npm start` ở máy sẽ đòi đăng nhập Google
+thật — dễ nhất là test luôn trên bản deploy.
+
+- [ ] iPhone/iPad: push CHỈ hoạt động sau khi thêm app vào Màn hình chính. Kiểm cả hai: chưa cài (không xin được quyền, hiện `remindIosHint`) và đã cài (nhận được thông báo).
+- [ ] Thông báo khi app đã đóng hoàn toàn (không chỉ ẩn tab).
+- [ ] Từ chối quyền → hiện `remindDenied`, không rác trong DB.
+- [ ] Bấm thông báo lúc app đang mở → focus tab cũ, không mở tab thứ hai.
+- [ ] Nhiều thiết bị cùng tài khoản → mỗi thiết bị một hàng `PushSubscription`, và một lần cron gửi tới tất cả.
+- [ ] Cùng thiết bị đổi sang tài khoản khác → subscription CHUYỂN chủ, người mới không nhận nhắc của người cũ.
+
+> Đã nghiệm được bằng script (không cần trình duyệt): cap 1 lần/ngày, đường im lặng vẫn đẩy
+> con trỏ, dọn subscription chết khi push service trả 404/410, và việc chuyển chủ subscription.
