@@ -27,3 +27,9 @@ data/backups/
 
 # subagent-driven-development scratch: ledgers, task briefs, review packages
 .superpowers
+
+grammar-translate-todo.json
+# No trailing slash: this worktree has it as a symlink to the shared source
+# dir in the main checkout, and git's trailing-slash "directory only" ignore
+# patterns do not match a symlink-to-directory, only a real directory.
+EnglishGrammar_extracted

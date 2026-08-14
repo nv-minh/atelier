@@ -30,6 +30,11 @@ model User {
   learnerProfile LearnerProfile?
 
   pushSubscriptions PushSubscription[]
+
+  grammarLessonReads   GrammarLessonRead[]
+  grammarTopicProgress GrammarTopicProgress[]
+  grammarCategoryStats GrammarCategoryStat[]
+  grammarAnswerStates  GrammarAnswerState[]
 }
 
 model Account {
@@ -132,21 +137,21 @@ model Card {
 }
 
 model ReviewLog {
-  id            String   @id @default(cuid())
-  cardId        String
-  userId        String
-  rating        Int // 1=Again,2=Hard,3=Good,4=Easy
-  state         Int
-  stability     Float
-  difficulty    Float
-  elapsedDays   Int
-  scheduledDays Int
-  reviewedAt    DateTime @default(now())
+  id             String   @id @default(cuid())
+  cardId         String
+  userId         String
+  rating         Int // 1=Again,2=Hard,3=Good,4=Easy
+  state          Int
+  stability      Float
+  difficulty     Float
+  elapsedDays    Int
+  scheduledDays  Int
+  reviewedAt     DateTime @default(now())
   // Client-generated per review; a network-retried POST carrying the same key is
   // a no-op server-side (see recordReview), so a retry can't double-advance the
   // card or double-award XP. Nullable: NULLs are distinct in a Postgres unique
   // index, so older callers / non-review paths are unaffected.
-  idempotencyKey String? @unique
+  idempotencyKey String?  @unique
 
   card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -182,6 +187,10 @@ model DailyStat {
   totalCount   Int    @default(0)
   xp           Int    @default(0) // ReviewLog-derived only (backfill can rebuild this)
   bonusXp      Int    @default(0) // non-SRS mode XP (matching, …); backfill never touches it
+  // Grammar answers submitted this day (right or wrong). Feeds the streak
+  // (computeStreakFromDb ORs on it — Plan 2); kept OUT of totalCount so vocab
+  // accuracy/heatmap stats stay pure SRS.
+  grammarCount Int    @default(0)
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -201,9 +210,9 @@ model Settings {
   // ── Study reminders ───────────────────────────────────────────────
   // remindHour: LOCAL hour 0–23; null = reminders off, which is what every
   // existing row has, so nobody gets switched on silently when this ships.
-  remindHour Int?
+  remindHour   Int?
   // IANA zone, not a minute offset: a stored offset is wrong on the day DST changes.
-  tz         String @default("Asia/Ho_Chi_Minh")
+  tz           String    @default("Asia/Ho_Chi_Minh")
   // A DERIVED pointer, and a deliberate exception to the "Settings = what the
   // user set by hand" rule. It lives here because the "one reminder per day" cap
   // is enforced by a single conditional update on this very row (see
@@ -307,4 +316,141 @@ model WordMark {
   @@unique([userId, wordId])
   @@index([userId, starred])
   @@index([userId, known])
+}
+
+// ── Grammar module: content ──────────────────────────────────────────
+// Immutable after import (import-grammar.ts). Every *Vi column is nullable:
+// NULL = "needs translation" — grammar-translate-export queries exactly that,
+// grammar-translate-import fills it back. No side tracking table.
+
+model GrammarTopic {
+  id      Int     @id // stable catalog id (src/lib/grammar/catalog.ts)
+  slug    String  @unique // kebab EN: "past-perfect", "reported-speech", …
+  nameEn  String
+  nameVi  String?
+  cluster String // "tenses" | "word-classes" | "sentence" | "other"
+  order   Int // position within its cluster
+
+  lessons       GrammarLesson[]
+  testQuestions GrammarTestQuestion[]
+}
+
+model GrammarLesson {
+  id            Int     @id @default(autoincrement())
+  topicId       Int
+  order         Int // 1-based sequence index within the topic in CSV row order (raw lesson_order has dup/gapped values)
+  titleEn       String
+  titleVi       String?
+  contentEnHtml String  @db.Text // sanitized + image paths rewritten at import
+  contentViHtml String? @db.Text
+
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@unique([topicId, order])
+}
+
+model GrammarTestQuestion {
+  id          Int     @id // source id from tests.csv
+  topicId     Int
+  questionEn  String
+  questionVi  String?
+  choicesEn   Json // string[], 2–4 items; answers are EN-only by design
+  answerIndex Int // normalized 0-based
+
+  topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+
+  @@index([topicId])
+}
+
+model GrammarPracticeQuestion {
+  id            Int     @id // source id from grammar_questions.csv
+  level         Int // 1 | 2
+  categoryEn    String
+  categoryVi    String?
+  questionEn    String
+  questionVi    String?
+  choicesEn     Json // string[]
+  answerIndex   Int // normalized 0-based
+  explanationEn String? @db.Text
+  explanationVi String? @db.Text
+
+  @@index([level, categoryEn])
+}
+
+model GrammarConfusedPair {
+  id        Int     @id // source id from confused_words.csv
+  titleEn   String // "a few, afew"
+  titleVi   String?
+  entriesEn Json // ConfusedEntry[]: [{ w, m, examples: string[] }]
+  entriesVi Json? // same shape; NULL when the mangled source JSON was unrepairable
+}
+
+model GrammarCommonMistake {
+  id       Int     @id // source id from common_mistakes.csv
+  category String // category slug (catalog.ts names the 22 numeric groups)
+  titleEn  String
+  titleVi  String?
+  bodyEn   String  @db.Text
+  bodyVi   String? @db.Text
+  noteEn   String? @db.Text
+  noteVi   String? @db.Text
+
+  @@index([category])
+}
+
+// ── Grammar module: per-user progress ────────────────────────────────
+// No FK to content tables on purpose: re-import must never cascade into user
+// progress. questionId meaning depends on `source`.
+
+model GrammarLessonRead {
+  userId   String
+  lessonId Int
+  readAt   DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, lessonId])
+}
+
+model GrammarTopicProgress {
+  userId   String
+  topicId  Int
+  answered Int    @default(0)
+  correct  Int    @default(0)
+  recent   Json   @default("[]") // ring buffer, ≤20 booleans, newest last
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, topicId])
+}
+
+model GrammarCategoryStat {
+  userId   String
+  level    Int
+  category String // GrammarPracticeQuestion.categoryEn
+  answered Int    @default(0)
+  correct  Int    @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, level, category])
+}
+
+// source: "topic_test" | "practice" | "confused". One row per question a user
+// ever answered. firstCorrectAt is the anti-farm XP ledger (set exactly once);
+// wrongCount/lastWrongAt/resolvedAt drive the wrong-answer notebook
+// (in the notebook ⇔ wrongCount > 0 AND resolvedAt IS NULL).
+model GrammarAnswerState {
+  userId         String
+  source         String
+  questionId     Int
+  firstCorrectAt DateTime?
+  wrongCount     Int       @default(0)
+  lastWrongAt    DateTime?
+  resolvedAt     DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, source, questionId])
+  @@index([userId, resolvedAt])
 }
