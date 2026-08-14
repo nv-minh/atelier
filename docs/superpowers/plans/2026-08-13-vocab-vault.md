@@ -21,8 +21,10 @@
 - **`learning` gồm `state = 0`.** Khi đối chiếu `/stats`: `learning` của kho từ = `learningCards + newCardsSeen`, **không** phải `learningCards`.
 - **Bulk tối đa 40 `wordId`** (bằng `perPage` của `/browse`).
 - **Nút "ôn"/"xuất" mang bộ lọc, không mang danh sách id.**
-- Commit message theo repo: tiếng Anh, dạng `feat(scope): …` / `refactor(scope): …`, kèm `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>`.
+- Commit message theo repo: tiếng Anh, dạng `<type>(<vùng>): …` trong đó `<vùng>` là tên vùng code chứ không phải chữ "scope" — repo đang dùng `feat(vault)`, `feat(placement)`, `fix(quote)`, `refactor(home)`, `data(images)`. Kèm `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>`.
+- **Ngôn ngữ comment — quy ước của repo là CHIA HAI, và các snippet dưới đây không phản ánh nó:** comment trong **module production** viết **tiếng Anh** (đã kiểm: `src/lib/selection/score.ts`, `src/lib/placement/ladder.ts` của gói A, và toàn bộ code cũ), còn **file test** viết **tiếng Việt** (đã kiểm: `src/lib/leaderboard/{pace,board,rivals,activity}.test.ts` trên `main` — cả tên test lẫn comment giải thích). Snippet trong plan này viết comment tiếng Việt cho **cả hai** loại file; khi cài đặt, **dịch sang tiếng Anh mọi comment thuộc module production**, giữ tiếng Việt trong file `*.test.ts`. Giữ nguyên *nội dung* lập luận của comment — nhất là các câu giải thích *vì sao* (vì sao module không có `server-only`, vì sao không xoá `ReviewLog`), vì đó mới là phần đáng giá.
 - Chạy toàn bộ test bằng `npm test` (vitest run). Chạy một file: `npx vitest run src/lib/vault/scope.test.ts`.
+- **Repo KHÔNG có ESLint** dù `package.json` khai báo script `"lint": "next lint"` (không có dependency `eslint`, không có config). Đừng chạy `npm run lint`; để bắt import thừa thì dùng `npx tsc --noUnusedLocals --noUnusedParameters` rồi so trước/sau.
 
 ---
 

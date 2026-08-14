@@ -22,6 +22,8 @@
 - **Service worker CHỈ đăng ký ở production** (`src/components/sw-register.tsx` kiểm `NODE_ENV === "production"`). Nghĩa là **`npm run dev` không test được push** — phải `npm run build && npm start`, hoặc test trên bản deploy.
 - **Nhắc tắt mặc định.** Mọi hàng `Settings` đang tồn tại có `remindHour = null`; không ai bị bật ngầm.
 - Commit message tiếng Anh dạng `feat(reminders): …`, kèm `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>`.
+- **Ngôn ngữ comment — quy ước của repo là CHIA HAI, và các snippet dưới đây không phản ánh nó:** comment trong **module production** viết **tiếng Anh** (đã kiểm: `src/lib/selection/score.ts`, `src/lib/placement/ladder.ts`, và toàn bộ code cũ), còn **file test** viết **tiếng Việt** (đã kiểm: `src/lib/leaderboard/{pace,board,rivals,activity}.test.ts` trên `main`). Snippet trong plan này viết comment tiếng Việt cho cả hai loại; khi cài đặt, **dịch sang tiếng Anh mọi comment thuộc module production** (kể cả trong `public/sw.js`), giữ tiếng Việt trong `*.test.ts`. Giữ nguyên *nội dung* lập luận — nhất là các câu giải thích vì sao (vì sao giành suất trước khi gửi, vì sao lưu IANA `tz` chứ không lưu offset).
+- **Repo KHÔNG có ESLint** dù `package.json` khai báo `"lint": "next lint"`. Đừng chạy `npm run lint`.
 
 ---
 
