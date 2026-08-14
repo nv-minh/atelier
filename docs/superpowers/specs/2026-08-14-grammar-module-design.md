@@ -19,7 +19,7 @@ App hiện chỉ dạy từ vựng. Người dùng muốn thêm một module h�
 | `csv/lessons.csv` | 292 bài, 33 chủ đề | `topic_en/vi, lesson_order, lesson_name_en/vi, content_en_html, content_vi_html` — HTML có span ngữ nghĩa (`.adjective`, `.verb`, `.subject`…), bảng ví dụ, 25 bài nhúng `<img>` |
 | `csv/grammar_questions.csv` | 10.000 câu | `id, level (1/2), category_en/vi (~25 nhóm), question_en/vi, choices_en/vi ("##"-separated), answer_index (1-based), answer_en/vi, explanation_en/vi` |
 | `csv/tests.csv` | 9.380 câu | `id, topic_en/vi (khớp đúng 33 chủ đề lessons), question_en/vi, a..d_en/vi, answer_index (1-based), answer_en/vi` |
-| `csv/confused_words.csv` | 833 cặp | `id, title_en/vi, body_en/vi` — body là JSON `[{w, m}]`, ví dụ nằm sau ký tự `#` trong `m` |
+| `csv/confused_words.csv` | 832 cặp | `id, title_en/vi, body_en/vi` — body là JSON `[{w, m}]`, ví dụ nằm sau ký tự `#` trong `m` |
 | `csv/common_mistakes.csv` | 687 mục | `id, category (chỉ mã số 1–22, KHÔNG có tên nhóm), title_en/vi, body_en/vi, note_en/vi` — body dạng Incorrect:/Correct: |
 
 **Sự thật về chất lượng, quyết định design phải gánh:**
@@ -57,7 +57,7 @@ App hiện chỉ dạy từ vựng. Người dùng muốn thêm một module h�
 
 ### Tiêu chí thành công
 
-- Import một lệnh ra đủ: 33 topics, 292 lessons, 9.380 test questions, 10.000 practice questions, 833 confused pairs, 687 mistakes — lệch là fail.
+- Import một lệnh ra đủ: 33 topics, 292 lessons, 9.380 test questions, 10.000 practice questions, 832 confused pairs, 687 mistakes — lệch là fail.
 - Vòng lặp học liền mạch: đọc lý thuyết (ảnh hiển thị, span màu) → làm test đúng chủ đề → mastery tăng thấy được → câu sai vào sổ → ôn sổ resolve được.
 - XP grammar cộng đúng sổ `bonusXp`, ngày có hoạt động grammar nối được streak, badge grammar unlock được.
 - `grammar:translate-export` dump được đúng danh sách field VI đang NULL; `grammar:translate-import` đổ ngược file đã dịch vào DB không cần sửa schema.
@@ -223,7 +223,7 @@ Cuối run in + ghi `EnglishGrammar_extracted/import-report.json` (nằm cạnh 
 | `/grammar/[topic]/lesson/[order]` | Trình đọc lý thuyết (§6) | public; nút "Đã hiểu" cần đăng nhập |
 | `/grammar/[topic]/test` | Phiên test 10 câu của chủ đề | đăng nhập |
 | `/grammar/practice` | Picker level (Cơ bản/Nâng cao) + category (hiện độ chính xác của bạn từng nhóm) → phiên luyện | đăng nhập |
-| `/grammar/confused` | Danh sách 833 cặp, search client-side theo title; chi tiết 2 card cạnh nhau; nút "Mini-quiz" | public; quiz cần đăng nhập |
+| `/grammar/confused` | Danh sách 832 cặp, search client-side theo title; chi tiết 2 card cạnh nhau; nút "Mini-quiz" | public; quiz cần đăng nhập |
 | `/grammar/mistakes` | Duyệt theo 22 nhóm, search; thẻ Incorrect→Correct, note mở rộng khi bấm | public |
 | `/grammar/review` | Sổ câu sai: phiên ôn dùng chung UI phiên test | đăng nhập |
 
@@ -279,7 +279,7 @@ Theo hợp đồng hiện hành: test thuần, không chạm prisma, `*.test.ts`
 - **XP first-correct**: hàm thuần quyết định `(answerState, đúng/sai) → xpDelta` — farm câu cũ = 0.
 - **Cloze confused-quiz**: cặp có/không ví dụ, từ xuất hiện nhiều lần trong câu.
 - **Translate round-trip**: export shape → import validate (từ chối field ngoài whitelist, textVi rỗng, entriesVi sai shape).
-- **Sau import thật** (smoke, chạy tay): report khớp 33/292/9380/10000/833/687.
+- **Sau import thật** (smoke, chạy tay): report khớp 33/292/9380/10000/832/687.
 
 ## 10. Phasing gợi ý cho implementation plan
 

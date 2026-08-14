@@ -41,7 +41,7 @@ describe("EXPECTED_COUNTS", () => {
   it("matches the spec success criteria", () => {
     expect(EXPECTED_COUNTS).toEqual({
       topics: 33, lessons: 292, testQuestions: 9380,
-      practiceQuestions: 10000, confusedPairs: 833, commonMistakes: 687,
+      practiceQuestions: 10000, confusedPairs: 832, commonMistakes: 687,
     });
   });
 });

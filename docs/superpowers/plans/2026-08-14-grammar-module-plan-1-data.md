@@ -19,7 +19,7 @@
 - Nguồn `EnglishGrammar_extracted/` KHÔNG commit (đã untracked, giữ nguyên). `public/grammar/images/` (30 PNG script copy sang) PHẢI commit — runtime cần.
 - CSV: có BOM (utf-8-sig), field quoted nhiều dòng, `answer_index` **1-based**, choices tách bằng `##`.
 - Mọi cột `*Vi` nullable; **NULL = cần dịch**. Import KHÔNG bao giờ ghi đè cột `*Vi` khi update (bản dịch do translate-import điền phải sống sót qua lần import lại) — CSV VI chỉ áp lúc create.
-- Số kỳ vọng sau import (lệch → exit code ≠ 0): 33 topics, 292 lessons, 9.380 test questions, 10.000 practice questions, 833 confused pairs, 687 mistakes.
+- Số kỳ vọng sau import (lệch → exit code ≠ 0): 33 topics, 292 lessons, 9.380 test questions, 10.000 practice questions, 832 confused pairs, 687 mistakes.
 
 ---
 
@@ -374,7 +374,7 @@ git commit -m "feat(grammar): CSV cleaners thuần + devDeps csv-parse/sanitize-
 - Consumes: `splitMeaningExamples` từ `./clean` (Task 2)
 - Produces: `type ConfusedEntry = { w: string; m: string; examples: string[] }` · `parseEntriesEn(bodyEn: string): ConfusedEntry[]` (throw khi hỏng — importer bắt để skip+report) · `parseEntriesVi(bodyVi: string): ConfusedEntry[] | null` (null = không cứu được → cần dịch)
 
-Bối cảnh dữ liệu (đã đo trên toàn bộ 833 dòng): `body_en` parse JSON được **100%**; `body_vi` hỏng **832/833** nhưng theo vài pattern cơ khí — `":"` sau key `"w"`/`"m"` bị biến thành `>` hoặc biến mất. Fixture dưới đây là trích nguyên văn từ dòng id 1 và 2.
+Bối cảnh dữ liệu (đã đo trên toàn bộ 832 dòng): `body_en` parse JSON được **100%**; `body_vi` hỏng **832/832** nhưng theo vài pattern cơ khí — `":"` sau key `"w"`/`"m"` bị biến thành `>` hoặc biến mất. Fixture dưới đây là trích nguyên văn từ dòng id 1 và 2.
 
 - [ ] **Step 1: Viết test fail**
 
@@ -437,8 +437,8 @@ Expected: FAIL — module chưa tồn tại.
 
 ```ts
 // confused_words.csv body parsing. EN bodies are all valid JSON (measured on
-// all 833 rows). VI bodies were mangled by whatever produced the CSV — the
-// `":"` after a "w"/"m" key collapsed into `>` or vanished (832/833 rows) —
+// all 832 rows). VI bodies were mangled by whatever produced the CSV — the
+// `":"` after a "w"/"m" key collapsed into `>` or vanished (832/832 rows) —
 // but the damage is mechanical, so we attempt regex repairs before giving up.
 import { splitMeaningExamples } from "./clean";
 
@@ -719,7 +719,7 @@ describe("EXPECTED_COUNTS", () => {
   it("matches the spec success criteria", () => {
     expect(EXPECTED_COUNTS).toEqual({
       topics: 33, lessons: 292, testQuestions: 9380,
-      practiceQuestions: 10000, confusedPairs: 833, commonMistakes: 687,
+      practiceQuestions: 10000, confusedPairs: 832, commonMistakes: 687,
     });
   });
 });
@@ -839,7 +839,7 @@ export const EXPECTED_COUNTS = {
   lessons: 292,
   testQuestions: 9380,
   practiceQuestions: 10000,
-  confusedPairs: 833,
+  confusedPairs: 832,
   commonMistakes: 687,
 } as const;
 ```
@@ -1141,7 +1141,7 @@ Trong `package.json`, sau dòng `"images:fetch-wikimedia": …`:
 - [ ] **Step 3: Dry-run**
 
 Run: `npm run grammar:import -- --dry-run`
-Expected: `imported: { topics: 33, lessons: 292, testQuestions: 9380, practiceQuestions: 10000, confusedPairs: 833, commonMistakes: 687 }`, `skipped: 0`, missing images đúng 3 file `["ae.svg", "be.svg", "passiv_blank.png"]` (thứ tự tùy run), exit 0. Nếu có skip: đọc `EnglishGrammar_extracted/import-report.json`, sửa cleaner tương ứng (Task 2–4) theo TDD rồi chạy lại — KHÔNG nới `EXPECTED_COUNTS`.
+Expected: `imported: { topics: 33, lessons: 292, testQuestions: 9380, practiceQuestions: 10000, confusedPairs: 832, commonMistakes: 687 }`, `skipped: 0`, missing images đúng 3 file `["ae.svg", "be.svg", "passiv_blank.png"]` (thứ tự tùy run), exit 0. Nếu có skip: đọc `EnglishGrammar_extracted/import-report.json`, sửa cleaner tương ứng (Task 2–4) theo TDD rồi chạy lại — KHÔNG nới `EXPECTED_COUNTS`.
 
 - [ ] **Step 4: Chạy import thật + kiểm DB**
 

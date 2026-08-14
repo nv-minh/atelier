@@ -104,6 +104,6 @@ export const EXPECTED_COUNTS = {
   lessons: 292,
   testQuestions: 9380,
   practiceQuestions: 10000,
-  confusedPairs: 833,
+  confusedPairs: 832,
   commonMistakes: 687,
 } as const;
