@@ -19,13 +19,20 @@ export default async function BrowsePage({
   const page = Math.max(1, Number(searchParams.page || "1"));
   const perPage = 40;
 
-  // Page 1 is the free sample; anything past it needs an account. The client
-  // intercepts the "next" tap, so this only fires on a direct/bookmarked URL.
-  if (!userId && page > 1) {
+  // Page 1 of scope=all is the free sample; anything past it, or any scope
+  // that claims to be "your" words, needs an account. Without the scope half
+  // of this guard, `filterWhere` silently drops the scope clause for a null
+  // userId (by design, so it degrades to "all" rather than throwing) — so a
+  // guest hitting e.g. /browse?scope=known directly would render the FULL
+  // unscoped list while the client still draws the "Known" chip as active
+  // and locked. The client intercepts the "next" tap and the scope-chip tap
+  // for signed-out users, so this only fires on a direct/bookmarked URL.
+  if (!userId && (page > 1 || filter.scope !== "all")) {
     const sp = new URLSearchParams();
     if (filter.q) sp.set("q", filter.q);
     if (filter.cefr) sp.set("cefr", filter.cefr);
     if (filter.topic) sp.set("topic", filter.topic);
+    if (filter.scope !== "all") sp.set("scope", filter.scope);
     sp.set("page", String(page));
     return <AuthRequired context="library" callbackUrl={`/browse?${sp.toString()}`} />;
   }

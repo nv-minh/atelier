@@ -151,6 +151,7 @@ export function LibraryClient({
               }
               startTransition(() => router.push(`/browse?${mkQs(cur, { scope: s, page: 1 })}`));
             }}
+            title={!authed && s !== "all" ? t("browse.scopeLocked") : undefined}
             className={cn(
               "rounded-full px-3 py-1.5 text-xs font-medium border whitespace-nowrap transition-colors",
               scope === s ? "bg-ember text-paper border-ember" : "border-line text-soft hover:text-ink"
@@ -163,6 +164,7 @@ export function LibraryClient({
         <select
           value={topic}
           onChange={(e) => startTransition(() => router.push(`/browse?${mkQs(cur, { topic: e.target.value, page: 1 })}`))}
+          aria-label={t("browse.topicLabel")}
           className="rounded-full border border-line bg-surface px-3.5 py-2 text-sm"
         >
           <option value="ALL">{t("browse.topicAll")}</option>
