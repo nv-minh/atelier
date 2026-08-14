@@ -6,6 +6,7 @@
 
 import Link from "next/link";
 import { useI18n } from "@/components/i18n-provider";
+import { feedbackMailto } from "@/lib/contact";
 
 export function SiteFooter() {
   const { t } = useI18n();
@@ -17,6 +18,14 @@ export function SiteFooter() {
           {t("footer.tagline")}
         </p>
         <nav className="flex items-center gap-5 text-sm text-soft">
+          {/* Signed-out readers never see the settings page, so this mailto is
+              the only route they have to send anything back. */}
+          <a
+            href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
+            className="hover:text-ink transition-colors"
+          >
+            {t("footer.feedback")}
+          </a>
           <Link href="/privacy" className="hover:text-ink transition-colors">
             {t("footer.privacy")}
           </Link>

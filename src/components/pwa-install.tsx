@@ -143,12 +143,14 @@ export function PwaInstall() {
   if (pathname?.startsWith("/study/")) return null;
   if (!visible) return null;
 
+  // bottom-24 clears the mobile tab bar: 64px of row plus its own 0.5rem of
+  // slack, and the safe-area inset is padded for below that.
   return (
     <div
       role="region"
       aria-live="polite"
       aria-label={iosMode ? t("pwa.iosTitle") : t("pwa.title")}
-      className="fixed inset-x-0 bottom-20 md:bottom-6 z-50 px-4 pb-[env(safe-area-inset-bottom)]"
+      className="fixed inset-x-0 bottom-24 md:bottom-6 z-50 px-4 pb-[env(safe-area-inset-bottom)]"
     >
       <div className="card-atelier mx-auto max-w-md p-4 sm:p-5 relative">
         <button

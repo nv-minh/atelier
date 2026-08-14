@@ -304,7 +304,7 @@ export function LibraryClient({
                 />
               )}
               {isRealImage(w.imageUrl) && (
-                <WordImage imageUrl={w.imageUrl} word={w.word} className="!w-20 !h-20 shrink-0" maxH="max-h-20" />
+                <WordImage imageUrl={w.imageUrl} word={w.word} fit="cover" className="w-20 h-20 shrink-0" />
               )}
               <div className="flex-1 min-w-0">
                 <div className="flex items-baseline gap-2 flex-wrap">
