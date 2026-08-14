@@ -23,6 +23,11 @@ const DELEGATES = {
   GrammarCommonMistake: prisma.grammarCommonMistake,
 } as const;
 
+if (ONLY_TABLE && !(ONLY_TABLE in DELEGATES)) {
+  console.error(`Invalid --table value "${ONLY_TABLE}". Valid tables: ${Object.keys(DELEGATES).join(", ")}`);
+  process.exit(1);
+}
+
 async function main(): Promise<void> {
   const rows: TranslateRow[] = [];
   for (const [table, fields] of Object.entries(TRANSLATABLE)) {

@@ -48,4 +48,11 @@ describe("cleanLessonHtml", () => {
     expect(html).toContain('colspan="2"');
     expect(html).toContain("<tbody>");
   });
+  it("drops xmp content entirely (raw-text XSS vector)", () => {
+    const { html } = cleanLessonHtml("<p>a<xmp><img src=x onerror=alert(1)></xmp>b</p>", IMGS);
+    expect(html).not.toContain("alert");
+    expect(html).not.toContain("onerror");
+    expect(html).toContain("a");
+    expect(html).toContain("b");
+  });
 });

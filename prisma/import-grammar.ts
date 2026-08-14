@@ -2,7 +2,11 @@
 // Idempotent: content rows are upserted by their source id (lessons by
 // topicId+order). On update only EN fields are refreshed — *Vi columns are
 // NEVER touched, so translations applied later by grammar-translate-import
-// survive a re-run (CSV VI is only written at create).
+// survive a re-run (CSV VI is only written at create) — with two carve-outs:
+// topics' nameVi comes from the hand-written catalog (catalog.ts), not the
+// CSV, and IS written on update (it can never be NULL, so the translate
+// round-trip never targets it); and lessons under the explicit --refresh-vi
+// flag (see below), which re-syncs titleVi/contentViHtml from the CSV too.
 // A broken row never kills the run: it is skipped and listed in the report.
 //
 // Usage: npm run grammar:import -- [--dry-run] [--src <dir>] [--only <table>] [--refresh-vi]
@@ -244,9 +248,12 @@ async function countViNulls(): Promise<void> {
     "GrammarTestQuestion.questionVi": await prisma.grammarTestQuestion.count({ where: { questionVi: null } }),
     "GrammarPracticeQuestion.questionVi": await prisma.grammarPracticeQuestion.count({ where: { questionVi: null } }),
     "GrammarPracticeQuestion.explanationVi": await prisma.grammarPracticeQuestion.count({ where: { explanationVi: null } }),
+    "GrammarPracticeQuestion.categoryVi": await prisma.grammarPracticeQuestion.count({ where: { categoryVi: null } }),
     "GrammarConfusedPair.titleVi": await prisma.grammarConfusedPair.count({ where: { titleVi: null } }),
     "GrammarConfusedPair.entriesVi": await prisma.grammarConfusedPair.count({ where: { entriesVi: { equals: null as never } } }),
     "GrammarCommonMistake.bodyVi": await prisma.grammarCommonMistake.count({ where: { bodyVi: null } }),
+    "GrammarCommonMistake.titleVi": await prisma.grammarCommonMistake.count({ where: { titleVi: null } }),
+    "GrammarCommonMistake.noteVi": await prisma.grammarCommonMistake.count({ where: { noteVi: null } }),
   };
 }
 

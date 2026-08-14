@@ -1,6 +1,6 @@
 // confused_words.csv body parsing. EN bodies are all valid JSON (measured on
-// all 833 rows). VI bodies were mangled by whatever produced the CSV — the
-// `":"` after a "w"/"m" key collapsed into `>` or vanished (832/833 rows) —
+// all 832 rows). VI bodies were mangled by whatever produced the CSV — the
+// `":"` after a "w"/"m" key collapsed into `>` or vanished (831/832 rows) —
 // but the damage is mechanical, so we attempt regex repairs before giving up.
 import { splitMeaningExamples } from "./clean";
 

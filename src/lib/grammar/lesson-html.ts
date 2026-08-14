@@ -28,7 +28,7 @@ export function cleanLessonHtml(html: string, availableImages: Set<string>): Cle
     ],
     // Disallowed tags (font/div/figure/center/a/ins/g/…) are UNWRAPPED — text
     // survives. These must vanish WITH their contents instead:
-    nonTextTags: ["script", "style", "aside", "textarea", "option"],
+    nonTextTags: ["script", "style", "aside", "textarea", "option", "xmp"],
     allowedAttributes: {
       span: ["class"],
       img: ["src", "alt"],

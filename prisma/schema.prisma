@@ -338,7 +338,7 @@ model GrammarTopic {
 model GrammarLesson {
   id            Int     @id @default(autoincrement())
   topicId       Int
-  order         Int // lesson_order from lessons.csv (natural key: topic+order)
+  order         Int // 1-based sequence index within the topic in CSV row order (raw lesson_order has dup/gapped values)
   titleEn       String
   titleVi       String?
   contentEnHtml String  @db.Text // sanitized + image paths rewritten at import

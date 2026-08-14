@@ -68,7 +68,7 @@ App hiện chỉ dạy từ vựng. Người dùng muốn thêm một module h�
 
 Ba tầng, tách như các module hiện có:
 
-1. **Pipeline import** (`scripts/grammar/`, chạy bằng tsx như packs:*): CSV → làm sạch → Prisma. Chạy lại được (idempotent, upsert theo khóa gốc). Kèm cặp script translate round-trip.
+1. **Pipeline import** (`prisma/import-grammar.ts`, chạy bằng tsx như packs:*): CSV → làm sạch → Prisma. Chạy lại được (idempotent, upsert theo khóa gốc). Kèm cặp script translate round-trip.
 2. **Nội dung + tiến độ trong DB**: 6 bảng nội dung (bất biến sau import, chỉ UPDATE bởi translate-import) + 4 bảng tiến độ theo user. Mọi cột `*Vi` nullable — **`NULL` = "cần dịch"**, query trực tiếp, không cần bảng tracking phụ.
 3. **UI dưới `/grammar`**: server components đọc thẳng Prisma; mutation (nộp đáp án, đánh dấu đã đọc, resolve câu sai) qua `/api/grammar/*` dùng chung auth/CSRF/rate-limit hiện có.
 
@@ -210,7 +210,7 @@ Cuối run in + ghi `EnglishGrammar_extracted/import-report.json` (nằm cạnh 
 
 ### 4.2 Vòng dịch khép kín — không cần sửa schema
 
-- `npm run grammar:translate-export [--table X]` → `grammar-translate-todo.json`: mọi row có field VI NULL, shape `[{ table, id, field, textEn, textVi: null }]`. (Với `entriesVi`: textEn là JSON string của `entriesEn`.)
+- `npm run grammar:translate-export [--table X]` → `grammar-translate-todo.json`: mọi row có field VI NULL, shape `[{ table, id, field, textEn, textVi: null }]`, bỏ qua row mà field EN nguồn cũng rỗng (không có gì để dịch). (Với `entriesVi`: textEn là JSON string của `entriesEn`.)
 - Người dùng tự chạy translate ngoài band, điền `textVi`.
 - `npm run grammar:translate-import <file>` → validate (table/field trong whitelist, id tồn tại, textVi khác rỗng; `entriesVi` phải parse được đúng shape) → batch UPDATE → report số field đã điền / bị từ chối kèm lý do. Chạy nhiều lần, mỗi lần một phần cũng được.
 
