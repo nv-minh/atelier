@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { updateSettings } from "@/lib/study-engine";
 import { requireUserId } from "@/lib/session";
+import { setReminderPrefs } from "@/lib/reminders/prefs-server";
 
 export async function POST(req: NextRequest) {
   const userId = await requireUserId();
@@ -17,5 +18,18 @@ export async function POST(req: NextRequest) {
     allowed.dailyGoalXp = Math.round(Math.min(500, Math.max(10, body.dailyGoalXp)));
   }
   await updateSettings(userId, allowed);
+
+  // remindHour/tz take their own path because storing them also has to recompute
+  // nextRemindAt — updateSettings() writes straight through, so it cannot do this.
+  const touchesReminder =
+    body.remindHour === null || typeof body.remindHour === "number" || typeof body.tz === "string";
+  if (touchesReminder) {
+    await setReminderPrefs(userId, {
+      remindHour:
+        body.remindHour === null ? null : typeof body.remindHour === "number" ? body.remindHour : undefined,
+      tz: typeof body.tz === "string" ? body.tz : undefined,
+    });
+  }
+
   return NextResponse.json({ ok: true });
 }

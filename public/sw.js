@@ -120,3 +120,43 @@ self.addEventListener("fetch", (event) => {
 
   // Everything else: pass through (no respondWith).
 });
+
+// ── Push: study reminders ────────────────────────────────────────────
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    // Payload is not JSON (a probe from a dev tool): still show a generic
+    // notification rather than staying silent, so the mistake surfaces early.
+  }
+  const title = data.title || "Atelier";
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body: data.body || "",
+      icon: "/icons/icon-192.png",
+      badge: "/icons/icon-192.png",
+      // Fixed tag: a new reminder REPLACES an unread one instead of stacking up.
+      tag: "vocab-reminder",
+      data: { url: data.url || "/study" },
+    })
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = event.notification.data?.url || "/study";
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((clients) => {
+      // If a tab of the app is already open, focus it and navigate — opening a
+      // third tab on every notification click is the fastest way to make someone
+      // revoke the permission.
+      for (const client of clients) {
+        if (new URL(client.url).origin === self.location.origin) {
+          return client.focus().then((c) => (c && "navigate" in c ? c.navigate(url) : c));
+        }
+      }
+      return self.clients.openWindow(url);
+    })
+  );
+});

@@ -6,6 +6,7 @@ import { getCurrentUser } from "@/lib/session";
 import { TOPICS, topicBySlug } from "@/lib/topic-taxonomy";
 import { bandToCefr } from "@/lib/placement/estimate";
 import { getLearnerProfile } from "@/lib/selection/candidates";
+import { getReminderStateFrom } from "@/lib/reminders/state-server";
 import { HomeView } from "./home-view";
 import { LandingView } from "./landing-view";
 import type { DemoWord } from "@/components/landing/try-cards";
@@ -69,12 +70,24 @@ export default async function Home() {
     );
   }
 
+  // One Promise.all rather than sequential awaits: every extra round-trip to
+  // serverless Postgres is paid in latency on the first paint of the home page.
   const [stats, leechCount, gamify, profile] = await Promise.all([
     getDashboardStats(user.id),
     getLeechCount(user.id),
     getGamificationSummary(user.id),
     getLearnerProfile(user.id),
   ]);
+
+  // Fed from the numbers above instead of getReminderState(), which would re-run
+  // all four — including computeStreakFromDb, an unbounded DailyStat scan. One
+  // small extra query (the win-back lookback) beats four duplicated ones here.
+  const reminder = await getReminderStateFrom(user.id, {
+    studiedToday: stats.today.totalCount > 0,
+    streak: stats.streak,
+    dueCount: stats.dueToday,
+    leechCount,
+  });
 
   // Shown as a chip in the hero so level-aware selection is visible. Without it
   // the app looks like it hands out words at random.
@@ -88,5 +101,13 @@ export default async function Home() {
       }
     : null;
 
-  return <HomeView stats={stats} leechCount={leechCount} gamify={gamify} cefrBand={cefrBand} />;
+  return (
+    <HomeView
+      stats={stats}
+      leechCount={leechCount}
+      gamify={gamify}
+      cefrBand={cefrBand}
+      reminder={reminder}
+    />
+  );
 }

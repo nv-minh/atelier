@@ -20,7 +20,7 @@ committed pack files are the build artifacts of `npm run packs:*`.
 | Wikimedia Commons (via Wikipedia PageImages API) | Varies by file, generally free-use/CC; `prisma/fetch-images.ts` only accepts `upload.wikimedia.org` thumbnails | `Word.imageUrl` for words with a matching Wikipedia article (`source: "wikimedia"` in `data/images.json`) | https://en.wikipedia.org/w/api.php | 2026-07-26 |
 | Pexels API | Pexels License — free to use, no attribution required, hotlinking via `images.pexels.com` allowed: https://www.pexels.com/license/ | `Word.imageUrl` for the remaining words (`scripts/images/fetch-pexels.ts`, `source: "pexels"` in `data/images.json`); `photographer`/`pexelsUrl` recorded per entry for optional credit | https://www.pexels.com/api/ | 2026-08-08 |
 | Princeton WordNet 3.0 | WordNet 3.0 License (BSD-style; reuse and commercial use permitted) | Word lists **and verbatim glosses** (`definition_en`), synonyms and the few examples in the 2026-08-13 domain packs: `medical`, `legal`, `finance`, `logistics`, `daily-life`, `social`, `travel`, `office-skills`, `daily-communication` | https://wordnet.princeton.edu/ | 2026-08-13 |
-| `wordfreq` (Robyn Speer) | MIT (underlying corpora CC BY-SA / public domain) | Zipf frequency used to select and to **estimate CEFR** for the 2026-08-13 packs (`cefr_source: "inferred"`) | https://github.com/rspeer/wordfreq | 2026-08-13 |
+| `wordfreq` (Robyn Speer) | MIT (underlying corpora CC BY-SA / public domain) | Zipf frequency used to select and to **estimate CEFR** for the 2026-08-13 packs (`cefr_source: "inferred"`); since 2026-08-14 also the fallback tier of `Word.freqPct` via `packs:fetch-wordfreq` | https://github.com/rspeer/wordfreq | 2026-08-14 |
 
 ## Commercialization note
 
@@ -67,8 +67,16 @@ spelling already in the DB). Rationale for each decision is in
 
 **A crawl batch does not carry frequency data.** `freq_rank` was null on all
 2,996 rows of the 2026-08-13 batch, so those words get their percentile from
-`db:backfill-freq` or not at all. A future crawl should emit Zipf values from
-`wordfreq` (which it already uses to pick words) straight into `freq_rank`.
+`db:backfill-freq` or not at all.
+
+This used to end with "a future crawl should emit Zipf straight into
+`freq_rank`", which made 2,813 unranked words wait on a batch that might never
+come. **Resolved 2026-08-14 without waiting:** `packs:fetch-wordfreq` asks
+`wordfreq` for a Zipf value for every word already in the DB, and
+`db:backfill-freq` uses it as a last-resort tier. Coverage went 5,198 → 8,010 of
+8,011. A future crawl carrying `freq_rank` is still welcome, but nothing is
+blocked on it — reading the word list from the DB reaches every word regardless
+of how it arrived.
 
 ## Frequency sources and priority
 
@@ -81,13 +89,44 @@ most general scale available, in this order:
 2. `NGSL_Spoken_12_stats.csv`
 3. `BSL_120_stats.csv`
 4. `TSL_12_stats.csv`
+5. `wordfreq_zipf.csv` — fallback tier, **not** a ranked list (see below)
 
 The three specialist lists are built to *supplement* NGSL rather than repeat it,
 so they overlap it very little — the union is 5,252 distinct ranked words.
 `--force` recomputes every row against this priority (use it after changing the
 order); the default fills only nulls and is safe to re-run.
 
-Words in none of the lists keep `freqPct = null` on purpose, and the selection
+### The wordfreq tier, and why it is compressed
+
+`npm run packs:fetch-wordfreq` (needs `pip3 install wordfreq`) writes a Zipf value
+for every DB word to gitignored `data/raw/wordfreq_zipf.csv`. Missing file = tier
+skipped, like any other absent source.
+
+Zipf is an **absolute** scale, which the four rank-derived tiers are not. Writing
+raw Zipf percentiles into the same column would mix two scales, and that was
+measured before choosing: a straight conversion drops ~2,550 of the 2,813 unranked
+words from a selection weight of 0.60 to ~0.27, while `mister` keeps the 0.9994 its
+1,744-word list handed it. Rescaling *everything* to Zipf fixes `mister`
+(0.9994 → 0.0073) but reverses a decision the selection spec took on purpose:
+1,515 business/TOEIC words fall from ~0.98 to ~0.005, destroying the
+"central word of this domain" signal that `topicBoost` relies on.
+
+So `freqPctFromZipf` (`src/lib/freq.ts`) claims only what it can honestly deliver:
+an **order** among words that previously all tied at the neutral score. It maps Zipf
+onto a band centred on the exact freqPct that reproduces `SELECTION.freqUnknown`,
+so filling a word in breaks the tie without changing how often it is chosen.
+Measured on the 2,812 rows written on 2026-08-14: freqPct spans [0.189, 0.747],
+median selection weight 0.579 against the 0.600 every one of them had before.
+
+Two invariants worth keeping:
+- The tier **never displaces** a list percentile — `backfill-freq.ts` skips any row
+  whose `freqSource` is already a ranked list. Without that, a `--force` run while
+  one CSV happens to be absent (`data/raw` is gitignored, so that is the normal
+  state of a fresh checkout) would silently rescale the whole column.
+- Zipf `0` means "wordfreq has never seen this word", not "rarest possible", so it
+  stays `freqPct = null`. Exactly one DB word is in that state: `webhook`.
+
+Words in none of the sources keep `freqPct = null` on purpose, and the selection
 engine scores null neutrally rather than inventing a rank.
 
 ## Backups

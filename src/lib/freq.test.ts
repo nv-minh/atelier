@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { PACK_FREQ_SOURCE, freqPctFromRank, freqForPackWord } from "./freq";
+import {
+  PACK_FREQ_SOURCE,
+  freqPctFromRank,
+  freqForPackWord,
+  freqPctFromZipf,
+  ZIPF_MID,
+  ZIPF_HALF_RANGE,
+} from "./freq";
 
 describe("freqPctFromRank", () => {
   it("puts the top of a list at ~1 and the bottom at 0", () => {
@@ -67,5 +74,51 @@ describe("freqForPackWord", () => {
 
   it("only claims a scale for packs actually built from a ranked list", () => {
     expect(Object.keys(PACK_FREQ_SOURCE).sort()).toEqual(["business", "conversation", "toeic"]);
+  });
+});
+
+describe("freqPctFromZipf", () => {
+  it("giữ đúng thứ tự: từ phổ biến hơn thì percentile cao hơn", () => {
+    const rare = freqPctFromZipf(2.5)!;
+    const mid = freqPctFromZipf(4.0)!;
+    const common = freqPctFromZipf(5.5)!;
+    expect(rare).toBeLessThan(mid);
+    expect(mid).toBeLessThan(common);
+  });
+
+  it("zipf ở giữa dải rơi ĐÚNG điểm trung tính — đây là điều giữ hành vi chọn từ không đảo", () => {
+    // 0.4667 = (freqUnknown 0.6 − freqFloor 0.25) / freqSpan 0.75, tức đúng điểm
+    // số mà một từ KHÔNG có dữ liệu tần suất đang nhận hôm nay.
+    expect(freqPctFromZipf(ZIPF_MID)).toBeCloseTo((0.6 - 0.25) / 0.75, 6);
+  });
+
+  it("bị NÉN trong dải quanh điểm trung tính, không bao giờ đội sàn 0 hay chạm trần 1", () => {
+    // Đây là cả lý do tầng này tồn tại: nó chỉ phá thế hoà, không được phép đẩy
+    // 2.813 từ chuyên ngành xuống dưới mọi từ đã có rank.
+    for (const z of [0.5, 1, 2, 3, 4, 5, 6, 7, 8, 99]) {
+      const p = freqPctFromZipf(z);
+      if (p === null) continue;
+      expect(p).toBeGreaterThan(0.1);
+      expect(p).toBeLessThan(0.8);
+    }
+  });
+
+  it("bão hoà ở hai đầu thay vì trôi ra ngoài dải", () => {
+    expect(freqPctFromZipf(99)).toBe(freqPctFromZipf(ZIPF_MID + ZIPF_HALF_RANGE));
+    expect(freqPctFromZipf(0.01)).toBe(freqPctFromZipf(ZIPF_MID - ZIPF_HALF_RANGE));
+  });
+
+  it("zipf = 0 là 'wordfreq không biết từ này' → null, KHÔNG phải 'hiếm nhất'", () => {
+    // Bịa ra 'hiếm nhất' cho một từ chỉ vì corpus không chứa nó là chế dữ liệu.
+    expect(freqPctFromZipf(0)).toBeNull();
+    expect(freqPctFromZipf(-1)).toBeNull();
+    expect(freqPctFromZipf(null)).toBeNull();
+    expect(freqPctFromZipf(undefined)).toBeNull();
+    expect(freqPctFromZipf(NaN)).toBeNull();
+  });
+
+  it("không bao giờ vượt một từ có rank thật ở đỉnh list tổng quát", () => {
+    // `the` = 0.9996 qua đường NGSL. Không giá trị zipf nào được lên tới đó.
+    expect(freqPctFromZipf(8)!).toBeLessThan(0.9996);
   });
 });
