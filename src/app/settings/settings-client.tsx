@@ -9,6 +9,7 @@ import { LangToggle } from "@/components/lang-toggle";
 import { cn } from "@/lib/utils";
 import { CEFR_LEVELS } from "@/lib/export-format";
 import { isEnabled, setEnabled } from "@/lib/feedback-prefs";
+import { ReminderSettings } from "@/components/reminder-settings";
 import { playSound } from "@/lib/sound";
 
 export function SettingsClient({
@@ -18,6 +19,8 @@ export function SettingsClient({
   theme,
   dailyGoalXp,
   profile,
+  remindHour,
+  tz,
 }: {
   requestRetention: number;
   newCardsPerDay: number;
@@ -25,6 +28,9 @@ export function SettingsClient({
   theme: string;
   dailyGoalXp: number;
   profile: ProfileView;
+  /** null = reminders off. */
+  remindHour: number | null;
+  tz: string;
 }) {
   const { theme: active, set } = useTheme();
   const { t } = useI18n();
@@ -213,6 +219,8 @@ export function SettingsClient({
           onChange={setGoalXp}
         />
       </section>
+
+      <ReminderSettings initialHour={remindHour} initialTz={tz} />
 
       {/* Export */}
       <section className="card-atelier p-6 sm:p-7 mb-4">

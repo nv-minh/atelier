@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export default async function SettingsPage() {
   const user = await getCurrentUser();
   if (!user) return <AuthRequired context="settings" callbackUrl="/settings" />;
-  const [settings, profile] = await Promise.all([
+  const [settings, profile, reminderPrefs] = await Promise.all([
     getSettings(user.id),
     (async () => {
       const p = await prisma.learnerProfile.findUnique({
@@ -27,6 +27,13 @@ export default async function SettingsPage() {
         source: p.source,
       };
     })(),
+    // Read straight from Settings rather than through getSettings(): these two
+    // columns are only meaningful together with nextRemindAt, which the reminder
+    // path owns, so they do not belong in the generic settings shape.
+    prisma.settings.findUnique({
+      where: { userId: user.id },
+      select: { remindHour: true, tz: true },
+    }),
   ]);
   return (
     <SettingsClient
@@ -36,6 +43,8 @@ export default async function SettingsPage() {
       theme={settings.theme}
       dailyGoalXp={settings.dailyGoalXp}
       profile={profile}
+      remindHour={reminderPrefs?.remindHour ?? null}
+      tz={reminderPrefs?.tz ?? "Asia/Ho_Chi_Minh"}
     />
   );
 }

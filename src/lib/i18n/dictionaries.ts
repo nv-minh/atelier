@@ -334,6 +334,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dismiss: "Để sau",
     },
     settings: {
+      remind: "Nhắc học",
+      remindDesc: "Mỗi ngày tối đa một lời nhắc, vào giờ bạn chọn.",
+      remindEnable: "Bật nhắc học",
+      remindHour: "Giờ nhắc",
+      remindDisable: "Tắt nhắc",
+      remindDenied: "Trình duyệt đã chặn thông báo — bật lại trong cài đặt trang web.",
+      remindUnsupported: "Trình duyệt này không hỗ trợ thông báo đẩy.",
+      remindIosHint:
+        "Trên iPhone/iPad, thông báo chỉ hoạt động sau khi bạn thêm app vào Màn hình chính.",
       header: "— Cài đặt",
       title: "Tinh chỉnh",
       titleAccent: "studio",
@@ -1016,6 +1025,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dismiss: "Later",
     },
     settings: {
+      remind: "Study reminders",
+      remindDesc: "At most one reminder a day, at the hour you pick.",
+      remindEnable: "Turn on reminders",
+      remindHour: "Reminder hour",
+      remindDisable: "Turn off",
+      remindDenied: "Your browser blocked notifications — re-enable them in site settings.",
+      remindUnsupported: "This browser does not support push notifications.",
+      remindIosHint:
+        "On iPhone/iPad, notifications only work after you add the app to your Home Screen.",
       header: "— Settings",
       title: "Tune your",
       titleAccent: "studio",
