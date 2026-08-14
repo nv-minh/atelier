@@ -30,6 +30,8 @@
     "images:apply": "tsx prisma/apply-images.ts",
     "images:fetch-wikimedia": "tsx prisma/fetch-images.ts",
     "grammar:import": "tsx prisma/import-grammar.ts",
+    "grammar:translate-export": "tsx prisma/grammar-translate-export.ts",
+    "grammar:translate-import": "tsx prisma/grammar-translate-import.ts",
     "postinstall": "prisma generate",
     "brand:icons": "tsx scripts/brand/gen-icons.ts"
   },
