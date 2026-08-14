@@ -1,0 +1,54 @@
+name: Reminders
+
+# Hourly ping of /api/cron/reminders.
+#
+# Why not Vercel Cron: this project is on a Hobby account, and Vercel rejects any
+# schedule that runs more than once a day ("Hobby accounts are limited to daily
+# cron jobs", deploy 2026-08-14). A daily cron cannot work here — learners pick the
+# hour they want to be reminded, and the endpoint delivers whatever is due at the
+# moment it runs, so a once-a-day trigger would reach everyone at that one hour
+# instead of theirs.
+#
+# The endpoint authenticates on CRON_SECRET alone, so nothing about the app had to
+# change to move the trigger here.
+#
+# Two honest caveats about GitHub's scheduler:
+#  - It is best-effort. Runs are commonly minutes late and can be skipped entirely
+#    under load. That is fine for a study nudge and NOT fine for anything exact.
+#    Nothing is lost when a run is skipped: Settings.nextRemindAt stays in the past
+#    and the next run picks it up.
+#  - GitHub disables scheduled workflows after 60 days with no repository activity.
+#    If reminders go quiet, check that before suspecting the app.
+
+on:
+  schedule:
+    # Top of every hour, UTC. Zones offset by whole hours land exactly; a
+    # half-hour zone (e.g. Asia/Kolkata) is served up to 30 minutes late.
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+# A late run must never overlap a running one: both would scan the same rows, and
+# while the conditional claim on nextRemindAt makes a double send impossible, the
+# second run would only ever report skips.
+concurrency:
+  group: reminders
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    name: Send due reminders
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the reminders cron endpoint
+        env:
+          URL: ${{ secrets.REMINDERS_CRON_URL }}
+          SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          if [ -z "$URL" ] || [ -z "$SECRET" ]; then
+            echo "::error::REMINDERS_CRON_URL or CRON_SECRET is not set in repository secrets"
+            exit 1
+          fi
+          # --fail-with-body so a non-2xx fails the job AND still prints what the
+          # endpoint said; a bare --fail hides the reason.
+          curl -sS --fail-with-body --max-time 300 \
+            -H "Authorization: Bearer $SECRET" "$URL"

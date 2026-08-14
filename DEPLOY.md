@@ -148,32 +148,45 @@ và chúng chỉ bị dọn dần khi cron gặp 404/410. Sinh một lần rồi
 Code mới đọc ba cột mới của `Settings` (`remindHour`, `tz`, `nextRemindAt`) và bảng
 `PushSubscription`. Deploy trước khi push schema = 500 trên `/` và `/settings`.
 
-### 3. Cron chạy bằng gì
-Repo giờ có `vercel.json` với `"schedule": "0 * * * *"` (mỗi giờ, đúng phút 0).
+### 3. Cron chạy bằng GitHub Actions, KHÔNG phải Vercel Cron
+**Đã có câu trả lời dứt điểm (2026-08-14): tài khoản Hobby chỉ cho cron mỗi ngày một lần.**
+Deploy với `vercel.json` chứa `"schedule": "0 * * * *"` bị từ chối thẳng:
 
-Đã kiểm bằng `npx vercel crons ls`: CLI **nhận** lịch mỗi giờ và liệt kê nó ở trạng thái
-`not deployed`. Tài liệu Vercel nêu cú pháp (kể cả ví dụ `* * * * *`) nhưng **không** nói
-giới hạn tần suất theo plan, nên điều này chỉ được chứng minh dứt điểm ở lần deploy đầu.
-Sau `vercel --prod`, chạy lại `npx vercel crons ls` và xác nhận trạng thái đổi sang deployed.
+> Hobby accounts are limited to daily cron jobs. This cron expression (0 * * * *) would
+> run more than once per day. Upgrade to the Pro plan…
 
-Nếu plan từ chối tần suất này thì **đừng sửa code** — endpoint chỉ cần `CRON_SECRET`, nên xoá
-`vercel.json` và chuyển sang GitHub Actions:
+Đáng ghi lại vì `npx vercel crons ls` **nhận** lịch đó và liệt kê ở trạng thái `not deployed`
+mà không cảnh báo gì, còn tài liệu Vercel chỉ nêu cú pháp (kể cả ví dụ `* * * * *`) chứ không
+nói giới hạn theo plan. Chỉ deploy mới lộ ra.
 
-```yaml
-# .github/workflows/reminders.yml
-name: reminders
-on:
-  schedule:
-    - cron: "0 * * * *"
-  workflow_dispatch:
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - run: curl -sS -f -X GET "$URL" -H "Authorization: Bearer $SECRET"
-        env:
-          URL: ${{ secrets.REMINDERS_CRON_URL }}
-          SECRET: ${{ secrets.CRON_SECRET }}
+**Cron mỗi ngày không dùng được ở đây**, nên đừng hạ tần suất cho vừa Hobby: người học tự chọn
+giờ nhắc, còn endpoint gửi những gì đến hạn *tại thời điểm nó chạy* — trigger mỗi ngày một lần
+sẽ nhắc tất cả mọi người vào đúng cái giờ đó thay vì giờ họ chọn.
+
+Nên `vercel.json` **đã bị xoá** và trigger chuyển sang `.github/workflows/reminders.yml`.
+**Không dòng code app nào phải đổi** — endpoint chỉ xác thực bằng `CRON_SECRET`.
+
+Hai secret của repo (đã đặt bằng `gh secret set`):
+
+| Secret | Giá trị |
+|---|---|
+| `REMINDERS_CRON_URL` | `https://vocab-master-dusky.vercel.app/api/cron/reminders` |
+| `CRON_SECRET` | **cùng giá trị** với biến `CRON_SECRET` trên Vercel — lệch là 401 mỗi giờ, im lặng |
+
+Hai điểm yếu của scheduler GitHub, biết trước để khỏi truy nhầm:
+- Nó là **best-effort**: chạy trễ vài phút là bình thường, và có thể bị bỏ hẳn khi hệ thống
+  tải cao. Mất một lần chạy **không mất lời nhắc** — `nextRemindAt` vẫn nằm ở quá khứ và lần
+  chạy sau vớt được.
+- GitHub **tắt** scheduled workflow sau 60 ngày repo không có hoạt động nào. Nhắc học im
+  lặng thì kiểm chỗ này trước khi nghi app.
+
+Muốn quay lại Vercel Cron thì phải lên Pro; khi đó tạo lại `vercel.json` và xoá workflow —
+đừng để cả hai cùng chạy.
+
+Chạy tay một lần để kiểm workflow mà không phải đợi tới đầu giờ:
+
+```bash
+gh workflow run reminders.yml && sleep 20 && gh run list --workflow=reminders.yml --limit 1
 ```
 
 ### 4. Sau deploy: gọi tay một lần trước khi tin cron
