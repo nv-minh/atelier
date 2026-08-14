@@ -1,0 +1,39 @@
+# What NOT to upload to Vercel.
+#
+# This file is not optional: the CLI does NOT read .gitignore. Without it the
+# deploy packs the entire working directory — 23,911 files against a 15,000-file
+# limit — and is rejected with `missing_archive`. Only 308 files in this repo are
+# actually tracked by git; everything below is local-only or build-time.
+
+# Build output and dependencies — Vercel installs and builds from source.
+.next
+node_modules
+out
+build
+*.tsbuildinfo
+
+# Local tooling state. .claude alone is ~47,000 files (plugin caches).
+.claude
+.superpowers
+.vercel
+.crawl-w*.log
+
+# Datasets and crawl artifacts. Read only by the manual scripts in prisma/ and
+# scripts/, and by src/lib/placement/traps.test.ts — none of which run on Vercel;
+# the running app reads its vocabulary from Postgres, never from disk.
+#
+# data/cache/ is 14,307 files, and data/backups/ holds full table dumps
+# INCLUDING USER DATA. Neither has any business leaving this machine.
+data
+files
+
+# Specs, plans and execution ledgers.
+docs
+
+# Secrets and local databases, in case one is ever un-gitignored by accident.
+.env
+.env*
+*.pem
+prisma/*.db
+prisma/*.db-journal
+dev.db
