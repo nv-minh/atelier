@@ -23,6 +23,10 @@ const srcIdx = process.argv.indexOf("--src");
 const SRC = srcIdx !== -1 && process.argv[srcIdx + 1] ? process.argv[srcIdx + 1] : "EnglishGrammar_extracted";
 const onlyIdx = process.argv.indexOf("--only");
 const ONLY = onlyIdx !== -1 && process.argv[onlyIdx + 1] ? process.argv[onlyIdx + 1] : null;
+if (ONLY && !(ONLY in EXPECTED_COUNTS)) {
+  console.error(`Invalid --only value "${ONLY}". Valid tables: ${Object.keys(EXPECTED_COUNTS).join(", ")}`);
+  process.exit(1);
+}
 // Lesson update normally never touches *Vi (see header) so translations survive
 // a re-run. --refresh-vi is an explicit escape hatch to re-sync titleVi/
 // contentViHtml from the source CSV on the update path too — safe ONLY before
@@ -278,13 +282,16 @@ async function main(): Promise<void> {
   console.log("vi=NULL:", report.viNull);
   console.log("dbCounts:", report.dbCounts);
 
-  // Dry-run has no DB to query, so it falls back to ops-counting; a real run
-  // (full or --only) always has dbCounts for all six tables (see above) and
-  // is checked against that ground truth instead. --only narrows which keys
-  // are actually checked, so a single-table run isn't flagged for the five
-  // tables it never touched this invocation.
+  // Dry-run has no DB to query, so it falls back to ops-counting, where
+  // report.imported genuinely only has keys for the table(s) --only ran —
+  // narrowed there to avoid flagging untouched tables as "missing". A real
+  // run always has dbCounts for all six tables regardless of --only (see
+  // queryDbCounts above), so it is the ground-truth check for ALL six every
+  // time — --only only controls which table gets re-imported, never which
+  // tables get verified, so a real run can't silently miss a regression in
+  // some other table just because this invocation didn't touch it.
   const counted = DRY_RUN ? report.imported : report.dbCounts;
-  const expectedEntries = ONLY
+  const expectedEntries = (DRY_RUN && ONLY)
     ? Object.entries(EXPECTED_COUNTS).filter(([k]) => k === ONLY)
     : Object.entries(EXPECTED_COUNTS);
   const mismatches = expectedEntries.filter(([k, v]) => counted[k] !== v);

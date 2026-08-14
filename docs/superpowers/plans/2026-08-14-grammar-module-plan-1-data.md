@@ -861,6 +861,7 @@ git commit -m "feat(grammar): catalog 33 chủ đề/4 cụm + tên 22 nhóm l�
 ### Task 6: Script import (`prisma/import-grammar.ts`) + copy ảnh + report
 
 > Amendment (fix round 1): lessons.csv có 2 cặp (topic, lesson_order) trùng → order đánh theo tuần tự trong topic; import thêm --only <table> và verify dbCounts vs EXPECTED_COUNTS.
+> Amendment (fix round 2–3): thêm --refresh-vi (chỉ update path, đồng bộ lại titleVi/contentViHtml từ CSV — an toàn trước khi grammar-translate-import chạy lần nào); phát hiện nguyên nhân thứ 3 — topic "Simple Future (will-future)" có lesson_order thiếu số 5 (gap, không trùng), khiến hàng cũ ở key 8 bị bỏ rơi (id=268, trùng nội dung với id=267) sau khi đánh lại order tuần tự; user đã tự tay xóa hàng id=268 (scoped delete, đã xác minh trùng lặp) để đưa lessons về đúng 292.
 
 **Files:**
 - Create: `prisma/import-grammar.ts`
