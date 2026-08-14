@@ -39,7 +39,7 @@ Brainstorm ngày 2026-08-13 tách yêu cầu "user khác trình độ, chỉ mu�
 
 ### Tiêu chí thành công
 
-1. Từ `/browse`, người học lọc được đúng năm phạm vi (`mine`, `learned`, `learning`, `known`, `unseen`) kết hợp được với `q`, `cefr`, `topic`, và **mỗi kết hợp đều có đường đi thẳng sang một phiên học và sang export** mà không cần bảng dịch từ vựng nào.
+1. Từ `/browse`, người học lọc được đúng năm phạm vi (`mine`, `learned`, `learning`, `known`, `unseen`) kết hợp được với `q`, `cefr`, `topic`; **mọi kết hợp đều đi thẳng sang export**, và sang một phiên học qua `scope=weak` mang theo đúng `cefr`/`topic` đang lọc — tất cả không cần bảng dịch từ vựng nào. *(Sửa 2026-08-14 sau review toàn nhánh: bản đầu viết "mỗi kết hợp đều có đường đi thẳng sang một phiên học", nhưng `STUDY_SCOPES` chỉ có `starred|leeches|weak`, nên không học được "từ chưa gặp bậc B2 chủ đề y tế" — tiêu chí cũ nói quá so với thứ §2.5 thiết kế. Muốn học theo phạm vi tuỳ ý thì phải mở một cửa vào study giữ nguyên `scope`, và đó là việc của gói sau, không phải gói B.)*
 2. Không có định nghĩa "đã học" thứ ba: `stats.ts`, `export.ts` và kho từ dùng **cùng một hằng** `LEARNED_STATES`.
 3. `reset` một từ **không làm thay đổi XP** của người học, kể cả sau khi chạy lại `db:backfill-xp --force`.
 4. Một người học bật nhắc nhận **đúng một** thông báo mỗi ngày, kể cả khi cron chạy trùng hoặc retry — tính chất này được cưỡng chế bởi dữ liệu, không bởi chính sách trong code.
@@ -86,11 +86,13 @@ export function scopeWhere(scope: Scope, userId: string): Record<string, unknown
 | `learned` | `cards: { some: { userId, state: { in: LEARNED_STATES } } }` |
 | `learning` | `cards: { some: { userId, state: { in: [STATES.New, STATES.Learning] } } }` |
 | `known` | `marks: { some: { userId, known: true } }` |
-| `unseen` | `cards: { none: { userId } }` |
+| `unseen` | `cards: { none: { userId } }` **và** `marks: { none: { userId, known: true } }` |
 | `starred` | `marks: { some: { userId, starred: true } }` |
 | `leeches` | `cards: { some: { userId, ...leechCardWhere() } }` |
 
 **`learning` gồm cả state 0.** `Card` chỉ được tạo khi từ đã được đưa vào một phiên học (`fetchNewCards`), nên một card `state = 0` là từ *đã gặp mà chưa tốt nghiệp* — với người học đó là "đang học". `stats.ts` gọi nó là `newCardsSeen` và đếm riêng, nên khi nghiệm phải nhớ: **`learning` của kho từ = `learningCards` + `newCardsSeen` của `/stats`**, không phải `learningCards`. Nếu bỏ state 0 ra thì có một nhóm từ không thuộc phạm vi nào ngoài `mine`, và người học sẽ không tìm lại được chúng.
+
+**`unseen` loại luôn từ đã đánh dấu "đã biết" — sửa spec ngày 2026-08-14 sau review toàn nhánh.** Bản đầu định nghĩa `unseen` chỉ là "không có `Card`", trong khi §2.4 lại đặt `mark-known` làm cách nói "đừng hỏi tôi từ này nữa". Hai điều đó cộng lại bảo đảm rằng từ người học vừa gạt đi **vẫn nằm nguyên** trong danh sách "Chưa gặp" — mà `scope=unseen` chính là chỗ tự nhiên nhất để bấm đánh dấu hàng loạt, nên nút trông như không làm gì đúng ở nơi nó được dùng nhiều nhất. Phán quyết: **tự nhận là mình biết cũng là một lần gặp**, nên `unseen` phải loại chúng ra. Chỉ loại theo `known: true`; từ chỉ được gắn sao mà chưa gặp thì vẫn là `unseen`.
 
 **`leeches` không được định nghĩa lần thứ hai.** `study-engine.ts` đang có `leechWhere(userId)` trả `where` trên `Card`; bóc phần điều kiện không liên quan `userId` ra thành `leechCardWhere()` rồi dùng cho cả hai chỗ. Nếu chép lại `lapses >= LEECH_THRESHOLD, state >= 1` vào `scope.ts` thì repo có hai định nghĩa leech, đúng thứ mà tiêu chí 2 đang cấm với "đã học".
 
