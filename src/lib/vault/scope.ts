@@ -12,6 +12,13 @@
 import { STATES, LEARNED_STATES } from "../fsrs";
 import { leechCardWhere } from "../leech";
 import { CEFR_LEVELS } from "../export-format";
+// Pure module (slug list + a keyword regex, no prisma), so it's safe to pull
+// into this pure module too.
+import { topicBySlug } from "../topic-taxonomy";
+// Type-only: erased at compile time, so vitest never loads the actual Prisma
+// client and this module stays pure. Gives scopeWhere/filterWhere compile-time
+// checking against the real Word schema instead of an unchecked bag of keys.
+import type { Prisma } from "@prisma/client";
 
 export const SCOPES = [
   "all", "mine", "learned", "learning", "known", "unseen", "starred", "leeches", "weak",
@@ -50,13 +57,16 @@ export function parseFilter(
   }
 
   if (cefr && cefr !== "ALL" && (CEFR_LEVELS as readonly string[]).includes(cefr)) out.cefr = cefr;
-  if (sp.topic && sp.topic !== "ALL") out.topic = sp.topic;
+  // Dropped exactly like an invalid cefr is: an unrecognized slug (or a
+  // crafted string trying to smuggle content into a downstream header, e.g.
+  // the export route's Content-Disposition filename) never reaches a caller.
+  if (sp.topic && sp.topic !== "ALL" && topicBySlug(sp.topic)) out.topic = sp.topic;
   const q = sp.q?.trim().toLowerCase();
   if (q) out.q = q;
   return out;
 }
 
-export function scopeWhere(scope: Scope, userId: string): Record<string, unknown> {
+export function scopeWhere(scope: Scope, userId: string): Prisma.WordWhereInput {
   switch (scope) {
     case "mine":
       return {
@@ -75,7 +85,16 @@ export function scopeWhere(scope: Scope, userId: string): Record<string, unknown
     case "known":
       return { marks: { some: { userId, known: true } } };
     case "unseen":
-      return { cards: { none: { userId } } };
+      // A word the learner explicitly marked known HAS been encountered —
+      // declaring knowledge is an encounter. Without this second clause, a
+      // word dismissed via mark-known (the sanctioned way to say "stop asking
+      // me about this word", see bulk.ts) would stay in "unseen" forever, and
+      // since scope=unseen is the most natural place to bulk-mark, the button
+      // would look broken exactly where it is used most.
+      return {
+        cards: { none: { userId } },
+        marks: { none: { userId, known: true } },
+      };
     case "starred":
       return { marks: { some: { userId, starred: true } } };
     case "leeches":
@@ -91,8 +110,8 @@ export function scopeWhere(scope: Scope, userId: string): Record<string, unknown
   }
 }
 
-export function filterWhere(f: VaultFilter, userId: string | null): Record<string, unknown> {
-  const where: Record<string, unknown> = {};
+export function filterWhere(f: VaultFilter, userId: string | null): Prisma.WordWhereInput {
+  const where: Prisma.WordWhereInput = {};
   if (f.cefr) where.cefr = f.cefr;
   // Word.topics is a JSON array stored as a string — same shape as studyWordFilter.
   if (f.topic) where.topics = { contains: `"${f.topic}"` };
