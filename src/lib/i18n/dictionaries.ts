@@ -270,6 +270,8 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       bulkReset: "Học lại từ đầu",
       bulkClear: "Bỏ chọn",
       bulkDone: "Đã cập nhật {n} từ",
+      bulkErrorAuth: "Phiên đăng nhập đã hết hạn — hãy đăng nhập lại",
+      bulkError: "Có lỗi xảy ra, thử lại",
     },
     notebook: {
       header: "— Sổ tay của bạn",
@@ -938,6 +940,8 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       bulkReset: "Reset progress",
       bulkClear: "Clear",
       bulkDone: "Updated {n} words",
+      bulkErrorAuth: "Your session expired — sign in again",
+      bulkError: "Something went wrong — try again",
     },
     notebook: {
       header: "— Your notebook",

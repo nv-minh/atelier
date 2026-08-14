@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { Search, StickyNote, Lock } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
 import { StarButton } from "@/components/star-button";
+import { KnownButton } from "@/components/known-button";
 import { useAuthGate, useGuestGuard } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
 import { WordImage, isRealImage } from "@/components/word-image";
@@ -33,6 +34,7 @@ type Item = {
   reps: number;
   starred: boolean;
   hasNote: boolean;
+  known: boolean;
 };
 
 const stateLabel: Record<number, { t: string; c: string }> = {
@@ -83,6 +85,25 @@ export function LibraryClient({
   // Row selection for the bulk action bar below. Keyed by word id.
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkMsg, setBulkMsg] = useState<string | null>(null);
+  // True while a bulk request is in flight — disables the action buttons so a
+  // double-click can't fire two overlapping requests against the same selection.
+  const [bulkPending, setBulkPending] = useState(false);
+  // Tracks the timer that clears `bulkMsg`, so a second bulk action (or an
+  // unmount) can cancel the previous one instead of leaving a stray
+  // setState-after-unmount / a premature clear of the newer message.
+  const bulkMsgTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (bulkMsgTimer.current) clearTimeout(bulkMsgTimer.current);
+    };
+  }, []);
+
+  const showBulkMsg = (msg: string) => {
+    if (bulkMsgTimer.current) clearTimeout(bulkMsgTimer.current);
+    setBulkMsg(msg);
+    bulkMsgTimer.current = setTimeout(() => setBulkMsg(null), 3000);
+  };
 
   // `items` is a fresh array from the server on every navigation (new page,
   // filter, or scope), so a stale selection would otherwise point at word ids
@@ -102,21 +123,31 @@ export function LibraryClient({
     });
 
   const runBulk = async (action: string) => {
-    const res = await fetch("/api/vault/bulk", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ wordIds: [...selected], action }),
-    });
-    if (!res.ok) return;
-    const result = await res.json().catch(() => null);
-    setSelected(new Set());
-    if (result && typeof result.changed === "number") {
-      setBulkMsg(t("browse.bulkDone", { n: result.changed }));
-      setTimeout(() => setBulkMsg(null), 3000);
+    setBulkPending(true);
+    try {
+      const res = await fetch("/api/vault/bulk", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ wordIds: [...selected], action }),
+      });
+      if (!res.ok) {
+        // An expired session (401) or an unknown word (404) must surface —
+        // silently no-op-ing here would leave the selection sitting there
+        // with zero feedback, as if the click had done nothing.
+        showBulkMsg(res.status === 401 ? t("browse.bulkErrorAuth") : t("browse.bulkError"));
+        return;
+      }
+      const result = await res.json().catch(() => null);
+      setSelected(new Set());
+      if (result && typeof result.changed === "number") {
+        showBulkMsg(t("browse.bulkDone", { n: result.changed }));
+      }
+      // Server component re-reads the DB: refresh instead of hand-editing local
+      // state, so the status pills and summary strip never drift from the DB.
+      router.refresh();
+    } finally {
+      setBulkPending(false);
     }
-    // Server component re-reads the DB: refresh instead of hand-editing local
-    // state, so the status pills and summary strip never drift from the DB.
-    router.refresh();
   };
 
   // Guests read page 1 freely; paging deeper raises the prompt instead of
@@ -237,7 +268,11 @@ export function LibraryClient({
               {t("browse.studyWeak")}
             </Link>
             <a
-              href={`/api/export?format=csv&${mkQs(cur, {})}`}
+              // /api/export has no notion of pagination — pass page:1 in the
+              // patch so a export while on page N > 1 doesn't leave a stray
+              // `page=N` on the URL that claims a pagination the endpoint
+              // ignores.
+              href={`/api/export?format=csv&${mkQs(cur, { page: 1 })}`}
               download
               className="rounded-full border border-line px-3.5 py-1.5 text-xs font-medium hover:border-ember"
             >
@@ -303,6 +338,7 @@ export function LibraryClient({
               <div className="flex flex-col items-end gap-2 shrink-0">
                 <div className="flex items-center gap-1">
                   <StarButton wordId={w.id} initialStarred={w.starred} size="sm" />
+                  <KnownButton wordId={w.id} initialKnown={w.known} variant="icon" />
                   <AudioButton word={w.word} accent="us" size="sm" />
                 </div>
                 {st ? (
@@ -349,19 +385,22 @@ export function LibraryClient({
           <span className="text-sm text-soft">{t("browse.bulkSelected", { n: selected.size })}</span>
           <button
             onClick={() => runBulk("mark-known")}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+            disabled={bulkPending}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkMarkKnown")}
           </button>
           <button
             onClick={() => runBulk("star")}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+            disabled={bulkPending}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkStar")}
           </button>
           <button
             onClick={() => runBulk("reset")}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+            disabled={bulkPending}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkReset")}
           </button>

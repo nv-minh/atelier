@@ -53,11 +53,11 @@ export default async function BrowsePage({
     userId ? getVaultSummary(userId) : Promise.resolve(null),
   ]);
 
-  // Per-user marks (star + note presence) for the words on this page.
+  // Per-user marks (star + note presence + known) for the words on this page.
   const marks = userId
     ? await prisma.wordMark.findMany({
         where: { userId, wordId: { in: words.map((w) => w.id) } },
-        select: { wordId: true, starred: true, note: true },
+        select: { wordId: true, starred: true, note: true, known: true },
       })
     : [];
   const markByWord = new Map(marks.map((m) => [m.wordId, m]));
@@ -84,6 +84,7 @@ export default async function BrowsePage({
       reps: w.cards?.[0]?.reps ?? 0,
       starred: mark?.starred ?? false,
       hasNote: !!mark && mark.note !== "",
+      known: mark?.known ?? false,
     };
   });
 
