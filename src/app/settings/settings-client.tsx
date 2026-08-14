@@ -10,6 +10,9 @@ import { cn } from "@/lib/utils";
 import { CEFR_LEVELS } from "@/lib/export-format";
 import { isEnabled, setEnabled } from "@/lib/feedback-prefs";
 import { ReminderSettings } from "@/components/reminder-settings";
+// "contribute", not "feedback": settings.feedback is already the sound-and-
+// haptics section in this app's vocabulary.
+import { ContributeCard } from "@/components/contribute-card";
 import { playSound } from "@/lib/sound";
 
 export function SettingsClient({
@@ -274,6 +277,8 @@ export function SettingsClient({
         </div>
         <p className="text-xs text-soft mt-3">{t("settings.exportAnkiHint")}</p>
       </section>
+
+      <ContributeCard />
 
       <div className="flex items-center gap-3">
         <button

@@ -13,19 +13,30 @@ export function isRealImage(url: string | null | undefined): boolean {
 }
 
 // Shows the word's image inline when a real image URL exists; otherwise nothing.
-// object-contain (no crop) inside a self-drawn frame: the wrapper centers the
-// image, caps its height via `maxH`, and fills any letterbox area with a subtle
-// bg so off-ratio photos read as intentional rather than broken.
+//
+// Two fits, because the same picture does two different jobs:
+//
+//   "contain" — the whole picture, letterboxed inside a self-drawn frame whose
+//     height is capped by `maxH`. Right where the image is the reference and a
+//     crop would lose information (the word detail page).
+//
+//   "cover" — the frame's size wins and the picture fills it, cropping the
+//     overflow. Right on cards: at "contain" a portrait photo collapses into a
+//     sliver a third of the card wide, which reads as broken rather than
+//     deliberate. The caller owns the frame's height here (`h-44`, `aspect-*`)
+//     and `maxH` is ignored.
 export function WordImage({
   imageUrl,
   word,
   className,
   maxH = "max-h-48",
+  fit = "contain",
 }: {
   imageUrl: string | null | undefined;
   word: string;
   className?: string;
   maxH?: string;
+  fit?: "contain" | "cover";
 }) {
   const [err, setErr] = useState(false);
   if (!isRealImage(imageUrl) || err) return null;
@@ -42,7 +53,11 @@ export function WordImage({
         alt={word}
         loading="lazy"
         onError={() => setErr(true)}
-        className={cn("object-contain max-w-full h-auto", maxH)}
+        className={
+          fit === "cover"
+            ? "h-full w-full object-cover"
+            : cn("object-contain max-w-full h-auto", maxH)
+        }
       />
     </div>
   );

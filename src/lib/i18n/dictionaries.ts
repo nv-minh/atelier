@@ -683,8 +683,22 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       tagline: "Atelier — studio học ngôn ngữ.",
       privacy: "Quyền riêng tư",
       terms: "Điều khoản",
+      feedback: "Góp ý",
       dataLine:
         "Đăng nhập bằng Google lưu tên, email và ảnh đại diện của bạn. Bật nhắc học sẽ lưu thêm một đăng ký thông báo của trình duyệt. Bạn xuất được toàn bộ từ vựng của mình ra CSV bất cứ lúc nào.",
+    },
+    contribute: {
+      title: "Đóng góp ý kiến",
+      desc: "Atelier do một người làm, nên mọi góp ý đều được đọc. Cứ nói thẳng chỗ nào khó dùng.",
+      itemBug: "Lỗi hiển thị, bấm không được, chỗ nào chạy sai",
+      itemWord: "Từ sai nghĩa, sai phiên âm, ảnh không khớp với từ",
+      itemIdea: "Ý tưởng cho chế độ học hoặc tính năng mới",
+      cta: "Gửi góp ý qua email",
+      subject: "Góp ý cho Atelier",
+      bodyTemplate:
+        "Mình muốn góp ý về:\n\n\nMình đang dùng (điện thoại / trình duyệt):\n",
+      copy: "Sao chép địa chỉ email",
+      copied: "Đã sao chép",
     },
     topics: {
       header: "— Học theo chủ đề",
@@ -1431,8 +1445,21 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       tagline: "Atelier — a language studio.",
       privacy: "Privacy",
       terms: "Terms",
+      feedback: "Feedback",
       dataLine:
         "Signing in with Google stores your name, email and avatar. Turning on reminders also stores a browser notification subscription. You can export all of your words to CSV at any time.",
+    },
+    contribute: {
+      title: "Send feedback",
+      desc: "Atelier is built by one person, so every note gets read. Say plainly what is getting in your way.",
+      itemBug: "Anything broken: layout, taps that do nothing, wrong behaviour",
+      itemWord: "A word with the wrong meaning, phonetics, or picture",
+      itemIdea: "Ideas for a study mode or a feature",
+      cta: "Send feedback by email",
+      subject: "Atelier feedback",
+      bodyTemplate: "What I want to flag:\n\n\nDevice / browser I'm on:\n",
+      copy: "Copy the email address",
+      copied: "Copied",
     },
     topics: {
       header: "— Browse by theme",

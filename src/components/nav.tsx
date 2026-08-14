@@ -90,10 +90,20 @@ export function Nav() {
       <nav
         className={cn(
           "md:hidden fixed bottom-0 inset-x-0 z-40 backdrop-blur-xl bg-paper/85 border-t border-line",
+          // The safe-area inset belongs on the bar, not inside the h-16 row.
+          // Inside it, the padding was subtracted from the row's fixed 64px
+          // rather than added to the bar: with a 34px inset the icons overflowed
+          // *above* the top border while the bottom third of the bar sat empty.
+          // Out here the bar grows and the row stays centred in its own 64px.
+          // The extra 0.5rem is slack for mobile browsers that park a toolbar
+          // over the last pixels of a `bottom: 0` element — clipped labels are
+          // what make the bar look like it has slid off the bottom of the
+          // screen. It lands on empty background now, not on the text.
+          "pb-[calc(0.5rem+env(safe-area-inset-bottom))]",
           isStudying && "opacity-0 pointer-events-none translate-y-full transition-transform"
         )}
       >
-        <div className="flex items-center justify-around h-16 pb-[env(safe-area-inset-bottom)]">
+        <div className="flex items-center justify-around h-16">
           {mobileLinks.map((l) => {
             const active = pathname === l.href || (l.href !== "/" && pathname?.startsWith(l.href));
             const Icon = l.icon;

@@ -216,10 +216,9 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
         </details>
       )}
 
-      {/* inline image when a real one exists */}
-      <div className="mt-4">
-        <WordImage imageUrl={card.imageUrl} word={card.word} maxH="max-h-44" />
-      </div>
+      {/* inline image when a real one exists — the margin rides on the frame so
+          nothing is left behind on the cards that have no picture */}
+      <WordImage imageUrl={card.imageUrl} word={card.word} fit="cover" className="mt-4 h-44" />
 
       <div className="flex items-center gap-2 mt-5 pt-4 border-t border-line">
         <AudioButton word={card.word} accent="uk" size="sm" />

@@ -167,7 +167,17 @@ function Front({ card }: { card: DemoWord }) {
 
       <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 py-4">
         {isRealImage(card.imageUrl) && (
-          <WordImage imageUrl={card.imageUrl} word={card.word} className="!w-auto" maxH="max-h-32" />
+          // Full card width, cropped to whatever height is left over: flex-1
+          // hands the picture the slack the word and phonetics don't need, and
+          // the max-h keeps it from swallowing a tall card. Sized this way
+          // rather than fixed because the card is only min(58vh, 440px) tall —
+          // on a short viewport a fixed band pushes the word past the padding.
+          <WordImage
+            imageUrl={card.imageUrl}
+            word={card.word}
+            fit="cover"
+            className="flex-1 min-h-0 max-h-36 sm:max-h-44"
+          />
         )}
         <div>
           <p className="display text-4xl sm:text-5xl leading-none">{card.word}</p>
