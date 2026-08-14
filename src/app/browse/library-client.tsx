@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Search, StickyNote, Lock } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { AudioButton } from "@/components/audio-button";
@@ -79,6 +79,45 @@ export function LibraryClient({
   // filter on its own and would drop another chip's parameter — exactly the
   // bug mkQs exists to prevent.
   const cur: Query = { q: search, cefr, topic, scope, page };
+
+  // Row selection for the bulk action bar below. Keyed by word id.
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [bulkMsg, setBulkMsg] = useState<string | null>(null);
+
+  // `items` is a fresh array from the server on every navigation (new page,
+  // filter, or scope), so a stale selection would otherwise point at word ids
+  // that are no longer on screen — the floating bar would keep showing "N
+  // selected" for rows the user can no longer see, and running an action
+  // would silently apply to invisible words. Clear it whenever the list
+  // changes out from under the selection.
+  useEffect(() => {
+    setSelected(new Set());
+  }, [items]);
+
+  const toggle = (id: string) =>
+    setSelected((prev) => {
+      const next = new Set(prev);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+
+  const runBulk = async (action: string) => {
+    const res = await fetch("/api/vault/bulk", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ wordIds: [...selected], action }),
+    });
+    if (!res.ok) return;
+    const result = await res.json().catch(() => null);
+    setSelected(new Set());
+    if (result && typeof result.changed === "number") {
+      setBulkMsg(t("browse.bulkDone", { n: result.changed }));
+      setTimeout(() => setBulkMsg(null), 3000);
+    }
+    // Server component re-reads the DB: refresh instead of hand-editing local
+    // state, so the status pills and summary strip never drift from the DB.
+    router.refresh();
+  };
 
   // Guests read page 1 freely; paging deeper raises the prompt instead of
   // navigating to a wall they did not ask for.
@@ -220,6 +259,15 @@ export function LibraryClient({
               key={w.id}
               className="card-atelier p-4 sm:p-5 flex items-start gap-4 hover:border-ember/25 transition-colors"
             >
+              {authed && (
+                <input
+                  type="checkbox"
+                  checked={selected.has(w.id)}
+                  onChange={() => toggle(w.id)}
+                  aria-label={w.word}
+                  className="mt-1 shrink-0 accent-ember"
+                />
+              )}
               {isRealImage(w.imageUrl) && (
                 <WordImage imageUrl={w.imageUrl} word={w.word} className="!w-20 !h-20 shrink-0" maxH="max-h-20" />
               )}
@@ -289,6 +337,49 @@ export function LibraryClient({
             {t("browse.next")}
             {!authed && <Lock size={12} className="text-ember" aria-hidden />}
           </button>
+        </div>
+      )}
+
+      {/* Floating bulk action bar — only while rows are selected. Every
+          action re-reads the DB via router.refresh() rather than patching
+          local state, so the summary strip and per-row pills never drift
+          out of sync with what actually happened on the server. */}
+      {selected.size > 0 && (
+        <div className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 card-atelier px-4 py-3 flex items-center gap-2 shadow-lg">
+          <span className="text-sm text-soft">{t("browse.bulkSelected", { n: selected.size })}</span>
+          <button
+            onClick={() => runBulk("mark-known")}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+          >
+            {t("browse.bulkMarkKnown")}
+          </button>
+          <button
+            onClick={() => runBulk("star")}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+          >
+            {t("browse.bulkStar")}
+          </button>
+          <button
+            onClick={() => runBulk("reset")}
+            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember"
+          >
+            {t("browse.bulkReset")}
+          </button>
+          <button onClick={() => setSelected(new Set())} className="text-xs text-soft hover:text-ink">
+            {t("browse.bulkClear")}
+          </button>
+        </div>
+      )}
+
+      {/* Transient confirmation after a bulk action lands — survives past the
+          bar above disappearing (selection clears immediately on success). */}
+      {bulkMsg && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 card-atelier px-4 py-2 text-sm shadow-lg"
+        >
+          {bulkMsg}
         </div>
       )}
     </main>
