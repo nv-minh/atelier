@@ -25,7 +25,9 @@ export function ReminderSettings({
 }) {
   const { t } = useI18n();
   const [hour, setHour] = useState<number | null>(initialHour);
-  const [status, setStatus] = useState<"idle" | "saving" | "denied" | "unsupported" | "saved">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "saving" | "denied" | "unsupported" | "failed" | "saved"
+  >("idle");
 
   const save = async (nextHour: number | null) => {
     setStatus("saving");
@@ -50,16 +52,32 @@ export function ReminderSettings({
       setStatus("denied");
       return;
     }
-    const reg = await navigator.serviceWorker.ready;
-    const sub = await reg.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY ?? ""),
-    });
-    await fetch("/api/push/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(sub.toJSON()),
-    });
+    const vapid = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+    if (!vapid) {
+      // Forgetting NEXT_PUBLIC_VAPID_PUBLIC_KEY on the host is the likeliest way
+      // this breaks in production, and subscribe() would fail with a DOMException
+      // that never reaches the user. Say something instead of dying silently.
+      setStatus("failed");
+      return;
+    }
+    try {
+      const reg = await navigator.serviceWorker.ready;
+      const sub = await reg.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapid),
+      });
+      await fetch("/api/push/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(sub.toJSON()),
+      });
+    } catch {
+      // Permission is granted at this point, so a failure here is the browser or
+      // the push service refusing — not the learner. Do NOT save an hour: a
+      // remindHour with no subscription is a reminder that can never arrive.
+      setStatus("failed");
+      return;
+    }
     await save(hour ?? 21);
   };
 
@@ -106,6 +124,7 @@ export function ReminderSettings({
 
       {status === "denied" && <p className="text-xs text-ember mt-3">{t("settings.remindDenied")}</p>}
       {status === "unsupported" && <p className="text-xs text-soft mt-3">{t("settings.remindUnsupported")}</p>}
+      {status === "failed" && <p className="text-xs text-ember mt-3">{t("settings.remindFailed")}</p>}
       <p className="text-xs text-soft opacity-80 mt-3">{t("settings.remindIosHint")}</p>
     </section>
   );

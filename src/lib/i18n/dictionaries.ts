@@ -341,6 +341,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       remindDisable: "Tắt nhắc",
       remindDenied: "Trình duyệt đã chặn thông báo — bật lại trong cài đặt trang web.",
       remindUnsupported: "Trình duyệt này không hỗ trợ thông báo đẩy.",
+      remindFailed: "Không đăng ký được thông báo. Thử lại, hoặc tải lại trang rồi thử.",
       remindIosHint:
         "Trên iPhone/iPad, thông báo chỉ hoạt động sau khi bạn thêm app vào Màn hình chính.",
       header: "— Cài đặt",
@@ -1032,6 +1033,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       remindDisable: "Turn off",
       remindDenied: "Your browser blocked notifications — re-enable them in site settings.",
       remindUnsupported: "This browser does not support push notifications.",
+      remindFailed: "Could not register for notifications. Try again, or reload the page first.",
       remindIosHint:
         "On iPhone/iPad, notifications only work after you add the app to your Home Screen.",
       header: "— Settings",
