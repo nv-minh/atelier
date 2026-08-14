@@ -58,32 +58,45 @@ export async function sendReminderTo(
     url: reminder.url,
   });
 
-  let sent = 0;
-  let pruned = 0;
-  for (const s of subs) {
-    try {
-      await webpush.sendNotification(
-        { endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } },
-        payload
-      );
-      sent++;
-      await prisma.pushSubscription.update({
-        where: { id: s.id },
-        data: { lastOkAt: new Date(), failCount: 0 },
-      });
-    } catch (e: any) {
-      // 404/410 = the device uninstalled the app or the subscription expired:
-      // delete it now rather than keep pushing into the void forever.
-      if (e?.statusCode === 404 || e?.statusCode === 410) {
-        await prisma.pushSubscription.delete({ where: { id: s.id } }).catch(() => {});
-        pruned++;
-      } else {
+  // One user rarely has more than 2-3 devices, but the cron calls this for
+  // every claimed user in its own concurrent batch (see cron/reminders/route.ts)
+  // — a serial `for` here used to multiply that fan-out by however many devices
+  // each user has. Promise.allSettled: one device's failure/prune must not skip
+  // or block another device's send.
+  const results = await Promise.allSettled(
+    subs.map(async (s) => {
+      try {
+        await webpush.sendNotification(
+          { endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } },
+          payload
+        );
+        await prisma.pushSubscription.update({
+          where: { id: s.id },
+          data: { lastOkAt: new Date(), failCount: 0 },
+        });
+        return "sent" as const;
+      } catch (e: any) {
+        // 404/410 = the device uninstalled the app or the subscription expired:
+        // delete it now rather than keep pushing into the void forever.
+        if (e?.statusCode === 404 || e?.statusCode === 410) {
+          await prisma.pushSubscription.delete({ where: { id: s.id } }).catch(() => {});
+          return "pruned" as const;
+        }
         await prisma.pushSubscription.update({
           where: { id: s.id },
           data: { failCount: { increment: 1 } },
         });
+        return "failed" as const;
       }
-    }
+    })
+  );
+
+  let sent = 0;
+  let pruned = 0;
+  for (const r of results) {
+    if (r.status !== "fulfilled") continue; // per-device try/catch above already handles failures
+    if (r.value === "sent") sent++;
+    else if (r.value === "pruned") pruned++;
   }
   return { sent, pruned };
 }

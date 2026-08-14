@@ -7,10 +7,56 @@ import {
   getSettings,
   getStarredWordIds,
   studyWordFilter,
+  truncateDef,
   type StudyCard,
 } from "@/lib/study-engine";
+import { shuffle } from "@/lib/utils";
 import { deriveSessionLimits } from "./session-limits";
 import type { PracticeItem, PracticeMode, SessionPlan } from "./types";
+
+type QuizOptions = { options: string[]; correctIndex: number };
+
+// Precompute quiz answer options for the WHOLE session up front: one query PER
+// DISTINCT CEFR LEVEL in the queue (usually just one, since sessions are
+// commonly level-filtered), instead of QuizMode firing one client round trip
+// (+2 DB queries) per card — up to 20+ waterfalled requests per session. See
+// the pre-release perf audit, H9.
+async function buildQuizOptionsByCard(queue: StudyCard[]): Promise<Map<string, QuizOptions>> {
+  const withDefs = queue.filter((c) => c.definitionEn);
+  const result = new Map<string, QuizOptions>();
+  if (withDefs.length === 0) return result;
+
+  const levels = [...new Set(withDefs.map((c) => c.cefr))];
+  const poolByLevel = new Map<string, { word: string; def: string }[]>();
+  await Promise.all(
+    levels.map(async (level) => {
+      const rows = await prisma.word.findMany({
+        where: { cefr: level, definitionEn: { not: null } },
+        select: { word: true, definitionEn: true },
+        take: 200,
+      });
+      poolByLevel.set(
+        level,
+        rows.map((r) => ({ word: r.word, def: truncateDef(r.definitionEn!) }))
+      );
+    })
+  );
+
+  for (const c of withDefs) {
+    const correct = truncateDef(c.definitionEn!);
+    const pool = poolByLevel.get(c.cefr) ?? [];
+    const valid = pool.filter((p) => p.word !== c.word && p.def !== correct).map((p) => p.def);
+    const distractors = shuffle(valid).slice(0, 3);
+    // Too few peer definitions at this level (a thin CEFR bucket, or a niche
+    // topic filter): leave it unset so QuizMode falls back to the live
+    // endpoint, which pulls from the full level pool rather than this
+    // session's queue-derived one.
+    if (distractors.length < 3) continue;
+    const options = shuffle([correct, ...distractors]);
+    result.set(c.cardId, { options, correctIndex: options.indexOf(correct) });
+  }
+  return result;
+}
 
 export const DEFAULT_SESSION_SIZE = 15;
 const MAX_SESSION_SIZE = 200;
@@ -24,7 +70,7 @@ export function parseSize(raw: string | undefined): number | "all" {
   return Math.min(MAX_SESSION_SIZE, Math.floor(n));
 }
 
-function toPracticeItem(c: StudyCard, starred: boolean): PracticeItem {
+function toPracticeItem(c: StudyCard, starred: boolean, quizOptions?: QuizOptions): PracticeItem {
   return {
     cardId: c.cardId,
     wordId: c.id,
@@ -55,6 +101,7 @@ function toPracticeItem(c: StudyCard, starred: boolean): PracticeItem {
     scheduledDays: c.scheduledDays,
     due: c.due.toISOString(),
     lastReview: c.lastReview ? c.lastReview.toISOString() : null,
+    quizOptions,
   };
 }
 
@@ -121,17 +168,17 @@ export async function buildSessionPlan(
   // budget.reviewLimit; actual.newLimit is never read. No special-case needed.)
   const queue = [...dueCards, ...newCards];
 
-  const starred = new Set(
-    (
-      await prisma.wordMark.findMany({
-        where: { userId, starred: true, wordId: { in: queue.map((c) => c.id) } },
-        select: { wordId: true },
-      })
-    ).map((m) => m.wordId)
-  );
+  const [starredRows, quizOptionsByCard] = await Promise.all([
+    prisma.wordMark.findMany({
+      where: { userId, starred: true, wordId: { in: queue.map((c) => c.id) } },
+      select: { wordId: true },
+    }),
+    opts.mode === "quiz" ? buildQuizOptionsByCard(queue) : Promise.resolve(new Map<string, QuizOptions>()),
+  ]);
+  const starred = new Set(starredRows.map((m) => m.wordId));
 
   return {
-    items: queue.map((c) => toPracticeItem(c, starred.has(c.id))),
+    items: queue.map((c) => toPracticeItem(c, starred.has(c.id), quizOptionsByCard.get(c.cardId))),
     remaining: {
       due: Math.max(0, dueAvailable - dueCards.length),
       new: Math.max(0, newAllowanceToday - newCards.length),

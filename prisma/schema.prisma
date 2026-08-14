@@ -142,6 +142,11 @@ model ReviewLog {
   elapsedDays   Int
   scheduledDays Int
   reviewedAt    DateTime @default(now())
+  // Client-generated per review; a network-retried POST carrying the same key is
+  // a no-op server-side (see recordReview), so a retry can't double-advance the
+  // card or double-award XP. Nullable: NULLs are distinct in a Postgres unique
+  // index, so older callers / non-review paths are unaffected.
+  idempotencyKey String? @unique
 
   card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

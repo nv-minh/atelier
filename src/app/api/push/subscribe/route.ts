@@ -1,12 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { requireUserId } from "@/lib/session";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  // A real user subscribes a handful of times ever (once per device). 20/min
+  // bounds a broken retry loop or scripted spam without ever bothering a
+  // legitimate multi-device sign-in.
+  const limit = checkRateLimit(`${userId}:push:subscribe`, 20, 60_000);
+  if (!limit.allowed) return rateLimitResponse(limit.retryAfterSec);
 
   const body = await req.json().catch(() => null);
   const endpoint = body?.endpoint;
@@ -28,6 +36,7 @@ export async function POST(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

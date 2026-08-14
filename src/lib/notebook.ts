@@ -66,11 +66,24 @@ export async function setWordMark(
   return { starred: mark.starred, note: mark.note, known: mark.known };
 }
 
+// Word columns the notebook list actually renders. `include: { word: true }`
+// used to pull every column — extraDefs/synonyms/antonyms/topics/both audio
+// URLs/freq fields — for a list view that shows none of them.
+const NOTEBOOK_WORD_SELECT = {
+  word: true,
+  cefr: true,
+  typeVi: true,
+  typeEn: true,
+  definitionEn: true,
+  definitionVi: true,
+  imageUrl: true,
+} as const;
+
 // Starred words with the word content + the user's card state per word.
 export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
   const marks = await prisma.wordMark.findMany({
     where: { userId, starred: true },
-    include: { word: true },
+    select: { wordId: true, note: true, word: { select: NOTEBOOK_WORD_SELECT } },
     orderBy: { createdAt: "desc" },
   });
 
@@ -112,7 +125,7 @@ export async function getNotebook(userId: string): Promise<NotebookEntry[]> {
 export async function getKnownWords(userId: string): Promise<NotebookEntry[]> {
   const marks = await prisma.wordMark.findMany({
     where: { userId, known: true },
-    include: { word: true },
+    select: { wordId: true, note: true, starred: true, word: { select: NOTEBOOK_WORD_SELECT } },
     orderBy: { updatedAt: "desc" },
   });
 
@@ -154,7 +167,14 @@ export async function getKnownCount(userId: string): Promise<number> {
 export async function getLeeches(userId: string): Promise<NotebookEntry[]> {
   const cards = await prisma.card.findMany({
     where: leechWhere(userId),
-    include: { word: true },
+    select: {
+      wordId: true,
+      state: true,
+      reps: true,
+      lapses: true,
+      due: true,
+      word: { select: NOTEBOOK_WORD_SELECT },
+    },
     orderBy: { lapses: "desc" },
   });
 

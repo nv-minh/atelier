@@ -6,6 +6,7 @@ import type { BlockResult } from "@/lib/placement/ladder";
 import { TRAP_WORDS } from "@/lib/placement/traps";
 import { requireUserId } from "@/lib/session";
 import { topicBySlug } from "@/lib/topic-taxonomy";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 type Answer = { wordId: string; known: boolean };
 type TrapAnswer = { word: string; known: boolean };
@@ -45,6 +46,7 @@ function trapAnswers(v: unknown): TrapAnswer[] {
  * draft never overwrites a newer placement.
  */
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

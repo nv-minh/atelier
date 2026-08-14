@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { Prisma } from "@prisma/client";
 import { setWordMark } from "@/lib/notebook";
 import { requireUserId } from "@/lib/session";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

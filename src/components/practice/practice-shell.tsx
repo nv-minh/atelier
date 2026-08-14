@@ -40,7 +40,17 @@ const REQUEUE_ON_AGAIN: Record<PracticeMode, boolean> = {
   "image-word": false,
 };
 
-type PendingPost = { cardId: string; rating: number; correct: boolean };
+type PendingPost = { cardId: string; rating: number; correct: boolean; idempotencyKey: string };
+
+// One key per answered card, sent with every attempt (including the retry).
+// The server dedupes on it (ReviewLog.idempotencyKey is unique), so a
+// network-retried submit can't double-advance the card or double-award XP.
+// crypto.randomUUID needs a secure context; every deployed origin is HTTPS, and
+// the Math.random fallback only matters for the odd non-secure local dev URL.
+function newIdempotencyKey(): string {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) return crypto.randomUUID();
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
 
 export function PracticeShell({
   items,
@@ -210,7 +220,12 @@ export function PracticeShell({
         ...r.signals,
         wasHidden: r.signals.wasHidden || hiddenRef.current,
       });
-      pendingRef.current = { cardId: current.cardId, rating, correct: r.correct };
+      pendingRef.current = {
+        cardId: current.cardId,
+        rating,
+        correct: r.correct,
+        idempotencyKey: newIdempotencyKey(),
+      };
       dispatch({
         type: "answer",
         result: {

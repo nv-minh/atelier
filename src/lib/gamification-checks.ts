@@ -6,7 +6,7 @@
 // (src/lib/db.ts) and a throwaway client in the backfill script.
 
 import type { PrismaClient } from "@prisma/client";
-import { todayStr, addDays } from "./utils";
+import { todayStr, addUtcDays } from "./utils";
 import { XP_PER_RATING, CEFR_ACHIEVEMENT_LEVELS } from "./gamification-defs";
 
 // A card is "mastered" once it's in Review state with a scheduled interval of at
@@ -18,23 +18,33 @@ export const MASTERED_MIN_DAYS = 21;
 // stats.computeStreak — kept here (rather than importing the server-only stats
 // module) so the backfill script can call it too.
 export async function computeStreakFromDb(prisma: PrismaClient, userId: string): Promise<number> {
+  // Bound the scan: a streak can only run back from today, so rows older than
+  // ~13 months can never be part of it. Without this Postgres ships the user's
+  // ENTIRE DailyStat history before the break-early loop below even starts —
+  // slow for long-tenured users, and 200x worse inside the reminder cron which
+  // calls this per user. The take is a hard backstop on top of the date window.
+  const since = todayStr(addUtcDays(new Date(), -400));
   const stats = await prisma.dailyStat.findMany({
-    where: { userId, totalCount: { gt: 0 } },
+    where: { userId, totalCount: { gt: 0 }, dateStr: { gte: since } },
     orderBy: { dateStr: "desc" },
+    take: 400,
     select: { dateStr: true },
   });
   if (stats.length === 0) return 0;
 
   const today = todayStr();
-  const yesterday = todayStr(addDays(new Date(), -1));
+  const yesterday = todayStr(addUtcDays(new Date(), -1));
   if (stats[0].dateStr !== today && stats[0].dateStr !== yesterday) return 0;
 
   let streak = 0;
+  // cursor is a UTC-midnight base (parsed from a YYYY-MM-DD dateStr), so step it
+  // on the UTC axis — addDays() uses local setDate/getDate and would slip a day
+  // across a DST transition, resetting every streak to 0 on transition day.
   let cursor = new Date(stats[0].dateStr);
   for (const s of stats) {
     if (s.dateStr === todayStr(cursor)) {
       streak += 1;
-      cursor = addDays(cursor, -1);
+      cursor = addUtcDays(cursor, -1);
     } else {
       break;
     }
