@@ -4,7 +4,6 @@ import { shapeSummary } from "./summary";
 describe("shapeSummary", () => {
   it("learning gộp state 0 và 1 — khớp learningCards + newCardsSeen của /stats", () => {
     const s = shapeSummary({
-      total: 8011,
       cardStates: [
         { state: 0, count: 12 },
         { state: 1, count: 30 },
@@ -20,25 +19,24 @@ describe("shapeSummary", () => {
     expect(s.learned).toBe(1204); // 1200 + 4
     expect(s.seen).toBe(1246); // mọi card, bất kể state
     expect(s.known).toBe(87);
-    expect(s.total).toBe(8011);
   });
 
   it("user chưa có card nào → mọi số là 0, không NaN", () => {
-    const s = shapeSummary({ total: 8011, cardStates: [], knownCount: 0, bandLevel: null });
-    expect(s).toMatchObject({ seen: 0, learned: 0, learning: 0, known: 0, total: 8011 });
+    const s = shapeSummary({ cardStates: [], knownCount: 0, bandLevel: null });
+    expect(s).toMatchObject({ seen: 0, learned: 0, learning: 0, known: 0 });
     expect(s.band).toBeNull();
   });
 
   it("không có LearnerProfile → band null, dải không vẽ thanh tiến độ", () => {
     const s = shapeSummary({
-      total: 10, cardStates: [{ state: 2, count: 3 }], knownCount: 0, bandLevel: null,
+      cardStates: [{ state: 2, count: 3 }], knownCount: 0, bandLevel: null,
     });
     expect(s.band).toBeNull();
   });
 
   it("band có nhưng bậc đó chưa có từ nào trong DB → total 0, KHÔNG chia cho 0", () => {
     const s = shapeSummary({
-      total: 10, cardStates: [], knownCount: 0,
+      cardStates: [], knownCount: 0,
       bandLevel: "C1", bandTotal: 0, bandLearned: 0,
     });
     expect(s.band).toEqual({ level: "C1", learned: 0, total: 0 });
@@ -47,7 +45,7 @@ describe("shapeSummary", () => {
   it("state lạ trong DB không làm hỏng phép đếm", () => {
     // Phòng xa: state ngoài 0..3 (dữ liệu cũ/hỏng) chỉ tính vào seen.
     const s = shapeSummary({
-      total: 5, cardStates: [{ state: 9, count: 2 }], knownCount: 0, bandLevel: null,
+      cardStates: [{ state: 9, count: 2 }], knownCount: 0, bandLevel: null,
     });
     expect(s.seen).toBe(2);
     expect(s.learned).toBe(0);

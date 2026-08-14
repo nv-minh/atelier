@@ -5,7 +5,6 @@
 import { STATES, LEARNED_STATES } from "../fsrs";
 
 export type SummaryInput = {
-  total: number;
   cardStates: { state: number; count: number }[];
   knownCount: number;
   bandLevel: string | null;
@@ -14,7 +13,6 @@ export type SummaryInput = {
 };
 
 export type VaultSummary = {
-  total: number;
   seen: number;
   learned: number;
   learning: number;
@@ -37,7 +35,6 @@ export function shapeSummary(input: SummaryInput): VaultSummary {
     // toward seen, but neither bucket — better an undercount than a crash.
   }
   return {
-    total: input.total,
     seen,
     learned,
     learning,
