@@ -16,6 +16,11 @@ export async function getWeakWordIds(
   limit: number,
   filter: VaultFilter
 ): Promise<string[]> {
+  // Passing `null` as the userId already makes filterWhere skip any scope
+  // clause (see filterWhere's own userId-null branch), so the caller's own
+  // scope ("weak", "leeches", ...) can never leak into the Word-side where.
+  // Forcing `scope: "all"` here is belt-and-braces on top of that, not what
+  // actually prevents the leak.
   const wordWhere = filterWhere({ ...filter, scope: "all" }, null);
   const rows = await prisma.card.findMany({
     where: {

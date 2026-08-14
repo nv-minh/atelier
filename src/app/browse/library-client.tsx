@@ -42,7 +42,7 @@ const stateLabel: Record<number, { t: string; c: string }> = {
   3: { t: "Relearning", c: "text-red-400" },
 };
 
-type Query = { q?: string; cefr?: string; topic?: string; scope?: Scope; page?: number };
+type Query = { q?: string; cefr?: string; topic?: string; scope?: Scope; page?: number; limit?: number };
 
 export function LibraryClient({
   items,
@@ -231,7 +231,7 @@ export function LibraryClient({
           )}
           <div className="flex gap-2 ml-auto">
             <Link
-              href={`/study/cram?${mkQs({ cefr, topic }, { scope: "weak" as Scope })}`}
+              href={`/study/cram?${mkQs({ cefr, topic }, { scope: "weak" as Scope, limit: 20 })}`}
               className="rounded-full border border-line px-3.5 py-1.5 text-xs font-medium hover:border-ember"
             >
               {t("browse.studyWeak")}
@@ -399,5 +399,6 @@ function mkQs(cur: Query, patch: Query) {
   if (next.topic && next.topic !== "ALL") sp.set("topic", next.topic);
   if (next.scope && next.scope !== "all") sp.set("scope", next.scope);
   if (next.page && next.page > 1) sp.set("page", String(next.page));
+  if (next.limit) sp.set("limit", String(next.limit));
   return sp.toString();
 }

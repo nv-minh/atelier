@@ -7,10 +7,23 @@ import { parseScope, STUDY_SCOPES } from "@/lib/vault/scope";
 
 export const dynamic = "force-dynamic";
 
+const DEFAULT_CRAM_LIMIT = 30;
+const MAX_CRAM_LIMIT = 50;
+
+// `?limit=` is a user-controlled query parameter — absent or unparseable falls
+// back to the existing default (30), but anything present gets clamped to
+// 1..50 so a crafted URL can't ask buildCramQueue for the whole word table.
+function parseLimit(raw: string | undefined): number {
+  if (!raw) return DEFAULT_CRAM_LIMIT;
+  const n = Number(raw);
+  if (!Number.isFinite(n)) return DEFAULT_CRAM_LIMIT;
+  return Math.min(MAX_CRAM_LIMIT, Math.max(1, Math.floor(n)));
+}
+
 export default async function CramPage({
   searchParams,
 }: {
-  searchParams: { cefr?: string; topic?: string; dir?: string; scope?: string };
+  searchParams: { cefr?: string; topic?: string; dir?: string; scope?: string; limit?: string };
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
@@ -18,7 +31,7 @@ export default async function CramPage({
   const words = await buildCramQueue({
     cefr: searchParams.cefr,
     topic: searchParams.topic,
-    limit: 30,
+    limit: parseLimit(searchParams.limit),
     userId: user.id,
     scope: scope as "starred" | "leeches" | "weak" | undefined,
   });
