@@ -423,10 +423,13 @@ export async function buildCramQueue(opts?: {
     orderedIds = await getLeechWordIds(opts.userId);
     where.id = { in: orderedIds };
   } else if (opts?.scope === "weak" && opts.userId) {
+    // Use the already-normalized `cefr`/`topic` locals (ALL → undefined), same
+    // as the leeches/starred branches above — passing the raw opts here let
+    // `cefr=ALL` compile to a literal where.cefr = "ALL" that matches nothing.
     orderedIds = await getWeakWordIds(opts.userId, opts?.limit ?? 30, {
       scope: "all",
-      cefr: opts.cefr,
-      topic: opts.topic,
+      cefr,
+      topic,
     });
     where.id = { in: orderedIds };
   }
