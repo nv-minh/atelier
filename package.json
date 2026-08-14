@@ -18,6 +18,7 @@
     "db:restore": "tsx prisma/restore-db.ts",
     "db:studio": "prisma studio",
     "packs:fetch": "tsx scripts/packs/fetch-sources.ts",
+    "packs:fetch-wordfreq": "tsx scripts/packs/fetch-wordfreq.ts",
     "packs:build": "tsx scripts/packs/build-wordlists.ts",
     "packs:build-crawl": "tsx scripts/packs/build-crawl-batch.ts",
     "packs:enrich": "tsx scripts/packs/enrich.ts",

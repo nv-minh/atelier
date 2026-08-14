@@ -42,10 +42,17 @@ export const SELECTION = {
   freqSpan: 0.75,
 
   /**
-   * Score for a word with no frequency data — deliberately mid-range. 4,871 of
-   * 8,011 rows have `freqPct = null` (no general frequency list covers them),
-   * so this is the common case, not an edge case. It must not push them behind
-   * every ranked word, and must not invent a rank they do not have.
+   * Score for a word with no frequency data — deliberately mid-range: it must not
+   * push such a word behind every ranked word, and must not invent a rank it does
+   * not have.
+   *
+   * Once the common case (4,871 of 8,011 rows), now an edge case: the wordfreq
+   * tier in db:backfill-freq took coverage to 8,010/8,011. Do NOT read that as
+   * "this constant no longer matters" — it is still the anchor the whole Zipf tier
+   * is calibrated against. freqPctFromZipf centres its band on the freqPct that
+   * reproduces exactly this score, so that filling a word in breaks the tie among
+   * unranked words without changing how often they are chosen overall. Retuning
+   * this number moves 2,812 words with it.
    */
   freqUnknown: 0.6,
 
