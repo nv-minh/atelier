@@ -690,6 +690,10 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     contribute: {
       title: "Đóng góp ý kiến",
       desc: "Atelier do một người làm, nên mọi góp ý đều được đọc. Cứ nói thẳng chỗ nào khó dùng.",
+      label: "Góp ý",
+      bannerTitle: "Thấy chỗ nào chưa ổn?",
+      bannerBody:
+        "Atelier do một người làm. Lỗi bạn gặp, từ bị sai, tính năng bạn muốn có — gửi thẳng cho tôi, email nào cũng được đọc.",
       itemBug: "Lỗi hiển thị, bấm không được, chỗ nào chạy sai",
       itemWord: "Từ sai nghĩa, sai phiên âm, ảnh không khớp với từ",
       itemIdea: "Ý tưởng cho chế độ học hoặc tính năng mới",
@@ -1452,6 +1456,10 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     contribute: {
       title: "Send feedback",
       desc: "Atelier is built by one person, so every note gets read. Say plainly what is getting in your way.",
+      label: "Feedback",
+      bannerTitle: "Something not working?",
+      bannerBody:
+        "Atelier is built by one person. Bugs you hit, words that are wrong, features you want — send them straight to me. Every email gets read.",
       itemBug: "Anything broken: layout, taps that do nothing, wrong behaviour",
       itemWord: "A word with the wrong meaning, phonetics, or picture",
       itemIdea: "Ideas for a study mode or a feature",

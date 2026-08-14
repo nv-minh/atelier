@@ -14,6 +14,7 @@ import { TryCards, type DemoWord } from "@/components/landing/try-cards";
 import { IntervalLadder } from "@/components/landing/interval-ladder";
 import { DailyQuote } from "@/components/daily-quote";
 import { SiteFooter } from "@/components/site-footer";
+import { ContributeBanner } from "@/components/contribute-card";
 import { startSignIn, GoogleMark } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
 import type { Topic } from "@/lib/topic-taxonomy";
@@ -295,6 +296,11 @@ export function LandingView({
         </button>
         <p className="mt-4 text-xs text-soft/70">{t("landing.final.note")}</p>
       </section>
+
+      {/* Feedback before the footer, not inside it: a visitor who bounced off
+          the sign-in ask is exactly the one worth hearing from, and a link
+          between Privacy and Terms is not something anyone notices. */}
+      <ContributeBanner className="mt-16 sm:mt-24" />
 
       <SiteFooter />
     </main>

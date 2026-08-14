@@ -5,13 +5,22 @@
 // and a skeleton body already filled, and the address itself is on screen and
 // copyable — on a phone with no mail client wired up a mailto: link opens
 // nothing at all, and that reader would otherwise have no address to reach.
+//
+// Two shapes, one pair of actions:
+//   ContributeCard   — the full section, for the settings stack.
+//   ContributeBanner — a slim strip for the end of the dashboard and the
+//     landing page, matching the landing's "what's next" block. It exists
+//     because the settings card was the ONLY entry point: the dashboard has no
+//     footer, so reaching it meant user menu -> settings -> scroll to bottom.
 
 import { useState } from "react";
 import { Mail, Copy, Check } from "lucide-react";
 import { FEEDBACK_EMAIL, feedbackMailto } from "@/lib/contact";
 import { useI18n } from "@/components/i18n-provider";
+import { cn } from "@/lib/utils";
 
-export function ContributeCard() {
+// Shared by both shapes: the mailto button plus the address as a copy target.
+function ContributeActions({ className }: { className?: string }) {
   const { t } = useI18n();
   const [copied, setCopied] = useState(false);
 
@@ -28,6 +37,31 @@ export function ContributeCard() {
   };
 
   return (
+    <div className={cn("flex flex-wrap items-center gap-2", className)}>
+      <a
+        href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
+        className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+      >
+        <Mail size={15} />
+        {t("contribute.cta")}
+      </a>
+      <button
+        onClick={copy}
+        aria-label={t("contribute.copy")}
+        className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2.5 text-soft hover:text-ink transition-colors"
+      >
+        {copied ? <Check size={14} className="text-moss-500" /> : <Copy size={14} />}
+        <span className="font-mono text-xs">
+          {copied ? t("contribute.copied") : FEEDBACK_EMAIL}
+        </span>
+      </button>
+    </div>
+  );
+}
+
+export function ContributeCard() {
+  const { t } = useI18n();
+  return (
     <section className="card-atelier p-6 sm:p-7 mb-4">
       <h2 className="display text-xl mb-1">{t("contribute.title")}</h2>
       <p className="text-xs text-soft mb-5">{t("contribute.desc")}</p>
@@ -43,29 +77,33 @@ export function ContributeCard() {
         ))}
       </ul>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <a
-          href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
-          className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
-        >
-          <Mail size={15} />
-          {t("contribute.cta")}
-        </a>
-        <button
-          onClick={copy}
-          aria-label={t("contribute.copy")}
-          className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2.5 text-soft hover:text-ink transition-colors"
-        >
-          {copied ? (
-            <Check size={14} className="text-moss-500" />
-          ) : (
-            <Copy size={14} />
-          )}
-          <span className="font-mono text-xs">
-            {copied ? t("contribute.copied") : FEEDBACK_EMAIL}
-          </span>
-        </button>
+      <ContributeActions />
+    </section>
+  );
+}
+
+export function ContributeBanner({ className }: { className?: string }) {
+  const { t } = useI18n();
+  return (
+    // Three columns on a wide screen — heading, sentence, actions — so the
+    // strip fills its width instead of leaving the right half empty. It stacks
+    // below lg, where three columns would squeeze the buttons.
+    <section
+      className={cn(
+        "rounded-2xl border border-line px-6 py-5 lg:flex lg:items-center lg:gap-8",
+        className
+      )}
+    >
+      <div className="lg:shrink-0">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ember">
+          {t("contribute.label")}
+        </p>
+        <p className="display text-xl mt-1">{t("contribute.bannerTitle")}</p>
       </div>
+      <p className="mt-2 lg:mt-0 flex-1 text-sm text-soft leading-relaxed">
+        {t("contribute.bannerBody")}
+      </p>
+      <ContributeActions className="mt-4 lg:mt-0 lg:shrink-0" />
     </section>
   );
 }
