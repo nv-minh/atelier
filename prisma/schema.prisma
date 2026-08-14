@@ -28,6 +28,8 @@ model User {
   achievements   Achievement[]
   progress       UserProgress?
   learnerProfile LearnerProfile?
+
+  pushSubscriptions PushSubscription[]
 }
 
 model Account {
@@ -191,7 +193,40 @@ model Settings {
   theme            String @default("system")
   dailyGoalXp      Int    @default(60)
 
+  // ── Study reminders ───────────────────────────────────────────────
+  // remindHour: LOCAL hour 0–23; null = reminders off, which is what every
+  // existing row has, so nobody gets switched on silently when this ships.
+  remindHour Int?
+  // IANA zone, not a minute offset: a stored offset is wrong on the day DST changes.
+  tz         String @default("Asia/Ho_Chi_Minh")
+  // A DERIVED pointer, and a deliberate exception to the "Settings = what the
+  // user set by hand" rule. It lives here because the "one reminder per day" cap
+  // is enforced by a single conditional update on this very row (see
+  // /api/cron/reminders); in a separate table the cron would have to join and
+  // then write in two places, and the most important property of the feature
+  // would rest on those two writes never drifting apart.
+  nextRemindAt DateTime?
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([nextRemindAt])
+}
+
+// One learner can have several devices, so this cannot live on Settings.
+model PushSubscription {
+  id        String    @id @default(cuid())
+  userId    String
+  endpoint  String    @unique
+  p256dh    String
+  auth      String
+  userAgent String?
+  createdAt DateTime  @default(now())
+  lastOkAt  DateTime?
+  failCount Int       @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 // ── Gamification: XP total + unlocked achievements ───────────────────
