@@ -9,6 +9,9 @@ import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import https from "https";
 import { readFileSync, writeFileSync, existsSync } from "fs";
+// Imported rather than re-typed: this literal used to exist in three places
+// and they had already drifted from each other.
+import { UA } from "../scripts/packs/lib/http";
 
 const prisma = new PrismaClient();
 const PROGRESS_FILE = "/tmp/img-progress.json";
@@ -24,7 +27,7 @@ function fetchJson(url: string, timeout = 8000): Promise<any> {
   return new Promise((res, rej) => {
     const req = https.get(
       url,
-      { headers: { "User-Agent": "VocabMaster/1.0 (educational vocab app; contact@atelier.app)" }, timeout },
+      { headers: { "User-Agent": UA }, timeout },
       (r) => {
         let d = "";
         r.on("data", (c) => (d += c));

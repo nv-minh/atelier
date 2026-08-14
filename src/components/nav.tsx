@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen, BarChart3, Library, Settings, Layers, Compass, NotebookPen, Trophy } from "lucide-react";
+import { BarChart3, Library, Settings, Layers, Compass, NotebookPen, Trophy } from "lucide-react";
+import { BrandMark } from "./brand-mark";
 import { ThemeToggle } from "./theme-toggle";
 import { LangToggle } from "./lang-toggle";
 import { UserMenu } from "./user-menu";
@@ -43,9 +44,7 @@ export function Nav() {
       >
         <div className="shell flex h-16 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-paper">
-              <BookOpen size={15} strokeWidth={2} />
-            </span>
+            <BrandMark size={32} />
             <span className="display text-lg tracking-tight">
               Atelier
               <span className="display-it text-ember">.</span>

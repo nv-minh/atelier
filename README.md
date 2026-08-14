@@ -1,15 +1,15 @@
-# Atelier — Vocabulary Studio
+# Atelier — Studio học ngôn ngữ
 
-[![CI](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/vocab-training/actions/workflows/ci.yml)
-[![Live demo](https://img.shields.io/badge/demo-Vercel-ember)](https://vocab-master-dusky.vercel.app)
+[![CI](https://github.com/nv-minh/atelier/actions/workflows/ci.yml/badge.svg)](https://github.com/nv-minh/atelier/actions/workflows/ci.yml)
+[![Live demo](https://img.shields.io/badge/demo-Vercel-ember)](https://atelier-lang.vercel.app)
 
-Web app **full-stack** luyện từ vựng tiếng Anh (A1–C1) bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập Google + đồng bộ dữ liệu học giữa các thiết bị.
+Web app **full-stack** học ngôn ngữ — hiện là từ vựng tiếng Anh (A1–C1), ngữ pháp đang xây bằng **spaced repetition (FSRS)** — thuật toán họ Anki 2024. Xây bằng Next.js, Prisma + PostgreSQL, giao diện ấm kiểu editorial, có đăng nhập Google + đồng bộ dữ liệu học giữa các thiết bị.
 
 ```
-6.394 từ · 5 chế độ học · 5 bộ từ chuyên đề · FSRS scheduler · song ngữ Anh–Vi · đăng nhập Google
+8.011 từ · 7 chế độ học · 14 bộ từ nguồn · FSRS scheduler · song ngữ Anh–Vi · đăng nhập Google
 ```
 
-👉 **Demo chạy thật:** https://vocab-master-dusky.vercel.app
+👉 **Demo chạy thật:** https://atelier-lang.vercel.app
 
 ---
 
@@ -25,14 +25,17 @@ Dùng **FSRS** (`ts-fsrs`) — mô hình mỗi thẻ theo 3 biến *stability / 
 | 🟢 Tốt | Nhớ được | Khoảng chuẩn |
 | 🔵 Dễ | Nhớ tức thì | Khoảng dài |
 
-### 🎴 5 chế độ luyện tập
+### 🎴 7 chế độ luyện tập
 - **Flashcard** — lõi SRS: lật thẻ → đánh giá → lặp. Hỗ trợ 3 hướng: **Word→Meaning**, **Meaning→Word**, **Cloze** (điền khuyết trong câu ví dụ).
 - **Trắc nghiệm** — chọn nghĩa trong 4 đáp án cùng cấp CEFR.
 - **Gõ đáp án** — active recall, chấp nhận sai 1 ký tự (Levenshtein).
 - **Nghe & viết** — nghe audio (UK/US, chỉnh tốc độ) rồi chép lại.
+- **Ghép cặp** — game nối 6 cặp từ↔nghĩa qua 4 vòng; thưởng XP, không ghi lịch SRS.
+- **Luyện phát âm** — nghe mẫu rồi đọc vào micro, trình duyệt nhận diện và chấm ngay.
 - **Cram (ôn tự do)** — drill nhanh theo cấp/chủ đề, **không đụng lịch SRS** — hợp ôn trước thi.
 
-Mọi chế độ (trừ Cram) ghi vào cùng lịch FSRS; Quiz/Typing/Dictation tự đánh giá (đúng → Good, sai → Again).
+Bốn chế độ đầu ghi vào cùng lịch FSRS; Ghép cặp và Luyện phát âm chỉ thưởng XP; Cram không ghi gì cả.
+Trong nhóm ghi lịch, Quiz/Typing/Dictation tự đánh giá (đúng → Good, sai → Again).
 
 ### 🌐 Song ngữ Anh–Vi
 Nghĩa + ví dụ hiện **cả tiếng Anh lẫn tiếng Việt** (dịch batch qua Google Translate, lưu sẵn DB). UI cũng chuyển được **Tiếng Việt / English**.
@@ -64,23 +67,23 @@ npm install
 npx prisma generate          # sinh Prisma client
 npx prisma db push           # tạo schema trên Postgres (cần DATABASE_URL)
 npm run db:seed              # nạp 3.677 từ nền (A1–B2) từ data/vocabulary.json
-npm run packs:import         # nạp thêm 5 bộ từ chuyên đề (→ 6.394 từ, có C1)
+npm run packs:import         # nạp thêm 14 bộ từ nguồn (→ 8.011 từ, có C1)
 npm run images:apply         # nạp ảnh đã crawl sẵn (data/images.json) vào DB
 npm run dev                  # http://localhost:3000
 ```
 
 > `packs:import` idempotent (chạy lại không đổi gì): từ mới → thêm, từ đã có → hợp nhất chủ đề, **không ghi đè** cefr/nghĩa. Thêm `-- --dry-run` để xem trước.
 
-Cần file `.env` (KHÔNG commit):
+Cần file `.env` (KHÔNG commit). Copy từ template đã có sẵn:
+
+```bash
+cp .env.example .env
 ```
-DATABASE_URL="postgresql://..."        # Neon / Postgres
-NEXTAUTH_SECRET="..."                   # openssl rand -base64 32
-NEXTAUTH_URL="http://localhost:3000"
-GOOGLE_CLIENT_ID="..."                  # Google OAuth client
-GOOGLE_CLIENT_SECRET="..."
-AUTH_BYPASS="1"                         # (tuỳ chọn) dùng local không cần login
-PEXELS_API_KEY="..."                    # (chỉ cần khi chạy images:fetch) key miễn phí tại pexels.com/api
-```
+
+`.env.example` liệt kê **đủ 12 biến** production đang dùng, kèm chú thích từng biến —
+gồm cả nhóm nhắc học (`VAPID_*`, `CRON_SECRET`) mà bản README cũ bỏ sót.
+Chạy local tối thiểu chỉ cần `DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`
+và `AUTH_BYPASS=1`.
 
 > Muốn setup Neon + Google OAuth đầy đủ, xem `DEPLOY.md`.
 
@@ -107,39 +110,55 @@ scripts/images/ fetch-pexels: crawl ảnh Pexels cho từ chưa có ảnh → da
 src/app/        routes: study (flashcard/quiz/typing/dictation/cram), stats, topics, browse, settings, login + api/
 src/components/ study/*, stats/*, nav, i18n, theme, audio, word-image
 src/lib/        fsrs, study-engine, stats, auth, session, topics-data, tts, cloze, i18n dictionaries
-data/           vocabulary.json (3.677 từ nền) · packs/*.json (5 bộ chuyên đề) · images.json (word→ảnh, durable) · SOURCES.md (giấy phép nguồn)
+data/           vocabulary.json (3.677 từ nền) · packs/*.json (14 bộ nguồn) · images.json (word→ảnh, durable) · SOURCES.md (giấy phép nguồn)
 ```
 
 ---
 
 ## 📊 Dữ liệu
 
-**6.394 từ** — nền **Oxford 5000** (A1–B2, 3.677 từ) + 5 bộ chuyên đề (thêm C1 và từ vựng theo lĩnh vực), enrich đầy đủ:
+**8.011 từ** trong DB — nền **Oxford 5000** (A1–B2, 3.677 từ) + 14 bộ nguồn (thêm C1 và từ vựng theo lĩnh vực), enrich đầy đủ:
 - IPA (UK + US), loại từ (Anh + Việt)
 - Nghĩa tiếng Anh + **dịch tiếng Việt** (từ điển mở OVDP Anh–Việt, fallback Google Translate)
 - Câu ví dụ + dịch VI
 - Từ đồng nghĩa / trái nghĩa
-- Audio phát âm (UK/US) · Ảnh thật (Wikimedia + Pexels, phủ gần như toàn bộ)
+- Audio phát âm (UK/US) · Ảnh thật (Wikimedia + Pexels — 7.987/8.011 từ, 99,7%)
 
 | Cấp | Số từ |
 |---|---|
-| A1 | 926 |
-| A2 | 884 |
-| B1 | 1.081 |
-| B2 | 2.136 |
-| C1 | 1.367 |
+| A1 | 928 |
+| A2 | 903 |
+| B1 | 1.346 |
+| B2 | 2.537 |
+| C1 | 2.297 |
+
+<sub>Số đếm trực tiếp từ DB. Kiểm lại bất cứ lúc nào bằng `npm run packs:verify` (read-only).</sub>
 
 ### 📦 Bộ từ chuyên đề (word packs)
 
-5 bộ dựng từ danh sách tần suất mở (NGSL/BSL/TSL) + Oxford C1 + list IT tự soạn, gắn chủ đề sẵn:
+14 bộ dựng từ danh sách tần suất mở (NGSL/BSL/TSL), Oxford C1, batch crawl theo lĩnh vực và list IT tự soạn.
+
+Lưu ý: 14 là số **file nguồn**, không phải số chủ đề người dùng thấy — `oxford-c1`, `daily-communication` và
+`logistics` là input dựng dữ liệu chứ không phải chủ đề riêng (xem `src/lib/topic-taxonomy.ts`).
 
 | Bộ | Chủ đề | Số từ | Nguồn |
 |---|---|---|---|
-| `oxford-c1` | — (nâng cấp C1) | 1.314 | Oxford 5000 (slice C1) |
-| `conversation` | Giao tiếp hằng ngày | 721 | NGSL-Spoken 1.2 |
 | `business` | Tiếng Anh Thương mại | 1.744 | BSL 1.2 |
+| `daily-communication` | — (từ vựng chung) | 1.622 | crawl batch |
+| `oxford-c1` | — (nâng cấp C1) | 1.314 | Oxford 5000 (slice C1) |
 | `toeic` | Trọng tâm TOEIC | 1.250 | TSL 1.2 |
+| `conversation` | Giao tiếp hằng ngày | 721 | NGSL-Spoken 1.2 |
+| `medical` | Y khoa | 464 | crawl batch |
 | `it-programming` | CNTT & Lập trình | 442 | list tự soạn (informed by CSWL) |
+| `legal` | Pháp lý | 261 | crawl batch |
+| `daily-life` | Đời sống hằng ngày | 194 | crawl batch |
+| `finance` | Tài chính | 125 | crawl batch |
+| `social` | Xã hội | 124 | crawl batch |
+| `office-skills` | Kỹ năng văn phòng | 65 | crawl batch |
+| `travel` | Du lịch | 60 | crawl batch |
+| `logistics` | — (gộp vào Thương mại) | 15 | crawl batch |
+
+<sub>Tổng số dòng trong các file là 8.401, nhiều hơn 8.011 từ trong DB: các bộ chồng lấn nhau và `packs:import` khử trùng lặp theo từ.</sub>
 
 Giấy phép + attribution từng nguồn: xem [`data/SOURCES.md`](data/SOURCES.md). File `data/packs/*.json` là **build artifact** đã commit — dựng lại bằng `npm run packs:fetch && packs:build && packs:enrich && packs:translate`.
 
@@ -170,6 +189,20 @@ npm run images:apply            # nạp data/images.json vào Word.imageUrl (--d
 - **Multi-user:** đã per-user (mọi bảng scope theo `userId` qua session Google).
 - **Tối ưu FSRS:** `ts-fsrs` hỗ trợ optimize tham số từ lịch sử ôn → scheduler cá nhân hoá.
 - **Thêm ngôn ngữ UI:** thêm entry vào `src/lib/i18n/dictionaries.ts`.
+- **Ngữ pháp:** đang xây — dùng lại chính bộ lập lịch FSRS, áp cho các điểm ngữ pháp.
+- **Đổi logo:** sửa `MARK` trong `src/lib/brand.ts`, chạy `npm run brand:icons`, commit lại PNG.
+
+---
+
+---
+
+## 📄 Giấy phép
+
+Mã nguồn: **MIT** (xem [`LICENSE`](LICENSE)).
+
+Dữ liệu trong `data/` **không** thuộc phạm vi MIT — đó là build artifact dẫn xuất từ
+nhiều nguồn với giấy phép khác nhau (CC BY 3.0, CC BY-SA 3.0, và một từ điển Việt chỉ
+cho phép phi thương mại). Chi tiết từng nguồn: [`data/SOURCES.md`](data/SOURCES.md).
 
 ---
 

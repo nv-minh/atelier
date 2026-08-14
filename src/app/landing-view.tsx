@@ -9,15 +9,21 @@
 // only twice (hero and close) because the demo already makes the ask once.
 
 import Link from "next/link";
-import { ArrowRight, Compass, Library, NotebookPen, BarChart3 } from "lucide-react";
+import { ArrowRight, Compass, Library, NotebookPen, BarChart3, Gauge } from "lucide-react";
 import { TryCards, type DemoWord } from "@/components/landing/try-cards";
 import { IntervalLadder } from "@/components/landing/interval-ladder";
 import { DailyQuote } from "@/components/daily-quote";
+import { SiteFooter } from "@/components/site-footer";
 import { startSignIn, GoogleMark } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
 import type { Topic } from "@/lib/topic-taxonomy";
 
-const MODE_KEYS = ["cards", "quiz", "typeIt", "listen", "matching", "pron"] as const;
+// All seven routes under /study. "cram" is last because it is the one that
+// writes nothing to the SRS schedule — landing.features.modesBody says so
+// rather than letting the count quietly disagree with what /study shows.
+const MODE_KEYS = ["cards", "quiz", "typeIt", "listen", "matching", "pron", "cram"] as const;
+
+const EXTRA_CHIP_KEYS = ["chipPwa", "chipExport", "chipLang", "chipImages"] as const;
 
 export function LandingView({
   totalWords,
@@ -55,7 +61,7 @@ export function LandingView({
           </p>
 
           <div
-            className="flex flex-col sm:flex-row gap-3 mb-6 animate-fade-up"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-6 animate-fade-up"
             style={{ animationDelay: "220ms", animationFillMode: "both" }}
           >
             <button
@@ -66,6 +72,16 @@ export function LandingView({
               {t("landing.ctaPrimary")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
             </button>
+            {/* A no-signup CTA next to the Google button. The level check is
+                genuinely open to guests (src/app/onboarding/page.tsx), so this
+                is not a teaser that bounces into an auth wall. */}
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
+            >
+              <Gauge size={16} />
+              {t("landing.level.cta")}
+            </Link>
             <Link
               href="/topics"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
@@ -98,7 +114,33 @@ export function LandingView({
       </section>
 
       {/* ── HOW IT WORKS ────────────────────────────────────────────── */}
+      {/* Two beats, not one: the app measures where you are, then schedules
+          what you would forget. The first beat is the part no other vocab app
+          does, so it leads. */}
       <section className="mt-20 sm:mt-28">
+        <SectionLabel>{t("landing.level.label")}</SectionLabel>
+        <div className="card-atelier p-6 sm:p-8 mb-16 sm:mb-20">
+          <div className="sm:flex sm:items-start sm:gap-8">
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ember/10 text-ember mb-4 sm:mb-0">
+              <Gauge size={20} />
+            </span>
+            <div className="max-w-2xl">
+              <h2 className="display text-display-md mb-3">
+                {t("landing.level.title")}{" "}
+                <span className="display-it text-ember">{t("landing.level.titleAccent")}</span>
+              </h2>
+              <p className="text-soft leading-relaxed mb-5">{t("landing.level.body")}</p>
+              <Link
+                href="/onboarding"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-ember transition-colors"
+              >
+                {t("landing.level.cta")}
+                <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
         <SectionLabel>{t("landing.how.label")}</SectionLabel>
         <div className="sm:grid sm:grid-cols-2 sm:gap-14 lg:gap-20 sm:items-start">
           <div className="max-w-md">
@@ -126,7 +168,7 @@ export function LandingView({
           <div className="card-atelier p-6 sm:col-span-3 lg:col-span-1 lg:row-span-1">
             <p className="display text-xl mb-1.5">{t("landing.features.modesTitle")}</p>
             <p className="text-sm text-soft leading-relaxed mb-5">{t("landing.features.modesBody")}</p>
-            {/* the six modes, named the way they are named inside the app */}
+            {/* the seven modes, named the way they are named inside the app */}
             <div className="flex flex-wrap gap-1.5">
               {MODE_KEYS.map((k) => (
                 <span
@@ -168,7 +210,7 @@ export function LandingView({
           </Link>
         </div>
 
-        {/* A sample, not the catalogue — 22 chips is a wall of text on a
+        {/* A sample, not the catalogue — all 28 chips are a wall of text on a
             phone, and "Xem tất cả" is right there for the rest. */}
         <div className="flex flex-wrap gap-2">
           {topics.slice(0, 12).map((tp) => (
@@ -183,6 +225,10 @@ export function LandingView({
           ))}
         </div>
 
+        <p className="mt-5 text-sm text-soft leading-relaxed max-w-2xl">
+          {t("landing.topics.packs")}
+        </p>
+
         <div className="mt-6 flex flex-wrap gap-2">
           <OpenLink href="/topics" icon={<Compass size={14} />} label={t("auth.exploreTopics")} />
           <OpenLink href="/browse" icon={<Library size={14} />} label={t("auth.exploreLibrary")} />
@@ -192,9 +238,45 @@ export function LandingView({
         </div>
       </section>
 
+      {/* ── EXTRAS ──────────────────────────────────────────────────── */}
+      {/* Prose and chips rather than cards: these are trust signals, not
+          selling points, and the page is already long on mobile. */}
+      <section className="mt-20 sm:mt-28">
+        <SectionLabel>{t("landing.extras.label")}</SectionLabel>
+        <h2 className="display text-display-md mb-4 max-w-lg">
+          {t("landing.extras.title")}{" "}
+          <span className="display-it text-ember">{t("landing.extras.titleAccent")}</span>
+        </h2>
+        <p className="text-soft leading-relaxed max-w-2xl mb-6">{t("landing.extras.body")}</p>
+        <div className="flex flex-wrap gap-2">
+          {EXTRA_CHIP_KEYS.map((k) => (
+            <span
+              key={k}
+              className="rounded-full border border-line px-3.5 py-1.5 text-xs text-soft"
+            >
+              {t(`landing.extras.${k}`)}
+            </span>
+          ))}
+        </div>
+      </section>
+
       {/* ── QUOTE ───────────────────────────────────────────────────── */}
       <section className="mt-20 sm:mt-28">
         <DailyQuote />
+      </section>
+
+      {/* ── WHAT'S NEXT ─────────────────────────────────────────────── */}
+      {/* One line, one unbuilt feature, no date. Japanese and Chinese are
+          deliberately not mentioned: the schema has no language column, so
+          promising them here would be selling something that cannot ship. */}
+      <section className="mt-20 sm:mt-28">
+        <div className="rounded-2xl border border-line px-6 py-5 sm:flex sm:items-center sm:gap-6">
+          <div className="sm:shrink-0">
+            <SectionLabel>{t("landing.next.label")}</SectionLabel>
+            <p className="display text-xl -mt-2">{t("landing.next.title")}</p>
+          </div>
+          <p className="mt-2 sm:mt-0 text-sm text-soft leading-relaxed">{t("landing.next.body")}</p>
+        </div>
       </section>
 
       {/* ── CLOSE ───────────────────────────────────────────────────── */}
@@ -213,6 +295,8 @@ export function LandingView({
         </button>
         <p className="mt-4 text-xs text-soft/70">{t("landing.final.note")}</p>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

@@ -1,4 +1,4 @@
-// VocabMaster — Atelier SRS vocabulary app (Postgres + multi-user)
+// Atelier — language-learning studio (Postgres + multi-user, FSRS)
 generator client {
   provider = "prisma-client-js"
 }

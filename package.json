@@ -1,5 +1,5 @@
 {
-  "name": "vocab-master",
+  "name": "atelier",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -29,7 +29,8 @@
     "images:merge": "tsx scripts/images/merge-parts.ts",
     "images:apply": "tsx prisma/apply-images.ts",
     "images:fetch-wikimedia": "tsx prisma/fetch-images.ts",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "brand:icons": "tsx scripts/brand/gen-icons.ts"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",

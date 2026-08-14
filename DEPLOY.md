@@ -1,9 +1,52 @@
 # Deployment — Vercel + Neon + Google OAuth
 
+## Đổi hostname sang `atelier-lang.vercel.app`
+
+`atelier-lang.vercel.app` là host chính thức từ 2026-08-14. Host cũ
+`vocab-master-dusky.vercel.app` vẫn sống (project chưa đổi tên) và là đường lùi.
+
+Hostname cũ đang **gánh 5 việc cùng lúc**: `NEXTAUTH_URL`, redirect URI của Google OAuth,
+callback GitHub OAuth, secret `REMINDERS_CRON_URL`, và origin của mọi service worker +
+push subscription. Vì vậy `vercel project rename` là bước **CUỐI**, không phải bước đầu —
+đổi tên project trước khi chuyển các tham chiếu là sập toàn bộ đăng nhập và cron.
+
+Thứ tự đã chạy (2026-08-14), giữ lại vì lần mua domain riêng sẽ lặp y hệt:
+
+| # | Việc | Trạng thái |
+|---|---|---|
+| 1 | Gán `atelier-lang.vercel.app` vào project (`vercel domains add`) — thuần cộng thêm | ✅ |
+| 2 | Đổi tên repo → `nv-minh/atelier`, `git remote set-url` | ✅ |
+| 3 | `NEXT_PUBLIC_SITE_URL` + `NEXTAUTH_URL` → host mới trên env production | ✅ |
+| 4 | Deploy lại (env bind lúc deploy — không deploy thì bước 3 vô nghĩa) | ✅ |
+| 5 | Google Cloud Console → Credentials → **THÊM** `https://atelier-lang.vercel.app/api/auth/callback/google`. **Giữ nguyên URI cũ** làm đường lùi. | ⬜ **tay, chủ repo** |
+| 6 | GitHub OAuth App → Homepage + callback sang host mới (provider còn đăng ký nhưng nút đã gỡ khỏi `/login`, nên không chặn gì) | ⬜ tay, không gấp |
+| 7 | `gh secret set REMINDERS_CRON_URL` → host mới | ✅ |
+| 8 | `NEXT_PUBLIC_CONTACT_EMAIL` → hộp thư thật (xem `src/lib/legal.ts`) | ⬜ **chặn việc public** |
+| 9 | `vercel project rename vocab-master atelier` — **để cuối cùng**, sau khi bước 5 xong và đăng nhập đã verify. Bước này khai tử `vocab-master-dusky.vercel.app`, tức là mất đường lùi. | ⬜ |
+
+> Giữa bước 4 và bước 5, đăng nhập trên host mới trả `redirect_uri_mismatch`. Đó là
+> hành vi đúng, không phải hỏng: `NEXTAUTH_URL` chỉ nhận một giá trị, còn Google thì
+> chưa biết URI mới. Muốn lùi: trỏ `NEXTAUTH_URL` về `vocab-master-dusky.vercel.app`
+> rồi deploy lại — URI cũ vẫn còn đăng ký nên chạy ngay.
+
+**Đừng đụng vào:** `VAPID_PUBLIC_KEY` / `VAPID_PRIVATE_KEY` (đổi là giết sạch push
+subscription cùng lúc) và `CRON_SECRET` (phải giống hệt nhau ở Vercel và repo secret —
+lệch là 401 mỗi giờ, im lặng). `CACHE_VERSION` trong `public/sw.js` cũng **không** bump vì
+đổi domain: Cache Storage tách theo origin nên origin mới vốn đã bắt đầu rỗng.
+
+**Push + PWA khi đổi origin:** subscription và bản cài PWA gắn chặt origin. Lúc cutover
+2026-08-14, DB có 6 user và **0 push subscription** nên chi phí đúng bằng không. Nếu về sau đã có
+người dùng thật, mỗi thiết bị phải: tắt nhắc học ở origin **cũ** (chỉ đường này mới xoá
+được cả row lẫn subscription phía trình duyệt), rồi bật lại ở origin mới; iOS phải xoá icon
+cũ và Add to Home Screen lại. Bỏ bước tắt ở origin cũ sẽ tạo **2 row → 2 push mỗi lần nhắc**.
+
+> Cái giá này phải trả **lại một lần nữa** khi mua domain riêng. Nếu định mua trong 1–2
+> tháng tới thì cân nhắc gộp làm một lần.
+
 ## Đã deploy
-- **App**: https://vocab-master-dusky.vercel.app
+- **App**: https://atelier-lang.vercel.app — host cũ `vocab-master-dusky.vercel.app` vẫn sống làm đường lùi cho tới khi đổi tên project.
 - **DB**: Neon Postgres (project `sparkling-bird-30788729`, database `neondb`), đã seed 3.677 từ.
-- **Env trên Vercel (production)**: `DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL`, `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`.
+- **Env trên Vercel (production)**: 14 biến — xem `.env.example` để biết đủ danh sách và ý nghĩa từng biến.
 - **Auth**: GitHub OAuth (NextAuth v4) — đang BẬT. `AUTH_BYPASS` đã tắt trên prod (khách chưa đăng nhập xem được landing page, danh sách chủ đề và trang đầu thư viện; phần còn lại hiện màn hình yêu cầu đăng nhập — xem mục Kiến trúc).
 
 > Local dev (`.env`) vẫn giữ `AUTH_BYPASS="1"` để chạy nhanh không cần login (GitHub OAuth app callback trỏ về prod, nên local sẽ mismatch — dùng bypass khi dev).
@@ -17,8 +60,8 @@
 1. Vào https://github.com/settings/applications/new (đăng nhập GitHub).
 2. Điền:
    - **Application name**: `Atelier`
-   - **Homepage URL**: `https://vocab-master-dusky.vercel.app`
-   - **Authorization callback URL**: `https://vocab-master-dusky.vercel.app/api/auth/callback/github`
+   - **Homepage URL**: `https://atelier-lang.vercel.app`
+   - **Authorization callback URL**: `https://atelier-lang.vercel.app/api/auth/callback/github`
 3. Register → copy **Client ID** + sinh **Client Secret**.
 
 > Muốn dùng cả local: thêm callback thứ 2 `http://localhost:3000/api/auth/callback/github` (hoặc tạo 1 OAuth app riêng cho dev).
@@ -44,7 +87,7 @@ Thêm cùng 2 giá trị vào `.env` (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`
 1. Vào Google Cloud Console → **APIs & Services → Credentials** → **Create Credentials → OAuth 2.0 Client ID** → chọn loại **Web application**.
 2. Thêm **Authorized redirect URIs**:
    - `http://localhost:3000/api/auth/callback/google` (dev)
-   - `https://<production-domain>/api/auth/callback/google` (prod — thay bằng domain thật, vd `vocab-master-dusky.vercel.app`)
+   - `https://<production-domain>/api/auth/callback/google` (prod — thay bằng domain thật, vd `atelier-lang.vercel.app`)
 3. Create → copy **Client ID** + sinh **Client Secret**.
 
 > Thiếu redirect URI production là nguyên nhân phổ biến nhất của lỗi `redirect_uri_mismatch` — local chạy được nhưng prod báo lỗi.
@@ -116,7 +159,7 @@ lặp code không bị kẹt asset cũ.
 ### Test thủ công (KHÔNG test được headless)
 Hành vi service worker không kiểm thử được bằng build tĩnh. Sau khi deploy prod:
 1. Mở app trên Chrome → DevTools → **Application → Service Workers**: xác nhận `sw.js` activated.
-2. **Application → Manifest**: thấy tên "Atelier — Vocabulary Studio", 4 icon, `display: standalone`; nút cài đặt xuất hiện (Chrome/Android install prompt, iOS "Add to Home Screen").
+2. **Application → Manifest**: thấy tên "Atelier — Studio học ngôn ngữ", 4 icon, `display: standalone`; nút cài đặt xuất hiện (Chrome/Android install prompt, iOS "Add to Home Screen").
 3. Bật **Offline** (Network throttling = Offline) → điều hướng sang route bất kỳ → phải thấy trang `/offline` (không phải màn lỗi trình duyệt).
 4. Đăng xuất → bật Offline → điều hướng: KHÔNG được thấy vỏ giao diện đã đăng nhập (chứng minh HTML điều hướng không bị cache).
 5. Đổi `CACHE_VERSION`, deploy lại, reload 2 lần → cache version cũ bị xoá (kiểm tra **Application → Cache Storage**).
@@ -170,7 +213,7 @@ Hai secret của repo (đã đặt bằng `gh secret set`):
 
 | Secret | Giá trị |
 |---|---|
-| `REMINDERS_CRON_URL` | `https://vocab-master-dusky.vercel.app/api/cron/reminders` |
+| `REMINDERS_CRON_URL` | `https://atelier-lang.vercel.app/api/cron/reminders` |
 | `CRON_SECRET` | **cùng giá trị** với biến `CRON_SECRET` trên Vercel — lệch là 401 mỗi giờ, im lặng |
 
 Hai điểm yếu của scheduler GitHub, biết trước để khỏi truy nhầm:

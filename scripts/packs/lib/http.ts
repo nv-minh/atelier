@@ -3,7 +3,11 @@
 // retries with backoff, hard timeout. Mirrors the conventions of
 // prisma/fetch-images.ts but on global fetch (Node 18+ via tsx).
 
-export const UA = "VocabMaster/1.0 (educational vocab app; contact@atelier.app)";
+// Wikimedia and dictionaryapi.dev both see this string, and Wikimedia's UA
+// policy expects a contact that actually resolves. The old value named
+// contact@atelier.app — a mailbox on a domain nobody here owns. A URL is the
+// honest form until there is a real inbox to point at.
+export const UA = "Atelier/1.0 (language-learning app; +https://github.com/nv-minh/atelier)";
 
 // Some hosts (Squarespace) 404 non-browser UAs on static file links.
 export const BROWSER_UA =

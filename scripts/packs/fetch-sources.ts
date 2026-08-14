@@ -7,7 +7,7 @@
 // Sources & licenses are documented in data/SOURCES.md.
 import { existsSync, mkdirSync, statSync, writeFileSync } from "fs";
 import { resolve } from "path";
-import { BROWSER_UA, decodeSmart, fetchText, sleep } from "./lib/http";
+import { BROWSER_UA, UA, decodeSmart, fetchText, sleep } from "./lib/http";
 import { RAW_DIR } from "./lib/formats";
 
 type Source = { file: string; url: string; ua?: string; note: string };
@@ -67,7 +67,7 @@ async function main() {
     }
     console.log(`↓ ${s.file} — ${s.note}`);
     const res = await fetch(s.url, {
-      headers: { "User-Agent": s.ua ?? "VocabMaster/1.0 (educational vocab app)" },
+      headers: { "User-Agent": s.ua ?? UA },
       signal: AbortSignal.timeout(120000),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${s.url}`);

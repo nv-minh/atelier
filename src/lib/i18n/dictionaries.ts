@@ -78,13 +78,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       matchingDesc: "Nối từ với nghĩa",
       pron: "Phát âm",
       pronDesc: "Đọc vào micro",
+      cram: "Cram",
+      cramDesc: "Drill tự do, không đụng lịch",
     },
     modes: {
       header: "— Chọn chế độ",
       title: "Hôm nay học",
       titleAccent: "thế nào?",
       subtitle:
-        "Bốn cách tiếp cận cùng bộ từ vựng. Flashcard nuôi trí nhớ dài hạn; các chế độ còn lại mài nhận diện, gợi nhớ và kỹ năng nghe.",
+        "Bảy cách tiếp cận cùng bộ từ vựng. Flashcard nuôi trí nhớ dài hạn; các chế độ còn lại mài nhận diện, gợi nhớ, nghe và phát âm.",
       level: "Cấp độ",
       all: "Tất cả cấp",
       allTopics: "Mọi chủ đề",
@@ -241,7 +243,8 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       header: "— Thư viện",
       title: "Mọi",
       titleAccent: "từ vựng",
-      subtitle: "{n} từ vựng bốn cấp độ. Tìm, lọc, duyệt tự do.",
+      // Nêu khoảng thay vì đếm số cấp: thêm cấp mới cũng không làm câu này sai.
+      subtitle: "{n} từ vựng từ A1 đến C1. Tìm, lọc, duyệt tự do.",
       searchWord: "Tìm từ…",
       all: "Tất cả",
       noWords: "Không tìm thấy từ. Thử từ khóa khác.",
@@ -375,8 +378,12 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dailyGoalXpDesc: "Ôn xong chừng này XP là đạt mục tiêu hôm nay.",
       saveChanges: "Lưu thay đổi",
       saved: "Đã lưu ✓",
-      dataFoot: "Dữ liệu lưu cục bộ trong SQLite. Thuật toán FSRS chạy ở client để phản hồi tức thì, ở server để lưu trữ.",
-      wordsFoot: "3,677 từ từ Oxford 5000, cấp A1–B2, kèm IPA, định nghĩa, từ đồng nghĩa, ví dụ và audio.",
+      // Câu cũ nói "lưu cục bộ trong SQLite" — sai, và là kiểu sai tệ nhất:
+      // nó nói với người đã đăng nhập rằng dữ liệu của họ không rời khỏi máy.
+      // Thực tế là PostgreSQL trên máy chủ, nhiều người dùng chung.
+      dataFoot: "Dữ liệu học của bạn lưu trên máy chủ (PostgreSQL) để đồng bộ giữa các thiết bị. Thuật toán FSRS chạy ở trình duyệt để phản hồi tức thì, và chạy lại ở máy chủ khi ghi kết quả.",
+      // Không gắn số cứng ở đây nữa — con số cũ (3.677) đã mốc hai lần rồi.
+      wordsFoot: "Kho từ cấp A1–C1, kèm IPA, định nghĩa Anh–Việt, từ đồng nghĩa, ví dụ và audio. Nguồn: Oxford 5000 cộng các bộ từ chuyên ngành biên soạn riêng.",
       export: "Xuất từ vựng",
       exportDesc: "Tải từ vựng của bạn về máy để sao lưu hoặc học trên Anki.",
       exportScope: "Phạm vi",
@@ -564,13 +571,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     },
     // Trang giới thiệu cho khách chưa đăng nhập ("/").
     landing: {
-      eyebrow: "A1 — B2 · Học theo lịch nhắc lại",
-      title1: "Học từ tiếng Anh",
+      eyebrow: "A1 — C1 · Học theo lịch nhắc lại",
+      title1: "Học tiếng Anh",
       title2: "và nhớ được lâu.",
-      sub: "{n} từ trình độ A1–B2. Atelier tính đúng ngày bạn sắp quên một từ rồi mang nó quay lại — bạn chỉ cần trả lời.",
+      // "Từ vựng trước đã" nới khung sản phẩm mà vẫn khoanh đúng phạm vi hiện
+      // tại: đọc lên là một lời hứa đang được giữ, không phải lời hứa mới.
+      sub: "Từ vựng trước đã: {n} từ, A1 đến C1. Atelier tính đúng ngày bạn sắp quên một từ rồi mang nó quay lại — bạn chỉ cần trả lời.",
       ctaPrimary: "Bắt đầu với Google",
       ctaSecondary: "Xem chủ đề",
-      index: "{w} từ · {t} chủ đề · 6 chế độ học · miễn phí",
+      index: "{w} từ · {t} chủ đề · 7 chế độ học · miễn phí",
       demo: {
         label: "Thử ba thẻ",
         tapToReveal: "Chạm để xem nghĩa",
@@ -584,13 +593,27 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
           "Đăng nhập để Atelier giữ lại: mỗi từ sẽ quay lại đúng lúc bạn sắp quên, trên mọi thiết bị bạn dùng.",
         again: "Xem lại ba thẻ",
       },
+      // Bài đo trình độ mở cho khách, nên nó vừa là tính năng vừa là CTA không
+      // cần đăng ký. Mọi con số ở đây đều đối chiếu được: 90 giây lấy từ
+      // onboarding.introTitle, phần "tự dịch lên" là drift trong lib/selection.
+      level: {
+        label: "Trước khi học",
+        title: "App đo trước,",
+        titleAccent: "rồi mới chọn từ.",
+        body:
+          "Một bài đo khoảng chín mươi giây cho biết bạn đang ở đâu trên thang A1–C1. Sau đó Atelier chỉ đưa những từ vừa tầm bạn, và tự dịch lên khi bạn khá dần. Không cần tài khoản để thử.",
+        cta: "Đo trình độ",
+      },
       how: {
         label: "Cách hoạt động",
         title: "Ôn đúng lúc",
         titleAccent: "sắp quên.",
         body:
-          "Nhớ đúng một từ, Atelier đẩy lần ôn sau ra xa hơn. Trả lời sai thì kéo lại gần. Nhờ vậy bạn không phải học lại những từ đã thuộc, và 15 phút mỗi ngày là đủ.",
-        caption: "Khoảng cách giữa các lần ôn của một từ bạn đang nhớ tốt.",
+          "Nhớ đúng một từ, Atelier đẩy lần ôn sau ra xa hơn. Trả lời sai thì kéo lại gần. Nhờ vậy bạn không mất thời gian ôn lại những từ đã thuộc.",
+        // Thang này là minh hoạ, không phải output của scheduler — nói thẳng ra
+        // thay vì để người đọc tưởng đây là lịch thật của họ.
+        caption:
+          "Ví dụ minh hoạ: khoảng cách giữa các lần ôn của một từ bạn đang nhớ tốt. Lịch thật do FSRS tính riêng cho từng từ và từng người.",
         i1: "10 phút",
         i2: "1 ngày",
         i3: "3 ngày",
@@ -602,18 +625,50 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         label: "Có gì bên trong",
         title: "Một từ,",
         titleAccent: "nhiều đường vào trí nhớ.",
-        modesTitle: "Sáu chế độ học",
-        modesBody: "Cùng một từ, mỗi chế độ bắt trí nhớ làm việc theo một kiểu khác nhau.",
+        modesTitle: "Bảy chế độ học",
+        modesBody:
+          "Cùng một từ, mỗi chế độ bắt trí nhớ làm việc theo một kiểu khác nhau. Sáu chế độ ghi vào lịch ôn của bạn; Cram là drill tự do, không đụng đến lịch.",
         notebookTitle: "Sổ tay riêng",
-        notebookBody: "Gắn sao từ cần nhớ, viết ghi chú của bạn. Từ hay quên được đánh dấu tự động.",
-        progressTitle: "Tiến độ thấy được",
-        progressBody: "Chuỗi ngày học, biểu đồ ôn tập, cấp độ và huy hiệu.",
+        notebookBody:
+          "Gắn sao từ cần nhớ, viết ghi chú của riêng bạn. Từ nào quên từ bốn lần trở lên được tự động gắn cờ để drill riêng.",
+        progressTitle: "Giữ được nhịp",
+        // GIỮ NGUYÊN vế "do chính app tạo ra". Rival là tổng hợp, không phải
+        // người thật; câu tiết lộ phải nằm trong chính câu quảng cáo, đúng
+        // chuẩn mà components/leaderboard/how-it-works.tsx đã đặt ra.
+        progressBody:
+          "Chuỗi ngày, biểu đồ ôn tập, cấp độ và huy hiệu. Kèm một lời nhắc mỗi ngày vào giờ bạn chọn, và bảng xếp hạng tuần — nơi bạn chạy đua với các đối thủ luyện tập do chính app tạo ra.",
       },
       topics: {
         label: "Bắt đầu từ đâu",
         title: "{n} chủ đề để chọn",
         cta: "Xem tất cả",
-        free: "Hai mục này xem được ngay, chưa cần tài khoản.",
+        // Kể tên thay vì đếm: data/packs/ có 14 file nhưng chỉ 11 topic curated
+        // hiện ra với người dùng, nên mọi con số ở đây đều sẽ sai.
+        packs:
+          "Trong đó có các bộ chuyên ngành: Thương mại, TOEIC, Y khoa, CNTT, Pháp lý, Tài chính, Kỹ năng văn phòng.",
+        free: "Danh sách chủ đề và trang đầu thư viện xem được ngay. Học và lưu tiến độ thì cần tài khoản.",
+      },
+      // Không có chữ "offline" nào ở đây là cố ý: service worker không cache
+      // điều hướng (public/sw.js), nên app KHÔNG học được khi mất mạng — nó
+      // chỉ báo lỗi tử tế. Xem src/app/offline/page.tsx.
+      extras: {
+        label: "Chi tiết",
+        title: "Vài thứ nhỏ",
+        titleAccent: "ít ai nhắc đến.",
+        body:
+          "Cài lên màn hình chính, mở toàn màn hình như một app thật. Xuất từ của bạn ra CSV hoặc file nạp thẳng vào Anki, bất cứ lúc nào. Đổi giao diện Tiếng Việt / English trong một chạm. Gần như từ nào cũng có hình minh hoạ. Mất mạng thì app báo rõ thay vì trắng trang.",
+        chipPwa: "Cài như app",
+        chipExport: "Xuất CSV & Anki",
+        chipLang: "Tiếng Việt / English",
+        chipImages: "Gần như từ nào cũng có hình",
+      },
+      // Nêu đúng MỘT tính năng chưa xây, không kèm ngày. Tiếng Nhật và tiếng
+      // Trung cố tình vắng mặt và phải tiếp tục vắng cho tới khi schema có cột
+      // ngôn ngữ — hiện tại chưa có.
+      next: {
+        label: "Sắp tới",
+        title: "Sắp có: Ngữ pháp",
+        body: "Cùng bộ máy nhắc lại này, áp cho các điểm ngữ pháp. Đang xây, chưa hẹn ngày.",
       },
       final: {
         title: "Hôm nay học",
@@ -621,6 +676,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         body: "Đăng nhập bằng Google, tiến độ đồng bộ trên điện thoại và máy tính.",
         note: "Miễn phí · Không quảng cáo",
       },
+    },
+    // Chân trang. Kết ở chỗ "xuất dữ liệu" chứ không phải "xoá tài khoản":
+    // hiện chưa có đường xoá tự phục vụ nào trong code, nên không được hứa.
+    footer: {
+      tagline: "Atelier — studio học ngôn ngữ.",
+      privacy: "Quyền riêng tư",
+      terms: "Điều khoản",
+      dataLine:
+        "Đăng nhập bằng Google lưu tên, email và ảnh đại diện của bạn. Bật nhắc học sẽ lưu thêm một đăng ký thông báo của trình duyệt. Bạn xuất được toàn bộ từ vựng của mình ra CSV bất cứ lúc nào.",
     },
     topics: {
       header: "— Học theo chủ đề",
@@ -694,7 +758,9 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     },
     pwa: {
       title: "Cài Atelier vào máy",
-      body: "Mở nhanh từ màn hình chính, chạy toàn màn hình, dùng được cả khi mạng chập chờn.",
+      // Không hứa "dùng được khi mạng chập chờn": service worker không cache
+      // điều hướng, nên mất mạng là không ôn được — chỉ ra trang /offline.
+      body: "Mở nhanh từ màn hình chính, chạy toàn màn hình như một app thật.",
       install: "Cài đặt",
       later: "Để sau",
       iosTitle: "Thêm Atelier vào màn hình chính",
@@ -770,13 +836,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       matchingDesc: "Pair word to meaning",
       pron: "Pronunciation",
       pronDesc: "Speak into the mic",
+      cram: "Cram",
+      cramDesc: "Free drill, schedule untouched",
     },
     modes: {
       header: "— Choose a mode",
       title: "How shall we",
       titleAccent: "study today?",
       subtitle:
-        "Four ways into the same vocabulary. Flashcards drive your long-term memory; the others sharpen recognition, recall, and listening.",
+        "Seven ways into the same vocabulary. Flashcards drive your long-term memory; the others sharpen recognition, recall, listening and pronunciation.",
       level: "Level",
       all: "All levels",
       allTopics: "All topics",
@@ -933,7 +1001,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       header: "— Library",
       title: "Every",
       titleAccent: "word",
-      subtitle: "{n} words across four levels. Search, filter, browse.",
+      subtitle: "{n} words from A1 to C1. Search, filter, browse.",
       searchWord: "Search a word…",
       all: "All",
       noWords: "No words found. Try another search.",
@@ -1067,8 +1135,8 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       dailyGoalXpDesc: "Earn roughly this much XP to hit today's goal.",
       saveChanges: "Save changes",
       saved: "Saved ✓",
-      dataFoot: "Data is stored locally in SQLite. The FSRS algorithm runs client-side for instant feedback, server-side for persistence.",
-      wordsFoot: "3,677 words from Oxford 5000, levels A1–B2, with IPA, definitions, synonyms, examples, and audio.",
+      dataFoot: "Your study data is stored on the server (PostgreSQL) so it syncs across devices. The FSRS algorithm runs in your browser for instant feedback, and again on the server when the result is saved.",
+      wordsFoot: "Words from A1 to C1, with IPA, English and Vietnamese definitions, synonyms, examples and audio. Sourced from Oxford 5000 plus hand-scoped specialist packs.",
       export: "Export words",
       exportDesc: "Download your vocabulary to back it up or study it in Anki.",
       exportScope: "Scope",
@@ -1256,13 +1324,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     },
     // The guest landing page at "/".
     landing: {
-      eyebrow: "A1 — B2 · Spaced repetition",
-      title1: "Learn English words",
-      title2: "and keep them.",
-      sub: "{n} words from A1 to B2. Atelier works out the day you are about to forget a word and brings it back — you just answer.",
+      eyebrow: "A1 — C1 · Spaced repetition",
+      title1: "Learn English",
+      title2: "and keep it.",
+      // "Vocabulary first" widens the frame and scopes the present tense in two
+      // words: it reads as a promise being kept, not a promise being made.
+      sub: "Vocabulary first: {n} words, A1 to C1. Atelier works out the day you are about to forget a word and brings it back — you just answer.",
       ctaPrimary: "Start with Google",
       ctaSecondary: "Browse topics",
-      index: "{w} words · {t} topics · 6 study modes · free",
+      index: "{w} words · {t} topics · 7 study modes · free",
       demo: {
         label: "Try three cards",
         tapToReveal: "Tap to see the meaning",
@@ -1276,13 +1346,22 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
           "Sign in and Atelier keeps them: each word comes back exactly when you are about to forget it, on every device you use.",
         again: "Read them again",
       },
+      level: {
+        label: "Before you study",
+        title: "It measures first,",
+        titleAccent: "then picks the words.",
+        body:
+          "A ninety-second check places you on the A1–C1 scale. After that Atelier only hands you words that fit your level, and drifts upward as you improve. No account needed to try it.",
+        cta: "Check my level",
+      },
       how: {
         label: "How it works",
         title: "Reviewed the day",
         titleAccent: "you'd forget.",
         body:
-          "Answer a word correctly and Atelier pushes the next review further out. Miss it and the next one comes sooner. You stop re-reading what you already know, which is why 15 minutes a day is enough.",
-        caption: "The gap between reviews of a word you are remembering well.",
+          "Answer a word correctly and Atelier pushes the next review further out. Miss it and the next one comes sooner. So you stop spending time on words you already know.",
+        caption:
+          "An illustration: the gap between reviews of a word you are remembering well. Your real schedule is computed per word, per person, by FSRS.",
         i1: "10 minutes",
         i2: "1 day",
         i3: "3 days",
@@ -1294,18 +1373,50 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         label: "What's inside",
         title: "One word,",
         titleAccent: "many ways in.",
-        modesTitle: "Six study modes",
-        modesBody: "The same word, each mode making your memory work a different way.",
+        modesTitle: "Seven study modes",
+        modesBody:
+          "The same word, each mode making your memory work a different way. Six of them feed your review schedule; Cram is a free drill that leaves it untouched.",
         notebookTitle: "Your notebook",
-        notebookBody: "Star what you need, write your own notes. Words you keep forgetting are flagged for you.",
-        progressTitle: "Progress you can see",
-        progressBody: "Study streaks, review charts, levels and badges.",
+        notebookBody:
+          "Star what you need, write your own notes. Any word you forget four times or more gets flagged automatically so you can drill it on its own.",
+        progressTitle: "Keeping the habit",
+        // KEEP the "the app generates for you" clause. The rivals are
+        // synthetic; the disclosure belongs inside the selling sentence, not in
+        // a footnote. Same standard as components/leaderboard/how-it-works.tsx.
+        progressBody:
+          "Streaks, review charts, levels and badges. Plus one reminder a day at the hour you pick, and a weekly leaderboard where you race practice rivals the app generates for you.",
       },
       topics: {
         label: "Where to start",
         title: "{n} topics to pick from",
         cta: "See all",
-        free: "Both are open right now, no account needed.",
+        // Named, not counted: data/packs/ holds 14 files but only 11 curated
+        // topics ever surface, so any number here would be wrong.
+        packs:
+          "Including specialist packs: Business, TOEIC, Medical, IT, Legal, Finance, Office Skills.",
+        free: "The topic list and the first page of the library are open right now. Studying and saving progress need an account.",
+      },
+      // No "offline" claim here, on purpose: the service worker never caches
+      // navigations (public/sw.js), so the app does NOT work offline — it just
+      // fails legibly. See src/app/offline/page.tsx.
+      extras: {
+        label: "Details",
+        title: "A few small things",
+        titleAccent: "nobody advertises.",
+        body:
+          "Install it to your home screen and it opens full-screen like a real app. Export your words to CSV, or to a file that drops straight into Anki, whenever you like. Switch the interface between Vietnamese and English in one tap. Nearly every word comes with a picture. Lose your connection and it says so, rather than going blank.",
+        chipPwa: "Installable",
+        chipExport: "CSV & Anki export",
+        chipLang: "Tiếng Việt / English",
+        chipImages: "Nearly all illustrated",
+      },
+      // Names exactly ONE unbuilt feature and carries no date. Japanese and
+      // Chinese are deliberately absent and must stay absent until the schema
+      // has a language column — today it has none.
+      next: {
+        label: "Next",
+        title: "Coming: Grammar",
+        body: "The same spaced-repetition engine, applied to grammar points. In progress, no date promised.",
       },
       final: {
         title: "Ten words",
@@ -1313,6 +1424,15 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         body: "Sign in with Google and your progress follows you from phone to desktop.",
         note: "Free · No ads",
       },
+    },
+    // Ends on export, not deletion: there is no self-serve delete path in the
+    // codebase yet, so the footer must not imply one.
+    footer: {
+      tagline: "Atelier — a language studio.",
+      privacy: "Privacy",
+      terms: "Terms",
+      dataLine:
+        "Signing in with Google stores your name, email and avatar. Turning on reminders also stores a browser notification subscription. You can export all of your words to CSV at any time.",
     },
     topics: {
       header: "— Browse by theme",
@@ -1392,7 +1512,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
     },
     pwa: {
       title: "Install Atelier",
-      body: "Open it straight from your home screen, full screen, and keep working when the network drops.",
+      body: "Open it straight from your home screen and run it full-screen like a real app.",
       install: "Install",
       later: "Not now",
       iosTitle: "Add Atelier to your home screen",

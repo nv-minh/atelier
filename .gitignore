@@ -12,6 +12,10 @@ prisma/*.db-journal
 dev.db
 .vercel
 .env*
+# ...but the template of variable NAMES (no values) must be committed. Without
+# this negation the `.env*` pattern above swallows it silently and `git add`
+# reports nothing, which looks exactly like a successful commit.
+!.env.example
 .claude
 *.tsbuildinfo
 data/raw/

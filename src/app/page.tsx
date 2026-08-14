@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/db";
 import { getDashboardStats } from "@/lib/stats";
 import { getLeechCount } from "@/lib/notebook";
@@ -54,13 +55,30 @@ async function getDemoWords(): Promise<DemoWord[]> {
   }
 }
 
+// This route is force-dynamic because it reads cookies to choose between the
+// landing page and the dashboard — that cannot be cached. The two guest-only
+// queries can be, though, and they were being paid by every crawler and every
+// cold visitor on the LCP path, against a database that scales to zero.
+//
+// Both are safe to hold for an hour: word.count() only moves on an import, and
+// getDemoWords() is already date-keyed and deterministic — identical for
+// everyone on a given day by design.
+const getGuestLandingData = unstable_cache(
+  async () => {
+    const [totalWords, demoWords] = await Promise.all([prisma.word.count(), getDemoWords()]);
+    return { totalWords, demoWords };
+  },
+  ["landing-guest-v1"],
+  { revalidate: 3600 },
+);
+
 export default async function Home() {
   const user = await getCurrentUser();
 
   // Guests get the landing page instead of redirect("/login") — that redirect
   // is what made the "Trang chủ" tab look dead from the login screen.
   if (!user) {
-    const [totalWords, demoWords] = await Promise.all([prisma.word.count(), getDemoWords()]);
+    const { totalWords, demoWords } = await getGuestLandingData();
     return (
       <LandingView
         totalWords={totalWords}

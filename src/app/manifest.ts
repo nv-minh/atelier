@@ -6,10 +6,14 @@ import type { MetadataRoute } from "next";
 //   theme_color      = --ink   (31 28 22)    => #1F1C16
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Atelier — Vocabulary Studio",
+    // "Language Studio", not "Vocabulary Studio": grammar is next, and iOS
+    // never updates the name of an already-installed PWA. Widening it now,
+    // while the install base is still small, is the cheap moment to do it.
+    name: "Atelier — Studio học ngôn ngữ",
     short_name: "Atelier",
     description:
-      "A refined spaced-repetition studio for mastering English vocabulary, A1 to C1.",
+      "Studio luyện tiếng Anh theo lịch nhắc lại: hơn 8.000 từ A1–C1, bảy chế độ học và lịch ôn tính riêng cho bạn.",
+    lang: "vi",
     start_url: "/",
     display: "standalone",
     background_color: "#FDFBF6",
