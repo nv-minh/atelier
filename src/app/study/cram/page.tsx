@@ -3,6 +3,7 @@ import { buildCramQueue } from "@/lib/study-engine";
 import { getCurrentUser } from "@/lib/session";
 import { CramSession } from "@/components/study/cram-session";
 import { EmptyStudy } from "@/components/study/empty-study";
+import { parseScope, STUDY_SCOPES } from "@/lib/vault/scope";
 
 export const dynamic = "force-dynamic";
 
@@ -13,11 +14,14 @@ export default async function CramPage({
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
-  const scope =
-    searchParams.scope === "starred" || searchParams.scope === "leeches"
-      ? searchParams.scope
-      : undefined;
-  const words = await buildCramQueue({ cefr: searchParams.cefr, topic: searchParams.topic, limit: 30, userId: user.id, scope });
+  const scope = parseScope(searchParams.scope, STUDY_SCOPES) ?? undefined;
+  const words = await buildCramQueue({
+    cefr: searchParams.cefr,
+    topic: searchParams.topic,
+    limit: 30,
+    userId: user.id,
+    scope: scope as "starred" | "leeches" | "weak" | undefined,
+  });
   if (words.length === 0) return <EmptyStudy />;
   const dir = (searchParams.dir as "forward" | "reverse" | "cloze") || "forward";
 

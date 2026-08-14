@@ -6,6 +6,7 @@ import { awardForReview, awardForSessionEnd } from "./gamification";
 import { selectNewWordIds } from "./selection/candidates";
 import { applyDrift } from "./selection/apply-drift";
 import { LEECH_THRESHOLD, leechCardWhere } from "./leech";
+import { getWeakWordIds } from "./vault/weak-server";
 
 export type StudyWord = {
   id: string;
@@ -405,29 +406,39 @@ export async function buildCramQueue(opts?: {
   topic?: string;
   limit?: number;
   userId?: string;
-  scope?: "starred" | "leeches";
+  scope?: "starred" | "leeches" | "weak";
 }): Promise<StudyWord[]> {
   const cefr = opts?.cefr && opts.cefr !== "ALL" ? opts.cefr : undefined;
   const topic = opts?.topic && opts.topic !== "ALL" ? opts.topic : undefined;
   const where: any = {};
   if (cefr) where.cefr = cefr;
   if (topic) where.topics = { contains: `"${topic}"` };
-  let leechOrder: string[] | null = null;
+  // Set for "leeches" and "weak" alike: both need the fetch-then-restore-order
+  // dance below, because `findMany` cannot order by an id list.
+  let orderedIds: string[] | null = null;
   if (opts?.scope === "starred" && opts.userId) {
     const ids = await getStarredWordIds(opts.userId);
     where.id = { in: ids };
   } else if (opts?.scope === "leeches" && opts.userId) {
-    leechOrder = await getLeechWordIds(opts.userId);
-    where.id = { in: leechOrder };
+    orderedIds = await getLeechWordIds(opts.userId);
+    where.id = { in: orderedIds };
+  } else if (opts?.scope === "weak" && opts.userId) {
+    orderedIds = await getWeakWordIds(opts.userId, opts?.limit ?? 30, {
+      scope: "all",
+      cefr: opts.cefr,
+      topic: opts.topic,
+    });
+    where.id = { in: orderedIds };
   }
   const limit = opts?.limit ?? 30;
 
-  // Leeches drill worst-first: fetch all matches (findMany can't order by the id
-  // list), restore the lapses-desc order from getLeechWordIds, then cap — so >30
-  // leeches drill the worst offenders, not an alphabetical slice.
-  if (leechOrder) {
+  // Leeches and weak both drill worst-first: fetch all matches (findMany can't
+  // order by the id list), restore the order the id list was already sorted in
+  // (lapses-desc for leeches, stability-asc for weak), then cap — so >30 results
+  // drill the worst offenders, not an alphabetical slice.
+  if (orderedIds) {
     const rows = await prisma.word.findMany({ where });
-    const rank = new Map(leechOrder.map((id, i) => [id, i]));
+    const rank = new Map(orderedIds.map((id, i) => [id, i]));
     rows.sort((a, b) => (rank.get(a.id) ?? Infinity) - (rank.get(b.id) ?? Infinity));
     return rows.slice(0, limit).map(mapWord);
   }

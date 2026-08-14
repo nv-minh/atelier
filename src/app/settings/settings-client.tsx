@@ -34,6 +34,7 @@ export function SettingsClient({
   const [goalXp, setGoalXp] = useState(dailyGoalXp);
   const [saved, setSaved] = useState(false);
   const [exportScope, setExportScope] = useState("all");
+  const [exportCefr, setExportCefr] = useState("ALL");
 
   // Read on mount, not during render: localStorage does not exist on the server,
   // and reading it during render would desync the first client paint from the
@@ -66,14 +67,23 @@ export function SettingsClient({
     { key: "system", label: t("settings.auto"), icon: Monitor },
   ] as const;
 
+  // CEFR now travels as its own `cefr` param instead of being baked into the
+  // scope string (the old `cefr:X` form still works server-side as a
+  // backward-compatible alias — see parseFilter — but new links use the
+  // dedicated param so scope and level can combine freely).
   const scopeOptions = [
     { key: "all", label: t("settings.exportScopeAll") },
+    { key: "mine", label: t("settings.exportScopeMine") },
     { key: "starred", label: t("settings.exportScopeStarred") },
     { key: "learned", label: t("settings.exportScopeLearned") },
-    ...CEFR_LEVELS.map((level) => ({ key: `cefr:${level}`, label: level })),
+    { key: "known", label: t("settings.exportScopeKnown") },
+    { key: "leeches", label: t("settings.exportScopeLeeches") },
   ];
-  const exportHref = (format: string) =>
-    `/api/export?format=${format}&scope=${encodeURIComponent(exportScope)}`;
+  const exportHref = (format: string) => {
+    const sp = new URLSearchParams({ format, scope: exportScope });
+    if (exportCefr !== "ALL") sp.set("cefr", exportCefr);
+    return `/api/export?${sp.toString()}`;
+  };
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14 max-w-2xl">
@@ -218,6 +228,20 @@ export function SettingsClient({
           {scopeOptions.map((opt) => (
             <option key={opt.key} value={opt.key}>
               {opt.label}
+            </option>
+          ))}
+        </select>
+
+        <label className="text-sm font-medium block mb-2">{t("settings.exportCefr")}</label>
+        <select
+          value={exportCefr}
+          onChange={(e) => setExportCefr(e.target.value)}
+          className="w-full rounded-2xl border border-line bg-transparent px-4 py-3 text-sm mb-4"
+        >
+          <option value="ALL">{t("browse.all")}</option>
+          {CEFR_LEVELS.map((level) => (
+            <option key={level} value={level}>
+              {level}
             </option>
           ))}
         </select>
