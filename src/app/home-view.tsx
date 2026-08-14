@@ -8,7 +8,9 @@ import { LevelCard } from "@/components/gamification/level-card";
 import { GoalRing } from "@/components/gamification/goal-ring";
 import { DailyQuote } from "@/components/daily-quote";
 import { useI18n } from "@/components/i18n-provider";
+import { ReminderBanner } from "@/components/reminder-banner";
 import type { GamificationSummary } from "@/lib/gamification";
+import type { Reminder } from "@/lib/reminders/pick";
 
 export type HomeStats = {
   totalWords: number;
@@ -28,6 +30,7 @@ export function HomeView({
   leechCount,
   gamify,
   cefrBand,
+  reminder,
 }: {
   stats: HomeStats;
   leechCount: number;
@@ -38,6 +41,8 @@ export function HomeView({
    * "level" render in this component, so this one says which it is.
    */
   cefrBand: { band: string; topics: string[] } | null;
+  /** The one reminder worth showing today, or null when there is nothing to say. */
+  reminder: Reminder | null;
 }) {
   const { t } = useI18n();
 
@@ -51,6 +56,7 @@ export function HomeView({
 
       {/* HERO */}
       <section className="pt-10 sm:pt-16 pb-12 sm:pb-16 relative">
+        {reminder && <ReminderBanner reminder={reminder} />}
         <div className="max-w-3xl">
           <div className="animate-fade-up flex flex-wrap items-center gap-3 mb-4">
             <p className="text-sm text-soft font-mono flex items-center gap-2">
