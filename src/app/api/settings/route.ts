@@ -2,8 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { updateSettings } from "@/lib/study-engine";
 import { requireUserId } from "@/lib/session";
 import { setReminderPrefs } from "@/lib/reminders/prefs-server";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const body = await req.json();

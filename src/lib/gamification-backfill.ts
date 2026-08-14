@@ -65,23 +65,25 @@ export async function runBackfillForUser(
 
   const { byDay, totalXp } = xpByDayFromLogs(logs);
 
-  // Write per-day XP. Update existing DailyStat rows; create a row only when a
-  // day has logs but no DailyStat (shouldn't normally happen, but keeps XP whole).
-  let daysWritten = 0;
-  for (const [dateStr, xp] of byDay) {
-    const row = await prisma.dailyStat.findUnique({
-      where: { userId_dateStr: { userId, dateStr } },
-    });
-    if (row) {
-      await prisma.dailyStat.update({
-        where: { userId_dateStr: { userId, dateStr } },
-        data: { xp },
-      });
-    } else {
-      await prisma.dailyStat.create({ data: { userId, dateStr, xp } });
-    }
-    daysWritten += 1;
+  // Write per-day XP as one batched transaction of upserts instead of a
+  // sequential findUnique-then-update/create PER DAY (was 2 network round trips
+  // x every active day the user has ever had — multi-hundred queries, and the
+  // whole thing runs inline on this user's first home-page load after
+  // gamification shipped). `xp` is SET, not incremented, so a plain upsert
+  // covers both the "row exists" and "row missing" cases without reading first.
+  const dayEntries = [...byDay.entries()];
+  if (dayEntries.length > 0) {
+    await prisma.$transaction(
+      dayEntries.map(([dateStr, xp]) =>
+        prisma.dailyStat.upsert({
+          where: { userId_dateStr: { userId, dateStr } },
+          update: { xp },
+          create: { userId, dateStr, xp },
+        })
+      )
+    );
   }
+  const daysWritten = dayEntries.length;
 
   // Absolute XP total (idempotent — set, never increment).
   await prisma.userProgress.upsert({

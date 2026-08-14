@@ -45,7 +45,22 @@ export default async function BrowsePage({
       orderBy: { word: "asc" },
       skip: (page - 1) * perPage,
       take: perPage,
-      include: {
+      // `select`, not `include` — `include` pulled every Word column (extraDefs,
+      // antonyms, topics, both audio URLs, freq fields) for a list view that
+      // renders only what's listed below, x40 rows x every page load.
+      select: {
+        id: true,
+        word: true,
+        cefr: true,
+        typeEn: true,
+        typeVi: true,
+        ipaUk: true,
+        ipaUs: true,
+        definitionEn: true,
+        definitionVi: true,
+        imageUrl: true,
+        synonyms: true,
+        example: true,
         cards: userId ? { where: { userId }, select: { state: true, due: true, reps: true } } : false,
       },
     }),

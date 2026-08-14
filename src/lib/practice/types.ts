@@ -42,6 +42,12 @@ export type PracticeItem = {
   scheduledDays: number;
   due: string; // ISO
   lastReview: string | null; // ISO
+  // Precomputed at session-build time for quiz mode (see session-plan.ts) so
+  // QuizMode doesn't fire one client round trip (+ 2 DB queries) per card.
+  // Undefined for every non-quiz mode, and quiz falls back to the live
+  // /api/study/quiz-options endpoint if this is missing (e.g. too few peer
+  // words at this CEFR level to build 3 distractors).
+  quizOptions?: { options: string[]; correctIndex: number };
 };
 
 // What a mode observes about how the answer was produced. Consumed only by

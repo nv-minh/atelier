@@ -3,10 +3,12 @@ import { Prisma } from "@prisma/client";
 import { requireUserId } from "@/lib/session";
 import { parseBulkRequest } from "@/lib/vault/bulk";
 import { applyBulk } from "@/lib/vault/bulk-server";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

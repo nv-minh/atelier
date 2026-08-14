@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { withAuth } from "next-auth/middleware";
 
-// When AUTH_BYPASS=1, no route protection — the app uses a shared local user.
-const BYPASS = process.env.AUTH_BYPASS === "1";
+// When AUTH_BYPASS=1 (AND not in production), no route protection — the app uses
+// a shared local user. The NODE_ENV guard must stay in lockstep with the same
+// flag in src/lib/session.ts and next.config.js: a prod build must NEVER honour
+// AUTH_BYPASS even if the env var leaks into the deployed environment. (This
+// can't import the session.ts constant — middleware runs on the edge and that
+// module pulls in prisma + "server-only".)
+const BYPASS = process.env.AUTH_BYPASS === "1" && process.env.NODE_ENV !== "production";
 
 const guard = withAuth({
   pages: { signIn: "/login" },

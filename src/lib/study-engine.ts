@@ -207,12 +207,21 @@ export async function fetchNewCards(
       });
     }
 
-    for (const wordId of freshIds) {
-      const card = await prisma.card.create({
-        data: { userId, wordId, due: now, state: 0 },
+    // Batch-create the new stubs in one round trip instead of one INSERT per
+    // word (was N+1: 20 new words = 20 sequential awaits on the first study tap
+    // of the day). createMany doesn't return rows, so one findMany re-fetches
+    // them with the word joined. `due: now` + state 0 pin exactly what we just
+    // inserted (freshIds are unseen words, so no pre-existing state-0 card can
+    // match).
+    if (freshIds.length > 0) {
+      await prisma.card.createMany({
+        data: freshIds.map((wordId) => ({ userId, wordId, due: now, state: 0 })),
+      });
+      const created = await prisma.card.findMany({
+        where: { userId, wordId: { in: freshIds }, state: 0, due: now },
         include: { word: true },
       });
-      out.push(toStudyCard(card, true));
+      for (const card of created) out.push(toStudyCard(card, true));
     }
   }
   return out;
@@ -311,8 +320,52 @@ export function getRatingPreviews(card: StudyCard, now = new Date()): RatingPrev
   });
 }
 
-// Record a review: apply FSRS, update card, write log, update daily stats
-export async function recordReview(userId: string, cardId: string, rating: Rating, correct = true) {
+// Record a review: apply FSRS, update card, write log, update daily stats.
+//
+// `idempotencyKey` (optional, client-generated) makes a network-retried submit
+// a no-op: if a ReviewLog with that key already exists, the stored outcome is
+// returned without re-applying the rating. Without it, a retry (the client
+// resends on a network error after the server already processed the first
+// request) would double-advance the card, double-count the daily tally —
+// blowing past newCardsPerDay — and double-award XP.
+export async function recordReview(
+  userId: string,
+  cardId: string,
+  rating: Rating,
+  correct = true,
+  idempotencyKey?: string
+) {
+  if (idempotencyKey) {
+    const prior = await prisma.reviewLog.findUnique({
+      where: { idempotencyKey },
+      select: {
+        state: true,
+        stability: true,
+        difficulty: true,
+        elapsedDays: true,
+        scheduledDays: true,
+        // `due` isn't logged on ReviewLog (it's a Card field) — the caller
+        // (the /api/study/review route) reads `updated.due` unconditionally,
+        // so the replay echo needs it too. The card's CURRENT due is exactly
+        // what the original request set, since nothing else moves it between
+        // then and a retry landing here.
+        card: { select: { due: true } },
+      },
+    });
+    if (prior) {
+      // Already recorded: return a zero-award echo so a retried submit isn't
+      // worse than the original success, without re-running gamification.
+      const { card, ...rest } = prior;
+      return {
+        ...rest,
+        due: card.due,
+        xpGained: 0,
+        unlocked: [] as string[],
+        leveledUp: null as number | null,
+      };
+    }
+  }
+
   const now = new Date();
   const card = await prisma.card.findUnique({ where: { id: cardId } });
   if (!card || card.userId !== userId) return null;
@@ -335,44 +388,51 @@ export async function recordReview(userId: string, cardId: string, rating: Ratin
   );
 
   const wasNew = card.state === 0;
-  await prisma.card.update({ where: { id: cardId }, data: updated });
-
-  await prisma.reviewLog.create({
-    data: {
-      cardId,
-      userId,
-      rating,
-      state: updated.state,
-      stability: updated.stability,
-      difficulty: updated.difficulty,
-      elapsedDays: updated.elapsedDays,
-      scheduledDays: updated.scheduledDays,
-    },
-  });
-
-  // Update daily stats (non-XP fields). The XP ledgers (DailyStat.xp +
-  // UserProgress.xp) are incremented together inside awardForReview's
-  // transaction, keyed on this SAME dateStr so the day never splits.
+  // dateStr is shared with awardForReview below so the XP ledger lands on the
+  // same UTC day as the rest of this DailyStat row.
   const dateStr = todayStr();
   const isNewContribution = wasNew ? 1 : 0;
   const isReviewContribution = !wasNew ? 1 : 0;
-  await prisma.dailyStat.upsert({
-    where: { userId_dateStr: { userId, dateStr } },
-    update: {
-      newCards: { increment: isNewContribution },
-      reviews: { increment: isReviewContribution },
-      correctCount: { increment: correct ? 1 : 0 },
-      totalCount: { increment: 1 },
-    },
-    create: {
-      userId,
-      dateStr,
-      newCards: isNewContribution,
-      reviews: isReviewContribution,
-      correctCount: correct ? 1 : 0,
-      totalCount: 1,
-    },
-  });
+
+  // Atomic: card advance + review log + daily tally commit together. Previously
+  // three independent awaits — a crash between them (function timeout, DB blip)
+  // left the card advanced with no ReviewLog, silently drifting the
+  // newCardsPerDay cap, the streak and every accuracy aggregate that derives from
+  // ReviewLog. XP stays in its own best-effort transaction (awardForReview): a
+  // review must never 500 because gamification did.
+  await prisma.$transaction([
+    prisma.card.update({ where: { id: cardId }, data: updated }),
+    prisma.reviewLog.create({
+      data: {
+        cardId,
+        userId,
+        rating,
+        state: updated.state,
+        stability: updated.stability,
+        difficulty: updated.difficulty,
+        elapsedDays: updated.elapsedDays,
+        scheduledDays: updated.scheduledDays,
+        ...(idempotencyKey ? { idempotencyKey } : {}),
+      },
+    }),
+    prisma.dailyStat.upsert({
+      where: { userId_dateStr: { userId, dateStr } },
+      update: {
+        newCards: { increment: isNewContribution },
+        reviews: { increment: isReviewContribution },
+        correctCount: { increment: correct ? 1 : 0 },
+        totalCount: { increment: 1 },
+      },
+      create: {
+        userId,
+        dateStr,
+        newCards: isNewContribution,
+        reviews: isReviewContribution,
+        correctCount: correct ? 1 : 0,
+        totalCount: 1,
+      },
+    }),
+  ]);
 
   // Gamification is best-effort: the review is already committed above, so a
   // gamification failure must never 500 the request or lose the review. Fall
@@ -571,6 +631,12 @@ export async function endSession(
 ): Promise<{ ok: false } | { ok: true; xpGained: number; unlocked: string[] }> {
   const existing = await prisma.studySession.findUnique({ where: { id: sessionId } });
   if (!existing || existing.userId !== userId) return { ok: false };
+  // Idempotent: a session that already ended must NOT be re-ended. Without this,
+  // replaying the PATCH (a flaky-client retry, or a deliberate curl loop on the
+  // same sessionId) reruns awardForSessionEnd and re-awards the non-SRS bonus XP
+  // every time — farmable leaderboard XP. Ownership is checked above; this is
+  // the replay guard.
+  if (existing.endedAt) return { ok: true, xpGained: 0, unlocked: [] };
 
   const session = await prisma.studySession.update({
     where: { id: sessionId },

@@ -6,46 +6,69 @@ import { computeStreakFromDb } from "./gamification-checks";
 import { CEFR_LEVELS } from "./export-format";
 import { LEARNED_STATES } from "./fsrs";
 
+// One row per (cefr, state) combination the user has any cards in — at most
+// ~6 CEFR levels x 4 states, never O(cards). Replaces a `findMany` that used
+// to return every Card the user has ever touched (up to the full vocabulary
+// size) just to bucket it by cefr+state in JS. userId is passed as a tagged-
+// template parameter, so Prisma parameterizes it — not string interpolation.
+type CefrStateCount = { cefr: string; state: number; count: number };
+async function cardCountsByCefrAndState(userId: string): Promise<CefrStateCount[]> {
+  const rows = await prisma.$queryRaw<{ cefr: string; state: number; count: bigint }[]>`
+    SELECT w.cefr AS cefr, c.state AS state, COUNT(*)::int AS count
+    FROM "Card" c
+    JOIN "Word" w ON w.id = c."wordId"
+    WHERE c."userId" = ${userId}
+    GROUP BY w.cefr, c.state
+  `;
+  return rows.map((r) => ({ cefr: r.cefr, state: r.state, count: Number(r.count) }));
+}
+
 export async function getDashboardStats(userId: string) {
   const now = new Date();
-  const totalWords = await prisma.word.count();
+  const today = todayStr();
+  const cefrLevels = [...CEFR_LEVELS];
 
-  // Cards by state
-  const cardsByState = await prisma.card.groupBy({
-    by: ["state"],
-    _count: true,
-    where: { userId },
-  });
+  // Every query below is independent of the others — run them together instead
+  // of as 9 sequential awaits. Each round trip to serverless Postgres is paid
+  // in full on the home page's first paint.
+  const [
+    totalWords,
+    cardsByState,
+    totalCards,
+    dueToday,
+    wordByCefr,
+    cefrStateCounts,
+    todayStat,
+    streak,
+    recentReviews,
+  ] = await Promise.all([
+    prisma.word.count(),
+    prisma.card.groupBy({ by: ["state"], _count: true, where: { userId } }),
+    prisma.card.count({ where: { userId } }),
+    prisma.card.count({ where: { userId, due: { lte: now }, state: { gte: 1 } } }),
+    prisma.word.groupBy({ by: ["cefr"], _count: true }),
+    cardCountsByCefrAndState(userId),
+    prisma.dailyStat.findUnique({ where: { userId_dateStr: { userId, dateStr: today } } }),
+    computeStreak(userId),
+    // Accuracy (last 100 reviews)
+    prisma.reviewLog.findMany({ where: { userId }, orderBy: { reviewedAt: "desc" }, take: 100 }),
+  ]);
+
   const stateCount: Record<number, number> = {};
   for (const s of cardsByState) stateCount[s.state] = s._count;
-  const totalCards = await prisma.card.count({ where: { userId } });
   const learnedCards = LEARNED_STATES.reduce((n, s) => n + (stateCount[s] ?? 0), 0);
   const learningCards = stateCount[1] ?? 0;
   const newCardsSeen = stateCount[0] ?? 0; // still new (seen but not graduated)
 
-  // Due today
-  const dueToday = await prisma.card.count({
-    where: { userId, due: { lte: now }, state: { gte: 1 } },
-  });
-
-  // CEFR breakdown — 2 queries instead of 12 (was N+1 loop).
-  const cefrLevels = [...CEFR_LEVELS];
-  const [wordByCefr, cardsWithCefr] = await Promise.all([
-    prisma.word.groupBy({ by: ["cefr"], _count: true }),
-    prisma.card.findMany({
-      where: { userId },
-      select: { state: true, word: { select: { cefr: true } } },
-    }),
-  ]);
+  // CEFR breakdown
   const wordTotals: Record<string, number> = {};
   for (const g of wordByCefr) wordTotals[g.cefr] = g._count;
   const learnedByCefr: Record<string, number> = {};
   const learningByCefr: Record<string, number> = {};
   const LEARNED = new Set<number>(LEARNED_STATES);
-  for (const c of cardsWithCefr) {
-    const lvl = c.word.cefr;
-    if (LEARNED.has(c.state)) learnedByCefr[lvl] = (learnedByCefr[lvl] ?? 0) + 1;
-    else learningByCefr[lvl] = (learningByCefr[lvl] ?? 0) + 1;
+  for (const c of cefrStateCounts) {
+    if (LEARNED.has(c.state)) learnedByCefr[c.cefr] = (learnedByCefr[c.cefr] ?? 0) + c.count;
+    else learningByCefr[c.cefr] = (learningByCefr[c.cefr] ?? 0) + c.count;
   }
   const cefrStats = cefrLevels.map((level) => {
     const total = wordTotals[level] ?? 0;
@@ -54,21 +77,6 @@ export async function getDashboardStats(userId: string) {
     return { level, total, learned, learning, unseen: total - learned - learning };
   });
 
-  // Today's stats
-  const today = todayStr();
-  const todayStat = await prisma.dailyStat.findUnique({
-    where: { userId_dateStr: { userId, dateStr: today } },
-  });
-
-  // Streak: count consecutive days with activity ending today or yesterday
-  const streak = await computeStreak(userId);
-
-  // Accuracy (last 100 reviews)
-  const recentReviews = await prisma.reviewLog.findMany({
-    where: { userId },
-    orderBy: { reviewedAt: "desc" },
-    take: 100,
-  });
   const accuracy =
     recentReviews.length > 0
       ? (recentReviews.filter((r) => r.rating >= 3).length / recentReviews.length) * 100

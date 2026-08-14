@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { requireUserId } from "@/lib/session";
 import { topicBySlug } from "@/lib/topic-taxonomy";
 import { parseJsonArray } from "@/lib/utils";
+import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 
 /** The learner's own view of their profile. */
 export async function GET() {
@@ -44,6 +45,7 @@ export async function GET() {
  * number mean nothing. Retaking the test is the way to change it.
  */
 export async function PATCH(req: NextRequest) {
+  if (!isSameOrigin(req)) return forbiddenCrossOrigin();
   const userId = await requireUserId();
   if (!userId) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
 

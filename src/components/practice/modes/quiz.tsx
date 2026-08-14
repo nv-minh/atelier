@@ -17,8 +17,20 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
   const readyAtRef = useRef<number | null>(null);
 
   useEffect(() => {
-    setOpts(null);
     setSelected(null);
+
+    // The common path: the server precomputed options for the whole session at
+    // queue-build time (session-plan.ts), so most cards need no request at all
+    // — was a waterfall of one fetch (+2 DB queries) per card. Only fall back
+    // to the live endpoint when it's missing (e.g. too few peer words at this
+    // CEFR level to build 3 distractors there).
+    if (item.quizOptions) {
+      setOpts(item.quizOptions);
+      readyAtRef.current = Date.now();
+      return;
+    }
+
+    setOpts(null);
     readyAtRef.current = null;
     let cancelled = false;
 
@@ -40,7 +52,7 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
     return () => {
       cancelled = true;
     };
-  }, [item.wordId, onSkip]);
+  }, [item.wordId, item.quizOptions, onSkip]);
 
   const pick = (i: number) => {
     if (selected !== null || !opts) return;

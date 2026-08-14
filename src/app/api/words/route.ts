@@ -22,7 +22,19 @@ export async function GET(req: NextRequest) {
       orderBy: { word: "asc" },
       skip: (page - 1) * perPage,
       take: perPage,
-      include: {
+      // `select`, not `include` — see the same change in src/app/browse/page.tsx.
+      select: {
+        id: true,
+        word: true,
+        cefr: true,
+        typeEn: true,
+        typeVi: true,
+        ipaUk: true,
+        ipaUs: true,
+        definitionEn: true,
+        definitionVi: true,
+        synonyms: true,
+        example: true,
         cards: userId ? { where: { userId }, select: { state: true, due: true, reps: true } } : false,
       },
     }),
