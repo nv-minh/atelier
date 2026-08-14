@@ -27,7 +27,7 @@ App hiện chỉ dạy từ vựng. Người dùng muốn thêm một module h�
 - Toàn bộ tiếng Việt là **máy dịch**, nhiều field hỏng nặng: đáp án "men" dịch thành "leaven"; `choices_vi` kiểu `"núi lửa ## núi lửa ## núi lửa"` (vô dụng); JSON tiếng Việt trong `confused_words.csv` **vỡ cấu trúc quote** (`""w"">Một vài""`) — parse thẳng sẽ fail.
 - CSV có **BOM** (đọc bằng `utf-8-sig`). `answer_index` **1-based**.
 - 25 bài lesson nhúng ảnh dạng `file:///android_asset/images/...`; thư mục `images/` có 30 file PNG nhưng **3 file được tham chiếu mà không tồn tại**: `ae.svg`, `be.svg`, `passiv_blank.png`.
-- `lessons.csv` **không có cột id** — khóa tự nhiên là `(topic_en, lesson_order)`.
+- `lessons.csv` **không có cột id** — khóa tự nhiên là `(topic_en, lesson_order)`; và có 2 cặp lesson_order trùng, nên order trong DB đánh lại theo tuần tự xuất hiện trong topic.
 - `grammar_questions` chia theo ~25 category × 2 level, **không map 1:1** với 33 chủ đề của lessons/tests. Không ép map (đó là lý do chọn phương án hub lai, xem §2).
 - Chủ đề ít câu nhất: `Other Grammar` chỉ có 30 câu test.
 
@@ -89,7 +89,7 @@ model GrammarTopic {
 model GrammarLesson {
   id            Int     @id @default(autoincrement())
   topicId       Int
-  order         Int                    // lesson_order gốc
+  order         Int                    // thứ tự tuần tự trong topic theo dòng CSV (lesson_order gốc có 2 cặp trùng)
   titleEn       String
   titleVi       String?
   contentEnHtml String  @db.Text       // ĐÃ sanitize + rewrite ảnh lúc import

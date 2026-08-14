@@ -5,7 +5,7 @@
 // survive a re-run (CSV VI is only written at create).
 // A broken row never kills the run: it is skipped and listed in the report.
 //
-// Usage: npm run grammar:import -- [--dry-run] [--src <dir>]
+// Usage: npm run grammar:import -- [--dry-run] [--src <dir>] [--only <table>] [--refresh-vi]
 import "./load-env";
 import { PrismaClient } from "@prisma/client";
 import fs from "node:fs";
@@ -21,6 +21,14 @@ const prisma = new PrismaClient();
 const DRY_RUN = process.argv.includes("--dry-run");
 const srcIdx = process.argv.indexOf("--src");
 const SRC = srcIdx !== -1 && process.argv[srcIdx + 1] ? process.argv[srcIdx + 1] : "EnglishGrammar_extracted";
+const onlyIdx = process.argv.indexOf("--only");
+const ONLY = onlyIdx !== -1 && process.argv[onlyIdx + 1] ? process.argv[onlyIdx + 1] : null;
+// Lesson update normally never touches *Vi (see header) so translations survive
+// a re-run. --refresh-vi is an explicit escape hatch to re-sync titleVi/
+// contentViHtml from the source CSV on the update path too — safe ONLY before
+// any grammar-translate-import has ever run (it would otherwise clobber
+// applied translations).
+const REFRESH_VI = process.argv.includes("--refresh-vi");
 const PUBLIC_IMAGES = path.join("public", "grammar", "images");
 
 type Skip = { table: string; id: string; reason: string };
@@ -30,6 +38,7 @@ const report = {
   viNull: {} as Record<string, number>,
   missingImages: new Set<string>(),
   imagesCopied: 0,
+  dbCounts: {} as Record<string, number>,
 };
 
 function readCsv(name: string): Record<string, string>[] {
@@ -70,11 +79,18 @@ async function importTopics(): Promise<void> {
 async function importLessons(availableImages: Set<string>): Promise<void> {
   const rows = readCsv("lessons.csv");
   const ops: Array<() => never> = [];
+  // lesson_order (the CSV's natural key alongside topic_en) has 2 duplicate
+  // pairs in the source data ('Passive Voice'/5, 'Other Grammar'/9), which
+  // silently collided into one DB row each via upsert. CSV rows are already
+  // sorted by lesson_order within each topic, so order is instead assigned
+  // as a 1-based sequence per topic, counted in CSV row order — deterministic
+  // across re-runs (the CSV is static) and collision-free by construction.
+  const nextOrder = new Map<number, number>(); // topicId → next order
   for (const r of rows) {
     const topic = TOPIC_BY_SOURCE_EN.get(r.topic_en);
-    if (!topic) { report.skipped.push({ table: "lessons", id: `${r.topic_en}/${r.lesson_order}`, reason: "unknown topic_en" }); continue; }
-    const order = Number.parseInt(r.lesson_order, 10);
-    if (!Number.isInteger(order)) { report.skipped.push({ table: "lessons", id: `${r.topic_en}/${r.lesson_order}`, reason: "bad lesson_order" }); continue; }
+    if (!topic) { report.skipped.push({ table: "lessons", id: `${r.topic_en}/${r.lesson_name_en}`, reason: "unknown topic_en" }); continue; }
+    const order = nextOrder.get(topic.id) ?? 1;
+    nextOrder.set(topic.id, order + 1);
     const en = cleanLessonHtml(r.content_en_html, availableImages);
     en.missingImages.forEach((m) => report.missingImages.add(m));
     let contentViHtml: string | null = null;
@@ -92,7 +108,9 @@ async function importLessons(availableImages: Set<string>): Promise<void> {
     ops.push((() =>
       prisma.grammarLesson.upsert({
         where: { topicId_order: { topicId: topic.id, order } },
-        update: { titleEn: data.titleEn, contentEnHtml: data.contentEnHtml }, // EN only — see header
+        update: REFRESH_VI
+          ? { titleEn: data.titleEn, contentEnHtml: data.contentEnHtml, titleVi: data.titleVi, contentViHtml: data.contentViHtml }
+          : { titleEn: data.titleEn, contentEnHtml: data.contentEnHtml }, // EN only by default — see header
         create: { topicId: topic.id, order, ...data },
       })) as never);
   }
@@ -228,23 +246,48 @@ async function countViNulls(): Promise<void> {
   };
 }
 
+// Ground truth: distinct row counts per table, regardless of --only — this is
+// what actually caught the lessons dedup bug that ops-counting (report.imported)
+// missed (292 ops upserted onto only 290 distinct rows via 2 duplicate keys).
+async function queryDbCounts(): Promise<Record<string, number>> {
+  return {
+    topics: await prisma.grammarTopic.count(),
+    lessons: await prisma.grammarLesson.count(),
+    testQuestions: await prisma.grammarTestQuestion.count(),
+    practiceQuestions: await prisma.grammarPracticeQuestion.count(),
+    confusedPairs: await prisma.grammarConfusedPair.count(),
+    commonMistakes: await prisma.grammarCommonMistake.count(),
+  };
+}
+
 async function main(): Promise<void> {
   const availableImages = copyImages();
-  await importTopics();
-  await importLessons(availableImages);
-  await importTestQuestions();
-  await importPracticeQuestions();
-  await importConfusedPairs();
-  await importCommonMistakes();
+  if (!ONLY || ONLY === "topics") await importTopics();
+  if (!ONLY || ONLY === "lessons") await importLessons(availableImages);
+  if (!ONLY || ONLY === "testQuestions") await importTestQuestions();
+  if (!ONLY || ONLY === "practiceQuestions") await importPracticeQuestions();
+  if (!ONLY || ONLY === "confusedPairs") await importConfusedPairs();
+  if (!ONLY || ONLY === "commonMistakes") await importCommonMistakes();
   await countViNulls();
+  if (!DRY_RUN) report.dbCounts = await queryDbCounts();
 
   const out = { ...report, missingImages: [...report.missingImages] };
   fs.writeFileSync(path.join(SRC, "import-report.json"), JSON.stringify(out, null, 2));
   console.log(`${DRY_RUN ? "[dry-run] " : ""}imported:`, report.imported);
   console.log("skipped:", report.skipped.length, "| missing images:", out.missingImages);
   console.log("vi=NULL:", report.viNull);
+  console.log("dbCounts:", report.dbCounts);
 
-  const mismatches = Object.entries(EXPECTED_COUNTS).filter(([k, v]) => report.imported[k] !== v);
+  // Dry-run has no DB to query, so it falls back to ops-counting; a real run
+  // (full or --only) always has dbCounts for all six tables (see above) and
+  // is checked against that ground truth instead. --only narrows which keys
+  // are actually checked, so a single-table run isn't flagged for the five
+  // tables it never touched this invocation.
+  const counted = DRY_RUN ? report.imported : report.dbCounts;
+  const expectedEntries = ONLY
+    ? Object.entries(EXPECTED_COUNTS).filter(([k]) => k === ONLY)
+    : Object.entries(EXPECTED_COUNTS);
+  const mismatches = expectedEntries.filter(([k, v]) => counted[k] !== v);
   if (mismatches.length > 0) {
     console.error("COUNT MISMATCH vs spec:", mismatches, "— see skipped[] in import-report.json");
     process.exitCode = 1;

@@ -860,6 +860,8 @@ git commit -m "feat(grammar): catalog 33 chủ đề/4 cụm + tên 22 nhóm l�
 
 ### Task 6: Script import (`prisma/import-grammar.ts`) + copy ảnh + report
 
+> Amendment (fix round 1): lessons.csv có 2 cặp (topic, lesson_order) trùng → order đánh theo tuần tự trong topic; import thêm --only <table> và verify dbCounts vs EXPECTED_COUNTS.
+
 **Files:**
 - Create: `prisma/import-grammar.ts`
 - Create (script sinh ra, phải commit): `public/grammar/images/` (30 PNG)
