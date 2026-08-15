@@ -3,6 +3,8 @@
 // the lesson reader's legend and the import-time sanitizer whitelist both
 // read this list. It lives OUTSIDE lesson-html.ts on purpose — that module
 // imports sanitize-html (a devDependency) and must never reach a client bundle.
+// Everything else (wp-block-*, scrollbar4, german, example1–10, …) is layout
+// junk from the source site: the class is stripped, the span and its text stay.
 export const SEMANTIC_SPAN_CLASSES = [
   "adjective", "adverb", "verb", "subject", "object", "auxiliary",
   "infinitive", "negation", "signal-word", "ending", "irregular-past",

@@ -220,7 +220,7 @@
     border-collapse: collapse;
     font-size: 0.9rem;
     display: block;
-    overflow-x: auto; /* nguồn có bảng chia thì rất rộng — cuộn trong bảng, không vỡ trang */
+    overflow-x: auto; /* source conjugation tables can be very wide — scroll inside the table, never break the page */
   }
   .grammar-prose th, .grammar-prose td {
     border: 1px solid rgb(var(--ink-line) / 0.12);
@@ -236,7 +236,7 @@
     margin: 1rem auto;
     display: block;
     cursor: zoom-in;
-    background: white; /* timeline PNG nền trắng — giữ đọc được ở dark mode */
+    background: white; /* timeline PNGs have white backgrounds — keep them readable in dark mode */
     padding: 0.5rem;
   }
   .grammar-prose s, .grammar-prose del { color: rgb(var(--gr-negation)); }
