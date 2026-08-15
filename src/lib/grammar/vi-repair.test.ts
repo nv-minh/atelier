@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  checkEntriesVi,
+  checkExplanationVi,
+  checkLessonVi,
   isBlankStem,
   isInflectionPattern,
   repairConfusedEntriesVi,
@@ -64,6 +67,45 @@ describe("repairLessonViHtml", () => {
 
     const out = repairLessonViHtml(en, vi)!;
     expect(out.html).toBe(en);
+  });
+
+  it("trả CẢ câu ví dụ trong <p> về tiếng Anh, không chỉ mỗi span", () => {
+    // Bài 245 thật: 'draws' bị tra từ điển thành 'vẽ, kéo' + 's', khung câu
+    // cũng bị dịch nốt — người học đọc được đúng cái sai.
+    const en =
+      '<p>My friend often <span class="infinitive">draw</span><span class="ending">s</span> nice posters.</p>';
+    const vi =
+      '<p>Bạn tôi thường xuyên <span class="infinitive">vẽ, kéo</span><span class="ending">s</span> áp phích đẹp.</p>';
+
+    expect(repairLessonViHtml(en, vi)!.html).toBe(en);
+  });
+
+  it("chừa câu HƯỚNG DẪN tiếng Việt, chỉ kéo dạng được trích dẫn về EN", () => {
+    // Cùng mang span vai trò như câu ví dụ, nhưng đây là câu nói VỀ ngữ pháp.
+    const en =
+      '<p>You need the auxiliary <span class="auxiliary">do/does</span> and the infinitive.</p>';
+    const vi =
+      '<p>Bạn cần trợ động từ <span class="auxiliary">làm/thực hiện</span> và động từ nguyên thể.</p>';
+
+    expect(repairLessonViHtml(en, vi)!.html).toBe(
+      '<p>Bạn cần trợ động từ <span class="auxiliary">do/does</span> và động từ nguyên thể.</p>'
+    );
+  });
+
+  it("giữ công thức tiếng Anh dù nó cũng gọi tên loại từ", () => {
+    const en = '<p><span class="auxiliary">will</span> + infinitive</p>';
+    const vi = '<p><span class="auxiliary">sẽ</span> + nguyên thể</p>';
+
+    expect(repairLessonViHtml(en, vi)!.html).toBe(en);
+  });
+
+  it("giữ chất liệu trong <i> — tên thì, dạng trích dẫn, danh sách động từ", () => {
+    const en = "<h3>with special verbs <i>be, believe, belong, hate</i></h3>";
+    const vi = "<h3>với động từ đặc biệt <i>được, tin, thuộc về, ghét</i></h3>";
+
+    expect(repairLessonViHtml(en, vi)!.html).toBe(
+      "<h3>với động từ đặc biệt <i>be, believe, belong, hate</i></h3>"
+    );
   });
 
   it("giữ hình vị đang được dạy ở tiếng Anh ngay giữa câu văn tiếng Việt", () => {
@@ -169,5 +211,106 @@ describe("repairMistakeTitleVi", () => {
   it("trả null khi tiêu đề không có dạng 'từ khoá (chú giải)'", () => {
     expect(repairMistakeTitleVi("Absorbed", "Hấp thụ")).toBeNull();
     expect(repairMistakeTitleVi("Absorbed (= interested)", null)).toBeNull();
+  });
+});
+
+describe("checkLessonVi — validator Tầng 1", () => {
+  const en =
+    "<table><thead><tr><th>Long form</th></tr></thead><tbody><tr>" +
+    '<td>I <span class="auxiliary">can</span> play football.</td>' +
+    '</tr></tbody></table><p>Add <span class="ending">es</span> to the verb.</p>';
+
+  it("chấp nhận bản dịch giữ nguyên vùng bảo vệ", () => {
+    const vi =
+      "<table><thead><tr><th>Biểu mẫu dài</th></tr></thead><tbody><tr>" +
+      '<td>I <span class="auxiliary">can</span> play football.</td>' +
+      '</tr></tbody></table><p>Thêm <span class="ending">es</span> vào động từ.</p>';
+    expect(checkLessonVi(en, vi)).toEqual({ ok: true });
+  });
+
+  it("từ chối khi đụng ô <td> tiếng Anh", () => {
+    const vi =
+      "<table><thead><tr><th>Biểu mẫu dài</th></tr></thead><tbody><tr>" +
+      '<td>Tôi <span class="auxiliary">có thể</span> chơi bóng đá.</td>' +
+      '</tr></tbody></table><p>Thêm <span class="ending">es</span> vào động từ.</p>';
+    const r = checkLessonVi(en, vi);
+    expect(r.ok).toBe(false);
+    if (!r.ok) expect(r.reason).toContain("protected");
+  });
+
+  it("từ chối khi dịch mất hình vị trong span ending", () => {
+    const vi =
+      "<table><thead><tr><th>Biểu mẫu dài</th></tr></thead><tbody><tr>" +
+      '<td>I <span class="auxiliary">can</span> play football.</td>' +
+      '</tr></tbody></table><p>Thêm <span class="ending">phải</span> vào động từ.</p>';
+    expect(checkLessonVi(en, vi).ok).toBe(false);
+  });
+
+  it("từ chối khi dịch cả câu ví dụ trong <p>", () => {
+    const enP = '<p>The sun <span class="infinitive">rise</span>s in the east.</p>';
+    const viP = '<p>Mặt Trời <span class="infinitive">mọc lên</span>s ở phía đông.</p>';
+    expect(checkLessonVi(enP, viP).ok).toBe(false);
+  });
+
+  it("từ chối khi chuỗi thẻ bị thay đổi", () => {
+    expect(checkLessonVi("<p>a</p>", '<div>a</div>').ok).toBe(false);
+    expect(checkLessonVi("<p>a</p><p>b</p>", "<p>a</p>").ok).toBe(false);
+  });
+});
+
+describe("checkExplanationVi — validator Tầng 1", () => {
+  it("chấp nhận khi giữ dòng Example: + mẫu vật EN, dịch dòng văn", () => {
+    const en = "Some nouns:\nExample:  deer\ntomato => tomato<b>es</b>";
+    const vi = "Một số danh từ:\nVí dụ:  deer\ntomato => tomato<b>es</b>";
+    expect(checkExplanationVi(en, vi)).toEqual({ ok: true });
+  });
+
+  it("từ chối khi dịch mất mẫu vật sau nhãn", () => {
+    expect(checkExplanationVi("Example: deer", "Ví dụ: hươu").ok).toBe(false);
+  });
+
+  it("từ chối khi đổi dòng mẫu biến đổi", () => {
+    expect(checkExplanationVi("tomato => tomatoes", "cà chua => cà chuaes").ok).toBe(false);
+  });
+
+  it("từ chối khi lệch số dòng", () => {
+    expect(checkExplanationVi("a\nb", "a").ok).toBe(false);
+  });
+});
+
+describe("checkEntriesVi — validator Tầng 1", () => {
+  const en = [
+    { w: "Bare", m: "without cover", examples: ["his chest was bare"] },
+    { w: "Bear", m: "to tolerate", examples: ["the grizzly bear"] },
+  ];
+
+  it("chấp nhận JSON đúng shape, w/examples giữ EN, m là tiếng Việt", () => {
+    const vi = JSON.stringify([
+      { w: "Bare", m: "trần, không che", examples: ["his chest was bare"] },
+      { w: "Bear", m: "chịu đựng", examples: ["the grizzly bear"] },
+    ]);
+    const r = checkEntriesVi(en, vi);
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.entries[0]).toEqual({ w: "Bare", m: "trần, không che", examples: en[0].examples });
+  });
+
+  it("dung nạp thiếu examples — tự đổ từ EN", () => {
+    const vi = JSON.stringify([{ w: "Bare", m: "trần" }, { w: "Bear", m: "chịu đựng" }]);
+    const r = checkEntriesVi(en, vi);
+    expect(r.ok).toBe(true);
+    if (r.ok) expect(r.entries[1].examples).toEqual(en[1].examples);
+  });
+
+  it("từ chối: sai JSON / sai số mục / đổi w / đổi examples / m rỗng", () => {
+    expect(checkEntriesVi(en, "not json").ok).toBe(false);
+    expect(checkEntriesVi(en, JSON.stringify([{ w: "Bare", m: "trần" }])).ok).toBe(false);
+    expect(checkEntriesVi(en, JSON.stringify([{ w: "trần", m: "x" }, { w: "Bear", m: "y" }])).ok).toBe(false);
+    expect(
+      checkEntriesVi(en, JSON.stringify([
+        { w: "Bare", m: "trần", examples: ["ngực trần"] },
+        { w: "Bear", m: "gấu", examples: ["con gấu"] },
+      ])).ok
+    ).toBe(false);
+    expect(checkEntriesVi(en, JSON.stringify([{ w: "Bare", m: "  " }, { w: "Bear", m: "y" }])).ok).toBe(false);
   });
 });
