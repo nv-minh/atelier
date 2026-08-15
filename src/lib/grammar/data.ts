@@ -120,8 +120,10 @@ export async function getGrammarHub(userId: string | null): Promise<GrammarHub> 
     if (lastTopic != null) target = await pickLesson(lastTopic);
   }
   if (!target) {
-    // First topic (cluster order) that still has an unread lesson.
-    for (const c of cards) {
+    // First topic with an unread lesson, in pedagogical CLUSTER_ORDER — the
+    // prisma sort above is alphabetical on the cluster string ("other" first).
+    const orderedCards = CLUSTER_ORDER.flatMap((k) => cards.filter((c) => c.cluster === k));
+    for (const c of orderedCards) {
       target = await pickLesson(c.id);
       if (target) break;
     }
