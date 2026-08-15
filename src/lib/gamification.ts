@@ -229,8 +229,9 @@ export async function awardForSessionEnd(
   const dailyGoalXp = settings?.dailyGoalXp ?? 60;
   // Non-SRS bonus XP DOES count toward the daily goal (total = xp + bonusXp), so a
   // matching session alone can reach the goal. It does NOT extend the streak,
-  // though — streak stays SRS-only (computeStreak is ReviewLog-derived), so a day
-  // of only matching earns the goal badge but not a streak day. Intentional.
+  // though — non-SRS vocab modes don't touch totalCount or grammarCount, the two
+  // day-activity sources computeStreakFromDb reads (grammar answers DO extend the
+  // streak via grammarCount — grammar design §7). Intentional.
   const todayTotalXp = totalXp(todayStat ?? {});
   if (todayTotalXp >= dailyGoalXp) candidates.push("goal_reached");
 
