@@ -83,10 +83,15 @@ const config: Config = {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
+      // Looser than before on both axes, for two reasons that only show up in
+      // Vietnamese. Line height first: "Học tiếng Anh / và nhớ được lâu." stacks
+      // a bottom-dot ọ over a top-accent ớ, and at 0.95 those two marks collide
+      // at hero size. Tracking second: Literata is a serif, so it needs less
+      // negative letter-spacing than the grotesque these values were tuned for.
       fontSize: {
-        "display-xl": ["clamp(3rem, 8vw, 6rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 3.75rem)", { lineHeight: "1", letterSpacing: "-0.025em" }],
-        "display-md": ["clamp(1.75rem, 3.5vw, 2.5rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        "display-xl": ["clamp(3rem, 8vw, 6rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
+        "display-lg": ["clamp(2.25rem, 5vw, 3.75rem)", { lineHeight: "1.06", letterSpacing: "-0.016em" }],
+        "display-md": ["clamp(1.75rem, 3.5vw, 2.5rem)", { lineHeight: "1.1", letterSpacing: "-0.012em" }],
       },
       borderRadius: {
         "4xl": "2rem",
