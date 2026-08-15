@@ -29,6 +29,7 @@ export type GateReason =
   | "star"
   | "study"
   | "placement"
+  | "grammar"
   | "generic";
 
 type OpenOpts = { callbackUrl?: string; reason?: GateReason };

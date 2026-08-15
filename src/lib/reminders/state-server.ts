@@ -68,7 +68,10 @@ export async function getReminderState(userId: string, now = new Date()): Promis
   return getReminderStateFrom(
     userId,
     {
-      // "Had activity" = totalCount > 0, the same predicate computeStreakFromDb uses.
+      // "Had activity" = totalCount > 0 (SRS vocab reviews only); reminders consider
+      // vocab activity specifically for win-back logic. Grammar days count for the
+      // streak itself (computeStreakFromDb checks totalCount > 0 OR grammarCount > 0)
+      // but not for reminder decision-making.
       studiedToday: (todayStat?.totalCount ?? 0) > 0,
       streak,
       dueCount,

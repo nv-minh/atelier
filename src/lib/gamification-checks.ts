@@ -25,7 +25,15 @@ export async function computeStreakFromDb(prisma: PrismaClient, userId: string):
   // calls this per user. The take is a hard backstop on top of the date window.
   const since = todayStr(addUtcDays(new Date(), -400));
   const stats = await prisma.dailyStat.findMany({
-    where: { userId, totalCount: { gt: 0 }, dateStr: { gte: since } },
+    // A day counts toward the streak if it has EITHER vocab SRS reviews
+    // (totalCount) OR grammar answers (grammarCount) — the user chose full
+    // gamification integration for grammar (design §7). totalCount itself
+    // stays SRS-only so vocab accuracy/heatmap stats remain pure.
+    where: {
+      userId,
+      dateStr: { gte: since },
+      OR: [{ totalCount: { gt: 0 } }, { grammarCount: { gt: 0 } }],
+    },
     orderBy: { dateStr: "desc" },
     take: 400,
     select: { dateStr: true },

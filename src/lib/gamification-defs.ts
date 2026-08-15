@@ -12,6 +12,15 @@ export const XP_PER_RATING: Record<number, number> = { 1: 2, 2: 4, 3: 6, 4: 8 };
 export const XP_PER_NONSRS_CORRECT = 1;
 export const NONSRS_XP_CAP = 30;
 
+// ── Grammar XP economy (grammar design §7) ───────────────────────────
+// All grammar XP lands on the BONUS ledgers (DailyStat.bonusXp +
+// UserProgress.bonusXp) via awardGrammarXp — never `xp`, which stays strictly
+// ReviewLog-derived so the backfill can rebuild it.
+export const GRAMMAR_XP_FIRST_CORRECT = 2; // per question, first-ever correct answer
+export const GRAMMAR_XP_LESSON_READ = 5; // per lesson, first "Đã hiểu" only
+export const GRAMMAR_XP_SESSION_BONUS = 5; // completing a full round
+export const GRAMMAR_SESSION_SIZE = 10; // questions per round
+
 // Total XP for a DailyStat/UserProgress row = the ReviewLog-derived `xp` ledger
 // PLUS the non-SRS `bonusXp` ledger. This is the ONE place that sum is defined —
 // every display, level, goal-check, and recap total routes through it so the two

@@ -193,7 +193,7 @@ Không lưu event log từng lần trả lời (YAGNI — 20k câu × users phì
 
 ## 4. Pipeline import & vòng dịch
 
-### 4.1 `npm run grammar:import` (`scripts/grammar/import.ts`, chạy tsx — nhớ bẫy `.env` như packs)
+### 4.1 `npm run grammar:import` (`prisma/import-grammar.ts`, chạy tsx — nhớ bẫy `.env` như packs)
 
 Thứ tự: topics (suy từ lessons.csv, gán cluster theo bảng map tĩnh trong script) → lessons → tests → practice → confused → mistakes → copy ảnh. Nguyên tắc: **một row hỏng không đánh sập run** — skip + ghi report; upsert theo khóa gốc nên chạy lại không nhân đôi.
 

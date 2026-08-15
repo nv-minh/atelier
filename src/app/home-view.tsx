@@ -169,6 +169,7 @@ export function HomeView({
           <ModeCard href="/study/dictation" title={t("home.listen")} desc={t("home.listenDesc")} emoji="🎧" />
           <ModeCard href="/study/matching" title={t("home.matching")} desc={t("home.matchingDesc")} emoji="🧩" />
           <ModeCard href="/study/pronunciation" title={t("home.pron")} desc={t("home.pronDesc")} emoji="🎤" />
+          <ModeCard href="/grammar" title={t("grammar.home.title")} desc={t("grammar.home.desc")} emoji="📖" />
         </div>
       </section>
 
