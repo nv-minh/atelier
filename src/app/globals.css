@@ -73,7 +73,10 @@
   body {
     background-color: rgb(var(--paper));
     color: rgb(var(--ink));
-    font-feature-settings: "ss01", "cv01", "cv11";
+    /* No font-feature-settings here on purpose. The old "ss01","cv01","cv11"
+       line was written for a different family — Fira Sans has no cv* features
+       at all, and its ss04 swaps in single-storey a/g, which is the wrong
+       letter model for learners reading printed English. Defaults are right. */
     /* 100vh on mobile Safari counts the address bar, so the page jumps as the
        bar hides and shows. dvh tracks the real viewport. The vh line stays as
        a fallback for browsers without dvh. */
@@ -145,17 +148,19 @@
     box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 2px 8px -2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.5);
   }
 
-  /* Display heading with optical sizing */
+  /* Display heading with optical sizing.
+     Weight 520, not the old 380: at hero size the thin cut disappeared into the
+     paper-grain background, which is most of what "chữ mỏng, khó đọc" was
+     about. Literata is a serif, so it needs less negative tracking than the
+     grotesque it replaced. */
   .display {
     font-family: var(--font-display), Georgia, serif;
-    font-weight: 380;
-    letter-spacing: -0.02em;
-    font-feature-settings: "ss01", "ss02";
+    font-weight: 520;
+    letter-spacing: -0.012em;
   }
 
   .display-it {
     font-style: italic;
-    font-variation-settings: "SOFT" 100, "WONK" 1;
   }
 
   /* Ember accent underline */
@@ -196,12 +201,12 @@
   .grammar-prose h1 { display: none; } /* duplicates the page title */
   .grammar-prose h2 {
     font-family: var(--font-display), Georgia, serif;
-    font-weight: 420;
+    font-weight: 560;
     font-size: 1.35rem;
     margin: 2rem 0 0.75rem;
   }
-  .grammar-prose h3 { font-weight: 650; font-size: 1.08rem; margin: 1.5rem 0 0.5rem; }
-  .grammar-prose h4 { font-weight: 650; font-size: 0.95rem; margin: 1.25rem 0 0.5rem; }
+  .grammar-prose h3 { font-weight: 600; font-size: 1.08rem; margin: 1.5rem 0 0.5rem; }
+  .grammar-prose h4 { font-weight: 600; font-size: 0.95rem; margin: 1.25rem 0 0.5rem; }
   .grammar-prose p { margin: 0.65rem 0; }
   .grammar-prose ul, .grammar-prose ol { margin: 0.65rem 0 0.65rem 1.35rem; }
   .grammar-prose ul { list-style: disc; }
@@ -228,7 +233,7 @@
     text-align: left;
     vertical-align: top;
   }
-  .grammar-prose thead th { background-color: rgb(var(--ink) / 0.04); font-weight: 650; }
+  .grammar-prose thead th { background-color: rgb(var(--ink) / 0.04); font-weight: 600; }
   .grammar-prose img {
     max-width: 100%;
     height: auto;
@@ -243,18 +248,18 @@
   .grammar-prose sup { font-size: 0.7em; }
 
   /* Semantic span colors — one hue per grammatical role, stable everywhere. */
-  .grammar-prose span.subject { color: rgb(var(--gr-subject)); font-weight: 550; }
-  .grammar-prose span.verb { color: rgb(var(--gr-verb)); font-weight: 550; }
-  .grammar-prose span.auxiliary { color: rgb(var(--gr-auxiliary)); font-weight: 550; }
-  .grammar-prose span.infinitive { color: rgb(var(--gr-infinitive)); font-weight: 550; }
-  .grammar-prose span.object { color: rgb(var(--gr-object)); font-weight: 550; }
-  .grammar-prose span.adjective { color: rgb(var(--gr-adjective)); font-weight: 550; }
-  .grammar-prose span.adverb { color: rgb(var(--gr-adverb)); font-weight: 550; }
-  .grammar-prose span.negation { color: rgb(var(--gr-negation)); font-weight: 550; }
+  .grammar-prose span.subject { color: rgb(var(--gr-subject)); font-weight: 500; }
+  .grammar-prose span.verb { color: rgb(var(--gr-verb)); font-weight: 500; }
+  .grammar-prose span.auxiliary { color: rgb(var(--gr-auxiliary)); font-weight: 500; }
+  .grammar-prose span.infinitive { color: rgb(var(--gr-infinitive)); font-weight: 500; }
+  .grammar-prose span.object { color: rgb(var(--gr-object)); font-weight: 500; }
+  .grammar-prose span.adjective { color: rgb(var(--gr-adjective)); font-weight: 500; }
+  .grammar-prose span.adverb { color: rgb(var(--gr-adverb)); font-weight: 500; }
+  .grammar-prose span.negation { color: rgb(var(--gr-negation)); font-weight: 500; }
   .grammar-prose span.place { color: rgb(var(--gr-adjective)); font-style: italic; }
   .grammar-prose span.ending { color: rgb(var(--ember)); font-weight: 700; }
   .grammar-prose span.irregular-past,
-  .grammar-prose span.irregular-participle { color: rgb(var(--gr-verb)); font-weight: 650; }
+  .grammar-prose span.irregular-participle { color: rgb(var(--gr-verb)); font-weight: 600; }
   .grammar-prose span.signal-word {
     color: rgb(var(--gr-adverb));
     text-decoration: underline dotted rgb(var(--gr-adverb) / 0.6);

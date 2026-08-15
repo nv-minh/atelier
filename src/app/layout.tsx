@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Literata, Fira_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
@@ -14,24 +14,45 @@ import { PwaInstall } from "@/components/pwa-install";
 // so without it those glyphs fall back per-character to Georgia / system-ui /
 // ui-monospace. The damage lands hardest in the hero, which renders Vietnamese
 // at up to 96px: six of the twenty glyphs in "Học tiếng Anh và nhớ được lâu."
-// would break stroke weight mid-word, and .display-it loses its SOFT/WONK
-// variable axes entirely because Georgia has none. Costs ~5–20 KB per family.
-const display = Fraunces({
+// would break stroke weight mid-word. Costs ~5–20 KB per family.
+//
+// Literata replaced Fraunces: Fraunces ran at weight 380 with the WONK axis on,
+// which read as thin and oddly curled over the paper-grain background. Literata
+// was drawn for long-form reading on screen, carries the opsz axis so the hero
+// and the 1.35rem lesson headings get different drawings of the same face, and
+// covers Vietnamese fully.
+const display = Literata({
   subsets: ["latin", "vietnamese"],
   variable: "--font-display",
   display: "swap",
-  axes: ["opsz", "SOFT", "WONK"],
+  axes: ["opsz"],
   style: ["normal", "italic"],
 });
 
-const sans = Hanken_Grotesk({
+// Fira Sans replaced Hanken Grotesk for two measured reasons. Hanken's x-height
+// is 49% of the em against Fira's 53%, so the same 15px reads noticeably larger
+// here without touching the type scale. And Hanken ships no IPA: Google serves
+// its latin-ext subset with a unicode-range covering U+0250–02AF but no glyphs
+// inside it, so ˈ ɪ ʊ ʌ ɔ ɜ ɡ ʃ ʒ ː silently fell through to system-ui.
+//
+// Fira is static, not variable, so every weight is a separate file — keep this
+// list to the four the app actually uses (400 body, 500 font-medium, 600
+// font-semibold, 700 headings). Do not enable ss04: it swaps in single-storey
+// a and g, which is the wrong model of the letters for people learning to read
+// printed English.
+const sans = Fira_Sans({
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
-  subsets: ["latin", "vietnamese"],
+// This family renders every IPA transcription in the app (flashcard, dictation,
+// pronunciation, landing try-cards), so latin-ext is preloaded on purpose —
+// that is the subset the phonetic glyphs live in. JetBrains Mono was missing 14
+// of them, which is why a transcription used to mix two fonts mid-line.
+const mono = Noto_Sans_Mono({
+  subsets: ["latin", "latin-ext", "vietnamese"],
   variable: "--font-mono",
   display: "swap",
 });
