@@ -1,5 +1,6 @@
 import "server-only";
 import { prisma } from "./db";
+import type { Prisma, PrismaClient } from "@prisma/client";
 import { computeStreak } from "./stats";
 import {
   XP_PER_RATING,
@@ -54,6 +55,48 @@ async function unlockKeys(
     }
   }
   return inserted;
+}
+
+// ── awardGrammarXp: the grammar module's ONLY XP path ─────────────────
+// Bumps BOTH bonus ledgers (DailyStat.bonusXp + UserProgress.bonusXp) — never
+// `xp`, which stays strictly ReviewLog-derived for the backfill. Callers pass
+// their interactive-transaction client via `db` when the XP must be atomic
+// with progress writes (the answer API); standalone callers (lesson-read,
+// session-end) use the default singleton, where the two upserts run inside
+// one $transaction like awardForSessionEnd's non-SRS path.
+export async function awardGrammarXp(
+  userId: string,
+  amount: number,
+  db: PrismaClient | Prisma.TransactionClient = prisma
+): Promise<{ leveledUp: number | null }> {
+  if (amount <= 0) return { leveledUp: null };
+  const dateStr = todayStr();
+  const before = await db.userProgress.findUnique({ where: { userId } });
+  const beforeXp = totalXp(before ?? {});
+  const dailyOp = {
+    where: { userId_dateStr: { userId, dateStr } },
+    update: { bonusXp: { increment: amount } },
+    create: { userId, dateStr, bonusXp: amount },
+  } as const;
+  const progressOp = {
+    where: { userId },
+    update: { bonusXp: { increment: amount } },
+    create: { userId, bonusXp: amount },
+  } as const;
+  let after;
+  if (db === prisma) {
+    [, after] = await prisma.$transaction([
+      prisma.dailyStat.upsert(dailyOp),
+      prisma.userProgress.upsert(progressOp),
+    ]);
+  } else {
+    // Already inside the caller's interactive transaction — just run in order.
+    await db.dailyStat.upsert(dailyOp);
+    after = await db.userProgress.upsert(progressOp);
+  }
+  const afterXp = totalXp(after);
+  const leveledUp = levelFromXp(afterXp) > levelFromXp(beforeXp) ? levelFromXp(afterXp) : null;
+  return { leveledUp };
 }
 
 // The user's already-unlocked achievement keys, read once per award pass.
