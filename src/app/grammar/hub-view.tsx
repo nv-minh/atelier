@@ -25,6 +25,10 @@ function localName(nameEn: string, nameVi: string | null, lang: string): string 
 export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
   const { t, lang } = useI18n();
   const c = hub.continueTarget;
+  const totalQuestions = hub.clusters.reduce(
+    (s, cl) => s + cl.topics.reduce((t, tp) => t + tp.testQuestionCount, 0),
+    0
+  );
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
@@ -36,7 +40,7 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
         <p className="text-soft text-lg leading-relaxed">
           {t("grammar.subtitle", {
             lessons: hub.totals.lessonsTotal.toLocaleString(),
-            questions: (9380).toLocaleString(),
+            questions: totalQuestions.toLocaleString(),
             topics: hub.clusters.reduce((s, cl) => s + cl.topics.length, 0),
           })}
         </p>
@@ -77,7 +81,6 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
                 key={tp.slug}
                 href={`/grammar/${tp.slug}`}
                 className="group card-atelier p-5 hover:-translate-y-0.5 transition-all hover:border-ember/30 flex flex-col"
-                style={{ animationDelay: `${i * 30}ms` }}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <h3 className="display text-lg leading-snug">{localName(tp.nameEn, tp.nameVi, lang)}</h3>

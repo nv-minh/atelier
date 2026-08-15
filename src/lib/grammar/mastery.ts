@@ -25,6 +25,7 @@ export function masteryPct(i: {
   answered: number;
 }): number | null {
   if (i.answered < MASTERY_MIN_ANSWERED) return null;
+  // No re-cap here: pushRecent is the only writer and always caps at RECENT_WINDOW.
   const readRatio = i.lessonsTotal > 0 ? Math.min(1, i.lessonsRead / i.lessonsTotal) : 0;
   const recent = sanitizeRecent(i.recent);
   const acc = recent.length > 0 ? recent.filter(Boolean).length / recent.length : 0;

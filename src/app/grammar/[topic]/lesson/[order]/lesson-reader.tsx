@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -38,6 +38,21 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
     if (img instanceof HTMLImageElement && img.src) setLightbox(img.src);
   };
 
+  // Lightbox a11y: Escape to close, lock body scroll while open.
+  useEffect(() => {
+    if (!lightbox) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [lightbox]);
+
   const markRead = async () => {
     if (read || saving) return;
     if (!authed) {
@@ -56,6 +71,8 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
         setRead(true);
         if (typeof d.xpGained === "number") setJustEarned(d.xpGained);
       }
+    } catch {
+      // network failure — leave unread; the button stays tappable to retry
     } finally {
       setSaving(false);
     }

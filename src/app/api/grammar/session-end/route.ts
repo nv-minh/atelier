@@ -5,7 +5,7 @@ import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import { isSameOrigin, forbiddenCrossOrigin } from "@/lib/csrf";
 import { awardGrammarXp } from "@/lib/gamification";
 import { GRAMMAR_SESSION_SIZE, GRAMMAR_XP_SESSION_BONUS } from "@/lib/gamification-defs";
-import { GRAMMAR_SOURCES } from "@/lib/grammar/session-types";
+import { GRAMMAR_SOURCES, type GrammarSource } from "@/lib/grammar/session-types";
 
 // The client mints one uuid per round; the StudySession PK makes the replay
 // (summary-screen reload, network retry) a no-op — same idempotency-by-unique
@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     typeof sessionKey !== "string" ||
     !KEY_RE.test(sessionKey) ||
     typeof source !== "string" ||
-    !GRAMMAR_SOURCES.includes(source as never)
+    !GRAMMAR_SOURCES.includes(source as GrammarSource)
   ) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }

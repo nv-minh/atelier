@@ -826,7 +826,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         pickAnswer: "Chọn đáp án đúng",
         answerWas: "Đáp án đúng:",
         summaryTitle: "Hoàn thành!",
-        accuracy: "Chính xác",
+        accuracy: "Độ chính xác",
         retryWrong: "Làm lại {n} câu sai",
         backToTopic: "Về chủ đề",
         anotherRound: "Vòng mới",
