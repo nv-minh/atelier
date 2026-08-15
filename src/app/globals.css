@@ -12,6 +12,16 @@
     --ink-line: 31 28 22;
     --ember: 200 130 26;
     --grain-opacity: 0.035;
+    /* Grammar semantic-span palette (grammar design §6). Channel triplets like
+       the rest — keep both blocks in sync with the .dark overrides below. */
+    --gr-subject: 59 116 166;
+    --gr-verb: 181 85 46;
+    --gr-auxiliary: 58 141 139;
+    --gr-infinitive: 122 82 148;
+    --gr-object: 158 74 122;
+    --gr-adjective: 91 138 96;
+    --gr-adverb: 176 116 24;
+    --gr-negation: 185 61 61;
     color-scheme: light;
   }
 
@@ -24,6 +34,14 @@
     --ink-line: 245 240 228;
     --ember: 232 165 71;
     --grain-opacity: 0.06;
+    --gr-subject: 121 168 210;
+    --gr-verb: 219 128 94;
+    --gr-auxiliary: 105 184 181;
+    --gr-infinitive: 176 141 199;
+    --gr-object: 204 128 168;
+    --gr-adjective: 133 178 138;
+    --gr-adverb: 226 162 74;
+    --gr-negation: 226 111 111;
     color-scheme: dark;
   }
 
@@ -165,6 +183,99 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     border: 1px solid rgb(var(--ink-line) / 0.12);
+  }
+
+  /* ── Grammar lesson typography ─────────────────────────────────────
+     Applied to sanitized lesson HTML rendered via dangerouslySetInnerHTML.
+     The DB content only contains the whitelisted tags/classes from Plan 1's
+     sanitizer, so every selector here targets a known-possible node. */
+  .grammar-prose {
+    line-height: 1.75;
+    font-size: 0.975rem;
+  }
+  .grammar-prose h1 { display: none; } /* duplicates the page title */
+  .grammar-prose h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 420;
+    font-size: 1.35rem;
+    margin: 2rem 0 0.75rem;
+  }
+  .grammar-prose h3 { font-weight: 650; font-size: 1.08rem; margin: 1.5rem 0 0.5rem; }
+  .grammar-prose h4 { font-weight: 650; font-size: 0.95rem; margin: 1.25rem 0 0.5rem; }
+  .grammar-prose p { margin: 0.65rem 0; }
+  .grammar-prose ul, .grammar-prose ol { margin: 0.65rem 0 0.65rem 1.35rem; }
+  .grammar-prose ul { list-style: disc; }
+  .grammar-prose ol { list-style: decimal; }
+  .grammar-prose li { margin: 0.3rem 0; }
+  .grammar-prose hr { border: 0; border-top: 1px solid rgb(var(--ink-line) / 0.1); margin: 1.75rem 0; }
+  .grammar-prose blockquote {
+    border-left: 3px solid rgb(var(--ember) / 0.5);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: rgb(var(--ink-soft));
+  }
+  .grammar-prose table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto; /* nguồn có bảng chia thì rất rộng — cuộn trong bảng, không vỡ trang */
+  }
+  .grammar-prose th, .grammar-prose td {
+    border: 1px solid rgb(var(--ink-line) / 0.12);
+    padding: 0.45rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .grammar-prose thead th { background-color: rgb(var(--ink) / 0.04); font-weight: 650; }
+  .grammar-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 1rem auto;
+    display: block;
+    cursor: zoom-in;
+    background: white; /* timeline PNG nền trắng — giữ đọc được ở dark mode */
+    padding: 0.5rem;
+  }
+  .grammar-prose s, .grammar-prose del { color: rgb(var(--gr-negation)); }
+  .grammar-prose sup { font-size: 0.7em; }
+
+  /* Semantic span colors — one hue per grammatical role, stable everywhere. */
+  .grammar-prose span.subject { color: rgb(var(--gr-subject)); font-weight: 550; }
+  .grammar-prose span.verb { color: rgb(var(--gr-verb)); font-weight: 550; }
+  .grammar-prose span.auxiliary { color: rgb(var(--gr-auxiliary)); font-weight: 550; }
+  .grammar-prose span.infinitive { color: rgb(var(--gr-infinitive)); font-weight: 550; }
+  .grammar-prose span.object { color: rgb(var(--gr-object)); font-weight: 550; }
+  .grammar-prose span.adjective { color: rgb(var(--gr-adjective)); font-weight: 550; }
+  .grammar-prose span.adverb { color: rgb(var(--gr-adverb)); font-weight: 550; }
+  .grammar-prose span.negation { color: rgb(var(--gr-negation)); font-weight: 550; }
+  .grammar-prose span.place { color: rgb(var(--gr-adjective)); font-style: italic; }
+  .grammar-prose span.ending { color: rgb(var(--ember)); font-weight: 700; }
+  .grammar-prose span.irregular-past,
+  .grammar-prose span.irregular-participle { color: rgb(var(--gr-verb)); font-weight: 650; }
+  .grammar-prose span.signal-word {
+    color: rgb(var(--gr-adverb));
+    text-decoration: underline dotted rgb(var(--gr-adverb) / 0.6);
+    text-underline-offset: 3px;
+  }
+  .grammar-prose span.mistake { color: rgb(var(--gr-negation)); }
+  .grammar-prose span.consonant { color: rgb(var(--gr-subject)); }
+  .grammar-prose span.vowel { color: rgb(var(--gr-adverb)); }
+
+  /* Legend chip — colored by the same vars via a CSS custom property the
+     component sets inline (style={{ "--chip": `var(--gr-subject)` }}). */
+  .grammar-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid rgb(var(--chip) / 0.35);
+    color: rgb(var(--chip));
+    background-color: rgb(var(--chip) / 0.08);
   }
 }
 

@@ -2,19 +2,13 @@
 // the client renders it with dangerouslySetInnerHTML and no runtime gate —
 // this file is the only gate, so the whitelist errs on the side of dropping.
 import sanitizeHtml from "sanitize-html";
+import { SEMANTIC_SPAN_CLASSES } from "./semantic-classes";
+
+// Re-export for existing consumers (the import pipeline and its tests).
+export { SEMANTIC_SPAN_CLASSES };
 
 export const LESSON_IMAGE_PREFIX = "/grammar/images/";
 const ANDROID_ASSET_PREFIX = "file:///android_asset/images/";
-
-// The 16 semantic classes actually present in the source lessons — the Plan-2
-// lesson stylesheet colors exactly these. Everything else (wp-block-*,
-// scrollbar4, german, example1–10, …) is layout junk from the source site:
-// the class is stripped, the span and its text stay.
-export const SEMANTIC_SPAN_CLASSES = [
-  "adjective", "adverb", "verb", "subject", "object", "auxiliary",
-  "infinitive", "negation", "signal-word", "ending", "irregular-past",
-  "irregular-participle", "place", "mistake", "consonant", "vowel",
-] as const;
 
 export type CleanLessonResult = { html: string; missingImages: string[] };
 
