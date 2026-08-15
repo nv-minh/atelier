@@ -11,7 +11,6 @@ import { CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
-import { GRAMMAR_SESSION_SIZE } from "@/lib/gamification-defs";
 import type { GrammarSessionItem, GrammarSource } from "@/lib/grammar/session-types";
 
 const LETTERS = ["A", "B", "C", "D"];
@@ -53,6 +52,10 @@ export function GrammarSession({
   const startedAtRef = useRef(Date.now());
   const endedRef = useRef(false);
   const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Clear the reveal auto-advance timer when the session unmounts mid-reveal
+  // (practice-shell has the same cleanup for the same reason).
+  useEffect(() => () => { if (advanceTimer.current) clearTimeout(advanceTimer.current); }, []);
 
   const current = queue[index];
   const topicName = lang === "vi" && topicNameVi ? topicNameVi : topicNameEn;
@@ -98,11 +101,12 @@ export function GrammarSession({
         advance();
         return;
       }
-      setServerAnswer(d.answerIndex);
-      setReveal(d.correct ? "correct" : "wrong");
-      setResults((r) => [...r, { item: current, chosen: i, answerIndex: d!.answerIndex, correct: d!.correct }]);
-      if (d.xpGained > 0) setXp((x) => x + d.xpGained);
-      if (d.correct) {
+      const graded = d; // narrowed non-null
+      setServerAnswer(graded.answerIndex);
+      setReveal(graded.correct ? "correct" : "wrong");
+      setResults((r) => [...r, { item: current, chosen: i, answerIndex: graded.answerIndex, correct: graded.correct }]);
+      if (graded.xpGained > 0) setXp((x) => x + graded.xpGained);
+      if (graded.correct) {
         playSound("correct");
         vibrate(10);
       } else {
@@ -182,6 +186,7 @@ export function GrammarSession({
     setResults([]);
     setXp(0);
     setUnsaved(0);
+    setPosting(false);
     setQueue(wrong);
     setIndex(0);
     setDone(false);
@@ -194,7 +199,6 @@ export function GrammarSession({
     const correct = results.filter((r) => r.correct).length;
     const pct = results.length > 0 ? Math.round((correct / results.length) * 100) : 0;
     const wrong = results.filter((r) => !r.correct);
-    const mm = String(Math.floor((Date.now() - startedAtRef.current) / 60000)).padStart(2, "0");
     return (
       <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 py-10">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-md">
