@@ -9,14 +9,22 @@
 // flag (see below), which re-syncs titleVi/contentViHtml from the CSV too.
 // A broken row never kills the run: it is skipped and listed in the report.
 //
+// Every *Vi value written here first goes through src/lib/grammar/vi-repair.ts:
+// the source CSV was machine-translated wholesale, so conjugation tables,
+// example sentences and question stems arrived in Vietnamese. The repair puts
+// that English material back, and a re-import therefore cannot reintroduce it.
+//
 // Usage: npm run grammar:import -- [--dry-run] [--src <dir>] [--only <table>] [--refresh-vi]
 import "./load-env";
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import fs from "node:fs";
 import path from "node:path";
 import { parseCsvRecords, normalizeChoices, viOrNull } from "../src/lib/grammar/clean";
 import { parseEntriesEn, parseEntriesVi } from "../src/lib/grammar/confused-json";
 import { cleanLessonHtml } from "../src/lib/grammar/lesson-html";
+import {
+  isBlankStem, repairConfusedEntriesVi, repairExplanationVi, repairLessonViHtml, repairMistakeTitleVi,
+} from "../src/lib/grammar/vi-repair";
 import {
   EXPECTED_COUNTS, GRAMMAR_TOPICS, MISTAKE_CATEGORY_BY_CODE, TOPIC_BY_SOURCE_EN,
 } from "../src/lib/grammar/catalog";
@@ -105,7 +113,10 @@ async function importLessons(availableImages: Set<string>): Promise<void> {
     if (viOrNull(r.content_vi_html, r.content_en_html)) {
       const vi = cleanLessonHtml(r.content_vi_html, availableImages);
       vi.missingImages.forEach((m) => report.missingImages.add(m));
-      contentViHtml = vi.html.trim() || null;
+      // The CSV translated the conjugation tables and example sentences too;
+      // put that English material back before it ever reaches the DB (see
+      // vi-repair.ts). Unalignable bodies fall back to English.
+      contentViHtml = repairLessonViHtml(en.html, vi.html)?.html.trim() || null;
     }
     const data = {
       titleEn: r.lesson_name_en.trim(),
@@ -126,6 +137,10 @@ async function importLessons(availableImages: Set<string>): Promise<void> {
   report.imported.lessons = ops.length;
 }
 
+// A stem with a blank IS the exercise, and only works in English: "The dog ___
+// small." asks something, "Con chó ___ nhỏ." does not. NULL falls back to EN.
+const stemVi = (vi: string, en: string): string | null => (isBlankStem(en) ? null : viOrNull(vi, en));
+
 async function importTestQuestions(): Promise<void> {
   const rows = readCsv("tests.csv");
   const ops: Array<() => never> = [];
@@ -137,7 +152,7 @@ async function importTestQuestions(): Promise<void> {
     const data = {
       topicId: topic.id,
       questionEn: r.question_en.trim(),
-      questionVi: viOrNull(r.question_vi, r.question_en),
+      questionVi: stemVi(r.question_vi, r.question_en),
       choicesEn: norm.choices,
       answerIndex: norm.answerIndex,
     };
@@ -150,6 +165,14 @@ async function importTestQuestions(): Promise<void> {
   }
   if (!DRY_RUN) await runBatched(ops as never);
   report.imported.testQuestions = ops.length;
+}
+
+// Explanations keep their Vietnamese prose but hand back the English specimens
+// the machine translation ate: "Example: deer" had become "Ví dụ: hươu".
+function explanationVi(vi: string, en: string): string | null {
+  const kept = viOrNull(vi, en);
+  if (!kept) return null;
+  return repairExplanationVi(en, kept)?.text ?? kept;
 }
 
 async function importPracticeQuestions(): Promise<void> {
@@ -165,11 +188,11 @@ async function importPracticeQuestions(): Promise<void> {
       categoryEn: r.category_en.trim(),
       categoryVi: viOrNull(r.category_vi, r.category_en),
       questionEn: r.question_en.trim(),
-      questionVi: viOrNull(r.question_vi, r.question_en),
+      questionVi: stemVi(r.question_vi, r.question_en),
       choicesEn: norm.choices,
       answerIndex: norm.answerIndex,
       explanationEn: r.explanation_en.trim() || null,
-      explanationVi: viOrNull(r.explanation_vi, r.explanation_en),
+      explanationVi: explanationVi(r.explanation_vi, r.explanation_en),
     };
     ops.push((() =>
       prisma.grammarPracticeQuestion.upsert({
@@ -196,10 +219,13 @@ async function importConfusedPairs(): Promise<void> {
       report.skipped.push({ table: "confusedPairs", id: r.id, reason: `body_en: ${(e as Error).message}` });
       continue;
     }
-    const entriesVi = parseEntriesVi(r.body_vi);
+    // The headword and its examples are the pair being distinguished, so they
+    // stay English ("bare, bear", not "trần, gấu") and only the gloss is
+    // Vietnamese. The title is nothing but headwords → always fall back to EN.
+    const entriesVi = repairConfusedEntriesVi(entriesEn, parseEntriesVi(r.body_vi));
     const data = {
       titleEn: r.title_en.trim(),
-      titleVi: viOrNull(r.title_vi, r.title_en),
+      titleVi: null,
       entriesEn: entriesEn as never,
       entriesVi: (entriesVi ?? undefined) as never, // undefined → Prisma leaves NULL
     };
@@ -223,7 +249,9 @@ async function importCommonMistakes(): Promise<void> {
     const data = {
       category: cat.slug,
       titleEn: r.title_en.trim(),
-      titleVi: viOrNull(r.title_vi, r.title_en),
+      // "Absorbed ( = very much interested)" → keep the English headword in
+      // front of the Vietnamese gloss instead of "Hấp thụ (= rất quan tâm)".
+      titleVi: repairMistakeTitleVi(r.title_en.trim(), viOrNull(r.title_vi, r.title_en)),
       bodyEn: r.body_en.trim(),
       bodyVi: viOrNull(r.body_vi, r.body_en),
       noteEn: r.note_en.trim() || null,
@@ -250,7 +278,9 @@ async function countViNulls(): Promise<void> {
     "GrammarPracticeQuestion.explanationVi": await prisma.grammarPracticeQuestion.count({ where: { explanationVi: null } }),
     "GrammarPracticeQuestion.categoryVi": await prisma.grammarPracticeQuestion.count({ where: { categoryVi: null } }),
     "GrammarConfusedPair.titleVi": await prisma.grammarConfusedPair.count({ where: { titleVi: null } }),
-    "GrammarConfusedPair.entriesVi": await prisma.grammarConfusedPair.count({ where: { entriesVi: { equals: null as never } } }),
+    // Prisma.DbNull, not null: `{ equals: null }` matches neither of a Json
+    // column's two nulls, so this counter used to report 0 unconditionally.
+    "GrammarConfusedPair.entriesVi": await prisma.grammarConfusedPair.count({ where: { entriesVi: { equals: Prisma.DbNull } } }),
     "GrammarCommonMistake.bodyVi": await prisma.grammarCommonMistake.count({ where: { bodyVi: null } }),
     "GrammarCommonMistake.titleVi": await prisma.grammarCommonMistake.count({ where: { titleVi: null } }),
     "GrammarCommonMistake.noteVi": await prisma.grammarCommonMistake.count({ where: { noteVi: null } }),

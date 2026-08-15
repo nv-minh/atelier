@@ -1,7 +1,7 @@
 // Dump every NULL *Vi field as TranslateRow[] for out-of-band translation.
 // Usage: npm run grammar:translate-export -- [--table GrammarLesson] [--out <file>]
 import "./load-env";
-import { PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import fs from "node:fs";
 import { TRANSLATABLE, type TranslateRow } from "../src/lib/grammar/translate-format";
 
@@ -36,8 +36,14 @@ async function main(): Promise<void> {
       findMany: (q: unknown) => Promise<Array<Record<string, unknown>>>;
     };
     for (const [viField, enField] of Object.entries(fields)) {
-      // Json null needs the { equals: null } form; scalar null is plain null.
-      const where = viField === "entriesVi" ? { [viField]: { equals: null } } : { [viField]: null };
+      // A nullable Json column has TWO nulls and `{ equals: null }` matches
+      // neither: Prisma.DbNull is the SQL NULL the importer writes, JsonNull is
+      // a stored JSON `null`. Using the plain form silently exported zero
+      // entriesVi rows while 366 of them were in fact untranslated.
+      const where =
+        viField === "entriesVi"
+          ? { [viField]: { equals: Prisma.DbNull } }
+          : { [viField]: null };
       const found = await delegate.findMany({ where, select: { id: true, [enField]: true }, orderBy: { id: "asc" } });
       for (const r of found) {
         const en = r[enField];
