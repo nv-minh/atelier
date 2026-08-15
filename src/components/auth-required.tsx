@@ -22,7 +22,8 @@ export type WallContext =
   | "word"
   | "settings"
   | "home"
-  | "leaderboard";
+  | "leaderboard"
+  | "grammar";
 
 export function AuthRequired({
   context,

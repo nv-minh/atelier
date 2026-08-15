@@ -563,6 +563,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
           title: "Bảng xếp hạng cần một tài khoản",
           body: "Thứ hạng được tính từ XP tuần của chính bạn, nên bảng chỉ có nghĩa khi đã đăng nhập.",
         },
+        grammar: {
+          header: "— Ngữ pháp",
+          title: "Ngữ pháp cần một tài khoản",
+          body: "Tiến độ test, mastery và XP ngữ pháp được lưu theo tài khoản. Đăng nhập để bắt đầu.",
+        },
       },
     },
     quote: {
@@ -1392,6 +1397,11 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
           header: "— Ranks",
           title: "The leaderboard needs an account",
           body: "Your rank comes from your own weekly XP, so the board only means anything once you are signed in.",
+        },
+        grammar: {
+          header: "— Grammar",
+          title: "Grammar needs an account",
+          body: "Your test progress, mastery and XP are tracked per learner. Sign in to get started.",
         },
       },
     },
