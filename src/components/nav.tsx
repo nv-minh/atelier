@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, Library, Settings, Layers, Compass, NotebookPen, Trophy } from "lucide-react";
+import { BarChart3, Library, Settings, Layers, Compass, NotebookPen, Trophy, GraduationCap } from "lucide-react";
 import { BrandMark } from "./brand-mark";
 import { ThemeToggle } from "./theme-toggle";
 import { LangToggle } from "./lang-toggle";
@@ -24,6 +24,7 @@ export function Nav() {
   const links = [
     { href: "/", label: t("nav.studio"), icon: Layers, mobile: true, locked: false },
     { href: "/topics", label: t("nav.topics"), icon: Compass, mobile: true, locked: false },
+    { href: "/grammar", label: t("nav.grammar"), icon: GraduationCap, mobile: true, locked: false },
     { href: "/browse", label: t("nav.library"), icon: Library, mobile: false, locked: false },
     { href: "/notebook", label: t("nav.notebook"), icon: NotebookPen, mobile: true, locked: true },
     { href: "/stats", label: t("nav.progress"), icon: BarChart3, mobile: true, locked: true },
