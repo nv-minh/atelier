@@ -4,6 +4,8 @@ import type { BoardEntry } from "@/lib/leaderboard/board";
 import { RivalRow } from "@/components/leaderboard/rival-row";
 import { HowItWorks } from "@/components/leaderboard/how-it-works";
 import { useI18n } from "@/components/i18n-provider";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 export function LeaderboardView({
   board,
@@ -35,7 +37,7 @@ export function LeaderboardView({
         <p className="mb-5 text-sm text-fg-muted">{t("leaderboard.mondayNote")}</p>
       )}
 
-      <ul className="card-atelier p-1.5 sm:p-2">
+      <ul className={cn(cardClasses("flat"), "p-1.5 sm:p-2")}>
         {board.map((e) => (
           <RivalRow key={e.key} entry={e} nowIso={nowIso} />
         ))}

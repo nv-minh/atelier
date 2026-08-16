@@ -76,13 +76,9 @@
     .shell { padding-inline: 2rem; }
   }
 
-  /* A refined card surface */
-  .card-atelier {
-    background-color: rgb(var(--bg-surface-rgb));
-    border: 1px solid rgb(var(--border-hairline-rgb) / 0.8);
-    border-radius: var(--r-xl);
-    box-shadow: var(--shadow-sm);
-  }
+  /* .card-atelier RETIRED (Plan 1 Task 8) — replaced by src/components/ui/card.tsx
+     (cardClasses() in src/lib/ui/card-classes.ts). All real call sites migrated;
+     see design-system.test.ts's ratchet comment for the residual count. */
 
   /* LEGACY — xoá ở Plan 8, xem spec §7 R4 (19 chỗ dùng) */
   .surface {

@@ -5,6 +5,9 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import type { GrammarHub, TopicCard } from "@/lib/grammar/data";
 import { Chip } from "@/components/ui/chip";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
+import { ProgressBar } from "@/components/ui/progress-bar";
 
 // Small shared badge: a number when mastery is measurable, the "just started"
 // tag chip otherwise (design §7 — no % below 5 answers).
@@ -50,7 +53,7 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
       {c && (
         <Link
           href={`/grammar/${c.topicSlug}/lesson/${c.lessonOrder}`}
-          className="group card-atelier p-5 sm:p-6 mb-10 flex items-center gap-4 hover:border-ember/30 transition-all"
+          className={cn(cardClasses("interactive"), "group p-5 sm:p-6 mb-10 flex items-center gap-4")}
         >
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ember/10 text-ember">
             <BookOpen size={22} strokeWidth={1.7} />
@@ -81,7 +84,7 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
               <Link
                 key={tp.slug}
                 href={`/grammar/${tp.slug}`}
-                className="group card-atelier p-5 hover:-translate-y-0.5 transition-all hover:border-ember/30 flex flex-col"
+                className={cn(cardClasses("interactive"), "group p-5 flex flex-col")}
               >
                 <div className="flex items-start justify-between gap-3 mb-3">
                   <h3 className="display text-lg leading-snug">{localName(tp.nameEn, tp.nameVi, lang)}</h3>
@@ -94,12 +97,10 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
                       <span>{t("grammar.questionsN", { n: tp.testQuestionCount })}</span>
                     )}
                   </div>
-                  <div className="h-1.5 rounded-full bg-ink/8 overflow-hidden">
-                    <div
-                      className="h-full rounded-full bg-ember/70 transition-all"
-                      style={{ width: `${tp.lessonsTotal > 0 ? (tp.lessonsRead / tp.lessonsTotal) * 100 : 0}%` }}
-                    />
-                  </div>
+                  <ProgressBar
+                    form="line"
+                    value={tp.lessonsTotal > 0 ? (tp.lessonsRead / tp.lessonsTotal) * 100 : 0}
+                  />
                 </div>
               </Link>
             ))}

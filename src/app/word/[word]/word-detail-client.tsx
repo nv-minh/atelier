@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Chip, chipClasses } from "@/components/ui/chip";
+import { Card } from "@/components/ui/card";
 import { AudioButton } from "@/components/audio-button";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { StarButton } from "@/components/star-button";
@@ -53,7 +54,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
       <div className="grid gap-6 lg:grid-cols-3">
         {/* Main column */}
         <div className="lg:col-span-2 space-y-5">
-          <div className="card-atelier p-6 sm:p-8">
+          <Card variant="flat" className="p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <div className="flex items-baseline gap-3 flex-wrap">
@@ -144,17 +145,17 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 </div>
               </div>
             )}
-          </div>
+          </Card>
 
           {/* Note editor */}
-          <div className="card-atelier p-6">
+          <Card variant="flat" className="p-6">
             <NoteEditor wordId={w.id} initialNote={detail.mark.note} />
-          </div>
+          </Card>
         </div>
 
         {/* Sidebar: SRS + history */}
         <div className="space-y-5">
-          <div className="card-atelier p-6">
+          <Card variant="flat" className="p-6">
             <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-3">{t("word.srsTitle")}</p>
             {detail.card ? (
               <dl className="space-y-2 text-sm">
@@ -178,9 +179,9 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
             ) : (
               <p className="text-sm text-fg-muted">{t("word.notStudied")}</p>
             )}
-          </div>
+          </Card>
 
-          <div className="card-atelier p-6">
+          <Card variant="flat" className="p-6">
             <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-3">{t("word.history")}</p>
             {detail.reviews.length === 0 ? (
               <p className="text-sm text-fg-muted">{t("word.noHistory")}</p>
@@ -199,7 +200,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 })}
               </ul>
             )}
-          </div>
+          </Card>
         </div>
       </div>
     </main>

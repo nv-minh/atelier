@@ -8,6 +8,8 @@ import { CefrFilter } from "@/components/study/cefr-filter";
 import { DirectionFilter } from "@/components/study/direction-filter";
 import { useI18n } from "@/components/i18n-provider";
 import { Chip } from "@/components/ui/chip";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 export default function StudyPage() {
   const { t } = useI18n();
@@ -60,7 +62,7 @@ export default function StudyPage() {
             <Link
               key={m.slug}
               href={withQuery(m.slug)}
-              className={`group relative card-atelier p-6 sm:p-7 border transition-all hover:-translate-y-0.5 ${m.ring}`}
+              className={cn(cardClasses("interactive"), "group relative p-6 sm:p-7", m.ring)}
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="flex items-start justify-between mb-5">

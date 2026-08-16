@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { Download, Share, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   isIos,
   recordDismissed,
@@ -153,7 +154,7 @@ export function PwaInstall() {
       aria-label={iosMode ? t("pwa.iosTitle") : t("pwa.title")}
       className="fixed inset-x-0 bottom-24 md:bottom-6 z-50 px-4 pb-[env(safe-area-inset-bottom)]"
     >
-      <div className="card-atelier mx-auto max-w-md p-4 sm:p-5 relative">
+      <Card variant="flat" className="mx-auto max-w-md p-4 sm:p-5 relative">
         <button
           onClick={dismiss}
           aria-label={t("pwa.dismiss")}
@@ -194,7 +195,7 @@ export function PwaInstall() {
             )}
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

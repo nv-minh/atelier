@@ -9,6 +9,11 @@ import { RatingButtons, type RatingPreview } from "./rating-buttons";
 import { useI18n } from "@/components/i18n-provider";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+// Aliased: this file already exports a `Card` TYPE (the flashcard data shape,
+// below) — importing the ui primitive under its own name would shadow/confuse
+// that, even though TS's separate type/value namespaces would technically
+// compile it.
+import { Card as CardSurface } from "@/components/ui/card";
 import { buildCloze } from "@/lib/cloze";
 import { WordImage, ImageSearchLink } from "@/components/word-image";
 
@@ -104,7 +109,7 @@ export function Flashcard({
 function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reverse" | "cloze"; clozeText: string | null }) {
   const { t } = useI18n();
   return (
-    <div className="backface-hidden absolute inset-0 card-atelier p-6 sm:p-10 flex flex-col">
+    <CardSurface variant="flat" className="backface-hidden absolute inset-0 p-6 sm:p-10 flex flex-col">
       <div className="flex items-center justify-between">
         <CefrStamp level={card.cefr} />
         {dir === "forward" && (
@@ -148,14 +153,14 @@ function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "rev
       <p className="text-center text-xs text-fg-muted/70">
         {t("study.tapToReveal")} · <span className="font-mono">↵</span>
       </p>
-    </div>
+    </CardSurface>
   );
 }
 
 function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reverse" | "cloze"; clozeText: string | null }) {
   const { t } = useI18n();
   return (
-    <div className="backface-hidden rotate-y-180 absolute inset-0 card-atelier p-6 sm:p-10 overflow-y-auto scrollbar-hide">
+    <CardSurface variant="flat" className="backface-hidden rotate-y-180 absolute inset-0 p-6 sm:p-10 overflow-y-auto scrollbar-hide">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-baseline gap-2">
           <span className="display text-xl sm:text-2xl">{card.word}</span>
@@ -238,6 +243,6 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
         <StarButton wordId={card.id} initialStarred={!!card.starred} size="sm" className="ml-auto" />
         <ImageSearchLink word={card.word} imageUrl={card.imageUrl} />
       </div>
-    </div>
+    </CardSurface>
   );
 }

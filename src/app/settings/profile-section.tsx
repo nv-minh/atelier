@@ -16,6 +16,7 @@ import { bandToCefr } from "@/lib/placement/estimate";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+import { cardClasses } from "@/lib/ui/card-classes";
 
 export type ProfileView = {
   band: number;
@@ -56,7 +57,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
   const bandLabel = profile ? bandToCefr(profile.band) : null;
 
   return (
-    <section className="card-atelier p-6 sm:p-7 mb-4">
+    <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
       <h2 className="display text-xl mb-1">{t("profile.sectionTitle")}</h2>
 
       {!profile ? (

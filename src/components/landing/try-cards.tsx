@@ -17,6 +17,9 @@ import { WordImage, isRealImage } from "@/components/word-image";
 import { startSignIn, GoogleMark } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 export type DemoWord = {
   word: string;
@@ -63,7 +66,7 @@ export function TryCards({ words }: { words: DemoWord[] }) {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="card-atelier p-7 sm:p-9 flex flex-col justify-center"
+            className={cn(cardClasses("flat"), "p-7 sm:p-9 flex flex-col justify-center")}
             style={{ minHeight: "min(58vh, 440px)" }}
           >
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ember mb-4">
@@ -154,7 +157,7 @@ export function TryCards({ words }: { words: DemoWord[] }) {
 function Front({ card }: { card: DemoWord }) {
   const { t } = useI18n();
   return (
-    <div className="backface-hidden absolute inset-0 card-atelier p-6 sm:p-8 flex flex-col">
+    <Card variant="flat" className="backface-hidden absolute inset-0 p-6 sm:p-8 flex flex-col">
       <div className="flex items-center justify-between">
         <CefrStamp level={card.cefr} />
         {/* stop the tap here so hearing the word doesn't also flip the card */}
@@ -186,14 +189,14 @@ function Front({ card }: { card: DemoWord }) {
       </div>
 
       <p className="text-center text-xs text-fg-muted/70">{t("landing.demo.tapToReveal")}</p>
-    </div>
+    </Card>
   );
 }
 
 function Back({ card }: { card: DemoWord }) {
   const { t } = useI18n();
   return (
-    <div className="backface-hidden rotate-y-180 absolute inset-0 card-atelier p-6 sm:p-8 flex flex-col overflow-y-auto scrollbar-hide">
+    <Card variant="flat" className="backface-hidden rotate-y-180 absolute inset-0 p-6 sm:p-8 flex flex-col overflow-y-auto scrollbar-hide">
       <div className="flex items-baseline justify-between gap-3">
         <p className="display text-2xl">{card.word}</p>
         {card.typeVi && <span className="text-xs text-fg-muted shrink-0">{card.typeVi}</span>}
@@ -217,6 +220,6 @@ function Back({ card }: { card: DemoWord }) {
       </div>
 
       <p className="text-center text-xs text-fg-muted/70">{t("landing.demo.tapToHide")}</p>
-    </div>
+    </Card>
   );
 }

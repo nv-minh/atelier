@@ -175,7 +175,9 @@ const config: Config = {
       },
       animation: {
         "fade-up": "fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
-        "shimmer": "shimmer 2s linear infinite",
+        // 1.4s per Plan 1 Task 8's Skeleton primitive brief (src/components/ui/skeleton.tsx),
+        // the only consumer of this utility.
+        "shimmer": "shimmer 1.4s linear infinite",
       },
     },
   },

@@ -4,6 +4,7 @@ import { Lock } from "lucide-react";
 import { ACHIEVEMENTS } from "@/lib/gamification-defs";
 import { useI18n } from "@/components/i18n-provider";
 import { iconFor } from "./badge-icons";
+import { Card } from "@/components/ui/card";
 
 // Grid of ALL badges from the defs. Unlocked badges are full-color and show the
 // unlock date; locked ones are dimmed/grayscale with a small lock. Titles and
@@ -25,7 +26,7 @@ export function BadgeGallery({
   });
 
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <h3 className="display text-lg">{t("gamify.badges")}</h3>
         <span className="text-xs text-fg-muted tabular-nums">
@@ -73,6 +74,6 @@ export function BadgeGallery({
           );
         })}
       </div>
-    </div>
+    </Card>
   );
 }

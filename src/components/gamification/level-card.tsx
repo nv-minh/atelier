@@ -3,10 +3,14 @@
 import { motion } from "motion/react";
 import { Trophy } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 
 // Level + XP progress bar to the next level. Mirrors stat-card.tsx / TodayCard
-// styling (card-atelier, display type, Atelier tokens) so it slots into the home
-// grid without visual seams. Dark mode is inherited via the token classes.
+// styling (Card primitive, display type, Atelier tokens) so it slots into the
+// home grid without visual seams. Dark mode is inherited via the token classes.
+// `variant="raised"` to match GoalRing — the two sit side by side in
+// home-view.tsx's "LEVEL + GOAL" row and must share elevation (see the note
+// in goal-ring.tsx).
 export function LevelCard({
   level,
   currentLevelXp,
@@ -26,8 +30,9 @@ export function LevelCard({
   const pct = Math.round(progress01 * 100);
 
   return (
-    <div
-      className="card-atelier p-6 sm:p-7 h-full flex flex-col justify-between animate-fade-up"
+    <Card
+      variant="raised"
+      className="p-6 sm:p-7 h-full flex flex-col justify-between animate-fade-up"
       style={{ animationDelay: `${delay}ms`, animationFillMode: "both" }}
     >
       <div className="flex items-start justify-between">
@@ -61,6 +66,6 @@ export function LevelCard({
           />
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

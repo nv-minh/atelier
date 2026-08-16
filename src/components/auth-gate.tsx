@@ -20,6 +20,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { Lock, X } from "lucide-react";
 import { useI18n } from "./i18n-provider";
 import { Button } from "@/components/ui/button";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 // Reasons map to auth.reasons.* copy — one sentence explaining what the
 // login unlocks, so the prompt answers "why" instead of just demanding.
@@ -162,7 +164,10 @@ function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () =
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="relative w-full sm:max-w-sm card-atelier p-7 pb-[calc(1.75rem+env(safe-area-inset-bottom))] sm:pb-7 rounded-t-3xl sm:rounded-[1.25rem]"
+            className={cn(
+              cardClasses("flat"),
+              "relative w-full sm:max-w-sm p-7 pb-[calc(1.75rem+env(safe-area-inset-bottom))] sm:pb-7 rounded-t-3xl sm:rounded-[1.25rem]"
+            )}
           >
             <button
               onClick={onClose}

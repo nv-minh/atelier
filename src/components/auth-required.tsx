@@ -14,6 +14,7 @@ import { useI18n } from "./i18n-provider";
 import { startSignIn, GoogleMark } from "./auth-gate";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 export type WallContext =
@@ -43,11 +44,9 @@ export function AuthRequired({
   const { t } = useI18n();
 
   const body = (
-    <div
-      className={cn(
-        "card-atelier p-8 sm:p-10 text-center max-w-lg mx-auto animate-fade-up",
-        className
-      )}
+    <Card
+      variant="flat"
+      className={cn("p-8 sm:p-10 text-center max-w-lg mx-auto animate-fade-up", className)}
     >
       <span className="grid h-12 w-12 place-items-center rounded-full bg-ember/10 text-ember mx-auto mb-5">
         <Lock size={20} strokeWidth={2} />
@@ -79,7 +78,7 @@ export function AuthRequired({
           </Link>
         </div>
       </div>
-    </div>
+    </Card>
   );
 
   if (variant === "panel") return body;

@@ -2,6 +2,7 @@
 
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 import type { WeeklyRecap as WeeklyRecapData } from "@/lib/stats";
 
 // This ISO week vs last week. Each row shows this-week value, last-week value,
@@ -32,7 +33,7 @@ export function WeeklyRecap({ data }: { data: WeeklyRecapData }) {
   ];
 
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <h3 className="display text-lg">{t("gamify.weeklyRecap")}</h3>
         <div className="flex items-center gap-4 text-[11px] uppercase tracking-wide text-fg-muted">
@@ -52,7 +53,7 @@ export function WeeklyRecap({ data }: { data: WeeklyRecapData }) {
           </div>
         ))}
       </div>
-    </div>
+    </Card>
   );
 }
 

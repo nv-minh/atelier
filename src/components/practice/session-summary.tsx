@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { CheckCircle2, RotateCcw } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { RATING } from "@/lib/practice/types";
 import type { SessionSummaryData } from "@/lib/practice/session-state";
 
@@ -61,23 +62,23 @@ export function SessionSummary({
         <div className="mb-4" />
 
         <div className="grid grid-cols-3 gap-3 mb-5">
-          <div className="card-atelier p-4 text-center">
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl text-moss-500 tabular-nums">{data.pct}%</p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.accLabel")}</p>
-          </div>
-          <div className="card-atelier p-4 text-center">
+          </Card>
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums">
               {mm}:{ss}
             </p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.timeLabel")}</p>
-          </div>
-          <div className="card-atelier p-4 text-center">
+          </Card>
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums">{data.bestCombo}</p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("practice.comboBest")}</p>
-          </div>
+          </Card>
         </div>
 
-        <div className="card-atelier p-5 mb-6">
+        <Card variant="flat" className="p-5 mb-6">
           <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-3">
             {t("study.breakdown")}
           </p>
@@ -105,7 +106,7 @@ export function SessionSummary({
               );
             })}
           </div>
-        </div>
+        </Card>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           {left > 0 && (

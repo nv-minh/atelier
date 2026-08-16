@@ -11,6 +11,7 @@
 import Link from "next/link";
 import { ArrowRight, Compass, Library, NotebookPen, BarChart3, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { TryCards, type DemoWord } from "@/components/landing/try-cards";
 import { IntervalLadder } from "@/components/landing/interval-ladder";
 import { DailyQuote } from "@/components/daily-quote";
@@ -120,7 +121,7 @@ export function LandingView({
           does, so it leads. */}
       <section className="mt-20 sm:mt-28">
         <SectionLabel>{t("landing.level.label")}</SectionLabel>
-        <div className="card-atelier p-6 sm:p-8 mb-16 sm:mb-20">
+        <Card variant="flat" className="p-6 sm:p-8 mb-16 sm:mb-20">
           <div className="sm:flex sm:items-start sm:gap-8">
             <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ember/10 text-ember mb-4 sm:mb-0">
               <Gauge size={20} />
@@ -140,7 +141,7 @@ export function LandingView({
               </Link>
             </div>
           </div>
-        </div>
+        </Card>
 
         <SectionLabel>{t("landing.how.label")}</SectionLabel>
         <div className="sm:grid sm:grid-cols-2 sm:gap-14 lg:gap-20 sm:items-start">
@@ -166,7 +167,7 @@ export function LandingView({
         </h2>
 
         <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
-          <div className="card-atelier p-6 sm:col-span-3 lg:col-span-1 lg:row-span-1">
+          <Card variant="flat" className="p-6 sm:col-span-3 lg:col-span-1 lg:row-span-1">
             <p className="display text-xl mb-1.5">{t("landing.features.modesTitle")}</p>
             <p className="text-sm text-fg-muted leading-relaxed mb-5">{t("landing.features.modesBody")}</p>
             {/* the seven modes, named the way they are named inside the app */}
@@ -180,7 +181,7 @@ export function LandingView({
                 </span>
               ))}
             </div>
-          </div>
+          </Card>
 
           <FeatureCard
             icon={<NotebookPen size={17} />}
@@ -330,13 +331,13 @@ function FeatureCard({
   body: string;
 }) {
   return (
-    <div className="card-atelier p-6">
+    <Card variant="flat" className="p-6">
       <span className="grid h-9 w-9 place-items-center rounded-full bg-ember/10 text-ember mb-4">
         {icon}
       </span>
       <p className="display text-xl mb-1.5">{title}</p>
       <p className="text-sm text-fg-muted leading-relaxed">{body}</p>
-    </div>
+    </Card>
   );
 }
 

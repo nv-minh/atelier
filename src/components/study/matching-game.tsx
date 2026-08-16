@@ -6,6 +6,7 @@ import { CheckCircle2, RotateCcw, Layers } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { fmtTime } from "@/lib/utils";
 
 type MatchingItem = { wordId: string; word: string; def: string };
@@ -396,20 +397,20 @@ function SummaryScreen({
         {xpGained <= 0 && <div className="mb-4" />}
 
         <div className="grid grid-cols-3 gap-3 mb-6">
-          <div className="card-atelier p-4 text-center">
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums">{fmtTime(elapsed)}</p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingTime")}</p>
-          </div>
-          <div className="card-atelier p-4 text-center">
+          </Card>
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums text-moss-500">{totalPairs}</p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingMatched")}</p>
-          </div>
-          <div className="card-atelier p-4 text-center">
+          </Card>
+          <Card variant="flat" className="p-4 text-center">
             <p className={`display text-2xl tabular-nums ${mistakes > 0 ? "text-red-400" : ""}`}>
               {mistakes}
             </p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingMistakes")}</p>
-          </div>
+          </Card>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

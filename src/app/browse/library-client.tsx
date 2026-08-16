@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { Search, StickyNote, Lock } from "lucide-react";
 import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Chip } from "@/components/ui/chip";
+import { Card } from "@/components/ui/card";
 import { AudioButton } from "@/components/audio-button";
 import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
@@ -249,7 +250,7 @@ export function LibraryClient({
           and only once the learner has actually seen a word, so a brand-new
           account does not see an all-zero strip. */}
       {summary && summary.seen > 0 && (
-        <div className="card-atelier p-4 mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+        <Card variant="flat" className="p-4 mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
           <span className="display text-lg">{t("browse.summaryLearned", { n: summary.learned.toLocaleString() })}</span>
           <span className="text-sm text-fg-muted">{t("browse.summaryLearning", { n: summary.learning.toLocaleString() })}</span>
           <span className="text-sm text-fg-muted">{t("browse.summaryKnown", { n: summary.known.toLocaleString() })}</span>
@@ -280,20 +281,21 @@ export function LibraryClient({
               {t("browse.exportFiltered")}
             </a>
           </div>
-        </div>
+        </Card>
       )}
 
       {/* List */}
       <div className="grid gap-2.5">
         {items.length === 0 && (
-          <div className="card-atelier p-12 text-center text-fg-muted">{t("browse.noWords")}</div>
+          <Card variant="flat" className="p-12 text-center text-fg-muted">{t("browse.noWords")}</Card>
         )}
         {items.map((w) => {
           const st = w.cardState !== null ? stateLabel[w.cardState] : null;
           return (
-            <div
+            <Card
+              variant="interactive"
               key={w.id}
-              className="card-atelier p-4 sm:p-5 flex items-start gap-4 hover:border-ember/25 transition-colors"
+              className="p-4 sm:p-5 flex items-start gap-4"
             >
               {authed && (
                 <input
@@ -341,7 +343,7 @@ export function LibraryClient({
                   <Chip className="text-[9px] text-fg-muted">—</Chip>
                 )}
               </div>
-            </div>
+            </Card>
           );
         })}
       </div>
@@ -375,7 +377,7 @@ export function LibraryClient({
           local state, so the summary strip and per-row pills never drift
           out of sync with what actually happened on the server. */}
       {selected.size > 0 && (
-        <div className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 card-atelier px-4 py-3 flex items-center gap-2 shadow-lg">
+        <Card variant="flat" className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 py-3 flex items-center gap-2 shadow-lg">
           <span className="text-sm text-fg-muted">{t("browse.bulkSelected", { n: selected.size })}</span>
           <button
             onClick={() => runBulk("mark-known")}
@@ -401,19 +403,20 @@ export function LibraryClient({
           <button onClick={() => setSelected(new Set())} className="text-xs text-fg-muted hover:text-fg">
             {t("browse.bulkClear")}
           </button>
-        </div>
+        </Card>
       )}
 
       {/* Transient confirmation after a bulk action lands — survives past the
           bar above disappearing (selection clears immediately on success). */}
       {bulkMsg && (
-        <div
+        <Card
+          variant="flat"
           role="status"
           aria-live="polite"
-          className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 card-atelier px-4 py-2 text-sm shadow-lg"
+          className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 px-4 py-2 text-sm shadow-lg"
         >
           {bulkMsg}
-        </div>
+        </Card>
       )}
     </main>
   );

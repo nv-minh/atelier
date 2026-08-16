@@ -8,6 +8,7 @@ import { useAchievementToasts } from "@/components/gamification/achievement-toas
 import { AudioButton } from "@/components/audio-button";
 import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { buttonClasses, buttonVariantClasses } from "@/lib/ui/button-classes";
 import { fmtTime, shuffle } from "@/lib/utils";
 import {
@@ -604,18 +605,18 @@ function SummaryScreen({
         {xpGained <= 0 && <div className="mb-4" />}
 
         <div className="grid grid-cols-2 gap-3 mb-6">
-          <div className="card-atelier p-4 text-center">
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums">{fmtTime(elapsed)}</p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.pronTime")}</p>
-          </div>
-          <div className="card-atelier p-4 text-center">
+          </Card>
+          <Card variant="flat" className="p-4 text-center">
             <p className="display text-2xl tabular-nums text-moss-500">
               {correctCount}/{total}
             </p>
             <p className="text-[10px] uppercase tracking-wide text-fg-muted">
               {t("study.pronCorrectLabel")}
             </p>
-          </div>
+          </Card>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

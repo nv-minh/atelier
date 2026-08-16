@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 // base64url (the VAPID public key) → Uint8Array, the shape PushManager.subscribe wants.
 //
@@ -97,7 +99,7 @@ export function ReminderSettings({
   };
 
   return (
-    <section className="card-atelier p-6 sm:p-7 mb-4">
+    <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
       <h2 className="display text-xl mb-1">{t("settings.remind")}</h2>
       <p className="text-xs text-fg-muted mb-5">{t("settings.remindDesc")}</p>
 

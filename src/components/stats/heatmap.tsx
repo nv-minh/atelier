@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 
 type Day = { date: string; count: number; newCards: number; reviews: number };
 
@@ -54,7 +55,7 @@ export function ActivityHeatmap({ data }: { data: Day[] }) {
   };
 
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.activity")}</h3>
@@ -118,6 +119,6 @@ export function ActivityHeatmap({ data }: { data: Day[] }) {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

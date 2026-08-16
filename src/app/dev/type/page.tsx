@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Card } from "@/components/ui/card";
 
 // ── /dev/type — Font & glyph-coverage prover ─────────────────────────
 //
@@ -238,7 +239,7 @@ function GlyphCell({ result }: { result: GlyphResult }) {
 function CoverageGrid({ title, results }: { title: string; results: GlyphResult[] }) {
   const failCount = results.filter((r) => !r.ok).length;
   return (
-    <div className="card-atelier p-6">
+    <Card variant="flat" className="p-6">
       <div className="mb-4 flex items-baseline justify-between gap-4">
         <h3 className="display text-xl">{title}</h3>
         <span className={failCount === 0 ? "text-emerald-600" : "text-red-600 font-semibold"}>
@@ -250,7 +251,7 @@ function CoverageGrid({ title, results }: { title: string; results: GlyphResult[
           <GlyphCell key={`${r.family}::${r.codepoint}`} result={r} />
         ))}
       </div>
-    </div>
+    </Card>
   );
 }
 
@@ -359,7 +360,7 @@ export default function DevTypePage() {
             { family: "Be Vietnam Pro", label: "Be Vietnam Pro — candidate for headings & body text" },
             { family: "Noto Sans Mono", label: "Noto Sans Mono — current mono/IPA (regression check)" },
           ].map(({ family, label }) => (
-            <div key={family} className="card-atelier space-y-3 p-6">
+            <Card variant="flat" key={family} className="space-y-3 p-6">
               <p className="text-sm font-semibold">{label}</p>
               {[16, 24, 48].map((size) => (
                 <div key={size} style={{ fontFamily: `"${family}", sans-serif`, fontSize: `${size}px` }}>
@@ -367,7 +368,7 @@ export default function DevTypePage() {
                   <div>{VI_TORTURE}</div>
                 </div>
               ))}
-            </div>
+            </Card>
           ))}
         </div>
       </section>
@@ -397,7 +398,7 @@ export default function DevTypePage() {
       <section className="space-y-4">
         <h2 className="display text-xl">1c — Font payload</h2>
         {state.status === "done" ? (
-          <div className="card-atelier grid gap-6 p-6 sm:grid-cols-2">
+          <Card variant="flat" className="grid gap-6 p-6 sm:grid-cols-2">
             <FontKbTable
               title="Production (self-hosted via next/font, _next/static/media)"
               note="What every real page load actually ships. Compare against the §11 budget (< 120 KB)."
@@ -409,7 +410,7 @@ export default function DevTypePage() {
               note="Loaded only by this page for literal-name access to the candidate families before they're wired into next/font. Not part of the production budget."
               data={state.testHarnessFontKb}
             />
-          </div>
+          </Card>
         ) : (
           <p>Measuring…</p>
         )}

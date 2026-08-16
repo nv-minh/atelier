@@ -23,6 +23,7 @@ import { BLOCK_SIZE, type BlockResult, nextLadderStep } from "@/lib/placement/la
 import { bandToCefr, estimatePlacement } from "@/lib/placement/estimate";
 import { clearDraft, readDraft, writeDraft } from "@/lib/placement/storage";
 import { cn } from "@/lib/utils";
+import { cardClasses } from "@/lib/ui/card-classes";
 
 type Item = { id: string; word: string; cefr: string };
 type Bank = { items: Item[]; traps: string[] };
@@ -437,7 +438,7 @@ export function OnboardingFlow() {
 
 function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="card-atelier p-8 sm:p-10 text-center max-w-lg mx-auto animate-fade-up">
+    <div className={cn(cardClasses("flat"), "p-8 sm:p-10 text-center max-w-lg mx-auto animate-fade-up")}>
       {children}
     </div>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Circle, PencilRuler } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+import { cardClasses } from "@/lib/ui/card-classes";
 import { useI18n } from "@/components/i18n-provider";
 import { useGuestGuard } from "@/components/auth-gate";
 import { MasteryBadge } from "../hub-view";
@@ -43,7 +44,7 @@ export function TopicView({ data, authed }: { data: NonNullable<TopicPageData>; 
         </Link>
       )}
 
-      <ol className="card-atelier divide-y divide-ink/10 overflow-hidden">
+      <ol className={cn(cardClasses("flat"), "divide-y divide-ink/10 overflow-hidden")}>
         {lessons.map((l) => {
           const title = lang === "vi" && l.titleVi ? l.titleVi : l.titleEn;
           return (

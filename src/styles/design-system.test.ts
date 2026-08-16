@@ -352,21 +352,41 @@ describe("Hệ thiết kế — lưới an toàn", () => {
     // stub thành công cụ đo font thật, dùng thêm 2 dòng .card-atelier ròng —
     // 1 dòng cũ của stub bị thay bằng 3 dòng mới ở 1a/1c). display 109 → 113,
     // xem countDisplay() ở trên.
+    //
+    // Plan 1 Task 8: `.card-atelier` xoá khỏi globals.css, toàn bộ call site
+    // thật (76 dòng ở 41 file, tự đếm lại bằng grep trước khi migrate — số đo
+    // 72 của brief đã cũ) di trú sang <Card>/cardClasses(). card-atelier
+    // 77 → 7: 7 dòng còn lại đều là comment tài liệu hoá (card.tsx ×1,
+    // card-classes.ts ×4, card-classes.test.ts ×2) trong chính các file mới
+    // của primitive, không phải usage thật — cùng kiểu residual mà Task 7 đã
+    // chấp nhận cho `.pill` (23→10). display 113 → 115 (+2 dòng thật: nhãn
+    // "70%" trong demo ProgressBar ring ở /dev/ui, và tiêu đề <h2> của
+    // EmptyState — cả hai là <h2>/<span> "display" type thật, không phải
+    // .display CSS class cũ). pill 10 → 13 (+3: 2 dòng `rounded-pill` +
+    // comment "pill-shaped" thật trong tabs.tsx cho biến thể Tabs mới, +1
+    // dòng tiêu đề mục demo "Tabs — pill, …" ở /dev/ui). surface 25 → 30
+    // (+5: `bg-surface` trong BASE của card-classes.ts +1, cộng 4 dòng
+    // comment/assertion trong card-classes.ts/test.ts nhắc tới "surface" khi
+    // mô tả token nền — cùng loại "tên token đang được đo/dùng", không phải
+    // nợ cần dọn). bg-paper 32 → 30: Task 8 KHÔNG đụng file nào có bg-paper
+    // (xác nhận bằng git diff, không dòng nào thêm/bớt) — số 32 vốn đã dư 2
+    // dòng so với usage thật từ trước, phát hiện khi đo lại, siết về đúng số
+    // đo (cùng bài học "surface 19 vs 21" của Task 6).
     const BUDGETS: Array<{
       cls: string;
       budget: number;
       count: () => number;
     }> = [
-      { cls: "card-atelier", budget: 77, count: () => countLines(/\bcard-atelier\b/) },
+      { cls: "card-atelier", budget: 7, count: () => countLines(/\bcard-atelier\b/) },
       // Plan 1 Task 7: .pill CSS class deleted from globals.css, all real
-      // call sites migrated onto <Chip>/chipClasses(). Remaining 10 lines are
+      // call sites migrated onto <Chip>/chipClasses(). Remaining lines are
       // `rounded-pill` (Tailwind's border-radius token — a different,
-      // legitimate class, not the retired component class) at 6 sites plus 4
-      // comment lines in chip.tsx documenting the migration. Tightened from
-      // 23 to the measured value.
-      { cls: "pill",          budget: 10, count: () => countLines(/\bpill\b/) },
-      { cls: "display",       budget: 113, count: countDisplay },
-      { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
+      // legitimate class, not the retired component class) plus a handful of
+      // comment lines documenting the migration (chip.tsx, and now tabs.tsx
+      // for Task 8's pill-shaped Tabs primitive — see comment above).
+      { cls: "pill",          budget: 13, count: () => countLines(/\bpill\b/) },
+      { cls: "display",       budget: 115, count: countDisplay },
+      { cls: "bg-paper",      budget: 30, count: () => countLines(/\bbg-paper\b/) },
       // Plan 1 Task 6: 19 → 21. The `secondary` Button variant is the first
       // caller of the card-level background token via a literal class
       // string (src/lib/ui/button-classes.ts) plus its test's expectation
@@ -381,7 +401,7 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       // state, plus 5 comment lines in cefr-stamp.ts documenting a measured
       // WCAG contrast finding (the word "surface" there names the page
       // background being tested against, not a class to migrate away from).
-      { cls: "surface",       budget: 25, count: () => countLines(/\bsurface\b/) },
+      { cls: "surface",       budget: 30, count: () => countLines(/\bsurface\b/) },
     ];
 
     for (const { cls, budget, count } of BUDGETS) {

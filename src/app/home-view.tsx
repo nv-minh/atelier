@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Flame } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+import { Card } from "@/components/ui/card";
+import { cardClasses } from "@/lib/ui/card-classes";
 import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { LevelCard } from "@/components/gamification/level-card";
@@ -183,7 +185,7 @@ export function HomeView({
 
   function TodayCard({ newCards, reviews, accuracy, total }: { newCards: number; reviews: number; accuracy: number; total: number }) {
     return (
-      <div className="card-atelier p-6 sm:p-7 h-full flex flex-col justify-between">
+      <Card variant="flat" className="p-6 sm:p-7 h-full flex flex-col justify-between">
         <div>
           <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-1">{t("home.today")}</p>
           <p className="display text-4xl tabular-nums">{total}</p>
@@ -203,14 +205,14 @@ export function HomeView({
             <p className="text-[10px] text-fg-muted uppercase tracking-wide">{t("home.correct")}</p>
           </div>
         </div>
-      </div>
+      </Card>
     );
   }
 }
 
 function ModeCard({ href, title, desc, emoji }: { href: string; title: string; desc: string; emoji: string }) {
   return (
-    <Link href={href} className="group card-atelier p-5 hover:-translate-y-0.5 transition-transform border hover:border-ember/30">
+    <Link href={href} className={cn(cardClasses("interactive"), "group p-5")}>
       <div className="text-2xl mb-3">{emoji}</div>
       <p className="display text-lg mb-0.5">{title}</p>
       <p className="text-xs text-fg-muted">{desc}</p>

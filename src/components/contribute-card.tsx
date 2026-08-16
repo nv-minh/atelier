@@ -19,6 +19,7 @@ import { FEEDBACK_EMAIL, feedbackMailto } from "@/lib/contact";
 import { useI18n } from "@/components/i18n-provider";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+import { cardClasses } from "@/lib/ui/card-classes";
 
 // Shared by both shapes: the mailto button plus the address as a copy target.
 function ContributeActions({ className }: { className?: string }) {
@@ -63,7 +64,7 @@ function ContributeActions({ className }: { className?: string }) {
 export function ContributeCard() {
   const { t } = useI18n();
   return (
-    <section className="card-atelier p-6 sm:p-7 mb-4">
+    <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
       <h2 className="display text-xl mb-1">{t("contribute.title")}</h2>
       <p className="text-xs text-fg-muted mb-5">{t("contribute.desc")}</p>
 

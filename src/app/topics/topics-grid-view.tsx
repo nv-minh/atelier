@@ -5,6 +5,7 @@ import { Lock } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useGuestGuard } from "@/components/auth-gate";
 import { cn } from "@/lib/utils";
+import { cardClasses } from "@/lib/ui/card-classes";
 import type { TopicSummary } from "@/lib/topics-data";
 
 export function TopicsGridView({
@@ -46,7 +47,7 @@ export function TopicsGridView({
             href={`/topics/${tp.slug}`}
             onClick={guard(`/topics/${tp.slug}`, "topic")}
             aria-describedby={authed ? undefined : "topics-locked-hint"}
-            className="group card-atelier p-6 hover:-translate-y-0.5 transition-all border hover:border-ember/30 flex flex-col"
+            className={cn(cardClasses("interactive"), "group p-6 flex flex-col")}
             style={{ animationDelay: `${i * 40}ms` }}
           >
             <div className="flex items-start justify-between mb-4">

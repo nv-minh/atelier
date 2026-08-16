@@ -1,4 +1,5 @@
-import { ShellSkeleton, Skeleton } from "@/components/skeletons";
+import { ShellSkeleton, Skeleton } from "@/components/ui/skeleton";
+import { Card } from "@/components/ui/card";
 
 export default function Loading() {
   return (
@@ -10,7 +11,7 @@ export default function Loading() {
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         {Array.from({ length: 9 }).map((_, i) => (
-          <div key={i} className="card-atelier p-6">
+          <Card variant="flat" key={i} className="p-6">
             <div className="flex justify-between mb-4">
               <Skeleton className="h-9 w-9 rounded-xl" />
               <Skeleton className="h-7 w-10" />
@@ -18,7 +19,7 @@ export default function Loading() {
             <Skeleton className="h-5 w-2/3 mb-2" />
             <Skeleton className="h-3 w-full mb-1" />
             <Skeleton className="h-3 w-4/5" />
-          </div>
+          </Card>
         ))}
       </div>
     </ShellSkeleton>

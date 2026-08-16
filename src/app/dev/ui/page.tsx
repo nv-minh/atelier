@@ -5,6 +5,13 @@ import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IconButton } from "@/components/ui/icon-button";
 import type { ButtonVariant, ButtonSize } from "@/lib/ui/button-classes";
+import { Card } from "@/components/ui/card";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { ProgressBar } from "@/components/ui/progress-bar";
+import { Skeleton } from "@/components/ui/skeleton";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Tabs } from "@/components/ui/tabs";
+import { cn } from "@/lib/utils";
 
 // A tiny client-side toggle so developers can preview both palettes without
 // going to Settings. Dark mode uses the `data-theme` attribute on <html>
@@ -32,7 +39,7 @@ function ThemeToggle() {
     <button
       id="theme-switch"
       onClick={toggle}
-      className="fixed top-4 right-4 z-50 card-atelier px-3 py-1.5 text-sm cursor-pointer"
+      className={cn(cardClasses("flat"), "fixed top-4 right-4 z-50 px-3 py-1.5 text-sm cursor-pointer")}
     >
       🌙 Dark
     </button>
@@ -53,7 +60,9 @@ export default function DevUIPage() {
       <ThemeToggle />
       <h1 className="text-2xl font-semibold mb-2">/dev/ui</h1>
       <p className="text-fg-muted mb-8">
-        Component gallery — Button/IconButton primitive (Plan 1 Task 6).
+        Component gallery — Button/IconButton (Task 6), Card/ProgressBar/Skeleton/
+        EmptyState/Tabs (Task 8). Chip/SegmentedControl/CefrStamp (Task 7) and
+        Sheet/Toast/Input (Task 9) render here once those tasks add their sections.
       </p>
 
       <section className="mb-12">
@@ -122,6 +131,84 @@ export default function DevUIPage() {
           </IconButton>
           <IconButton aria-label="Favorite, loading" variant="primary" size="md" loading />
         </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold mb-4">Card — flat / raised / interactive (Task 8)</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <Card variant="flat" className="p-5">
+            <p className="text-sm font-semibold mb-1">flat</p>
+            <p className="text-xs text-fg-muted">1:1 replacement for the retired global card class.</p>
+          </Card>
+          <Card variant="raised" className="p-5">
+            <p className="text-sm font-semibold mb-1">raised</p>
+            <p className="text-xs text-fg-muted">Stronger shadow — single hero dashboard tiles (GoalRing/LevelCard).</p>
+          </Card>
+          <Card variant="interactive" className="p-5" role="button" tabIndex={0}>
+            <p className="text-sm font-semibold mb-1">interactive</p>
+            <p className="text-xs text-fg-muted">Hover lift + accent border — clickable cards/list rows.</p>
+          </Card>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold mb-4">ProgressBar — line / ring (Task 8)</h2>
+        <div className="flex flex-wrap items-center gap-8">
+          <div className="w-64">
+            <p className="text-xs text-fg-muted mb-2">form=&quot;line&quot; (real caller: grammar/hub-view.tsx)</p>
+            <ProgressBar form="line" value={62} />
+          </div>
+          <div>
+            <p className="text-xs text-fg-muted mb-2">form=&quot;ring&quot; (evaluated against GoalRing, kept bespoke — see progress-bar.tsx)</p>
+            <ProgressBar
+              form="ring"
+              value={70}
+              size={96}
+              label={<span className="display text-xl tabular-nums">70%</span>}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold mb-4">Skeleton — text / card / art3d (Task 8)</h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          <div>
+            <p className="text-xs text-fg-muted mb-2">form=&quot;text&quot;</p>
+            <Skeleton form="text" className="mb-2" />
+            <Skeleton form="text" className="w-2/3" />
+          </div>
+          <div>
+            <p className="text-xs text-fg-muted mb-2">form=&quot;card&quot;</p>
+            <Skeleton form="card" />
+          </div>
+          <div>
+            <p className="text-xs text-fg-muted mb-2">form=&quot;art3d&quot; (120px reserved slot)</p>
+            <Skeleton form="art3d" />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-lg font-semibold mb-4">EmptyState (Task 8)</h2>
+        <Card variant="flat" className="p-8">
+          <EmptyState
+            title="Bạn đã ôn hết cho hôm nay"
+            body="Quay lại vào lúc từ tiếp theo đến hạn, hoặc chọn một chế độ học khác."
+            action={{ kind: "link", label: "Đổi chế độ học", href: "/study" }}
+          />
+        </Card>
+      </section>
+
+      <section className="mt-12 mb-12">
+        <h2 className="text-lg font-semibold mb-4">Tabs — pill, height 44, scroll-snap (Task 8)</h2>
+        <Tabs
+          items={[
+            { key: "a", href: "#", active: true, label: "Đã lưu (12)" },
+            { key: "b", href: "#", active: false, label: "Khó nhớ (3)" },
+            { key: "c", href: "#", active: false, label: "Đã thuộc (48)" },
+          ]}
+        />
       </section>
     </main>
   );

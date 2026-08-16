@@ -12,11 +12,12 @@ import {
   CartesianGrid,
 } from "recharts";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 
 export function ForecastChart({ data }: { data: Array<{ date: string; count: number }> }) {
   const { t } = useI18n();
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.forecast")}</h3>
@@ -54,14 +55,14 @@ export function ForecastChart({ data }: { data: Array<{ date: string; count: num
           </AreaChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Card>
   );
 }
 
 export function AccuracyChart({ data }: { data: Array<{ date: string; accuracy: number; count: number }> }) {
   const { t } = useI18n();
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.accuracy")}</h3>
@@ -94,6 +95,6 @@ export function AccuracyChart({ data }: { data: Array<{ date: string; accuracy: 
           </LineChart>
         </ResponsiveContainer>
       </div>
-    </div>
+    </Card>
   );
 }

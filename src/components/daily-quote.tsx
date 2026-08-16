@@ -27,6 +27,7 @@ import { Volume2, VolumeX, X } from "lucide-react";
 import { useI18n } from "./i18n-provider";
 import { speak, stopSpeaking } from "@/lib/tts";
 import { cn } from "@/lib/utils";
+import { cardClasses } from "@/lib/ui/card-classes";
 import {
   isDismissed,
   recordDismissed,
@@ -116,7 +117,8 @@ export function DailyQuote({ className }: { className?: string }) {
           exit={{ opacity: 0, y: -6, height: 0, marginBottom: 0 }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           className={cn(
-            "relative card-atelier px-6 py-7 sm:px-9 sm:py-8 overflow-hidden",
+            cardClasses("flat"),
+            "relative px-6 py-7 sm:px-9 sm:py-8 overflow-hidden",
             className
           )}
         >

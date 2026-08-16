@@ -9,6 +9,7 @@ import { ForecastChart, AccuracyChart } from "@/components/stats/charts";
 import { WeeklyRecap } from "@/components/gamification/weekly-recap";
 import { BadgeGallery } from "@/components/gamification/badge-gallery";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 import type { WeeklyRecap as WeeklyRecapData } from "@/lib/stats";
 import type { GamificationSummary } from "@/lib/gamification";
 
@@ -67,7 +68,7 @@ export function StatsView({
 
       {leeches.length > 0 && (
         <section className="mb-6">
-          <div className="card-atelier p-6 sm:p-7">
+          <Card variant="flat" className="p-6 sm:p-7">
             <div className="flex items-center gap-2 mb-4">
               <span className="inline-grid h-8 w-8 place-items-center rounded-full bg-red-400/10 text-red-400">
                 <Flame size={15} />
@@ -95,7 +96,7 @@ export function StatsView({
             >
               {t("stats.leechLink")} →
             </Link>
-          </div>
+          </Card>
         </section>
       )}
 

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { GraduationCap, Zap, StickyNote, Star, Flame, CheckCheck } from "lucide-react";
 import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Chip } from "@/components/ui/chip";
+import { Card } from "@/components/ui/card";
+import { Tabs } from "@/components/ui/tabs";
 import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
 import { useI18n } from "@/components/i18n-provider";
@@ -58,18 +60,45 @@ export function NotebookClient({
       </header>
 
       {/* Tabs — kept visible for guests so the page reads as the notebook,
-          just empty, rather than as a generic access-denied screen. */}
-      <div className="flex gap-2 mb-8 border-b border-hairline/10">
-        <TabLink href="/notebook" active={tab === "starred"}>
-          <Star size={14} /> {t("notebook.tabStarred")} ({entries.length})
-        </TabLink>
-        <TabLink href="/notebook?tab=leeches" active={tab === "leeches"}>
-          <Flame size={14} /> {t("notebook.tabLeeches")} ({leeches.length})
-        </TabLink>
-        <TabLink href="/notebook?tab=known" active={tab === "known"}>
-          <CheckCheck size={14} /> {t("known.filter")} ({known.length})
-        </TabLink>
-      </div>
+          just empty, rather than as a generic access-denied screen. Pill
+          tabs (Plan 1 Task 8), not the old underline TabLink: these navigate
+          via next/link + a query param (no client-side tab state), so Tabs
+          takes href/active per item rather than assuming a controlled model. */}
+      <Tabs
+        className="mb-8"
+        items={[
+          {
+            key: "starred",
+            href: "/notebook",
+            active: tab === "starred",
+            label: (
+              <>
+                <Star size={14} /> {t("notebook.tabStarred")} ({entries.length})
+              </>
+            ),
+          },
+          {
+            key: "leeches",
+            href: "/notebook?tab=leeches",
+            active: tab === "leeches",
+            label: (
+              <>
+                <Flame size={14} /> {t("notebook.tabLeeches")} ({leeches.length})
+              </>
+            ),
+          },
+          {
+            key: "known",
+            href: "/notebook?tab=known",
+            active: tab === "known",
+            label: (
+              <>
+                <CheckCheck size={14} /> {t("known.filter")} ({known.length})
+              </>
+            ),
+          },
+        ]}
+      />
 
       {gate ??
         (tab === "starred" ? (
@@ -83,37 +112,13 @@ export function NotebookClient({
   );
 }
 
-function TabLink({
-  href,
-  active,
-  children,
-}: {
-  href: string;
-  active: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors",
-        active
-          ? "border-ember text-fg"
-          : "border-transparent text-fg-muted hover:text-fg"
-      )}
-    >
-      {children}
-    </Link>
-  );
-}
-
 function StarredPanel({ entries }: { entries: Entry[] }) {
   const { t } = useI18n();
   const n = entries.length;
 
   if (n === 0) {
     return (
-      <div className="card-atelier p-10 sm:p-14 text-center max-w-xl mx-auto">
+      <Card variant="flat" className="p-10 sm:p-14 text-center max-w-xl mx-auto">
         <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-ember/10 text-ember mb-4">
           <Star size={20} />
         </span>
@@ -125,7 +130,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
         >
           {t("notebook.goBrowse")}
         </Link>
-      </div>
+      </Card>
     );
   }
 
@@ -167,13 +172,13 @@ function LeechesPanel({ leeches }: { leeches: Entry[] }) {
 
   if (n === 0) {
     return (
-      <div className="card-atelier p-10 sm:p-14 text-center max-w-xl mx-auto">
+      <Card variant="flat" className="p-10 sm:p-14 text-center max-w-xl mx-auto">
         <span className="inline-grid h-12 w-12 place-items-center rounded-full bg-moss-500/10 text-moss-500 mb-4">
           <Flame size={20} />
         </span>
         <h2 className="display text-xl mb-2">{t("notebook.leechEmptyTitle")}</h2>
         <p className="text-fg-muted text-sm">{t("notebook.leechEmptyBody")}</p>
-      </div>
+      </Card>
     );
   }
 
@@ -204,13 +209,13 @@ function KnownPanel({ known }: { known: Entry[] }) {
 
   if (!known.length) {
     return (
-      <div className="card-atelier p-8 text-center">
+      <Card variant="flat" className="p-8 text-center">
         <span className="grid h-11 w-11 place-items-center rounded-full bg-moss-500/10 text-moss-500 mx-auto mb-4">
           <CheckCheck size={18} strokeWidth={2} />
         </span>
         <h2 className="display text-xl mb-2">{t("known.filter")}</h2>
         <p className="text-fg-muted text-sm">{t("known.mark")}</p>
-      </div>
+      </Card>
     );
   }
 
@@ -235,7 +240,7 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
   const overdue = w.card ? new Date(w.card.due) <= new Date() : false;
 
   return (
-    <div className="card-atelier p-4 sm:p-5 flex items-start gap-4 hover:border-ember/25 transition-colors">
+    <Card variant="interactive" className="p-4 sm:p-5 flex items-start gap-4">
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline gap-2 flex-wrap">
           <Link href={`/word/${encodeURIComponent(w.word)}`} className="display text-lg hover:text-ember transition-colors">
@@ -270,6 +275,6 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
           </span>
         )}
       </div>
-    </div>
+    </Card>
   );
 }

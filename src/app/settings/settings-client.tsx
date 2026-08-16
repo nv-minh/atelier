@@ -8,6 +8,7 @@ import { ProfileSection, type ProfileView } from "./profile-section";
 import { LangToggle } from "@/components/lang-toggle";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { cardClasses } from "@/lib/ui/card-classes";
 import { CEFR_LEVELS } from "@/lib/export-format";
 import { isEnabled, setEnabled } from "@/lib/feedback-prefs";
 import { ReminderSettings } from "@/components/reminder-settings";
@@ -108,7 +109,7 @@ export function SettingsClient({
       <ProfileSection profile={profile} />
 
       {/* Appearance */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.appearance")}</h2>
         <p className="text-xs text-fg-muted mb-5">{t("settings.appearanceDesc")}</p>
         <div className="grid grid-cols-3 gap-2">
@@ -138,14 +139,14 @@ export function SettingsClient({
       </section>
 
       {/* Language */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.language")}</h2>
         <p className="text-xs text-fg-muted mb-5">{t("settings.languageDesc")}</p>
         <LangToggle variant="full" />
       </section>
 
       {/* Sound & haptics */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.feedback")}</h2>
         <p className="text-xs text-fg-muted mb-5">{t("settings.feedbackDesc")}</p>
         <Toggle
@@ -172,7 +173,7 @@ export function SettingsClient({
       </section>
 
       {/* SRS */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.spacedRepetition")}</h2>
         <p className="text-xs text-fg-muted mb-6">{t("settings.srsDesc")}</p>
 
@@ -209,7 +210,7 @@ export function SettingsClient({
       </section>
 
       {/* Daily goal */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.dailyGoal")}</h2>
         <p className="text-xs text-fg-muted mb-6">{t("settings.dailyGoalDesc")}</p>
         <Slider
@@ -227,7 +228,7 @@ export function SettingsClient({
       <ReminderSettings initialHour={remindHour} initialTz={tz} />
 
       {/* Export */}
-      <section className="card-atelier p-6 sm:p-7 mb-4">
+      <section className={cn(cardClasses("flat"), "p-6 sm:p-7 mb-4")}>
         <h2 className="display text-xl mb-1">{t("settings.export")}</h2>
         <p className="text-xs text-fg-muted mb-5">{t("settings.exportDesc")}</p>
 

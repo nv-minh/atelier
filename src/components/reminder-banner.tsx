@@ -6,6 +6,7 @@ import { Bell } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { cn } from "@/lib/utils";
 import { buttonClasses } from "@/lib/ui/button-classes";
+import { Card } from "@/components/ui/card";
 import { reminderCopyKey } from "@/lib/reminders/copy";
 import type { Reminder } from "@/lib/reminders/pick";
 
@@ -16,7 +17,7 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
 
   const key = reminderCopyKey(reminder.kind);
   return (
-    <div className="card-atelier p-4 mb-6 flex items-center gap-3">
+    <Card variant="flat" className="p-4 mb-6 flex items-center gap-3">
       <Bell size={16} className="text-ember shrink-0" aria-hidden />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium">{t(key.title, { n: reminder.n })}</p>
@@ -31,6 +32,6 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
       <button onClick={() => setHidden(true)} className="shrink-0 text-xs text-fg-muted hover:text-fg">
         {t("reminders.dismiss")}
       </button>
-    </div>
+    </Card>
   );
 }

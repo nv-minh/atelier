@@ -11,6 +11,7 @@ import { CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
 import { Chip } from "@/components/ui/chip";
+import { Card } from "@/components/ui/card";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
 import type { GrammarSessionItem, GrammarSource } from "@/lib/grammar/session-types";
@@ -220,19 +221,19 @@ export function GrammarSession({
             <p className="text-center mb-1 text-sm text-red-500">{t("grammar.test.unsavedN", { n: unsaved })}</p>
           )}
           <div className="grid grid-cols-2 gap-3 my-5">
-            <div className="card-atelier p-4 text-center">
+            <Card variant="flat" className="p-4 text-center">
               <p className="display text-2xl text-moss-500 tabular-nums">{pct}%</p>
               <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("grammar.test.accuracy")}</p>
-            </div>
-            <div className="card-atelier p-4 text-center">
+            </Card>
+            <Card variant="flat" className="p-4 text-center">
               <p className="display text-2xl tabular-nums">
                 {correct}/{results.length}
               </p>
               <p className="text-[10px] uppercase tracking-wide text-fg-muted">{topicName}</p>
-            </div>
+            </Card>
           </div>
           {wrong.length > 0 && (
-            <div className="card-atelier p-5 mb-6 max-h-60 overflow-y-auto">
+            <Card variant="flat" className="p-5 mb-6 max-h-60 overflow-y-auto">
               <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-3">
                 {t("grammar.test.wrongList")}
               </p>
@@ -247,7 +248,7 @@ export function GrammarSession({
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           )}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             {wrong.length > 0 && (

@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { Mail } from "lucide-react";
 import { feedbackMailto } from "@/lib/contact";
 import { useI18n } from "./i18n-provider";
+import { cardClasses } from "@/lib/ui/card-classes";
+import { cn } from "@/lib/utils";
 
 export function UserMenu() {
   const { data: session, status } = useSession();
@@ -75,7 +77,7 @@ export function UserMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.97 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-2 w-56 card-atelier p-2 z-50"
+            className={cn(cardClasses("flat"), "absolute right-0 mt-2 w-56 p-2 z-50")}
           >
             <div className="px-3 py-2 border-b border-hairline/10 mb-1">
               <p className="text-sm font-medium truncate">{name}</p>

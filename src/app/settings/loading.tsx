@@ -1,4 +1,5 @@
-import { Skeleton } from "@/components/skeletons";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Card } from "@/components/ui/card";
 
 export default function Loading() {
   return (
@@ -10,11 +11,11 @@ export default function Loading() {
       </div>
       <div className="space-y-4">
         {Array.from({ length: 2 }).map((_, i) => (
-          <div key={i} className="card-atelier p-6 sm:p-7">
+          <Card variant="flat" key={i} className="p-6 sm:p-7">
             <Skeleton className="h-6 w-40 mb-2" />
             <Skeleton className="h-3 w-72 mb-6" />
             <Skeleton className="h-12 w-full rounded-2xl" />
-          </div>
+          </Card>
         ))}
       </div>
     </main>

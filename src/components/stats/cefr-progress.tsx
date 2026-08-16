@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { useI18n } from "@/components/i18n-provider";
+import { Card } from "@/components/ui/card";
 
 const colors: Record<string, string> = {
   A1: "bg-cefr-a1",
@@ -15,7 +16,7 @@ const colors: Record<string, string> = {
 export function CefrProgress({ stats }: { stats: Array<{ level: string; total: number; learned: number; learning: number; unseen: number }> }) {
   const { t } = useI18n();
   return (
-    <div className="card-atelier p-6 sm:p-7">
+    <Card variant="flat" className="p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <h3 className="display text-xl">{t("stats.masteryByLevel")}</h3>
         <span className="text-xs text-fg-muted font-mono">CEFR</span>
@@ -58,6 +59,6 @@ export function CefrProgress({ stats }: { stats: Array<{ level: string; total: n
         <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-ink/60" /> {t("stats.learnedLegend")}</span>
         <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-ink/20" /> {t("stats.learningLegend")}</span>
       </div>
-    </div>
+    </Card>
   );
 }

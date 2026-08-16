@@ -1,4 +1,4 @@
-import { ShellSkeleton, StatCardSkeleton, Skeleton } from "@/components/skeletons";
+import { ShellSkeleton, StatCardSkeleton, Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (

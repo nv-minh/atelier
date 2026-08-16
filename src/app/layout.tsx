@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
 import { Providers } from "@/components/providers";
-import { ProgressBar } from "@/components/progress-bar";
+import { RouteProgress } from "@/components/route-progress";
 import { Nav } from "@/components/nav";
 import { SwRegister } from "@/components/sw-register";
 import { PwaInstall } from "@/components/pwa-install";
@@ -171,7 +171,7 @@ export default function RootLayout({
         <ThemeProvider>
           <I18nProvider>
             <Providers>
-              <ProgressBar />
+              <RouteProgress />
               <Nav />
               <div>{children}</div>
               <SwRegister />
