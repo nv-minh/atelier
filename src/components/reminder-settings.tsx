@@ -98,7 +98,7 @@ export function ReminderSettings({
   return (
     <section className="card-atelier p-6 sm:p-7 mb-4">
       <h2 className="display text-xl mb-1">{t("settings.remind")}</h2>
-      <p className="text-xs text-soft mb-5">{t("settings.remindDesc")}</p>
+      <p className="text-xs text-fg-muted mb-5">{t("settings.remindDesc")}</p>
 
       {hour === null ? (
         <button onClick={enable} className="rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90">
@@ -110,22 +110,22 @@ export function ReminderSettings({
           <select
             value={hour}
             onChange={(e) => save(Number(e.target.value))}
-            className="rounded-2xl border border-line bg-transparent px-4 py-2.5 text-sm"
+            className="rounded-2xl border border-hairline/10 bg-transparent px-4 py-2.5 text-sm"
           >
             {Array.from({ length: 24 }, (_, h) => (
               <option key={h} value={h}>{`${String(h).padStart(2, "0")}:00`}</option>
             ))}
           </select>
-          <button onClick={disable} className="text-sm text-soft hover:text-ink underline">
+          <button onClick={disable} className="text-sm text-fg-muted hover:text-fg underline">
             {t("settings.remindDisable")}
           </button>
         </div>
       )}
 
       {status === "denied" && <p className="text-xs text-ember mt-3">{t("settings.remindDenied")}</p>}
-      {status === "unsupported" && <p className="text-xs text-soft mt-3">{t("settings.remindUnsupported")}</p>}
+      {status === "unsupported" && <p className="text-xs text-fg-muted mt-3">{t("settings.remindUnsupported")}</p>}
       {status === "failed" && <p className="text-xs text-ember mt-3">{t("settings.remindFailed")}</p>}
-      <p className="text-xs text-soft opacity-80 mt-3">{t("settings.remindIosHint")}</p>
+      <p className="text-xs text-fg-muted opacity-80 mt-3">{t("settings.remindIosHint")}</p>
     </section>
   );
 }

@@ -42,14 +42,14 @@ export function RatingButtons({
             transition={{ delay: i * 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             whileTap={{ scale: 0.95 }}
             className={cn(
-              "group relative min-w-0 flex flex-col items-center gap-1.5 rounded-2xl border border-line bg-surface px-2.5 py-3 sm:px-3 sm:py-4 transition-colors disabled:opacity-50",
+              "group relative min-w-0 flex flex-col items-center gap-1.5 rounded-2xl border border-hairline/10 bg-surface px-2.5 py-3 sm:px-3 sm:py-4 transition-colors disabled:opacity-50",
               s.ring
             )}
           >
             <span className={cn("h-1.5 w-1.5 rounded-full", s.dot)} />
             <span className="text-sm font-semibold">{t(s.tkey)}</span>
-            <span className="text-[11px] tabular-nums text-soft">{p.interval}</span>
-            <kbd className="hidden sm:block absolute top-1.5 right-1.5 text-[9px] text-soft/60 font-mono">
+            <span className="text-[11px] tabular-nums text-fg-muted">{p.interval}</span>
+            <kbd className="hidden sm:block absolute top-1.5 right-1.5 text-[9px] text-fg-muted/60 font-mono">
               {s.key}
             </kbd>
           </motion.button>

@@ -15,15 +15,15 @@ export function TopicView({ data, authed }: { data: NonNullable<TopicPageData>; 
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14 max-w-3xl">
-      <Link href="/grammar" className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink mb-6">
+      <Link href="/grammar" className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg mb-6">
         <ArrowLeft size={15} /> {t("common.back")}
       </Link>
 
       <header className="mb-8 flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm text-soft font-mono mb-2">{t(`grammar.clusters.${topic.cluster}`)}</p>
+          <p className="text-sm text-fg-muted font-mono mb-2">{t(`grammar.clusters.${topic.cluster}`)}</p>
           <h1 className="display text-display-md">{name}</h1>
-          <p className="text-sm text-soft mt-2">
+          <p className="text-sm text-fg-muted mt-2">
             {t("grammar.lessonsRead", { read: topic.lessonsRead, total: topic.lessonsTotal })}
             {topic.testQuestionCount > 0 && <> · {t("grammar.questionsN", { n: topic.testQuestionCount })}</>}
           </p>
@@ -53,9 +53,9 @@ export function TopicView({ data, authed }: { data: NonNullable<TopicPageData>; 
                 {l.read ? (
                   <CheckCircle2 size={18} className="shrink-0 text-moss-500" />
                 ) : (
-                  <Circle size={18} className="shrink-0 text-ink/20" />
+                  <Circle size={18} className="shrink-0 text-fg/20" />
                 )}
-                <span className="text-xs font-mono text-soft w-6 shrink-0">{l.order}</span>
+                <span className="text-xs font-mono text-fg-muted w-6 shrink-0">{l.order}</span>
                 <span className="text-sm leading-snug">{title}</span>
               </Link>
             </li>

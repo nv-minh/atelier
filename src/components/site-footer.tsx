@@ -13,12 +13,12 @@ export function SiteFooter() {
   const { t } = useI18n();
 
   return (
-    <footer className="mt-20 sm:mt-28 border-t border-line pt-8">
+    <footer className="mt-20 sm:mt-28 border-t border-hairline/10 pt-8">
       <div className="flex flex-wrap items-baseline justify-between gap-4">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-soft/70">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg-muted/70">
           {t("footer.tagline")}
         </p>
-        <nav className="flex items-center gap-5 text-sm text-soft">
+        <nav className="flex items-center gap-5 text-sm text-fg-muted">
           {/* Carries an icon and the ember hover the legal links don't: it is an
               action, not a document. The prominent ask is ContributeBanner,
               directly above this footer — this is the version for someone
@@ -30,15 +30,15 @@ export function SiteFooter() {
             <Mail size={13} />
             {t("footer.feedback")}
           </a>
-          <Link href="/privacy" className="hover:text-ink transition-colors">
+          <Link href="/privacy" className="hover:text-fg transition-colors">
             {t("footer.privacy")}
           </Link>
-          <Link href="/terms" className="hover:text-ink transition-colors">
+          <Link href="/terms" className="hover:text-fg transition-colors">
             {t("footer.terms")}
           </Link>
         </nav>
       </div>
-      <p className="mt-4 max-w-2xl text-xs leading-relaxed text-soft/70">
+      <p className="mt-4 max-w-2xl text-xs leading-relaxed text-fg-muted/70">
         {t("footer.dataLine")}
       </p>
     </footer>

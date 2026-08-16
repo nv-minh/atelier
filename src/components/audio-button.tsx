@@ -37,7 +37,7 @@ export function AudioButton({
       data-nosound
       onClick={play}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border border-line px-2.5 py-1 text-[11px] font-medium text-soft hover:text-ink hover:border-ember/40 transition-colors",
+        "inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-2.5 py-1 text-[11px] font-medium text-fg-muted hover:text-fg hover:border-ember/40 transition-colors",
         size === "sm" && "px-2 py-0.5 text-[10px]",
         playing && "text-ember border-ember/40",
         className

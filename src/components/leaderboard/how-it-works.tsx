@@ -11,12 +11,12 @@ import { useI18n } from "@/components/i18n-provider";
 export function HowItWorks() {
   const { t } = useI18n();
   return (
-    <details className="group rounded-2xl border border-line px-4 py-3">
-      <summary className="flex cursor-pointer list-none items-center gap-2 text-sm text-soft hover:text-ink transition-colors">
+    <details className="group rounded-2xl border border-hairline/10 px-4 py-3">
+      <summary className="flex cursor-pointer list-none items-center gap-2 text-sm text-fg-muted hover:text-fg transition-colors">
         <Info size={14} />
         {t("leaderboard.howTitle")}
       </summary>
-      <p className="mt-3 text-sm leading-relaxed text-soft">{t("leaderboard.howBody")}</p>
+      <p className="mt-3 text-sm leading-relaxed text-fg-muted">{t("leaderboard.howBody")}</p>
     </details>
   );
 }

@@ -30,7 +30,7 @@ export function DirectionFilter() {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-xs text-soft font-mono mr-1">{t("study.dirLabel")}</span>
+      <span className="text-xs text-fg-muted font-mono mr-1">{t("study.dirLabel")}</span>
       {dirs.map((d) => {
         const isActive = active === d.key;
         return (
@@ -39,7 +39,7 @@ export function DirectionFilter() {
             onClick={() => set(d.key)}
             className={cn(
               "rounded-full px-3.5 py-1.5 text-sm font-medium border transition-all",
-              isActive ? "bg-ember text-paper border-ember" : "border-line text-soft hover:text-ink hover:border-ink/30"
+              isActive ? "bg-ember text-paper border-ember" : "border-hairline/10 text-fg-muted hover:text-fg hover:border-ink/30"
             )}
           >
             {labels[d.key]}

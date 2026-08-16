@@ -42,11 +42,11 @@ export default function DevUIPage() {
     <main className="shell py-12">
       <ThemeToggle />
       <h1 className="display text-display-lg mb-4">/dev/ui</h1>
-      <p className="text-soft text-lg mb-8">
+      <p className="text-fg-muted text-lg mb-8">
         Component gallery — placeholder. Content arrives in Tasks 6–9.
       </p>
       <div className="card-atelier p-6">
-        <p className="text-soft">Preview area — empty for now.</p>
+        <p className="text-fg-muted">Preview area — empty for now.</p>
       </div>
     </main>
   );

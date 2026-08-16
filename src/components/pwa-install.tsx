@@ -156,7 +156,7 @@ export function PwaInstall() {
         <button
           onClick={dismiss}
           aria-label={t("pwa.dismiss")}
-          className="absolute top-3 right-3 text-soft hover:text-ink transition-colors"
+          className="absolute top-3 right-3 text-fg-muted hover:text-fg transition-colors"
         >
           <X size={16} />
         </button>
@@ -171,13 +171,13 @@ export function PwaInstall() {
             </p>
 
             {iosMode ? (
-              <ol className="mt-2 space-y-1 text-xs text-soft list-decimal list-inside">
+              <ol className="mt-2 space-y-1 text-xs text-fg-muted list-decimal list-inside">
                 <li>{t("pwa.iosStep1")}</li>
                 <li>{t("pwa.iosStep2")}</li>
               </ol>
             ) : (
               <>
-                <p className="text-xs text-soft mt-1 leading-relaxed">{t("pwa.body")}</p>
+                <p className="text-xs text-fg-muted mt-1 leading-relaxed">{t("pwa.body")}</p>
                 <div className="flex items-center gap-2 mt-3">
                   <button
                     onClick={install}
@@ -187,7 +187,7 @@ export function PwaInstall() {
                   </button>
                   <button
                     onClick={dismiss}
-                    className="rounded-full border border-line px-4 py-2 text-sm text-soft hover:text-ink transition-colors"
+                    className="rounded-full border border-hairline/10 px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors"
                   >
                     {t("pwa.later")}
                   </button>

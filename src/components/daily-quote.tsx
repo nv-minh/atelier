@@ -123,7 +123,7 @@ export function DailyQuote({ className }: { className?: string }) {
           {/* oversized quotation mark, same editorial device as the hero "a" */}
           <span
             aria-hidden
-            className="pointer-events-none absolute -top-8 right-4 select-none display display-it text-[10rem] leading-none text-ink/[0.045]"
+            className="pointer-events-none absolute -top-8 right-4 select-none display display-it text-[10rem] leading-none text-fg/[0.045]"
           >
             &rdquo;
           </span>
@@ -131,7 +131,7 @@ export function DailyQuote({ className }: { className?: string }) {
           <div className="relative">
             <div className="flex items-center gap-2 mb-4">
               <span className="h-px w-6 bg-ember/50" />
-              <figcaption className="text-[10px] uppercase tracking-[0.18em] text-soft/80 font-mono">
+              <figcaption className="text-[10px] uppercase tracking-[0.18em] text-fg-muted/80 font-mono">
                 {t("quote.label")}
               </figcaption>
             </div>
@@ -141,7 +141,7 @@ export function DailyQuote({ className }: { className?: string }) {
             </blockquote>
 
             <div className="mt-5 flex items-center justify-between gap-4">
-              <cite className="not-italic text-sm text-soft">— {quote.author}</cite>
+              <cite className="not-italic text-sm text-fg-muted">— {quote.author}</cite>
               {/* data-nosound: the listen button starts its own audio, so the
                   shell's tap tone would just double up on it. */}
               <div className="flex items-center gap-1 shrink-0" data-nosound>
@@ -152,8 +152,8 @@ export function DailyQuote({ className }: { className?: string }) {
                   className={cn(
                     "rounded-full p-2 transition-colors hover:bg-ink/5",
                     audio === "playing" && "text-ember",
-                    audio === "failed" && "text-soft/50",
-                    audio === "idle" && "text-soft hover:text-ember"
+                    audio === "failed" && "text-fg-muted/50",
+                    audio === "idle" && "text-fg-muted hover:text-ember"
                   )}
                 >
                   {audio === "failed" ? (
@@ -166,7 +166,7 @@ export function DailyQuote({ className }: { className?: string }) {
                   onClick={dismiss}
                   aria-label={t("quote.dismiss")}
                   title={t("quote.dismiss")}
-                  className="rounded-full p-2 text-soft hover:text-ink hover:bg-ink/5 transition-colors"
+                  className="rounded-full p-2 text-fg-muted hover:text-fg hover:bg-ink/5 transition-colors"
                 >
                   <X size={15} />
                 </button>

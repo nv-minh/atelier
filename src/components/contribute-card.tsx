@@ -48,7 +48,7 @@ function ContributeActions({ className }: { className?: string }) {
       <button
         onClick={copy}
         aria-label={t("contribute.copy")}
-        className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2.5 text-soft hover:text-ink transition-colors"
+        className="inline-flex items-center gap-2 rounded-full border border-hairline/10 px-4 py-2.5 text-fg-muted hover:text-fg transition-colors"
       >
         {copied ? <Check size={14} className="text-moss-500" /> : <Copy size={14} />}
         <span className="font-mono text-xs">
@@ -64,9 +64,9 @@ export function ContributeCard() {
   return (
     <section className="card-atelier p-6 sm:p-7 mb-4">
       <h2 className="display text-xl mb-1">{t("contribute.title")}</h2>
-      <p className="text-xs text-soft mb-5">{t("contribute.desc")}</p>
+      <p className="text-xs text-fg-muted mb-5">{t("contribute.desc")}</p>
 
-      <ul className="text-sm text-soft space-y-1.5 mb-5">
+      <ul className="text-sm text-fg-muted space-y-1.5 mb-5">
         {["itemBug", "itemWord", "itemIdea"].map((k) => (
           <li key={k} className="flex gap-2">
             <span aria-hidden className="text-ember">
@@ -90,7 +90,7 @@ export function ContributeBanner({ className }: { className?: string }) {
     // below lg, where three columns would squeeze the buttons.
     <section
       className={cn(
-        "rounded-2xl border border-line px-6 py-5 lg:flex lg:items-center lg:gap-8",
+        "rounded-2xl border border-hairline/10 px-6 py-5 lg:flex lg:items-center lg:gap-8",
         className
       )}
     >
@@ -100,7 +100,7 @@ export function ContributeBanner({ className }: { className?: string }) {
         </p>
         <p className="display text-xl mt-1">{t("contribute.bannerTitle")}</p>
       </div>
-      <p className="mt-2 lg:mt-0 flex-1 text-sm text-soft leading-relaxed">
+      <p className="mt-2 lg:mt-0 flex-1 text-sm text-fg-muted leading-relaxed">
         {t("contribute.bannerBody")}
       </p>
       <ContributeActions className="mt-4 lg:mt-0 lg:shrink-0" />

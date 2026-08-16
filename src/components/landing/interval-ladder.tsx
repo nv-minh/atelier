@@ -46,12 +46,12 @@ export function IntervalLadder() {
                   : "h-[11px] w-[11px] rounded-full border-2 border-ember/45 bg-paper shrink-0"
               }
             />
-            <span className="font-mono text-sm text-soft tabular-nums">{t(`landing.how.${s.key}`)}</span>
+            <span className="font-mono text-sm text-fg-muted tabular-nums">{t(`landing.how.${s.key}`)}</span>
           </li>
         ))}
       </ol>
 
-      <p className="mt-8 text-xs text-soft/70 leading-relaxed max-w-xs">{t("landing.how.caption")}</p>
+      <p className="mt-8 text-xs text-fg-muted/70 leading-relaxed max-w-xs">{t("landing.how.caption")}</p>
     </div>
   );
 }

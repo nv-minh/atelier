@@ -28,7 +28,7 @@ export function BadgeGallery({
     <div className="card-atelier p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <h3 className="display text-lg">{t("gamify.badges")}</h3>
-        <span className="text-xs text-soft tabular-nums">
+        <span className="text-xs text-fg-muted tabular-nums">
           {unlocked.size} / {ACHIEVEMENTS.length}
         </span>
       </div>
@@ -43,17 +43,17 @@ export function BadgeGallery({
               className={`rounded-2xl border p-4 flex flex-col items-center text-center transition-colors ${
                 isUnlocked
                   ? "border-ember/30 bg-ember/5"
-                  : "border-line bg-transparent opacity-55 grayscale"
+                  : "border-hairline/10 bg-transparent opacity-55 grayscale"
               }`}
             >
               <span
                 className={`relative inline-grid h-11 w-11 place-items-center rounded-full mb-2 ${
-                  isUnlocked ? "bg-ember/12 text-ember" : "bg-ink/8 text-soft"
+                  isUnlocked ? "bg-ember/12 text-ember" : "bg-ink/8 text-fg-muted"
                 }`}
               >
                 <Icon size={20} strokeWidth={1.75} />
                 {!isUnlocked && (
-                  <span className="absolute -bottom-0.5 -right-0.5 grid h-4 w-4 place-items-center rounded-full bg-paper text-soft border border-line">
+                  <span className="absolute -bottom-0.5 -right-0.5 grid h-4 w-4 place-items-center rounded-full bg-paper text-fg-muted border border-hairline/10">
                     <Lock size={9} />
                   </span>
                 )}
@@ -61,7 +61,7 @@ export function BadgeGallery({
               <p className="text-sm font-semibold leading-tight">
                 {t(`achievements.${a.key}.title`)}
               </p>
-              <p className="text-[11px] text-soft mt-1 leading-snug">
+              <p className="text-[11px] text-fg-muted mt-1 leading-snug">
                 {t(`achievements.${a.key}.desc`)}
               </p>
               {isUnlocked && iso && (

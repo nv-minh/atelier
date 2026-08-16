@@ -80,8 +80,8 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
           <AudioButton word={item.word} accent="uk" size="sm" />
         </div>
         <h2 className="display text-display-md break-words">{item.word}</h2>
-        {item.ipaUk && <p className="font-mono text-sm text-soft mt-2">{item.ipaUk}</p>}
-        <p className="text-xs text-soft mt-3">{t("practice.whichMeaning")}</p>
+        {item.ipaUk && <p className="font-mono text-sm text-fg-muted mt-2">{item.ipaUk}</p>}
+        <p className="text-xs text-fg-muted mt-3">{t("practice.whichMeaning")}</p>
       </div>
 
       {!opts ? (
@@ -116,11 +116,11 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
                     : shown && isPicked
                       ? "border-red-400 bg-red-400/10 cursor-default"
                       : shown
-                        ? "border-line opacity-60 cursor-default"
-                        : "border-line hover:border-ink/30 hover:bg-paper-200/40"
+                        ? "border-hairline/10 opacity-60 cursor-default"
+                        : "border-hairline/10 hover:border-ink/30 hover:bg-paper-200/40"
                 }`}
               >
-                <span className="text-xs font-mono text-soft mt-0.5">{LETTERS[i]}</span>
+                <span className="text-xs font-mono text-fg-muted mt-0.5">{LETTERS[i]}</span>
                 <span className="text-sm leading-snug">{opt}</span>
                 {shown && isCorrect && <CheckCircle2 size={16} className="ml-auto text-moss-500" />}
                 {shown && isPicked && !isCorrect && (

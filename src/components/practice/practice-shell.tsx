@@ -429,7 +429,7 @@ export function PracticeShell({
     <div className="-mt-16 min-h-[100dvh] flex flex-col">
       {toaster}
 
-      <div className="sticky top-0 z-30 bg-paper/80 backdrop-blur-md border-b border-line pt-[env(safe-area-inset-top)]">
+      <div className="sticky top-0 z-30 bg-paper/80 backdrop-blur-md border-b border-hairline/10 pt-[env(safe-area-inset-top)]">
         <div className="shell py-2.5 flex items-center gap-3">
           <button
             onClick={onExit}
@@ -437,11 +437,11 @@ export function PracticeShell({
             data-nosound
             // h-11 keeps the 44px touch floor; -my-2.5 cancels most of it
             // against the row's py-2.5 so the bar grows by ~8px, not 28px.
-            className="-my-2.5 h-11 w-11 shrink-0 grid place-items-center rounded-full text-soft hover:text-ink hover:bg-ink/5 transition-colors"
+            className="-my-2.5 h-11 w-11 shrink-0 grid place-items-center rounded-full text-fg-muted hover:text-fg hover:bg-ink/5 transition-colors"
           >
             <X size={20} />
           </button>
-          <span className="text-xs text-soft tabular-nums whitespace-nowrap">
+          <span className="text-xs text-fg-muted tabular-nums whitespace-nowrap">
             {state.index + 1} <span className="opacity-50">/ {queue.length}</span>
           </span>
           <div className="flex-1 h-1.5 rounded-full bg-ink/10 overflow-hidden">
@@ -451,7 +451,7 @@ export function PracticeShell({
               transition={{ duration: 0.3 }}
             />
           </div>
-          <span className="text-xs font-mono text-soft">
+          <span className="text-xs font-mono text-fg-muted">
             {sessionSummary(state).correct}/{state.results.length}
           </span>
         </div>
@@ -468,7 +468,7 @@ export function PracticeShell({
           session, so the old pb-28 clearance was 112px of nothing — the main
           reason this page scrolled on phones. 1rem + safe-area is enough. */}
       <div className="shell w-full flex-1 flex flex-col justify-center py-4 sm:py-8 pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-10">
-        {notice && <p className="text-center text-xs text-soft mb-4">{notice}</p>}
+        {notice && <p className="text-center text-xs text-fg-muted mb-4">{notice}</p>}
         <AnimatePresence mode="wait">
           <motion.div
             key={`${current.cardId}-${state.index}`}

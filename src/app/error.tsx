@@ -22,12 +22,12 @@ export default function Error({
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-6 py-20">
       <div className="shell w-full max-w-md text-center">
-        <p className="font-display text-6xl leading-none text-ink/15 select-none" aria-hidden>
+        <p className="font-display text-6xl leading-none text-fg/15 select-none" aria-hidden>
           ¦
         </p>
-        <h1 className="mt-4 font-display text-2xl text-ink">Đã xảy ra lỗi</h1>
-        <p className="mt-1 text-sm text-soft">Something went wrong.</p>
-        <p className="mt-4 text-sm text-soft">
+        <h1 className="mt-4 font-display text-2xl text-fg">Đã xảy ra lỗi</h1>
+        <p className="mt-1 text-sm text-fg-muted">Something went wrong.</p>
+        <p className="mt-4 text-sm text-fg-muted">
           Trang này không tải được. Thử lại, hoặc quay về trang chủ.
           <br />
           This page didn&apos;t load. Try again, or head back home.
@@ -41,13 +41,13 @@ export default function Error({
           </button>
           <a
             href="/"
-            className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-ink/5"
+            className="rounded-full border border-hairline/10 px-5 py-2.5 text-sm font-medium text-fg transition hover:bg-ink/5"
           >
             Về trang chủ
           </a>
         </div>
         {process.env.NODE_ENV !== "production" && error?.message ? (
-          <pre className="mt-6 max-h-40 overflow-auto rounded-lg border border-line bg-paper p-3 text-left text-xs text-soft">
+          <pre className="mt-6 max-h-40 overflow-auto rounded-lg border border-hairline/10 bg-paper p-3 text-left text-xs text-fg-muted">
             {error.message}
           </pre>
         ) : null}

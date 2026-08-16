@@ -73,7 +73,7 @@ export function KnownButton({
         aria-label={label}
         className={cn(
           "inline-flex items-center justify-center rounded-full p-1.5 transition-colors",
-          known ? "text-moss-500" : "text-soft hover:text-moss-500",
+          known ? "text-moss-500" : "text-fg-muted hover:text-moss-500",
           className
         )}
       >
@@ -91,7 +91,7 @@ export function KnownButton({
         "inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors",
         known
           ? "border-moss-500 bg-moss-500/10 text-moss-500"
-          : "border-ink/15 text-soft hover:bg-ink/5",
+          : "border-ink/15 text-fg-muted hover:bg-ink/5",
         className
       )}
     >

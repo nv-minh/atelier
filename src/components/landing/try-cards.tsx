@@ -71,7 +71,7 @@ export function TryCards({ words }: { words: DemoWord[] }) {
             <h3 className="display text-3xl sm:text-4xl leading-tight mb-4">
               {t("landing.demo.doneTitle", { n: words.length })}
             </h3>
-            <p className="text-soft leading-relaxed mb-8">{t("landing.demo.doneBody")}</p>
+            <p className="text-fg-muted leading-relaxed mb-8">{t("landing.demo.doneBody")}</p>
             <button
               onClick={() => startSignIn("/")}
               className="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-6 py-3.5 font-medium hover:opacity-90 transition-opacity"
@@ -81,7 +81,7 @@ export function TryCards({ words }: { words: DemoWord[] }) {
             </button>
             <button
               onClick={restart}
-              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full px-6 py-2.5 text-sm text-soft hover:text-ink transition-colors"
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"
             >
               <RotateCcw size={13} /> {t("landing.demo.again")}
             </button>
@@ -133,14 +133,14 @@ export function TryCards({ words }: { words: DemoWord[] }) {
                     }
                   />
                 ))}
-                <span className="font-mono text-[11px] text-soft/70 ml-2 tabular-nums">
+                <span className="font-mono text-[11px] text-fg-muted/70 ml-2 tabular-nums">
                   {i + 1}/{words.length}
                 </span>
               </div>
 
               <button
                 onClick={advance}
-                className="group inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm font-medium hover:border-ink/25 hover:bg-paper-200/50 transition-colors"
+                className="group inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-4 py-2 text-sm font-medium hover:border-ink/25 hover:bg-paper-200/50 transition-colors"
               >
                 {last ? t("landing.demo.finish") : t("landing.demo.next")}
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -182,12 +182,12 @@ function Front({ card }: { card: DemoWord }) {
         <div>
           <p className="display text-4xl sm:text-5xl leading-none">{card.word}</p>
           {card.ipaUk && (
-            <p className="font-mono text-sm text-soft mt-2.5">{card.ipaUk}</p>
+            <p className="font-mono text-sm text-fg-muted mt-2.5">{card.ipaUk}</p>
           )}
         </div>
       </div>
 
-      <p className="text-center text-xs text-soft/70">{t("landing.demo.tapToReveal")}</p>
+      <p className="text-center text-xs text-fg-muted/70">{t("landing.demo.tapToReveal")}</p>
     </div>
   );
 }
@@ -198,7 +198,7 @@ function Back({ card }: { card: DemoWord }) {
     <div className="backface-hidden rotate-y-180 absolute inset-0 card-atelier p-6 sm:p-8 flex flex-col overflow-y-auto scrollbar-hide">
       <div className="flex items-baseline justify-between gap-3">
         <p className="display text-2xl">{card.word}</p>
-        {card.typeVi && <span className="text-xs text-soft shrink-0">{card.typeVi}</span>}
+        {card.typeVi && <span className="text-xs text-fg-muted shrink-0">{card.typeVi}</span>}
       </div>
 
       <div className="flex-1 flex flex-col justify-center gap-4 py-5">
@@ -206,11 +206,11 @@ function Back({ card }: { card: DemoWord }) {
           <p className="display text-2xl sm:text-[1.75rem] leading-snug">{card.definitionVi}</p>
         )}
         {card.definitionEn && (
-          <p className="text-sm text-soft leading-relaxed">{card.definitionEn}</p>
+          <p className="text-sm text-fg-muted leading-relaxed">{card.definitionEn}</p>
         )}
         {card.example && (
-          <p className="text-sm leading-relaxed border-l-2 border-ember/40 pl-3.5 text-soft">
-            <span className="font-mono text-[10px] uppercase tracking-wider text-soft/60 block mb-1">
+          <p className="text-sm leading-relaxed border-l-2 border-ember/40 pl-3.5 text-fg-muted">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-fg-muted/60 block mb-1">
               {t("landing.demo.example")}
             </span>
             {card.example}
@@ -218,7 +218,7 @@ function Back({ card }: { card: DemoWord }) {
         )}
       </div>
 
-      <p className="text-center text-xs text-soft/70">{t("landing.demo.tapToHide")}</p>
+      <p className="text-center text-xs text-fg-muted/70">{t("landing.demo.tapToHide")}</p>
     </div>
   );
 }

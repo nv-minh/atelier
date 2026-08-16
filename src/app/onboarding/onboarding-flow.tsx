@@ -283,7 +283,7 @@ export function OnboardingFlow() {
   if (loadError) {
     return (
       <Card>
-        <p className="text-soft mb-6">{t("onboarding.error")}</p>
+        <p className="text-fg-muted mb-6">{t("onboarding.error")}</p>
         <PrimaryButton onClick={() => void loadBank()}>{t("onboarding.retry")}</PrimaryButton>
       </Card>
     );
@@ -292,8 +292,8 @@ export function OnboardingFlow() {
   if (!bank) {
     return (
       <Card>
-        <Loader2 className="mx-auto mb-4 animate-spin text-soft" size={22} />
-        <p className="text-soft">{t("onboarding.loading")}</p>
+        <Loader2 className="mx-auto mb-4 animate-spin text-fg-muted" size={22} />
+        <p className="text-fg-muted">{t("onboarding.loading")}</p>
       </Card>
     );
   }
@@ -301,15 +301,15 @@ export function OnboardingFlow() {
   if (phase === "intro") {
     return (
       <Card>
-        <p className="pill text-[10px] text-soft mb-4">{t("onboarding.introHeader")}</p>
+        <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.introHeader")}</p>
         <h1 className="display text-2xl sm:text-3xl mb-3">{t("onboarding.introTitle")}</h1>
-        <p className="text-soft leading-relaxed mb-4">{t("onboarding.introBody")}</p>
-        <p className="text-soft/80 text-sm leading-relaxed mb-7">{t("onboarding.introHonest")}</p>
+        <p className="text-fg-muted leading-relaxed mb-4">{t("onboarding.introBody")}</p>
+        <p className="text-fg-muted/80 text-sm leading-relaxed mb-7">{t("onboarding.introHonest")}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <PrimaryButton onClick={start}>{t("onboarding.start")}</PrimaryButton>
           <button
             onClick={() => router.push("/")}
-            className="rounded-full px-6 py-3 text-soft hover:text-ink transition-colors"
+            className="rounded-full px-6 py-3 text-fg-muted hover:text-fg transition-colors"
           >
             {t("onboarding.skip")}
           </button>
@@ -323,8 +323,8 @@ export function OnboardingFlow() {
       <Card>
         {/* No "question 4 of 20": the ladder is adaptive, so the total is genuinely
             not known in advance. Claiming one would be a lie. */}
-        <p className="pill text-[10px] text-soft mb-6">{t("onboarding.progress")}</p>
-        <p className="text-soft text-sm mb-3">{t("onboarding.question")}</p>
+        <p className="pill text-[10px] text-fg-muted mb-6">{t("onboarding.progress")}</p>
+        <p className="text-fg-muted text-sm mb-3">{t("onboarding.question")}</p>
         <p className="display text-3xl sm:text-4xl mb-9 break-words">
           {current.kind === "real" ? current.item.word : current.word}
         </p>
@@ -344,7 +344,7 @@ export function OnboardingFlow() {
             {t("onboarding.dontKnow")}
           </button>
         </div>
-        <p className="text-soft/70 text-xs mt-6">{t("onboarding.keyHint")}</p>
+        <p className="text-fg-muted/70 text-xs mt-6">{t("onboarding.keyHint")}</p>
       </Card>
     );
   }
@@ -352,12 +352,12 @@ export function OnboardingFlow() {
   if (phase === "result") {
     return (
       <Card>
-        <p className="pill text-[10px] text-soft mb-4">{t("onboarding.resultHeader")}</p>
-        <p className="text-soft text-sm mb-1">{t("onboarding.resultTitle")}</p>
+        <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.resultHeader")}</p>
+        <p className="text-fg-muted text-sm mb-1">{t("onboarding.resultTitle")}</p>
         <p className="display text-5xl mb-6 text-ember">{bandLabel}</p>
 
         <div className="mb-7">
-          <p className="text-soft text-xs uppercase tracking-wide mb-1">
+          <p className="text-fg-muted text-xs uppercase tracking-wide mb-1">
             {t("onboarding.vocabEst")}
           </p>
           <p className="display text-2xl">
@@ -368,7 +368,7 @@ export function OnboardingFlow() {
         {estimate.falseAlarmRate > 0 && (
           // Stated plainly, without accusing anyone: the correction already
           // happened, and hiding it would make the number look arbitrary.
-          <p className="text-soft/80 text-sm leading-relaxed mb-6">
+          <p className="text-fg-muted/80 text-sm leading-relaxed mb-6">
             {t("onboarding.trapNotice")}
           </p>
         )}
@@ -388,9 +388,9 @@ export function OnboardingFlow() {
   // topics + saving
   return (
     <Card>
-      <p className="pill text-[10px] text-soft mb-4">{t("onboarding.topicsHeader")}</p>
+      <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.topicsHeader")}</p>
       <h2 className="display text-2xl mb-3">{t("onboarding.topicsTitle")}</h2>
-      <p className="text-soft leading-relaxed mb-7">{t("onboarding.topicsBody")}</p>
+      <p className="text-fg-muted leading-relaxed mb-7">{t("onboarding.topicsBody")}</p>
 
       <div className="flex flex-wrap gap-2 justify-center mb-8">
         {TOPICS.map((topic) => {
@@ -410,7 +410,7 @@ export function OnboardingFlow() {
                 "inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm transition-colors",
                 on
                   ? "border-ember bg-ember/10 text-ember"
-                  : "border-ink/15 text-soft hover:bg-ink/5"
+                  : "border-ink/15 text-fg-muted hover:bg-ink/5"
               )}
             >
               <span aria-hidden>{topic.emoji}</span>
@@ -421,7 +421,7 @@ export function OnboardingFlow() {
       </div>
 
       {savedForGuest && (
-        <p className="text-soft/80 text-sm mb-5">{t("onboarding.savedGuest")}</p>
+        <p className="text-fg-muted/80 text-sm mb-5">{t("onboarding.savedGuest")}</p>
       )}
 
       <PrimaryButton onClick={() => void finish(topics)} disabled={phase === "saving"}>
@@ -468,7 +468,7 @@ function WordList({ label, words }: { label: string; words: string[] }) {
   if (!words.length) return null;
   return (
     <div>
-      <p className="text-soft text-xs uppercase tracking-wide mb-2">{label}</p>
+      <p className="text-fg-muted text-xs uppercase tracking-wide mb-2">{label}</p>
       <ul className="space-y-1">
         {words.map((w) => (
           <li key={w} className="text-sm">

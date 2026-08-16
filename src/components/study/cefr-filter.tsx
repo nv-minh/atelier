@@ -26,7 +26,7 @@ export function CefrFilter() {
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className="text-xs text-soft font-mono mr-1">{t("modes.level")}</span>
+      <span className="text-xs text-fg-muted font-mono mr-1">{t("modes.level")}</span>
       {levels.map((l) => {
         const isActive = active === l.key;
         return (
@@ -35,7 +35,7 @@ export function CefrFilter() {
             onClick={() => push({ cefr: l.key })}
             className={cn(
               "rounded-full px-3.5 py-1.5 text-sm font-medium border transition-all",
-              isActive ? "bg-ink text-paper border-ink" : "border-line text-soft hover:text-ink hover:border-ink/30"
+              isActive ? "bg-ink text-paper border-ink" : "border-hairline/10 text-fg-muted hover:text-fg hover:border-ink/30"
             )}
           >
             {l.key === "ALL" ? t("modes.all") : l.key}
@@ -45,7 +45,7 @@ export function CefrFilter() {
       <select
         value={topic}
         onChange={(e) => push({ topic: e.target.value })}
-        className="ml-1 rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-soft outline-none focus:border-ember cursor-pointer"
+        className="ml-1 rounded-full border border-hairline/10 bg-surface px-3 py-1.5 text-sm text-fg-muted outline-none focus:border-ember cursor-pointer"
         aria-label="Topic"
       >
         <option value="ALL">{t("modes.allTopics")}</option>

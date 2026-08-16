@@ -171,22 +171,22 @@ export function LibraryClient({
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
       <header className="mb-8 max-w-2xl">
-        <p className="text-sm text-soft font-mono mb-3">{t("browse.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("browse.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("browse.title")} <span className="display-it text-ember">{t("browse.titleAccent")}</span>
         </h1>
-        <p className="text-soft">{t("browse.subtitle", { n: total.toLocaleString() })}</p>
+        <p className="text-fg-muted">{t("browse.subtitle", { n: total.toLocaleString() })}</p>
       </header>
 
       {/* Controls */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <form onSubmit={onSubmit} className="relative flex-1">
-          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-soft" />
+          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-fg-muted" />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t("browse.searchWord")}
-            className="w-full rounded-full border border-line bg-surface pl-11 pr-4 py-2.5 text-sm outline-none focus:border-ember"
+            className="w-full rounded-full border border-hairline/10 bg-surface pl-11 pr-4 py-2.5 text-sm outline-none focus:border-ember"
           />
         </form>
         <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">
@@ -196,7 +196,7 @@ export function LibraryClient({
               onClick={() => startTransition(() => router.push(`/browse?${mkQs(cur, { cefr: l, page: 1 })}`))}
               className={cn(
                 "rounded-full px-3.5 py-2 text-sm font-medium border whitespace-nowrap transition-colors",
-                cefr === l ? "bg-ink text-paper border-ink" : "border-line text-soft hover:text-ink"
+                cefr === l ? "bg-ink text-paper border-ink" : "border-hairline/10 text-fg-muted hover:text-fg"
               )}
             >
               {l === "ALL" ? t("browse.all") : l}
@@ -210,7 +210,7 @@ export function LibraryClient({
           chips still fits on mobile, while a chip per topic would not (there
           are 28 of them). */}
       <div className="flex items-center gap-2 mb-4 overflow-x-auto scrollbar-hide">
-        <span className="text-xs text-soft font-mono shrink-0">{t("browse.scopeLabel")}</span>
+        <span className="text-xs text-fg-muted font-mono shrink-0">{t("browse.scopeLabel")}</span>
         {BROWSE_SCOPES.map((s) => (
           <button
             key={s}
@@ -224,7 +224,7 @@ export function LibraryClient({
             title={!authed && s !== "all" ? t("browse.scopeLocked") : undefined}
             className={cn(
               "rounded-full px-3 py-1.5 text-xs font-medium border whitespace-nowrap transition-colors",
-              scope === s ? "bg-ember text-paper border-ember" : "border-line text-soft hover:text-ink"
+              scope === s ? "bg-ember text-paper border-ember" : "border-hairline/10 text-fg-muted hover:text-fg"
             )}
           >
             {t(`browse.scope${s[0].toUpperCase()}${s.slice(1)}`)}
@@ -235,7 +235,7 @@ export function LibraryClient({
           value={topic}
           onChange={(e) => startTransition(() => router.push(`/browse?${mkQs(cur, { topic: e.target.value, page: 1 })}`))}
           aria-label={t("browse.topicLabel")}
-          className="rounded-full border border-line bg-surface px-3.5 py-2 text-sm"
+          className="rounded-full border border-hairline/10 bg-surface px-3.5 py-2 text-sm"
         >
           <option value="ALL">{t("browse.topicAll")}</option>
           {TOPICS.map((tp) => (
@@ -250,10 +250,10 @@ export function LibraryClient({
       {summary && summary.seen > 0 && (
         <div className="card-atelier p-4 mb-5 flex flex-wrap items-center gap-x-5 gap-y-2">
           <span className="display text-lg">{t("browse.summaryLearned", { n: summary.learned.toLocaleString() })}</span>
-          <span className="text-sm text-soft">{t("browse.summaryLearning", { n: summary.learning.toLocaleString() })}</span>
-          <span className="text-sm text-soft">{t("browse.summaryKnown", { n: summary.known.toLocaleString() })}</span>
+          <span className="text-sm text-fg-muted">{t("browse.summaryLearning", { n: summary.learning.toLocaleString() })}</span>
+          <span className="text-sm text-fg-muted">{t("browse.summaryKnown", { n: summary.known.toLocaleString() })}</span>
           {summary.band && summary.band.total > 0 && (
-            <span className="text-sm text-soft tabular-nums">
+            <span className="text-sm text-fg-muted tabular-nums">
               {t("browse.summaryBand", {
                 level: summary.band.level,
                 pct: Math.round((summary.band.learned / summary.band.total) * 100),
@@ -263,7 +263,7 @@ export function LibraryClient({
           <div className="flex gap-2 ml-auto">
             <Link
               href={`/study/cram?${mkQs({ cefr, topic }, { scope: "weak" as Scope, limit: 20 })}`}
-              className="rounded-full border border-line px-3.5 py-1.5 text-xs font-medium hover:border-ember"
+              className="rounded-full border border-hairline/10 px-3.5 py-1.5 text-xs font-medium hover:border-ember"
             >
               {t("browse.studyWeak")}
             </Link>
@@ -274,7 +274,7 @@ export function LibraryClient({
               // ignores.
               href={`/api/export?format=csv&${mkQs(cur, { page: 1 })}`}
               download
-              className="rounded-full border border-line px-3.5 py-1.5 text-xs font-medium hover:border-ember"
+              className="rounded-full border border-hairline/10 px-3.5 py-1.5 text-xs font-medium hover:border-ember"
             >
               {t("browse.exportFiltered")}
             </a>
@@ -285,7 +285,7 @@ export function LibraryClient({
       {/* List */}
       <div className="grid gap-2.5">
         {items.length === 0 && (
-          <div className="card-atelier p-12 text-center text-soft">{t("browse.noWords")}</div>
+          <div className="card-atelier p-12 text-center text-fg-muted">{t("browse.noWords")}</div>
         )}
         {items.map((w) => {
           const st = w.cardState !== null ? stateLabel[w.cardState] : null;
@@ -315,12 +315,12 @@ export function LibraryClient({
                   >
                     {w.word}
                   </Link>
-                  {w.ipaUk && <span className="font-mono text-xs text-soft">{w.ipaUk}</span>}
+                  {w.ipaUk && <span className="font-mono text-xs text-fg-muted">{w.ipaUk}</span>}
                   <CefrBadge level={w.cefr} />
-                  {w.typeVi && <span className="text-xs text-soft">· {w.typeVi}</span>}
+                  {w.typeVi && <span className="text-xs text-fg-muted">· {w.typeVi}</span>}
                   {w.hasNote && <StickyNote size={12} className="text-ember" aria-label={t("notebook.hasNote")} />}
                 </div>
-                {w.definitionEn && <p className="text-sm text-soft mt-1 line-clamp-2">{w.definitionEn}</p>}
+                {w.definitionEn && <p className="text-sm text-fg-muted mt-1 line-clamp-2">{w.definitionEn}</p>}
                 {/* `text-soft` is a @layer components class, not a Tailwind colour
                     key — bare/opacity colour utilities like `text-soft/70` need a
                     DEFAULT colour key to slash-modify, so that form silently
@@ -328,9 +328,9 @@ export function LibraryClient({
                     of dimmed. Splitting into `text-soft opacity-70` applies the
                     dimming as a separate utility instead of trying to modify
                     `text-soft` itself. */}
-                {w.definitionVi && <p className="text-xs text-soft opacity-70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
+                {w.definitionVi && <p className="text-xs text-fg-muted opacity-70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
                 {w.synonyms.length > 0 && (
-                  <p className="text-xs text-soft opacity-80 mt-1">
+                  <p className="text-xs text-fg-muted opacity-80 mt-1">
                     <span className="text-moss-600 dark:text-moss-400">{t("browse.syn")}</span> {w.synonyms.slice(0, 3).join(", ")}
                   </p>
                 )}
@@ -344,7 +344,7 @@ export function LibraryClient({
                 {st ? (
                   <span className={cn("pill text-[9px]", st.c)}>{st.t}</span>
                 ) : (
-                  <span className="pill text-[9px] text-soft">—</span>
+                  <span className="pill text-[9px] text-fg-muted">—</span>
                 )}
               </div>
             </div>
@@ -358,17 +358,17 @@ export function LibraryClient({
           <button
             disabled={page <= 1}
             onClick={() => goToPage(page - 1)}
-            className="rounded-full border border-line px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
+            className="rounded-full border border-hairline/10 px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
           >
             {t("browse.prev")}
           </button>
-          <span className="text-sm text-soft tabular-nums">
+          <span className="text-sm text-fg-muted tabular-nums">
             {page} / {totalPages}
           </span>
           <button
             disabled={page >= totalPages}
             onClick={() => goToPage(page + 1)}
-            className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
+            className="inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-4 py-2 text-sm disabled:opacity-30 hover:bg-paper-200/50"
           >
             {t("browse.next")}
             {!authed && <Lock size={12} className="text-ember" aria-hidden />}
@@ -382,29 +382,29 @@ export function LibraryClient({
           out of sync with what actually happened on the server. */}
       {selected.size > 0 && (
         <div className="fixed bottom-20 md:bottom-6 left-1/2 -translate-x-1/2 z-40 card-atelier px-4 py-3 flex items-center gap-2 shadow-lg">
-          <span className="text-sm text-soft">{t("browse.bulkSelected", { n: selected.size })}</span>
+          <span className="text-sm text-fg-muted">{t("browse.bulkSelected", { n: selected.size })}</span>
           <button
             onClick={() => runBulk("mark-known")}
             disabled={bulkPending}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
+            className="rounded-full border border-hairline/10 px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkMarkKnown")}
           </button>
           <button
             onClick={() => runBulk("star")}
             disabled={bulkPending}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
+            className="rounded-full border border-hairline/10 px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkStar")}
           </button>
           <button
             onClick={() => runBulk("reset")}
             disabled={bulkPending}
-            className="rounded-full border border-line px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
+            className="rounded-full border border-hairline/10 px-3 py-1.5 text-xs hover:border-ember disabled:opacity-40 disabled:pointer-events-none"
           >
             {t("browse.bulkReset")}
           </button>
-          <button onClick={() => setSelected(new Set())} className="text-xs text-soft hover:text-ink">
+          <button onClick={() => setSelected(new Set())} className="text-xs text-fg-muted hover:text-fg">
             {t("browse.bulkClear")}
           </button>
         </div>

@@ -60,7 +60,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
 
       {!profile ? (
         <>
-          <p className="text-xs text-soft mb-5">{t("profile.noProfile")}</p>
+          <p className="text-xs text-fg-muted mb-5">{t("profile.noProfile")}</p>
           <Link
             href="/onboarding"
             className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
@@ -72,22 +72,22 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
         <>
           <div className="flex flex-wrap items-end gap-x-10 gap-y-4 mt-4 mb-6">
             <div>
-              <p className="text-xs text-soft uppercase tracking-wide mb-1">{t("profile.band")}</p>
+              <p className="text-xs text-fg-muted uppercase tracking-wide mb-1">{t("profile.band")}</p>
               <p className="display text-3xl text-ember">{bandLabel}</p>
-              <p className="text-[11px] text-soft/70 mt-1">
+              <p className="text-[11px] text-fg-muted/70 mt-1">
                 {profile.source === "drift" ? t("profile.sourceDrift") : t("profile.sourceTest")}
               </p>
             </div>
             <div>
-              <p className="text-xs text-soft uppercase tracking-wide mb-1">{t("profile.vocab")}</p>
+              <p className="text-xs text-fg-muted uppercase tracking-wide mb-1">{t("profile.vocab")}</p>
               <p className="display text-2xl">
                 ~{profile.vocabSizeEst.toLocaleString()} {t("profile.words")}
               </p>
             </div>
           </div>
 
-          <p className="text-xs text-soft uppercase tracking-wide mb-2">{t("profile.topics")}</p>
-          {!topics.length && <p className="text-xs text-soft/70 mb-3">{t("profile.noTopics")}</p>}
+          <p className="text-xs text-fg-muted uppercase tracking-wide mb-2">{t("profile.topics")}</p>
+          {!topics.length && <p className="text-xs text-fg-muted/70 mb-3">{t("profile.noTopics")}</p>}
           <div className="flex flex-wrap gap-2 mb-5">
             {TOPICS.map((topic) => {
               const on = topics.includes(topic.slug);
@@ -104,7 +104,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
                   }
                   className={cn(
                     "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs transition-colors disabled:opacity-60",
-                    on ? "border-ember bg-ember/10 text-ember" : "border-ink/15 text-soft hover:bg-ink/5"
+                    on ? "border-ember bg-ember/10 text-ember" : "border-ink/15 text-fg-muted hover:bg-ink/5"
                   )}
                 >
                   <span aria-hidden>{topic.emoji}</span>
@@ -121,7 +121,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
             >
               {t("profile.retake")}
             </Link>
-            {saving && <Loader2 size={14} className="animate-spin text-soft" />}
+            {saving && <Loader2 size={14} className="animate-spin text-fg-muted" />}
             {saved && !saving && (
               <span className="inline-flex items-center gap-1 text-xs text-moss-500">
                 <CheckCheck size={13} /> {t("profile.saved")}

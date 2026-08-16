@@ -166,7 +166,7 @@ function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () =
             <button
               onClick={onClose}
               aria-label={t("auth.later")}
-              className="absolute right-4 top-4 rounded-full p-1.5 text-soft hover:text-ink hover:bg-ink/5 transition-colors"
+              className="absolute right-4 top-4 rounded-full p-1.5 text-fg-muted hover:text-fg hover:bg-ink/5 transition-colors"
             >
               <X size={16} />
             </button>
@@ -178,7 +178,7 @@ function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () =
             <h2 id="auth-gate-title" className="display text-2xl mb-2">
               {t("auth.gateTitle")}
             </h2>
-            <p className="text-sm text-soft leading-relaxed mb-6">{t(`auth.reasons.${reason}`)}</p>
+            <p className="text-sm text-fg-muted leading-relaxed mb-6">{t(`auth.reasons.${reason}`)}</p>
 
             <button
               onClick={() => startSignIn(opts?.callbackUrl)}
@@ -189,7 +189,7 @@ function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () =
             </button>
             <button
               onClick={onClose}
-              className="w-full mt-2 rounded-full px-6 py-2.5 text-sm text-soft hover:text-ink transition-colors"
+              className="w-full mt-2 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"
             >
               {t("auth.later")}
             </button>

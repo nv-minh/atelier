@@ -75,9 +75,9 @@ export function NoteEditor({
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-xs font-mono text-soft uppercase tracking-wide">{t("word.noteLabel")}</span>
+        <span className="text-xs font-mono text-fg-muted uppercase tracking-wide">{t("word.noteLabel")}</span>
         {status === "saving" && (
-          <span className="inline-flex items-center gap-1 text-[11px] text-soft">
+          <span className="inline-flex items-center gap-1 text-[11px] text-fg-muted">
             <Loader2 size={12} className="animate-spin" /> {t("word.saving")}
           </span>
         )}
@@ -98,7 +98,7 @@ export function NoteEditor({
         rows={4}
         maxLength={2000}
         placeholder={t("word.notePlaceholder")}
-        className="w-full rounded-2xl border border-line bg-surface px-4 py-3 text-sm outline-none focus:border-ember resize-y"
+        className="w-full rounded-2xl border border-hairline/10 bg-surface px-4 py-3 text-sm outline-none focus:border-ember resize-y"
       />
     </div>
   );

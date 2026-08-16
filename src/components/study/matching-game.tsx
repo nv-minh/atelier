@@ -261,18 +261,18 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
       {toaster}
       {/* HUD */}
-      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
+      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-hairline/10">
         <div className="shell py-2.5 flex items-center justify-between gap-3 text-sm">
-          <span className="text-soft tabular-nums whitespace-nowrap">
+          <span className="text-fg-muted tabular-nums whitespace-nowrap">
             {t("study.matchingRound", { n: roundIdx + 1, total: rounds.length })}
           </span>
           <div className="flex items-center gap-4 tabular-nums">
-            <span className="text-soft">
-              <span className="text-ink font-semibold">{fmtTime(elapsed)}</span>
+            <span className="text-fg-muted">
+              <span className="text-fg font-semibold">{fmtTime(elapsed)}</span>
             </span>
-            <span className="text-soft">
+            <span className="text-fg-muted">
               {t("study.matchingMistakes")}{" "}
-              <span className={mistakes > 0 ? "text-red-400 font-semibold" : "text-ink font-semibold"}>
+              <span className={mistakes > 0 ? "text-red-400 font-semibold" : "text-fg font-semibold"}>
                 {mistakes}
               </span>
             </span>
@@ -281,7 +281,7 @@ export function MatchingGame({ rounds }: { rounds: MatchingItem[][] }) {
       </div>
 
       <div className="shell w-full flex-1 flex flex-col justify-center py-6 sm:py-10 pb-28 md:pb-10">
-        <p className="text-center text-soft text-sm mb-5">{t("study.matchingHint")}</p>
+        <p className="text-center text-fg-muted text-sm mb-5">{t("study.matchingHint")}</p>
         <AnimatePresence mode="wait">
           <motion.div
             key={roundIdx}
@@ -320,12 +320,12 @@ function TileButton({
     "relative min-h-[4.5rem] sm:min-h-[5.5rem] rounded-2xl border px-3 py-3 text-center flex items-center justify-center transition-colors select-none";
   const cls =
     state === "selected"
-      ? "border-ember bg-ember/10 text-ink"
+      ? "border-ember bg-ember/10 text-fg"
       : state === "matched"
-        ? "border-moss-500/30 bg-moss-500/10 text-soft"
+        ? "border-moss-500/30 bg-moss-500/10 text-fg-muted"
         : state === "wrong"
-          ? "border-red-400 bg-red-400/15 text-ink"
-          : "border-line bg-surface hover:border-ember/40 text-ink";
+          ? "border-red-400 bg-red-400/15 text-fg"
+          : "border-hairline/10 bg-surface hover:border-ember/40 text-fg";
 
   return (
     <motion.button
@@ -384,7 +384,7 @@ function SummaryScreen({
           <CheckCircle2 size={40} strokeWidth={1.5} />
         </motion.div>
         <h2 className="display text-display-md mb-1 text-center">{t("study.matchingComplete")}</h2>
-        <p className="text-soft text-center mb-2">
+        <p className="text-fg-muted text-center mb-2">
           {t("study.matchingMatchedN", { n: totalPairs })}
         </p>
         {xpGained > 0 && (
@@ -397,17 +397,17 @@ function SummaryScreen({
         <div className="grid grid-cols-3 gap-3 mb-6">
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums">{fmtTime(elapsed)}</p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.matchingTime")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingTime")}</p>
           </div>
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums text-moss-500">{totalPairs}</p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.matchingMatched")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingMatched")}</p>
           </div>
           <div className="card-atelier p-4 text-center">
             <p className={`display text-2xl tabular-nums ${mistakes > 0 ? "text-red-400" : ""}`}>
               {mistakes}
             </p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.matchingMistakes")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.matchingMistakes")}</p>
           </div>
         </div>
 
@@ -420,7 +420,7 @@ function SummaryScreen({
           </button>
           <a
             href="/study"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"
           >
             <Layers size={16} /> {t("study.changeMode")}
           </a>

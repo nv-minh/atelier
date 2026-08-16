@@ -34,11 +34,11 @@ export function StatsView({
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
       <header className="mb-10 max-w-2xl">
-        <p className="text-sm text-soft font-mono mb-3">{t("stats.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("stats.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("stats.title")} <span className="display-it text-ember">{t("stats.titleAccent")}</span>
         </h1>
-        <p className="text-soft text-lg leading-relaxed">{t("stats.subtitle")}</p>
+        <p className="text-fg-muted text-lg leading-relaxed">{t("stats.subtitle")}</p>
       </header>
 
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6">
@@ -91,7 +91,7 @@ export function StatsView({
             </ul>
             <Link
               href="/notebook?tab=leeches"
-              className="inline-block mt-3 text-sm text-soft hover:text-ember transition-colors"
+              className="inline-block mt-3 text-sm text-fg-muted hover:text-ember transition-colors"
             >
               {t("stats.leechLink")} →
             </Link>

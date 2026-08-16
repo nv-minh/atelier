@@ -45,7 +45,7 @@ export function LandingView({
       {/* ── HERO + DEMO ─────────────────────────────────────────────── */}
       <section className="pt-8 sm:pt-14 lg:pt-20 lg:grid lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-16 lg:items-center">
         <div className="max-w-xl">
-          <p className="animate-fade-up font-mono text-[11px] uppercase tracking-[0.22em] text-soft/80 mb-5">
+          <p className="animate-fade-up font-mono text-[11px] uppercase tracking-[0.22em] text-fg-muted/80 mb-5">
             {t("landing.eyebrow")}
           </p>
           <h1
@@ -57,7 +57,7 @@ export function LandingView({
             <span className="display-it text-ember">{t("landing.title2")}</span>
           </h1>
           <p
-            className="text-lg sm:text-xl text-soft leading-relaxed mb-7 animate-fade-up"
+            className="text-lg sm:text-xl text-fg-muted leading-relaxed mb-7 animate-fade-up"
             style={{ animationDelay: "140ms", animationFillMode: "both" }}
           >
             {t("landing.sub", { n: words })}
@@ -80,14 +80,14 @@ export function LandingView({
                 is not a teaser that bounces into an auth wall. */}
             <Link
               href="/onboarding"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
             >
               <Gauge size={16} />
               {t("landing.level.cta")}
             </Link>
             <Link
               href="/topics"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
             >
               {t("landing.ctaSecondary")}
             </Link>
@@ -95,7 +95,7 @@ export function LandingView({
 
           {/* The numbers stay a single mono line — a colophon, not a stat row. */}
           <p
-            className="font-mono text-[11px] text-soft/70 tracking-wide animate-fade-up"
+            className="font-mono text-[11px] text-fg-muted/70 tracking-wide animate-fade-up"
             style={{ animationDelay: "300ms", animationFillMode: "both" }}
           >
             {t("landing.index", { w: words, t: topics.length })}
@@ -132,10 +132,10 @@ export function LandingView({
                 {t("landing.level.title")}{" "}
                 <span className="display-it text-ember">{t("landing.level.titleAccent")}</span>
               </h2>
-              <p className="text-soft leading-relaxed mb-5">{t("landing.level.body")}</p>
+              <p className="text-fg-muted leading-relaxed mb-5">{t("landing.level.body")}</p>
               <Link
                 href="/onboarding"
-                className="group inline-flex items-center gap-1.5 text-sm font-medium text-ink hover:text-ember transition-colors"
+                className="group inline-flex items-center gap-1.5 text-sm font-medium text-fg hover:text-ember transition-colors"
               >
                 {t("landing.level.cta")}
                 <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -151,7 +151,7 @@ export function LandingView({
               {t("landing.how.title")}{" "}
               <span className="display-it text-ember">{t("landing.how.titleAccent")}</span>
             </h2>
-            <p className="text-soft leading-relaxed">{t("landing.how.body")}</p>
+            <p className="text-fg-muted leading-relaxed">{t("landing.how.body")}</p>
           </div>
           <div className="mt-10 sm:mt-2">
             <IntervalLadder />
@@ -170,13 +170,13 @@ export function LandingView({
         <div className="grid gap-3 sm:gap-4 sm:grid-cols-3">
           <div className="card-atelier p-6 sm:col-span-3 lg:col-span-1 lg:row-span-1">
             <p className="display text-xl mb-1.5">{t("landing.features.modesTitle")}</p>
-            <p className="text-sm text-soft leading-relaxed mb-5">{t("landing.features.modesBody")}</p>
+            <p className="text-sm text-fg-muted leading-relaxed mb-5">{t("landing.features.modesBody")}</p>
             {/* the seven modes, named the way they are named inside the app */}
             <div className="flex flex-wrap gap-1.5">
               {MODE_KEYS.map((k) => (
                 <span
                   key={k}
-                  className="rounded-full border border-line px-3 py-1.5 text-xs text-soft"
+                  className="rounded-full border border-hairline/10 px-3 py-1.5 text-xs text-fg-muted"
                 >
                   {t(`home.${k}`)}
                 </span>
@@ -206,7 +206,7 @@ export function LandingView({
           </h2>
           <Link
             href="/topics"
-            className="group inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink transition-colors"
+            className="group inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg transition-colors"
           >
             {t("landing.topics.cta")}
             <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
@@ -220,7 +220,7 @@ export function LandingView({
             <Link
               key={tp.slug}
               href="/topics"
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 text-sm hover:border-ember/40 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 rounded-full border border-hairline/10 bg-surface px-3.5 py-2 text-sm hover:border-ember/40 hover:-translate-y-0.5 transition-all"
             >
               <span aria-hidden>{tp.emoji}</span>
               {t(`topics.names.${tp.slug}`)}
@@ -228,14 +228,14 @@ export function LandingView({
           ))}
         </div>
 
-        <p className="mt-5 text-sm text-soft leading-relaxed max-w-2xl">
+        <p className="mt-5 text-sm text-fg-muted leading-relaxed max-w-2xl">
           {t("landing.topics.packs")}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           <OpenLink href="/topics" icon={<Compass size={14} />} label={t("auth.exploreTopics")} />
           <OpenLink href="/browse" icon={<Library size={14} />} label={t("auth.exploreLibrary")} />
-          <span className="inline-flex items-center text-xs text-soft/70 px-1">
+          <span className="inline-flex items-center text-xs text-fg-muted/70 px-1">
             {t("landing.topics.free")}
           </span>
         </div>
@@ -250,12 +250,12 @@ export function LandingView({
           {t("landing.extras.title")}{" "}
           <span className="display-it text-ember">{t("landing.extras.titleAccent")}</span>
         </h2>
-        <p className="text-soft leading-relaxed max-w-2xl mb-6">{t("landing.extras.body")}</p>
+        <p className="text-fg-muted leading-relaxed max-w-2xl mb-6">{t("landing.extras.body")}</p>
         <div className="flex flex-wrap gap-2">
           {EXTRA_CHIP_KEYS.map((k) => (
             <span
               key={k}
-              className="rounded-full border border-line px-3.5 py-1.5 text-xs text-soft"
+              className="rounded-full border border-hairline/10 px-3.5 py-1.5 text-xs text-fg-muted"
             >
               {t(`landing.extras.${k}`)}
             </span>
@@ -277,13 +277,13 @@ export function LandingView({
       <section className="mt-20 sm:mt-28">
         <Link
           href="/grammar"
-          className="group block rounded-2xl border border-line px-6 py-5 sm:flex sm:items-center sm:gap-6 hover:border-ember/30 transition-colors"
+          className="group block rounded-2xl border border-hairline/10 px-6 py-5 sm:flex sm:items-center sm:gap-6 hover:border-ember/30 transition-colors"
         >
           <div className="sm:shrink-0">
             <SectionLabel>{t("landing.grammar.label")}</SectionLabel>
             <p className="display text-xl -mt-2">{t("landing.grammar.title")}</p>
           </div>
-          <p className="mt-2 sm:mt-0 text-sm text-soft leading-relaxed">
+          <p className="mt-2 sm:mt-0 text-sm text-fg-muted leading-relaxed">
             {t("landing.grammar.body", {
               topics: grammar.topics.toLocaleString("vi-VN"),
               lessons: grammar.lessons.toLocaleString("vi-VN"),
@@ -298,7 +298,7 @@ export function LandingView({
           {t("landing.final.title")}{" "}
           <span className="display-it text-ember">{t("landing.final.titleAccent")}</span>
         </h2>
-        <p className="text-soft leading-relaxed max-w-md mx-auto mb-7">{t("landing.final.body")}</p>
+        <p className="text-fg-muted leading-relaxed max-w-md mx-auto mb-7">{t("landing.final.body")}</p>
         <button
           onClick={() => startSignIn("/")}
           className="inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-8 py-4 font-medium hover:opacity-90 transition-opacity"
@@ -306,7 +306,7 @@ export function LandingView({
           <GoogleMark size={18} />
           {t("landing.ctaPrimary")}
         </button>
-        <p className="mt-4 text-xs text-soft/70">{t("landing.final.note")}</p>
+        <p className="mt-4 text-xs text-fg-muted/70">{t("landing.final.note")}</p>
       </section>
 
       {/* Feedback before the footer, not inside it: a visitor who bounced off
@@ -321,7 +321,7 @@ export function LandingView({
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-soft/70 mb-4">{children}</p>
+    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg-muted/70 mb-4">{children}</p>
   );
 }
 
@@ -340,7 +340,7 @@ function FeatureCard({
         {icon}
       </span>
       <p className="display text-xl mb-1.5">{title}</p>
-      <p className="text-sm text-soft leading-relaxed">{body}</p>
+      <p className="text-sm text-fg-muted leading-relaxed">{body}</p>
     </div>
   );
 }
@@ -349,7 +349,7 @@ function OpenLink({ href, icon, label }: { href: string; icon: React.ReactNode; 
   return (
     <Link
       href={href}
-      className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm text-soft hover:text-ink hover:border-ink/25 transition-colors"
+      className="inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-4 py-2 text-sm text-fg-muted hover:text-fg hover:border-ink/25 transition-colors"
     >
       {icon}
       {label}

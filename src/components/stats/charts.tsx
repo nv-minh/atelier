@@ -20,7 +20,7 @@ export function ForecastChart({ data }: { data: Array<{ date: string; count: num
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.forecast")}</h3>
-          <p className="text-xs text-soft mt-0.5">{t("stats.forecastSub")}</p>
+          <p className="text-xs text-fg-muted mt-0.5">{t("stats.forecastSub")}</p>
         </div>
       </div>
       <div className="h-48">
@@ -65,7 +65,7 @@ export function AccuracyChart({ data }: { data: Array<{ date: string; accuracy: 
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.accuracy")}</h3>
-          <p className="text-xs text-soft mt-0.5">{t("stats.accuracySub")}</p>
+          <p className="text-xs text-fg-muted mt-0.5">{t("stats.accuracySub")}</p>
         </div>
       </div>
       <div className="h-48">

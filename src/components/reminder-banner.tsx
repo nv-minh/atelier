@@ -20,7 +20,7 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
         <p className="text-sm font-medium">{t(key.title, { n: reminder.n })}</p>
         {/* text-soft is an @layer components class, NOT a colour key: text-soft/70
             compiles to nothing. Use a separate opacity utility. */}
-        <p className="text-xs text-soft opacity-80 mt-0.5">{t(key.body, { n: reminder.n })}</p>
+        <p className="text-xs text-fg-muted opacity-80 mt-0.5">{t(key.body, { n: reminder.n })}</p>
       </div>
       <Link
         href={reminder.url}
@@ -28,7 +28,7 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
       >
         {t("reminders.cta")}
       </Link>
-      <button onClick={() => setHidden(true)} className="shrink-0 text-xs text-soft hover:text-ink">
+      <button onClick={() => setHidden(true)} className="shrink-0 text-xs text-fg-muted hover:text-fg">
         {t("reminders.dismiss")}
       </button>
     </div>

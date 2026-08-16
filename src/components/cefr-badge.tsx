@@ -10,6 +10,6 @@ const styles: Record<string, string> = {
 
 export function CefrBadge({ level, className }: { level: string; className?: string }) {
   return (
-    <span className={cn("pill", styles[level] ?? "text-soft", className)}>{level}</span>
+    <span className={cn("pill", styles[level] ?? "text-fg-muted", className)}>{level}</span>
   );
 }

@@ -33,7 +33,7 @@ export function GoalRing({
       className="card-atelier p-6 sm:p-7 h-full flex flex-col items-center justify-center text-center animate-fade-up"
       style={{ animationDelay: `${delay}ms`, animationFillMode: "both" }}
     >
-      <p className="text-[11px] uppercase tracking-wider text-soft font-semibold mb-4 self-start">
+      <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-4 self-start">
         {t("gamify.dailyGoal")}
       </p>
       <div className="relative" style={{ width: size, height: size }}>
@@ -64,12 +64,12 @@ export function GoalRing({
           <span className={`display text-3xl tabular-nums ${reached ? "text-moss-500" : ""}`}>
             {todayXp}
           </span>
-          <span className="text-[10px] uppercase tracking-wide text-soft">
+          <span className="text-[10px] uppercase tracking-wide text-fg-muted">
             {t("gamify.todayXp")}
           </span>
         </div>
       </div>
-      <p className="mt-4 text-xs text-soft">
+      <p className="mt-4 text-xs text-fg-muted">
         {reached ? (
           <span className="inline-flex items-center gap-1 text-moss-500 font-medium">
             <Check size={13} /> {t("gamify.goalReached")}

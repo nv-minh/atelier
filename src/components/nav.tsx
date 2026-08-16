@@ -40,7 +40,7 @@ export function Nav() {
       {/* Top bar */}
       <header
         className={cn(
-          "sticky top-0 z-40 backdrop-blur-xl bg-paper/75 border-b border-line pt-[env(safe-area-inset-top)]",
+          "sticky top-0 z-40 backdrop-blur-xl bg-paper/75 border-b border-hairline/10 pt-[env(safe-area-inset-top)]",
           isStudying && "opacity-0 pointer-events-none"
         )}
       >
@@ -67,11 +67,11 @@ export function Nav() {
                   href={l.href}
                   className={cn(
                     "relative px-3.5 py-1.5 text-sm rounded-full transition-colors",
-                    active ? "text-ink" : "text-soft hover:text-ink"
+                    active ? "text-fg" : "text-fg-muted hover:text-fg"
                   )}
                 >
                   {active && (
-                    <span className="absolute inset-0 rounded-full bg-ink/5 border border-line" />
+                    <span className="absolute inset-0 rounded-full bg-ink/5 border border-hairline/10" />
                   )}
                   <span className="relative">{l.label}</span>
                 </Link>
@@ -96,7 +96,7 @@ export function Nav() {
       {/* Mobile bottom tab bar */}
       <nav
         className={cn(
-          "md:hidden fixed bottom-0 inset-x-0 z-40 backdrop-blur-xl bg-paper/85 border-t border-line",
+          "md:hidden fixed bottom-0 inset-x-0 z-40 backdrop-blur-xl bg-paper/85 border-t border-hairline/10",
           // The safe-area inset belongs on the bar, not inside the h-16 row.
           // Inside it, the padding was subtracted from the row's fixed 64px
           // rather than added to the bar: with a 34px inset the icons overflowed
@@ -120,7 +120,7 @@ export function Nav() {
                 href={l.href}
                 className={cn(
                   "flex flex-col items-center gap-0.5 px-3 py-1 text-[10px] font-medium transition-colors",
-                  active ? "text-ember" : "text-soft"
+                  active ? "text-ember" : "text-fg-muted"
                 )}
               >
                 <span className="relative">

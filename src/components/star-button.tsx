@@ -55,7 +55,7 @@ export function StarButton({
       aria-pressed={starred}
       className={cn(
         "inline-flex items-center justify-center rounded-full p-1.5 transition-colors",
-        starred ? "text-ember" : "text-soft hover:text-ember",
+        starred ? "text-ember" : "text-fg-muted hover:text-ember",
         className
       )}
     >

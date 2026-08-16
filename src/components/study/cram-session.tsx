@@ -90,14 +90,14 @@ export function CramSession({
             <CheckCircle2 size={40} strokeWidth={1.5} />
           </motion.div>
           <h2 className="display text-display-md mb-1">{t("study.cramDone")}</h2>
-          <p className="text-soft mb-8">
+          <p className="text-fg-muted mb-8">
             {t("study.cramSummary", { seen: order.length, again: againIds.size })}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button onClick={() => { setDone(false); shuffle(); }} className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90">
               <RotateCcw size={16} /> {t("practice.practiceAgain")}
             </button>
-            <a href="/study" className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50">
+            <a href="/study" className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50">
               {t("study.changeMode")}
             </a>
           </div>
@@ -111,19 +111,19 @@ export function CramSession({
   return (
     <main className="shell w-full py-6 sm:py-8 pb-28 md:pb-10 min-h-[calc(100vh-4rem)] flex flex-col">
       <div className="flex items-center justify-between gap-4 mb-5">
-        <Link href="/study" className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink">
+        <Link href="/study" className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
           <ArrowLeft size={15} /> {t("modes.title")}
         </Link>
         <div className="flex items-center gap-3">
-          <span className="pill text-soft"><span className="h-1.5 w-1.5 rounded-full bg-ember" /> {t("modes.tagCram")}</span>
-          <button onClick={shuffle} className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink">
+          <span className="pill text-fg-muted"><span className="h-1.5 w-1.5 rounded-full bg-ember" /> {t("modes.tagCram")}</span>
+          <button onClick={shuffle} className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
             <Shuffle size={14} /> {t("topics.shuffle")}
           </button>
         </div>
       </div>
 
       <div className="flex items-center gap-3 mb-6">
-        <span className="text-xs font-mono text-soft tabular-nums whitespace-nowrap">
+        <span className="text-xs font-mono text-fg-muted tabular-nums whitespace-nowrap">
           {Math.min(seen + 1, order.length)}/{order.length}
         </span>
         <div className="flex-1 h-1.5 rounded-full bg-ink/10 overflow-hidden">
@@ -154,7 +154,7 @@ export function CramSession({
 
         {/* Cram nav: Prev / Mark review / Next */}
         <div className="mt-6 grid grid-cols-3 gap-3">
-          <button onClick={prev} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-line bg-surface py-3.5 font-medium hover:bg-paper-200/50">
+          <button onClick={prev} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 bg-surface py-3.5 font-medium hover:bg-paper-200/50">
             <ChevronLeft size={18} /> {t("topics.previous")}
           </button>
           <button onClick={markAgain} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-ember/30 text-ember py-3.5 font-medium hover:bg-ember/5">
@@ -164,7 +164,7 @@ export function CramSession({
             {t("topics.next")} <ChevronRight size={18} />
           </button>
         </div>
-        <p className="text-center text-xs text-soft mt-3">{t("topics.keyboardHint")}</p>
+        <p className="text-center text-xs text-fg-muted mt-3">{t("topics.keyboardHint")}</p>
       </div>
     </main>
   );

@@ -60,7 +60,7 @@ export function HomeView({
         {reminder && <ReminderBanner reminder={reminder} />}
         <div className="max-w-3xl">
           <div className="animate-fade-up flex flex-wrap items-center gap-3 mb-4">
-            <p className="text-sm text-soft font-mono flex items-center gap-2">
+            <p className="text-sm text-fg-muted font-mono flex items-center gap-2">
               <Sparkles size={14} className="text-ember" />
               {stats.streak > 0 ? t("home.streakActive", { n: stats.streak }) : t("home.newDay")}
             </p>
@@ -89,7 +89,7 @@ export function HomeView({
             <span className="display-it text-ember">{t("home.title2")}</span>
           </h1>
           <p
-            className="text-lg sm:text-xl text-soft leading-relaxed max-w-xl mb-8 animate-fade-up"
+            className="text-lg sm:text-xl text-fg-muted leading-relaxed max-w-xl mb-8 animate-fade-up"
             style={{ animationDelay: "140ms", animationFillMode: "both" }}
           >
             {t("home.subtitle", { n: stats.totalWords.toLocaleString() })}
@@ -104,7 +104,7 @@ export function HomeView({
             </Link>
             <Link
               href="/study"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-7 py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
             >
               {t("home.chooseMode")}
             </Link>
@@ -116,10 +116,10 @@ export function HomeView({
           aria-hidden
           className="hidden lg:flex absolute top-10 right-[-4rem] select-none pointer-events-none items-start gap-6"
         >
-          <span className="display display-it text-[26rem] leading-[0.8] text-ink/[0.06]">a</span>
+          <span className="display display-it text-[26rem] leading-[0.8] text-fg/[0.06]">a</span>
           <div className="flex flex-col gap-3 mt-8">
             <span className="h-24 w-px bg-ember/30" />
-            <span className="text-[10px] uppercase tracking-[0.3em] text-soft/40 font-mono [writing-mode:vertical-rl] rotate-180">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-fg-muted/40 font-mono [writing-mode:vertical-rl] rotate-180">
               {t("home.decoMark")}
             </span>
           </div>
@@ -183,22 +183,22 @@ export function HomeView({
     return (
       <div className="card-atelier p-6 sm:p-7 h-full flex flex-col justify-between">
         <div>
-          <p className="text-[11px] uppercase tracking-wider text-soft font-semibold mb-1">{t("home.today")}</p>
+          <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-1">{t("home.today")}</p>
           <p className="display text-4xl tabular-nums">{total}</p>
-          <p className="text-xs text-soft">{t("home.cardsStudied")}</p>
+          <p className="text-xs text-fg-muted">{t("home.cardsStudied")}</p>
         </div>
-        <div className="grid grid-cols-3 gap-3 mt-6 pt-5 border-t border-line">
+        <div className="grid grid-cols-3 gap-3 mt-6 pt-5 border-t border-hairline/10">
           <div>
             <p className="display text-xl tabular-nums text-ember">{newCards}</p>
-            <p className="text-[10px] text-soft uppercase tracking-wide">{t("home.new_")}</p>
+            <p className="text-[10px] text-fg-muted uppercase tracking-wide">{t("home.new_")}</p>
           </div>
           <div>
             <p className="display text-xl tabular-nums">{reviews}</p>
-            <p className="text-[10px] text-soft uppercase tracking-wide">{t("home.reviews")}</p>
+            <p className="text-[10px] text-fg-muted uppercase tracking-wide">{t("home.reviews")}</p>
           </div>
           <div>
             <p className="display text-xl tabular-nums text-moss-500">{total > 0 ? `${accuracy.toFixed(0)}%` : "—"}</p>
-            <p className="text-[10px] text-soft uppercase tracking-wide">{t("home.correct")}</p>
+            <p className="text-[10px] text-fg-muted uppercase tracking-wide">{t("home.correct")}</p>
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@ function ModeCard({ href, title, desc, emoji }: { href: string; title: string; d
     <Link href={href} className="group card-atelier p-5 hover:-translate-y-0.5 transition-transform border hover:border-ember/30">
       <div className="text-2xl mb-3">{emoji}</div>
       <p className="display text-lg mb-0.5">{title}</p>
-      <p className="text-xs text-soft">{desc}</p>
+      <p className="text-xs text-fg-muted">{desc}</p>
     </Link>
   );
 }

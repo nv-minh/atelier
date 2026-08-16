@@ -45,7 +45,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
 
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
-      <Link href="/notebook" className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink mb-6">
+      <Link href="/notebook" className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg mb-6">
         <ArrowLeft size={15} /> {t("nav.notebook")}
       </Link>
 
@@ -58,11 +58,11 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <h1 className="display text-display-md">{w.word}</h1>
                   <CefrBadge level={w.cefr} />
-                  {typeLabel && <span className="text-sm text-soft">· {typeLabel}</span>}
+                  {typeLabel && <span className="text-sm text-fg-muted">· {typeLabel}</span>}
                 </div>
                 <div className="flex items-center gap-3 mt-3 flex-wrap">
-                  {w.ipaUk && <span className="font-mono text-xs text-soft">UK {w.ipaUk}</span>}
-                  {w.ipaUs && <span className="font-mono text-xs text-soft">US {w.ipaUs}</span>}
+                  {w.ipaUk && <span className="font-mono text-xs text-fg-muted">UK {w.ipaUk}</span>}
+                  {w.ipaUs && <span className="font-mono text-xs text-fg-muted">US {w.ipaUs}</span>}
                   <div className="flex gap-1.5">
                     <AudioButton word={w.word} accent="uk" size="sm" />
                     <AudioButton word={w.word} accent="us" size="sm" />
@@ -82,14 +82,14 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
             )}
 
             <div className="mt-5 space-y-1.5">
-              {w.definitionEn && <p className="text-ink">{w.definitionEn}</p>}
-              {w.definitionVi && <p className="text-soft text-sm">{w.definitionVi}</p>}
+              {w.definitionEn && <p className="text-fg">{w.definitionEn}</p>}
+              {w.definitionVi && <p className="text-fg-muted text-sm">{w.definitionVi}</p>}
             </div>
 
             {w.extraDefs.length > 0 && (
               <div className="mt-4">
-                <p className="text-xs font-mono text-soft uppercase tracking-wide mb-1.5">{t("word.more")}</p>
-                <ul className="space-y-1 text-sm text-soft list-disc list-inside">
+                <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.more")}</p>
+                <ul className="space-y-1 text-sm text-fg-muted list-disc list-inside">
                   {w.extraDefs.map((d, i) => (
                     <li key={i}>{d}</li>
                   ))}
@@ -98,16 +98,16 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
             )}
 
             {(w.example || w.exampleVi) && (
-              <div className="mt-4 border-l-2 border-line pl-3">
-                <p className="text-xs font-mono text-soft uppercase tracking-wide mb-1">{t("word.example")}</p>
-                {w.example && <p className="text-sm text-ink italic">{w.example}</p>}
-                {w.exampleVi && <p className="text-sm text-soft">{w.exampleVi}</p>}
+              <div className="mt-4 border-l-2 border-hairline/10 pl-3">
+                <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1">{t("word.example")}</p>
+                {w.example && <p className="text-sm text-fg italic">{w.example}</p>}
+                {w.exampleVi && <p className="text-sm text-fg-muted">{w.exampleVi}</p>}
               </div>
             )}
 
             {detail.synonyms.length > 0 && (
               <div className="mt-4">
-                <p className="text-xs font-mono text-soft uppercase tracking-wide mb-1.5">{t("word.synonyms")}</p>
+                <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.synonyms")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.synonyms.map((s) => (
                     <Link key={s} href={`/word/${encodeURIComponent(s)}`} className="pill text-[11px] text-moss-600 dark:text-moss-400 border-moss-500/30 bg-moss-500/10 hover:border-moss-500/60">
@@ -120,7 +120,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
 
             {detail.antonyms.length > 0 && (
               <div className="mt-4">
-                <p className="text-xs font-mono text-soft uppercase tracking-wide mb-1.5">{t("word.antonyms")}</p>
+                <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.antonyms")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.antonyms.map((a) => (
                     <Link key={a} href={`/word/${encodeURIComponent(a)}`} className="pill text-[11px] text-red-400 border-red-400/30 bg-red-400/10 hover:border-red-400/60">
@@ -133,10 +133,10 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
 
             {detail.topics.length > 0 && (
               <div className="mt-4">
-                <p className="text-xs font-mono text-soft uppercase tracking-wide mb-1.5">{t("word.topics")}</p>
+                <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.topics")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.topics.map((slug) => (
-                    <Link key={slug} href={`/topics/${slug}`} className="pill text-[11px] text-soft hover:text-ink hover:border-ember/40">
+                    <Link key={slug} href={`/topics/${slug}`} className="pill text-[11px] text-fg-muted hover:text-fg hover:border-ember/40">
                       {t(`topics.names.${slug}`)}
                     </Link>
                   ))}
@@ -154,42 +154,42 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
         {/* Sidebar: SRS + history */}
         <div className="space-y-5">
           <div className="card-atelier p-6">
-            <p className="text-xs font-mono text-soft uppercase tracking-wide mb-3">{t("word.srsTitle")}</p>
+            <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-3">{t("word.srsTitle")}</p>
             {detail.card ? (
               <dl className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <dt className="text-soft">{t("word.srsState")}</dt>
-                  <dd className="text-ink">{t(stateKey[detail.card.state] ?? "common.new")}</dd>
+                  <dt className="text-fg-muted">{t("word.srsState")}</dt>
+                  <dd className="text-fg">{t(stateKey[detail.card.state] ?? "common.new")}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-soft">{t("word.srsReps")}</dt>
-                  <dd className="text-ink tabular-nums">{detail.card.reps}</dd>
+                  <dt className="text-fg-muted">{t("word.srsReps")}</dt>
+                  <dd className="text-fg tabular-nums">{detail.card.reps}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-soft">{t("word.srsLapses")}</dt>
-                  <dd className="text-ink tabular-nums">{detail.card.lapses}</dd>
+                  <dt className="text-fg-muted">{t("word.srsLapses")}</dt>
+                  <dd className="text-fg tabular-nums">{detail.card.lapses}</dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-soft">{t("word.srsDue")}</dt>
-                  <dd className="text-ink tabular-nums">{formatInterval(new Date(detail.card.due))}</dd>
+                  <dt className="text-fg-muted">{t("word.srsDue")}</dt>
+                  <dd className="text-fg tabular-nums">{formatInterval(new Date(detail.card.due))}</dd>
                 </div>
               </dl>
             ) : (
-              <p className="text-sm text-soft">{t("word.notStudied")}</p>
+              <p className="text-sm text-fg-muted">{t("word.notStudied")}</p>
             )}
           </div>
 
           <div className="card-atelier p-6">
-            <p className="text-xs font-mono text-soft uppercase tracking-wide mb-3">{t("word.history")}</p>
+            <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-3">{t("word.history")}</p>
             {detail.reviews.length === 0 ? (
-              <p className="text-sm text-soft">{t("word.noHistory")}</p>
+              <p className="text-sm text-fg-muted">{t("word.noHistory")}</p>
             ) : (
               <ul className="space-y-2">
                 {detail.reviews.map((r, i) => {
                   const rk = ratingKey[r.rating];
                   return (
                     <li key={i} className="flex items-center justify-between text-sm">
-                      <span className="text-soft tabular-nums">
+                      <span className="text-fg-muted tabular-nums">
                         {new Date(r.reviewedAt).toLocaleDateString(lang === "vi" ? "vi-VN" : "en-US")}
                       </span>
                       {rk && <span className={cn("pill text-[10px]", rk.c)}>{t(rk.key)}</span>}

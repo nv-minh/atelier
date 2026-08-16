@@ -43,7 +43,7 @@ export function WordImage({
   return (
     <div
       className={cn(
-        "flex items-center justify-center w-full overflow-hidden rounded-2xl border border-line bg-ink/5",
+        "flex items-center justify-center w-full overflow-hidden rounded-2xl border border-hairline/10 bg-ink/5",
         className
       )}
     >
@@ -80,7 +80,7 @@ export function ImageSearchLink({
       href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(word)}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn("inline-flex items-center gap-1 text-xs text-soft hover:text-ember", className)}
+      className={cn("inline-flex items-center gap-1 text-xs text-fg-muted hover:text-ember", className)}
     >
       {t("study.seeImage")} <ExternalLink size={11} />
     </a>

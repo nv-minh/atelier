@@ -36,8 +36,8 @@ export function FeedbackStrip({
         {reveal === "correct" ? t("practice.correct") : t("practice.wrong")}{" "}
         {message && <span className="font-normal opacity-80">— {message}</span>}
       </p>
-      {example && <p className="text-xs text-soft mt-1.5 italic">“{example}”</p>}
-      {exampleVi && <p className="text-xs text-soft/70 mt-0.5">{exampleVi}</p>}
+      {example && <p className="text-xs text-fg-muted mt-1.5 italic">“{example}”</p>}
+      {exampleVi && <p className="text-xs text-fg-muted/70 mt-0.5">{exampleVi}</p>}
     </motion.div>
   );
 }

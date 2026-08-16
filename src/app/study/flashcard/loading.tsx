@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/skeletons";
 export default function Loading() {
   return (
     <main className="shell w-full min-h-[calc(100vh-4rem)] flex flex-col">
-      <div className="shell w-full py-2.5 flex items-center gap-3 border-b border-line mb-6">
+      <div className="shell w-full py-2.5 flex items-center gap-3 border-b border-hairline/10 mb-6">
         <Skeleton className="h-3 w-16" />
         <Skeleton className="h-1.5 flex-1 rounded-full" />
       </div>

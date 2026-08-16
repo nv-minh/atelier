@@ -14,15 +14,15 @@ function LoginInner() {
     <main className="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
       {/* decorative */}
       <div aria-hidden className="absolute top-10 right-[-3rem] select-none pointer-events-none">
-        <span className="display display-it text-[18rem] leading-[0.8] text-ink/[0.05]">a</span>
+        <span className="display display-it text-[18rem] leading-[0.8] text-fg/[0.05]">a</span>
       </div>
 
       <div className="relative max-w-md w-full text-center">
-        <p className="text-sm text-soft font-mono mb-3">Atelier</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">Atelier</p>
         <h1 className="display text-display-md mb-4">
           {t("login.title1")} <span className="display-it text-ember">{t("login.title2")}</span>
         </h1>
-        <p className="text-soft mb-10 leading-relaxed">{t("login.subtitle")}</p>
+        <p className="text-fg-muted mb-10 leading-relaxed">{t("login.subtitle")}</p>
 
         <button
           onClick={() => signIn("google", { callbackUrl })}

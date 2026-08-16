@@ -58,15 +58,15 @@ export function ActivityHeatmap({ data }: { data: Day[] }) {
       <div className="flex items-baseline justify-between mb-5">
         <div>
           <h3 className="display text-xl">{t("stats.activity")}</h3>
-          <p className="text-xs text-soft mt-0.5">{t("stats.activitySub")}</p>
+          <p className="text-xs text-fg-muted mt-0.5">{t("stats.activitySub")}</p>
         </div>
         {hover && hover.date ? (
           <div className="text-right">
             <p className="text-sm font-semibold tabular-nums">{t("stats.nReviews", { n: hover.count })}</p>
-            <p className="text-xs text-soft">{hover.date}</p>
+            <p className="text-xs text-fg-muted">{hover.date}</p>
           </div>
         ) : (
-          <span className="text-xs text-soft font-mono">{t("stats.hoverDay")}</span>
+          <span className="text-xs text-fg-muted font-mono">{t("stats.hoverDay")}</span>
         )}
       </div>
 
@@ -77,7 +77,7 @@ export function ActivityHeatmap({ data }: { data: Day[] }) {
             {monthLabels.map((m) => (
               <span
                 key={m.idx}
-                className="text-[10px] text-soft absolute"
+                className="text-[10px] text-fg-muted absolute"
                 style={{ left: `calc(${m.idx} * 15px)` }}
               >
                 {m.label}
@@ -108,13 +108,13 @@ export function ActivityHeatmap({ data }: { data: Day[] }) {
             ))}
           </div>
           <div className="flex items-center justify-end gap-1.5 mt-2">
-            <span className="text-[10px] text-soft">{t("stats.less")}</span>
+            <span className="text-[10px] text-fg-muted">{t("stats.less")}</span>
             <div className="h-3 w-3 rounded-sm bg-ink/8" />
             <div className="h-3 w-3 rounded-sm bg-ember/25" />
             <div className="h-3 w-3 rounded-sm bg-ember/50" />
             <div className="h-3 w-3 rounded-sm bg-ember/75" />
             <div className="h-3 w-3 rounded-sm bg-ember" />
-            <span className="text-[10px] text-soft">{t("stats.more")}</span>
+            <span className="text-[10px] text-fg-muted">{t("stats.more")}</span>
           </div>
         </div>
       </div>

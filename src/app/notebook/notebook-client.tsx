@@ -49,7 +49,7 @@ export function NotebookClient({
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
       <header className="mb-6 max-w-2xl">
-        <p className="text-sm text-soft font-mono mb-3">{t("notebook.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("notebook.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("notebook.title")} <span className="display-it text-ember">{t("notebook.titleAccent")}</span>
         </h1>
@@ -57,7 +57,7 @@ export function NotebookClient({
 
       {/* Tabs — kept visible for guests so the page reads as the notebook,
           just empty, rather than as a generic access-denied screen. */}
-      <div className="flex gap-2 mb-8 border-b border-line">
+      <div className="flex gap-2 mb-8 border-b border-hairline/10">
         <TabLink href="/notebook" active={tab === "starred"}>
           <Star size={14} /> {t("notebook.tabStarred")} ({entries.length})
         </TabLink>
@@ -96,8 +96,8 @@ function TabLink({
       className={cn(
         "inline-flex items-center gap-1.5 px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors",
         active
-          ? "border-ember text-ink"
-          : "border-transparent text-soft hover:text-ink"
+          ? "border-ember text-fg"
+          : "border-transparent text-fg-muted hover:text-fg"
       )}
     >
       {children}
@@ -116,7 +116,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
           <Star size={20} />
         </span>
         <h2 className="display text-xl mb-2">{t("notebook.emptyTitle")}</h2>
-        <p className="text-soft text-sm mb-6">{t("notebook.emptyBody")}</p>
+        <p className="text-fg-muted text-sm mb-6">{t("notebook.emptyBody")}</p>
         <Link
           href="/browse"
           className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 py-2 text-sm font-medium hover:opacity-90 transition-opacity"
@@ -129,7 +129,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
 
   return (
     <>
-      <p className="text-soft mb-5">
+      <p className="text-fg-muted mb-5">
         {n === 1 ? t("notebook.subtitleOne") : t("notebook.subtitle", { n })}
       </p>
 
@@ -143,12 +143,12 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
         </Link>
         <Link
           href="/study/cram?scope=starred"
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium text-soft hover:text-ink hover:border-ember/40 transition-colors"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-5 py-2.5 text-sm font-medium text-fg-muted hover:text-fg hover:border-ember/40 transition-colors"
         >
           <Zap size={16} /> {t("notebook.cramStarred")}
         </Link>
       </div>
-      <p className="text-xs text-soft/80 mb-6">{t("notebook.dailyLimitNote")}</p>
+      <p className="text-xs text-fg-muted/80 mb-6">{t("notebook.dailyLimitNote")}</p>
 
       <div className="grid gap-2.5">
         {entries.map((w) => (
@@ -170,14 +170,14 @@ function LeechesPanel({ leeches }: { leeches: Entry[] }) {
           <Flame size={20} />
         </span>
         <h2 className="display text-xl mb-2">{t("notebook.leechEmptyTitle")}</h2>
-        <p className="text-soft text-sm">{t("notebook.leechEmptyBody")}</p>
+        <p className="text-fg-muted text-sm">{t("notebook.leechEmptyBody")}</p>
       </div>
     );
   }
 
   return (
     <>
-      <p className="text-soft mb-5 max-w-2xl">{t("notebook.leechExplainer")}</p>
+      <p className="text-fg-muted mb-5 max-w-2xl">{t("notebook.leechExplainer")}</p>
 
       <div className="mb-6">
         <Link
@@ -207,7 +207,7 @@ function KnownPanel({ known }: { known: Entry[] }) {
           <CheckCheck size={18} strokeWidth={2} />
         </span>
         <h2 className="display text-xl mb-2">{t("known.filter")}</h2>
-        <p className="text-soft text-sm">{t("known.mark")}</p>
+        <p className="text-fg-muted text-sm">{t("known.mark")}</p>
       </div>
     );
   }
@@ -216,7 +216,7 @@ function KnownPanel({ known }: { known: Entry[] }) {
     <div>
       {/* Says out loud that the mark comes off — a one-way "I know this" would
           lose the word to a mistap, since selection drops it to 2% weight. */}
-      <p className="text-soft mb-5 max-w-2xl text-sm">{t("known.unmarkHint")}</p>
+      <p className="text-fg-muted mb-5 max-w-2xl text-sm">{t("known.unmarkHint")}</p>
       <div className="space-y-2.5">
         {known.map((w) => (
           <WordRow key={w.wordId} w={w} showKnown />
@@ -240,11 +240,11 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
             {w.word}
           </Link>
           <CefrBadge level={w.cefr} />
-          {typeLabel && <span className="text-xs text-soft">· {typeLabel}</span>}
+          {typeLabel && <span className="text-xs text-fg-muted">· {typeLabel}</span>}
           {w.note && <StickyNote size={13} className="text-ember" aria-label={t("notebook.hasNote")} />}
         </div>
-        {w.definitionEn && <p className="text-sm text-soft mt-1 line-clamp-2">{w.definitionEn}</p>}
-        {w.definitionVi && <p className="text-xs text-soft/70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
+        {w.definitionEn && <p className="text-sm text-fg-muted mt-1 line-clamp-2">{w.definitionEn}</p>}
+        {w.definitionVi && <p className="text-xs text-fg-muted/70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
       </div>
       <div className="flex flex-col items-end gap-2 shrink-0">
         {leech && w.card ? (
@@ -260,10 +260,10 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
         {st ? (
           <span className={cn("pill text-[9px]", st.c)}>{t(st.key)}</span>
         ) : (
-          <span className="pill text-[9px] text-soft">—</span>
+          <span className="pill text-[9px] text-fg-muted">—</span>
         )}
         {leech && w.card && (
-          <span className="text-[10px] text-soft tabular-nums">
+          <span className="text-[10px] text-fg-muted tabular-nums">
             {t("word.srsDue")} {overdue ? t("notebook.dueNow") : formatInterval(new Date(w.card.due))}
           </span>
         )}

@@ -11,10 +11,10 @@ export function MasteryBadge({ mastery, answered }: { mastery: number | null; an
   const { t } = useI18n();
   if (mastery == null) {
     return answered > 0 ? (
-      <span className="pill text-soft">{t("grammar.masteryNew")}</span>
+      <span className="pill text-fg-muted">{t("grammar.masteryNew")}</span>
     ) : null;
   }
-  const tone = mastery >= 90 ? "text-moss-500" : mastery >= 50 ? "text-ember" : "text-soft";
+  const tone = mastery >= 90 ? "text-moss-500" : mastery >= 50 ? "text-ember" : "text-fg-muted";
   return <span className={`display text-2xl tabular-nums ${tone}`}>{mastery}%</span>;
 }
 
@@ -33,11 +33,11 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
       <header className="mb-8 max-w-2xl">
-        <p className="text-sm text-soft font-mono mb-3">{t("grammar.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("grammar.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("grammar.title")} <span className="display-it text-ember">{t("grammar.titleAccent")}</span>
         </h1>
-        <p className="text-soft text-lg leading-relaxed">
+        <p className="text-fg-muted text-lg leading-relaxed">
           {t("grammar.subtitle", {
             lessons: hub.totals.lessonsTotal.toLocaleString(),
             questions: totalQuestions.toLocaleString(),
@@ -55,13 +55,13 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
             <BookOpen size={22} strokeWidth={1.7} />
           </span>
           <span className="min-w-0 flex-1">
-            <span className="block text-[11px] uppercase tracking-wider text-soft font-semibold">
+            <span className="block text-[11px] uppercase tracking-wider text-fg-muted font-semibold">
               {authed && hub.totals.lessonsRead > 0 ? t("grammar.continueTitle") : t("grammar.startTitle")}
             </span>
             <span className="block truncate display text-lg">
               {localName(c.lessonTitleEn, c.lessonTitleVi, lang)}
             </span>
-            <span className="block text-xs text-soft truncate">
+            <span className="block text-xs text-fg-muted truncate">
               {localName(c.topicNameEn, c.topicNameVi, lang)}
             </span>
           </span>
@@ -87,7 +87,7 @@ export function HubView({ hub, authed }: { hub: GrammarHub; authed: boolean }) {
                   <MasteryBadge mastery={tp.mastery} answered={tp.answered} />
                 </div>
                 <div className="mt-auto">
-                  <div className="flex items-center justify-between text-[11px] text-soft mb-1.5">
+                  <div className="flex items-center justify-between text-[11px] text-fg-muted mb-1.5">
                     <span>{t("grammar.lessonsRead", { read: tp.lessonsRead, total: tp.lessonsTotal })}</span>
                     {tp.testQuestionCount > 0 && (
                       <span>{t("grammar.questionsN", { n: tp.testQuestionCount })}</span>

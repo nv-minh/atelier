@@ -19,7 +19,7 @@ export function LangToggle({ variant = "icon" }: { variant?: "icon" | "full" }) 
               onClick={() => setLang(l.code as Lang)}
               className={cn(
                 "flex flex-col items-center gap-1 rounded-2xl border p-4 transition-colors",
-                active ? "border-ember bg-ember/5 text-ember" : "border-line text-soft hover:text-ink"
+                active ? "border-ember bg-ember/5 text-ember" : "border-hairline/10 text-fg-muted hover:text-fg"
               )}
             >
               <span className="text-sm font-semibold">{l.short}</span>
@@ -37,14 +37,14 @@ export function LangToggle({ variant = "icon" }: { variant?: "icon" | "full" }) 
     <button
       onClick={() => setLang(next as Lang)}
       aria-label="Switch language"
-      className="h-9 px-2.5 rounded-full border border-line flex items-center gap-1 text-xs font-semibold text-soft hover:text-ink hover:border-ink/30 transition-colors"
+      className="h-9 px-2.5 rounded-full border border-hairline/10 flex items-center gap-1 text-xs font-semibold text-fg-muted hover:text-fg hover:border-ink/30 transition-colors"
     >
       {LANGS.map((l, i) => (
         <span
           key={l.code}
           className={cn(
             "relative px-1.5 py-0.5 rounded-full transition-colors",
-            lang === l.code ? "text-ember" : "text-soft/50"
+            lang === l.code ? "text-ember" : "text-fg-muted/50"
           )}
         >
           {l.short}

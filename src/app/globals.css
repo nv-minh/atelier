@@ -86,21 +86,9 @@
     background-color: rgb(var(--surface));
   }
 
-  .text-soft {
-    color: rgb(var(--ink-soft));
-  }
-
-  .text-ink {
-    color: rgb(var(--ink));
-  }
-
   /* LEGACY — xoá ở Plan 8, xem spec §7 R4 (32 chỗ dùng) */
   .bg-paper {
     background-color: rgb(var(--paper));
-  }
-
-  .border-line {
-    border-color: rgb(var(--ink-line) / 0.1);
   }
 
   /* Display heading with optical sizing.

@@ -80,26 +80,26 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
 
   return (
     <main className="shell py-8 sm:py-12 pb-28 md:pb-14 max-w-3xl">
-      <Link href={`/grammar/${topic.slug}`} className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink mb-5">
+      <Link href={`/grammar/${topic.slug}`} className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg mb-5">
         <ArrowLeft size={15} /> {topicName}
       </Link>
 
       <header className="mb-5">
-        <p className="text-xs font-mono text-soft mb-2">
+        <p className="text-xs font-mono text-fg-muted mb-2">
           {t("grammar.lesson.ofTopic", { order: lesson.order, topic: topicName })}
         </p>
         <h1 className="display text-display-md">{title}</h1>
       </header>
 
       {viMissing && (
-        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 text-xs text-soft">
+        <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-hairline/10 px-3.5 py-1.5 text-xs text-fg-muted">
           {t("grammar.lesson.viUpdating")}
         </p>
       )}
 
       {legend.length > 0 && (
         <div className="mb-6 flex flex-wrap items-center gap-1.5">
-          <span className="text-[10px] uppercase tracking-wider text-soft font-semibold mr-1">
+          <span className="text-[10px] uppercase tracking-wider text-fg-muted font-semibold mr-1">
             {t("grammar.legend.title")}
           </span>
           {legend.map((l) => (
@@ -130,23 +130,23 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
         {topic.testQuestionCount > 0 && (
           <Link
             href={`/grammar/${topic.slug}/test`}
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium hover:bg-paper-200/50"
+            className="inline-flex items-center gap-2 rounded-full border border-hairline/10 px-5 py-2.5 text-sm font-medium hover:bg-paper-200/50"
           >
             <PencilRuler size={15} /> {t("grammar.lesson.takeTest")}
           </Link>
         )}
       </div>
 
-      <nav className="mt-8 flex items-center justify-between border-t border-line pt-5">
+      <nav className="mt-8 flex items-center justify-between border-t border-hairline/10 pt-5">
         {data.prevOrder != null ? (
-          <Link href={`/grammar/${topic.slug}/lesson/${data.prevOrder}`} className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink">
+          <Link href={`/grammar/${topic.slug}/lesson/${data.prevOrder}`} className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
             <ArrowLeft size={15} /> {t("grammar.lesson.prev")}
           </Link>
         ) : (
           <span />
         )}
         {data.nextOrder != null ? (
-          <Link href={`/grammar/${topic.slug}/lesson/${data.nextOrder}`} className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink">
+          <Link href={`/grammar/${topic.slug}/lesson/${data.nextOrder}`} className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
             {t("grammar.lesson.next")} <ArrowRight size={15} />
           </Link>
         ) : (

@@ -20,17 +20,17 @@ export function LegalDocView({ vi, en }: { vi: LegalDoc; en: LegalDoc }) {
   return (
     <main className="shell pb-28 md:pb-20 pt-10 sm:pt-16">
       <article className="max-w-2xl">
-        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-soft/70 mb-4">
+        <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg-muted/70 mb-4">
           {updatedLabel}: {updated}
         </p>
         <h1 className="display text-display-lg mb-5">{doc.title}</h1>
-        <p className="text-lg text-soft leading-relaxed mb-12">{doc.intro}</p>
+        <p className="text-lg text-fg-muted leading-relaxed mb-12">{doc.intro}</p>
 
         {doc.sections.map((s) => (
           <section key={s.heading} className="mb-10">
             <h2 className="display text-xl mb-3">{s.heading}</h2>
             {s.body.map((p, i) => (
-              <p key={i} className="text-soft leading-relaxed mb-3">
+              <p key={i} className="text-fg-muted leading-relaxed mb-3">
                 {p}
               </p>
             ))}

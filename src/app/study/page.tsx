@@ -36,11 +36,11 @@ export default function StudyPage() {
   return (
     <main className="shell py-10 sm:py-16 pb-28 md:pb-16">
       <header className="mb-10 sm:mb-14 max-w-2xl">
-        <p className="text-sm text-soft mb-3 font-mono">{t("modes.header")}</p>
+        <p className="text-sm text-fg-muted mb-3 font-mono">{t("modes.header")}</p>
         <h1 className="display text-display-lg mb-4">
           {t("modes.title")} <span className="display-it text-ember">{t("modes.titleAccent")}</span>
         </h1>
-        <p className="text-soft text-lg leading-relaxed">{t("modes.subtitle")}</p>
+        <p className="text-fg-muted text-lg leading-relaxed">{t("modes.subtitle")}</p>
       </header>
 
       <div className="flex flex-col gap-3 mb-2">
@@ -66,16 +66,16 @@ export default function StudyPage() {
                 <span className={`grid h-11 w-11 place-items-center rounded-2xl bg-ink/5 ${m.accent}`}>
                   <Icon size={20} strokeWidth={1.75} />
                 </span>
-                <span className="pill text-soft">{m.tag}</span>
+                <span className="pill text-fg-muted">{m.tag}</span>
               </div>
               <h3 className="display text-2xl mb-2 flex items-center gap-1.5">
                 {m.title}
                 <ArrowUpRight
                   size={18}
-                  className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-soft"
+                  className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-fg-muted"
                 />
               </h3>
-              <p className="text-soft text-sm leading-relaxed">{m.desc}</p>
+              <p className="text-fg-muted text-sm leading-relaxed">{m.desc}</p>
             </Link>
           );
         })}

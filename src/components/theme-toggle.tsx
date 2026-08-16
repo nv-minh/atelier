@@ -10,7 +10,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle theme"
-      className="relative h-9 w-9 rounded-full border border-line flex items-center justify-center overflow-hidden hover:bg-paper-200/60 transition-colors"
+      className="relative h-9 w-9 rounded-full border border-hairline/10 flex items-center justify-center overflow-hidden hover:bg-paper-200/60 transition-colors"
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.span

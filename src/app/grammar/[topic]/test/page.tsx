@@ -39,8 +39,8 @@ export default async function GrammarTestPage({ params }: { params: { topic: str
   if (ids.length === 0) {
     return (
       <main className="shell py-14 max-w-xl text-center">
-        <p className="text-soft mb-6">Chủ đề này chưa có câu hỏi kiểm tra.</p>
-        <Link href={`/grammar/${topic.slug}`} className="inline-flex rounded-full border border-line px-5 py-2.5 text-sm font-medium">
+        <p className="text-fg-muted mb-6">Chủ đề này chưa có câu hỏi kiểm tra.</p>
+        <Link href={`/grammar/${topic.slug}`} className="inline-flex rounded-full border border-hairline/10 px-5 py-2.5 text-sm font-medium">
           ← {topic.nameVi ?? topic.nameEn}
         </Link>
       </main>

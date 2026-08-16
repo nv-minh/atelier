@@ -42,12 +42,12 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
         // grey-washed the user row's ember border at every rank but 1st. This
         // sibling-combinator hairline compiles to (0,1,1) — still higher than
         // a plain utility — so the user row's own border needs `!` to win.
-        "[&+li]:border-t [&+li]:border-line",
+        "[&+li]:border-t [&+li]:border-hairline/10",
         isUser && "bg-ember/8 border !border-ember/20"
       )}
     >
       <span
-        className={cn("w-6 text-right font-mono text-sm", isUser ? "text-ember" : "text-soft")}
+        className={cn("w-6 text-right font-mono text-sm", isUser ? "text-ember" : "text-fg-muted")}
         aria-label={`${t("leaderboard.rank")} ${entry.rank}`}
       >
         {entry.rank}
@@ -67,7 +67,7 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
           </span>
           {entry.streak > 0 && (
             <span
-              className="inline-flex shrink-0 items-center gap-0.5 text-xs text-soft"
+              className="inline-flex shrink-0 items-center gap-0.5 text-xs text-fg-muted"
               aria-label={t("leaderboard.streakLabel", { n: entry.streak })}
             >
               <Flame size={11} className="text-ember" />
@@ -75,7 +75,7 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
             </span>
           )}
         </span>
-        {activeLabel && <span className="block text-xs text-soft opacity-70">{activeLabel}</span>}
+        {activeLabel && <span className="block text-xs text-fg-muted opacity-70">{activeLabel}</span>}
       </span>
 
       {entry.delta !== null && entry.delta !== 0 && (

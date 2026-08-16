@@ -21,17 +21,17 @@ export function TopicsGridView({
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14">
       <header className="mb-10 max-w-2xl">
-        <p className="text-sm text-soft font-mono mb-3">{t("topics.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("topics.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("topics.title")} <span className="display-it text-ember">{t("topics.titleAccent")}</span>
         </h1>
-        <p className="text-soft text-lg leading-relaxed">
+        <p className="text-fg-muted text-lg leading-relaxed">
           {t("topics.subtitle", { n: totalCovered.toLocaleString(), t: topics.length })}
         </p>
         {!authed && (
           <p
             id="topics-locked-hint"
-            className="mt-4 inline-flex items-center gap-2 rounded-full border border-line px-3.5 py-1.5 text-xs text-soft"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-hairline/10 px-3.5 py-1.5 text-xs text-fg-muted"
           >
             <Lock size={12} className="text-ember" />
             {t("auth.reasons.topic")}
@@ -53,24 +53,24 @@ export function TopicsGridView({
               <span className="text-3xl">{tp.emoji}</span>
               <span className="flex items-center gap-2">
                 {!authed && (
-                  <Lock size={13} className="text-soft/50 group-hover:text-ember transition-colors" aria-hidden />
+                  <Lock size={13} className="text-fg-muted/50 group-hover:text-ember transition-colors" aria-hidden />
                 )}
                 <span className={cn("display text-2xl tabular-nums", tp.accent)}>{tp.count}</span>
               </span>
             </div>
             <h3 className="display text-xl mb-1">{t(`topics.names.${tp.slug}`)}</h3>
-            <p className="text-xs text-soft leading-relaxed mb-4 flex-1">{t(`topics.blurbs.${tp.slug}`)}</p>
+            <p className="text-xs text-fg-muted leading-relaxed mb-4 flex-1">{t(`topics.blurbs.${tp.slug}`)}</p>
             {/* The arrow is the click affordance for every card, so it must render
                 regardless of `preview` — a topic can have zero preview words while
                 still being a fully clickable link. Only the chips are conditional. */}
-            <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-line">
+            <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-hairline/10">
               {tp.preview.length > 0 &&
                 tp.preview.map((w) => (
-                  <span key={w} className="text-[11px] rounded-full bg-ink/5 text-soft px-2 py-0.5">
+                  <span key={w} className="text-[11px] rounded-full bg-ink/5 text-fg-muted px-2 py-0.5">
                     {w}
                   </span>
                 ))}
-              <span className="text-[11px] text-soft/60 px-1 self-center ml-auto" aria-hidden>
+              <span className="text-[11px] text-fg-muted/60 px-1 self-center ml-auto" aria-hidden>
                 →
               </span>
             </div>

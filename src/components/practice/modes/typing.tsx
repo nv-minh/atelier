@@ -42,9 +42,9 @@ export function TypingMode({ item, reveal, onAnswer }: ModeViewProps) {
     <div className="max-w-xl mx-auto">
       <div className="text-center mb-8">
         <CefrBadge level={item.cefr} className="mb-4" />
-        <p className="text-xs text-soft font-mono mb-2">{t("practice.typeFor")}</p>
+        <p className="text-xs text-fg-muted font-mono mb-2">{t("practice.typeFor")}</p>
         <p className="display text-xl sm:text-2xl leading-snug">{item.definitionEn}</p>
-        {item.typeVi && <p className="text-xs text-soft mt-2">{item.typeVi}</p>}
+        {item.typeVi && <p className="text-xs text-fg-muted mt-2">{item.typeVi}</p>}
       </div>
 
       <form onSubmit={submit}>
@@ -62,7 +62,7 @@ export function TypingMode({ item, reveal, onAnswer }: ModeViewProps) {
               ? reveal === "correct"
                 ? "border-moss-500"
                 : "border-red-400"
-              : "border-line focus:border-ember"
+              : "border-hairline/10 focus:border-ember"
           }`}
         />
         {!shown && (
@@ -78,15 +78,15 @@ export function TypingMode({ item, reveal, onAnswer }: ModeViewProps) {
 
       {shown && (
         <div className="mt-4 text-center">
-          <p className="text-sm text-soft">
-            {t("practice.answer")} <span className="display text-xl text-ink">{item.word}</span>
+          <p className="text-sm text-fg-muted">
+            {t("practice.answer")} <span className="display text-xl text-fg">{item.word}</span>
             <span className="font-mono text-xs ml-2">{item.ipaUk}</span>
           </p>
           <div className="flex justify-center gap-1.5 mt-2">
             <AudioButton word={item.word} accent="us" size="sm" />
             <AudioButton word={item.word} accent="uk" size="sm" />
           </div>
-          {item.definitionVi && <p className="text-xs text-soft/70 mt-2">{item.definitionVi}</p>}
+          {item.definitionVi && <p className="text-xs text-fg-muted/70 mt-2">{item.definitionVi}</p>}
         </div>
       )}
 

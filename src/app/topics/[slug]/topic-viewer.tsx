@@ -29,8 +29,8 @@ export function TopicViewer({
       <main className="shell py-20 text-center">
         <div className="text-4xl mb-4">{topic.emoji}</div>
         <h1 className="display text-display-md mb-3">{t(`topics.names.${topic.slug}`)}</h1>
-        <p className="text-soft mb-8">{t("topics.empty")}</p>
-        <Link href="/topics" className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink">
+        <p className="text-fg-muted mb-8">{t("topics.empty")}</p>
+        <Link href="/topics" className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
           <ArrowLeft size={15} /> {t("topics.topicsBack")}
         </Link>
       </main>
@@ -106,17 +106,17 @@ export function TopicViewer({
       <div className="flex items-center justify-between gap-4 mb-5">
         <Link
           href="/topics"
-          className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg transition-colors"
         >
           <ArrowLeft size={15} /> {t("topics.topicsBack")}
         </Link>
         <div className="flex items-center gap-3">
-          <span className="pill text-soft">
+          <span className="pill text-fg-muted">
             <span className="h-1.5 w-1.5 rounded-full bg-cefr-a2" /> {t("topics.practiceTag")}
           </span>
           <button
             onClick={shuffle}
-            className="inline-flex items-center gap-1.5 text-sm text-soft hover:text-ink transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg transition-colors"
           >
             <Shuffle size={14} /> {t("topics.shuffle")}
           </button>
@@ -128,7 +128,7 @@ export function TopicViewer({
           <span className="text-4xl">{topic.emoji}</span>
           <h1 className="display text-display-md">{t(`topics.names.${topic.slug}`)}</h1>
         </div>
-        <p className="text-soft text-sm">
+        <p className="text-fg-muted text-sm">
           {t("topics.nOfTotal", { n: order.length, t: total })} · <span className="italic">{t("topics.practiceNote")}</span>
         </p>
       </div>
@@ -142,7 +142,7 @@ export function TopicViewer({
             transition={{ duration: 0.3 }}
           />
         </div>
-        <span className="text-xs font-mono text-soft tabular-nums whitespace-nowrap">
+        <span className="text-xs font-mono text-fg-muted tabular-nums whitespace-nowrap">
           {index + 1}/{order.length}
         </span>
       </div>
@@ -172,7 +172,7 @@ export function TopicViewer({
         <div className="mt-6 grid grid-cols-2 gap-3">
           <button
             onClick={prev}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-line bg-surface py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 bg-surface py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
           >
             <ChevronLeft size={18} /> {t("topics.previous")}
           </button>
@@ -183,7 +183,7 @@ export function TopicViewer({
             {t("topics.next")} <ChevronRight size={18} />
           </button>
         </div>
-        <p className="text-center text-xs text-soft mt-3">
+        <p className="text-center text-xs text-fg-muted mt-3">
           <kbd className="font-mono">←</kbd> <kbd className="font-mono">→</kbd> {t("topics.keyboardHint")}
         </p>
       </div>

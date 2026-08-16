@@ -32,11 +32,11 @@ export function LevelCard({
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-[11px] uppercase tracking-wider text-soft font-semibold mb-1">
+          <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-1">
             {t("gamify.level")}
           </p>
           <p className="display text-4xl tabular-nums">{level}</p>
-          <p className="text-xs text-soft mt-0.5">{t("gamify.xpTotal", { n: xp.toLocaleString() })}</p>
+          <p className="text-xs text-fg-muted mt-0.5">{t("gamify.xpTotal", { n: xp.toLocaleString() })}</p>
         </div>
         <span className="inline-grid h-9 w-9 place-items-center rounded-full bg-ember/10 text-ember">
           <Trophy size={16} />
@@ -45,10 +45,10 @@ export function LevelCard({
 
       <div className="mt-5">
         <div className="flex items-baseline justify-between mb-1.5">
-          <span className="text-[11px] uppercase tracking-wide text-soft">
+          <span className="text-[11px] uppercase tracking-wide text-fg-muted">
             {t("gamify.xpToNext", { n: Math.max(0, nextLevelXp - currentLevelXp) })}
           </span>
-          <span className="text-xs text-soft tabular-nums">
+          <span className="text-xs text-fg-muted tabular-nums">
             {currentLevelXp} / {nextLevelXp}
           </span>
         </div>

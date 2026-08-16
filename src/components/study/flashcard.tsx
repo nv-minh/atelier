@@ -110,7 +110,7 @@ function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "rev
             <AudioButton word={card.word} accent="us" size="sm" />
           </div>
         )}
-        {dir !== "forward" && <span className="pill text-soft">{dir === "reverse" ? t("study.dirReverse") : t("study.dirCloze")}</span>}
+        {dir !== "forward" && <span className="pill text-fg-muted">{dir === "reverse" ? t("study.dirReverse") : t("study.dirCloze")}</span>}
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center text-center gap-3 px-2">
@@ -125,24 +125,24 @@ function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "rev
               {card.word}
             </motion.h2>
             {(card.ipaUk || card.ipaUs) && (
-              <p className="font-mono text-sm sm:text-base text-soft">{card.ipaUk || card.ipaUs}</p>
+              <p className="font-mono text-sm sm:text-base text-fg-muted">{card.ipaUk || card.ipaUs}</p>
             )}
-            {card.typeVi && <span className="pill text-soft mt-1">{card.typeVi}</span>}
+            {card.typeVi && <span className="pill text-fg-muted mt-1">{card.typeVi}</span>}
           </>
         )}
         {dir === "reverse" && (
           <>
-            <p className="text-lg sm:text-2xl leading-relaxed text-ink max-w-lg">{card.definitionEn}</p>
-            {card.definitionVi && <p className="text-sm text-soft max-w-md">{card.definitionVi}</p>}
-            {card.typeVi && <span className="pill text-soft mt-1">{card.typeVi}</span>}
+            <p className="text-lg sm:text-2xl leading-relaxed text-fg max-w-lg">{card.definitionEn}</p>
+            {card.definitionVi && <p className="text-sm text-fg-muted max-w-md">{card.definitionVi}</p>}
+            {card.typeVi && <span className="pill text-fg-muted mt-1">{card.typeVi}</span>}
           </>
         )}
         {dir === "cloze" && clozeText && (
-          <p className="display text-xl sm:text-3xl leading-relaxed text-ink max-w-lg">{clozeText}</p>
+          <p className="display text-xl sm:text-3xl leading-relaxed text-fg max-w-lg">{clozeText}</p>
         )}
       </div>
 
-      <p className="text-center text-xs text-soft/70">
+      <p className="text-center text-xs text-fg-muted/70">
         {t("study.tapToReveal")} · <span className="font-mono">↵</span>
       </p>
     </div>
@@ -156,29 +156,29 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-baseline gap-2">
           <span className="display text-xl sm:text-2xl">{card.word}</span>
-          {card.ipaUk && <span className="font-mono text-xs text-soft">{card.ipaUk}</span>}
+          {card.ipaUk && <span className="font-mono text-xs text-fg-muted">{card.ipaUk}</span>}
         </div>
         <CefrBadge level={card.cefr} />
       </div>
 
       {card.definitionEn && (
-        <p className="text-base sm:text-lg leading-relaxed text-ink mb-1.5">
+        <p className="text-base sm:text-lg leading-relaxed text-fg mb-1.5">
           {card.definitionEn}
         </p>
       )}
       {card.definitionVi && (
-        <p className="text-sm sm:text-base leading-relaxed text-soft mb-4">
+        <p className="text-sm sm:text-base leading-relaxed text-fg-muted mb-4">
           {card.definitionVi}
         </p>
       )}
 
       {card.example && (
         <blockquote className="border-l-2 border-ember/40 pl-3 my-4">
-          <p className="display display-it text-base sm:text-lg text-soft leading-snug">
+          <p className="display display-it text-base sm:text-lg text-fg-muted leading-snug">
             “{card.example}”
           </p>
           {card.exampleVi && (
-            <p className="text-xs sm:text-sm text-soft/70 leading-snug mt-1.5 not-italic">
+            <p className="text-xs sm:text-sm text-fg-muted/70 leading-snug mt-1.5 not-italic">
               {card.exampleVi}
             </p>
           )}
@@ -188,7 +188,7 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
       <div className="grid sm:grid-cols-2 gap-3 mt-4">
         {card.synonyms.length > 0 && (
           <div>
-            <p className="text-[10px] uppercase tracking-wider text-soft font-semibold mb-1.5">{t("study.synonyms")}</p>
+            <p className="text-[10px] uppercase tracking-wider text-fg-muted font-semibold mb-1.5">{t("study.synonyms")}</p>
             <div className="flex flex-wrap gap-1.5">
               {card.synonyms.filter((s) => s.toLowerCase() !== card.word.toLowerCase()).slice(0, 5).map((s) => (
                 <span key={s} className="text-xs rounded-full bg-moss-500/10 text-moss-600 dark:text-moss-400 px-2 py-0.5">
@@ -200,7 +200,7 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
         )}
         {card.antonyms.length > 0 && (
           <div>
-            <p className="text-[10px] uppercase tracking-wider text-soft font-semibold mb-1.5">{t("study.antonyms")}</p>
+            <p className="text-[10px] uppercase tracking-wider text-fg-muted font-semibold mb-1.5">{t("study.antonyms")}</p>
             <div className="flex flex-wrap gap-1.5">
               {card.antonyms.slice(0, 4).map((s) => (
                 <span key={s} className="text-xs rounded-full bg-red-500/10 text-red-500 px-2 py-0.5">
@@ -214,10 +214,10 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
 
       {card.extraDefs.length > 0 && (
         <details className="mt-4 group">
-          <summary className="text-xs text-soft cursor-pointer hover:text-ink list-none flex items-center gap-1">
+          <summary className="text-xs text-fg-muted cursor-pointer hover:text-fg list-none flex items-center gap-1">
             <span className="transition-transform group-open:rotate-90">▸</span> {t("study.moreDefs")}
           </summary>
-          <ul className="mt-2 space-y-1 text-sm text-soft pl-4">
+          <ul className="mt-2 space-y-1 text-sm text-fg-muted pl-4">
             {card.extraDefs.slice(0, 3).map((d, i) => (
               <li key={i} className="leading-relaxed">{d}</li>
             ))}
@@ -229,7 +229,7 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
           nothing is left behind on the cards that have no picture */}
       <WordImage imageUrl={card.imageUrl} word={card.word} fit="cover" className="mt-4 h-44" />
 
-      <div className="flex items-center gap-2 mt-5 pt-4 border-t border-line">
+      <div className="flex items-center gap-2 mt-5 pt-4 border-t border-hairline/10">
         <AudioButton word={card.word} accent="uk" size="sm" />
         <AudioButton word={card.word} accent="us" size="sm" />
         <StarButton wordId={card.id} initialStarred={!!card.starred} size="sm" className="ml-auto" />

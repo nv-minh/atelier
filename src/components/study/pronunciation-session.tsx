@@ -342,16 +342,16 @@ function SupportedSession({
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
       {toaster}
       {/* HUD */}
-      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
+      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-hairline/10">
         <div className="shell py-2.5 flex items-center justify-between gap-3 text-sm">
-          <span className="text-soft tabular-nums whitespace-nowrap" aria-live="polite">
+          <span className="text-fg-muted tabular-nums whitespace-nowrap" aria-live="polite">
             {t("study.pronProgress", { n: idx + 1, total: order.length })}
           </span>
           <div className="flex items-center gap-4 tabular-nums">
-            <span className="text-soft">
-              <span className="text-ink font-semibold">{fmtTime(elapsed)}</span>
+            <span className="text-fg-muted">
+              <span className="text-fg font-semibold">{fmtTime(elapsed)}</span>
             </span>
-            <span className="text-soft">
+            <span className="text-fg-muted">
               {t("study.pronCorrectLabel")}{" "}
               <span className="text-moss-500 font-semibold">{correctCount}</span>
             </span>
@@ -373,13 +373,13 @@ function SupportedSession({
               <CefrBadge level={current.cefr} />
             </div>
 
-            <p className="text-soft text-sm mb-3">{t("study.pronListenPrompt")}</p>
+            <p className="text-fg-muted text-sm mb-3">{t("study.pronListenPrompt")}</p>
 
             <h2 className="display text-display-md sm:text-display-lg break-words mb-3">
               {current.word}
             </h2>
 
-            {ipa && <p className="font-mono text-sm sm:text-base text-soft mb-4">{ipa}</p>}
+            {ipa && <p className="font-mono text-sm sm:text-base text-fg-muted mb-4">{ipa}</p>}
 
             <div className="flex items-center justify-center gap-1.5 mb-6">
               <AudioButton word={current.word} accent="uk" size="sm" />
@@ -387,19 +387,19 @@ function SupportedSession({
             </div>
 
             {(current.definitionVi || current.definitionEn) && (
-              <p className="text-soft text-sm leading-relaxed mb-8 max-w-md mx-auto">
+              <p className="text-fg-muted text-sm leading-relaxed mb-8 max-w-md mx-auto">
                 {current.definitionVi || current.definitionEn}
               </p>
             )}
 
             {/* Persistent error banner (mic denied / network) */}
             {errorKind === "denied" && (
-              <div className="mb-6 rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-ink">
+              <div className="mb-6 rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-fg">
                 {t("study.pronMicDenied")}
               </div>
             )}
             {errorKind === "network" && (
-              <div className="mb-6 rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-ink">
+              <div className="mb-6 rounded-2xl border border-red-400/30 bg-red-400/10 px-4 py-3 text-sm text-fg">
                 {t("study.pronNeedsNetwork")}
               </div>
             )}
@@ -471,12 +471,12 @@ function MicArea({
             <MicOff size={30} strokeWidth={1.5} />
           </div>
           {heard ? (
-            <p className="text-sm text-soft">
+            <p className="text-sm text-fg-muted">
               {t("study.pronHeard")}{" "}
-              <span className="text-ink font-semibold">“{heard}”</span>
+              <span className="text-fg font-semibold">“{heard}”</span>
             </p>
           ) : (
-            <p className="text-sm text-soft">{t("study.pronNoSpeech")}</p>
+            <p className="text-sm text-fg-muted">{t("study.pronNoSpeech")}</p>
           )}
           <div className="flex flex-col sm:flex-row gap-3">
             <button
@@ -487,7 +487,7 @@ function MicArea({
             </button>
             <button
               onClick={onNext}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
             >
               <SkipForward size={16} /> {t("study.pronSkip")}
             </button>
@@ -515,7 +515,7 @@ function MicArea({
             )}
             <Mic size={38} strokeWidth={1.75} className={listening ? "animate-pulse" : ""} />
           </motion.button>
-          <p className="text-sm text-soft min-h-[1.25rem]">
+          <p className="text-sm text-fg-muted min-h-[1.25rem]">
             {listening
               ? t("study.pronListening")
               : noSpeech
@@ -528,7 +528,7 @@ function MicArea({
           {blocked && (
             <button
               onClick={onNext}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
             >
               <SkipForward size={16} /> {t("study.pronSkip")}
             </button>
@@ -546,11 +546,11 @@ function UnsupportedScreen() {
   return (
     <main className="shell py-20">
       <div className="mx-auto max-w-md text-center">
-        <div className="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full bg-ink/5 text-soft">
+        <div className="mx-auto mb-6 grid h-16 w-16 place-items-center rounded-full bg-ink/5 text-fg-muted">
           <MicOff size={32} strokeWidth={1.5} />
         </div>
         <h1 className="display text-display-md mb-3">{t("study.pronUnsupportedTitle")}</h1>
-        <p className="text-soft mb-8 leading-relaxed">{t("study.pronUnsupportedBody")}</p>
+        <p className="text-fg-muted mb-8 leading-relaxed">{t("study.pronUnsupportedBody")}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <a
             href="/study/dictation"
@@ -560,7 +560,7 @@ function UnsupportedScreen() {
           </a>
           <a
             href="/study"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
           >
             <Layers size={16} /> {t("study.changeMode")}
           </a>
@@ -600,7 +600,7 @@ function SummaryScreen({
           <Mic size={38} strokeWidth={1.5} />
         </motion.div>
         <h2 className="display text-display-md mb-1 text-center">{t("study.pronComplete")}</h2>
-        <p className="text-soft text-center mb-2">
+        <p className="text-fg-muted text-center mb-2">
           {t("study.pronCorrectOf", { c: correctCount, t: total })}
         </p>
         {xpGained > 0 && (
@@ -613,13 +613,13 @@ function SummaryScreen({
         <div className="grid grid-cols-2 gap-3 mb-6">
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums">{fmtTime(elapsed)}</p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.pronTime")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.pronTime")}</p>
           </div>
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums text-moss-500">
               {correctCount}/{total}
             </p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">
               {t("study.pronCorrectLabel")}
             </p>
           </div>
@@ -634,7 +634,7 @@ function SummaryScreen({
           </button>
           <a
             href="/study"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"
           >
             <Layers size={16} /> {t("study.changeMode")}
           </a>

@@ -333,20 +333,6 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       return count;
     }
 
-    // Cách đếm "text-ink": đếm dòng chứa \btext-ink\b
-    // LOẠI BỎ dòng cũng chứa text-ink- (text-ink-100, v.v.)
-    function countTextInk(): number {
-      let count = 0;
-      for (const file of allTsTsx) {
-        for (const line of readLines(file)) {
-          if (/\btext-ink\b/.test(line) && !/text-ink-/.test(line)) {
-            count++;
-          }
-        }
-      }
-      return count;
-    }
-
     // Ngân sách ratchet ban đầu — đo trên main @ 900805f, cộng thêm cho
     // trang /dev mới: card-atelier +3 (ui×2 + type×1), display +2, text-soft +4.
     // Ratchet được giảm dần khi migrate sang design system mới.
@@ -359,12 +345,6 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       { cls: "pill",          budget: 23, count: () => countLines(/\bpill\b/) },
       { cls: "display",       budget: 109, count: countDisplay },
       { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
-      // text-soft/text-ink +1 mỗi cái từ PR #15 (fix/study-mobile-ux): nút ✕
-      // mới trên thanh tiến độ phiên học, `text-soft hover:text-ink` — merge
-      // vào main trước khi nhánh này tồn tại nên không biết ngân sách.
-      { cls: "text-soft",     budget: 366, count: () => countLines(/\btext-soft\b/) },
-      { cls: "text-ink",      budget: 78, count: countTextInk },
-      { cls: "border-line",   budget: 92, count: () => countLines(/\bborder-line\b/) },
       { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
     ];
 

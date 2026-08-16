@@ -41,7 +41,7 @@ export function UserMenu() {
     return (
       <a
         href="/login"
-        className="inline-flex items-center rounded-full border border-line px-3.5 py-1.5 text-sm font-medium text-soft hover:text-ink hover:border-ink/30 transition-colors"
+        className="inline-flex items-center rounded-full border border-hairline/10 px-3.5 py-1.5 text-sm font-medium text-fg-muted hover:text-fg hover:border-ink/30 transition-colors"
       >
         {t("nav.login")}
       </a>
@@ -56,7 +56,7 @@ export function UserMenu() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen((o) => !o)}
-        className="h-9 w-9 rounded-full overflow-hidden border border-line hover:border-ember/40 transition-colors"
+        className="h-9 w-9 rounded-full overflow-hidden border border-hairline/10 hover:border-ember/40 transition-colors"
         aria-label="Account"
       >
         {image ? (
@@ -77,10 +77,10 @@ export function UserMenu() {
             transition={{ duration: 0.15 }}
             className="absolute right-0 mt-2 w-56 card-atelier p-2 z-50"
           >
-            <div className="px-3 py-2 border-b border-line mb-1">
+            <div className="px-3 py-2 border-b border-hairline/10 mb-1">
               <p className="text-sm font-medium truncate">{name}</p>
               {session.user.email && (
-                <p className="text-xs text-soft truncate">{session.user.email}</p>
+                <p className="text-xs text-fg-muted truncate">{session.user.email}</p>
               )}
             </div>
             {/* The one feedback entry point that follows the reader onto every
@@ -89,14 +89,14 @@ export function UserMenu() {
             <a
               href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-soft hover:bg-ink/5 hover:text-ink transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-fg-muted hover:bg-ink/5 hover:text-fg transition-colors"
             >
               <Mail size={14} />
               {t("contribute.label")}
             </a>
             <button
               onClick={() => signOut({ callbackUrl: "/login" })}
-              className="w-full text-left px-3 py-2 rounded-xl text-sm text-soft hover:bg-ink/5 hover:text-ink transition-colors"
+              className="w-full text-left px-3 py-2 rounded-xl text-sm text-fg-muted hover:bg-ink/5 hover:text-fg transition-colors"
             >
               {t("nav.logout")}
             </button>

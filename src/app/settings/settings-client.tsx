@@ -97,11 +97,11 @@ export function SettingsClient({
   return (
     <main className="shell py-10 sm:py-14 pb-28 md:pb-14 max-w-2xl">
       <header className="mb-10">
-        <p className="text-sm text-soft font-mono mb-3">{t("settings.header")}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t("settings.header")}</p>
         <h1 className="display text-display-lg mb-3">
           {t("settings.title")} <span className="display-it text-ember">{t("settings.titleAccent")}</span>
         </h1>
-        <p className="text-soft">{t("settings.subtitle")}</p>
+        <p className="text-fg-muted">{t("settings.subtitle")}</p>
       </header>
 
       <ProfileSection profile={profile} />
@@ -109,7 +109,7 @@ export function SettingsClient({
       {/* Appearance */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.appearance")}</h2>
-        <p className="text-xs text-soft mb-5">{t("settings.appearanceDesc")}</p>
+        <p className="text-xs text-fg-muted mb-5">{t("settings.appearanceDesc")}</p>
         <div className="grid grid-cols-3 gap-2">
           {themeOptions.map((opt) => {
             const Icon = opt.icon;
@@ -125,7 +125,7 @@ export function SettingsClient({
                 }}
                 className={cn(
                   "flex flex-col items-center gap-2 rounded-2xl border p-4 transition-colors",
-                  isActive ? "border-ember bg-ember/5 text-ember" : "border-line text-soft hover:text-ink"
+                  isActive ? "border-ember bg-ember/5 text-ember" : "border-hairline/10 text-fg-muted hover:text-fg"
                 )}
               >
                 <Icon size={20} />
@@ -139,14 +139,14 @@ export function SettingsClient({
       {/* Language */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.language")}</h2>
-        <p className="text-xs text-soft mb-5">{t("settings.languageDesc")}</p>
+        <p className="text-xs text-fg-muted mb-5">{t("settings.languageDesc")}</p>
         <LangToggle variant="full" />
       </section>
 
       {/* Sound & haptics */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.feedback")}</h2>
-        <p className="text-xs text-soft mb-5">{t("settings.feedbackDesc")}</p>
+        <p className="text-xs text-fg-muted mb-5">{t("settings.feedbackDesc")}</p>
         <Toggle
           label={t("settings.soundToggle")}
           desc={t("settings.soundToggleDesc")}
@@ -173,7 +173,7 @@ export function SettingsClient({
       {/* SRS */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.spacedRepetition")}</h2>
-        <p className="text-xs text-soft mb-6">{t("settings.srsDesc")}</p>
+        <p className="text-xs text-fg-muted mb-6">{t("settings.srsDesc")}</p>
 
         <Slider
           label={t("settings.targetRetention")}
@@ -210,7 +210,7 @@ export function SettingsClient({
       {/* Daily goal */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.dailyGoal")}</h2>
-        <p className="text-xs text-soft mb-6">{t("settings.dailyGoalDesc")}</p>
+        <p className="text-xs text-fg-muted mb-6">{t("settings.dailyGoalDesc")}</p>
         <Slider
           label={t("settings.dailyGoalXp")}
           desc={t("settings.dailyGoalXpDesc")}
@@ -228,13 +228,13 @@ export function SettingsClient({
       {/* Export */}
       <section className="card-atelier p-6 sm:p-7 mb-4">
         <h2 className="display text-xl mb-1">{t("settings.export")}</h2>
-        <p className="text-xs text-soft mb-5">{t("settings.exportDesc")}</p>
+        <p className="text-xs text-fg-muted mb-5">{t("settings.exportDesc")}</p>
 
         <label className="text-sm font-medium block mb-2">{t("settings.exportScope")}</label>
         <select
           value={exportScope}
           onChange={(e) => setExportScope(e.target.value)}
-          className="w-full rounded-2xl border border-line bg-transparent px-4 py-3 text-sm mb-4"
+          className="w-full rounded-2xl border border-hairline/10 bg-transparent px-4 py-3 text-sm mb-4"
         >
           {scopeOptions.map((opt) => (
             <option key={opt.key} value={opt.key}>
@@ -247,7 +247,7 @@ export function SettingsClient({
         <select
           value={exportCefr}
           onChange={(e) => setExportCefr(e.target.value)}
-          className="w-full rounded-2xl border border-line bg-transparent px-4 py-3 text-sm mb-4"
+          className="w-full rounded-2xl border border-hairline/10 bg-transparent px-4 py-3 text-sm mb-4"
         >
           <option value="ALL">{t("browse.all")}</option>
           {CEFR_LEVELS.map((level) => (
@@ -261,7 +261,7 @@ export function SettingsClient({
           <a
             href={exportHref("csv")}
             download
-            className="flex items-center justify-center gap-2 rounded-2xl border border-line px-4 py-3 text-sm font-medium text-soft hover:text-ink transition-colors"
+            className="flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 px-4 py-3 text-sm font-medium text-fg-muted hover:text-fg transition-colors"
           >
             <Download size={16} />
             {t("settings.exportCsv")}
@@ -269,13 +269,13 @@ export function SettingsClient({
           <a
             href={exportHref("anki")}
             download
-            className="flex items-center justify-center gap-2 rounded-2xl border border-line px-4 py-3 text-sm font-medium text-soft hover:text-ink transition-colors"
+            className="flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 px-4 py-3 text-sm font-medium text-fg-muted hover:text-fg transition-colors"
           >
             <Download size={16} />
             {t("settings.exportAnki")}
           </a>
         </div>
-        <p className="text-xs text-soft mt-3">{t("settings.exportAnkiHint")}</p>
+        <p className="text-xs text-fg-muted mt-3">{t("settings.exportAnkiHint")}</p>
       </section>
 
       <ContributeCard />
@@ -290,7 +290,7 @@ export function SettingsClient({
         {saved && <span className="text-sm text-moss-500 animate-fade-up">{t("settings.saved")}</span>}
       </div>
 
-      <div className="mt-12 pt-8 border-t border-line text-xs text-soft space-y-1">
+      <div className="mt-12 pt-8 border-t border-hairline/10 text-xs text-fg-muted space-y-1">
         <p>{t("settings.dataFoot")}</p>
         <p>{t("settings.wordsFoot")}</p>
       </div>
@@ -323,7 +323,7 @@ function Slider({
         <label className="text-sm font-medium">{label}</label>
         <span className="display text-lg text-ember tabular-nums">{format(value)}</span>
       </div>
-      <p className="text-xs text-soft mb-3">{desc}</p>
+      <p className="text-xs text-fg-muted mb-3">{desc}</p>
       <input
         type="range"
         min={min}
@@ -353,7 +353,7 @@ function Toggle({
     <div className="flex items-start justify-between gap-4 mb-5 last:mb-0">
       <div className="min-w-0">
         <p className="text-sm font-medium">{label}</p>
-        <p className="text-xs text-soft mt-0.5">{desc}</p>
+        <p className="text-xs text-fg-muted mt-0.5">{desc}</p>
       </div>
       <button
         role="switch"

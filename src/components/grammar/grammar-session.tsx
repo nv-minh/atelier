@@ -220,18 +220,18 @@ export function GrammarSession({
           <div className="grid grid-cols-2 gap-3 my-5">
             <div className="card-atelier p-4 text-center">
               <p className="display text-2xl text-moss-500 tabular-nums">{pct}%</p>
-              <p className="text-[10px] uppercase tracking-wide text-soft">{t("grammar.test.accuracy")}</p>
+              <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("grammar.test.accuracy")}</p>
             </div>
             <div className="card-atelier p-4 text-center">
               <p className="display text-2xl tabular-nums">
                 {correct}/{results.length}
               </p>
-              <p className="text-[10px] uppercase tracking-wide text-soft">{topicName}</p>
+              <p className="text-[10px] uppercase tracking-wide text-fg-muted">{topicName}</p>
             </div>
           </div>
           {wrong.length > 0 && (
             <div className="card-atelier p-5 mb-6 max-h-60 overflow-y-auto">
-              <p className="text-[11px] uppercase tracking-wider text-soft font-semibold mb-3">
+              <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-3">
                 {t("grammar.test.wrongList")}
               </p>
               <ul className="space-y-3">
@@ -258,7 +258,7 @@ export function GrammarSession({
             )}
             <Link
               href={`/grammar/${topicSlug}`}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"
             >
               {t("grammar.test.backToTopic")}
             </Link>
@@ -273,9 +273,9 @@ export function GrammarSession({
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
-      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
+      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-hairline/10">
         <div className="shell py-2.5 flex items-center gap-3">
-          <span className="text-xs text-soft tabular-nums whitespace-nowrap">
+          <span className="text-xs text-fg-muted tabular-nums whitespace-nowrap">
             {index + 1} <span className="opacity-50">/ {queue.length}</span>
           </span>
           <div className="flex-1 h-1.5 rounded-full bg-ink/10 overflow-hidden">
@@ -285,7 +285,7 @@ export function GrammarSession({
               transition={{ duration: 0.3 }}
             />
           </div>
-          <span className="text-xs font-mono text-soft">
+          <span className="text-xs font-mono text-fg-muted">
             {results.filter((r) => r.correct).length}/{results.length}
           </span>
         </div>
@@ -302,13 +302,13 @@ export function GrammarSession({
             className="max-w-2xl mx-auto w-full"
           >
             <div className="text-center mb-8">
-              <p className="text-xs text-soft font-mono mb-3">{t("grammar.test.title", { topic: topicName })}</p>
-              {current.repeat && <p className="mb-3"><span className="pill text-soft">{t("grammar.test.repeatPill")}</span></p>}
+              <p className="text-xs text-fg-muted font-mono mb-3">{t("grammar.test.title", { topic: topicName })}</p>
+              {current.repeat && <p className="mb-3"><span className="pill text-fg-muted">{t("grammar.test.repeatPill")}</span></p>}
               <h2 className="display text-xl sm:text-2xl leading-relaxed break-words">{question}</h2>
               {lang === "vi" && current.questionVi && current.questionEn !== question && (
-                <p className="text-sm text-soft mt-2">{current.questionEn}</p>
+                <p className="text-sm text-fg-muted mt-2">{current.questionEn}</p>
               )}
-              <p className="text-xs text-soft mt-3">{t("grammar.test.pickAnswer")}</p>
+              <p className="text-xs text-fg-muted mt-3">{t("grammar.test.pickAnswer")}</p>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-2.5" data-nosound>
@@ -327,11 +327,11 @@ export function GrammarSession({
                         : shown && isPicked
                           ? "border-red-400 bg-red-400/10 cursor-default"
                           : shown
-                            ? "border-line opacity-60 cursor-default"
-                            : "border-line hover:border-ink/30 hover:bg-paper-200/40"
+                            ? "border-hairline/10 opacity-60 cursor-default"
+                            : "border-hairline/10 hover:border-ink/30 hover:bg-paper-200/40"
                     }`}
                   >
-                    <span className="text-xs font-mono text-soft mt-0.5">{LETTERS[i]}</span>
+                    <span className="text-xs font-mono text-fg-muted mt-0.5">{LETTERS[i]}</span>
                     <span className="text-sm leading-snug">{opt}</span>
                     {shown && isCorrect && <CheckCircle2 size={16} className="ml-auto shrink-0 text-moss-500" />}
                     {shown && isPicked && !isCorrect && <XCircle size={16} className="ml-auto shrink-0 text-red-400" />}

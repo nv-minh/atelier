@@ -18,7 +18,7 @@ export function CefrProgress({ stats }: { stats: Array<{ level: string; total: n
     <div className="card-atelier p-6 sm:p-7">
       <div className="flex items-baseline justify-between mb-5">
         <h3 className="display text-xl">{t("stats.masteryByLevel")}</h3>
-        <span className="text-xs text-soft font-mono">CEFR</span>
+        <span className="text-xs text-fg-muted font-mono">CEFR</span>
       </div>
       <div className="space-y-4">
         {stats.map((s, i) => {
@@ -30,11 +30,11 @@ export function CefrProgress({ stats }: { stats: Array<{ level: string; total: n
                 <div className="flex items-center gap-2">
                   <span className={cn("h-2 w-2 rounded-full", colors[s.level])} />
                   <span className="text-sm font-semibold">{s.level}</span>
-                  <span className="text-xs text-soft">
+                  <span className="text-xs text-fg-muted">
                     {s.learned}/{s.total} · {t("stats.learnedLegend").toLowerCase()}
                   </span>
                 </div>
-                <span className="text-xs font-mono text-soft tabular-nums">{learnedPct.toFixed(0)}%</span>
+                <span className="text-xs font-mono text-fg-muted tabular-nums">{learnedPct.toFixed(0)}%</span>
               </div>
               <div className="h-2.5 rounded-full bg-ink/8 overflow-hidden flex">
                 <motion.div
@@ -54,7 +54,7 @@ export function CefrProgress({ stats }: { stats: Array<{ level: string; total: n
           );
         })}
       </div>
-      <div className="flex gap-4 mt-5 pt-4 border-t border-line text-xs text-soft">
+      <div className="flex gap-4 mt-5 pt-4 border-t border-hairline/10 text-xs text-fg-muted">
         <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-ink/60" /> {t("stats.learnedLegend")}</span>
         <span className="flex items-center gap-1.5"><span className="h-2 w-2 rounded-full bg-ink/20" /> {t("stats.learningLegend")}</span>
       </div>

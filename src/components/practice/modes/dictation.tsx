@@ -69,7 +69,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
         <div className="flex items-center justify-center gap-2 mb-4">
           <CefrBadge level={item.cefr} />
         </div>
-        <p className="text-xs text-soft font-mono mb-3">{t("practice.listenType")}</p>
+        <p className="text-xs text-fg-muted font-mono mb-3">{t("practice.listenType")}</p>
         <button
           onClick={play}
           data-nosound
@@ -83,7 +83,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
               key={s}
               onClick={() => setSpeedTracked(s)}
               className={`text-xs rounded-full px-2.5 py-1 border transition-colors ${
-                speed === s ? "border-ember text-ember" : "border-line text-soft"
+                speed === s ? "border-ember text-ember" : "border-hairline/10 text-fg-muted"
               }`}
             >
               {s === 1 ? "1×" : `${s}×`}
@@ -107,7 +107,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
               ? reveal === "correct"
                 ? "border-moss-500"
                 : "border-red-400"
-              : "border-line focus:border-ember"
+              : "border-hairline/10 focus:border-ember"
           }`}
         />
         {!shown && (
@@ -123,12 +123,12 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
 
       {shown && (
         <div className="mt-4 text-center">
-          <p className="text-sm text-soft">
-            <span className="display text-xl text-ink">{item.word}</span>
+          <p className="text-sm text-fg-muted">
+            <span className="display text-xl text-fg">{item.word}</span>
             <span className="font-mono text-xs ml-2">{item.ipaUs || item.ipaUk}</span>
           </p>
-          {item.definitionEn && <p className="text-xs text-soft mt-1">{item.definitionEn}</p>}
-          {item.definitionVi && <p className="text-xs text-soft/70 mt-0.5">{item.definitionVi}</p>}
+          {item.definitionEn && <p className="text-xs text-fg-muted mt-1">{item.definitionEn}</p>}
+          {item.definitionVi && <p className="text-xs text-fg-muted/70 mt-0.5">{item.definitionVi}</p>}
         </div>
       )}
 

@@ -51,9 +51,9 @@ export function AuthRequired({
         <Lock size={20} strokeWidth={2} />
       </span>
 
-      <p className="pill text-[10px] text-soft mb-4">{t("auth.badge")}</p>
+      <p className="pill text-[10px] text-fg-muted mb-4">{t("auth.badge")}</p>
       <h2 className="display text-2xl sm:text-3xl mb-3">{t(`auth.walls.${context}.title`)}</h2>
-      <p className="text-soft leading-relaxed mb-7">{t(`auth.walls.${context}.body`)}</p>
+      <p className="text-fg-muted leading-relaxed mb-7">{t(`auth.walls.${context}.body`)}</p>
 
       <button
         onClick={() => startSignIn(callbackUrl)}
@@ -63,18 +63,18 @@ export function AuthRequired({
         {t("auth.signInGoogle")}
       </button>
 
-      <div className="mt-8 pt-6 border-t border-line">
-        <p className="text-xs text-soft/80 mb-3">{t("auth.publicHint")}</p>
+      <div className="mt-8 pt-6 border-t border-hairline/10">
+        <p className="text-xs text-fg-muted/80 mb-3">{t("auth.publicHint")}</p>
         <div className="flex flex-wrap items-center justify-center gap-2">
           <Link
             href="/topics"
-            className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm text-soft hover:text-ink hover:border-ink/25 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-4 py-2 text-sm text-fg-muted hover:text-fg hover:border-ink/25 transition-colors"
           >
             <Compass size={14} /> {t("auth.exploreTopics")}
           </Link>
           <Link
             href="/browse"
-            className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-sm text-soft hover:text-ink hover:border-ink/25 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-full border border-hairline/10 px-4 py-2 text-sm text-fg-muted hover:text-fg hover:border-ink/25 transition-colors"
           >
             <Library size={14} /> {t("auth.exploreLibrary")}
           </Link>
@@ -88,7 +88,7 @@ export function AuthRequired({
   return (
     <main className="shell py-14 sm:py-20 pb-28 md:pb-20">
       <header className="mb-8 text-center max-w-xl mx-auto">
-        <p className="text-sm text-soft font-mono mb-3">{t(`auth.walls.${context}.header`)}</p>
+        <p className="text-sm text-fg-muted font-mono mb-3">{t(`auth.walls.${context}.header`)}</p>
       </header>
       {body}
     </main>

@@ -23,16 +23,16 @@ export function LeaderboardView({
   return (
     <main className="shell py-10 sm:py-16 pb-28 md:pb-16">
       <header className="mb-8 sm:mb-12 max-w-2xl">
-        <p className="text-sm text-soft mb-3 font-mono">{t("leaderboard.header")}</p>
+        <p className="text-sm text-fg-muted mb-3 font-mono">{t("leaderboard.header")}</p>
         <h1 className="display text-display-lg mb-4">
           {t("leaderboard.title")}{" "}
           <span className="display-it text-ember">{t("leaderboard.titleAccent")}</span>
         </h1>
-        <p className="text-soft leading-relaxed">{t("leaderboard.subtitle")}</p>
+        <p className="text-fg-muted leading-relaxed">{t("leaderboard.subtitle")}</p>
       </header>
 
       {isMonday && (
-        <p className="mb-5 text-sm text-soft">{t("leaderboard.mondayNote")}</p>
+        <p className="mb-5 text-sm text-fg-muted">{t("leaderboard.mondayNote")}</p>
       )}
 
       <ul className="card-atelier p-1.5 sm:p-2">

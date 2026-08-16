@@ -64,7 +64,7 @@ export function StandaloneBack() {
     <button
       onClick={() => router.back()}
       aria-label={t("nav.back")}
-      className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/85 backdrop-blur-xl text-ink hover:bg-paper-200/60 transition-colors"
+      className="grid h-11 w-11 place-items-center rounded-full border border-hairline/10 bg-paper/85 backdrop-blur-xl text-fg hover:bg-paper-200/60 transition-colors"
     >
       <ArrowLeft size={20} />
     </button>

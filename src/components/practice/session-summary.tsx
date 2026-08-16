@@ -48,7 +48,7 @@ export function SessionSummary({
         </motion.div>
 
         <h2 className="display text-display-md mb-1 text-center">{t("study.sessionComplete")}</h2>
-        <p className="text-soft text-center mb-2">{t("study.youReviewed", { n: data.total })}</p>
+        <p className="text-fg-muted text-center mb-2">{t("study.youReviewed", { n: data.total })}</p>
         {xpGained > 0 && (
           <p className="text-center mb-2 text-sm font-semibold text-ember">
             {t("gamify.xpEarned", { n: xpGained })}
@@ -62,22 +62,22 @@ export function SessionSummary({
         <div className="grid grid-cols-3 gap-3 mb-5">
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl text-moss-500 tabular-nums">{data.pct}%</p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.accLabel")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.accLabel")}</p>
           </div>
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums">
               {mm}:{ss}
             </p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("study.timeLabel")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("study.timeLabel")}</p>
           </div>
           <div className="card-atelier p-4 text-center">
             <p className="display text-2xl tabular-nums">{data.bestCombo}</p>
-            <p className="text-[10px] uppercase tracking-wide text-soft">{t("practice.comboBest")}</p>
+            <p className="text-[10px] uppercase tracking-wide text-fg-muted">{t("practice.comboBest")}</p>
           </div>
         </div>
 
         <div className="card-atelier p-5 mb-6">
-          <p className="text-[11px] uppercase tracking-wider text-soft font-semibold mb-3">
+          <p className="text-[11px] uppercase tracking-wider text-fg-muted font-semibold mb-3">
             {t("study.breakdown")}
           </p>
           <div className="space-y-2.5">
@@ -117,7 +117,7 @@ export function SessionSummary({
           )}
           <a
             href="/study"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-6 py-3 font-medium hover:bg-paper-200/50"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"
           >
             {t("study.changeMode")}
           </a>
