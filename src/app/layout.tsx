@@ -8,6 +8,7 @@ import { ProgressBar } from "@/components/progress-bar";
 import { Nav } from "@/components/nav";
 import { SwRegister } from "@/components/sw-register";
 import { PwaInstall } from "@/components/pwa-install";
+import { StandaloneBack } from "@/components/standalone-back";
 
 // The "vietnamese" subset is not optional here. Google's "latin" unicode-range
 // excludes U+1EA0–1EF9 (ạ ả ấ ầ ậ ế ệ ị ọ ộ ớ ợ ụ ứ ữ …) and U+01A0/01AF (Ơ Ư),
@@ -168,6 +169,7 @@ export default function RootLayout({
             <Providers>
               <ProgressBar />
               <Nav />
+              <StandaloneBack />
               <div className="relative z-10">{children}</div>
               <SwRegister />
               <PwaInstall />
