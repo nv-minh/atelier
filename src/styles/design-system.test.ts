@@ -165,7 +165,11 @@ describe("Hệ thiết kế — lưới an toàn", () => {
     // trên thanh tiến độ đã đổi thành sticky top-0, và
     // pb-[calc(1rem+env(safe-area-inset-bottom))] thay pb-28 lãng phí. Cả hai
     // là an toàn thật (X2 vừa bật viewport-fit=cover ở Plan 0), không phải nợ.
-    const RATCHET = 7;
+    // Plan 1 Task 9: auth-gate.tsx's dòng
+    // pb-[calc(1.75rem+env(safe-area-inset-bottom))] biến mất khi panel
+    // chuyển sang <Sheet> (dùng var(--safe-b) — token thật, không phải
+    // env(safe-area-* trần) → 7 - 1 = 6.
+    const RATCHET = 6;
 
     it(`số dòng chứa env(safe-area- ≤ ${RATCHET}`, () => {
       const files = collectFiles("src/components", ".tsx");
@@ -181,11 +185,18 @@ describe("Hệ thiết kế — lưới an toàn", () => {
 
   // ── 4.4: Không z-index tự nghĩ ─────────────────────────────────
   describe("4.4 — z-index chỉ dùng giá trị chuẩn", () => {
-    const Z_ARBITRARY_RATCHET = 1; // ngân sách: z-[60] trong auth-gate.tsx
+    // Plan 1 Task 9: auth-gate.tsx's one arbitrary z-index value (was 60,
+    // wrapping the AuthGateModal backdrop+panel) migrated onto the z-sheet
+    // token when that panel became <Sheet>. Ngân sách về đúng 0 — đo lại
+    // bằng grep trước khi ghi số, không giữ dư (xem task-9-report.md).
+    const Z_ARBITRARY_RATCHET = 0;
     const Z_ALLOWED = new Set([10, 20, 30, 40, 50]);
-    const Z_NUMBER_RATCHET = 14; // 13 gốc + 1 từ dev/ui z-50
+    // 13 gốc + 1 từ dev/ui z-50 = 14 (Task 1–8). Plan 1 Task 9: achievement-
+    // toast.tsx's bare z-50 stack wrapper migrated onto the z-toast token
+    // (Toast primitive) → 14 - 1 = 13. Đo lại bằng grep trước khi ghi số.
+    const Z_NUMBER_RATCHET = 13;
 
-    it(`z-[… arbitrary] ≤ ${Z_ARBITRARY_RATCHET} lần`, () => {
+    it(`z-index tuỳ ý (arbitrary) ≤ ${Z_ARBITRARY_RATCHET} lần`, () => {
       const files = [
         ...collectFiles("src/components", ".tsx"),
         ...collectFiles("src/app", ".tsx"),
@@ -384,8 +395,18 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       // legitimate class, not the retired component class) plus a handful of
       // comment lines documenting the migration (chip.tsx, and now tabs.tsx
       // for Task 8's pill-shaped Tabs primitive — see comment above).
+      //
+      // Plan 1 Task 9: unchanged at 13. dev/ui/page.tsx's new Chip demo
+      // caption was deliberately worded to avoid re-mentioning the retired
+      // class name (no functional reason to spend budget on a demo string).
       { cls: "pill",          budget: 13, count: () => countLines(/\bpill\b/) },
-      { cls: "display",       budget: 115, count: countDisplay },
+      // Plan 1 Task 9: 115 → 116 (+1 real usage: dev/ui/page.tsx's new
+      // SheetDemo heading `<h2 className="display text-2xl mb-2">`, styled
+      // the same way auth-gate.tsx's real heading already was — auth-gate's
+      // own line is not new, it just moved from the hand-rolled panel to
+      // being a child of <Sheet>). Recounted with countDisplay() before
+      // writing this number, not assumed.
+      { cls: "display",       budget: 116, count: countDisplay },
       { cls: "bg-paper",      budget: 30, count: () => countLines(/\bbg-paper\b/) },
       // Plan 1 Task 6: 19 → 21. The `secondary` Button variant is the first
       // caller of the card-level background token via a literal class
@@ -401,7 +422,15 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       // state, plus 5 comment lines in cefr-stamp.ts documenting a measured
       // WCAG contrast finding (the word "surface" there names the page
       // background being tested against, not a class to migrate away from).
-      { cls: "surface",       budget: 30, count: () => countLines(/\bsurface\b/) },
+      //
+      // Plan 1 Task 9: 30 → 31. Two real `bg-surface` call sites moved
+      // wholesale (achievement-toast.tsx's own card → toast.tsx; library-
+      // client.tsx's search <input> → input-classes.ts) — net zero, since
+      // each old line disappeared exactly where a new one appeared. The one
+      // genuine +1 is input-classes.test.ts's new assertion
+      // (`expect(classes).toContain("bg-surface")`), same "token being
+      // tested, not debt" category as cefr-stamp.ts's comment lines above.
+      { cls: "surface",       budget: 31, count: () => countLines(/\bsurface\b/) },
     ];
 
     for (const { cls, budget, count } of BUDGETS) {

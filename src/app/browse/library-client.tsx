@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
-import { Search, StickyNote, Lock } from "lucide-react";
+import { StickyNote, Lock } from "lucide-react";
 import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Chip } from "@/components/ui/chip";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { AudioButton } from "@/components/audio-button";
 import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
@@ -182,13 +183,12 @@ export function LibraryClient({
 
       {/* Controls */}
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
-        <form onSubmit={onSubmit} className="relative flex-1">
-          <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-fg-muted" />
-          <input
+        <form onSubmit={onSubmit} className="flex-1">
+          <Input
+            form="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder={t("browse.searchWord")}
-            className="w-full rounded-full border border-hairline/10 bg-surface pl-11 pr-4 py-2.5 text-sm outline-none focus:border-ember"
           />
         </form>
         <div className="flex gap-1.5 overflow-x-auto scrollbar-hide">

@@ -14,14 +14,12 @@
 // through — a signed-in user must never be interrupted by a login prompt, and
 // the server gate is still there as the real enforcement.
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { useSession, signIn } from "next-auth/react";
-import { AnimatePresence, motion } from "motion/react";
-import { Lock, X } from "lucide-react";
+import { Lock } from "lucide-react";
 import { useI18n } from "./i18n-provider";
 import { Button } from "@/components/ui/button";
-import { cardClasses } from "@/lib/ui/card-classes";
-import { cn } from "@/lib/utils";
+import { Sheet } from "@/components/ui/sheet";
 
 // Reasons map to auth.reasons.* copy — one sentence explaining what the
 // login unlocks, so the prompt answers "why" instead of just demanding.
@@ -121,90 +119,40 @@ export function startSignIn(callbackUrl?: string) {
 
 function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () => void }) {
   const { t } = useI18n();
-  const openNow = opts !== null;
-
-  // Escape closes. Body scroll is locked so the page behind cannot move under
-  // the sheet on mobile.
-  useEffect(() => {
-    if (!openNow) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
-    };
-  }, [openNow, onClose]);
-
   const reason = opts?.reason ?? "generic";
 
+  // ESC-to-close, body-scroll lock, backdrop click, focus trap and the
+  // swipe-down-to-dismiss gesture all now live in <Sheet> (Plan 1 Task 9) —
+  // this is the call site that used to hand-roll all of that, and the one
+  // that killed the old arbitrary z-index value 60 by moving onto the
+  // z-sheet token.
   return (
-    <AnimatePresence>
-      {openNow && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.18 }}
-          className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="auth-gate-title"
-        >
-          <div
-            className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
-            onClick={onClose}
-            aria-hidden
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className={cn(
-              cardClasses("flat"),
-              "relative w-full sm:max-w-sm p-7 pb-[calc(1.75rem+env(safe-area-inset-bottom))] sm:pb-7 rounded-t-3xl sm:rounded-[1.25rem]"
-            )}
-          >
-            <button
-              onClick={onClose}
-              aria-label={t("auth.later")}
-              className="absolute right-4 top-4 rounded-full p-1.5 text-fg-muted hover:text-fg hover:bg-ink/5 transition-colors"
-            >
-              <X size={16} />
-            </button>
+    <Sheet open={opts !== null} onClose={onClose} closeLabel={t("auth.later")} labelledBy="auth-gate-title">
+      <span className="grid h-11 w-11 place-items-center rounded-full bg-ember/10 text-ember mb-5">
+        <Lock size={18} strokeWidth={2} />
+      </span>
 
-            <span className="grid h-11 w-11 place-items-center rounded-full bg-ember/10 text-ember mb-5">
-              <Lock size={18} strokeWidth={2} />
-            </span>
+      <h2 id="auth-gate-title" className="display text-2xl mb-2">
+        {t("auth.gateTitle")}
+      </h2>
+      <p className="text-sm text-fg-muted leading-relaxed mb-6">{t(`auth.reasons.${reason}`)}</p>
 
-            <h2 id="auth-gate-title" className="display text-2xl mb-2">
-              {t("auth.gateTitle")}
-            </h2>
-            <p className="text-sm text-fg-muted leading-relaxed mb-6">{t(`auth.reasons.${reason}`)}</p>
-
-            <Button
-              onClick={() => startSignIn(opts?.callbackUrl)}
-              variant="primary"
-              size="md"
-              className="w-full"
-            >
-              <GoogleMark />
-              {GOOGLE_ENABLED ? t("auth.signInGoogle") : t("auth.signIn")}
-            </Button>
-            <button
-              onClick={onClose}
-              className="w-full mt-2 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"
-            >
-              {t("auth.later")}
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+      <Button
+        onClick={() => startSignIn(opts?.callbackUrl)}
+        variant="primary"
+        size="md"
+        className="w-full"
+      >
+        <GoogleMark />
+        {GOOGLE_ENABLED ? t("auth.signInGoogle") : t("auth.signIn")}
+      </Button>
+      <button
+        onClick={onClose}
+        className="w-full mt-2 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"
+      >
+        {t("auth.later")}
+      </button>
+    </Sheet>
   );
 }
 
