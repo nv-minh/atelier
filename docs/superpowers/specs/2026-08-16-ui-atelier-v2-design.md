@@ -175,6 +175,17 @@ Ba lưới, **không thêm dependency runtime nào**:
 
 Trang `/dev/*` phải `notFound()` khi `NODE_ENV === "production"` và `/dev` phải nằm trong `disallow` của `src/app/robots.ts`.
 
+### 6.1 Hai giới hạn của bộ chụp ảnh — đo được ở Plan 0, mọi plan sau phải biết
+
+**`AUTH_BYPASS=1` KHÔNG có tác dụng dưới `npm start`.** `src/lib/session.ts:11`, `src/middleware.ts:10` và `next.config.js:24` đều khoá thêm điều kiện `NODE_ENV !== "production"`; Next CLI tự đặt `NODE_ENV=production` cho `next build`/`next start`, và giá trị đó bị **inline thành literal lúc build**, nên ép biến môi trường vào tiến trình `next start` cũng vô ích. Hệ quả: chụp trên bản production **luôn** ra giao diện khách; `/study` trả 307, `/api/profile` trả 401.
+
+Vì vậy, quy ước cho mọi plan:
+- **Ảnh của màn hình cần đăng nhập** (dashboard, `/study/*`, `/me`, `/notebook`, `/stats`, `/leaderboard`, `/settings`, `/word/*`) chụp trên **`npm run dev`**, truyền `--base=http://localhost:3000` tới `ui:shots`. Bundle dev khác bundle prod về hiệu năng nhưng **giống hệt về bố cục và màu** — mà đó mới là thứ ảnh chụp dùng để so.
+- **Số liệu hiệu năng** (Lighthouse, kích thước route, byte ảnh) luôn đo trên **bản build production**, và luôn ở trạng thái khách. So sánh với Plan 0 chỉ hợp lệ khi cùng một chế độ.
+- Mọi bảng số phải ghi rõ nó đo ở chế độ nào. Số không đo được thì ghi "không đo được" kèm lý do — **tuyệt đối không bịa**.
+
+**Ảnh `fullPage: true` vẽ lặp thanh nav `position: fixed`.** Với trang cao hơn khung nhìn, Chromium/Playwright đôi khi vẽ thanh nav đáy (`src/components/nav.tsx:93`) lặp lại ở giữa ảnh. **Đó là hạn chế của công cụ chụp, không phải lỗi app** — đã xác minh bằng cuộn tay. Đừng mở bug cho nó, và đừng "sửa" bố cục vì nó.
+
 **Cổng của mọi task:**
 
 ```bash
