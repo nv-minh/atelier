@@ -1,0 +1,238 @@
+/* ============================================================================
+   ATELIER v2 — DESIGN TOKENS · "Studio xanh"
+   Chỉ khai báo custom property — không selector phần tử (base rules ở
+   globals.css @layer base). Mỗi màu công bố hai dạng: --x-rgb (triplet, nguồn
+   sự thật, Tailwind đọc qua rgb(var(--x-rgb) / <alpha-value>)) và
+   --x: rgb(var(--x-rgb)) (dùng thẳng trong CSS/gradient/style={{}}). Token đã
+   pha sẵn alpha (Tier 2 — *-subtle, *-soft, *-tint, *-glass, mọi gradient)
+   KHÔNG có dạng -rgb: chúng nhận var() trần, không nhận /N.
+   ============================================================================ */
+
+/* 1 · PRIMITIVES — không dùng trực tiếp trong component */
+:root {
+  --p-blue-50-rgb: 237 241 255;   --p-blue-50: rgb(var(--p-blue-50-rgb));
+  --p-blue-100-rgb: 221 228 255;  --p-blue-100: rgb(var(--p-blue-100-rgb));
+  --p-blue-200-rgb: 195 207 255;  --p-blue-200: rgb(var(--p-blue-200-rgb));
+  --p-blue-300-rgb: 154 174 255;  --p-blue-300: rgb(var(--p-blue-300-rgb));
+  --p-blue-400-rgb: 108 134 245;  --p-blue-400: rgb(var(--p-blue-400-rgb));
+  --p-blue-500-rgb: 74 103 240;   --p-blue-500: rgb(var(--p-blue-500-rgb));
+  --p-blue-600-rgb: 44 78 232;    --p-blue-600: rgb(var(--p-blue-600-rgb));  /* primary */
+  --p-blue-700-rgb: 35 64 196;    --p-blue-700: rgb(var(--p-blue-700-rgb));
+  --p-blue-800-rgb: 27 49 153;    --p-blue-800: rgb(var(--p-blue-800-rgb));
+
+  --p-lav-25-rgb: 251 252 255;   --p-lav-25: rgb(var(--p-lav-25-rgb));
+  --p-lav-50-rgb: 245 247 255;   --p-lav-50: rgb(var(--p-lav-50-rgb));
+  --p-lav-100-rgb: 239 242 254;  --p-lav-100: rgb(var(--p-lav-100-rgb));
+  --p-lav-200-rgb: 229 233 248;  --p-lav-200: rgb(var(--p-lav-200-rgb));
+  --p-lav-300-rgb: 213 219 240;  --p-lav-300: rgb(var(--p-lav-300-rgb));
+
+  --p-ink-900-rgb: 16 21 52;    --p-ink-900: rgb(var(--p-ink-900-rgb));
+  --p-ink-800-rgb: 27 34 68;    --p-ink-800: rgb(var(--p-ink-800-rgb));
+  --p-ink-700-rgb: 42 49 84;    --p-ink-700: rgb(var(--p-ink-700-rgb));
+  --p-ink-600-rgb: 70 78 117;   --p-ink-600: rgb(var(--p-ink-600-rgb));
+  --p-ink-500-rgb: 100 108 144; --p-ink-500: rgb(var(--p-ink-500-rgb));
+  --p-ink-400-rgb: 138 145 176; --p-ink-400: rgb(var(--p-ink-400-rgb));
+  --p-ink-300-rgb: 175 181 204; --p-ink-300: rgb(var(--p-ink-300-rgb));
+
+  --p-night-900-rgb: 10 14 34;  --p-night-900: rgb(var(--p-night-900-rgb));
+  --p-night-800-rgb: 17 22 52;  --p-night-800: rgb(var(--p-night-800-rgb));
+  --p-night-700-rgb: 26 33 69;  --p-night-700: rgb(var(--p-night-700-rgb));
+  --p-night-600-rgb: 37 45 90;  --p-night-600: rgb(var(--p-night-600-rgb));
+  --p-night-500-rgb: 51 60 112; --p-night-500: rgb(var(--p-night-500-rgb));
+
+  --p-amber-50-rgb: 255 244 227;      --p-amber-50: rgb(var(--p-amber-50-rgb));
+  --p-amber-500-rgb: 255 159 28;      --p-amber-500: rgb(var(--p-amber-500-rgb));
+  --p-amber-400-dark-rgb: 255 184 77; --p-amber-400-dark: rgb(var(--p-amber-400-dark-rgb));
+
+  --p-mint-50-rgb: 228 249 241;      --p-mint-50: rgb(var(--p-mint-50-rgb));
+  --p-mint-500-rgb: 15 185 129;      --p-mint-500: rgb(var(--p-mint-500-rgb));
+  --p-mint-400-dark-rgb: 61 220 164; --p-mint-400-dark: rgb(var(--p-mint-400-dark-rgb));
+
+  --p-coral-50-rgb: 255 236 236;      --p-coral-50: rgb(var(--p-coral-50-rgb));
+  --p-coral-500-rgb: 242 84 91;       --p-coral-500: rgb(var(--p-coral-500-rgb));
+  --p-coral-400-dark-rgb: 255 122 128; --p-coral-400-dark: rgb(var(--p-coral-400-dark-rgb));
+
+  --p-violet-50-rgb: 240 235 255;      --p-violet-50: rgb(var(--p-violet-50-rgb));
+  --p-violet-500-rgb: 124 92 255;      --p-violet-500: rgb(var(--p-violet-500-rgb));
+  --p-violet-400-dark-rgb: 169 140 255; --p-violet-400-dark: rgb(var(--p-violet-400-dark-rgb));
+}
+
+/* 2 · SEMANTIC — LIGHT */
+:root {
+  color-scheme: light;
+
+  /* Nền là gradient, không phải màu phẳng — chữ ký của hướng "Studio xanh".
+     background-attachment: fixed đo FPS cuộn trên máy thật ở Step 5 trước khi
+     chốt; nếu giật, đổi sang lớp ::before cố định thay vì trở về màu phẳng
+     (§14.5 cấm màu phẳng tuyệt đối). */
+  --bg-canvas: linear-gradient(180deg, var(--p-lav-100) 0%, var(--p-lav-25) 46%, var(--p-lav-50) 100%);
+  --bg-canvas-solid-rgb: var(--p-lav-50-rgb);   --bg-canvas-solid: rgb(var(--bg-canvas-solid-rgb));
+  --bg-surface-rgb: 255 255 255;                --bg-surface: rgb(var(--bg-surface-rgb));
+  --bg-surface-alt-rgb: var(--p-lav-50-rgb);    --bg-surface-alt: rgb(var(--bg-surface-alt-rgb));
+  --bg-sunken-rgb: var(--p-lav-100-rgb);        --bg-sunken: rgb(var(--bg-sunken-rgb));
+  --bg-tint: var(--p-blue-50);                  /* Tier 2 */
+  --bg-overlay: rgb(16 21 52 / 0.42);            /* Tier 2 */
+  --bg-glass: rgb(255 255 255 / 0.72);           /* Tier 2 — dùng cùng backdrop-filter blur(16px) */
+
+  --fg-default-rgb: var(--p-ink-900-rgb);  --fg-default: rgb(var(--fg-default-rgb));
+  --fg-muted-rgb: var(--p-ink-500-rgb);    --fg-muted: rgb(var(--fg-muted-rgb));
+  --fg-subtle-rgb: var(--p-ink-400-rgb);   --fg-subtle: rgb(var(--fg-subtle-rgb));
+  --fg-on-accent-rgb: 255 255 255;         --fg-on-accent: rgb(var(--fg-on-accent-rgb));
+  --fg-on-tint-rgb: var(--p-blue-700-rgb); --fg-on-tint: rgb(var(--fg-on-tint-rgb));
+
+  --border-hairline-rgb: var(--p-lav-200-rgb); --border-hairline: rgb(var(--border-hairline-rgb));
+  --border-strong-rgb: var(--p-lav-300-rgb);   --border-strong: rgb(var(--border-strong-rgb));
+  --border-focus: var(--p-blue-600);
+
+  --accent-rgb: var(--p-blue-600-rgb);    --accent: rgb(var(--accent-rgb));
+  --accent-hover-rgb: var(--p-blue-700-rgb);  --accent-hover: rgb(var(--accent-hover-rgb));
+  --accent-active-rgb: var(--p-blue-800-rgb); --accent-active: rgb(var(--accent-active-rgb));
+  --accent-fg-rgb: var(--p-blue-700-rgb);     --accent-fg: rgb(var(--accent-fg-rgb));
+  --accent-soft: var(--p-blue-100);       /* Tier 2 */
+  --accent-subtle: var(--p-blue-50);      /* Tier 2 */
+  --accent-gradient: linear-gradient(135deg, var(--p-blue-500) 0%, var(--p-blue-700) 100%);
+
+  --due-rgb: var(--p-amber-500-rgb);       --due: rgb(var(--due-rgb));       --due-subtle: var(--p-amber-50);
+  --mastered-rgb: var(--p-violet-500-rgb); --mastered: rgb(var(--mastered-rgb)); --mastered-subtle: var(--p-violet-50);
+  --correct-rgb: var(--p-mint-500-rgb);    --correct: rgb(var(--correct-rgb));  --correct-subtle: var(--p-mint-50);
+  --wrong-rgb: var(--p-coral-500-rgb);     --wrong: rgb(var(--wrong-rgb));      --wrong-subtle: var(--p-coral-50);
+
+  --shadow-xs: 0 1px 2px rgb(44 78 232 / 0.06);
+  --shadow-sm: 0 2px 8px rgb(44 78 232 / 0.07);
+  --shadow-md: 0 6px 20px rgb(44 78 232 / 0.10);
+  --shadow-lg: 0 14px 40px rgb(44 78 232 / 0.14);
+  --shadow-accent: 0 8px 24px rgb(44 78 232 / 0.32);
+  --shadow-card-lift: 0 20px 48px rgb(16 21 52 / 0.16);
+
+  --glow-3d: radial-gradient(circle at 50% 46%, rgb(44 78 232 / 0.10) 0%, rgb(44 78 232 / 0) 68%);
+}
+
+/* 3 · SEMANTIC — DARK. Chỉ gán lại dạng -rgb; dạng màu tự theo vì thay thế
+   custom property là lazy và cả hai cùng tính trên <html>. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-canvas: linear-gradient(180deg, var(--p-night-900) 0%, #0D1229 52%, var(--p-night-800) 100%);
+  --bg-canvas-solid-rgb: var(--p-night-900-rgb);
+  --bg-surface-rgb: var(--p-night-800-rgb);
+  --bg-surface-alt-rgb: var(--p-night-700-rgb);
+  --bg-sunken-rgb: var(--p-night-700-rgb);
+  --bg-tint: rgb(74 103 240 / 0.16);
+  --bg-overlay: rgb(0 0 0 / 0.62);
+  --bg-glass: rgb(26 33 69 / 0.72);
+
+  --fg-default-rgb: 238 241 255;
+  --fg-muted-rgb: 154 162 200;
+  --fg-subtle-rgb: 110 118 156;
+  --fg-on-tint-rgb: 185 198 255;
+
+  --border-hairline-rgb: var(--p-night-600-rgb);
+  --border-strong-rgb: var(--p-night-500-rgb);
+  --border-focus: var(--p-blue-300);
+
+  --accent-rgb: var(--p-blue-500-rgb);
+  --accent-hover-rgb: var(--p-blue-400-rgb);
+  --accent-active-rgb: var(--p-blue-300-rgb);
+  --accent-fg-rgb: var(--p-blue-300-rgb);
+  --accent-soft: rgb(74 103 240 / 0.24);
+  --accent-subtle: rgb(74 103 240 / 0.14);
+  --accent-gradient: linear-gradient(135deg, var(--p-blue-400) 0%, var(--p-blue-600) 100%);
+
+  --due-rgb: var(--p-amber-400-dark-rgb);        --due-subtle: rgb(255 184 77 / 0.15);
+  --mastered-rgb: var(--p-violet-400-dark-rgb);  --mastered-subtle: rgb(169 140 255 / 0.15);
+  --correct-rgb: var(--p-mint-400-dark-rgb);     --correct-subtle: rgb(61 220 164 / 0.15);
+  --wrong-rgb: var(--p-coral-400-dark-rgb);      --wrong-subtle: rgb(255 122 128 / 0.15);
+
+  /* KHÔNG được là `none` — Tailwind ghép box-shadow: <ring>, <ring>,
+     var(--tw-shadow); một phần tử `none` làm hỏng CẢ khai báo và giết luôn
+     focus ring. Kit gốc viết `none`, đây là chỗ sửa bắt buộc (spec §5.3/R8). */
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: 0 8px 28px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 20px 52px rgb(0 0 0 / 0.55);
+  --shadow-accent: 0 8px 24px rgb(44 78 232 / 0.40);
+  --shadow-card-lift: 0 20px 48px rgb(0 0 0 / 0.60);
+
+  --glow-3d: radial-gradient(circle at 50% 46%, rgb(122 146 255 / 0.16) 0%, rgb(122 146 255 / 0) 68%);
+}
+
+/* 4 · TYPE SCALE. KHÔNG khai --font-display/--font-mono/... ở đây: những biến
+   đó đã được next/font set trực tiếp trên <html> qua className={...variable}
+   trong layout.tsx (hiện là --font-display / --font-sans / --font-mono — LƯU
+   Ý app dùng "--font-sans", kit gốc gọi nó "--font-body"; đừng định nghĩa lại
+   biến font nào trong task này). --font-ipa vẫn KHÔNG tồn tại — đó là việc
+   của Task 5, chưa làm ở đây. Task này chỉ thêm thang chữ mới: */
+:root {
+  --text-hero: clamp(2rem, 8.5vw, 3rem);
+  --text-d1: clamp(1.625rem, 6vw, 2.25rem);
+  --text-h1: 1.5rem;
+  --text-h2: 1.1875rem;
+  --text-h3: 1.0625rem;
+  --text-2xs: 0.6875rem;
+
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --tracking-display: -0.02em;
+  --tracking-overline: 0.1em;
+}
+
+/* 5 · SPACING / RADIUS / MOTION / Z-INDEX */
+:root {
+  --gutter: 1.25rem;
+  --content-max: 42rem;
+  --content-max-wide: 68rem;
+
+  --tap-min: 44px;
+  --control-h: 48px;
+  --control-h-lg: 56px;
+  --tabbar-h: 64px;
+  --tabbar-inset: 12px;
+  --appbar-h: 56px;
+
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --pad-bottom-nav: calc(var(--tabbar-h) + var(--tabbar-inset) + var(--safe-b) + 1.25rem);
+
+  --r-xs: 8px; --r-sm: 12px; --r-md: 16px; --r-lg: 20px; --r-xl: 24px; --r-2xl: 28px; --r-pill: 999px;
+
+  --dur-instant: 90ms; --dur-fast: 150ms; --dur-base: 220ms; --dur-slow: 340ms; --dur-flip: 460ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.22, 1.4, 0.36, 1);
+
+  --z-base: 0; --z-sticky: 10; --z-appbar: 20; --z-tabbar: 30;
+  --z-sheet: 40; --z-overlay: 50; --z-toast: 60; --z-tooltip: 70;
+}
+
+/* 6 · DOMAIN — grammar semantic-span hues. Giữ NGUYÊN 16 giá trị hiện có
+   (light + dark) đang ở globals.css — chuyển nguyên văn sang đây, KHÔNG chỉnh
+   lại cho nền navy trong task này. Kiểm tương phản thật ở Step 6 (ảnh chụp
+   /grammar/*/lesson/*); chỉ chỉnh nếu ảnh cho thấy tương phản kém — đừng đoán
+   giá trị mới không có căn cứ. */
+:root {
+  --gr-subject: 59 116 166; --gr-verb: 181 85 46; --gr-auxiliary: 58 141 139;
+  --gr-infinitive: 122 82 148; --gr-object: 158 74 122; --gr-adjective: 91 138 96;
+  --gr-adverb: 176 116 24; --gr-negation: 185 61 61;
+}
+:root[data-theme="dark"] {
+  --gr-subject: 121 168 210; --gr-verb: 219 128 94; --gr-auxiliary: 105 184 181;
+  --gr-infinitive: 176 141 199; --gr-object: 204 128 168; --gr-adjective: 133 178 138;
+  --gr-adverb: 226 162 74; --gr-negation: 226 111 111;
+}
+
+/* 7 · LEGACY v1 ALIASES — XOÁ Ở PLAN 8 (task cuối cùng của cả migration).
+   Giữ ~19 chỗ đọc rgb(var(--ember))/rgb(var(--ink-soft)) từ JavaScript
+   (stats/charts.tsx ×15, route-progress.tsx, skeletons.tsx, settings-client.tsx)
+   và toàn bộ .grammar-prose chạy đúng và lên MÀU MỚI NGAY. Dạng triplet bắt
+   buộc — Tailwind không đọc được var(--accent) (hex) làm <alpha-value>. */
+:root {
+  --paper: var(--bg-canvas-solid-rgb);
+  --paper-2: var(--bg-sunken-rgb);
+  --surface: var(--bg-surface-rgb);
+  --ink: var(--fg-default-rgb);
+  --ink-soft: var(--fg-muted-rgb);
+  --ink-line: var(--border-hairline-rgb);
+  --ember: var(--accent-rgb);
+  --moss-500: var(--correct-rgb);
+}

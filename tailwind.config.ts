@@ -14,67 +14,70 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Atelier warm scholarly palette.
-        // DEFAULT keys wire the bare utility (bg-paper, text-ink, bg-ember,
-        // stroke-ember, bg-surface, …) to the CSS vars in globals.css, which are
-        // space-separated channel triplets (e.g. `--ember: 200 130 26`). That's
-        // what makes `rgb(var(--x) / <alpha-value>)` valid AND lets the .dark
-        // overrides recolor every usage. Without DEFAULT, Tailwind emits nothing
-        // for the bare/opacity forms and the class silently does nothing.
-        paper: {
-          DEFAULT: "rgb(var(--paper) / <alpha-value>)",
-          50: "#FDFBF6",
-          100: "#FBF7EE",
-          200: "#F5EEE0",
-          300: "#EDE3CF",
-          400: "#E0D2B4",
-        },
-        ink: {
-          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
-          50: "#F5F2EB",
-          100: "#E8E2D5",
-          200: "#C9C0AC",
-          300: "#A89F8A",
-          400: "#7C7361",
-          500: "#5A5346",
-          600: "#3D382E",
-          700: "#2B271F",
-          800: "#1F1C16",
-          900: "#14120E",
-        },
-        // Surface (card background) as a real utility so `bg-surface` /
-        // `bg-surface/95` work. Note: `border-line` / `text-soft` / `bg-paper`
-        // stay as the component classes already defined in globals.css — we do
-        // NOT add a `line` color here, because a `line` color key would emit a
-        // full-opacity `.border-line` utility that overrides the intended /0.1
-        // hairline. Divider usages use `divide-ink/10` instead.
+        // Atelier v2 "Studio xanh" palette — see src/styles/tokens.css and
+        // design spec §5.1. Tier 1 keys read `rgb(var(--x-rgb) / <alpha-value>)`
+        // so `/N` opacity works; Tier 2 keys (accent.soft/subtle, tint, glass,
+        // overlay, due.subtle, …) read a bare `var(--x)` that already carries
+        // baked-in alpha and must NEVER be given a `/N` suffix (see
+        // src/styles/design-system.test.ts 4.5).
+        canvas: "rgb(var(--bg-canvas-solid-rgb) / <alpha-value>)",
         surface: {
-          DEFAULT: "rgb(var(--surface) / <alpha-value>)",
+          DEFAULT: "rgb(var(--bg-surface-rgb) / <alpha-value>)",
+          alt: "rgb(var(--bg-surface-alt-rgb) / <alpha-value>)",
         },
+        sunken: "rgb(var(--bg-sunken-rgb) / <alpha-value>)",
+        fg: {
+          DEFAULT: "rgb(var(--fg-default-rgb) / <alpha-value>)",
+          muted: "rgb(var(--fg-muted-rgb) / <alpha-value>)",
+          subtle: "rgb(var(--fg-subtle-rgb) / <alpha-value>)",
+          "on-accent": "rgb(var(--fg-on-accent-rgb) / <alpha-value>)",
+          "on-tint": "rgb(var(--fg-on-tint-rgb) / <alpha-value>)",
+        },
+        accent: {
+          DEFAULT: "rgb(var(--accent-rgb) / <alpha-value>)",
+          hover: "rgb(var(--accent-hover-rgb) / <alpha-value>)",
+          active: "rgb(var(--accent-active-rgb) / <alpha-value>)",
+          fg: "rgb(var(--accent-fg-rgb) / <alpha-value>)",
+          soft: "var(--accent-soft)",     // Tier 2 — KHÔNG nhận /N
+          subtle: "var(--accent-subtle)", // Tier 2 — KHÔNG nhận /N
+        },
+        hairline: "rgb(var(--border-hairline-rgb) / <alpha-value>)",
+        strong: "rgb(var(--border-strong-rgb) / <alpha-value>)",
+        due: { DEFAULT: "rgb(var(--due-rgb) / <alpha-value>)", subtle: "var(--due-subtle)" },
+        mastered: { DEFAULT: "rgb(var(--mastered-rgb) / <alpha-value>)", subtle: "var(--mastered-subtle)" },
+        correct: { DEFAULT: "rgb(var(--correct-rgb) / <alpha-value>)", subtle: "var(--correct-subtle)" },
+        wrong: { DEFAULT: "rgb(var(--wrong-rgb) / <alpha-value>)", subtle: "var(--wrong-subtle)" },
+
+        // ── LEGACY · trỏ lại token v2, XOÁ Ở PLAN 8 — spec §5.4 ────────────
+        // Không xoá các key này: ~500 chỗ chưa viết lại đọc chúng và phải lên
+        // màu mới ngay. cefr.a1…c1 trỏ vào thang xanh 5 bậc → con dấu CEFR
+        // §2.3 có sẵn. Ramp số cũ (ink.50-900, paper 50-400, ember 50-300 +
+        // 600-900) bị xoá — grep xác nhận không còn call site thật nào dùng
+        // chúng (xem task-3-report.md). paper.200, ember.400, ember.500 giữ
+        // lại vì CÓ call site thật; ember.400/500 cố ý giữ nguyên hex CŨ
+        // (không đổi sang token mới) — xem ghi chú trong report, đây là quyết
+        // định cần người xem, task này không tự chế giá trị mới cho ramp.
+        paper: {
+          DEFAULT: "rgb(var(--bg-canvas-solid-rgb) / <alpha-value>)",
+          200: "rgb(var(--bg-sunken-rgb) / <alpha-value>)",
+        },
+        ink: { DEFAULT: "rgb(var(--fg-default-rgb) / <alpha-value>)" },
         ember: {
-          DEFAULT: "rgb(var(--ember) / <alpha-value>)",
-          50: "#FDF6EC",
-          100: "#FAE8CC",
-          200: "#F4CC8E",
-          300: "#EDAE4E",
-          400: "#E2942A",
-          500: "#C8821A", // primary accent
-          600: "#A56813",
-          700: "#7E4F10",
-          800: "#57370B",
-          900: "#332106",
+          DEFAULT: "rgb(var(--accent-rgb) / <alpha-value>)",
+          400: "#E2942A", // LEGACY hex — real call sites (rating-buttons.tsx,
+          500: "#C8821A", // session-summary.tsx); not migrated, see report.
         },
         moss: {
-          400: "#7BA67E",
-          500: "#5B8A60",
-          600: "#436B49",
+          400: "rgb(var(--correct-rgb) / <alpha-value>)",
+          500: "rgb(var(--correct-rgb) / <alpha-value>)",
+          600: "rgb(var(--correct-rgb) / <alpha-value>)",
         },
         cefr: {
-          a1: "#5B8A60", // moss green - beginner/fresh
-          a2: "#4A9E9C", // teal
-          b1: "#C8821A", // amber - intermediate
-          b2: "#B5552E", // warm rust - advanced
-          c1: "#8E5BA6", // plum - upper advanced
+          a1: "rgb(var(--p-blue-200-rgb) / <alpha-value>)",
+          a2: "rgb(var(--p-blue-400-rgb) / <alpha-value>)",
+          b1: "rgb(var(--p-blue-500-rgb) / <alpha-value>)",
+          b2: "rgb(var(--p-blue-600-rgb) / <alpha-value>)",
+          c1: "rgb(var(--p-blue-800-rgb) / <alpha-value>)",
         },
       },
       // Tailwind 3.4's opacity scale has no 8 or 12, so `bg-ember/12`,
@@ -98,18 +101,60 @@ const config: Config = {
         "display-xl": ["clamp(3rem, 8vw, 6rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
         "display-lg": ["clamp(2.25rem, 5vw, 3.75rem)", { lineHeight: "1.06", letterSpacing: "-0.016em" }],
         "display-md": ["clamp(1.75rem, 3.5vw, 2.5rem)", { lineHeight: "1.1", letterSpacing: "-0.012em" }],
+        hero: ["var(--text-hero)", { lineHeight: "var(--leading-tight)", letterSpacing: "var(--tracking-display)" }],
+        d1: ["var(--text-d1)", { lineHeight: "var(--leading-tight)", letterSpacing: "var(--tracking-display)" }],
+        h1: ["var(--text-h1)", { lineHeight: "var(--leading-snug)" }],
+        h2: ["var(--text-h2)", { lineHeight: "var(--leading-snug)" }],
+        h3: ["var(--text-h3)", { lineHeight: "var(--leading-snug)" }],
+        "2xs": ["var(--text-2xs)", { lineHeight: "1.3", letterSpacing: "var(--tracking-overline)" }],
       },
       borderRadius: {
         "4xl": "2rem",
+        xs: "var(--r-xs)", sm: "var(--r-sm)", md: "var(--r-md)",
+        lg: "var(--r-lg)", xl: "var(--r-xl)", "2xl": "var(--r-2xl)", pill: "var(--r-pill)",
       },
       boxShadow: {
         "soft": "0 2px 8px -2px rgba(31, 28, 22, 0.06), 0 8px 24px -8px rgba(31, 28, 22, 0.08)",
         "soft-lg": "0 4px 16px -4px rgba(31, 28, 22, 0.08), 0 16px 48px -12px rgba(31, 28, 22, 0.12)",
-        "ember": "0 4px 20px -4px rgba(200, 130, 26, 0.35)",
         "inset-line": "inset 0 -1px 0 0 rgba(31, 28, 22, 0.06)",
+        xs: "var(--shadow-xs)", sm: "var(--shadow-sm)", md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)", accent: "var(--shadow-accent)", "card-lift": "var(--shadow-card-lift)",
+        // "ember" key REMOVED — grep confirmed 0 real call sites for
+        // `shadow-ember` in src/ (safe cleanup, see task-3-report.md).
       },
       backgroundImage: {
-        "paper-grain": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
+        // "paper-grain" key REMOVED — grep confirmed 0 real call sites for
+        // `bg-paper-grain` in src/ (the only hits were English prose mentioning
+        // "paper-grain" in comments, not a class usage); safe cleanup alongside
+        // the body::before removal in globals.css.
+        canvas: "var(--bg-canvas)",
+        "accent-gradient": "var(--accent-gradient)",
+        "glow-3d": "var(--glow-3d)",
+      },
+      spacing: {
+        gutter: "var(--gutter)",
+        nav: "var(--pad-bottom-nav)",
+        "safe-t": "var(--safe-t)",
+        "safe-b": "var(--safe-b)",
+      },
+      maxWidth: { content: "var(--content-max)", "content-wide": "var(--content-max-wide)" },
+      minHeight: {
+        screen: "100dvh", // OVERRIDES Tailwind's core value — every existing
+        // `min-h-screen` in the app becomes 100dvh automatically.
+        tap: "var(--tap-min)",
+      },
+      zIndex: {
+        base: "var(--z-base)", sticky: "var(--z-sticky)", appbar: "var(--z-appbar)",
+        tabbar: "var(--z-tabbar)", sheet: "var(--z-sheet)", overlay: "var(--z-overlay)",
+        toast: "var(--z-toast)", tooltip: "var(--z-tooltip)",
+      },
+      transitionDuration: {
+        instant: "var(--dur-instant)", fast: "var(--dur-fast)",
+        base: "var(--dur-base)", slow: "var(--dur-slow)", flip: "var(--dur-flip)",
+      },
+      transitionTimingFunction: {
+        standard: "var(--ease-standard)", out: "var(--ease-out)",
+        spring: "var(--ease-spring)", bounce: "var(--ease-bounce)",
       },
       keyframes: {
         "fade-up": {

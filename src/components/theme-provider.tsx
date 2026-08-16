@@ -4,13 +4,13 @@ import { createContext, useContext, useEffect, useState, useCallback } from "rea
 
 type Theme = "light" | "dark";
 
-// Hex values for <meta name="theme-color">, matched to the --paper token in
-// globals.css (light = :root, dark = :root[data-theme="dark"]). Mirrors the
-// inline boot script in src/app/layout.tsx — that script is a plain string
-// (dangerouslySetInnerHTML) so it can't import this, but keep the two in sync
-// by hand if either changes.
-const THEME_COLOR_LIGHT = "#FDFBF6";
-const THEME_COLOR_DARK = "#14120E";
+// Hex values for <meta name="theme-color">, matched to the --bg-canvas-solid
+// token in src/styles/tokens.css (light = :root, dark = :root[data-theme="dark"]).
+// Mirrors the inline boot script in src/app/layout.tsx — that script is a
+// plain string (dangerouslySetInnerHTML) so it can't import this, but keep
+// the two in sync by hand if either changes.
+const THEME_COLOR_LIGHT = "#F5F7FF";
+const THEME_COLOR_DARK = "#0A0E22";
 
 function applyThemeColorMeta(t: Theme) {
   const meta = document.querySelector('meta[name="theme-color"]');

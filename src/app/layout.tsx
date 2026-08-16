@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Literata, Fira_Sans, Noto_Sans_Mono } from "next/font/google";
+import "@/styles/tokens.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/components/i18n-provider";
@@ -143,8 +144,9 @@ export default function RootLayout({
         {/* Owns the theme-color the boot script (and later theme-provider.tsx)
             mutates in place via querySelector — see the script below. Must
             render BEFORE that script so the query never comes up empty on
-            first paint. Default is the light --paper token (globals.css). */}
-        <meta name="theme-color" content="#FDFBF6" />
+            first paint. Default is the light --bg-canvas-solid token
+            (--p-lav-50, src/styles/tokens.css). */}
+        <meta name="theme-color" content="#F5F7FF" />
         {/* Prevent FOUC: set theme (data-theme attribute + theme-color meta) +
             lang before paint, and capture the install prompt before React
             mounts. The data-theme/theme-color logic here is inlined (this is
@@ -162,7 +164,7 @@ export default function RootLayout({
             exactly the users most likely to have storage restricted. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var d=t==='dark'||(!t&&m);document.documentElement.setAttribute('data-theme',d?'dark':'light');var mc=document.querySelector('meta[name="theme-color"]');if(mc&&d){mc.content='#14120E'}}catch(e){}try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}window.__bip=null;addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e})})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var d=t==='dark'||(!t&&m);document.documentElement.setAttribute('data-theme',d?'dark':'light');var mc=document.querySelector('meta[name="theme-color"]');if(mc&&d){mc.content='#0A0E22'}}catch(e){}try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}window.__bip=null;addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e})})();`,
           }}
         />
       </head>
@@ -172,7 +174,7 @@ export default function RootLayout({
             <Providers>
               <ProgressBar />
               <Nav />
-              <div className="relative z-10">{children}</div>
+              <div>{children}</div>
               <SwRegister />
               <PwaInstall />
             </Providers>

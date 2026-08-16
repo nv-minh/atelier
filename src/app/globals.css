@@ -3,50 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --paper: 253 251 246;
-    --paper-2: 251 247 238;
-    --surface: 255 255 255;
-    --ink: 31 28 22;
-    --ink-soft: 122 115 97;
-    --ink-line: 31 28 22;
-    --ember: 200 130 26;
-    --grain-opacity: 0.035;
-    /* Grammar semantic-span palette (grammar design §6). Channel triplets like
-       the rest — keep both blocks in sync with the [data-theme="dark"] overrides below. */
-    --gr-subject: 59 116 166;
-    --gr-verb: 181 85 46;
-    --gr-auxiliary: 58 141 139;
-    --gr-infinitive: 122 82 148;
-    --gr-object: 158 74 122;
-    --gr-adjective: 91 138 96;
-    --gr-adverb: 176 116 24;
-    --gr-negation: 185 61 61;
-    color-scheme: light;
-  }
-
-  :root[data-theme="dark"] {
-    --paper: 20 18 14;
-    --paper-2: 28 25 20;
-    --surface: 33 30 23;
-    --ink: 245 240 228;
-    --ink-soft: 168 159 138;
-    --ink-line: 245 240 228;
-    --ember: 232 165 71;
-    --grain-opacity: 0.06;
-    --gr-subject: 121 168 210;
-    --gr-verb: 219 128 94;
-    --gr-auxiliary: 105 184 181;
-    --gr-infinitive: 176 141 199;
-    --gr-object: 204 128 168;
-    --gr-adjective: 133 178 138;
-    --gr-adverb: 226 162 74;
-    --gr-negation: 226 111 111;
-    color-scheme: dark;
-  }
-
   * {
-    border-color: rgb(var(--ink-line) / 0.08);
+    border-color: rgb(var(--border-hairline-rgb) / 0.6);
   }
 
   html {
@@ -71,8 +29,9 @@
   }
 
   body {
-    background-color: rgb(var(--paper));
-    color: rgb(var(--ink));
+    background: var(--bg-canvas);
+    background-attachment: fixed; /* gradient không trôi khi cuộn — chữ ký hướng mới */
+    color: rgb(var(--fg-default-rgb) / 1);
     /* No font-feature-settings here on purpose. The old "ss01","cv01","cv11"
        line was written for a different family — Fira Sans has no cv* features
        at all, and its ss04 swaps in single-storey a/g, which is the wrong
@@ -82,31 +41,47 @@
        a fallback for browsers without dvh. */
     min-height: 100vh;
     min-height: 100dvh;
-    position: relative;
-  }
-
-  /* Paper grain texture overlay */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-    opacity: var(--grain-opacity);
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-  }
-
-  :root[data-theme="dark"] body::before {
-    mix-blend-mode: screen;
   }
 
   ::selection {
-    background-color: rgb(var(--ember) / 0.25);
+    background-color: rgb(var(--accent-rgb) / 0.25);
   }
 }
 
 @layer components {
+  /* Editorial container with generous margins */
+  .shell {
+    max-width: var(--content-max-wide);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  @media (min-width: 768px) {
+    .shell { padding-inline: 2rem; }
+  }
+
+  /* A refined card surface */
+  .card-atelier {
+    background-color: rgb(var(--bg-surface-rgb));
+    border: 1px solid rgb(var(--border-hairline-rgb) / 0.8);
+    border-radius: var(--r-xl);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Pill */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--r-pill);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: var(--tracking-overline);
+    text-transform: uppercase;
+    border: 1px solid rgb(var(--border-hairline-rgb));
+  }
+
+  /* LEGACY — xoá ở Plan 8, xem spec §7 R4 (19 chỗ dùng) */
   .surface {
     background-color: rgb(var(--surface));
   }
@@ -119,6 +94,7 @@
     color: rgb(var(--ink));
   }
 
+  /* LEGACY — xoá ở Plan 8, xem spec §7 R4 (32 chỗ dùng) */
   .bg-paper {
     background-color: rgb(var(--paper));
   }
@@ -127,32 +103,12 @@
     border-color: rgb(var(--ink-line) / 0.1);
   }
 
-  /* Editorial container with generous margins */
-  .shell {
-    max-width: 80rem;
-    margin-inline: auto;
-    padding-inline: 1.25rem;
-  }
-  @media (min-width: 768px) {
-    .shell { padding-inline: 2rem; }
-  }
-
-  /* A refined card surface */
-  .card-atelier {
-    background-color: rgb(var(--surface));
-    border: 1px solid rgb(var(--ink-line) / 0.08);
-    border-radius: 1.25rem;
-    box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.6) inset, 0 2px 8px -2px rgb(31 28 22 / 0.05), 0 12px 32px -16px rgb(31 28 22 / 0.1);
-  }
-  :root[data-theme="dark"] .card-atelier {
-    box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 2px 8px -2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.5);
-  }
-
   /* Display heading with optical sizing.
      Weight 520, not the old 380: at hero size the thin cut disappeared into the
      paper-grain background, which is most of what "chữ mỏng, khó đọc" was
      about. Literata is a serif, so it needs less negative tracking than the
-     grotesque it replaced. */
+     grotesque it replaced.
+     LEGACY — xoá ở Plan 8, xem spec §7 R4 (107 chỗ dùng) */
   .display {
     font-family: var(--font-display), Georgia, serif;
     font-weight: 520;
@@ -174,20 +130,6 @@
   .focus-ring {
     outline: none;
     box-shadow: 0 0 0 2px rgb(var(--paper)), 0 0 0 4px rgb(var(--ember) / 0.5);
-  }
-
-  /* Pill */
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 999px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 1px solid rgb(var(--ink-line) / 0.12);
   }
 
   /* ── Grammar lesson typography ─────────────────────────────────────
@@ -282,6 +224,58 @@
     color: rgb(var(--chip));
     background-color: rgb(var(--chip) / 0.08);
   }
+
+  /* ── Atelier v2 kit §6 BASE (selected) + §7 ASSET 3D ─────────────────
+     Verbatim from docs/files/atelier-ui-kit-v2/02-tokens.css lines 265-336,
+     restricted to the classes/keyframes plan-1-task-3-brief Step 2.9 names —
+     html/body/focus-visible/tap-target rules from that section are NOT
+     copied (body is already handled above; the rest has no call site yet
+     and would risk changing existing button/link sizing sight-unseen). */
+  .h-screen-dvh { height: 100dvh; }
+  .min-h-screen-dvh { min-height: 100dvh; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .art3d {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* soft contact shadow under the object — makes it "stand" on a surface
+       instead of floating */
+    filter: drop-shadow(0 12px 16px rgb(16 21 52 / 0.18));
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  /* glow behind the object — wrap .art3d in an element with this class */
+  .art3d-stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+  }
+  .art3d-stage::before {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    background: var(--glow-3d);
+    z-index: -1;
+  }
+
+  /* entrance: gentle bounce. Used when a card first enters the screen. */
+  @keyframes art3d-pop {
+    0%   { transform: scale(0.82) translateY(10px); opacity: 0; }
+    60%  { transform: scale(1.04) translateY(0);    opacity: 1; }
+    100% { transform: scale(1)    translateY(0);    opacity: 1; }
+  }
+  .art3d-enter { animation: art3d-pop var(--dur-slow) var(--ease-bounce) both; }
+
+  /* very light idle drift — ONLY on a screen with exactly one 3D object */
+  @keyframes art3d-float {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-6px); }
+  }
+  .art3d-float { animation: art3d-float 4.5s ease-in-out infinite; }
 }
 
 @layer utilities {
@@ -312,4 +306,6 @@
     transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
+
+  .art3d-float, .art3d-enter { animation: none !important; }
 }
