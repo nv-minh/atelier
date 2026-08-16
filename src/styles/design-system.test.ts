@@ -319,7 +319,18 @@ describe("Hệ thiết kế — lưới an toàn", () => {
     // Cách đếm "display": đếm dòng chứa \bdisplay\b,
     // LOẠI BỎ dòng cũng chứa display-it|display-xl|display-lg|display-md|font-display
     // (đây là class/component khác, không phải .display Atelier).
-    // Số đo: 107 trên main @ 900805f + 2 từ trang /dev mới = 109.
+    // Số đo trước Task 5: 109 (budget), nhưng thực đo chỉ 107 dùng — 2 dòng dư
+    // sẵn từ khi bump 107→109 ở Task 1 (comment cũ). Plan 1 Task 5 thêm đúng
+    // 6 dòng thật trong src/app/dev/type/page.tsx khi trang này từ stub thành
+    // công cụ đo thật: 4 className="display …" (CoverageGrid h3 + 3 h2 ở mục
+    // 1a/1b/1c) + 2 dòng "&display=swap" không tránh được trong URL Google
+    // Fonts CSS2 (đúng cú pháp API, không phải class .display — nhiễu của
+    // cách đếm theo dòng). 107 + 6 = 113 dùng thật → bump budget 109 → 113 (0
+    // dòng dư, đúng bằng usage — đã cố ý đổi tên biến `display` cục bộ trong
+    // page.tsx thành renderedChar và tránh chữ "display" trần trong comment
+    // mới ở layout.tsx để không cộng thêm nhiễu ngoài 6 dòng kể trên). Số đo
+    // xác nhận bằng cách chạy trực tiếp countDisplay() trước/sau — xem
+    // task-5-report.md.
     function countDisplay(): number {
       let count = 0;
       for (const file of allTsTsx) {
@@ -336,14 +347,19 @@ describe("Hệ thiết kế — lưới an toàn", () => {
     // Ngân sách ratchet ban đầu — đo trên main @ 900805f, cộng thêm cho
     // trang /dev mới: card-atelier +3 (ui×2 + type×1), display +2, text-soft +4.
     // Ratchet được giảm dần khi migrate sang design system mới.
+    //
+    // Plan 1 Task 5: card-atelier 75 → 77 (src/app/dev/type/page.tsx đổi từ
+    // stub thành công cụ đo font thật, dùng thêm 2 dòng .card-atelier ròng —
+    // 1 dòng cũ của stub bị thay bằng 3 dòng mới ở 1a/1c). display 109 → 113,
+    // xem countDisplay() ở trên.
     const BUDGETS: Array<{
       cls: string;
       budget: number;
       count: () => number;
     }> = [
-      { cls: "card-atelier", budget: 75, count: () => countLines(/\bcard-atelier\b/) },
+      { cls: "card-atelier", budget: 77, count: () => countLines(/\bcard-atelier\b/) },
       { cls: "pill",          budget: 23, count: () => countLines(/\bpill\b/) },
-      { cls: "display",       budget: 109, count: countDisplay },
+      { cls: "display",       budget: 113, count: countDisplay },
       { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
       { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
     ];

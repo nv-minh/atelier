@@ -34,6 +34,7 @@
     "grammar:translate-export": "tsx prisma/grammar-translate-export.ts",
     "grammar:translate-import": "tsx prisma/grammar-translate-import.ts",
     "ui:shots": "node scripts/ui/shots.mjs",
+    "check:type": "node scripts/ui/check-type.mjs",
     "postinstall": "prisma generate",
     "brand:icons": "tsx scripts/brand/gen-icons.ts"
   },

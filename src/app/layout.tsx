@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Literata, Fira_Sans, Noto_Sans_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, Noto_Sans_Mono } from "next/font/google";
 import "@/styles/tokens.css";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -10,38 +10,28 @@ import { Nav } from "@/components/nav";
 import { SwRegister } from "@/components/sw-register";
 import { PwaInstall } from "@/components/pwa-install";
 
-// The "vietnamese" subset is not optional here. Google's "latin" unicode-range
-// excludes U+1EA0–1EF9 (ạ ả ấ ầ ậ ế ệ ị ọ ộ ớ ợ ụ ứ ữ …) and U+01A0/01AF (Ơ Ư),
-// so without it those glyphs fall back per-character to Georgia / system-ui /
-// ui-monospace. The damage lands hardest in the hero, which renders Vietnamese
-// at up to 96px: six of the twenty glyphs in "Học tiếng Anh và nhớ được lâu."
-// would break stroke weight mid-word. Costs ~5–20 KB per family.
-//
-// Literata replaced Fraunces: Fraunces ran at weight 380 with the WONK axis on,
-// which read as thin and oddly curled over the paper-grain background. Literata
-// was drawn for long-form reading on screen, carries the opsz axis so the hero
-// and the 1.35rem lesson headings get different drawings of the same face, and
-// covers Vietnamese fully.
-const display = Literata({
+// Be Vietnam Pro replaces both Literata (--font-display) and Fira Sans
+// (--font-sans) — one family, not two (spec §7 R7). Verified, not assumed:
+// src/app/dev/type/page.tsx measures every required Vietnamese diacritic
+// (ệ ặ ỡ ữ ợ ẩ ẳ ỷ Ơ Ư Đ) against this family with a canvas double-fallback
+// trick (same char, two different-metric generics appended — equal widths
+// only if the family truly has the glyph), and scripts/ui/check-type.mjs
+// turned that into a gate that ran green before this file was touched. Kit v2
+// also proposed IBM Plex Mono + Charis SIL for mono/IPA, but that swap is NOT
+// made here: IBM Plex Mono is unmeasured, and Charis SIL is a serif, which
+// would put IPA transcriptions in a different letterform family than the
+// app's geometric sans headings and body copy — see the mono block below,
+// unchanged, and R7 for the full ruling. Total font payload drops (three
+// families → two) and stays under the §11 120 KB budget — see check:type
+// output.
+const display = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
-  axes: ["opsz"],
-  style: ["normal", "italic"],
 });
 
-// Fira Sans replaced Hanken Grotesk for two measured reasons. Hanken's x-height
-// is 49% of the em against Fira's 53%, so the same 15px reads noticeably larger
-// here without touching the type scale. And Hanken ships no IPA: Google serves
-// its latin-ext subset with a unicode-range covering U+0250–02AF but no glyphs
-// inside it, so ˈ ɪ ʊ ʌ ɔ ɜ ɡ ʃ ʒ ː silently fell through to system-ui.
-//
-// Fira is static, not variable, so every weight is a separate file — keep this
-// list to the four the app actually uses (400 body, 500 font-medium, 600
-// font-semibold, 700 headings). Do not enable ss04: it swaps in single-storey
-// a and g, which is the wrong model of the letters for people learning to read
-// printed English.
-const sans = Fira_Sans({
+const sans = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",

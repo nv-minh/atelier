@@ -91,15 +91,18 @@
     background-color: rgb(var(--paper));
   }
 
-  /* Display heading with optical sizing.
-     Weight 520, not the old 380: at hero size the thin cut disappeared into the
-     paper-grain background, which is most of what "chữ mỏng, khó đọc" was
-     about. Literata is a serif, so it needs less negative tracking than the
-     grotesque it replaced.
+  /* Display heading.
+     Weight 700, not 520: --font-display and --font-sans are now both Be
+     Vietnam Pro (Plan 1 Task 5), so the old serif-vs-grotesque contrast with
+     body text is gone — the only way left to keep `.display` visually
+     distinct is weight (and size). 520 was Literata's own optical-sizing
+     sweet spot on that axis; Be Vietnam Pro has no opsz axis, and 700 is
+     enough separation at section-heading scale without reading as heavy at
+     small sizes. 800 is reserved for hero/large-metric text per spec §2.2.
      LEGACY — xoá ở Plan 8, xem spec §7 R4 (107 chỗ dùng) */
   .display {
     font-family: var(--font-display), Georgia, serif;
-    font-weight: 520;
+    font-weight: 700;
     letter-spacing: -0.012em;
   }
 
@@ -131,7 +134,10 @@
   .grammar-prose h1 { display: none; } /* duplicates the page title */
   .grammar-prose h2 {
     font-family: var(--font-display), Georgia, serif;
-    font-weight: 560;
+    /* 700, not 560 — same reason as .display above: --font-display is Be
+       Vietnam Pro now, no separate serif to lean on, so weight carries the
+       contrast with the 0.975rem body text around it. */
+    font-weight: 700;
     font-size: 1.35rem;
     margin: 2rem 0 0.75rem;
   }
