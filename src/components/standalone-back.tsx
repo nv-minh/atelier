@@ -11,8 +11,17 @@
 // it with a real Back button built into the new AppBar, plus a left-edge
 // swipe gesture. Removing it is meant to be exactly:
 //   1. `git rm src/components/standalone-back.tsx`
-//   2. drop the `<StandaloneBack />` import/usage from src/app/layout.tsx
+//   2. drop the `<StandaloneBack />` import/usage from src/components/nav.tsx
 // Nothing else in the app should ever import from here.
+//
+// Rendered in nav.tsx as the first item in the header's left cluster, ahead
+// of the brand Link — NOT as a `fixed` overlay. An earlier version floated
+// this at `fixed top-left`, which measured out to overlapping BrandMark and
+// the start of the "Atelier" wordmark on a real 375px viewport (see task-6
+// fix round 1). Living inside the header's normal flex flow means it just
+// pushes the logo right, and it inherits the header's own
+// `pt-[env(safe-area-inset-top)]` (nav.tsx) for free — no separate safe-area
+// padding or z-index needed here.
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
@@ -43,20 +52,19 @@ export function StandaloneBack() {
   if (typeof window !== "undefined" && window.history.length <= 1) return null;
   // Root screen — there is no "back" from here.
   if (pathname === "/") return null;
-  // Exactly nav.tsx's `isStudying` condition (nav.tsx:19): the study session
-  // takes over the whole screen and already has its own `✕`, and nav hides
-  // itself on the same condition. Keep this expression identical to nav's so
-  // the two never disagree about when the session UI owns the screen.
+  // Exactly nav.tsx's `isStudying` condition (nav.tsx:19). Now that this
+  // renders inside the header, the header's own `opacity-0
+  // pointer-events-none` already hides it during a study session — this
+  // check is redundant in practice but stays as a literal copy of nav's
+  // expression so the two can never disagree about when the session UI owns
+  // the screen.
   if (pathname?.startsWith("/study/") && pathname !== "/study") return null;
 
   return (
     <button
       onClick={() => router.back()}
       aria-label={t("nav.back")}
-      // z-50: above nav's header/bottom-tab-bar (both z-40, nav.tsx:42/93) so
-      // this never renders underneath them, but below auth-gate's bottom
-      // sheet (z-[60], auth-gate.tsx:149) so the sheet still wins over it.
-      className="fixed z-50 top-[calc(0.75rem+env(safe-area-inset-top))] left-3 grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/85 backdrop-blur-xl text-ink hover:bg-paper-200/60 transition-colors"
+      className="grid h-11 w-11 place-items-center rounded-full border border-line bg-paper/85 backdrop-blur-xl text-ink hover:bg-paper-200/60 transition-colors"
     >
       <ArrowLeft size={20} />
     </button>

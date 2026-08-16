@@ -9,6 +9,7 @@ import { LangToggle } from "./lang-toggle";
 import { UserMenu } from "./user-menu";
 import { useAuthGate } from "./auth-gate";
 import { useI18n } from "./i18n-provider";
+import { StandaloneBack } from "./standalone-back";
 import { cn } from "@/lib/utils";
 
 export function Nav() {
@@ -44,13 +45,18 @@ export function Nav() {
         )}
       >
         <div className="shell flex h-16 items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <BrandMark size={32} />
-            <span className="display text-lg tracking-tight">
-              Atelier
-              <span className="display-it text-ember">.</span>
-            </span>
-          </Link>
+          <div className="flex items-center gap-2">
+            {/* First item in the left cluster so flex just pushes the logo
+                right instead of overlapping it — see standalone-back.tsx. */}
+            <StandaloneBack />
+            <Link href="/" className="flex items-center gap-2.5 group">
+              <BrandMark size={32} />
+              <span className="display text-lg tracking-tight">
+                Atelier
+                <span className="display-it text-ember">.</span>
+              </span>
+            </Link>
+          </div>
 
           <nav className="hidden md:flex items-center gap-1">
             {links.map((l) => {
