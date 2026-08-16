@@ -21,12 +21,21 @@ import { PwaInstall } from "@/components/pwa-install";
 // made here: IBM Plex Mono is unmeasured, and Charis SIL is a serif, which
 // would put IPA transcriptions in a different letterform family than the
 // app's geometric sans headings and body copy — see the mono block below,
-// unchanged, and R7 for the full ruling. Total font payload drops (three
-// families → two) and stays under the §11 120 KB budget — see check:type
-// output.
+// unchanged, and R7 for the full ruling.
+//
+// BUDGET MISS, measured not assumed (spec §7 R7 addendum): Be Vietnam Pro has
+// no variable-font file on Google Fonts, so every requested weight is a
+// separate static file per subset. Weight 800 was requested here on the
+// assumption spec §2.2's hero/large-metric text would need it, but nothing in
+// the app renders at 800 yet (grep confirms zero consumers) — that work
+// belongs to Plan 7's dashboard/hero components. Dropped it here: 2 fewer
+// files (1 weight × 2 subsets), zero visual change today. This alone does NOT
+// close the gap to the 120 KB target — full remediation (subset reduction,
+// possibly variable-font alternatives) is Plan 8's job, where the ship gate
+// measures and enforces §11 for real.
 const display = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
