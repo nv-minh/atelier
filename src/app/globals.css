@@ -199,7 +199,10 @@
   .grammar-prose span.adverb { color: rgb(var(--gr-adverb)); font-weight: 500; }
   .grammar-prose span.negation { color: rgb(var(--gr-negation)); font-weight: 500; }
   .grammar-prose span.place { color: rgb(var(--gr-adjective)); font-style: italic; }
-  .grammar-prose span.ending { color: rgb(var(--ember)); font-weight: 700; }
+  /* --accent-fg, not --ember: measured contrast on the new navy dark surface
+     is 3.78–4.09:1 for --accent/--ember (below WCAG AA 4.5:1) vs 8.3–9:1 for
+     --accent-fg, which is exactly the token built for accent-colored text. */
+  .grammar-prose span.ending { color: rgb(var(--accent-fg-rgb)); font-weight: 700; }
   .grammar-prose span.irregular-past,
   .grammar-prose span.irregular-participle { color: rgb(var(--gr-verb)); font-weight: 600; }
   .grammar-prose span.signal-word {

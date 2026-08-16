@@ -64,8 +64,15 @@ const config: Config = {
         ink: { DEFAULT: "rgb(var(--fg-default-rgb) / <alpha-value>)" },
         ember: {
           DEFAULT: "rgb(var(--accent-rgb) / <alpha-value>)",
-          400: "#E2942A", // LEGACY hex — real call sites (rating-buttons.tsx,
-          500: "#C8821A", // session-summary.tsx); not migrated, see report.
+          // Both shades feed the "Hard" rating swatch (rating-buttons.tsx,
+          // session-summary.tsx) — an amber/caution role, not the primary
+          // accent. `--due` is the token already built for exactly that hue
+          // and tuned for both themes, so this isn't a new invented value:
+          // it's routing an overloaded v1 accent to the v2 role it always
+          // meant. Real primitive (RatingBar reading `due` directly) lands
+          // in Plan 5; these two ramp entries die then.
+          400: "rgb(var(--due-rgb) / <alpha-value>)",
+          500: "rgb(var(--due-rgb) / <alpha-value>)",
         },
         moss: {
           400: "rgb(var(--correct-rgb) / <alpha-value>)",
