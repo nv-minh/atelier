@@ -20,6 +20,9 @@ export default function robots(): MetadataRoute.Robots {
         // "/leaderboard",
         // "/word",
         "/offline",
+        // Dev routes return 404 in production via layout.tsx, but this
+        // second layer prevents indexation in preview deployments.
+        "/dev",
       ],
     },
     sitemap: `${base}/sitemap.xml`,

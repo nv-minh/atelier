@@ -15,6 +15,16 @@ const guard = withAuth({
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function middleware(req: any) {
+  // Block /dev routes in production. Middleware runs at request time (edge),
+  // so this NODE_ENV check is not eliminated by the build compiler (unlike
+  // the same check in src/app/dev/layout.tsx, which IS eliminated).
+  if (
+    process.env.NODE_ENV === "production" &&
+    req.nextUrl.pathname.startsWith("/dev")
+  ) {
+    return new NextResponse(null, { status: 404 });
+  }
+
   if (BYPASS) return NextResponse.next();
   return guard(req);
 }
@@ -31,5 +41,5 @@ export default function middleware(req: any) {
 // (the matcher never covered /api). /study keeps the redirect because a study
 // session has no meaningful guest state to render at all.
 export const config = {
-  matcher: ["/study/:path*"],
+  matcher: ["/study/:path*", "/dev/:path*"],
 };
