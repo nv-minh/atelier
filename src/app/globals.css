@@ -84,20 +84,6 @@
     box-shadow: var(--shadow-sm);
   }
 
-  /* Pill */
-  .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--r-pill);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: var(--tracking-overline);
-    text-transform: uppercase;
-    border: 1px solid rgb(var(--border-hairline-rgb));
-  }
-
   /* LEGACY — xoá ở Plan 8, xem spec §7 R4 (19 chỗ dùng) */
   .surface {
     background-color: rgb(var(--surface));

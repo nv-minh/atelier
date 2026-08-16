@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
+import { Chip, chipClasses } from "@/components/ui/chip";
 import { AudioButton } from "@/components/audio-button";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { StarButton } from "@/components/star-button";
@@ -57,7 +58,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
               <div className="min-w-0">
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <h1 className="display text-display-md">{w.word}</h1>
-                  <CefrBadge level={w.cefr} />
+                  <CefrStamp level={w.cefr} />
                   {typeLabel && <span className="text-sm text-fg-muted">· {typeLabel}</span>}
                 </div>
                 <div className="flex items-center gap-3 mt-3 flex-wrap">
@@ -110,7 +111,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.synonyms")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.synonyms.map((s) => (
-                    <Link key={s} href={`/word/${encodeURIComponent(s)}`} className="pill text-[11px] text-moss-600 dark:text-moss-400 border-moss-500/30 bg-moss-500/10 hover:border-moss-500/60">
+                    <Link key={s} href={`/word/${encodeURIComponent(s)}`} className={cn(chipClasses(), "text-[11px] text-moss-600 dark:text-moss-400 border-moss-500/30 bg-moss-500/10 hover:border-moss-500/60")}>
                       {s}
                     </Link>
                   ))}
@@ -123,7 +124,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.antonyms")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.antonyms.map((a) => (
-                    <Link key={a} href={`/word/${encodeURIComponent(a)}`} className="pill text-[11px] text-red-400 border-red-400/30 bg-red-400/10 hover:border-red-400/60">
+                    <Link key={a} href={`/word/${encodeURIComponent(a)}`} className={cn(chipClasses(), "text-[11px] text-red-400 border-red-400/30 bg-red-400/10 hover:border-red-400/60")}>
                       {a}
                     </Link>
                   ))}
@@ -136,7 +137,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                 <p className="text-xs font-mono text-fg-muted uppercase tracking-wide mb-1.5">{t("word.topics")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {detail.topics.map((slug) => (
-                    <Link key={slug} href={`/topics/${slug}`} className="pill text-[11px] text-fg-muted hover:text-fg hover:border-ember/40">
+                    <Link key={slug} href={`/topics/${slug}`} className={cn(chipClasses(), "text-[11px] text-fg-muted hover:text-fg hover:border-ember/40")}>
                       {t(`topics.names.${slug}`)}
                     </Link>
                   ))}
@@ -192,7 +193,7 @@ export function WordDetailClient({ detail }: { detail: Detail }) {
                       <span className="text-fg-muted tabular-nums">
                         {new Date(r.reviewedAt).toLocaleDateString(lang === "vi" ? "vi-VN" : "en-US")}
                       </span>
-                      {rk && <span className={cn("pill text-[10px]", rk.c)}>{t(rk.key)}</span>}
+                      {rk && <Chip className={cn("text-[10px]", rk.c)}>{t(rk.key)}</Chip>}
                     </li>
                   );
                 })}

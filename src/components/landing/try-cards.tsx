@@ -11,7 +11,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, RotateCcw } from "lucide-react";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { AudioButton } from "@/components/audio-button";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { startSignIn, GoogleMark } from "@/components/auth-gate";
@@ -156,7 +156,7 @@ function Front({ card }: { card: DemoWord }) {
   return (
     <div className="backface-hidden absolute inset-0 card-atelier p-6 sm:p-8 flex flex-col">
       <div className="flex items-center justify-between">
-        <CefrBadge level={card.cefr} />
+        <CefrStamp level={card.cefr} />
         {/* stop the tap here so hearing the word doesn't also flip the card */}
         <span onClick={(e) => e.stopPropagation()} role="presentation">
           <AudioButton word={card.word} accent="uk" size="sm" />

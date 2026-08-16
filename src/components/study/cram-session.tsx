@@ -7,6 +7,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Shuffle, CheckCircle2, RotateCcw 
 import { Flashcard, type Card } from "@/components/study/flashcard";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 
 export function CramSession({
   initialCards,
@@ -116,7 +117,7 @@ export function CramSession({
           <ArrowLeft size={15} /> {t("modes.title")}
         </Link>
         <div className="flex items-center gap-3">
-          <span className="pill text-fg-muted"><span className="h-1.5 w-1.5 rounded-full bg-ember" /> {t("modes.tagCram")}</span>
+          <Chip className="text-fg-muted"><span className="h-1.5 w-1.5 rounded-full bg-ember" /> {t("modes.tagCram")}</Chip>
           <button onClick={shuffle} className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg">
             <Shuffle size={14} /> {t("topics.shuffle")}
           </button>

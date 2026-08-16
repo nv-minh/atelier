@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, XCircle } from "lucide-react";
 import { AudioButton } from "@/components/audio-button";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { useI18n } from "@/components/i18n-provider";
 import { FeedbackStrip } from "@/components/practice/feedback-strip";
 import type { ModeViewProps } from "@/lib/practice/types";
@@ -75,7 +75,7 @@ export function QuizMode({ item, reveal, onAnswer, onSkip }: ModeViewProps) {
     <div className="max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <CefrBadge level={item.cefr} />
+          <CefrStamp level={item.cefr} />
           <AudioButton word={item.word} accent="us" size="sm" />
           <AudioButton word={item.word} accent="uk" size="sm" />
         </div>

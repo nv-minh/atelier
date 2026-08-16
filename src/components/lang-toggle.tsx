@@ -4,30 +4,22 @@ import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "./i18n-provider";
 import { LANGS, type Lang } from "@/lib/i18n/dictionaries";
 import { cn } from "@/lib/utils";
+import { SegmentedControl } from "@/components/ui/segmented-control";
 
 export function LangToggle({ variant = "icon" }: { variant?: "icon" | "full" }) {
   const { lang, setLang } = useI18n();
 
   if (variant === "full") {
+    // Plan 1 Task 7: was a 2-card grid (short code + full name stacked);
+    // now the SegmentedControl primitive. External API unchanged — every
+    // caller still renders <LangToggle variant="full" /> exactly as before
+    // (only settings-client.tsx uses this branch, per task-7-brief.md).
     return (
-      <div className="grid grid-cols-2 gap-2">
-        {LANGS.map((l) => {
-          const active = lang === l.code;
-          return (
-            <button
-              key={l.code}
-              onClick={() => setLang(l.code as Lang)}
-              className={cn(
-                "flex flex-col items-center gap-1 rounded-2xl border p-4 transition-colors",
-                active ? "border-ember bg-ember/5 text-ember" : "border-hairline/10 text-fg-muted hover:text-fg"
-              )}
-            >
-              <span className="text-sm font-semibold">{l.short}</span>
-              <span className="text-xs">{l.label}</span>
-            </button>
-          );
-        })}
-      </div>
+      <SegmentedControl
+        value={lang}
+        onChange={(v) => setLang(v as Lang)}
+        options={LANGS.map((l) => ({ value: l.code as Lang, label: l.label }))}
+      />
     );
   }
 

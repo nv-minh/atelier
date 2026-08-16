@@ -13,6 +13,7 @@ import { Lock, Compass, Library } from "lucide-react";
 import { useI18n } from "./i18n-provider";
 import { startSignIn, GoogleMark } from "./auth-gate";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { cn } from "@/lib/utils";
 
 export type WallContext =
@@ -52,7 +53,7 @@ export function AuthRequired({
         <Lock size={20} strokeWidth={2} />
       </span>
 
-      <p className="pill text-[10px] text-fg-muted mb-4">{t("auth.badge")}</p>
+      <Chip className="text-[10px] text-fg-muted mb-4">{t("auth.badge")}</Chip>
       <h2 className="display text-2xl sm:text-3xl mb-3">{t(`auth.walls.${context}.title`)}</h2>
       <p className="text-fg-muted leading-relaxed mb-7">{t(`auth.walls.${context}.body`)}</p>
 

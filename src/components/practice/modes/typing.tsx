@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AudioButton } from "@/components/audio-button";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { useI18n } from "@/components/i18n-provider";
 import { FeedbackStrip } from "@/components/practice/feedback-strip";
 import { Button } from "@/components/ui/button";
@@ -42,7 +42,7 @@ export function TypingMode({ item, reveal, onAnswer }: ModeViewProps) {
   return (
     <div className="max-w-xl mx-auto">
       <div className="text-center mb-8">
-        <CefrBadge level={item.cefr} className="mb-4" />
+        <CefrStamp level={item.cefr} className="mb-4" />
         <p className="text-xs text-fg-muted font-mono mb-2">{t("practice.typeFor")}</p>
         <p className="display text-xl sm:text-2xl leading-snug">{item.definitionEn}</p>
         {item.typeVi && <p className="text-xs text-fg-muted mt-2">{item.typeVi}</p>}

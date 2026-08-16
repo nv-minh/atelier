@@ -10,6 +10,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
 import type { GrammarSessionItem, GrammarSource } from "@/lib/grammar/session-types";
@@ -301,7 +302,7 @@ export function GrammarSession({
           >
             <div className="text-center mb-8">
               <p className="text-xs text-fg-muted font-mono mb-3">{t("grammar.test.title", { topic: topicName })}</p>
-              {current.repeat && <p className="mb-3"><span className="pill text-fg-muted">{t("grammar.test.repeatPill")}</span></p>}
+              {current.repeat && <p className="mb-3"><Chip className="text-fg-muted">{t("grammar.test.repeatPill")}</Chip></p>}
               <h2 className="display text-xl sm:text-2xl leading-relaxed break-words">{question}</h2>
               {lang === "vi" && current.questionVi && current.questionEn !== question && (
                 <p className="text-sm text-fg-muted mt-2">{current.questionEn}</p>

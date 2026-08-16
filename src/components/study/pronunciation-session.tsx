@@ -6,7 +6,7 @@ import { Mic, MicOff, CheckCircle2, RotateCcw, Layers, SkipForward, ArrowRight }
 import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 import { AudioButton } from "@/components/audio-button";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { Button } from "@/components/ui/button";
 import { buttonClasses, buttonVariantClasses } from "@/lib/ui/button-classes";
 import { fmtTime, shuffle } from "@/lib/utils";
@@ -372,7 +372,7 @@ function SupportedSession({
             className="w-full max-w-lg text-center"
           >
             <div className="mb-4 flex justify-center">
-              <CefrBadge level={current.cefr} />
+              <CefrStamp level={current.cefr} />
             </div>
 
             <p className="text-fg-muted text-sm mb-3">{t("study.pronListenPrompt")}</p>

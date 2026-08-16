@@ -17,6 +17,7 @@ import { Check, Loader2, Sparkles, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAuthGate } from "@/components/auth-gate";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { BLOCK_SIZE, type BlockResult, nextLadderStep } from "@/lib/placement/ladder";
 import { bandToCefr, estimatePlacement } from "@/lib/placement/estimate";
@@ -302,7 +303,7 @@ export function OnboardingFlow() {
   if (phase === "intro") {
     return (
       <Card>
-        <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.introHeader")}</p>
+        <Chip className="text-[10px] text-fg-muted mb-4">{t("onboarding.introHeader")}</Chip>
         <h1 className="display text-2xl sm:text-3xl mb-3">{t("onboarding.introTitle")}</h1>
         <p className="text-fg-muted leading-relaxed mb-4">{t("onboarding.introBody")}</p>
         <p className="text-fg-muted/80 text-sm leading-relaxed mb-7">{t("onboarding.introHonest")}</p>
@@ -324,7 +325,7 @@ export function OnboardingFlow() {
       <Card>
         {/* No "question 4 of 20": the ladder is adaptive, so the total is genuinely
             not known in advance. Claiming one would be a lie. */}
-        <p className="pill text-[10px] text-fg-muted mb-6">{t("onboarding.progress")}</p>
+        <Chip className="text-[10px] text-fg-muted mb-6">{t("onboarding.progress")}</Chip>
         <p className="text-fg-muted text-sm mb-3">{t("onboarding.question")}</p>
         <p className="display text-3xl sm:text-4xl mb-9 break-words">
           {current.kind === "real" ? current.item.word : current.word}
@@ -350,7 +351,7 @@ export function OnboardingFlow() {
   if (phase === "result") {
     return (
       <Card>
-        <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.resultHeader")}</p>
+        <Chip className="text-[10px] text-fg-muted mb-4">{t("onboarding.resultHeader")}</Chip>
         <p className="text-fg-muted text-sm mb-1">{t("onboarding.resultTitle")}</p>
         <p className="display text-5xl mb-6 text-ember">{bandLabel}</p>
 
@@ -386,7 +387,7 @@ export function OnboardingFlow() {
   // topics + saving
   return (
     <Card>
-      <p className="pill text-[10px] text-fg-muted mb-4">{t("onboarding.topicsHeader")}</p>
+      <Chip className="text-[10px] text-fg-muted mb-4">{t("onboarding.topicsHeader")}</Chip>
       <h2 className="display text-2xl mb-3">{t("onboarding.topicsTitle")}</h2>
       <p className="text-fg-muted leading-relaxed mb-7">{t("onboarding.topicsBody")}</p>
 

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { Search, StickyNote, Lock } from "lucide-react";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
+import { Chip } from "@/components/ui/chip";
 import { AudioButton } from "@/components/audio-button";
 import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
@@ -316,7 +317,7 @@ export function LibraryClient({
                     {w.word}
                   </Link>
                   {w.ipaUk && <span className="font-mono text-xs text-fg-muted">{w.ipaUk}</span>}
-                  <CefrBadge level={w.cefr} />
+                  <CefrStamp level={w.cefr} />
                   {w.typeVi && <span className="text-xs text-fg-muted">· {w.typeVi}</span>}
                   {w.hasNote && <StickyNote size={12} className="text-ember" aria-label={t("notebook.hasNote")} />}
                 </div>
@@ -335,9 +336,9 @@ export function LibraryClient({
                   <AudioButton word={w.word} accent="us" size="sm" />
                 </div>
                 {st ? (
-                  <span className={cn("pill text-[9px]", st.c)}>{st.t}</span>
+                  <Chip className={cn("text-[9px]", st.c)}>{st.t}</Chip>
                 ) : (
-                  <span className="pill text-[9px] text-fg-muted">—</span>
+                  <Chip className="text-[9px] text-fg-muted">—</Chip>
                 )}
               </div>
             </div>

@@ -7,6 +7,7 @@ import { Layers, CheckSquare, Keyboard, Headphones, Zap, Grid3x3, Mic, ArrowUpRi
 import { CefrFilter } from "@/components/study/cefr-filter";
 import { DirectionFilter } from "@/components/study/direction-filter";
 import { useI18n } from "@/components/i18n-provider";
+import { Chip } from "@/components/ui/chip";
 
 export default function StudyPage() {
   const { t } = useI18n();
@@ -66,7 +67,7 @@ export default function StudyPage() {
                 <span className={`grid h-11 w-11 place-items-center rounded-2xl bg-ink/5 ${m.accent}`}>
                   <Icon size={20} strokeWidth={1.75} />
                 </span>
-                <span className="pill text-fg-muted">{m.tag}</span>
+                <Chip className="text-fg-muted">{m.tag}</Chip>
               </div>
               <h3 className="display text-2xl mb-2 flex items-center gap-1.5">
                 {m.title}

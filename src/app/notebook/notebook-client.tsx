@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { GraduationCap, Zap, StickyNote, Star, Flame, CheckCheck } from "lucide-react";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
+import { Chip } from "@/components/ui/chip";
 import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
 import { useI18n } from "@/components/i18n-provider";
@@ -240,7 +241,7 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
           <Link href={`/word/${encodeURIComponent(w.word)}`} className="display text-lg hover:text-ember transition-colors">
             {w.word}
           </Link>
-          <CefrBadge level={w.cefr} />
+          <CefrStamp level={w.cefr} />
           {typeLabel && <span className="text-xs text-fg-muted">· {typeLabel}</span>}
           {w.note && <StickyNote size={13} className="text-ember" aria-label={t("notebook.hasNote")} />}
         </div>
@@ -259,9 +260,9 @@ function WordRow({ w, leech, showKnown }: { w: Entry; leech?: boolean; showKnown
           <StarButton wordId={w.wordId} initialStarred={w.starred} size="sm" />
         )}
         {st ? (
-          <span className={cn("pill text-[9px]", st.c)}>{t(st.key)}</span>
+          <Chip className={cn("text-[9px]", st.c)}>{t(st.key)}</Chip>
         ) : (
-          <span className="pill text-[9px] text-fg-muted">—</span>
+          <Chip className="text-[9px] text-fg-muted">—</Chip>
         )}
         {leech && w.card && (
           <span className="text-[10px] text-fg-muted tabular-nums">

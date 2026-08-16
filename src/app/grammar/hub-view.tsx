@@ -4,14 +4,15 @@ import Link from "next/link";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import type { GrammarHub, TopicCard } from "@/lib/grammar/data";
+import { Chip } from "@/components/ui/chip";
 
 // Small shared badge: a number when mastery is measurable, the "just started"
-// pill otherwise (design §7 — no % below 5 answers).
+// tag chip otherwise (design §7 — no % below 5 answers).
 export function MasteryBadge({ mastery, answered }: { mastery: number | null; answered: number }) {
   const { t } = useI18n();
   if (mastery == null) {
     return answered > 0 ? (
-      <span className="pill text-fg-muted">{t("grammar.masteryNew")}</span>
+      <Chip className="text-fg-muted">{t("grammar.masteryNew")}</Chip>
     ) : null;
   }
   const tone = mastery >= 90 ? "text-moss-500" : mastery >= 50 ? "text-ember" : "text-fg-muted";

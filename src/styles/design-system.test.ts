@@ -358,7 +358,13 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       count: () => number;
     }> = [
       { cls: "card-atelier", budget: 77, count: () => countLines(/\bcard-atelier\b/) },
-      { cls: "pill",          budget: 23, count: () => countLines(/\bpill\b/) },
+      // Plan 1 Task 7: .pill CSS class deleted from globals.css, all real
+      // call sites migrated onto <Chip>/chipClasses(). Remaining 10 lines are
+      // `rounded-pill` (Tailwind's border-radius token — a different,
+      // legitimate class, not the retired component class) at 6 sites plus 4
+      // comment lines in chip.tsx documenting the migration. Tightened from
+      // 23 to the measured value.
+      { cls: "pill",          budget: 10, count: () => countLines(/\bpill\b/) },
       { cls: "display",       budget: 113, count: countDisplay },
       { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
       // Plan 1 Task 6: 19 → 21. The `secondary` Button variant is the first
@@ -371,7 +377,11 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       // recounted: the true current total (including those 2 lines) is 19,
       // not 21. Tightened back to the measured value, matching every other
       // budget in this list (exact count, not headroom).
-      { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
+      // +6 from Task 7: 1 real `bg-surface` in segmented-control.tsx's active
+      // state, plus 5 comment lines in cefr-stamp.ts documenting a measured
+      // WCAG contrast finding (the word "surface" there names the page
+      // background being tested against, not a class to migrate away from).
+      { cls: "surface",       budget: 25, count: () => countLines(/\bsurface\b/) },
     ];
 
     for (const { cls, budget, count } of BUDGETS) {

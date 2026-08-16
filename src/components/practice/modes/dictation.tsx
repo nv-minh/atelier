@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Volume2 } from "lucide-react";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
 import { useI18n } from "@/components/i18n-provider";
 import { FeedbackStrip } from "@/components/practice/feedback-strip";
 import { Button } from "@/components/ui/button";
@@ -68,7 +68,7 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
     <div className="max-w-xl mx-auto">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <CefrBadge level={item.cefr} />
+          <CefrStamp level={item.cefr} />
         </div>
         <p className="text-xs text-fg-muted font-mono mb-3">{t("practice.listenType")}</p>
         <Button

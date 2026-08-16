@@ -2,7 +2,8 @@
 
 import { motion } from "motion/react";
 import { AudioButton } from "@/components/audio-button";
-import { CefrBadge } from "@/components/cefr-badge";
+import { CefrStamp } from "@/components/ui/cefr-stamp";
+import { Chip } from "@/components/ui/chip";
 import { StarButton } from "@/components/star-button";
 import { RatingButtons, type RatingPreview } from "./rating-buttons";
 import { useI18n } from "@/components/i18n-provider";
@@ -105,14 +106,14 @@ function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "rev
   return (
     <div className="backface-hidden absolute inset-0 card-atelier p-6 sm:p-10 flex flex-col">
       <div className="flex items-center justify-between">
-        <CefrBadge level={card.cefr} />
+        <CefrStamp level={card.cefr} />
         {dir === "forward" && (
           <div className="flex gap-1.5">
             <AudioButton word={card.word} accent="uk" size="sm" />
             <AudioButton word={card.word} accent="us" size="sm" />
           </div>
         )}
-        {dir !== "forward" && <span className="pill text-fg-muted">{dir === "reverse" ? t("study.dirReverse") : t("study.dirCloze")}</span>}
+        {dir !== "forward" && <Chip className="text-fg-muted">{dir === "reverse" ? t("study.dirReverse") : t("study.dirCloze")}</Chip>}
       </div>
 
       <div className="flex-1 flex flex-col items-center justify-center text-center gap-3 px-2">
@@ -129,14 +130,14 @@ function FrontFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "rev
             {(card.ipaUk || card.ipaUs) && (
               <p className="font-mono text-sm sm:text-base text-fg-muted">{card.ipaUk || card.ipaUs}</p>
             )}
-            {card.typeVi && <span className="pill text-fg-muted mt-1">{card.typeVi}</span>}
+            {card.typeVi && <Chip className="text-fg-muted mt-1">{card.typeVi}</Chip>}
           </>
         )}
         {dir === "reverse" && (
           <>
             <p className="text-lg sm:text-2xl leading-relaxed text-fg max-w-lg">{card.definitionEn}</p>
             {card.definitionVi && <p className="text-sm text-fg-muted max-w-md">{card.definitionVi}</p>}
-            {card.typeVi && <span className="pill text-fg-muted mt-1">{card.typeVi}</span>}
+            {card.typeVi && <Chip className="text-fg-muted mt-1">{card.typeVi}</Chip>}
           </>
         )}
         {dir === "cloze" && clozeText && (
@@ -160,7 +161,7 @@ function BackFace({ card, dir, clozeText }: { card: Card; dir: "forward" | "reve
           <span className="display text-xl sm:text-2xl">{card.word}</span>
           {card.ipaUk && <span className="font-mono text-xs text-fg-muted">{card.ipaUk}</span>}
         </div>
-        <CefrBadge level={card.cefr} />
+        <CefrStamp level={card.cefr} />
       </div>
 
       {card.definitionEn && (

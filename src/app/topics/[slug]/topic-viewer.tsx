@@ -7,6 +7,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, RefreshCw, Eye, Shuffle } from "l
 import { Flashcard, type Card } from "@/components/study/flashcard";
 import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
+import { Chip } from "@/components/ui/chip";
 import type { Topic } from "@/lib/topic-taxonomy";
 import type { TopicWord } from "@/lib/topics-data";
 
@@ -112,9 +113,9 @@ export function TopicViewer({
           <ArrowLeft size={15} /> {t("topics.topicsBack")}
         </Link>
         <div className="flex items-center gap-3">
-          <span className="pill text-fg-muted">
+          <Chip className="text-fg-muted">
             <span className="h-1.5 w-1.5 rounded-full bg-cefr-a2" /> {t("topics.practiceTag")}
-          </span>
+          </Chip>
           <button
             onClick={shuffle}
             className="inline-flex items-center gap-1.5 text-sm text-fg-muted hover:text-fg transition-colors"
