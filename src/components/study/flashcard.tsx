@@ -65,7 +65,14 @@ export function Flashcard({
       <div className="perspective-1000 select-none">
         <motion.div
           className="relative preserve-3d cursor-pointer w-full"
-          style={{ minHeight: "min(64vh, 520px)" }}
+          // Grown from min(64vh, 520px): that cap left a large empty gap
+          // between the top progress bar and the card (and an equally large
+          // one below it, before the flip/rating button) on any phone taller
+          // than ~815px — the card stopped growing at 520px while the
+          // surrounding flex area kept getting taller. dvh (not vh) matches
+          // the rest of the app's convention for viewport-height math on
+          // mobile Safari (see practice-shell.tsx's own comment on this).
+          style={{ minHeight: "min(78dvh, 640px)" }}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           onClick={(e) => {
