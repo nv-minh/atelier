@@ -157,7 +157,12 @@ describe("Hệ thiết kế — lưới an toàn", () => {
 
   // ── 4.3: Không env(safe-area- trần ────────────────────────────
   describe("4.3 — Không env(safe-area- trần trong src/components", () => {
-    const RATCHET = 5; // ngân sách ban đầu
+    // 5 gốc + 2 từ PR #15 (fix/study-mobile-ux, merge vào main TRƯỚC khi
+    // nhánh này tồn tại nên không biết ngân sách): pt-[env(safe-area-inset-top)]
+    // trên thanh tiến độ đã đổi thành sticky top-0, và
+    // pb-[calc(1rem+env(safe-area-inset-bottom))] thay pb-28 lãng phí. Cả hai
+    // là an toàn thật (X2 vừa bật viewport-fit=cover ở Plan 0), không phải nợ.
+    const RATCHET = 7;
 
     it(`số dòng chứa env(safe-area- ≤ ${RATCHET}`, () => {
       const files = collectFiles("src/components", ".tsx");
@@ -351,8 +356,11 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       { cls: "pill",          budget: 23, count: () => countLines(/\bpill\b/) },
       { cls: "display",       budget: 109, count: countDisplay },
       { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
-      { cls: "text-soft",     budget: 365, count: () => countLines(/\btext-soft\b/) },
-      { cls: "text-ink",      budget: 77, count: countTextInk },
+      // text-soft/text-ink +1 mỗi cái từ PR #15 (fix/study-mobile-ux): nút ✕
+      // mới trên thanh tiến độ phiên học, `text-soft hover:text-ink` — merge
+      // vào main trước khi nhánh này tồn tại nên không biết ngân sách.
+      { cls: "text-soft",     budget: 366, count: () => countLines(/\btext-soft\b/) },
+      { cls: "text-ink",      budget: 78, count: countTextInk },
       { cls: "border-line",   budget: 92, count: () => countLines(/\bborder-line\b/) },
       { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
     ];
