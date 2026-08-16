@@ -102,6 +102,9 @@ const HEX_EXEMPT = new Set([
   "components/auth-gate.tsx",
   // <meta name="theme-color"> requires literal hex — CSS vars not supported.
   "app/layout.tsx",
+  // Same reason: ThemeProvider.set() writes the same meta tag's `content`
+  // (Task 2, [data-theme] migration) and must use the identical literal hex.
+  "components/theme-provider.tsx",
   // Standalone error page renders outside the app shell (no CSS vars).
   "app/global-error.tsx",
 ]);

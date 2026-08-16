@@ -3,14 +3,14 @@
 import { useEffect } from "react";
 
 // A tiny client-side toggle so developers can preview both palettes without
-// going to Settings. Dark mode currently uses the `.dark` class on <html>
-// (migrated to data-theme in Task 2).
+// going to Settings. Dark mode uses the `data-theme` attribute on <html>
+// (migrated from the `.dark` class in Task 2).
 function ThemeToggle() {
   useEffect(() => {
     // Sync initial state with the current DOM.
     const sw = document.getElementById("theme-switch") as HTMLButtonElement | null;
     if (sw) {
-      sw.textContent = document.documentElement.classList.contains("dark")
+      sw.textContent = document.documentElement.dataset.theme === "dark"
         ? "☀ Light"
         : "🌙 Dark";
     }
@@ -18,8 +18,8 @@ function ThemeToggle() {
 
   const toggle = () => {
     const html = document.documentElement;
-    const next = !html.classList.contains("dark");
-    html.classList.toggle("dark", next);
+    const next = html.dataset.theme !== "dark";
+    html.dataset.theme = next ? "dark" : "light";
     const sw = document.getElementById("theme-switch");
     if (sw) sw.textContent = next ? "☀ Light" : "🌙 Dark";
   };

@@ -13,7 +13,7 @@
     --ember: 200 130 26;
     --grain-opacity: 0.035;
     /* Grammar semantic-span palette (grammar design §6). Channel triplets like
-       the rest — keep both blocks in sync with the .dark overrides below. */
+       the rest — keep both blocks in sync with the [data-theme="dark"] overrides below. */
     --gr-subject: 59 116 166;
     --gr-verb: 181 85 46;
     --gr-auxiliary: 58 141 139;
@@ -25,7 +25,7 @@
     color-scheme: light;
   }
 
-  .dark {
+  :root[data-theme="dark"] {
     --paper: 20 18 14;
     --paper-2: 28 25 20;
     --surface: 33 30 23;
@@ -97,7 +97,7 @@
     mix-blend-mode: multiply;
   }
 
-  .dark body::before {
+  :root[data-theme="dark"] body::before {
     mix-blend-mode: screen;
   }
 
@@ -144,7 +144,7 @@
     border-radius: 1.25rem;
     box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.6) inset, 0 2px 8px -2px rgb(31 28 22 / 0.05), 0 12px 32px -16px rgb(31 28 22 / 0.1);
   }
-  .dark .card-atelier {
+  :root[data-theme="dark"] .card-atelier {
     box-shadow: 0 1px 0 0 rgb(255 255 255 / 0.04) inset, 0 2px 8px -2px rgb(0 0 0 / 0.3), 0 16px 40px -20px rgb(0 0 0 / 0.5);
   }
 

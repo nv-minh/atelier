@@ -14,10 +14,11 @@
 //     `addInitScript` that runs before any page script, NOT via the OS-level
 //     `prefers-color-scheme` media feature. The anti-FOUC inline script in
 //     src/app/layout.tsx reads the same `theme` localStorage key (falling
-//     back to prefers-color-scheme only when the key is absent) and adds the
-//     `.dark` class to <html> before first paint. Driving the OS color
-//     scheme instead would rely on that fallback path and would not match
-//     what a user who has explicitly picked a theme in-app actually sees.
+//     back to prefers-color-scheme only when the key is absent) and sets
+//     `data-theme` on <html> before first paint (`.dark` class pre-Task 2).
+//     Driving the OS color scheme instead would rely on that fallback path
+//     and would not match what a user who has explicitly picked a theme
+//     in-app actually sees.
 //
 // Besides the PNGs, every run also writes manifest.json to the tag's output
 // directory: one record per route — { route, finalUrl, status, redirected,

@@ -114,7 +114,13 @@ export const metadata: Metadata = {
   },
 };
 
-// Next 14.2: theme-color belongs in the viewport export, not metadata.
+// Next 14.2: theme-color belongs in the viewport export, not metadata — but
+// NOT as `themeColor` here. That field can only express the OS's
+// prefers-color-scheme via `media` queries; it can't express an in-app theme
+// choice (someone who picked dark in Settings on an OS set to light would
+// still get a light status bar). The single <meta name="theme-color"> tag
+// rendered in <head> below is the one source of truth instead, kept in sync
+// with `data-theme` by the boot script and theme-provider.tsx.
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -122,18 +128,6 @@ export const viewport: Viewport = {
   // iOS, which silently disables the notch and home-bar padding that nav.tsx,
   // auth-gate.tsx and pwa-install.tsx already ask for.
   viewportFit: "cover",
-  // Paired values instead of one dark ink for both schemes: a dark status bar
-  // over the paper background read as a rendering fault. This follows the OS
-  // preference only — an in-app theme override still shows the OS colour. That
-  // limitation is fixed together with the [data-theme] migration.
-  // Values are the CURRENT --paper tokens (globals.css), not the v2 redesign
-  // palette: this ships before the re-skin lands.
-  // #FDFBF6 = rgb(253 251 246) --paper (light, globals.css:7)
-  // #14120E = rgb(20 18 14)    --paper (dark,  globals.css:29)
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#FDFBF6" },
-    { media: "(prefers-color-scheme: dark)", color: "#14120E" },
-  ],
 };
 
 // lang="vi" matches DEFAULT_LANG and what the server actually renders; the
@@ -146,8 +140,18 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning className={`${display.variable} ${sans.variable} ${mono.variable}`}>
       <head>
-        {/* Prevent FOUC: set theme + lang before paint, and capture the install
-            prompt before React mounts.
+        {/* Owns the theme-color the boot script (and later theme-provider.tsx)
+            mutates in place via querySelector — see the script below. Must
+            render BEFORE that script so the query never comes up empty on
+            first paint. Default is the light --paper token (globals.css). */}
+        <meta name="theme-color" content="#FDFBF6" />
+        {/* Prevent FOUC: set theme (data-theme attribute + theme-color meta) +
+            lang before paint, and capture the install prompt before React
+            mounts. The data-theme/theme-color logic here is inlined (this is
+            a plain string, dangerouslySetInnerHTML, so it can't import
+            anything) and duplicated by hand in applyThemeColorMeta() /
+            ThemeProvider.set() in src/components/theme-provider.tsx — keep
+            both in sync if either changes.
 
             The beforeinstallprompt capture is deliberately OUTSIDE any try —
             it must not be skipped — but everything that touches localStorage is
@@ -158,7 +162,7 @@ export default function RootLayout({
             exactly the users most likely to have storage restricted. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&m)){document.documentElement.classList.add('dark')}}catch(e){}try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}window.__bip=null;addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e})})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;var d=t==='dark'||(!t&&m);document.documentElement.setAttribute('data-theme',d?'dark':'light');var mc=document.querySelector('meta[name="theme-color"]');if(mc&&d){mc.content='#14120E'}}catch(e){}try{var l=localStorage.getItem('lang');if(l){document.documentElement.lang=l}}catch(e){}window.__bip=null;addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e})})();`,
           }}
         />
       </head>

@@ -1,7 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "class",
+  // Attribute-based selector, not "class": Tailwind 3.4 (corePlugins.js:264)
+  // turns ["selector", X] into addVariant('dark', `&:where(${X}, ${X} *)`),
+  // so with X = '[data-theme="dark"]' every existing `dark:` utility keeps
+  // working unchanged — the 7 call sites (flashcard.tsx, skeletons.tsx,
+  // feedback-strip.tsx, note-editor.tsx, word-detail-client.tsx,
+  // lesson-reader.tsx, library-client.tsx) need no edits.
+  darkMode: ["selector", '[data-theme="dark"]'],
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
