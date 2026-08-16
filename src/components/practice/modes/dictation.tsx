@@ -5,6 +5,7 @@ import { Volume2 } from "lucide-react";
 import { CefrBadge } from "@/components/cefr-badge";
 import { useI18n } from "@/components/i18n-provider";
 import { FeedbackStrip } from "@/components/practice/feedback-strip";
+import { Button } from "@/components/ui/button";
 import { gradeTyping } from "@/lib/utils";
 import { playWord } from "@/lib/tts";
 import type { ModeViewProps } from "@/lib/practice/types";
@@ -70,13 +71,18 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
           <CefrBadge level={item.cefr} />
         </div>
         <p className="text-xs text-fg-muted font-mono mb-3">{t("practice.listenType")}</p>
-        <button
+        <Button
           onClick={play}
           data-nosound
-          className="mx-auto grid h-20 w-20 place-items-center rounded-full bg-ink text-paper hover:opacity-90 transition-opacity"
+          variant="primary"
+          size="lg"
+          // Overrides the lg preset's height/padding: this is a large
+          // icon-only "play audio" control, not a text CTA — same 80px
+          // square it always was, just the primary color role now.
+          className="mx-auto h-20 w-20 p-0"
         >
           <Volume2 size={28} />
-        </button>
+        </Button>
         <div className="flex justify-center gap-2 mt-4">
           {SPEEDS.map((s) => (
             <button
@@ -111,13 +117,9 @@ export function DictationMode({ item, reveal, onAnswer }: ModeViewProps) {
           }`}
         />
         {!shown && (
-          <button
-            type="submit"
-            data-nosound
-            className="mt-3 w-full rounded-2xl bg-ink text-paper py-3 font-medium hover:opacity-90"
-          >
+          <Button type="submit" data-nosound variant="primary" size="md" className="mt-3 w-full">
             {t("practice.check")} <span className="opacity-50 ml-1">↵</span>
-          </button>
+          </Button>
         )}
       </form>
 

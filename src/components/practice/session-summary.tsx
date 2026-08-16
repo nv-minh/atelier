@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { CheckCircle2, RotateCcw } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 import { RATING } from "@/lib/practice/types";
 import type { SessionSummaryData } from "@/lib/practice/session-state";
 
@@ -108,12 +109,9 @@ export function SessionSummary({
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           {left > 0 && (
-            <button
-              onClick={() => window.location.reload()}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90"
-            >
+            <Button onClick={() => window.location.reload()} variant="primary" size="md">
               <RotateCcw size={16} /> {t("practice.continueN", { n: left })}
-            </button>
+            </Button>
           )}
           <a
             href="/study"

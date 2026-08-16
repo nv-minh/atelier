@@ -63,7 +63,7 @@ export function UserMenu() {
           // eslint-disable-next-line @next/next/no-img-element
           <img src={image} alt={name} className="h-full w-full object-cover" />
         ) : (
-          <span className="grid h-full w-full place-items-center bg-ink text-paper text-sm font-semibold">
+          <span className="grid h-full w-full place-items-center bg-accent text-fg-on-accent text-sm font-semibold">
             {initial}
           </span>
         )}

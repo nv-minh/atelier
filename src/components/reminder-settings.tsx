@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 
 // base64url (the VAPID public key) → Uint8Array, the shape PushManager.subscribe wants.
 //
@@ -101,9 +102,9 @@ export function ReminderSettings({
       <p className="text-xs text-fg-muted mb-5">{t("settings.remindDesc")}</p>
 
       {hour === null ? (
-        <button onClick={enable} className="rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90">
+        <Button onClick={enable} variant="primary" size="sm">
           {t("settings.remindEnable")}
-        </button>
+        </Button>
       ) : (
         <div className="flex items-center gap-3 flex-wrap">
           <label className="text-sm font-medium">{t("settings.remindHour")}</label>

@@ -6,6 +6,8 @@ import { CefrBadge } from "@/components/cefr-badge";
 import { StarButton } from "@/components/star-button";
 import { RatingButtons, type RatingPreview } from "./rating-buttons";
 import { useI18n } from "@/components/i18n-provider";
+import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 import { buildCloze } from "@/lib/cloze";
 import { WordImage, ImageSearchLink } from "@/components/word-image";
 
@@ -86,7 +88,7 @@ export function Flashcard({
             animate={{ opacity: 1 }}
             onClick={onFlip}
             data-nosound
-            className="w-full rounded-2xl bg-ink text-paper py-3.5 font-medium hover:opacity-90 transition-opacity"
+            className={cn(buttonClasses("primary", "md"), "w-full")}
           >
             {t("study.revealAnswer")} <span className="opacity-50 ml-1">↵</span>
           </motion.button>

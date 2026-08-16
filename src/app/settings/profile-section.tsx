@@ -15,6 +15,7 @@ import { useI18n } from "@/components/i18n-provider";
 import { bandToCefr } from "@/lib/placement/estimate";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 
 export type ProfileView = {
   band: number;
@@ -63,7 +64,7 @@ export function ProfileSection({ profile }: { profile: ProfileView }) {
           <p className="text-xs text-fg-muted mb-5">{t("profile.noProfile")}</p>
           <Link
             href="/onboarding"
-            className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-6 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+            className={buttonClasses("primary", "sm")}
           >
             {t("profile.takeTest")}
           </Link>

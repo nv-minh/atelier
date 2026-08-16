@@ -35,7 +35,7 @@ export function CefrFilter() {
             onClick={() => push({ cefr: l.key })}
             className={cn(
               "rounded-full px-3.5 py-1.5 text-sm font-medium border transition-all",
-              isActive ? "bg-ink text-paper border-ink" : "border-hairline/10 text-fg-muted hover:text-fg hover:border-ink/30"
+              isActive ? "bg-accent text-fg-on-accent border-accent" : "border-hairline/10 text-fg-muted hover:text-fg hover:border-ink/30"
             )}
           >
             {l.key === "ALL" ? t("modes.all") : l.key}

@@ -11,6 +11,7 @@ import { useAuthGate } from "./auth-gate";
 import { useI18n } from "./i18n-provider";
 import { StandaloneBack } from "./standalone-back";
 import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 
 export function Nav() {
   const pathname = usePathname();
@@ -82,7 +83,7 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <Link
               href="/study"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-4 py-1.5 text-sm font-medium hover:opacity-90 transition-opacity"
+              className={cn(buttonClasses("primary", "sm"), "hidden sm:inline-flex")}
             >
               {t("nav.study")}
             </Link>

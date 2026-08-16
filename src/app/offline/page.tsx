@@ -6,6 +6,8 @@
 // t() is safe here — see src/components/i18n-provider.tsx.
 import Link from "next/link";
 import { useI18n } from "@/components/i18n-provider";
+import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 
 export default function OfflinePage() {
   const { t } = useI18n();
@@ -24,7 +26,7 @@ export default function OfflinePage() {
 
         <Link
           href="/"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 py-3.5 font-medium hover:opacity-90 transition-opacity w-full sm:w-auto"
+          className={cn(buttonClasses("primary", "md"), "w-full sm:w-auto")}
         >
           {t("offline.retry")}
         </Link>

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, Sparkles, Flame } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 import { StatCard } from "@/components/stats/stat-card";
 import { CefrProgress } from "@/components/stats/cefr-progress";
 import { LevelCard } from "@/components/gamification/level-card";
@@ -97,7 +99,7 @@ export function HomeView({
           <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "220ms", animationFillMode: "both" }}>
             <Link
               href="/study/flashcard"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 py-3.5 font-medium hover:opacity-90 transition-opacity"
+              className={cn(buttonClasses("primary", "md"), "group")}
             >
               {stats.dueToday > 0 ? t("home.studyDue", { n: stats.dueToday }) : t("home.startStudying")}
               <ArrowRight size={18} className="group-hover:translate-x-0.5 transition-transform" />

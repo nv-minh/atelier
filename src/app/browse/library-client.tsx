@@ -196,7 +196,7 @@ export function LibraryClient({
               onClick={() => startTransition(() => router.push(`/browse?${mkQs(cur, { cefr: l, page: 1 })}`))}
               className={cn(
                 "rounded-full px-3.5 py-2 text-sm font-medium border whitespace-nowrap transition-colors",
-                cefr === l ? "bg-ink text-paper border-ink" : "border-hairline/10 text-fg-muted hover:text-fg"
+                cefr === l ? "bg-accent text-fg-on-accent border-accent" : "border-hairline/10 text-fg-muted hover:text-fg"
               )}
             >
               {l === "ALL" ? t("browse.all") : l}

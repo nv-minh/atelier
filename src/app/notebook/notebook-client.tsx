@@ -7,6 +7,7 @@ import { StarButton } from "@/components/star-button";
 import { KnownButton } from "@/components/known-button";
 import { useI18n } from "@/components/i18n-provider";
 import { cn, formatInterval } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 
 type Entry = {
   wordId: string;
@@ -119,7 +120,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
         <p className="text-fg-muted text-sm mb-6">{t("notebook.emptyBody")}</p>
         <Link
           href="/browse"
-          className="inline-flex items-center gap-1.5 rounded-full bg-ink text-paper px-5 py-2 text-sm font-medium hover:opacity-90 transition-opacity"
+          className={buttonClasses("primary", "sm")}
         >
           {t("notebook.goBrowse")}
         </Link>
@@ -137,7 +138,7 @@ function StarredPanel({ entries }: { entries: Entry[] }) {
       <div className="flex flex-col sm:flex-row gap-3 mb-3">
         <Link
           href="/study/flashcard?scope=starred"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+          className={buttonClasses("primary", "sm")}
         >
           <GraduationCap size={16} /> {t("notebook.studyStarred")}
         </Link>
@@ -182,7 +183,7 @@ function LeechesPanel({ leeches }: { leeches: Entry[] }) {
       <div className="mb-6">
         <Link
           href="/study/cram?scope=leeches"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+          className={buttonClasses("primary", "sm")}
         >
           <Zap size={16} /> {t("notebook.drillLeeches")}
         </Link>

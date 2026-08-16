@@ -6,6 +6,7 @@ import { useTheme } from "@/components/theme-provider";
 import { useI18n } from "@/components/i18n-provider";
 import { ProfileSection, type ProfileView } from "./profile-section";
 import { LangToggle } from "@/components/lang-toggle";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CEFR_LEVELS } from "@/lib/export-format";
 import { isEnabled, setEnabled } from "@/lib/feedback-prefs";
@@ -281,12 +282,9 @@ export function SettingsClient({
       <ContributeCard />
 
       <div className="flex items-center gap-3">
-        <button
-          onClick={save}
-          className="rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90"
-        >
+        <Button onClick={save} variant="primary" size="md">
           {t("settings.saveChanges")}
-        </button>
+        </Button>
         {saved && <span className="text-sm text-moss-500 animate-fade-up">{t("settings.saved")}</span>}
       </div>
 

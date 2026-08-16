@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, ChevronLeft, ChevronRight, Shuffle, CheckCircle2, RotateCcw } from "lucide-react";
 import { Flashcard, type Card } from "@/components/study/flashcard";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 
 export function CramSession({
   initialCards,
@@ -94,9 +95,9 @@ export function CramSession({
             {t("study.cramSummary", { seen: order.length, again: againIds.size })}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button onClick={() => { setDone(false); shuffle(); }} className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90">
+            <Button onClick={() => { setDone(false); shuffle(); }} variant="primary" size="md">
               <RotateCcw size={16} /> {t("practice.practiceAgain")}
-            </button>
+            </Button>
             <a href="/study" className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50">
               {t("study.changeMode")}
             </a>
@@ -160,9 +161,9 @@ export function CramSession({
           <button onClick={markAgain} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-ember/30 text-ember py-3.5 font-medium hover:bg-ember/5">
             {t("study.cramAgain")}
           </button>
-          <button onClick={next} className="inline-flex items-center justify-center gap-2 rounded-2xl bg-ink text-paper py-3.5 font-medium hover:opacity-90">
+          <Button onClick={next} variant="primary" size="md">
             {t("topics.next")} <ChevronRight size={18} />
-          </button>
+          </Button>
         </div>
         <p className="text-center text-xs text-fg-muted mt-3">{t("topics.keyboardHint")}</p>
       </div>

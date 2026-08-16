@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 
 function LoginInner() {
   const { t } = useI18n();
@@ -24,14 +25,16 @@ function LoginInner() {
         </h1>
         <p className="text-fg-muted mb-10 leading-relaxed">{t("login.subtitle")}</p>
 
-        <button
+        <Button
           onClick={() => signIn("google", { callbackUrl })}
           disabled={!hasGoogle}
-          className="group inline-flex items-center justify-center gap-3 rounded-full bg-ink text-paper px-7 py-3.5 font-medium hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed w-full sm:w-auto"
+          variant="primary"
+          size="md"
+          className="group w-full sm:w-auto"
         >
           <GoogleIcon />
           {t("login.google")}
-        </button>
+        </Button>
 
         {!hasGoogle && (
           <p className="text-xs text-ember/80 mt-4 max-w-xs mx-auto">{t("login.notice")}</p>

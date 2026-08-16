@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowLeft, ArrowRight, CheckCircle2, PencilRuler, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { buttonVariantClasses } from "@/lib/ui/button-classes";
 import { SEMANTIC_LEGEND } from "@/lib/grammar/semantic-classes";
 import type { LessonPageData } from "@/lib/grammar/data";
 
@@ -120,7 +121,7 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
           className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors ${
             read
               ? "border border-moss-500/40 bg-moss-500/10 text-moss-600 dark:text-moss-400 cursor-default"
-              : "bg-ink text-paper hover:opacity-90"
+              : buttonVariantClasses("primary")
           }`}
         >
           <CheckCircle2 size={15} />

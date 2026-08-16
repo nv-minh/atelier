@@ -18,6 +18,7 @@ import { Mail, Copy, Check } from "lucide-react";
 import { FEEDBACK_EMAIL, feedbackMailto } from "@/lib/contact";
 import { useI18n } from "@/components/i18n-provider";
 import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 
 // Shared by both shapes: the mailto button plus the address as a copy target.
 function ContributeActions({ className }: { className?: string }) {
@@ -40,7 +41,7 @@ function ContributeActions({ className }: { className?: string }) {
     <div className={cn("flex flex-wrap items-center gap-2", className)}>
       <a
         href={feedbackMailto(t("contribute.subject"), t("contribute.bodyTemplate"))}
-        className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-5 py-2.5 text-sm font-medium hover:opacity-90 transition-opacity"
+        className={buttonClasses("primary", "sm")}
       >
         <Mail size={15} />
         {t("contribute.cta")}

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Bell } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { cn } from "@/lib/utils";
+import { buttonClasses } from "@/lib/ui/button-classes";
 import { reminderCopyKey } from "@/lib/reminders/copy";
 import type { Reminder } from "@/lib/reminders/pick";
 
@@ -22,7 +24,7 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
       </div>
       <Link
         href={reminder.url}
-        className="shrink-0 rounded-full bg-ink text-paper px-4 py-2 text-xs font-medium hover:opacity-90"
+        className={cn(buttonClasses("primary", "sm"), "shrink-0")}
       >
         {t("reminders.cta")}
       </Link>

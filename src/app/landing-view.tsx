@@ -10,6 +10,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Compass, Library, NotebookPen, BarChart3, Gauge } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { TryCards, type DemoWord } from "@/components/landing/try-cards";
 import { IntervalLadder } from "@/components/landing/interval-ladder";
 import { DailyQuote } from "@/components/daily-quote";
@@ -67,14 +68,11 @@ export function LandingView({
             className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-6 animate-fade-up"
             style={{ animationDelay: "220ms", animationFillMode: "both" }}
           >
-            <button
-              onClick={() => startSignIn("/")}
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-7 py-3.5 font-medium hover:opacity-90 transition-opacity"
-            >
+            <Button onClick={() => startSignIn("/")} variant="primary" size="md" className="group">
               <GoogleMark />
               {t("landing.ctaPrimary")}
               <ArrowRight size={17} className="group-hover:translate-x-0.5 transition-transform" />
-            </button>
+            </Button>
             {/* A no-signup CTA next to the Google button. The level check is
                 genuinely open to guests (src/app/onboarding/page.tsx), so this
                 is not a teaser that bounces into an auth wall. */}
@@ -299,13 +297,10 @@ export function LandingView({
           <span className="display-it text-ember">{t("landing.final.titleAccent")}</span>
         </h2>
         <p className="text-fg-muted leading-relaxed max-w-md mx-auto mb-7">{t("landing.final.body")}</p>
-        <button
-          onClick={() => startSignIn("/")}
-          className="inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-8 py-4 font-medium hover:opacity-90 transition-opacity"
-        >
+        <Button onClick={() => startSignIn("/")} variant="primary" size="lg">
           <GoogleMark size={18} />
           {t("landing.ctaPrimary")}
-        </button>
+        </Button>
         <p className="mt-4 text-xs text-fg-muted/70">{t("landing.final.note")}</p>
       </section>
 

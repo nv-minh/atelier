@@ -9,6 +9,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { CheckCircle2, RotateCcw, XCircle } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
 import type { GrammarSessionItem, GrammarSource } from "@/lib/grammar/session-types";
@@ -249,12 +250,9 @@ export function GrammarSession({
           )}
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             {wrong.length > 0 && (
-              <button
-                onClick={retryWrong}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90"
-              >
+              <Button onClick={retryWrong} variant="primary" size="md">
                 <RotateCcw size={16} /> {t("grammar.test.retryWrong", { n: wrong.length })}
-              </button>
+              </Button>
             )}
             <Link
               href={`/grammar/${topicSlug}`}

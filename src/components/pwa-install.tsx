@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Download, Share, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 import {
   isIos,
   recordDismissed,
@@ -179,12 +180,9 @@ export function PwaInstall() {
               <>
                 <p className="text-xs text-fg-muted mt-1 leading-relaxed">{t("pwa.body")}</p>
                 <div className="flex items-center gap-2 mt-3">
-                  <button
-                    onClick={install}
-                    className="rounded-full bg-ink text-paper px-4 py-2 text-sm font-medium hover:opacity-90 transition-opacity"
-                  >
+                  <Button onClick={install} variant="primary" size="sm">
                     {t("pwa.install")}
-                  </button>
+                  </Button>
                   <button
                     onClick={dismiss}
                     className="rounded-full border border-hairline/10 px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors"

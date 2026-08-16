@@ -16,6 +16,7 @@ import { useRouter } from "next/navigation";
 import { Check, Loader2, Sparkles, X } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAuthGate } from "@/components/auth-gate";
+import { Button } from "@/components/ui/button";
 import { TOPICS } from "@/lib/topic-taxonomy";
 import { BLOCK_SIZE, type BlockResult, nextLadderStep } from "@/lib/placement/ladder";
 import { bandToCefr, estimatePlacement } from "@/lib/placement/estimate";
@@ -329,13 +330,10 @@ export function OnboardingFlow() {
           {current.kind === "real" ? current.item.word : current.word}
         </p>
         <div className="flex gap-3 justify-center">
-          <button
-            onClick={() => answer(true)}
-            className="inline-flex items-center gap-2 rounded-full bg-ink text-paper px-7 py-3 font-medium hover:opacity-90 transition-opacity"
-          >
+          <Button onClick={() => answer(true)} variant="primary" size="md">
             <Check size={16} strokeWidth={2.5} />
             {t("onboarding.know")}
-          </button>
+          </Button>
           <button
             onClick={() => answer(false)}
             className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-7 py-3 font-medium hover:bg-ink/5 transition-colors"
@@ -454,13 +452,9 @@ function PrimaryButton({
   disabled?: boolean;
 }) {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 py-3 font-medium hover:opacity-90 transition-opacity disabled:opacity-60"
-    >
+    <Button onClick={onClick} disabled={disabled} variant="primary" size="md">
       {children}
-    </button>
+    </Button>
   );
 }
 

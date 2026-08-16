@@ -361,7 +361,12 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       { cls: "pill",          budget: 23, count: () => countLines(/\bpill\b/) },
       { cls: "display",       budget: 113, count: countDisplay },
       { cls: "bg-paper",      budget: 32, count: () => countLines(/\bbg-paper\b/) },
-      { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
+      // Plan 1 Task 6: 19 → 21. The `secondary` Button variant is the first
+      // caller of the card-level background token via a literal class
+      // string (src/lib/ui/button-classes.ts) plus its test's expectation
+      // (button-classes.test.ts) — 2 new lines, both real v2-token usage,
+      // not legacy debt.
+      { cls: "surface",       budget: 21, count: () => countLines(/\bsurface\b/) },
     ];
 
     for (const { cls, budget, count } of BUDGETS) {

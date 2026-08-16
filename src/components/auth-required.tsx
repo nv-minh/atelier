@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Lock, Compass, Library } from "lucide-react";
 import { useI18n } from "./i18n-provider";
 import { startSignIn, GoogleMark } from "./auth-gate";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export type WallContext =
@@ -55,13 +56,10 @@ export function AuthRequired({
       <h2 className="display text-2xl sm:text-3xl mb-3">{t(`auth.walls.${context}.title`)}</h2>
       <p className="text-fg-muted leading-relaxed mb-7">{t(`auth.walls.${context}.body`)}</p>
 
-      <button
-        onClick={() => startSignIn(callbackUrl)}
-        className="inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-7 py-3 font-medium hover:opacity-90 transition-opacity"
-      >
+      <Button onClick={() => startSignIn(callbackUrl)} variant="primary" size="md">
         <GoogleMark />
         {t("auth.signInGoogle")}
-      </button>
+      </Button>
 
       <div className="mt-8 pt-6 border-t border-hairline/10">
         <p className="text-xs text-fg-muted/80 mb-3">{t("auth.publicHint")}</p>

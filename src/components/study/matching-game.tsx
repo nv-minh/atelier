@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle2, RotateCcw, Layers } from "lucide-react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
+import { Button } from "@/components/ui/button";
 import { fmtTime } from "@/lib/utils";
 
 type MatchingItem = { wordId: string; word: string; def: string };
@@ -412,12 +413,9 @@ function SummaryScreen({
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            onClick={onPlayAgain}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90"
-          >
+          <Button onClick={onPlayAgain} variant="primary" size="md">
             <RotateCcw size={16} /> {t("study.matchingPlayAgain")}
-          </button>
+          </Button>
           <a
             href="/study"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"

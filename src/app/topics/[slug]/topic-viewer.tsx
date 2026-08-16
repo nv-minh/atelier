@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, ChevronLeft, ChevronRight, RefreshCw, Eye, Shuffle } from "lucide-react";
 import { Flashcard, type Card } from "@/components/study/flashcard";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 import type { Topic } from "@/lib/topic-taxonomy";
 import type { TopicWord } from "@/lib/topics-data";
 
@@ -176,12 +177,9 @@ export function TopicViewer({
           >
             <ChevronLeft size={18} /> {t("topics.previous")}
           </button>
-          <button
-            onClick={next}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-ink text-paper py-3.5 font-medium hover:opacity-90 transition-opacity"
-          >
+          <Button onClick={next} variant="primary" size="md">
             {t("topics.next")} <ChevronRight size={18} />
-          </button>
+          </Button>
         </div>
         <p className="text-center text-xs text-fg-muted mt-3">
           <kbd className="font-mono">←</kbd> <kbd className="font-mono">→</kbd> {t("topics.keyboardHint")}

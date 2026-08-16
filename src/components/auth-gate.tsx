@@ -19,6 +19,7 @@ import { useSession, signIn } from "next-auth/react";
 import { AnimatePresence, motion } from "motion/react";
 import { Lock, X } from "lucide-react";
 import { useI18n } from "./i18n-provider";
+import { Button } from "@/components/ui/button";
 
 // Reasons map to auth.reasons.* copy — one sentence explaining what the
 // login unlocks, so the prompt answers "why" instead of just demanding.
@@ -180,13 +181,15 @@ function AuthGateModal({ opts, onClose }: { opts: OpenOpts | null; onClose: () =
             </h2>
             <p className="text-sm text-fg-muted leading-relaxed mb-6">{t(`auth.reasons.${reason}`)}</p>
 
-            <button
+            <Button
               onClick={() => startSignIn(opts?.callbackUrl)}
-              className="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90 transition-opacity"
+              variant="primary"
+              size="md"
+              className="w-full"
             >
               <GoogleMark />
               {GOOGLE_ENABLED ? t("auth.signInGoogle") : t("auth.signIn")}
-            </button>
+            </Button>
             <button
               onClick={onClose}
               className="w-full mt-2 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"

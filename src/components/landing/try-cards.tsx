@@ -16,6 +16,7 @@ import { AudioButton } from "@/components/audio-button";
 import { WordImage, isRealImage } from "@/components/word-image";
 import { startSignIn, GoogleMark } from "@/components/auth-gate";
 import { useI18n } from "@/components/i18n-provider";
+import { Button } from "@/components/ui/button";
 
 export type DemoWord = {
   word: string;
@@ -72,13 +73,10 @@ export function TryCards({ words }: { words: DemoWord[] }) {
               {t("landing.demo.doneTitle", { n: words.length })}
             </h3>
             <p className="text-fg-muted leading-relaxed mb-8">{t("landing.demo.doneBody")}</p>
-            <button
-              onClick={() => startSignIn("/")}
-              className="w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-ink text-paper px-6 py-3.5 font-medium hover:opacity-90 transition-opacity"
-            >
+            <Button onClick={() => startSignIn("/")} variant="primary" size="md" className="w-full">
               <GoogleMark />
               {t("landing.ctaPrimary")}
-            </button>
+            </Button>
             <button
               onClick={restart}
               className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full px-6 py-2.5 text-sm text-fg-muted hover:text-fg transition-colors"

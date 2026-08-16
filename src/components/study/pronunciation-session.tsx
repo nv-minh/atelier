@@ -7,6 +7,8 @@ import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
 import { AudioButton } from "@/components/audio-button";
 import { CefrBadge } from "@/components/cefr-badge";
+import { Button } from "@/components/ui/button";
+import { buttonClasses, buttonVariantClasses } from "@/lib/ui/button-classes";
 import { fmtTime, shuffle } from "@/lib/utils";
 import {
   getSpeechRecognition,
@@ -458,12 +460,9 @@ function MicArea({
             <CheckCircle2 size={40} strokeWidth={1.5} />
           </motion.div>
           <p className="text-moss-500 font-semibold">{t("study.pronCorrect")}</p>
-          <button
-            onClick={onNext}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-7 py-3 font-medium hover:opacity-90 transition-opacity"
-          >
+          <Button onClick={onNext} variant="primary" size="md">
             {t("study.pronNext")} <ArrowRight size={16} />
-          </button>
+          </Button>
         </>
       ) : phase === "wrong" ? (
         <>
@@ -479,12 +478,9 @@ function MicArea({
             <p className="text-sm text-fg-muted">{t("study.pronNoSpeech")}</p>
           )}
           <div className="flex flex-col sm:flex-row gap-3">
-            <button
-              onClick={onRetry}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90 transition-opacity"
-            >
+            <Button onClick={onRetry} variant="primary" size="md">
               <RotateCcw size={16} /> {t("study.pronTryAgain")}
-            </button>
+            </Button>
             <button
               onClick={onNext}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50 transition-colors"
@@ -500,7 +496,7 @@ function MicArea({
             onClick={listening ? onStop : onStart}
             aria-label={listening ? t("study.pronListening") : t("study.pronSpeakPrompt")}
             className={`relative grid h-24 w-24 place-items-center rounded-full transition-colors cursor-pointer ${
-              listening ? "bg-ember text-paper" : "bg-ink text-paper hover:opacity-90"
+              listening ? "bg-ember text-paper" : buttonVariantClasses("primary")
             }`}
           >
             {/* Pulsing ring while listening */}
@@ -552,10 +548,7 @@ function UnsupportedScreen() {
         <h1 className="display text-display-md mb-3">{t("study.pronUnsupportedTitle")}</h1>
         <p className="text-fg-muted mb-8 leading-relaxed">{t("study.pronUnsupportedBody")}</p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="/study/dictation"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90 transition-opacity"
-          >
+          <a href="/study/dictation" className={buttonClasses("primary", "md")}>
             {t("study.pronTryDictation")}
           </a>
           <a
@@ -626,12 +619,9 @@ function SummaryScreen({
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button
-            onClick={onPlayAgain}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper px-6 py-3 font-medium hover:opacity-90"
-          >
+          <Button onClick={onPlayAgain} variant="primary" size="md">
             <RotateCcw size={16} /> {t("study.pronPracticeAgain")}
-          </button>
+          </Button>
           <a
             href="/study"
             className="inline-flex items-center justify-center gap-2 rounded-full border border-hairline/10 px-6 py-3 font-medium hover:bg-paper-200/50"
