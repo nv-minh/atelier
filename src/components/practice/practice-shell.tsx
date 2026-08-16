@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useI18n } from "@/components/i18n-provider";
 import { useAchievementToasts } from "@/components/gamification/achievement-toast";
@@ -67,6 +69,7 @@ export function PracticeShell({
   direction?: "forward" | "reverse" | "cloze";
 }) {
   const { t } = useI18n();
+  const router = useRouter();
   const { push: pushToast, toaster } = useAchievementToasts();
   const [state, dispatch] = useReducer(reduceSession, initialSessionState);
 
@@ -254,6 +257,18 @@ export function PracticeShell({
     [current, mode, advance]
   );
 
+  // ---- exit: the only way out of a session on a phone ----
+  // During a session the app chrome is gone: the header is opacity-0, the
+  // bottom tab bar slides away, and StandaloneBack deliberately returns null
+  // under /study/*. In a standalone PWA there is no browser back either, so
+  // without this button the user is trapped until the queue runs dry. Spec
+  // §8.2 asks for a confirm sheet after >3 answered cards; window.confirm is
+  // the hotfix stand-in — the real sheet lands with the Plan 5 session shell.
+  const onExit = useCallback(() => {
+    if (state.results.length > 3 && !window.confirm(t("practice.exitConfirm", { n: state.results.length }))) return;
+    router.push("/study");
+  }, [state.results.length, t, router]);
+
   // ---- skip (defect D6): first failure retries at the end, second drops it ----
   const onSkip = useCallback(
     (reason: string) => {
@@ -406,11 +421,26 @@ export function PracticeShell({
   if (!current || !View) return <>{toaster}</>;
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex flex-col">
+    // -mt-16 reclaims the 64px the (invisible, opacity-0 but still in-flow)
+    // nav header wastes above the progress bar — that empty strip was the
+    // "trống" top section, and together with pb-28 it pushed the card area
+    // past the viewport, making the OUTER container scroll on phones.
+    // 100dvh, not 100vh: the latter includes the iOS URL-bar area.
+    <div className="-mt-16 min-h-[100dvh] flex flex-col">
       {toaster}
 
-      <div className="sticky top-16 z-30 bg-paper/80 backdrop-blur-md border-b border-line">
+      <div className="sticky top-0 z-30 bg-paper/80 backdrop-blur-md border-b border-line pt-[env(safe-area-inset-top)]">
         <div className="shell py-2.5 flex items-center gap-3">
+          <button
+            onClick={onExit}
+            aria-label={t("practice.exit")}
+            data-nosound
+            // h-11 keeps the 44px touch floor; -my-2.5 cancels most of it
+            // against the row's py-2.5 so the bar grows by ~8px, not 28px.
+            className="-my-2.5 h-11 w-11 shrink-0 grid place-items-center rounded-full text-soft hover:text-ink hover:bg-ink/5 transition-colors"
+          >
+            <X size={20} />
+          </button>
           <span className="text-xs text-soft tabular-nums whitespace-nowrap">
             {state.index + 1} <span className="opacity-50">/ {queue.length}</span>
           </span>
@@ -434,7 +464,10 @@ export function PracticeShell({
           short and breakable, so min-content is tiny) and the other three modes
           render narrower than they should. The superseded study-session.tsx carried
           the same `w-full` for exactly this reason. */}
-      <div className="shell w-full flex-1 flex flex-col justify-center py-6 sm:py-10 pb-28 md:pb-10">
+      {/* pb: the bottom tab bar is `fixed` (out of flow) AND hidden during a
+          session, so the old pb-28 clearance was 112px of nothing — the main
+          reason this page scrolled on phones. 1rem + safe-area is enough. */}
+      <div className="shell w-full flex-1 flex flex-col justify-center py-4 sm:py-8 pb-[calc(1rem+env(safe-area-inset-bottom))] md:pb-10">
         {notice && <p className="text-center text-xs text-soft mb-4">{notice}</p>}
         <AnimatePresence mode="wait">
           <motion.div
