@@ -56,19 +56,28 @@ async function getDemoWords(): Promise<DemoWord[]> {
 }
 
 // This route is force-dynamic because it reads cookies to choose between the
-// landing page and the dashboard — that cannot be cached. The two guest-only
+// landing page and the dashboard — that cannot be cached. The guest-only
 // queries can be, though, and they were being paid by every crawler and every
 // cold visitor on the LCP path, against a database that scales to zero.
 //
-// Both are safe to hold for an hour: word.count() only moves on an import, and
+// All are safe to hold for an hour: the counts only move on an import, and
 // getDemoWords() is already date-keyed and deterministic — identical for
 // everyone on a given day by design.
 const getGuestLandingData = unstable_cache(
   async () => {
-    const [totalWords, demoWords] = await Promise.all([prisma.word.count(), getDemoWords()]);
-    return { totalWords, demoWords };
+    const [totalWords, demoWords, grammarTopics, grammarLessons] = await Promise.all([
+      prisma.word.count(),
+      getDemoWords(),
+      prisma.grammarTopic.count(),
+      prisma.grammarLesson.count(),
+    ]);
+    return { totalWords, demoWords, grammar: { topics: grammarTopics, lessons: grammarLessons } };
   },
-  ["landing-guest-v1"],
+  // Bumped from v1 to v2: the cached object gained a `grammar` field. Without
+  // a new key, a warm cache would keep serving the old shape (no `grammar`)
+  // for up to an hour, and the page would render `undefined` there instead of
+  // picking up the new data.
+  ["landing-guest-v2"],
   { revalidate: 3600 },
 );
 
@@ -78,12 +87,13 @@ export default async function Home() {
   // Guests get the landing page instead of redirect("/login") — that redirect
   // is what made the "Trang chủ" tab look dead from the login screen.
   if (!user) {
-    const { totalWords, demoWords } = await getGuestLandingData();
+    const { totalWords, demoWords, grammar } = await getGuestLandingData();
     return (
       <LandingView
         totalWords={totalWords}
         topics={TOPICS.map((t) => ({ slug: t.slug, emoji: t.emoji }))}
         demoWords={demoWords}
+        grammar={grammar}
       />
     );
   }

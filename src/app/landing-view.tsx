@@ -30,10 +30,12 @@ export function LandingView({
   totalWords,
   topics,
   demoWords,
+  grammar,
 }: {
   totalWords: number;
   topics: Pick<Topic, "slug" | "emoji">[];
   demoWords: DemoWord[];
+  grammar: { topics: number; lessons: number };
 }) {
   const { t } = useI18n();
   const words = totalWords.toLocaleString("vi-VN");
@@ -266,18 +268,28 @@ export function LandingView({
         <DailyQuote />
       </section>
 
-      {/* ── WHAT'S NEXT ─────────────────────────────────────────────── */}
-      {/* One line, one unbuilt feature, no date. Japanese and Chinese are
-          deliberately not mentioned: the schema has no language column, so
-          promising them here would be selling something that cannot ship. */}
+      {/* ── GRAMMAR ─────────────────────────────────────────────────── */}
+      {/* /grammar has shipped, so this states real numbers pulled from the DB
+          (see getGuestLandingData in page.tsx) rather than a promise. Japanese
+          and Chinese are still deliberately not mentioned: the schema has no
+          language column, so promising them here would be selling something
+          that cannot ship. */}
       <section className="mt-20 sm:mt-28">
-        <div className="rounded-2xl border border-line px-6 py-5 sm:flex sm:items-center sm:gap-6">
+        <Link
+          href="/grammar"
+          className="group block rounded-2xl border border-line px-6 py-5 sm:flex sm:items-center sm:gap-6 hover:border-ember/30 transition-colors"
+        >
           <div className="sm:shrink-0">
-            <SectionLabel>{t("landing.next.label")}</SectionLabel>
-            <p className="display text-xl -mt-2">{t("landing.next.title")}</p>
+            <SectionLabel>{t("landing.grammar.label")}</SectionLabel>
+            <p className="display text-xl -mt-2">{t("landing.grammar.title")}</p>
           </div>
-          <p className="mt-2 sm:mt-0 text-sm text-soft leading-relaxed">{t("landing.next.body")}</p>
-        </div>
+          <p className="mt-2 sm:mt-0 text-sm text-soft leading-relaxed">
+            {t("landing.grammar.body", {
+              topics: grammar.topics.toLocaleString("vi-VN"),
+              lessons: grammar.lessons.toLocaleString("vi-VN"),
+            })}
+          </p>
+        </Link>
       </section>
 
       {/* ── CLOSE ───────────────────────────────────────────────────── */}

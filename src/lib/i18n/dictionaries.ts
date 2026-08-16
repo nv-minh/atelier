@@ -669,13 +669,13 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         chipLang: "Tiếng Việt / English",
         chipImages: "Gần như từ nào cũng có hình",
       },
-      // Nêu đúng MỘT tính năng chưa xây, không kèm ngày. Tiếng Nhật và tiếng
-      // Trung cố tình vắng mặt và phải tiếp tục vắng cho tới khi schema có cột
-      // ngôn ngữ — hiện tại chưa có.
-      next: {
-        label: "Sắp tới",
-        title: "Sắp có: Ngữ pháp",
-        body: "Cùng bộ máy nhắc lại này, áp cho các điểm ngữ pháp. Đang xây, chưa hẹn ngày.",
+      // /grammar đã chạy thật nên đây là số liệu lấy từ DB, không còn là lời
+      // hứa. Tiếng Nhật và tiếng Trung cố tình vắng mặt và phải tiếp tục vắng
+      // cho tới khi schema có cột ngôn ngữ — hiện tại chưa có.
+      grammar: {
+        label: "Đã có",
+        title: "Ngữ pháp",
+        body: "{topics} chủ điểm, {lessons} bài lý thuyết song ngữ, cùng bộ máy nhắc lại.",
       },
       final: {
         title: "Hôm nay học",
@@ -1505,13 +1505,13 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         chipLang: "Tiếng Việt / English",
         chipImages: "Nearly all illustrated",
       },
-      // Names exactly ONE unbuilt feature and carries no date. Japanese and
-      // Chinese are deliberately absent and must stay absent until the schema
-      // has a language column — today it has none.
-      next: {
-        label: "Next",
-        title: "Coming: Grammar",
-        body: "The same spaced-repetition engine, applied to grammar points. In progress, no date promised.",
+      // /grammar has shipped, so this states real numbers from the DB rather
+      // than a promise. Japanese and Chinese are deliberately absent and must
+      // stay absent until the schema has a language column — today it has none.
+      grammar: {
+        label: "Available",
+        title: "Grammar",
+        body: "{topics} topics, {lessons} bilingual lessons, with the same spaced-repetition engine.",
       },
       final: {
         title: "Ten words",
