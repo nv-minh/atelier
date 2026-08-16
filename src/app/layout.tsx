@@ -80,6 +80,15 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
     apple: "/icons/apple-touch-icon.png",
   },
+  appleWebApp: {
+    capable: true,
+    title: "Atelier",
+    // "default" (opaque status bar), not "black-translucent": translucent
+    // pulls page content underneath the status bar, and the current layout
+    // does not compensate for that overlap yet. Revisit once Plan 3 ships a
+    // real --safe-t app shell.
+    statusBarStyle: "default",
+  },
   // Canonical only, no `languages` map: the VI/EN switch is a localStorage
   // toggle on the same URL, so hreflang would point at URLs that do not exist.
   alternates: { canonical: "/" },
@@ -106,9 +115,25 @@ export const metadata: Metadata = {
 };
 
 // Next 14.2: theme-color belongs in the viewport export, not metadata.
-// Matches the manifest theme_color (Atelier ink #1F1C16).
 export const viewport: Viewport = {
-  themeColor: "#1F1C16",
+  width: "device-width",
+  initialScale: 1,
+  // Without viewport-fit=cover every env(safe-area-inset-*) resolves to 0 on
+  // iOS, which silently disables the notch and home-bar padding that nav.tsx,
+  // auth-gate.tsx and pwa-install.tsx already ask for.
+  viewportFit: "cover",
+  // Paired values instead of one dark ink for both schemes: a dark status bar
+  // over the paper background read as a rendering fault. This follows the OS
+  // preference only — an in-app theme override still shows the OS colour. That
+  // limitation is fixed together with the [data-theme] migration.
+  // Values are the CURRENT --paper tokens (globals.css), not the v2 redesign
+  // palette: this ships before the re-skin lands.
+  // #FDFBF6 = rgb(253 251 246) --paper (light, globals.css:7)
+  // #14120E = rgb(20 18 14)    --paper (dark,  globals.css:29)
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FDFBF6" },
+    { media: "(prefers-color-scheme: dark)", color: "#14120E" },
+  ],
 };
 
 // lang="vi" matches DEFAULT_LANG and what the server actually renders; the

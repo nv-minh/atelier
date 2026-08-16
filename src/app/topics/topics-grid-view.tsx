@@ -60,16 +60,20 @@ export function TopicsGridView({
             </div>
             <h3 className="display text-xl mb-1">{t(`topics.names.${tp.slug}`)}</h3>
             <p className="text-xs text-soft leading-relaxed mb-4 flex-1">{t(`topics.blurbs.${tp.slug}`)}</p>
-            {tp.preview.length > 0 && (
-              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-line">
-                {tp.preview.map((w) => (
+            {/* The arrow is the click affordance for every card, so it must render
+                regardless of `preview` — a topic can have zero preview words while
+                still being a fully clickable link. Only the chips are conditional. */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-line">
+              {tp.preview.length > 0 &&
+                tp.preview.map((w) => (
                   <span key={w} className="text-[11px] rounded-full bg-ink/5 text-soft px-2 py-0.5">
                     {w}
                   </span>
                 ))}
-                <span className="text-[11px] text-soft/60 px-1 self-center">→</span>
-              </div>
-            )}
+              <span className="text-[11px] text-soft/60 px-1 self-center ml-auto" aria-hidden>
+                →
+              </span>
+            </div>
           </Link>
         ))}
       </div>

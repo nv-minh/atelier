@@ -1,0 +1,349 @@
+/* ============================================================================
+   ATELIER — DESIGN TOKENS v2  ·  hướng "Studio xanh" (soft blue + 3D)
+   Thay thế hoàn toàn tokens v1. Import ở đầu globals.css, TRƯỚC @tailwind base.
+   Mọi màu/khoảng cách/typography đọc từ đây. Không hard-code hex trong component.
+   ============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   1. PRIMITIVES — không dùng trực tiếp trong component
+   --------------------------------------------------------------------------- */
+:root {
+  /* Blue — mực chính, lấy từ mockup */
+  --p-blue-50:  #EDF1FF;
+  --p-blue-100: #DDE4FF;
+  --p-blue-200: #C3CFFF;
+  --p-blue-300: #9AAEFF;
+  --p-blue-400: #6C86F5;
+  --p-blue-500: #4A67F0;
+  --p-blue-600: #2C4EE8;   /* primary */
+  --p-blue-700: #2340C4;
+  --p-blue-800: #1B3199;
+
+  /* Lavender / canvas */
+  --p-lav-25:  #FBFCFF;
+  --p-lav-50:  #F5F7FF;
+  --p-lav-100: #EFF2FE;
+  --p-lav-200: #E5E9F8;
+  --p-lav-300: #D5DBF0;
+
+  /* Ink — navy, KHÔNG dùng đen thuần (đen thuần đá nhau với nền lavender) */
+  --p-ink-900: #101534;
+  --p-ink-800: #1B2244;
+  --p-ink-700: #2A3154;
+  --p-ink-600: #464E75;
+  --p-ink-500: #646C90;
+  --p-ink-400: #8A91B0;
+  --p-ink-300: #AFB5CC;
+
+  /* Night — nền tối */
+  --p-night-900: #0A0E22;
+  --p-night-800: #111634;
+  --p-night-700: #1A2145;
+  --p-night-600: #252D5A;
+  --p-night-500: #333C70;
+
+  /* Accent phụ — chỉ dùng đúng vai trò được gán */
+  --p-amber-50:  #FFF4E3;
+  --p-amber-500: #FF9F1C;   /* đến hạn ôn, chuỗi ngày */
+  --p-amber-400-dark: #FFB84D;
+
+  --p-mint-50:  #E4F9F1;
+  --p-mint-500: #0FB981;    /* đúng */
+  --p-mint-400-dark: #3DDCA4;
+
+  --p-coral-50:  #FFECEC;
+  --p-coral-500: #F2545B;   /* sai */
+  --p-coral-400-dark: #FF7A80;
+
+  --p-violet-50:  #F0EBFF;
+  --p-violet-500: #7C5CFF;  /* đã thuộc */
+  --p-violet-400-dark: #A98CFF;
+}
+
+/* ---------------------------------------------------------------------------
+   2. SEMANTIC — LIGHT
+   --------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  /* Nền: gradient lavender rất nhạt, không phải màu phẳng — đây là chữ ký của hướng này */
+  --bg-canvas: linear-gradient(180deg, var(--p-lav-100) 0%, var(--p-lav-25) 46%, var(--p-lav-50) 100%);
+  --bg-canvas-solid: var(--p-lav-50);      /* dùng cho meta theme-color, scrollbar */
+  --bg-surface:     #FFFFFF;
+  --bg-surface-alt: var(--p-lav-50);
+  --bg-sunken:      var(--p-lav-100);
+  --bg-tint:        var(--p-blue-50);      /* card nhấn nhẹ */
+  --bg-overlay:     rgb(16 21 52 / 0.42);
+  --bg-glass:       rgb(255 255 255 / 0.72);  /* dùng CÙNG backdrop-filter blur(16px) */
+
+  /* Chữ */
+  --fg-default:   var(--p-ink-900);
+  --fg-muted:     var(--p-ink-500);
+  --fg-subtle:    var(--p-ink-400);
+  --fg-on-accent: #FFFFFF;
+  --fg-on-tint:   var(--p-blue-700);
+
+  /* Viền */
+  --border-hairline: var(--p-lav-200);
+  --border-strong:   var(--p-lav-300);
+  --border-focus:    var(--p-blue-600);
+
+  /* Accent chính */
+  --accent:         var(--p-blue-600);
+  --accent-hover:   var(--p-blue-700);
+  --accent-active:  var(--p-blue-800);
+  --accent-soft:    var(--p-blue-100);
+  --accent-subtle:  var(--p-blue-50);
+  --accent-fg:      var(--p-blue-700);
+  --accent-gradient: linear-gradient(135deg, var(--p-blue-500) 0%, var(--p-blue-700) 100%);
+
+  /* Vai trò */
+  --due:            var(--p-amber-500);
+  --due-subtle:     var(--p-amber-50);
+  --mastered:       var(--p-violet-500);
+  --mastered-subtle:var(--p-violet-50);
+  --correct:        var(--p-mint-500);
+  --correct-subtle: var(--p-mint-50);
+  --wrong:          var(--p-coral-500);
+  --wrong-subtle:   var(--p-coral-50);
+
+  /* Đổ bóng — ám xanh, KHÔNG dùng bóng xám trung tính (sẽ trông bẩn trên nền lavender) */
+  --shadow-xs: 0 1px 2px rgb(44 78 232 / 0.06);
+  --shadow-sm: 0 2px 8px rgb(44 78 232 / 0.07);
+  --shadow-md: 0 6px 20px rgb(44 78 232 / 0.10);
+  --shadow-lg: 0 14px 40px rgb(44 78 232 / 0.14);
+  --shadow-accent: 0 8px 24px rgb(44 78 232 / 0.32);   /* dưới nút primary */
+  --shadow-card-lift: 0 20px 48px rgb(16 21 52 / 0.16); /* thẻ khi kéo */
+
+  /* Ánh sáng nền cho asset 3D — quầng sáng nhẹ phía sau nhân vật */
+  --glow-3d: radial-gradient(circle at 50% 46%, rgb(44 78 232 / 0.10) 0%, rgb(44 78 232 / 0) 68%);
+}
+
+/* ---------------------------------------------------------------------------
+   3. SEMANTIC — DARK
+   --------------------------------------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-canvas: linear-gradient(180deg, var(--p-night-900) 0%, #0D1229 52%, var(--p-night-800) 100%);
+  --bg-canvas-solid: var(--p-night-900);
+  --bg-surface:     var(--p-night-800);
+  --bg-surface-alt: var(--p-night-700);
+  --bg-sunken:      var(--p-night-700);
+  --bg-tint:        rgb(74 103 240 / 0.16);
+  --bg-overlay:     rgb(0 0 0 / 0.62);
+  --bg-glass:       rgb(26 33 69 / 0.72);
+
+  --fg-default:   #EEF1FF;
+  --fg-muted:     #9AA2C8;
+  --fg-subtle:    #6E769C;
+  --fg-on-accent: #FFFFFF;
+  --fg-on-tint:   #B9C6FF;
+
+  --border-hairline: var(--p-night-600);
+  --border-strong:   var(--p-night-500);
+  --border-focus:    var(--p-blue-300);
+
+  --accent:         var(--p-blue-500);
+  --accent-hover:   var(--p-blue-400);
+  --accent-active:  var(--p-blue-300);
+  --accent-soft:    rgb(74 103 240 / 0.24);
+  --accent-subtle:  rgb(74 103 240 / 0.14);
+  --accent-fg:      var(--p-blue-300);
+  --accent-gradient: linear-gradient(135deg, var(--p-blue-400) 0%, var(--p-blue-600) 100%);
+
+  --due:            var(--p-amber-400-dark);
+  --due-subtle:     rgb(255 184 77 / 0.15);
+  --mastered:       var(--p-violet-400-dark);
+  --mastered-subtle:rgb(169 140 255 / 0.15);
+  --correct:        var(--p-mint-400-dark);
+  --correct-subtle: rgb(61 220 164 / 0.15);
+  --wrong:          var(--p-coral-400-dark);
+  --wrong-subtle:   rgb(255 122 128 / 0.15);
+
+  --shadow-xs: none;
+  --shadow-sm: none;
+  --shadow-md: 0 8px 28px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 20px 52px rgb(0 0 0 / 0.55);
+  --shadow-accent: 0 8px 24px rgb(44 78 232 / 0.40);
+  --shadow-card-lift: 0 20px 48px rgb(0 0 0 / 0.60);
+
+  --glow-3d: radial-gradient(circle at 50% 46%, rgb(122 146 255 / 0.16) 0%, rgb(122 146 255 / 0) 68%);
+}
+
+/* ---------------------------------------------------------------------------
+   4. TYPOGRAPHY
+   ⚠ CẢNH BÁO: Poppins / Gilroy / Sora KHÔNG hỗ trợ đầy đủ dấu tiếng Việt.
+     Font trong mockup nhìn giống Poppins — đừng dùng, dấu sẽ vỡ.
+     Be Vietnam Pro là lựa chọn an toàn và giống nhất về dáng chữ.
+   --------------------------------------------------------------------------- */
+:root {
+  --font-display: "Be Vietnam Pro", "Nunito", system-ui, -apple-system, sans-serif;
+  --font-body:    "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-ipa:     "Charis SIL", "Gentium Plus", var(--font-mono);
+
+  /* Thang chữ — mobile-first */
+  --text-hero:  clamp(2rem, 8.5vw, 3rem);      /* từ vựng trên flashcard */
+  --text-d1:    clamp(1.625rem, 6vw, 2.25rem); /* tiêu đề màn hình lớn, số liệu chính */
+  --text-h1:    1.5rem;    /* 24 */
+  --text-h2:    1.1875rem; /* 19 */
+  --text-h3:    1.0625rem; /* 17 */
+  --text-body:  1rem;      /* 16 — sàn cho nội dung đọc */
+  --text-sm:    0.875rem;  /* 14 */
+  --text-xs:    0.8125rem; /* 13 */
+  --text-2xs:   0.6875rem; /* 11 — chỉ cho overline viết hoa */
+
+  --leading-tight: 1.12;
+  --leading-snug:  1.3;
+  --leading-body:  1.55;   /* tiếng Việt có dấu chồng, cần rộng hơn tiếng Anh */
+  --leading-loose: 1.7;
+
+  --tracking-display: -0.02em;
+  --tracking-tight:   -0.01em;
+  --tracking-overline: 0.1em;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+  --weight-black:   800;   /* tiêu đề lớn — hướng này cần chữ đậm */
+}
+
+/* ---------------------------------------------------------------------------
+   5. SPACING / SIZING / RADIUS / MOTION / Z-INDEX
+   --------------------------------------------------------------------------- */
+:root {
+  --sp-1: 0.25rem; --sp-2: 0.5rem;  --sp-3: 0.75rem; --sp-4: 1rem;
+  --sp-5: 1.25rem; --sp-6: 1.5rem;  --sp-8: 2rem;    --sp-10: 2.5rem;
+  --sp-14: 3.5rem; --sp-18: 4.5rem;
+
+  --gutter: var(--sp-5);          /* 20px — hướng này cần lề rộng hơn v1 */
+  --content-max: 42rem;
+  --content-max-wide: 68rem;
+
+  --tap-min: 44px;
+  --control-h: 48px;
+  --control-h-lg: 56px;
+  --tabbar-h: 64px;               /* nav nổi dạng viên thuốc, cao hơn */
+  --tabbar-inset: 12px;           /* khoảng cách nav tới mép màn hình */
+  --appbar-h: 56px;
+
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  --pad-bottom-nav: calc(var(--tabbar-h) + var(--tabbar-inset) + var(--safe-b) + var(--sp-5));
+
+  /* Radius — hướng này BO MẠNH. Đây là điểm khác lớn nhất so với v1. */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;    /* nút, chip */
+  --r-lg: 20px;    /* card nhỏ */
+  --r-xl: 24px;    /* card lớn */
+  --r-2xl: 28px;   /* flashcard, bottom sheet */
+  --r-pill: 999px;
+
+  /* Motion — nảy nhẹ, hợp với asset 3D */
+  --dur-instant: 90ms;
+  --dur-fast: 150ms;
+  --dur-base: 220ms;
+  --dur-slow: 340ms;
+  --dur-flip: 460ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-bounce: cubic-bezier(0.22, 1.4, 0.36, 1);
+
+  --z-base: 0; --z-sticky: 10; --z-appbar: 20; --z-tabbar: 30;
+  --z-sheet: 40; --z-overlay: 50; --z-toast: 60; --z-tooltip: 70;
+}
+
+/* ---------------------------------------------------------------------------
+   6. BASE
+   --------------------------------------------------------------------------- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  background: var(--bg-canvas);
+  background-attachment: fixed;      /* gradient không trôi khi cuộn */
+  color: var(--fg-default);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.h-screen-dvh { height: 100dvh; }
+.min-h-screen-dvh { min-height: 100dvh; }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+:where(button, a[role="button"], [role="tab"]) {
+  min-height: var(--tap-min);
+  touch-action: manipulation;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------------------
+   7. ASSET 3D — lớp dùng chung cho mọi nhân vật/vật thể 3D
+   --------------------------------------------------------------------------- */
+.art3d {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* bóng đổ mềm dưới vật thể — làm nó "đứng" trên mặt phẳng thay vì trôi lơ lửng */
+  filter: drop-shadow(0 12px 16px rgb(16 21 52 / 0.18));
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* quầng sáng phía sau — bọc .art3d trong phần tử có class này */
+.art3d-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.art3d-stage::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background: var(--glow-3d);
+  z-index: -1;
+}
+
+/* xuất hiện: nảy nhẹ. Dùng khi thẻ mới vào màn hình. */
+@keyframes art3d-pop {
+  0%   { transform: scale(0.82) translateY(10px); opacity: 0; }
+  60%  { transform: scale(1.04) translateY(0);    opacity: 1; }
+  100% { transform: scale(1)    translateY(0);    opacity: 1; }
+}
+.art3d-enter { animation: art3d-pop var(--dur-slow) var(--ease-bounce) both; }
+
+/* trôi rất nhẹ khi đứng yên — CHỈ dùng trên màn hình có đúng 1 vật thể 3D */
+@keyframes art3d-float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+.art3d-float { animation: art3d-float 4.5s ease-in-out infinite; }
+
+/* ---------------------------------------------------------------------------
+   8. REDUCED MOTION — bắt buộc
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .art3d-float, .art3d-enter { animation: none !important; }
+}

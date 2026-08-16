@@ -39,6 +39,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       logout: "Đăng xuất",
       leaderboard: "Xếp hạng",
       grammar: "Ngữ pháp",
+      back: "Quay lại",
     },
     home: {
       streakActive: "Chuỗi {n} ngày — giữ nhịp nhé",
@@ -669,13 +670,13 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         chipLang: "Tiếng Việt / English",
         chipImages: "Gần như từ nào cũng có hình",
       },
-      // Nêu đúng MỘT tính năng chưa xây, không kèm ngày. Tiếng Nhật và tiếng
-      // Trung cố tình vắng mặt và phải tiếp tục vắng cho tới khi schema có cột
-      // ngôn ngữ — hiện tại chưa có.
-      next: {
-        label: "Sắp tới",
-        title: "Sắp có: Ngữ pháp",
-        body: "Cùng bộ máy nhắc lại này, áp cho các điểm ngữ pháp. Đang xây, chưa hẹn ngày.",
+      // /grammar đã chạy thật nên đây là số liệu lấy từ DB, không còn là lời
+      // hứa. Tiếng Nhật và tiếng Trung cố tình vắng mặt và phải tiếp tục vắng
+      // cho tới khi schema có cột ngôn ngữ — hiện tại chưa có.
+      grammar: {
+        label: "Đã có",
+        title: "Ngữ pháp",
+        body: "{topics} chủ điểm, {lessons} bài lý thuyết song ngữ, cùng bộ máy nhắc lại.",
       },
       final: {
         title: "Hôm nay học",
@@ -749,6 +750,12 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         "it-programming": "Lập trình, hệ thống, mạng và bảo mật.",
         business: "Họp hành, giao dịch, báo cáo và nơi làm việc.",
         toeic: "Từ vựng cốt lõi cho kỳ thi TOEIC.",
+        medical: "Thuật ngữ lâm sàng, bệnh lý và chăm sóc sức khỏe.",
+        legal: "Ngôn ngữ hợp đồng, tố tụng, luật hình sự và dân sự.",
+        finance: "Kế toán, thuế, đầu tư và báo cáo tài chính.",
+        "daily-life": "Gia đình, thời tiết, đồ ăn và nấu nướng.",
+        social: "Chào hỏi, sở thích, thể thao và mạng xã hội.",
+        "office-skills": "Viết email, thuyết trình, đàm phán và phỏng vấn.",
       },
       names: {
         food: "Đồ ăn & Thức uống",
@@ -879,6 +886,7 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
       logout: "Sign out",
       leaderboard: "Ranks",
       grammar: "Grammar",
+      back: "Back",
     },
     home: {
       streakActive: "{n}-day streak — keep it alive",
@@ -1499,13 +1507,13 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         chipLang: "Tiếng Việt / English",
         chipImages: "Nearly all illustrated",
       },
-      // Names exactly ONE unbuilt feature and carries no date. Japanese and
-      // Chinese are deliberately absent and must stay absent until the schema
-      // has a language column — today it has none.
-      next: {
-        label: "Next",
-        title: "Coming: Grammar",
-        body: "The same spaced-repetition engine, applied to grammar points. In progress, no date promised.",
+      // /grammar has shipped, so this states real numbers from the DB rather
+      // than a promise. Japanese and Chinese are deliberately absent and must
+      // stay absent until the schema has a language column — today it has none.
+      grammar: {
+        label: "Available",
+        title: "Grammar",
+        body: "{topics} topics, {lessons} bilingual lessons, with the same spaced-repetition engine.",
       },
       final: {
         title: "Ten words",
@@ -1578,12 +1586,12 @@ export const dictionaries: Record<Lang, Record<string, any>> = {
         "it-programming": "Code, systems, networks, and security.",
         business: "Meetings, deals, reports, and the workplace.",
         toeic: "Core vocabulary for the TOEIC test.",
-        medical: "Medical & Healthcare",
-        legal: "Legal & Law",
-        finance: "Finance & Accounting",
-        "daily-life": "Everyday Life",
-        social: "Social English",
-        "office-skills": "Office Skills",
+        medical: "Clinical terms, illnesses, and patient care.",
+        legal: "Contracts, lawsuits, and criminal or civil law.",
+        finance: "Accounting, taxes, investing, and financial reports.",
+        "daily-life": "Family, weather, food, and cooking.",
+        social: "Greetings, hobbies, sports, and social media.",
+        "office-skills": "Writing emails, presenting, negotiating, and interviewing.",
       },
       names: {
         food: "Food & Drink",

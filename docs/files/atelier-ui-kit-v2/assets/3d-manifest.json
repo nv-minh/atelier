@@ -1,0 +1,9962 @@
+{
+"copyright": {
+"name": "copyright",
+"keys": [
+"copyright"
+]
+},
+"registered": {
+"name": "registered",
+"keys": [
+"registered"
+]
+},
+"mahjong-tile-red-dragon": {
+"name": "mahjong tile red dragon",
+"keys": [
+"dragon",
+"mahjong",
+"mahjong tile red dragon"
+]
+},
+"playing-card-black-joker": {
+"name": "playing card black joker",
+"keys": [
+"joker",
+"playing",
+"playing card black joker"
+]
+},
+"negative-squared-latin-capital-letter-a": {
+"name": "negative squared latin capital letter a",
+"keys": [
+"negative",
+"negative squared latin capital letter a"
+]
+},
+"negative-squared-latin-capital-letter-b": {
+"name": "negative squared latin capital letter b",
+"keys": [
+"negative",
+"negative squared latin capital letter b"
+]
+},
+"negative-squared-latin-capital-letter-o": {
+"name": "negative squared latin capital letter o",
+"keys": [
+"negative",
+"negative squared latin capital letter o"
+]
+},
+"negative-squared-latin-capital-letter-p": {
+"name": "negative squared latin capital letter p",
+"keys": [
+"negative",
+"negative squared latin capital letter p"
+]
+},
+"negative-squared-ab": {
+"name": "negative squared ab",
+"keys": [
+"ab",
+"negative",
+"negative squared ab"
+]
+},
+"squared-cl": {
+"name": "squared cl",
+"keys": [
+"cl",
+"squared",
+"squared cl"
+]
+},
+"squared-cool": {
+"name": "squared cool",
+"keys": [
+"cool",
+"squared",
+"squared cool"
+]
+},
+"squared-free": {
+"name": "squared free",
+"keys": [
+"free",
+"squared",
+"squared free"
+]
+},
+"squared-id": {
+"name": "squared id",
+"keys": [
+"id",
+"squared",
+"squared id"
+]
+},
+"squared-new": {
+"name": "squared new",
+"keys": [
+"new",
+"squared",
+"squared new"
+]
+},
+"squared-ng": {
+"name": "squared ng",
+"keys": [
+"ng",
+"squared",
+"squared ng"
+]
+},
+"squared-ok": {
+"name": "squared ok",
+"keys": [
+"ok",
+"squared",
+"squared ok"
+]
+},
+"squared-sos": {
+"name": "squared sos",
+"keys": [
+"sos",
+"squared",
+"squared sos"
+]
+},
+"squared-up-with-exclamation-mark": {
+"name": "squared up with exclamation mark",
+"keys": [
+"exclamation",
+"squared",
+"squared up with exclamation",
+"squared up with exclamation mark"
+]
+},
+"squared-vs": {
+"name": "squared vs",
+"keys": [
+"squared",
+"squared vs",
+"vs"
+]
+},
+"squared-katakana-koko": {
+"name": "squared katakana koko",
+"keys": [
+"koko",
+"squared",
+"squared katakana koko"
+]
+},
+"squared-katakana-sa": {
+"name": "squared katakana sa",
+"keys": [
+"sa",
+"squared",
+"squared katakana sa"
+]
+},
+"squared-cjk-unified-ideograph-7121": {
+"name": "squared cjk unified ideograph-7121",
+"keys": [
+"ideograph-7121",
+"squared",
+"squared cjk unified ideograph-7121"
+]
+},
+"squared-cjk-unified-ideograph-6307": {
+"name": "squared cjk unified ideograph-6307",
+"keys": [
+"ideograph-6307",
+"squared",
+"squared cjk unified ideograph-6307"
+]
+},
+"squared-cjk-unified-ideograph-7981": {
+"name": "squared cjk unified ideograph-7981",
+"keys": [
+"ideograph-7981",
+"squared",
+"squared cjk unified ideograph-7981"
+]
+},
+"squared-cjk-unified-ideograph-7a7a": {
+"name": "squared cjk unified ideograph-7a7a",
+"keys": [
+"ideograph-7a7a",
+"squared",
+"squared cjk unified ideograph-7a7a"
+]
+},
+"squared-cjk-unified-ideograph-5408": {
+"name": "squared cjk unified ideograph-5408",
+"keys": [
+"ideograph-5408",
+"squared",
+"squared cjk unified ideograph-5408"
+]
+},
+"squared-cjk-unified-ideograph-6e80": {
+"name": "squared cjk unified ideograph-6e80",
+"keys": [
+"ideograph-6e80",
+"squared",
+"squared cjk unified ideograph-6e80"
+]
+},
+"squared-cjk-unified-ideograph-6709": {
+"name": "squared cjk unified ideograph-6709",
+"keys": [
+"ideograph-6709",
+"squared",
+"squared cjk unified ideograph-6709"
+]
+},
+"squared-cjk-unified-ideograph-6708": {
+"name": "squared cjk unified ideograph-6708",
+"keys": [
+"ideograph-6708",
+"squared",
+"squared cjk unified ideograph-6708"
+]
+},
+"squared-cjk-unified-ideograph-7533": {
+"name": "squared cjk unified ideograph-7533",
+"keys": [
+"ideograph-7533",
+"squared",
+"squared cjk unified ideograph-7533"
+]
+},
+"squared-cjk-unified-ideograph-5272": {
+"name": "squared cjk unified ideograph-5272",
+"keys": [
+"ideograph-5272",
+"squared",
+"squared cjk unified ideograph-5272"
+]
+},
+"squared-cjk-unified-ideograph-55b6": {
+"name": "squared cjk unified ideograph-55b6",
+"keys": [
+"ideograph-55b6",
+"squared",
+"squared cjk unified ideograph-55b6"
+]
+},
+"circled-ideograph-advantage": {
+"name": "circled ideograph advantage",
+"keys": [
+"advantage",
+"circled",
+"circled ideograph advantage"
+]
+},
+"circled-ideograph-accept": {
+"name": "circled ideograph accept",
+"keys": [
+"accept",
+"circled",
+"circled ideograph accept"
+]
+},
+"cyclone": {
+"name": "cyclone",
+"keys": [
+"cyclone"
+]
+},
+"foggy": {
+"name": "foggy",
+"keys": [
+"foggy"
+]
+},
+"closed-umbrella": {
+"name": "closed umbrella",
+"keys": [
+"closed",
+"closed umbrella",
+"umbrella"
+]
+},
+"night-with-stars": {
+"name": "night with stars",
+"keys": [
+"night",
+"night with stars",
+"stars"
+]
+},
+"sunrise-over-mountains": {
+"name": "sunrise over mountains",
+"keys": [
+"mountains",
+"sunrise",
+"sunrise over mountains"
+]
+},
+"sunrise": {
+"name": "sunrise",
+"keys": [
+"sunrise"
+]
+},
+"cityscape-at-dusk": {
+"name": "cityscape at dusk",
+"keys": [
+"cityscape",
+"cityscape at dusk",
+"dusk"
+]
+},
+"sunset-over-buildings": {
+"name": "sunset over buildings",
+"keys": [
+"buildings",
+"sunset",
+"sunset over buildings"
+]
+},
+"rainbow": {
+"name": "rainbow",
+"keys": [
+"rainbow"
+]
+},
+"bridge-at-night": {
+"name": "bridge at night",
+"keys": [
+"bridge",
+"bridge at night",
+"night"
+]
+},
+"water-wave": {
+"name": "water wave",
+"keys": [
+"water",
+"water wave",
+"wave"
+]
+},
+"volcano": {
+"name": "volcano",
+"keys": [
+"volcano"
+]
+},
+"milky-way": {
+"name": "milky way",
+"keys": [
+"milky",
+"milky way",
+"way"
+]
+},
+"earth-globe-europe-africa": {
+"name": "earth globe europe-africa",
+"keys": [
+"earth",
+"earth globe europe-africa",
+"europe-africa"
+]
+},
+"earth-globe-americas": {
+"name": "earth globe americas",
+"keys": [
+"americas",
+"earth",
+"earth globe americas"
+]
+},
+"earth-globe-asia-australia": {
+"name": "earth globe asia-australia",
+"keys": [
+"asia-australia",
+"earth",
+"earth globe asia-australia"
+]
+},
+"globe-with-meridians": {
+"name": "globe with meridians",
+"keys": [
+"globe",
+"globe with meridians",
+"meridians"
+]
+},
+"new-moon": {
+"name": "new moon",
+"keys": [
+"moon",
+"new",
+"new moon"
+]
+},
+"waxing-crescent-moon": {
+"name": "waxing crescent moon",
+"keys": [
+"moon",
+"waxing",
+"waxing crescent moon"
+]
+},
+"first-quarter-moon": {
+"name": "first quarter moon",
+"keys": [
+"first",
+"first quarter moon",
+"moon"
+]
+},
+"waxing-gibbous-moon": {
+"name": "waxing gibbous moon",
+"keys": [
+"moon",
+"waxing",
+"waxing gibbous moon"
+]
+},
+"full-moon": {
+"name": "full moon",
+"keys": [
+"full",
+"full moon",
+"moon"
+]
+},
+"waning-gibbous-moon": {
+"name": "waning gibbous moon",
+"keys": [
+"moon",
+"waning",
+"waning gibbous moon"
+]
+},
+"last-quarter-moon": {
+"name": "last quarter moon",
+"keys": [
+"last",
+"last quarter moon",
+"moon"
+]
+},
+"waning-crescent-moon": {
+"name": "waning crescent moon",
+"keys": [
+"moon",
+"waning",
+"waning crescent moon"
+]
+},
+"crescent-moon": {
+"name": "crescent moon",
+"keys": [
+"crescent",
+"crescent moon",
+"moon"
+]
+},
+"new-moon-with-face": {
+"name": "new moon with face",
+"keys": [
+"new",
+"new moon with",
+"new moon with face",
+"with"
+]
+},
+"first-quarter-moon-with-face": {
+"name": "first quarter moon with face",
+"keys": [
+"first",
+"first quarter moon with",
+"first quarter moon with face",
+"with"
+]
+},
+"last-quarter-moon-with-face": {
+"name": "last quarter moon with face",
+"keys": [
+"last",
+"last quarter moon with",
+"last quarter moon with face",
+"with"
+]
+},
+"full-moon-with-face": {
+"name": "full moon with face",
+"keys": [
+"full",
+"full moon with",
+"full moon with face",
+"with"
+]
+},
+"sun-with-face": {
+"name": "sun with face",
+"keys": [
+"sun",
+"sun with",
+"sun with face",
+"with"
+]
+},
+"glowing-star": {
+"name": "glowing star",
+"keys": [
+"glowing",
+"glowing star",
+"star"
+]
+},
+"shooting-star": {
+"name": "shooting star",
+"keys": [
+"shooting",
+"shooting star",
+"star"
+]
+},
+"thermometer": {
+"name": "thermometer",
+"keys": [
+"thermometer"
+]
+},
+"white-sun-with-small-cloud": {
+"name": "white sun with small cloud",
+"keys": [
+"cloud",
+"white",
+"white sun with small cloud"
+]
+},
+"white-sun-behind-cloud": {
+"name": "white sun behind cloud",
+"keys": [
+"cloud",
+"white",
+"white sun behind cloud"
+]
+},
+"white-sun-behind-cloud-with-rain": {
+"name": "white sun behind cloud with rain",
+"keys": [
+"rain",
+"white",
+"white sun behind cloud with rain"
+]
+},
+"cloud-with-rain": {
+"name": "cloud with rain",
+"keys": [
+"cloud",
+"cloud with rain",
+"rain"
+]
+},
+"cloud-with-snow": {
+"name": "cloud with snow",
+"keys": [
+"cloud",
+"cloud with snow",
+"snow"
+]
+},
+"cloud-with-lightning": {
+"name": "cloud with lightning",
+"keys": [
+"cloud",
+"cloud with lightning",
+"lightning"
+]
+},
+"cloud-with-tornado": {
+"name": "cloud with tornado",
+"keys": [
+"cloud",
+"cloud with tornado",
+"tornado"
+]
+},
+"fog": {
+"name": "fog",
+"keys": [
+"fog"
+]
+},
+"wind-blowing-face": {
+"name": "wind blowing face",
+"keys": [
+"blowing",
+"wind",
+"wind blowing",
+"wind blowing face"
+]
+},
+"hot-dog": {
+"name": "hot dog",
+"keys": [
+"dog",
+"hot",
+"hot dog"
+]
+},
+"taco": {
+"name": "taco",
+"keys": [
+"taco"
+]
+},
+"burrito": {
+"name": "burrito",
+"keys": [
+"burrito"
+]
+},
+"chestnut": {
+"name": "chestnut",
+"keys": [
+"chestnut"
+]
+},
+"seedling": {
+"name": "seedling",
+"keys": [
+"seedling"
+]
+},
+"evergreen-tree": {
+"name": "evergreen tree",
+"keys": [
+"evergreen",
+"evergreen tree",
+"tree"
+]
+},
+"deciduous-tree": {
+"name": "deciduous tree",
+"keys": [
+"deciduous",
+"deciduous tree",
+"tree"
+]
+},
+"palm-tree": {
+"name": "palm tree",
+"keys": [
+"palm",
+"palm tree",
+"tree"
+]
+},
+"cactus": {
+"name": "cactus",
+"keys": [
+"cactus"
+]
+},
+"hot-pepper": {
+"name": "hot pepper",
+"keys": [
+"hot",
+"hot pepper",
+"pepper"
+]
+},
+"tulip": {
+"name": "tulip",
+"keys": [
+"tulip"
+]
+},
+"cherry-blossom": {
+"name": "cherry blossom",
+"keys": [
+"blossom",
+"cherry",
+"cherry blossom"
+]
+},
+"rose": {
+"name": "rose",
+"keys": [
+"rose"
+]
+},
+"hibiscus": {
+"name": "hibiscus",
+"keys": [
+"hibiscus"
+]
+},
+"sunflower": {
+"name": "sunflower",
+"keys": [
+"sunflower"
+]
+},
+"blossom": {
+"name": "blossom",
+"keys": [
+"blossom"
+]
+},
+"ear-of-maize": {
+"name": "ear of maize",
+"keys": [
+"ear",
+"ear of maize",
+"maize"
+]
+},
+"ear-of-rice": {
+"name": "ear of rice",
+"keys": [
+"ear",
+"ear of rice",
+"rice"
+]
+},
+"herb": {
+"name": "herb",
+"keys": [
+"herb"
+]
+},
+"four-leaf-clover": {
+"name": "four leaf clover",
+"keys": [
+"clover",
+"four",
+"four leaf clover"
+]
+},
+"maple-leaf": {
+"name": "maple leaf",
+"keys": [
+"leaf",
+"maple",
+"maple leaf"
+]
+},
+"fallen-leaf": {
+"name": "fallen leaf",
+"keys": [
+"fallen",
+"fallen leaf",
+"leaf"
+]
+},
+"leaf-fluttering-in-wind": {
+"name": "leaf fluttering in wind",
+"keys": [
+"leaf",
+"leaf fluttering in wind",
+"wind"
+]
+},
+"mushroom": {
+"name": "mushroom",
+"keys": [
+"mushroom"
+]
+},
+"tomato": {
+"name": "tomato",
+"keys": [
+"tomato"
+]
+},
+"aubergine": {
+"name": "aubergine",
+"keys": [
+"aubergine"
+]
+},
+"grapes": {
+"name": "grapes",
+"keys": [
+"grapes"
+]
+},
+"melon": {
+"name": "melon",
+"keys": [
+"melon"
+]
+},
+"watermelon": {
+"name": "watermelon",
+"keys": [
+"watermelon"
+]
+},
+"tangerine": {
+"name": "tangerine",
+"keys": [
+"tangerine"
+]
+},
+"lemon": {
+"name": "lemon",
+"keys": [
+"lemon"
+]
+},
+"banana": {
+"name": "banana",
+"keys": [
+"banana"
+]
+},
+"pineapple": {
+"name": "pineapple",
+"keys": [
+"pineapple"
+]
+},
+"red-apple": {
+"name": "red apple",
+"keys": [
+"apple",
+"red",
+"red apple"
+]
+},
+"green-apple": {
+"name": "green apple",
+"keys": [
+"apple",
+"green",
+"green apple"
+]
+},
+"pear": {
+"name": "pear",
+"keys": [
+"pear"
+]
+},
+"peach": {
+"name": "peach",
+"keys": [
+"peach"
+]
+},
+"cherries": {
+"name": "cherries",
+"keys": [
+"cherries"
+]
+},
+"strawberry": {
+"name": "strawberry",
+"keys": [
+"strawberry"
+]
+},
+"hamburger": {
+"name": "hamburger",
+"keys": [
+"hamburger"
+]
+},
+"slice-of-pizza": {
+"name": "slice of pizza",
+"keys": [
+"pizza",
+"slice",
+"slice of pizza"
+]
+},
+"meat-on-bone": {
+"name": "meat on bone",
+"keys": [
+"bone",
+"meat",
+"meat on bone"
+]
+},
+"poultry-leg": {
+"name": "poultry leg",
+"keys": [
+"leg",
+"poultry",
+"poultry leg"
+]
+},
+"rice-cracker": {
+"name": "rice cracker",
+"keys": [
+"cracker",
+"rice",
+"rice cracker"
+]
+},
+"rice-ball": {
+"name": "rice ball",
+"keys": [
+"ball",
+"rice",
+"rice ball"
+]
+},
+"cooked-rice": {
+"name": "cooked rice",
+"keys": [
+"cooked",
+"cooked rice",
+"rice"
+]
+},
+"curry-and-rice": {
+"name": "curry and rice",
+"keys": [
+"curry",
+"curry and rice",
+"rice"
+]
+},
+"steaming-bowl": {
+"name": "steaming bowl",
+"keys": [
+"bowl",
+"steaming",
+"steaming bowl"
+]
+},
+"spaghetti": {
+"name": "spaghetti",
+"keys": [
+"spaghetti"
+]
+},
+"bread": {
+"name": "bread",
+"keys": [
+"bread"
+]
+},
+"french-fries": {
+"name": "french fries",
+"keys": [
+"french",
+"french fries",
+"fries"
+]
+},
+"roasted-sweet-potato": {
+"name": "roasted sweet potato",
+"keys": [
+"potato",
+"roasted",
+"roasted sweet potato"
+]
+},
+"dango": {
+"name": "dango",
+"keys": [
+"dango"
+]
+},
+"oden": {
+"name": "oden",
+"keys": [
+"oden"
+]
+},
+"sushi": {
+"name": "sushi",
+"keys": [
+"sushi"
+]
+},
+"fried-shrimp": {
+"name": "fried shrimp",
+"keys": [
+"fried",
+"fried shrimp",
+"shrimp"
+]
+},
+"fish-cake-with-swirl-design": {
+"name": "fish cake with swirl design",
+"keys": [
+"design",
+"fish",
+"fish cake with swirl design"
+]
+},
+"soft-ice-cream": {
+"name": "soft ice cream",
+"keys": [
+"cream",
+"soft",
+"soft ice cream"
+]
+},
+"shaved-ice": {
+"name": "shaved ice",
+"keys": [
+"ice",
+"shaved",
+"shaved ice"
+]
+},
+"ice-cream": {
+"name": "ice cream",
+"keys": [
+"cream",
+"ice",
+"ice cream"
+]
+},
+"doughnut": {
+"name": "doughnut",
+"keys": [
+"doughnut"
+]
+},
+"cookie": {
+"name": "cookie",
+"keys": [
+"cookie"
+]
+},
+"chocolate-bar": {
+"name": "chocolate bar",
+"keys": [
+"bar",
+"chocolate",
+"chocolate bar"
+]
+},
+"candy": {
+"name": "candy",
+"keys": [
+"candy"
+]
+},
+"lollipop": {
+"name": "lollipop",
+"keys": [
+"lollipop"
+]
+},
+"custard": {
+"name": "custard",
+"keys": [
+"custard"
+]
+},
+"honey-pot": {
+"name": "honey pot",
+"keys": [
+"honey",
+"honey pot",
+"pot"
+]
+},
+"shortcake": {
+"name": "shortcake",
+"keys": [
+"shortcake"
+]
+},
+"bento-box": {
+"name": "bento box",
+"keys": [
+"bento",
+"bento box",
+"box"
+]
+},
+"pot-of-food": {
+"name": "pot of food",
+"keys": [
+"food",
+"pot",
+"pot of food"
+]
+},
+"cooking": {
+"name": "cooking",
+"keys": [
+"cooking"
+]
+},
+"fork-and-knife": {
+"name": "fork and knife",
+"keys": [
+"fork",
+"fork and knife",
+"knife"
+]
+},
+"teacup-without-handle": {
+"name": "teacup without handle",
+"keys": [
+"handle",
+"teacup",
+"teacup without handle"
+]
+},
+"sake-bottle-and-cup": {
+"name": "sake bottle and cup",
+"keys": [
+"cup",
+"sake",
+"sake bottle and cup"
+]
+},
+"wine-glass": {
+"name": "wine glass",
+"keys": [
+"glass",
+"wine",
+"wine glass"
+]
+},
+"cocktail-glass": {
+"name": "cocktail glass",
+"keys": [
+"cocktail",
+"cocktail glass",
+"glass"
+]
+},
+"tropical-drink": {
+"name": "tropical drink",
+"keys": [
+"drink",
+"tropical",
+"tropical drink"
+]
+},
+"beer-mug": {
+"name": "beer mug",
+"keys": [
+"beer",
+"beer mug",
+"mug"
+]
+},
+"clinking-beer-mugs": {
+"name": "clinking beer mugs",
+"keys": [
+"clinking",
+"clinking beer mugs",
+"mugs"
+]
+},
+"baby-bottle": {
+"name": "baby bottle",
+"keys": [
+"baby",
+"baby bottle",
+"bottle"
+]
+},
+"fork-and-knife-with-plate": {
+"name": "fork and knife with plate",
+"keys": [
+"fork",
+"fork and knife with plate",
+"plate"
+]
+},
+"bottle-with-popping-cork": {
+"name": "bottle with popping cork",
+"keys": [
+"bottle",
+"bottle with popping cork",
+"cork"
+]
+},
+"popcorn": {
+"name": "popcorn",
+"keys": [
+"popcorn"
+]
+},
+"ribbon": {
+"name": "ribbon",
+"keys": [
+"ribbon"
+]
+},
+"wrapped-present": {
+"name": "wrapped present",
+"keys": [
+"present",
+"wrapped",
+"wrapped present"
+]
+},
+"birthday-cake": {
+"name": "birthday cake",
+"keys": [
+"birthday",
+"birthday cake",
+"cake"
+]
+},
+"jack-o-lantern": {
+"name": "jack-o-lantern",
+"keys": [
+"jack-o-lantern"
+]
+},
+"christmas-tree": {
+"name": "christmas tree",
+"keys": [
+"christmas",
+"christmas tree",
+"tree"
+]
+},
+"father-christmas": {
+"name": "father christmas",
+"keys": [
+"christmas",
+"father",
+"father christmas"
+]
+},
+"fireworks": {
+"name": "fireworks",
+"keys": [
+"fireworks"
+]
+},
+"firework-sparkler": {
+"name": "firework sparkler",
+"keys": [
+"firework",
+"firework sparkler",
+"sparkler"
+]
+},
+"balloon": {
+"name": "balloon",
+"keys": [
+"balloon"
+]
+},
+"party-popper": {
+"name": "party popper",
+"keys": [
+"party",
+"party popper",
+"popper"
+]
+},
+"confetti-ball": {
+"name": "confetti ball",
+"keys": [
+"ball",
+"confetti",
+"confetti ball"
+]
+},
+"tanabata-tree": {
+"name": "tanabata tree",
+"keys": [
+"tanabata",
+"tanabata tree",
+"tree"
+]
+},
+"crossed-flags": {
+"name": "crossed flags",
+"keys": [
+"crossed",
+"crossed flags",
+"flags"
+]
+},
+"pine-decoration": {
+"name": "pine decoration",
+"keys": [
+"decoration",
+"pine",
+"pine decoration"
+]
+},
+"japanese-dolls": {
+"name": "japanese dolls",
+"keys": [
+"dolls",
+"japanese",
+"japanese dolls"
+]
+},
+"carp-streamer": {
+"name": "carp streamer",
+"keys": [
+"carp",
+"carp streamer",
+"streamer"
+]
+},
+"wind-chime": {
+"name": "wind chime",
+"keys": [
+"chime",
+"wind",
+"wind chime"
+]
+},
+"moon-viewing-ceremony": {
+"name": "moon viewing ceremony",
+"keys": [
+"ceremony",
+"moon",
+"moon viewing ceremony"
+]
+},
+"school-satchel": {
+"name": "school satchel",
+"keys": [
+"satchel",
+"school",
+"school satchel"
+]
+},
+"graduation-cap": {
+"name": "graduation cap",
+"keys": [
+"cap",
+"graduation",
+"graduation cap"
+]
+},
+"military-medal": {
+"name": "military medal",
+"keys": [
+"medal",
+"military",
+"military medal"
+]
+},
+"reminder-ribbon": {
+"name": "reminder ribbon",
+"keys": [
+"reminder",
+"reminder ribbon",
+"ribbon"
+]
+},
+"studio-microphone": {
+"name": "studio microphone",
+"keys": [
+"microphone",
+"studio",
+"studio microphone"
+]
+},
+"level-slider": {
+"name": "level slider",
+"keys": [
+"level",
+"level slider",
+"slider"
+]
+},
+"control-knobs": {
+"name": "control knobs",
+"keys": [
+"control",
+"control knobs",
+"knobs"
+]
+},
+"film-frames": {
+"name": "film frames",
+"keys": [
+"film",
+"film frames",
+"frames"
+]
+},
+"admission-tickets": {
+"name": "admission tickets",
+"keys": [
+"admission",
+"admission tickets",
+"tickets"
+]
+},
+"carousel-horse": {
+"name": "carousel horse",
+"keys": [
+"carousel",
+"carousel horse",
+"horse"
+]
+},
+"ferris-wheel": {
+"name": "ferris wheel",
+"keys": [
+"ferris",
+"ferris wheel",
+"wheel"
+]
+},
+"roller-coaster": {
+"name": "roller coaster",
+"keys": [
+"coaster",
+"roller",
+"roller coaster"
+]
+},
+"fishing-pole-and-fish": {
+"name": "fishing pole and fish",
+"keys": [
+"fish",
+"fishing",
+"fishing pole and fish"
+]
+},
+"microphone": {
+"name": "microphone",
+"keys": [
+"microphone"
+]
+},
+"movie-camera": {
+"name": "movie camera",
+"keys": [
+"camera",
+"movie",
+"movie camera"
+]
+},
+"cinema": {
+"name": "cinema",
+"keys": [
+"cinema"
+]
+},
+"headphone": {
+"name": "headphone",
+"keys": [
+"headphone"
+]
+},
+"artist-palette": {
+"name": "artist palette",
+"keys": [
+"artist",
+"artist palette",
+"palette"
+]
+},
+"top-hat": {
+"name": "top hat",
+"keys": [
+"hat",
+"top",
+"top hat"
+]
+},
+"circus-tent": {
+"name": "circus tent",
+"keys": [
+"circus",
+"circus tent",
+"tent"
+]
+},
+"ticket": {
+"name": "ticket",
+"keys": [
+"ticket"
+]
+},
+"clapper-board": {
+"name": "clapper board",
+"keys": [
+"board",
+"clapper",
+"clapper board"
+]
+},
+"performing-arts": {
+"name": "performing arts",
+"keys": [
+"arts",
+"performing",
+"performing arts"
+]
+},
+"video-game": {
+"name": "video game",
+"keys": [
+"game",
+"video",
+"video game"
+]
+},
+"direct-hit": {
+"name": "direct hit",
+"keys": [
+"direct",
+"direct hit",
+"hit"
+]
+},
+"slot-machine": {
+"name": "slot machine",
+"keys": [
+"machine",
+"slot",
+"slot machine"
+]
+},
+"billiards": {
+"name": "billiards",
+"keys": [
+"billiards"
+]
+},
+"game-die": {
+"name": "game die",
+"keys": [
+"die",
+"game",
+"game die"
+]
+},
+"bowling": {
+"name": "bowling",
+"keys": [
+"bowling"
+]
+},
+"flower-playing-cards": {
+"name": "flower playing cards",
+"keys": [
+"cards",
+"flower",
+"flower playing cards"
+]
+},
+"musical-note": {
+"name": "musical note",
+"keys": [
+"musical",
+"musical note",
+"note"
+]
+},
+"multiple-musical-notes": {
+"name": "multiple musical notes",
+"keys": [
+"multiple",
+"multiple musical notes",
+"notes"
+]
+},
+"saxophone": {
+"name": "saxophone",
+"keys": [
+"saxophone"
+]
+},
+"guitar": {
+"name": "guitar",
+"keys": [
+"guitar"
+]
+},
+"musical-keyboard": {
+"name": "musical keyboard",
+"keys": [
+"keyboard",
+"musical",
+"musical keyboard"
+]
+},
+"trumpet": {
+"name": "trumpet",
+"keys": [
+"trumpet"
+]
+},
+"violin": {
+"name": "violin",
+"keys": [
+"violin"
+]
+},
+"musical-score": {
+"name": "musical score",
+"keys": [
+"musical",
+"musical score",
+"score"
+]
+},
+"running-shirt-with-sash": {
+"name": "running shirt with sash",
+"keys": [
+"running",
+"running shirt with sash",
+"sash"
+]
+},
+"tennis-racquet-and-ball": {
+"name": "tennis racquet and ball",
+"keys": [
+"ball",
+"tennis",
+"tennis racquet and ball"
+]
+},
+"ski-and-ski-boot": {
+"name": "ski and ski boot",
+"keys": [
+"boot",
+"ski",
+"ski and ski boot"
+]
+},
+"basketball-and-hoop": {
+"name": "basketball and hoop",
+"keys": [
+"basketball",
+"basketball and hoop",
+"hoop"
+]
+},
+"chequered-flag": {
+"name": "chequered flag",
+"keys": [
+"chequered",
+"chequered flag",
+"flag"
+]
+},
+"snowboarder": {
+"name": "snowboarder",
+"keys": [
+"snowboarder"
+]
+},
+"runner": {
+"name": "runner",
+"keys": [
+"runner"
+]
+},
+"surfer": {
+"name": "surfer",
+"keys": [
+"surfer"
+]
+},
+"sports-medal": {
+"name": "sports medal",
+"keys": [
+"medal",
+"sports",
+"sports medal"
+]
+},
+"trophy": {
+"name": "trophy",
+"keys": [
+"trophy"
+]
+},
+"horse-racing": {
+"name": "horse racing",
+"keys": [
+"horse",
+"horse racing",
+"racing"
+]
+},
+"american-football": {
+"name": "american football",
+"keys": [
+"american",
+"american football",
+"football"
+]
+},
+"rugby-football": {
+"name": "rugby football",
+"keys": [
+"football",
+"rugby",
+"rugby football"
+]
+},
+"swimmer": {
+"name": "swimmer",
+"keys": [
+"swimmer"
+]
+},
+"weight-lifter": {
+"name": "weight lifter",
+"keys": [
+"lifter",
+"weight",
+"weight lifter"
+]
+},
+"golfer": {
+"name": "golfer",
+"keys": [
+"golfer"
+]
+},
+"racing-motorcycle": {
+"name": "racing motorcycle",
+"keys": [
+"motorcycle",
+"racing",
+"racing motorcycle"
+]
+},
+"racing-car": {
+"name": "racing car",
+"keys": [
+"car",
+"racing",
+"racing car"
+]
+},
+"cricket-bat-and-ball": {
+"name": "cricket bat and ball",
+"keys": [
+"ball",
+"cricket",
+"cricket bat and ball"
+]
+},
+"volleyball": {
+"name": "volleyball",
+"keys": [
+"volleyball"
+]
+},
+"field-hockey-stick-and-ball": {
+"name": "field hockey stick and ball",
+"keys": [
+"ball",
+"field",
+"field hockey stick and ball"
+]
+},
+"ice-hockey-stick-and-puck": {
+"name": "ice hockey stick and puck",
+"keys": [
+"ice",
+"ice hockey stick and puck",
+"puck"
+]
+},
+"table-tennis-paddle-and-ball": {
+"name": "table tennis paddle and ball",
+"keys": [
+"ball",
+"table",
+"table tennis paddle and ball"
+]
+},
+"snow-capped-mountain": {
+"name": "snow capped mountain",
+"keys": [
+"mountain",
+"snow",
+"snow capped mountain"
+]
+},
+"camping": {
+"name": "camping",
+"keys": [
+"camping"
+]
+},
+"beach-with-umbrella": {
+"name": "beach with umbrella",
+"keys": [
+"beach",
+"beach with umbrella",
+"umbrella"
+]
+},
+"building-construction": {
+"name": "building construction",
+"keys": [
+"building",
+"building construction",
+"construction"
+]
+},
+"house-buildings": {
+"name": "house buildings",
+"keys": [
+"buildings",
+"house",
+"house buildings"
+]
+},
+"cityscape": {
+"name": "cityscape",
+"keys": [
+"cityscape"
+]
+},
+"derelict-house-building": {
+"name": "derelict house building",
+"keys": [
+"building",
+"derelict",
+"derelict house building"
+]
+},
+"classical-building": {
+"name": "classical building",
+"keys": [
+"building",
+"classical",
+"classical building"
+]
+},
+"desert": {
+"name": "desert",
+"keys": [
+"desert"
+]
+},
+"desert-island": {
+"name": "desert island",
+"keys": [
+"desert",
+"desert island",
+"island"
+]
+},
+"national-park": {
+"name": "national park",
+"keys": [
+"national",
+"national park",
+"park"
+]
+},
+"stadium": {
+"name": "stadium",
+"keys": [
+"stadium"
+]
+},
+"house-building": {
+"name": "house building",
+"keys": [
+"building",
+"house",
+"house building"
+]
+},
+"house-with-garden": {
+"name": "house with garden",
+"keys": [
+"garden",
+"house",
+"house with garden"
+]
+},
+"office-building": {
+"name": "office building",
+"keys": [
+"building",
+"office",
+"office building"
+]
+},
+"japanese-post-office": {
+"name": "japanese post office",
+"keys": [
+"japanese",
+"japanese post office",
+"office"
+]
+},
+"european-post-office": {
+"name": "european post office",
+"keys": [
+"european",
+"european post office",
+"office"
+]
+},
+"hospital": {
+"name": "hospital",
+"keys": [
+"hospital"
+]
+},
+"bank": {
+"name": "bank",
+"keys": [
+"bank"
+]
+},
+"automated-teller-machine": {
+"name": "automated teller machine",
+"keys": [
+"automated",
+"automated teller machine",
+"machine"
+]
+},
+"hotel": {
+"name": "hotel",
+"keys": [
+"hotel"
+]
+},
+"love-hotel": {
+"name": "love hotel",
+"keys": [
+"hotel",
+"love",
+"love hotel"
+]
+},
+"convenience-store": {
+"name": "convenience store",
+"keys": [
+"convenience",
+"convenience store",
+"store"
+]
+},
+"school": {
+"name": "school",
+"keys": [
+"school"
+]
+},
+"department-store": {
+"name": "department store",
+"keys": [
+"department",
+"department store",
+"store"
+]
+},
+"factory": {
+"name": "factory",
+"keys": [
+"factory"
+]
+},
+"izakaya-lantern": {
+"name": "izakaya lantern",
+"keys": [
+"izakaya",
+"izakaya lantern",
+"lantern"
+]
+},
+"japanese-castle": {
+"name": "japanese castle",
+"keys": [
+"castle",
+"japanese",
+"japanese castle"
+]
+},
+"european-castle": {
+"name": "european castle",
+"keys": [
+"castle",
+"european",
+"european castle"
+]
+},
+"waving-white-flag": {
+"name": "waving white flag",
+"keys": [
+"flag",
+"waving",
+"waving white flag"
+]
+},
+"waving-black-flag": {
+"name": "waving black flag",
+"keys": [
+"flag",
+"waving",
+"waving black flag"
+]
+},
+"rosette": {
+"name": "rosette",
+"keys": [
+"rosette"
+]
+},
+"label": {
+"name": "label",
+"keys": [
+"label"
+]
+},
+"badminton-racquet-and-shuttlecock": {
+"name": "badminton racquet and shuttlecock",
+"keys": [
+"badminton",
+"badminton racquet and shuttlecock",
+"shuttlecock"
+]
+},
+"bow-and-arrow": {
+"name": "bow and arrow",
+"keys": [
+"arrow",
+"bow",
+"bow and arrow"
+]
+},
+"amphora": {
+"name": "amphora",
+"keys": [
+"amphora"
+]
+},
+"rat": {
+"name": "rat",
+"keys": [
+"rat"
+]
+},
+"mouse": {
+"name": "mouse",
+"keys": [
+"mouse"
+]
+},
+"ox": {
+"name": "ox",
+"keys": [
+"ox"
+]
+},
+"water-buffalo": {
+"name": "water buffalo",
+"keys": [
+"buffalo",
+"water",
+"water buffalo"
+]
+},
+"cow": {
+"name": "cow",
+"keys": [
+"cow"
+]
+},
+"tiger": {
+"name": "tiger",
+"keys": [
+"tiger"
+]
+},
+"leopard": {
+"name": "leopard",
+"keys": [
+"leopard"
+]
+},
+"rabbit": {
+"name": "rabbit",
+"keys": [
+"rabbit"
+]
+},
+"cat": {
+"name": "cat",
+"keys": [
+"cat"
+]
+},
+"dragon": {
+"name": "dragon",
+"keys": [
+"dragon"
+]
+},
+"crocodile": {
+"name": "crocodile",
+"keys": [
+"crocodile"
+]
+},
+"whale": {
+"name": "whale",
+"keys": [
+"whale"
+]
+},
+"snail": {
+"name": "snail",
+"keys": [
+"snail"
+]
+},
+"snake": {
+"name": "snake",
+"keys": [
+"snake"
+]
+},
+"horse": {
+"name": "horse",
+"keys": [
+"horse"
+]
+},
+"ram": {
+"name": "ram",
+"keys": [
+"ram"
+]
+},
+"goat": {
+"name": "goat",
+"keys": [
+"goat"
+]
+},
+"sheep": {
+"name": "sheep",
+"keys": [
+"sheep"
+]
+},
+"monkey": {
+"name": "monkey",
+"keys": [
+"monkey"
+]
+},
+"rooster": {
+"name": "rooster",
+"keys": [
+"rooster"
+]
+},
+"chicken": {
+"name": "chicken",
+"keys": [
+"chicken"
+]
+},
+"dog": {
+"name": "dog",
+"keys": [
+"dog"
+]
+},
+"pig": {
+"name": "pig",
+"keys": [
+"pig"
+]
+},
+"boar": {
+"name": "boar",
+"keys": [
+"boar"
+]
+},
+"elephant": {
+"name": "elephant",
+"keys": [
+"elephant"
+]
+},
+"octopus": {
+"name": "octopus",
+"keys": [
+"octopus"
+]
+},
+"spiral-shell": {
+"name": "spiral shell",
+"keys": [
+"shell",
+"spiral",
+"spiral shell"
+]
+},
+"bug": {
+"name": "bug",
+"keys": [
+"bug"
+]
+},
+"ant": {
+"name": "ant",
+"keys": [
+"ant"
+]
+},
+"honeybee": {
+"name": "honeybee",
+"keys": [
+"honeybee"
+]
+},
+"lady-beetle": {
+"name": "lady beetle",
+"keys": [
+"beetle",
+"lady",
+"lady beetle"
+]
+},
+"fish": {
+"name": "fish",
+"keys": [
+"fish"
+]
+},
+"tropical-fish": {
+"name": "tropical fish",
+"keys": [
+"fish",
+"tropical",
+"tropical fish"
+]
+},
+"blowfish": {
+"name": "blowfish",
+"keys": [
+"blowfish"
+]
+},
+"turtle": {
+"name": "turtle",
+"keys": [
+"turtle"
+]
+},
+"hatching-chick": {
+"name": "hatching chick",
+"keys": [
+"chick",
+"hatching",
+"hatching chick"
+]
+},
+"baby-chick": {
+"name": "baby chick",
+"keys": [
+"baby",
+"baby chick",
+"chick"
+]
+},
+"front-facing-baby-chick": {
+"name": "front-facing baby chick",
+"keys": [
+"chick",
+"front-facing",
+"front-facing baby chick"
+]
+},
+"bird": {
+"name": "bird",
+"keys": [
+"bird"
+]
+},
+"penguin": {
+"name": "penguin",
+"keys": [
+"penguin"
+]
+},
+"koala": {
+"name": "koala",
+"keys": [
+"koala"
+]
+},
+"poodle": {
+"name": "poodle",
+"keys": [
+"poodle"
+]
+},
+"dromedary-camel": {
+"name": "dromedary camel",
+"keys": [
+"camel",
+"dromedary",
+"dromedary camel"
+]
+},
+"bactrian-camel": {
+"name": "bactrian camel",
+"keys": [
+"bactrian",
+"bactrian camel",
+"camel"
+]
+},
+"dolphin": {
+"name": "dolphin",
+"keys": [
+"dolphin"
+]
+},
+"mouse-face": {
+"name": "mouse face",
+"keys": [
+"mouse",
+"mouse face"
+]
+},
+"cow-face": {
+"name": "cow face",
+"keys": [
+"cow",
+"cow face"
+]
+},
+"tiger-face": {
+"name": "tiger face",
+"keys": [
+"tiger",
+"tiger face"
+]
+},
+"rabbit-face": {
+"name": "rabbit face",
+"keys": [
+"rabbit",
+"rabbit face"
+]
+},
+"cat-face": {
+"name": "cat face",
+"keys": [
+"cat",
+"cat face"
+]
+},
+"dragon-face": {
+"name": "dragon face",
+"keys": [
+"dragon",
+"dragon face"
+]
+},
+"spouting-whale": {
+"name": "spouting whale",
+"keys": [
+"spouting",
+"spouting whale",
+"whale"
+]
+},
+"horse-face": {
+"name": "horse face",
+"keys": [
+"horse",
+"horse face"
+]
+},
+"monkey-face": {
+"name": "monkey face",
+"keys": [
+"monkey",
+"monkey face"
+]
+},
+"dog-face": {
+"name": "dog face",
+"keys": [
+"dog",
+"dog face"
+]
+},
+"pig-face": {
+"name": "pig face",
+"keys": [
+"pig",
+"pig face"
+]
+},
+"frog-face": {
+"name": "frog face",
+"keys": [
+"frog",
+"frog face"
+]
+},
+"hamster-face": {
+"name": "hamster face",
+"keys": [
+"hamster",
+"hamster face"
+]
+},
+"wolf-face": {
+"name": "wolf face",
+"keys": [
+"wolf",
+"wolf face"
+]
+},
+"bear-face": {
+"name": "bear face",
+"keys": [
+"bear",
+"bear face"
+]
+},
+"panda-face": {
+"name": "panda face",
+"keys": [
+"panda",
+"panda face"
+]
+},
+"pig-nose": {
+"name": "pig nose",
+"keys": [
+"nose",
+"pig",
+"pig nose"
+]
+},
+"paw-prints": {
+"name": "paw prints",
+"keys": [
+"paw",
+"paw prints",
+"prints"
+]
+},
+"chipmunk": {
+"name": "chipmunk",
+"keys": [
+"chipmunk"
+]
+},
+"eyes": {
+"name": "eyes",
+"keys": [
+"eyes"
+]
+},
+"eye": {
+"name": "eye",
+"keys": [
+"eye"
+]
+},
+"ear": {
+"name": "ear",
+"keys": [
+"ear"
+]
+},
+"nose": {
+"name": "nose",
+"keys": [
+"nose"
+]
+},
+"mouth": {
+"name": "mouth",
+"keys": [
+"mouth"
+]
+},
+"tongue": {
+"name": "tongue",
+"keys": [
+"tongue"
+]
+},
+"white-up-pointing-backhand-index": {
+"name": "white up pointing backhand index",
+"keys": [
+"index",
+"white",
+"white up pointing backhand index"
+]
+},
+"white-down-pointing-backhand-index": {
+"name": "white down pointing backhand index",
+"keys": [
+"index",
+"white",
+"white down pointing backhand index"
+]
+},
+"white-left-pointing-backhand-index": {
+"name": "white left pointing backhand index",
+"keys": [
+"index",
+"white",
+"white left pointing backhand index"
+]
+},
+"white-right-pointing-backhand-index": {
+"name": "white right pointing backhand index",
+"keys": [
+"index",
+"white",
+"white right pointing backhand index"
+]
+},
+"fisted-hand": {
+"name": "fisted hand",
+"keys": [
+"fisted",
+"fisted hand",
+"hand"
+]
+},
+"waving-hand": {
+"name": "waving hand",
+"keys": [
+"hand",
+"waving",
+"waving hand"
+]
+},
+"ok-hand": {
+"name": "ok hand",
+"keys": [
+"hand",
+"ok",
+"ok hand"
+]
+},
+"thumbs-up": {
+"name": "thumbs up",
+"keys": [
+"thumbs",
+"thumbs up",
+"up"
+]
+},
+"thumbs-down": {
+"name": "thumbs down",
+"keys": [
+"down",
+"thumbs",
+"thumbs down"
+]
+},
+"clapping-hands": {
+"name": "clapping hands",
+"keys": [
+"clapping",
+"clapping hands",
+"hands"
+]
+},
+"open-hands": {
+"name": "open hands",
+"keys": [
+"hands",
+"open",
+"open hands"
+]
+},
+"crown": {
+"name": "crown",
+"keys": [
+"crown"
+]
+},
+"womans-hat": {
+"name": "womans hat",
+"keys": [
+"hat",
+"womans",
+"womans hat"
+]
+},
+"eyeglasses": {
+"name": "eyeglasses",
+"keys": [
+"eyeglasses"
+]
+},
+"necktie": {
+"name": "necktie",
+"keys": [
+"necktie"
+]
+},
+"t-shirt": {
+"name": "t-shirt",
+"keys": [
+"t-shirt"
+]
+},
+"jeans": {
+"name": "jeans",
+"keys": [
+"jeans"
+]
+},
+"dress": {
+"name": "dress",
+"keys": [
+"dress"
+]
+},
+"kimono": {
+"name": "kimono",
+"keys": [
+"kimono"
+]
+},
+"bikini": {
+"name": "bikini",
+"keys": [
+"bikini"
+]
+},
+"womans-clothes": {
+"name": "womans clothes",
+"keys": [
+"clothes",
+"womans",
+"womans clothes"
+]
+},
+"purse": {
+"name": "purse",
+"keys": [
+"purse"
+]
+},
+"handbag": {
+"name": "handbag",
+"keys": [
+"handbag"
+]
+},
+"pouch": {
+"name": "pouch",
+"keys": [
+"pouch"
+]
+},
+"mans-shoe": {
+"name": "mans shoe",
+"keys": [
+"mans",
+"mans shoe",
+"shoe"
+]
+},
+"athletic-shoe": {
+"name": "athletic shoe",
+"keys": [
+"athletic",
+"athletic shoe",
+"shoe"
+]
+},
+"high-heeled-shoe": {
+"name": "high-heeled shoe",
+"keys": [
+"high-heeled",
+"high-heeled shoe",
+"shoe"
+]
+},
+"womans-sandal": {
+"name": "womans sandal",
+"keys": [
+"sandal",
+"womans",
+"womans sandal"
+]
+},
+"womans-boots": {
+"name": "womans boots",
+"keys": [
+"boots",
+"womans",
+"womans boots"
+]
+},
+"footprints": {
+"name": "footprints",
+"keys": [
+"footprints"
+]
+},
+"bust-in-silhouette": {
+"name": "bust in silhouette",
+"keys": [
+"bust",
+"bust in silhouette",
+"silhouette"
+]
+},
+"busts-in-silhouette": {
+"name": "busts in silhouette",
+"keys": [
+"busts",
+"busts in silhouette",
+"silhouette"
+]
+},
+"boy": {
+"name": "boy",
+"keys": [
+"boy"
+]
+},
+"girl": {
+"name": "girl",
+"keys": [
+"girl"
+]
+},
+"man": {
+"name": "man",
+"keys": [
+"man"
+]
+},
+"woman": {
+"name": "woman",
+"keys": [
+"woman"
+]
+},
+"family": {
+"name": "family",
+"keys": [
+"family"
+]
+},
+"man-and-woman-holding-hands": {
+"name": "man and woman holding hands",
+"keys": [
+"hands",
+"man",
+"man and woman holding hands"
+]
+},
+"two-men-holding-hands": {
+"name": "two men holding hands",
+"keys": [
+"hands",
+"two",
+"two men holding hands"
+]
+},
+"two-women-holding-hands": {
+"name": "two women holding hands",
+"keys": [
+"hands",
+"two",
+"two women holding hands"
+]
+},
+"police-officer": {
+"name": "police officer",
+"keys": [
+"officer",
+"police",
+"police officer"
+]
+},
+"woman-with-bunny-ears": {
+"name": "woman with bunny ears",
+"keys": [
+"ears",
+"woman",
+"woman with bunny ears"
+]
+},
+"bride-with-veil": {
+"name": "bride with veil",
+"keys": [
+"bride",
+"bride with veil",
+"veil"
+]
+},
+"person-with-blond-hair": {
+"name": "person with blond hair",
+"keys": [
+"hair",
+"person",
+"person with blond hair"
+]
+},
+"man-with-gua-pi-mao": {
+"name": "man with gua pi mao",
+"keys": [
+"man",
+"man with gua pi mao",
+"mao"
+]
+},
+"man-with-turban": {
+"name": "man with turban",
+"keys": [
+"man",
+"man with turban",
+"turban"
+]
+},
+"older-man": {
+"name": "older man",
+"keys": [
+"man",
+"older",
+"older man"
+]
+},
+"older-woman": {
+"name": "older woman",
+"keys": [
+"older",
+"older woman",
+"woman"
+]
+},
+"baby": {
+"name": "baby",
+"keys": [
+"baby"
+]
+},
+"construction-worker": {
+"name": "construction worker",
+"keys": [
+"construction",
+"construction worker",
+"worker"
+]
+},
+"princess": {
+"name": "princess",
+"keys": [
+"princess"
+]
+},
+"japanese-ogre": {
+"name": "japanese ogre",
+"keys": [
+"japanese",
+"japanese ogre",
+"ogre"
+]
+},
+"japanese-goblin": {
+"name": "japanese goblin",
+"keys": [
+"goblin",
+"japanese",
+"japanese goblin"
+]
+},
+"ghost": {
+"name": "ghost",
+"keys": [
+"ghost"
+]
+},
+"baby-angel": {
+"name": "baby angel",
+"keys": [
+"angel",
+"baby",
+"baby angel"
+]
+},
+"extraterrestrial-alien": {
+"name": "extraterrestrial alien",
+"keys": [
+"alien",
+"extraterrestrial",
+"extraterrestrial alien"
+]
+},
+"alien-monster": {
+"name": "alien monster",
+"keys": [
+"alien",
+"alien monster",
+"monster"
+]
+},
+"imp": {
+"name": "imp",
+"keys": [
+"imp"
+]
+},
+"skull": {
+"name": "skull",
+"keys": [
+"skull"
+]
+},
+"information-desk-person": {
+"name": "information desk person",
+"keys": [
+"information",
+"information desk person",
+"person"
+]
+},
+"guardsman": {
+"name": "guardsman",
+"keys": [
+"guardsman"
+]
+},
+"dancer": {
+"name": "dancer",
+"keys": [
+"dancer"
+]
+},
+"lipstick": {
+"name": "lipstick",
+"keys": [
+"lipstick"
+]
+},
+"nail-polish": {
+"name": "nail polish",
+"keys": [
+"nail",
+"nail polish",
+"polish"
+]
+},
+"face-massage": {
+"name": "face massage",
+"keys": [
+"face massage",
+"massage"
+]
+},
+"haircut": {
+"name": "haircut",
+"keys": [
+"haircut"
+]
+},
+"barber-pole": {
+"name": "barber pole",
+"keys": [
+"barber",
+"barber pole",
+"pole"
+]
+},
+"syringe": {
+"name": "syringe",
+"keys": [
+"syringe"
+]
+},
+"pill": {
+"name": "pill",
+"keys": [
+"pill"
+]
+},
+"kiss-mark": {
+"name": "kiss mark",
+"keys": [
+"kiss",
+"kiss mark"
+]
+},
+"love-letter": {
+"name": "love letter",
+"keys": [
+"letter",
+"love",
+"love letter"
+]
+},
+"ring": {
+"name": "ring",
+"keys": [
+"ring"
+]
+},
+"gem-stone": {
+"name": "gem stone",
+"keys": [
+"gem",
+"gem stone",
+"stone"
+]
+},
+"kiss": {
+"name": "kiss",
+"keys": [
+"kiss"
+]
+},
+"bouquet": {
+"name": "bouquet",
+"keys": [
+"bouquet"
+]
+},
+"couple-with-heart": {
+"name": "couple with heart",
+"keys": [
+"couple",
+"couple with heart",
+"heart"
+]
+},
+"wedding": {
+"name": "wedding",
+"keys": [
+"wedding"
+]
+},
+"beating-heart": {
+"name": "beating heart",
+"keys": [
+"beating",
+"beating heart",
+"heart"
+]
+},
+"broken-heart": {
+"name": "broken heart",
+"keys": [
+"broken",
+"broken heart",
+"heart"
+]
+},
+"two-hearts": {
+"name": "two hearts",
+"keys": [
+"hearts",
+"two",
+"two hearts"
+]
+},
+"sparkling-heart": {
+"name": "sparkling heart",
+"keys": [
+"heart",
+"sparkling",
+"sparkling heart"
+]
+},
+"growing-heart": {
+"name": "growing heart",
+"keys": [
+"growing",
+"growing heart",
+"heart"
+]
+},
+"heart-with-arrow": {
+"name": "heart with arrow",
+"keys": [
+"arrow",
+"heart",
+"heart with arrow"
+]
+},
+"blue-heart": {
+"name": "blue heart",
+"keys": [
+"blue",
+"blue heart",
+"heart"
+]
+},
+"green-heart": {
+"name": "green heart",
+"keys": [
+"green",
+"green heart",
+"heart"
+]
+},
+"yellow-heart": {
+"name": "yellow heart",
+"keys": [
+"heart",
+"yellow",
+"yellow heart"
+]
+},
+"purple-heart": {
+"name": "purple heart",
+"keys": [
+"heart",
+"purple",
+"purple heart"
+]
+},
+"heart-with-ribbon": {
+"name": "heart with ribbon",
+"keys": [
+"heart",
+"heart with ribbon",
+"ribbon"
+]
+},
+"revolving-hearts": {
+"name": "revolving hearts",
+"keys": [
+"hearts",
+"revolving",
+"revolving hearts"
+]
+},
+"heart-decoration": {
+"name": "heart decoration",
+"keys": [
+"decoration",
+"heart",
+"heart decoration"
+]
+},
+"diamond-shape-with-a-dot-inside": {
+"name": "diamond shape with a dot inside",
+"keys": [
+"diamond",
+"diamond shape with a dot inside",
+"inside"
+]
+},
+"electric-light-bulb": {
+"name": "electric light bulb",
+"keys": [
+"bulb",
+"electric",
+"electric light bulb"
+]
+},
+"anger": {
+"name": "anger",
+"keys": [
+"anger"
+]
+},
+"bomb": {
+"name": "bomb",
+"keys": [
+"bomb"
+]
+},
+"sleeping": {
+"name": "sleeping",
+"keys": [
+"sleeping"
+]
+},
+"collision": {
+"name": "collision",
+"keys": [
+"collision"
+]
+},
+"splashing-sweat": {
+"name": "splashing sweat",
+"keys": [
+"splashing",
+"splashing sweat",
+"sweat"
+]
+},
+"droplet": {
+"name": "droplet",
+"keys": [
+"droplet"
+]
+},
+"dash": {
+"name": "dash",
+"keys": [
+"dash"
+]
+},
+"pile-of-poo": {
+"name": "pile of poo",
+"keys": [
+"pile",
+"pile of poo",
+"poo"
+]
+},
+"flexed-biceps": {
+"name": "flexed biceps",
+"keys": [
+"biceps",
+"flexed",
+"flexed biceps"
+]
+},
+"dizzy": {
+"name": "dizzy",
+"keys": [
+"dizzy"
+]
+},
+"speech-balloon": {
+"name": "speech balloon",
+"keys": [
+"balloon",
+"speech",
+"speech balloon"
+]
+},
+"thought-balloon": {
+"name": "thought balloon",
+"keys": [
+"balloon",
+"thought",
+"thought balloon"
+]
+},
+"white-flower": {
+"name": "white flower",
+"keys": [
+"flower",
+"white",
+"white flower"
+]
+},
+"hundred-points": {
+"name": "hundred points",
+"keys": [
+"hundred",
+"hundred points",
+"points"
+]
+},
+"money-bag": {
+"name": "money bag",
+"keys": [
+"bag",
+"money",
+"money bag"
+]
+},
+"currency-exchange": {
+"name": "currency exchange",
+"keys": [
+"currency",
+"currency exchange",
+"exchange"
+]
+},
+"heavy-dollar": {
+"name": "heavy dollar",
+"keys": [
+"dollar",
+"heavy",
+"heavy dollar"
+]
+},
+"credit-card": {
+"name": "credit card",
+"keys": [
+"card",
+"credit",
+"credit card"
+]
+},
+"banknote-with-yen": {
+"name": "banknote with yen",
+"keys": [
+"banknote",
+"banknote with yen",
+"yen"
+]
+},
+"banknote-with-dollar": {
+"name": "banknote with dollar",
+"keys": [
+"banknote",
+"banknote with dollar",
+"dollar"
+]
+},
+"banknote-with-euro": {
+"name": "banknote with euro",
+"keys": [
+"banknote",
+"banknote with euro",
+"euro"
+]
+},
+"banknote-with-pound": {
+"name": "banknote with pound",
+"keys": [
+"banknote",
+"banknote with pound",
+"pound"
+]
+},
+"money-with-wings": {
+"name": "money with wings",
+"keys": [
+"money",
+"money with wings",
+"wings"
+]
+},
+"chart-with-upwards-trend-and-yen": {
+"name": "chart with upwards trend and yen",
+"keys": [
+"chart",
+"chart with upwards trend and yen",
+"yen"
+]
+},
+"seat": {
+"name": "seat",
+"keys": [
+"seat"
+]
+},
+"personal-computer": {
+"name": "personal computer",
+"keys": [
+"computer",
+"personal",
+"personal computer"
+]
+},
+"briefcase": {
+"name": "briefcase",
+"keys": [
+"briefcase"
+]
+},
+"minidisc": {
+"name": "minidisc",
+"keys": [
+"minidisc"
+]
+},
+"floppy-disk": {
+"name": "floppy disk",
+"keys": [
+"disk",
+"floppy",
+"floppy disk"
+]
+},
+"optical-disc": {
+"name": "optical disc",
+"keys": [
+"disc",
+"optical",
+"optical disc"
+]
+},
+"dvd": {
+"name": "dvd",
+"keys": [
+"dvd"
+]
+},
+"file-folder": {
+"name": "file folder",
+"keys": [
+"file",
+"file folder",
+"folder"
+]
+},
+"open-file-folder": {
+"name": "open file folder",
+"keys": [
+"folder",
+"open",
+"open file folder"
+]
+},
+"page-with-curl": {
+"name": "page with curl",
+"keys": [
+"curl",
+"page",
+"page with curl"
+]
+},
+"page-facing-up": {
+"name": "page facing up",
+"keys": [
+"page",
+"page facing up",
+"up"
+]
+},
+"calendar": {
+"name": "calendar",
+"keys": [
+"calendar"
+]
+},
+"tear-off-calendar": {
+"name": "tear-off calendar",
+"keys": [
+"calendar",
+"tear-off",
+"tear-off calendar"
+]
+},
+"card-index": {
+"name": "card index",
+"keys": [
+"card",
+"card index",
+"index"
+]
+},
+"chart-with-upwards-trend": {
+"name": "chart with upwards trend",
+"keys": [
+"chart",
+"chart with upwards trend",
+"trend"
+]
+},
+"chart-with-downwards-trend": {
+"name": "chart with downwards trend",
+"keys": [
+"chart",
+"chart with downwards trend",
+"trend"
+]
+},
+"bar-chart": {
+"name": "bar chart",
+"keys": [
+"bar",
+"bar chart",
+"chart"
+]
+},
+"clipboard": {
+"name": "clipboard",
+"keys": [
+"clipboard"
+]
+},
+"pushpin": {
+"name": "pushpin",
+"keys": [
+"pushpin"
+]
+},
+"round-pushpin": {
+"name": "round pushpin",
+"keys": [
+"pushpin",
+"round",
+"round pushpin"
+]
+},
+"paperclip": {
+"name": "paperclip",
+"keys": [
+"paperclip"
+]
+},
+"straight-ruler": {
+"name": "straight ruler",
+"keys": [
+"ruler",
+"straight",
+"straight ruler"
+]
+},
+"triangular-ruler": {
+"name": "triangular ruler",
+"keys": [
+"ruler",
+"triangular",
+"triangular ruler"
+]
+},
+"bookmark-tabs": {
+"name": "bookmark tabs",
+"keys": [
+"bookmark",
+"bookmark tabs",
+"tabs"
+]
+},
+"ledger": {
+"name": "ledger",
+"keys": [
+"ledger"
+]
+},
+"notebook": {
+"name": "notebook",
+"keys": [
+"notebook"
+]
+},
+"notebook-with-decorative-cover": {
+"name": "notebook with decorative cover",
+"keys": [
+"cover",
+"notebook",
+"notebook with decorative cover"
+]
+},
+"closed-book": {
+"name": "closed book",
+"keys": [
+"book",
+"closed",
+"closed book"
+]
+},
+"open-book": {
+"name": "open book",
+"keys": [
+"book",
+"open",
+"open book"
+]
+},
+"green-book": {
+"name": "green book",
+"keys": [
+"book",
+"green",
+"green book"
+]
+},
+"blue-book": {
+"name": "blue book",
+"keys": [
+"blue",
+"blue book",
+"book"
+]
+},
+"orange-book": {
+"name": "orange book",
+"keys": [
+"book",
+"orange",
+"orange book"
+]
+},
+"books": {
+"name": "books",
+"keys": [
+"books"
+]
+},
+"name-badge": {
+"name": "name badge",
+"keys": [
+"badge",
+"name",
+"name badge"
+]
+},
+"scroll": {
+"name": "scroll",
+"keys": [
+"scroll"
+]
+},
+"memo": {
+"name": "memo",
+"keys": [
+"memo"
+]
+},
+"telephone-receiver": {
+"name": "telephone receiver",
+"keys": [
+"receiver",
+"telephone",
+"telephone receiver"
+]
+},
+"pager": {
+"name": "pager",
+"keys": [
+"pager"
+]
+},
+"fax-machine": {
+"name": "fax machine",
+"keys": [
+"fax",
+"fax machine",
+"machine"
+]
+},
+"satellite-antenna": {
+"name": "satellite antenna",
+"keys": [
+"antenna",
+"satellite",
+"satellite antenna"
+]
+},
+"public-address-loudspeaker": {
+"name": "public address loudspeaker",
+"keys": [
+"loudspeaker",
+"public",
+"public address loudspeaker"
+]
+},
+"cheering-megaphone": {
+"name": "cheering megaphone",
+"keys": [
+"cheering",
+"cheering megaphone",
+"megaphone"
+]
+},
+"outbox-tray": {
+"name": "outbox tray",
+"keys": [
+"outbox",
+"outbox tray",
+"tray"
+]
+},
+"inbox-tray": {
+"name": "inbox tray",
+"keys": [
+"inbox",
+"inbox tray",
+"tray"
+]
+},
+"package": {
+"name": "package",
+"keys": [
+"package"
+]
+},
+"e-mail": {
+"name": "e-mail",
+"keys": [
+"e-mail"
+]
+},
+"incoming-envelope": {
+"name": "incoming envelope",
+"keys": [
+"envelope",
+"incoming",
+"incoming envelope"
+]
+},
+"envelope-with-downwards-arrow-above": {
+"name": "envelope with downwards arrow above",
+"keys": [
+"above",
+"envelope",
+"envelope with downwards arrow above"
+]
+},
+"closed-mailbox-with-lowered-flag": {
+"name": "closed mailbox with lowered flag",
+"keys": [
+"closed",
+"closed mailbox with lowered flag",
+"flag"
+]
+},
+"closed-mailbox-with-raised-flag": {
+"name": "closed mailbox with raised flag",
+"keys": [
+"closed",
+"closed mailbox with raised flag",
+"flag"
+]
+},
+"open-mailbox-with-raised-flag": {
+"name": "open mailbox with raised flag",
+"keys": [
+"flag",
+"open",
+"open mailbox with raised flag"
+]
+},
+"open-mailbox-with-lowered-flag": {
+"name": "open mailbox with lowered flag",
+"keys": [
+"flag",
+"open",
+"open mailbox with lowered flag"
+]
+},
+"postbox": {
+"name": "postbox",
+"keys": [
+"postbox"
+]
+},
+"postal-horn": {
+"name": "postal horn",
+"keys": [
+"horn",
+"postal",
+"postal horn"
+]
+},
+"newspaper": {
+"name": "newspaper",
+"keys": [
+"newspaper"
+]
+},
+"mobile-phone": {
+"name": "mobile phone",
+"keys": [
+"mobile",
+"mobile phone",
+"phone"
+]
+},
+"mobile-phone-with-rightwards-arrow-at-left": {
+"name": "mobile phone with rightwards arrow at left",
+"keys": [
+"left",
+"mobile",
+"mobile phone with rightwards arrow at left"
+]
+},
+"vibration-mode": {
+"name": "vibration mode",
+"keys": [
+"mode",
+"vibration",
+"vibration mode"
+]
+},
+"mobile-phone-off": {
+"name": "mobile phone off",
+"keys": [
+"mobile",
+"mobile phone off",
+"off"
+]
+},
+"no-mobile-phones": {
+"name": "no mobile phones",
+"keys": [
+"no",
+"no mobile phones",
+"phones"
+]
+},
+"antenna-with-bars": {
+"name": "antenna with bars",
+"keys": [
+"antenna",
+"antenna with bars",
+"bars"
+]
+},
+"camera": {
+"name": "camera",
+"keys": [
+"camera"
+]
+},
+"camera-with-flash": {
+"name": "camera with flash",
+"keys": [
+"camera",
+"camera with flash",
+"flash"
+]
+},
+"video-camera": {
+"name": "video camera",
+"keys": [
+"camera",
+"video",
+"video camera"
+]
+},
+"television": {
+"name": "television",
+"keys": [
+"television"
+]
+},
+"radio": {
+"name": "radio",
+"keys": [
+"radio"
+]
+},
+"videocassette": {
+"name": "videocassette",
+"keys": [
+"videocassette"
+]
+},
+"film-projector": {
+"name": "film projector",
+"keys": [
+"film",
+"film projector",
+"projector"
+]
+},
+"prayer-beads": {
+"name": "prayer beads",
+"keys": [
+"beads",
+"prayer",
+"prayer beads"
+]
+},
+"twisted-rightwards-arrows": {
+"name": "twisted rightwards arrows",
+"keys": [
+"arrows",
+"twisted",
+"twisted rightwards arrows"
+]
+},
+"clockwise-rightwards-and-leftwards-open-circle-arrows": {
+"name": "clockwise rightwards and leftwards open circle arrows",
+"keys": [
+"arrows",
+"clockwise",
+"clockwise rightwards and leftwards open circle arrows"
+]
+},
+"clockwise-rightwards-and-leftwards-open-circle-arrows-with-circled-one-overlay": {
+"name": "clockwise rightwards and leftwards open circle arrows with circled one overlay",
+"keys": [
+"clockwise",
+"clockwise rightwards and leftwards open circle arrows with circled one overlay",
+"overlay"
+]
+},
+"clockwise-downwards-and-upwards-open-circle-arrows": {
+"name": "clockwise downwards and upwards open circle arrows",
+"keys": [
+"arrows",
+"clockwise",
+"clockwise downwards and upwards open circle arrows"
+]
+},
+"anticlockwise-downwards-and-upwards-open-circle-arrows": {
+"name": "anticlockwise downwards and upwards open circle arrows",
+"keys": [
+"anticlockwise",
+"anticlockwise downwards and upwards open circle arrows",
+"arrows"
+]
+},
+"low-brightness": {
+"name": "low brightness",
+"keys": [
+"brightness",
+"low",
+"low brightness"
+]
+},
+"high-brightness": {
+"name": "high brightness",
+"keys": [
+"brightness",
+"high",
+"high brightness"
+]
+},
+"speaker-with-cancellation-stroke": {
+"name": "speaker with cancellation stroke",
+"keys": [
+"speaker",
+"speaker with cancellation stroke",
+"stroke"
+]
+},
+"speaker": {
+"name": "speaker",
+"keys": [
+"speaker"
+]
+},
+"speaker-with-one-sound-wave": {
+"name": "speaker with one sound wave",
+"keys": [
+"speaker",
+"speaker with one sound wave",
+"wave"
+]
+},
+"speaker-with-three-sound-waves": {
+"name": "speaker with three sound waves",
+"keys": [
+"speaker",
+"speaker with three sound waves",
+"waves"
+]
+},
+"battery": {
+"name": "battery",
+"keys": [
+"battery"
+]
+},
+"electric-plug": {
+"name": "electric plug",
+"keys": [
+"electric",
+"electric plug",
+"plug"
+]
+},
+"left-pointing-magnifying-glass": {
+"name": "left-pointing magnifying glass",
+"keys": [
+"glass",
+"left-pointing",
+"left-pointing magnifying glass"
+]
+},
+"right-pointing-magnifying-glass": {
+"name": "right-pointing magnifying glass",
+"keys": [
+"glass",
+"right-pointing",
+"right-pointing magnifying glass"
+]
+},
+"lock-with-ink-pen": {
+"name": "lock with ink pen",
+"keys": [
+"lock",
+"lock with ink pen",
+"pen"
+]
+},
+"closed-lock-with-key": {
+"name": "closed lock with key",
+"keys": [
+"closed",
+"closed lock with key",
+"key"
+]
+},
+"key": {
+"name": "key",
+"keys": [
+"key"
+]
+},
+"lock": {
+"name": "lock",
+"keys": [
+"lock"
+]
+},
+"open-lock": {
+"name": "open lock",
+"keys": [
+"lock",
+"open",
+"open lock"
+]
+},
+"bell": {
+"name": "bell",
+"keys": [
+"bell"
+]
+},
+"bell-with-cancellation-stroke": {
+"name": "bell with cancellation stroke",
+"keys": [
+"bell",
+"bell with cancellation stroke",
+"stroke"
+]
+},
+"bookmark": {
+"name": "bookmark",
+"keys": [
+"bookmark"
+]
+},
+"link": {
+"name": "link",
+"keys": [
+"link"
+]
+},
+"radio-button": {
+"name": "radio button",
+"keys": [
+"radio",
+"radio button"
+]
+},
+"back-with-leftwards-arrow-above": {
+"name": "back with leftwards arrow above",
+"keys": [
+"above",
+"back",
+"back with leftwards arrow above"
+]
+},
+"end-with-leftwards-arrow-above": {
+"name": "end with leftwards arrow above",
+"keys": [
+"above",
+"end",
+"end with leftwards arrow above"
+]
+},
+"on-with-exclamation-mark-with-left-right-arrow-above": {
+"name": "on with exclamation mark with left right arrow above",
+"keys": [
+"above",
+"on",
+"on with exclamation mark with left right arrow above"
+]
+},
+"soon-with-rightwards-arrow-above": {
+"name": "soon with rightwards arrow above",
+"keys": [
+"above",
+"soon",
+"soon with rightwards arrow above"
+]
+},
+"top-with-upwards-arrow-above": {
+"name": "top with upwards arrow above",
+"keys": [
+"above",
+"top",
+"top with upwards arrow above"
+]
+},
+"no-one-under-eighteen": {
+"name": "no one under eighteen",
+"keys": [
+"eighteen",
+"no",
+"no one under eighteen"
+]
+},
+"input-for-latin-capital-letters": {
+"name": "input for latin capital letters",
+"keys": [
+"input",
+"input for latin capital letters",
+"letters"
+]
+},
+"input-for-latin-small-letters": {
+"name": "input for latin small letters",
+"keys": [
+"input",
+"input for latin small letters",
+"letters"
+]
+},
+"input-for-numbers": {
+"name": "input for numbers",
+"keys": [
+"input",
+"input for numbers",
+"numbers"
+]
+},
+"input-for-symbols": {
+"name": "input for symbols",
+"keys": [
+"input",
+"input for symbols",
+"symbols"
+]
+},
+"input-for-latin-letters": {
+"name": "input for latin letters",
+"keys": [
+"input",
+"input for latin letters",
+"letters"
+]
+},
+"fire": {
+"name": "fire",
+"keys": [
+"fire"
+]
+},
+"electric-torch": {
+"name": "electric torch",
+"keys": [
+"electric",
+"electric torch",
+"torch"
+]
+},
+"wrench": {
+"name": "wrench",
+"keys": [
+"wrench"
+]
+},
+"hammer": {
+"name": "hammer",
+"keys": [
+"hammer"
+]
+},
+"nut-and-bolt": {
+"name": "nut and bolt",
+"keys": [
+"bolt",
+"nut",
+"nut and bolt"
+]
+},
+"hocho": {
+"name": "hocho",
+"keys": [
+"hocho"
+]
+},
+"pistol": {
+"name": "pistol",
+"keys": [
+"pistol"
+]
+},
+"microscope": {
+"name": "microscope",
+"keys": [
+"microscope"
+]
+},
+"telescope": {
+"name": "telescope",
+"keys": [
+"telescope"
+]
+},
+"crystal-ball": {
+"name": "crystal ball",
+"keys": [
+"ball",
+"crystal",
+"crystal ball"
+]
+},
+"six-pointed-star-with-middle-dot": {
+"name": "six pointed star with middle dot",
+"keys": [
+"dot",
+"six",
+"six pointed star with middle dot"
+]
+},
+"japanese-for-beginner": {
+"name": "japanese for beginner",
+"keys": [
+"beginner",
+"japanese",
+"japanese for beginner"
+]
+},
+"trident-emblem": {
+"name": "trident emblem",
+"keys": [
+"emblem",
+"trident",
+"trident emblem"
+]
+},
+"black-square-button": {
+"name": "black square button",
+"keys": [
+"black",
+"black square",
+"black square button",
+"square"
+]
+},
+"white-square-button": {
+"name": "white square button",
+"keys": [
+"square",
+"white",
+"white square",
+"white square button"
+]
+},
+"large-red-circle": {
+"name": "large red circle",
+"keys": [
+"circle",
+"large",
+"large red circle"
+]
+},
+"large-blue-circle": {
+"name": "large blue circle",
+"keys": [
+"circle",
+"large",
+"large blue circle"
+]
+},
+"large-orange-diamond": {
+"name": "large orange diamond",
+"keys": [
+"diamond",
+"large",
+"large orange diamond"
+]
+},
+"large-blue-diamond": {
+"name": "large blue diamond",
+"keys": [
+"diamond",
+"large",
+"large blue diamond"
+]
+},
+"small-orange-diamond": {
+"name": "small orange diamond",
+"keys": [
+"diamond",
+"small",
+"small orange diamond"
+]
+},
+"small-blue-diamond": {
+"name": "small blue diamond",
+"keys": [
+"diamond",
+"small",
+"small blue diamond"
+]
+},
+"up-pointing-red-triangle": {
+"name": "up-pointing red triangle",
+"keys": [
+"triangle",
+"up-pointing",
+"up-pointing red triangle"
+]
+},
+"down-pointing-red-triangle": {
+"name": "down-pointing red triangle",
+"keys": [
+"down-pointing",
+"down-pointing red triangle",
+"triangle"
+]
+},
+"up-pointing-small-red-triangle": {
+"name": "up-pointing small red triangle",
+"keys": [
+"triangle",
+"up-pointing",
+"up-pointing small red triangle"
+]
+},
+"down-pointing-small-red-triangle": {
+"name": "down-pointing small red triangle",
+"keys": [
+"down-pointing",
+"down-pointing small red triangle",
+"triangle"
+]
+},
+"om": {
+"name": "om",
+"keys": [
+"om"
+]
+},
+"dove-of-peace": {
+"name": "dove of peace",
+"keys": [
+"dove",
+"dove of peace",
+"peace"
+]
+},
+"kaaba": {
+"name": "kaaba",
+"keys": [
+"kaaba"
+]
+},
+"mosque": {
+"name": "mosque",
+"keys": [
+"mosque"
+]
+},
+"synagogue": {
+"name": "synagogue",
+"keys": [
+"synagogue"
+]
+},
+"menorah-with-nine-branches": {
+"name": "menorah with nine branches",
+"keys": [
+"branches",
+"menorah",
+"menorah with nine branches"
+]
+},
+"clock-face-one-oclock": {
+"name": "clock face one oclock",
+"keys": [
+"clock",
+"clock face one oclock",
+"oclock"
+]
+},
+"clock-face-two-oclock": {
+"name": "clock face two oclock",
+"keys": [
+"clock",
+"clock face two oclock",
+"oclock"
+]
+},
+"clock-face-three-oclock": {
+"name": "clock face three oclock",
+"keys": [
+"clock",
+"clock face three oclock",
+"oclock"
+]
+},
+"clock-face-four-oclock": {
+"name": "clock face four oclock",
+"keys": [
+"clock",
+"clock face four oclock",
+"oclock"
+]
+},
+"clock-face-five-oclock": {
+"name": "clock face five oclock",
+"keys": [
+"clock",
+"clock face five oclock",
+"oclock"
+]
+},
+"clock-face-six-oclock": {
+"name": "clock face six oclock",
+"keys": [
+"clock",
+"clock face six oclock",
+"oclock"
+]
+},
+"clock-face-seven-oclock": {
+"name": "clock face seven oclock",
+"keys": [
+"clock",
+"clock face seven oclock",
+"oclock"
+]
+},
+"clock-face-eight-oclock": {
+"name": "clock face eight oclock",
+"keys": [
+"clock",
+"clock face eight oclock",
+"oclock"
+]
+},
+"clock-face-nine-oclock": {
+"name": "clock face nine oclock",
+"keys": [
+"clock",
+"clock face nine oclock",
+"oclock"
+]
+},
+"clock-face-ten-oclock": {
+"name": "clock face ten oclock",
+"keys": [
+"clock",
+"clock face ten oclock",
+"oclock"
+]
+},
+"clock-face-eleven-oclock": {
+"name": "clock face eleven oclock",
+"keys": [
+"clock",
+"clock face eleven oclock",
+"oclock"
+]
+},
+"clock-face-twelve-oclock": {
+"name": "clock face twelve oclock",
+"keys": [
+"clock",
+"clock face twelve oclock",
+"oclock"
+]
+},
+"clock-face-one-thirty": {
+"name": "clock face one-thirty",
+"keys": [
+"clock",
+"clock face one-thirty",
+"one-thirty"
+]
+},
+"clock-face-two-thirty": {
+"name": "clock face two-thirty",
+"keys": [
+"clock",
+"clock face two-thirty",
+"two-thirty"
+]
+},
+"clock-face-three-thirty": {
+"name": "clock face three-thirty",
+"keys": [
+"clock",
+"clock face three-thirty",
+"three-thirty"
+]
+},
+"clock-face-four-thirty": {
+"name": "clock face four-thirty",
+"keys": [
+"clock",
+"clock face four-thirty",
+"four-thirty"
+]
+},
+"clock-face-five-thirty": {
+"name": "clock face five-thirty",
+"keys": [
+"clock",
+"clock face five-thirty",
+"five-thirty"
+]
+},
+"clock-face-six-thirty": {
+"name": "clock face six-thirty",
+"keys": [
+"clock",
+"clock face six-thirty",
+"six-thirty"
+]
+},
+"clock-face-seven-thirty": {
+"name": "clock face seven-thirty",
+"keys": [
+"clock",
+"clock face seven-thirty",
+"seven-thirty"
+]
+},
+"clock-face-eight-thirty": {
+"name": "clock face eight-thirty",
+"keys": [
+"clock",
+"clock face eight-thirty",
+"eight-thirty"
+]
+},
+"clock-face-nine-thirty": {
+"name": "clock face nine-thirty",
+"keys": [
+"clock",
+"clock face nine-thirty",
+"nine-thirty"
+]
+},
+"clock-face-ten-thirty": {
+"name": "clock face ten-thirty",
+"keys": [
+"clock",
+"clock face ten-thirty",
+"ten-thirty"
+]
+},
+"clock-face-eleven-thirty": {
+"name": "clock face eleven-thirty",
+"keys": [
+"clock",
+"clock face eleven-thirty",
+"eleven-thirty"
+]
+},
+"clock-face-twelve-thirty": {
+"name": "clock face twelve-thirty",
+"keys": [
+"clock",
+"clock face twelve-thirty",
+"twelve-thirty"
+]
+},
+"candle": {
+"name": "candle",
+"keys": [
+"candle"
+]
+},
+"mantelpiece-clock": {
+"name": "mantelpiece clock",
+"keys": [
+"clock",
+"mantelpiece",
+"mantelpiece clock"
+]
+},
+"hole": {
+"name": "hole",
+"keys": [
+"hole"
+]
+},
+"man-in-business-suit-levitating": {
+"name": "man in business suit levitating",
+"keys": [
+"levitating",
+"man",
+"man in business suit levitating"
+]
+},
+"sleuth-or-spy": {
+"name": "sleuth or spy",
+"keys": [
+"sleuth",
+"sleuth or spy",
+"spy"
+]
+},
+"dark-sunglasses": {
+"name": "dark sunglasses",
+"keys": [
+"dark",
+"dark sunglasses",
+"sunglasses"
+]
+},
+"spider": {
+"name": "spider",
+"keys": [
+"spider"
+]
+},
+"spider-web": {
+"name": "spider web",
+"keys": [
+"spider",
+"spider web",
+"web"
+]
+},
+"joystick": {
+"name": "joystick",
+"keys": [
+"joystick"
+]
+},
+"man-dancing": {
+"name": "man dancing",
+"keys": [
+"dancing",
+"man",
+"man dancing"
+]
+},
+"linked-paperclips": {
+"name": "linked paperclips",
+"keys": [
+"linked",
+"linked paperclips",
+"paperclips"
+]
+},
+"lower-left-ballpoint-pen": {
+"name": "lower left ballpoint pen",
+"keys": [
+"lower",
+"lower left ballpoint pen",
+"pen"
+]
+},
+"lower-left-fountain-pen": {
+"name": "lower left fountain pen",
+"keys": [
+"lower",
+"lower left fountain pen",
+"pen"
+]
+},
+"lower-left-paintbrush": {
+"name": "lower left paintbrush",
+"keys": [
+"lower",
+"lower left paintbrush",
+"paintbrush"
+]
+},
+"lower-left-crayon": {
+"name": "lower left crayon",
+"keys": [
+"crayon",
+"lower",
+"lower left crayon"
+]
+},
+"raised-hand-with-fingers-splayed": {
+"name": "raised hand with fingers splayed",
+"keys": [
+"raised",
+"raised hand with fingers splayed",
+"splayed"
+]
+},
+"reversed-hand-with-middle-finger-extended": {
+"name": "reversed hand with middle finger extended",
+"keys": [
+"extended",
+"reversed",
+"reversed hand with middle finger extended"
+]
+},
+"raised-hand-with-part-between-middle-and-ring-fingers": {
+"name": "raised hand with part between middle and ring fingers",
+"keys": [
+"fingers",
+"raised",
+"raised hand with part between middle and ring fingers"
+]
+},
+"black-heart": {
+"name": "black heart",
+"keys": [
+"black",
+"black heart",
+"heart"
+]
+},
+"desktop-computer": {
+"name": "desktop computer",
+"keys": [
+"computer",
+"desktop",
+"desktop computer"
+]
+},
+"printer": {
+"name": "printer",
+"keys": [
+"printer"
+]
+},
+"three-button-mouse": {
+"name": "three button mouse",
+"keys": [
+"mouse",
+"three",
+"three button mouse"
+]
+},
+"trackball": {
+"name": "trackball",
+"keys": [
+"trackball"
+]
+},
+"frame-with-picture": {
+"name": "frame with picture",
+"keys": [
+"frame",
+"frame with picture",
+"picture"
+]
+},
+"card-index-dividers": {
+"name": "card index dividers",
+"keys": [
+"card",
+"card index dividers",
+"dividers"
+]
+},
+"card-file-box": {
+"name": "card file box",
+"keys": [
+"box",
+"card",
+"card file box"
+]
+},
+"file-cabinet": {
+"name": "file cabinet",
+"keys": [
+"cabinet",
+"file",
+"file cabinet"
+]
+},
+"wastebasket": {
+"name": "wastebasket",
+"keys": [
+"wastebasket"
+]
+},
+"spiral-note-pad": {
+"name": "spiral note pad",
+"keys": [
+"pad",
+"spiral",
+"spiral note pad"
+]
+},
+"spiral-calendar-pad": {
+"name": "spiral calendar pad",
+"keys": [
+"pad",
+"spiral",
+"spiral calendar pad"
+]
+},
+"compression": {
+"name": "compression",
+"keys": [
+"compression"
+]
+},
+"old-key": {
+"name": "old key",
+"keys": [
+"key",
+"old",
+"old key"
+]
+},
+"rolled-up-newspaper": {
+"name": "rolled-up newspaper",
+"keys": [
+"newspaper",
+"rolled-up",
+"rolled-up newspaper"
+]
+},
+"dagger-knife": {
+"name": "dagger knife",
+"keys": [
+"dagger",
+"dagger knife",
+"knife"
+]
+},
+"speaking-head-in-silhouette": {
+"name": "speaking head in silhouette",
+"keys": [
+"silhouette",
+"speaking",
+"speaking head in silhouette"
+]
+},
+"left-speech-bubble": {
+"name": "left speech bubble",
+"keys": [
+"bubble",
+"left",
+"left speech bubble"
+]
+},
+"right-anger-bubble": {
+"name": "right anger bubble",
+"keys": [
+"bubble",
+"right",
+"right anger bubble"
+]
+},
+"ballot-box-with-ballot": {
+"name": "ballot box with ballot",
+"keys": [
+"ballot",
+"ballot box with ballot"
+]
+},
+"world-map": {
+"name": "world map",
+"keys": [
+"map",
+"world",
+"world map"
+]
+},
+"mount-fuji": {
+"name": "mount fuji",
+"keys": [
+"fuji",
+"mount",
+"mount fuji"
+]
+},
+"tokyo-tower": {
+"name": "tokyo tower",
+"keys": [
+"tokyo",
+"tokyo tower",
+"tower"
+]
+},
+"statue-of-liberty": {
+"name": "statue of liberty",
+"keys": [
+"liberty",
+"statue",
+"statue of liberty"
+]
+},
+"silhouette-of-japan": {
+"name": "silhouette of japan",
+"keys": [
+"japan",
+"silhouette",
+"silhouette of japan"
+]
+},
+"moyai": {
+"name": "moyai",
+"keys": [
+"moyai"
+]
+},
+"grinning-face": {
+"name": "grinning face",
+"keys": [
+"grinning",
+"grinning face"
+]
+},
+"grinning-face-with-smiling-eyes": {
+"name": "grinning face with smiling eyes",
+"keys": [
+"eyes",
+"grinning",
+"grinning face with smiling eyes"
+]
+},
+"face-with-tears-of-joy": {
+"name": "face with tears of joy",
+"keys": [
+"face with tears of joy",
+"joy"
+]
+},
+"smiling-face-with-open-mouth": {
+"name": "smiling face with open mouth",
+"keys": [
+"mouth",
+"smiling",
+"smiling face with open mouth"
+]
+},
+"smiling-face-with-open-mouth-and-smiling-eyes": {
+"name": "smiling face with open mouth and smiling eyes",
+"keys": [
+"eyes",
+"smiling",
+"smiling face with open mouth and smiling eyes"
+]
+},
+"smiling-face-with-open-mouth-and-cold-sweat": {
+"name": "smiling face with open mouth and cold sweat",
+"keys": [
+"smiling",
+"smiling face with open mouth and cold sweat",
+"sweat"
+]
+},
+"smiling-face-with-open-mouth-and-tightly-closed-eyes": {
+"name": "smiling face with open mouth and tightly-closed eyes",
+"keys": [
+"eyes",
+"smiling",
+"smiling face with open mouth and tightly-closed eyes"
+]
+},
+"smiling-face-with-halo": {
+"name": "smiling face with halo",
+"keys": [
+"halo",
+"smiling",
+"smiling face with halo"
+]
+},
+"smiling-face-with-horns": {
+"name": "smiling face with horns",
+"keys": [
+"horns",
+"smiling",
+"smiling face with horns"
+]
+},
+"winking-face": {
+"name": "winking face",
+"keys": [
+"winking",
+"winking face"
+]
+},
+"smiling-face-with-smiling-eyes": {
+"name": "smiling face with smiling eyes",
+"keys": [
+"eyes",
+"smiling",
+"smiling face with smiling eyes"
+]
+},
+"face-savouring-delicious-food": {
+"name": "face savouring delicious food",
+"keys": [
+"face savouring delicious food",
+"food"
+]
+},
+"relieved-face": {
+"name": "relieved face",
+"keys": [
+"relieved",
+"relieved face"
+]
+},
+"smiling-face-with-heart-shaped-eyes": {
+"name": "smiling face with heart-shaped eyes",
+"keys": [
+"eyes",
+"smiling",
+"smiling face with heart-shaped eyes"
+]
+},
+"smiling-face-with-sunglasses": {
+"name": "smiling face with sunglasses",
+"keys": [
+"smiling",
+"smiling face with sunglasses",
+"sunglasses"
+]
+},
+"smirking-face": {
+"name": "smirking face",
+"keys": [
+"smirking",
+"smirking face"
+]
+},
+"neutral-face": {
+"name": "neutral face",
+"keys": [
+"neutral",
+"neutral face"
+]
+},
+"expressionless-face": {
+"name": "expressionless face",
+"keys": [
+"expressionless",
+"expressionless face"
+]
+},
+"unamused-face": {
+"name": "unamused face",
+"keys": [
+"unamused",
+"unamused face"
+]
+},
+"face-with-cold-sweat": {
+"name": "face with cold sweat",
+"keys": [
+"face with cold sweat",
+"sweat"
+]
+},
+"pensive-face": {
+"name": "pensive face",
+"keys": [
+"pensive",
+"pensive face"
+]
+},
+"confused-face": {
+"name": "confused face",
+"keys": [
+"confused",
+"confused face"
+]
+},
+"confounded-face": {
+"name": "confounded face",
+"keys": [
+"confounded",
+"confounded face"
+]
+},
+"kissing-face": {
+"name": "kissing face",
+"keys": [
+"kissing",
+"kissing face"
+]
+},
+"face-throwing-a-kiss": {
+"name": "face throwing a kiss",
+"keys": [
+"face throwing a kiss",
+"kiss"
+]
+},
+"kissing-face-with-smiling-eyes": {
+"name": "kissing face with smiling eyes",
+"keys": [
+"eyes",
+"kissing",
+"kissing face with smiling eyes"
+]
+},
+"kissing-face-with-closed-eyes": {
+"name": "kissing face with closed eyes",
+"keys": [
+"eyes",
+"kissing",
+"kissing face with closed eyes"
+]
+},
+"face-with-stuck-out-tongue": {
+"name": "face with stuck-out tongue",
+"keys": [
+"face with stuck-out tongue",
+"tongue"
+]
+},
+"face-with-stuck-out-tongue-and-winking-eye": {
+"name": "face with stuck-out tongue and winking eye",
+"keys": [
+"eye",
+"face with stuck-out tongue and winking eye"
+]
+},
+"face-with-stuck-out-tongue-and-tightly-closed-eyes": {
+"name": "face with stuck-out tongue and tightly-closed eyes",
+"keys": [
+"eyes",
+"face with stuck-out tongue and tightly-closed eyes"
+]
+},
+"disappointed-face": {
+"name": "disappointed face",
+"keys": [
+"disappointed",
+"disappointed face"
+]
+},
+"worried-face": {
+"name": "worried face",
+"keys": [
+"worried",
+"worried face"
+]
+},
+"angry-face": {
+"name": "angry face",
+"keys": [
+"angry",
+"angry face"
+]
+},
+"pouting-face": {
+"name": "pouting face",
+"keys": [
+"pouting",
+"pouting face"
+]
+},
+"crying-face": {
+"name": "crying face",
+"keys": [
+"crying",
+"crying face"
+]
+},
+"persevering-face": {
+"name": "persevering face",
+"keys": [
+"persevering",
+"persevering face"
+]
+},
+"face-with-look-of-triumph": {
+"name": "face with look of triumph",
+"keys": [
+"face with look of triumph",
+"triumph"
+]
+},
+"disappointed-but-relieved-face": {
+"name": "disappointed but relieved face",
+"keys": [
+"disappointed",
+"disappointed but relieved",
+"disappointed but relieved face",
+"relieved"
+]
+},
+"frowning-face-with-open-mouth": {
+"name": "frowning face with open mouth",
+"keys": [
+"frowning",
+"frowning face with open mouth",
+"mouth"
+]
+},
+"anguished-face": {
+"name": "anguished face",
+"keys": [
+"anguished",
+"anguished face"
+]
+},
+"fearful-face": {
+"name": "fearful face",
+"keys": [
+"fearful",
+"fearful face"
+]
+},
+"weary-face": {
+"name": "weary face",
+"keys": [
+"weary",
+"weary face"
+]
+},
+"sleepy-face": {
+"name": "sleepy face",
+"keys": [
+"sleepy",
+"sleepy face"
+]
+},
+"tired-face": {
+"name": "tired face",
+"keys": [
+"tired",
+"tired face"
+]
+},
+"grimacing-face": {
+"name": "grimacing face",
+"keys": [
+"grimacing",
+"grimacing face"
+]
+},
+"loudly-crying-face": {
+"name": "loudly crying face",
+"keys": [
+"crying",
+"loudly",
+"loudly crying",
+"loudly crying face"
+]
+},
+"face-with-open-mouth": {
+"name": "face with open mouth",
+"keys": [
+"face with open mouth",
+"mouth"
+]
+},
+"hushed-face": {
+"name": "hushed face",
+"keys": [
+"hushed",
+"hushed face"
+]
+},
+"face-with-open-mouth-and-cold-sweat": {
+"name": "face with open mouth and cold sweat",
+"keys": [
+"face with open mouth and cold sweat",
+"sweat"
+]
+},
+"face-screaming-in-fear": {
+"name": "face screaming in fear",
+"keys": [
+"face screaming in fear",
+"fear"
+]
+},
+"astonished-face": {
+"name": "astonished face",
+"keys": [
+"astonished",
+"astonished face"
+]
+},
+"flushed-face": {
+"name": "flushed face",
+"keys": [
+"flushed",
+"flushed face"
+]
+},
+"sleeping-face": {
+"name": "sleeping face",
+"keys": [
+"sleeping",
+"sleeping face"
+]
+},
+"dizzy-face": {
+"name": "dizzy face",
+"keys": [
+"dizzy",
+"dizzy face"
+]
+},
+"face-without-mouth": {
+"name": "face without mouth",
+"keys": [
+"face without mouth",
+"mouth"
+]
+},
+"face-with-medical-mask": {
+"name": "face with medical mask",
+"keys": [
+"face with medical mask",
+"mask"
+]
+},
+"grinning-cat-face-with-smiling-eyes": {
+"name": "grinning cat face with smiling eyes",
+"keys": [
+"eyes",
+"grinning",
+"grinning cat face with smiling eyes"
+]
+},
+"cat-face-with-tears-of-joy": {
+"name": "cat face with tears of joy",
+"keys": [
+"cat",
+"cat face with tears of joy",
+"joy"
+]
+},
+"smiling-cat-face-with-open-mouth": {
+"name": "smiling cat face with open mouth",
+"keys": [
+"mouth",
+"smiling",
+"smiling cat face with open mouth"
+]
+},
+"smiling-cat-face-with-heart-shaped-eyes": {
+"name": "smiling cat face with heart-shaped eyes",
+"keys": [
+"eyes",
+"smiling",
+"smiling cat face with heart-shaped eyes"
+]
+},
+"cat-face-with-wry-smile": {
+"name": "cat face with wry smile",
+"keys": [
+"cat",
+"cat face with wry smile",
+"smile"
+]
+},
+"kissing-cat-face-with-closed-eyes": {
+"name": "kissing cat face with closed eyes",
+"keys": [
+"eyes",
+"kissing",
+"kissing cat face with closed eyes"
+]
+},
+"pouting-cat-face": {
+"name": "pouting cat face",
+"keys": [
+"cat",
+"pouting",
+"pouting cat",
+"pouting cat face"
+]
+},
+"crying-cat-face": {
+"name": "crying cat face",
+"keys": [
+"cat",
+"crying",
+"crying cat",
+"crying cat face"
+]
+},
+"weary-cat-face": {
+"name": "weary cat face",
+"keys": [
+"cat",
+"weary",
+"weary cat",
+"weary cat face"
+]
+},
+"slightly-frowning-face": {
+"name": "slightly frowning face",
+"keys": [
+"frowning",
+"slightly",
+"slightly frowning",
+"slightly frowning face"
+]
+},
+"slightly-smiling-face": {
+"name": "slightly smiling face",
+"keys": [
+"slightly",
+"slightly smiling",
+"slightly smiling face",
+"smiling"
+]
+},
+"upside-down-face": {
+"name": "upside-down face",
+"keys": [
+"upside-down",
+"upside-down face"
+]
+},
+"face-with-rolling-eyes": {
+"name": "face with rolling eyes",
+"keys": [
+"eyes",
+"face with rolling eyes"
+]
+},
+"face-with-no-good-gesture": {
+"name": "face with no good gesture",
+"keys": [
+"face with no good gesture",
+"gesture"
+]
+},
+"face-with-ok-gesture": {
+"name": "face with ok gesture",
+"keys": [
+"face with ok gesture",
+"gesture"
+]
+},
+"person-bowing-deeply": {
+"name": "person bowing deeply",
+"keys": [
+"deeply",
+"person",
+"person bowing deeply"
+]
+},
+"see-no-evil-monkey": {
+"name": "see-no-evil monkey",
+"keys": [
+"monkey",
+"see-no-evil",
+"see-no-evil monkey"
+]
+},
+"hear-no-evil-monkey": {
+"name": "hear-no-evil monkey",
+"keys": [
+"hear-no-evil",
+"hear-no-evil monkey",
+"monkey"
+]
+},
+"speak-no-evil-monkey": {
+"name": "speak-no-evil monkey",
+"keys": [
+"monkey",
+"speak-no-evil",
+"speak-no-evil monkey"
+]
+},
+"happy-person-raising-one-hand": {
+"name": "happy person raising one hand",
+"keys": [
+"hand",
+"happy",
+"happy person raising one hand"
+]
+},
+"person-raising-both-hands-in-celebration": {
+"name": "person raising both hands in celebration",
+"keys": [
+"celebration",
+"person",
+"person raising both hands in celebration"
+]
+},
+"person-frowning": {
+"name": "person frowning",
+"keys": [
+"frowning",
+"person",
+"person frowning"
+]
+},
+"person-with-pouting-face": {
+"name": "person with pouting face",
+"keys": [
+"person",
+"person with pouting",
+"person with pouting face",
+"pouting"
+]
+},
+"person-with-folded-hands": {
+"name": "person with folded hands",
+"keys": [
+"hands",
+"person",
+"person with folded hands"
+]
+},
+"rocket": {
+"name": "rocket",
+"keys": [
+"rocket"
+]
+},
+"helicopter": {
+"name": "helicopter",
+"keys": [
+"helicopter"
+]
+},
+"steam-locomotive": {
+"name": "steam locomotive",
+"keys": [
+"locomotive",
+"steam",
+"steam locomotive"
+]
+},
+"railway-car": {
+"name": "railway car",
+"keys": [
+"car",
+"railway",
+"railway car"
+]
+},
+"high-speed-train": {
+"name": "high-speed train",
+"keys": [
+"high-speed",
+"high-speed train",
+"train"
+]
+},
+"high-speed-train-with-bullet-nose": {
+"name": "high-speed train with bullet nose",
+"keys": [
+"high-speed",
+"high-speed train with bullet nose",
+"nose"
+]
+},
+"train": {
+"name": "train",
+"keys": [
+"train"
+]
+},
+"metro": {
+"name": "metro",
+"keys": [
+"metro"
+]
+},
+"light-rail": {
+"name": "light rail",
+"keys": [
+"light",
+"light rail",
+"rail"
+]
+},
+"station": {
+"name": "station",
+"keys": [
+"station"
+]
+},
+"tram": {
+"name": "tram",
+"keys": [
+"tram"
+]
+},
+"tram-car": {
+"name": "tram car",
+"keys": [
+"car",
+"tram",
+"tram car"
+]
+},
+"bus": {
+"name": "bus",
+"keys": [
+"bus"
+]
+},
+"oncoming-bus": {
+"name": "oncoming bus",
+"keys": [
+"bus",
+"oncoming",
+"oncoming bus"
+]
+},
+"trolleybus": {
+"name": "trolleybus",
+"keys": [
+"trolleybus"
+]
+},
+"bus-stop": {
+"name": "bus stop",
+"keys": [
+"bus",
+"bus stop",
+"stop"
+]
+},
+"minibus": {
+"name": "minibus",
+"keys": [
+"minibus"
+]
+},
+"ambulance": {
+"name": "ambulance",
+"keys": [
+"ambulance"
+]
+},
+"fire-engine": {
+"name": "fire engine",
+"keys": [
+"engine",
+"fire",
+"fire engine"
+]
+},
+"police-car": {
+"name": "police car",
+"keys": [
+"car",
+"police",
+"police car"
+]
+},
+"oncoming-police-car": {
+"name": "oncoming police car",
+"keys": [
+"car",
+"oncoming",
+"oncoming police car"
+]
+},
+"taxi": {
+"name": "taxi",
+"keys": [
+"taxi"
+]
+},
+"oncoming-taxi": {
+"name": "oncoming taxi",
+"keys": [
+"oncoming",
+"oncoming taxi",
+"taxi"
+]
+},
+"automobile": {
+"name": "automobile",
+"keys": [
+"automobile"
+]
+},
+"oncoming-automobile": {
+"name": "oncoming automobile",
+"keys": [
+"automobile",
+"oncoming",
+"oncoming automobile"
+]
+},
+"recreational-vehicle": {
+"name": "recreational vehicle",
+"keys": [
+"recreational",
+"recreational vehicle",
+"vehicle"
+]
+},
+"delivery-truck": {
+"name": "delivery truck",
+"keys": [
+"delivery",
+"delivery truck",
+"truck"
+]
+},
+"articulated-lorry": {
+"name": "articulated lorry",
+"keys": [
+"articulated",
+"articulated lorry",
+"lorry"
+]
+},
+"tractor": {
+"name": "tractor",
+"keys": [
+"tractor"
+]
+},
+"monorail": {
+"name": "monorail",
+"keys": [
+"monorail"
+]
+},
+"mountain-railway": {
+"name": "mountain railway",
+"keys": [
+"mountain",
+"mountain railway",
+"railway"
+]
+},
+"suspension-railway": {
+"name": "suspension railway",
+"keys": [
+"railway",
+"suspension",
+"suspension railway"
+]
+},
+"mountain-cableway": {
+"name": "mountain cableway",
+"keys": [
+"cableway",
+"mountain",
+"mountain cableway"
+]
+},
+"aerial-tramway": {
+"name": "aerial tramway",
+"keys": [
+"aerial",
+"aerial tramway",
+"tramway"
+]
+},
+"ship": {
+"name": "ship",
+"keys": [
+"ship"
+]
+},
+"rowboat": {
+"name": "rowboat",
+"keys": [
+"rowboat"
+]
+},
+"speedboat": {
+"name": "speedboat",
+"keys": [
+"speedboat"
+]
+},
+"horizontal-traffic-light": {
+"name": "horizontal traffic light",
+"keys": [
+"horizontal",
+"horizontal traffic light",
+"light"
+]
+},
+"vertical-traffic-light": {
+"name": "vertical traffic light",
+"keys": [
+"light",
+"vertical",
+"vertical traffic light"
+]
+},
+"construction": {
+"name": "construction",
+"keys": [
+"construction"
+]
+},
+"police-cars-revolving-light": {
+"name": "police cars revolving light",
+"keys": [
+"light",
+"police",
+"police cars revolving light"
+]
+},
+"triangular-flag-on-post": {
+"name": "triangular flag on post",
+"keys": [
+"post",
+"triangular",
+"triangular flag on post"
+]
+},
+"door": {
+"name": "door",
+"keys": [
+"door"
+]
+},
+"no-entry": {
+"name": "no entry",
+"keys": [
+"entry",
+"no",
+"no entry"
+]
+},
+"smoking": {
+"name": "smoking",
+"keys": [
+"smoking"
+]
+},
+"no-smoking": {
+"name": "no smoking",
+"keys": [
+"no",
+"no smoking",
+"smoking"
+]
+},
+"put-litter-in-its-place": {
+"name": "put litter in its place",
+"keys": [
+"place",
+"put",
+"put litter in its place"
+]
+},
+"do-not-litter": {
+"name": "do not litter",
+"keys": [
+"do",
+"do not litter",
+"litter"
+]
+},
+"potable-water": {
+"name": "potable water",
+"keys": [
+"potable",
+"potable water",
+"water"
+]
+},
+"non-potable-water": {
+"name": "non-potable water",
+"keys": [
+"non-potable",
+"non-potable water",
+"water"
+]
+},
+"bicycle": {
+"name": "bicycle",
+"keys": [
+"bicycle"
+]
+},
+"no-bicycles": {
+"name": "no bicycles",
+"keys": [
+"bicycles",
+"no",
+"no bicycles"
+]
+},
+"bicyclist": {
+"name": "bicyclist",
+"keys": [
+"bicyclist"
+]
+},
+"mountain-bicyclist": {
+"name": "mountain bicyclist",
+"keys": [
+"bicyclist",
+"mountain",
+"mountain bicyclist"
+]
+},
+"pedestrian": {
+"name": "pedestrian",
+"keys": [
+"pedestrian"
+]
+},
+"no-pedestrians": {
+"name": "no pedestrians",
+"keys": [
+"no",
+"no pedestrians",
+"pedestrians"
+]
+},
+"children-crossing": {
+"name": "children crossing",
+"keys": [
+"children",
+"children crossing",
+"crossing"
+]
+},
+"mens": {
+"name": "mens",
+"keys": [
+"mens"
+]
+},
+"womens": {
+"name": "womens",
+"keys": [
+"womens"
+]
+},
+"restroom": {
+"name": "restroom",
+"keys": [
+"restroom"
+]
+},
+"baby-2": {
+"name": "baby",
+"keys": [
+"baby"
+]
+},
+"toilet": {
+"name": "toilet",
+"keys": [
+"toilet"
+]
+},
+"water-closet": {
+"name": "water closet",
+"keys": [
+"closet",
+"water",
+"water closet"
+]
+},
+"shower": {
+"name": "shower",
+"keys": [
+"shower"
+]
+},
+"bath": {
+"name": "bath",
+"keys": [
+"bath"
+]
+},
+"bathtub": {
+"name": "bathtub",
+"keys": [
+"bathtub"
+]
+},
+"passport-control": {
+"name": "passport control",
+"keys": [
+"control",
+"passport",
+"passport control"
+]
+},
+"customs": {
+"name": "customs",
+"keys": [
+"customs"
+]
+},
+"baggage-claim": {
+"name": "baggage claim",
+"keys": [
+"baggage",
+"baggage claim",
+"claim"
+]
+},
+"left-luggage": {
+"name": "left luggage",
+"keys": [
+"left",
+"left luggage",
+"luggage"
+]
+},
+"couch-and-lamp": {
+"name": "couch and lamp",
+"keys": [
+"couch",
+"couch and lamp",
+"lamp"
+]
+},
+"sleeping-accommodation": {
+"name": "sleeping accommodation",
+"keys": [
+"accommodation",
+"sleeping",
+"sleeping accommodation"
+]
+},
+"shopping-bags": {
+"name": "shopping bags",
+"keys": [
+"bags",
+"shopping",
+"shopping bags"
+]
+},
+"bellhop-bell": {
+"name": "bellhop bell",
+"keys": [
+"bell",
+"bellhop",
+"bellhop bell"
+]
+},
+"bed": {
+"name": "bed",
+"keys": [
+"bed"
+]
+},
+"place-of-worship": {
+"name": "place of worship",
+"keys": [
+"place",
+"place of worship",
+"worship"
+]
+},
+"octagonal": {
+"name": "octagonal",
+"keys": [
+"octagonal"
+]
+},
+"shopping-trolley": {
+"name": "shopping trolley",
+"keys": [
+"shopping",
+"shopping trolley",
+"trolley"
+]
+},
+"hindu-temple": {
+"name": "hindu temple",
+"keys": [
+"hindu",
+"hindu temple",
+"temple"
+]
+},
+"hut": {
+"name": "hut",
+"keys": [
+"hut"
+]
+},
+"elevator": {
+"name": "elevator",
+"keys": [
+"elevator"
+]
+},
+"wireless": {
+"name": "wireless",
+"keys": [
+"wireless"
+]
+},
+"playground-slide": {
+"name": "playground slide",
+"keys": [
+"playground",
+"playground slide",
+"slide"
+]
+},
+"wheel": {
+"name": "wheel",
+"keys": [
+"wheel"
+]
+},
+"ring-buoy": {
+"name": "ring buoy",
+"keys": [
+"buoy",
+"ring",
+"ring buoy"
+]
+},
+"hammer-and-wrench": {
+"name": "hammer and wrench",
+"keys": [
+"hammer",
+"hammer and wrench",
+"wrench"
+]
+},
+"shield": {
+"name": "shield",
+"keys": [
+"shield"
+]
+},
+"oil-drum": {
+"name": "oil drum",
+"keys": [
+"drum",
+"oil",
+"oil drum"
+]
+},
+"motorway": {
+"name": "motorway",
+"keys": [
+"motorway"
+]
+},
+"railway-track": {
+"name": "railway track",
+"keys": [
+"railway",
+"railway track",
+"track"
+]
+},
+"motor-boat": {
+"name": "motor boat",
+"keys": [
+"boat",
+"motor",
+"motor boat"
+]
+},
+"small-airplane": {
+"name": "small airplane",
+"keys": [
+"airplane",
+"small",
+"small airplane"
+]
+},
+"airplane-departure": {
+"name": "airplane departure",
+"keys": [
+"airplane",
+"airplane departure",
+"departure"
+]
+},
+"airplane-arriving": {
+"name": "airplane arriving",
+"keys": [
+"airplane",
+"airplane arriving",
+"arriving"
+]
+},
+"satellite": {
+"name": "satellite",
+"keys": [
+"satellite"
+]
+},
+"passenger-ship": {
+"name": "passenger ship",
+"keys": [
+"passenger",
+"passenger ship",
+"ship"
+]
+},
+"scooter": {
+"name": "scooter",
+"keys": [
+"scooter"
+]
+},
+"motor-scooter": {
+"name": "motor scooter",
+"keys": [
+"motor",
+"motor scooter",
+"scooter"
+]
+},
+"canoe": {
+"name": "canoe",
+"keys": [
+"canoe"
+]
+},
+"sled": {
+"name": "sled",
+"keys": [
+"sled"
+]
+},
+"flying-saucer": {
+"name": "flying saucer",
+"keys": [
+"flying",
+"flying saucer",
+"saucer"
+]
+},
+"skateboard": {
+"name": "skateboard",
+"keys": [
+"skateboard"
+]
+},
+"auto-rickshaw": {
+"name": "auto rickshaw",
+"keys": [
+"auto",
+"auto rickshaw",
+"rickshaw"
+]
+},
+"pickup-truck": {
+"name": "pickup truck",
+"keys": [
+"pickup",
+"pickup truck",
+"truck"
+]
+},
+"roller-skate": {
+"name": "roller skate",
+"keys": [
+"roller",
+"roller skate",
+"skate"
+]
+},
+"large-orange-circle": {
+"name": "large orange circle",
+"keys": [
+"circle",
+"large",
+"large orange circle"
+]
+},
+"large-yellow-circle": {
+"name": "large yellow circle",
+"keys": [
+"circle",
+"large",
+"large yellow circle"
+]
+},
+"large-green-circle": {
+"name": "large green circle",
+"keys": [
+"circle",
+"large",
+"large green circle"
+]
+},
+"large-purple-circle": {
+"name": "large purple circle",
+"keys": [
+"circle",
+"large",
+"large purple circle"
+]
+},
+"large-brown-circle": {
+"name": "large brown circle",
+"keys": [
+"circle",
+"large",
+"large brown circle"
+]
+},
+"large-red-square": {
+"name": "large red square",
+"keys": [
+"large",
+"large red square",
+"square"
+]
+},
+"large-blue-square": {
+"name": "large blue square",
+"keys": [
+"large",
+"large blue square",
+"square"
+]
+},
+"large-orange-square": {
+"name": "large orange square",
+"keys": [
+"large",
+"large orange square",
+"square"
+]
+},
+"large-yellow-square": {
+"name": "large yellow square",
+"keys": [
+"large",
+"large yellow square",
+"square"
+]
+},
+"large-green-square": {
+"name": "large green square",
+"keys": [
+"large",
+"large green square",
+"square"
+]
+},
+"large-purple-square": {
+"name": "large purple square",
+"keys": [
+"large",
+"large purple square",
+"square"
+]
+},
+"large-brown-square": {
+"name": "large brown square",
+"keys": [
+"large",
+"large brown square",
+"square"
+]
+},
+"heavy-equals": {
+"name": "heavy equals",
+"keys": [
+"equals",
+"heavy",
+"heavy equals"
+]
+},
+"pinched-fingers": {
+"name": "pinched fingers",
+"keys": [
+"fingers",
+"pinched",
+"pinched fingers"
+]
+},
+"white-heart": {
+"name": "white heart",
+"keys": [
+"heart",
+"white",
+"white heart"
+]
+},
+"brown-heart": {
+"name": "brown heart",
+"keys": [
+"brown",
+"brown heart",
+"heart"
+]
+},
+"pinching-hand": {
+"name": "pinching hand",
+"keys": [
+"hand",
+"pinching",
+"pinching hand"
+]
+},
+"zipper-mouth-face": {
+"name": "zipper-mouth face",
+"keys": [
+"zipper-mouth",
+"zipper-mouth face"
+]
+},
+"money-mouth-face": {
+"name": "money-mouth face",
+"keys": [
+"money-mouth",
+"money-mouth face"
+]
+},
+"face-with-thermometer": {
+"name": "face with thermometer",
+"keys": [
+"face with thermometer",
+"thermometer"
+]
+},
+"nerd-face": {
+"name": "nerd face",
+"keys": [
+"nerd",
+"nerd face"
+]
+},
+"thinking-face": {
+"name": "thinking face",
+"keys": [
+"thinking",
+"thinking face"
+]
+},
+"face-with-head-bandage": {
+"name": "face with head-bandage",
+"keys": [
+"face with head-bandage",
+"head-bandage"
+]
+},
+"robot-face": {
+"name": "robot face",
+"keys": [
+"robot",
+"robot face"
+]
+},
+"hugging-face": {
+"name": "hugging face",
+"keys": [
+"hugging",
+"hugging face"
+]
+},
+"of-the-horns": {
+"name": "of the horns",
+"keys": [
+"horns",
+"of",
+"of the horns"
+]
+},
+"call-me-hand": {
+"name": "call me hand",
+"keys": [
+"call",
+"call me hand",
+"hand"
+]
+},
+"raised-back-of-hand": {
+"name": "raised back of hand",
+"keys": [
+"hand",
+"raised",
+"raised back of hand"
+]
+},
+"left-facing-fist": {
+"name": "left-facing fist",
+"keys": [
+"fist",
+"left-facing",
+"left-facing fist"
+]
+},
+"right-facing-fist": {
+"name": "right-facing fist",
+"keys": [
+"fist",
+"right-facing",
+"right-facing fist"
+]
+},
+"handshake": {
+"name": "handshake",
+"keys": [
+"handshake"
+]
+},
+"hand-with-index-and-middle-fingers-crossed": {
+"name": "hand with index and middle fingers crossed",
+"keys": [
+"crossed",
+"hand",
+"hand with index and middle fingers crossed"
+]
+},
+"i-love-you-hand": {
+"name": "i love you hand",
+"keys": [
+"hand",
+"i love you hand"
+]
+},
+"face-with-cowboy-hat": {
+"name": "face with cowboy hat",
+"keys": [
+"face with cowboy hat",
+"hat"
+]
+},
+"clown-face": {
+"name": "clown face",
+"keys": [
+"clown",
+"clown face"
+]
+},
+"nauseated-face": {
+"name": "nauseated face",
+"keys": [
+"nauseated",
+"nauseated face"
+]
+},
+"rolling-on-the-floor-laughing": {
+"name": "rolling on the floor laughing",
+"keys": [
+"laughing",
+"rolling",
+"rolling on the floor laughing"
+]
+},
+"drooling-face": {
+"name": "drooling face",
+"keys": [
+"drooling",
+"drooling face"
+]
+},
+"lying-face": {
+"name": "lying face",
+"keys": [
+"lying",
+"lying face"
+]
+},
+"face-palm": {
+"name": "face palm",
+"keys": [
+"face palm",
+"palm"
+]
+},
+"sneezing-face": {
+"name": "sneezing face",
+"keys": [
+"sneezing",
+"sneezing face"
+]
+},
+"face-with-one-eyebrow-raised": {
+"name": "face with one eyebrow raised",
+"keys": [
+"face with one eyebrow raised",
+"raised"
+]
+},
+"grinning-face-with-star-eyes": {
+"name": "grinning face with star eyes",
+"keys": [
+"eyes",
+"grinning",
+"grinning face with star eyes"
+]
+},
+"grinning-face-with-one-large-and-one-small-eye": {
+"name": "grinning face with one large and one small eye",
+"keys": [
+"eye",
+"grinning",
+"grinning face with one large and one small eye"
+]
+},
+"face-with-finger-covering-closed-lips": {
+"name": "face with finger covering closed lips",
+"keys": [
+"face with finger covering closed lips",
+"lips"
+]
+},
+"serious-face-with-symbols-covering-mouth": {
+"name": "serious face with symbols covering mouth",
+"keys": [
+"mouth",
+"serious",
+"serious face with symbols covering mouth"
+]
+},
+"smiling-face-with-smiling-eyes-and-hand-covering-mouth": {
+"name": "smiling face with smiling eyes and hand covering mouth",
+"keys": [
+"mouth",
+"smiling",
+"smiling face with smiling eyes and hand covering mouth"
+]
+},
+"face-with-open-mouth-vomiting": {
+"name": "face with open mouth vomiting",
+"keys": [
+"face with open mouth vomiting",
+"vomiting"
+]
+},
+"shocked-face-with-exploding-head": {
+"name": "shocked face with exploding head",
+"keys": [
+"head",
+"shocked",
+"shocked face with exploding head"
+]
+},
+"pregnant-woman": {
+"name": "pregnant woman",
+"keys": [
+"pregnant",
+"pregnant woman",
+"woman"
+]
+},
+"breast-feeding": {
+"name": "breast-feeding",
+"keys": [
+"breast-feeding"
+]
+},
+"palms-up-together": {
+"name": "palms up together",
+"keys": [
+"palms",
+"palms up together",
+"together"
+]
+},
+"selfie": {
+"name": "selfie",
+"keys": [
+"selfie"
+]
+},
+"prince": {
+"name": "prince",
+"keys": [
+"prince"
+]
+},
+"man-in-tuxedo": {
+"name": "man in tuxedo",
+"keys": [
+"man",
+"man in tuxedo",
+"tuxedo"
+]
+},
+"mother-christmas": {
+"name": "mother christmas",
+"keys": [
+"christmas",
+"mother",
+"mother christmas"
+]
+},
+"shrug": {
+"name": "shrug",
+"keys": [
+"shrug"
+]
+},
+"person-doing-cartwheel": {
+"name": "person doing cartwheel",
+"keys": [
+"cartwheel",
+"person",
+"person doing cartwheel"
+]
+},
+"juggling": {
+"name": "juggling",
+"keys": [
+"juggling"
+]
+},
+"fencer": {
+"name": "fencer",
+"keys": [
+"fencer"
+]
+},
+"wrestlers": {
+"name": "wrestlers",
+"keys": [
+"wrestlers"
+]
+},
+"water-polo": {
+"name": "water polo",
+"keys": [
+"polo",
+"water",
+"water polo"
+]
+},
+"handball": {
+"name": "handball",
+"keys": [
+"handball"
+]
+},
+"diving-mask": {
+"name": "diving mask",
+"keys": [
+"diving",
+"diving mask",
+"mask"
+]
+},
+"wilted-flower": {
+"name": "wilted flower",
+"keys": [
+"flower",
+"wilted",
+"wilted flower"
+]
+},
+"drum-with-drumsticks": {
+"name": "drum with drumsticks",
+"keys": [
+"drum",
+"drum with drumsticks",
+"drumsticks"
+]
+},
+"clinking-glasses": {
+"name": "clinking glasses",
+"keys": [
+"clinking",
+"clinking glasses",
+"glasses"
+]
+},
+"tumbler-glass": {
+"name": "tumbler glass",
+"keys": [
+"glass",
+"tumbler",
+"tumbler glass"
+]
+},
+"spoon": {
+"name": "spoon",
+"keys": [
+"spoon"
+]
+},
+"goal-net": {
+"name": "goal net",
+"keys": [
+"goal",
+"goal net",
+"net"
+]
+},
+"first-place-medal": {
+"name": "first place medal",
+"keys": [
+"first",
+"first place medal",
+"medal"
+]
+},
+"second-place-medal": {
+"name": "second place medal",
+"keys": [
+"medal",
+"second",
+"second place medal"
+]
+},
+"third-place-medal": {
+"name": "third place medal",
+"keys": [
+"medal",
+"third",
+"third place medal"
+]
+},
+"boxing-glove": {
+"name": "boxing glove",
+"keys": [
+"boxing",
+"boxing glove",
+"glove"
+]
+},
+"martial-arts-uniform": {
+"name": "martial arts uniform",
+"keys": [
+"martial",
+"martial arts uniform",
+"uniform"
+]
+},
+"curling-stone": {
+"name": "curling stone",
+"keys": [
+"curling",
+"curling stone",
+"stone"
+]
+},
+"lacrosse-stick-and-ball": {
+"name": "lacrosse stick and ball",
+"keys": [
+"ball",
+"lacrosse",
+"lacrosse stick and ball"
+]
+},
+"softball": {
+"name": "softball",
+"keys": [
+"softball"
+]
+},
+"flying-disc": {
+"name": "flying disc",
+"keys": [
+"disc",
+"flying",
+"flying disc"
+]
+},
+"croissant": {
+"name": "croissant",
+"keys": [
+"croissant"
+]
+},
+"avocado": {
+"name": "avocado",
+"keys": [
+"avocado"
+]
+},
+"cucumber": {
+"name": "cucumber",
+"keys": [
+"cucumber"
+]
+},
+"bacon": {
+"name": "bacon",
+"keys": [
+"bacon"
+]
+},
+"potato": {
+"name": "potato",
+"keys": [
+"potato"
+]
+},
+"carrot": {
+"name": "carrot",
+"keys": [
+"carrot"
+]
+},
+"baguette-bread": {
+"name": "baguette bread",
+"keys": [
+"baguette",
+"baguette bread",
+"bread"
+]
+},
+"green-salad": {
+"name": "green salad",
+"keys": [
+"green",
+"green salad",
+"salad"
+]
+},
+"shallow-pan-of-food": {
+"name": "shallow pan of food",
+"keys": [
+"food",
+"shallow",
+"shallow pan of food"
+]
+},
+"stuffed-flatbread": {
+"name": "stuffed flatbread",
+"keys": [
+"flatbread",
+"stuffed",
+"stuffed flatbread"
+]
+},
+"egg": {
+"name": "egg",
+"keys": [
+"egg"
+]
+},
+"glass-of-milk": {
+"name": "glass of milk",
+"keys": [
+"glass",
+"glass of milk",
+"milk"
+]
+},
+"peanuts": {
+"name": "peanuts",
+"keys": [
+"peanuts"
+]
+},
+"kiwifruit": {
+"name": "kiwifruit",
+"keys": [
+"kiwifruit"
+]
+},
+"pancakes": {
+"name": "pancakes",
+"keys": [
+"pancakes"
+]
+},
+"dumpling": {
+"name": "dumpling",
+"keys": [
+"dumpling"
+]
+},
+"fortune-cookie": {
+"name": "fortune cookie",
+"keys": [
+"cookie",
+"fortune",
+"fortune cookie"
+]
+},
+"takeout-box": {
+"name": "takeout box",
+"keys": [
+"box",
+"takeout",
+"takeout box"
+]
+},
+"chopsticks": {
+"name": "chopsticks",
+"keys": [
+"chopsticks"
+]
+},
+"bowl-with-spoon": {
+"name": "bowl with spoon",
+"keys": [
+"bowl",
+"bowl with spoon",
+"spoon"
+]
+},
+"cup-with-straw": {
+"name": "cup with straw",
+"keys": [
+"cup",
+"cup with straw",
+"straw"
+]
+},
+"coconut": {
+"name": "coconut",
+"keys": [
+"coconut"
+]
+},
+"broccoli": {
+"name": "broccoli",
+"keys": [
+"broccoli"
+]
+},
+"pie": {
+"name": "pie",
+"keys": [
+"pie"
+]
+},
+"pretzel": {
+"name": "pretzel",
+"keys": [
+"pretzel"
+]
+},
+"cut-of-meat": {
+"name": "cut of meat",
+"keys": [
+"cut",
+"cut of meat",
+"meat"
+]
+},
+"sandwich": {
+"name": "sandwich",
+"keys": [
+"sandwich"
+]
+},
+"canned-food": {
+"name": "canned food",
+"keys": [
+"canned",
+"canned food",
+"food"
+]
+},
+"leafy-green": {
+"name": "leafy green",
+"keys": [
+"green",
+"leafy",
+"leafy green"
+]
+},
+"mango": {
+"name": "mango",
+"keys": [
+"mango"
+]
+},
+"moon-cake": {
+"name": "moon cake",
+"keys": [
+"cake",
+"moon",
+"moon cake"
+]
+},
+"bagel": {
+"name": "bagel",
+"keys": [
+"bagel"
+]
+},
+"smiling-face-with-smiling-eyes-and-three-hearts": {
+"name": "smiling face with smiling eyes and three hearts",
+"keys": [
+"hearts",
+"smiling",
+"smiling face with smiling eyes and three hearts"
+]
+},
+"yawning-face": {
+"name": "yawning face",
+"keys": [
+"yawning",
+"yawning face"
+]
+},
+"smiling-face-with-tear": {
+"name": "smiling face with tear",
+"keys": [
+"smiling",
+"smiling face with tear",
+"tear"
+]
+},
+"face-with-party-horn-and-party-hat": {
+"name": "face with party horn and party hat",
+"keys": [
+"face with party horn and party hat",
+"hat"
+]
+},
+"face-with-uneven-eyes-and-wavy-mouth": {
+"name": "face with uneven eyes and wavy mouth",
+"keys": [
+"face with uneven eyes and wavy mouth",
+"mouth"
+]
+},
+"overheated-face": {
+"name": "overheated face",
+"keys": [
+"overheated",
+"overheated face"
+]
+},
+"freezing-face": {
+"name": "freezing face",
+"keys": [
+"freezing",
+"freezing face"
+]
+},
+"ninja": {
+"name": "ninja",
+"keys": [
+"ninja"
+]
+},
+"disguised-face": {
+"name": "disguised face",
+"keys": [
+"disguised",
+"disguised face"
+]
+},
+"face-holding-back-tears": {
+"name": "face holding back tears",
+"keys": [
+"face holding back tears",
+"tears"
+]
+},
+"face-with-pleading-eyes": {
+"name": "face with pleading eyes",
+"keys": [
+"eyes",
+"face with pleading eyes"
+]
+},
+"sari": {
+"name": "sari",
+"keys": [
+"sari"
+]
+},
+"lab-coat": {
+"name": "lab coat",
+"keys": [
+"coat",
+"lab",
+"lab coat"
+]
+},
+"goggles": {
+"name": "goggles",
+"keys": [
+"goggles"
+]
+},
+"hiking-boot": {
+"name": "hiking boot",
+"keys": [
+"boot",
+"hiking",
+"hiking boot"
+]
+},
+"flat-shoe": {
+"name": "flat shoe",
+"keys": [
+"flat",
+"flat shoe",
+"shoe"
+]
+},
+"crab": {
+"name": "crab",
+"keys": [
+"crab"
+]
+},
+"lion-face": {
+"name": "lion face",
+"keys": [
+"lion",
+"lion face"
+]
+},
+"scorpion": {
+"name": "scorpion",
+"keys": [
+"scorpion"
+]
+},
+"turkey": {
+"name": "turkey",
+"keys": [
+"turkey"
+]
+},
+"unicorn-face": {
+"name": "unicorn face",
+"keys": [
+"unicorn",
+"unicorn face"
+]
+},
+"eagle": {
+"name": "eagle",
+"keys": [
+"eagle"
+]
+},
+"duck": {
+"name": "duck",
+"keys": [
+"duck"
+]
+},
+"bat": {
+"name": "bat",
+"keys": [
+"bat"
+]
+},
+"shark": {
+"name": "shark",
+"keys": [
+"shark"
+]
+},
+"owl": {
+"name": "owl",
+"keys": [
+"owl"
+]
+},
+"fox-face": {
+"name": "fox face",
+"keys": [
+"fox",
+"fox face"
+]
+},
+"butterfly": {
+"name": "butterfly",
+"keys": [
+"butterfly"
+]
+},
+"deer": {
+"name": "deer",
+"keys": [
+"deer"
+]
+},
+"gorilla": {
+"name": "gorilla",
+"keys": [
+"gorilla"
+]
+},
+"lizard": {
+"name": "lizard",
+"keys": [
+"lizard"
+]
+},
+"rhinoceros": {
+"name": "rhinoceros",
+"keys": [
+"rhinoceros"
+]
+},
+"shrimp": {
+"name": "shrimp",
+"keys": [
+"shrimp"
+]
+},
+"squid": {
+"name": "squid",
+"keys": [
+"squid"
+]
+},
+"giraffe-face": {
+"name": "giraffe face",
+"keys": [
+"giraffe",
+"giraffe face"
+]
+},
+"zebra-face": {
+"name": "zebra face",
+"keys": [
+"zebra",
+"zebra face"
+]
+},
+"hedgehog": {
+"name": "hedgehog",
+"keys": [
+"hedgehog"
+]
+},
+"sauropod": {
+"name": "sauropod",
+"keys": [
+"sauropod"
+]
+},
+"t-rex": {
+"name": "t-rex",
+"keys": [
+"t-rex"
+]
+},
+"cricket": {
+"name": "cricket",
+"keys": [
+"cricket"
+]
+},
+"kangaroo": {
+"name": "kangaroo",
+"keys": [
+"kangaroo"
+]
+},
+"llama": {
+"name": "llama",
+"keys": [
+"llama"
+]
+},
+"peacock": {
+"name": "peacock",
+"keys": [
+"peacock"
+]
+},
+"hippopotamus": {
+"name": "hippopotamus",
+"keys": [
+"hippopotamus"
+]
+},
+"parrot": {
+"name": "parrot",
+"keys": [
+"parrot"
+]
+},
+"raccoon": {
+"name": "raccoon",
+"keys": [
+"raccoon"
+]
+},
+"lobster": {
+"name": "lobster",
+"keys": [
+"lobster"
+]
+},
+"mosquito": {
+"name": "mosquito",
+"keys": [
+"mosquito"
+]
+},
+"microbe": {
+"name": "microbe",
+"keys": [
+"microbe"
+]
+},
+"badger": {
+"name": "badger",
+"keys": [
+"badger"
+]
+},
+"swan": {
+"name": "swan",
+"keys": [
+"swan"
+]
+},
+"mammoth": {
+"name": "mammoth",
+"keys": [
+"mammoth"
+]
+},
+"dodo": {
+"name": "dodo",
+"keys": [
+"dodo"
+]
+},
+"sloth": {
+"name": "sloth",
+"keys": [
+"sloth"
+]
+},
+"otter": {
+"name": "otter",
+"keys": [
+"otter"
+]
+},
+"orangutan": {
+"name": "orangutan",
+"keys": [
+"orangutan"
+]
+},
+"skunk": {
+"name": "skunk",
+"keys": [
+"skunk"
+]
+},
+"flamingo": {
+"name": "flamingo",
+"keys": [
+"flamingo"
+]
+},
+"oyster": {
+"name": "oyster",
+"keys": [
+"oyster"
+]
+},
+"beaver": {
+"name": "beaver",
+"keys": [
+"beaver"
+]
+},
+"bison": {
+"name": "bison",
+"keys": [
+"bison"
+]
+},
+"seal": {
+"name": "seal",
+"keys": [
+"seal"
+]
+},
+"guide-dog": {
+"name": "guide dog",
+"keys": [
+"dog",
+"guide",
+"guide dog"
+]
+},
+"probing-cane": {
+"name": "probing cane",
+"keys": [
+"cane",
+"probing",
+"probing cane"
+]
+},
+"bone": {
+"name": "bone",
+"keys": [
+"bone"
+]
+},
+"leg": {
+"name": "leg",
+"keys": [
+"leg"
+]
+},
+"foot": {
+"name": "foot",
+"keys": [
+"foot"
+]
+},
+"tooth": {
+"name": "tooth",
+"keys": [
+"tooth"
+]
+},
+"superhero": {
+"name": "superhero",
+"keys": [
+"superhero"
+]
+},
+"supervillain": {
+"name": "supervillain",
+"keys": [
+"supervillain"
+]
+},
+"safety-vest": {
+"name": "safety vest",
+"keys": [
+"safety",
+"safety vest",
+"vest"
+]
+},
+"ear-with-hearing-aid": {
+"name": "ear with hearing aid",
+"keys": [
+"aid",
+"ear",
+"ear with hearing aid"
+]
+},
+"motorized-wheelchair": {
+"name": "motorized wheelchair",
+"keys": [
+"motorized",
+"motorized wheelchair",
+"wheelchair"
+]
+},
+"manual-wheelchair": {
+"name": "manual wheelchair",
+"keys": [
+"manual",
+"manual wheelchair",
+"wheelchair"
+]
+},
+"mechanical-arm": {
+"name": "mechanical arm",
+"keys": [
+"arm",
+"mechanical",
+"mechanical arm"
+]
+},
+"mechanical-leg": {
+"name": "mechanical leg",
+"keys": [
+"leg",
+"mechanical",
+"mechanical leg"
+]
+},
+"cheese-wedge": {
+"name": "cheese wedge",
+"keys": [
+"cheese",
+"cheese wedge",
+"wedge"
+]
+},
+"cupcake": {
+"name": "cupcake",
+"keys": [
+"cupcake"
+]
+},
+"salt-shaker": {
+"name": "salt shaker",
+"keys": [
+"salt",
+"salt shaker",
+"shaker"
+]
+},
+"beverage-box": {
+"name": "beverage box",
+"keys": [
+"beverage",
+"beverage box",
+"box"
+]
+},
+"garlic": {
+"name": "garlic",
+"keys": [
+"garlic"
+]
+},
+"onion": {
+"name": "onion",
+"keys": [
+"onion"
+]
+},
+"falafel": {
+"name": "falafel",
+"keys": [
+"falafel"
+]
+},
+"waffle": {
+"name": "waffle",
+"keys": [
+"waffle"
+]
+},
+"butter": {
+"name": "butter",
+"keys": [
+"butter"
+]
+},
+"mate-drink": {
+"name": "mate drink",
+"keys": [
+"drink",
+"mate",
+"mate drink"
+]
+},
+"ice-cube": {
+"name": "ice cube",
+"keys": [
+"cube",
+"ice",
+"ice cube"
+]
+},
+"bubble-tea": {
+"name": "bubble tea",
+"keys": [
+"bubble",
+"bubble tea",
+"tea"
+]
+},
+"troll": {
+"name": "troll",
+"keys": [
+"troll"
+]
+},
+"standing-person": {
+"name": "standing person",
+"keys": [
+"person",
+"standing",
+"standing person"
+]
+},
+"kneeling-person": {
+"name": "kneeling person",
+"keys": [
+"kneeling",
+"kneeling person",
+"person"
+]
+},
+"deaf-person": {
+"name": "deaf person",
+"keys": [
+"deaf",
+"deaf person",
+"person"
+]
+},
+"face-with-monocle": {
+"name": "face with monocle",
+"keys": [
+"face with monocle",
+"monocle"
+]
+},
+"adult": {
+"name": "adult",
+"keys": [
+"adult"
+]
+},
+"child": {
+"name": "child",
+"keys": [
+"child"
+]
+},
+"older-adult": {
+"name": "older adult",
+"keys": [
+"adult",
+"older",
+"older adult"
+]
+},
+"bearded-person": {
+"name": "bearded person",
+"keys": [
+"bearded",
+"bearded person",
+"person"
+]
+},
+"person-with-headscarf": {
+"name": "person with headscarf",
+"keys": [
+"headscarf",
+"person",
+"person with headscarf"
+]
+},
+"person-in-steamy-room": {
+"name": "person in steamy room",
+"keys": [
+"person",
+"person in steamy room",
+"room"
+]
+},
+"person-climbing": {
+"name": "person climbing",
+"keys": [
+"climbing",
+"person",
+"person climbing"
+]
+},
+"person-in-lotus-position": {
+"name": "person in lotus position",
+"keys": [
+"person",
+"person in lotus position",
+"position"
+]
+},
+"mage": {
+"name": "mage",
+"keys": [
+"mage"
+]
+},
+"fairy": {
+"name": "fairy",
+"keys": [
+"fairy"
+]
+},
+"vampire": {
+"name": "vampire",
+"keys": [
+"vampire"
+]
+},
+"merperson": {
+"name": "merperson",
+"keys": [
+"merperson"
+]
+},
+"elf": {
+"name": "elf",
+"keys": [
+"elf"
+]
+},
+"genie": {
+"name": "genie",
+"keys": [
+"genie"
+]
+},
+"zombie": {
+"name": "zombie",
+"keys": [
+"zombie"
+]
+},
+"brain": {
+"name": "brain",
+"keys": [
+"brain"
+]
+},
+"orange-heart": {
+"name": "orange heart",
+"keys": [
+"heart",
+"orange",
+"orange heart"
+]
+},
+"billed-cap": {
+"name": "billed cap",
+"keys": [
+"billed",
+"billed cap",
+"cap"
+]
+},
+"scarf": {
+"name": "scarf",
+"keys": [
+"scarf"
+]
+},
+"gloves": {
+"name": "gloves",
+"keys": [
+"gloves"
+]
+},
+"coat": {
+"name": "coat",
+"keys": [
+"coat"
+]
+},
+"socks": {
+"name": "socks",
+"keys": [
+"socks"
+]
+},
+"red-gift-envelope": {
+"name": "red gift envelope",
+"keys": [
+"envelope",
+"red",
+"red gift envelope"
+]
+},
+"firecracker": {
+"name": "firecracker",
+"keys": [
+"firecracker"
+]
+},
+"jigsaw-puzzle-piece": {
+"name": "jigsaw puzzle piece",
+"keys": [
+"jigsaw",
+"jigsaw puzzle piece",
+"piece"
+]
+},
+"test-tube": {
+"name": "test tube",
+"keys": [
+"test",
+"test tube",
+"tube"
+]
+},
+"petri-dish": {
+"name": "petri dish",
+"keys": [
+"dish",
+"petri",
+"petri dish"
+]
+},
+"dna-double-helix": {
+"name": "dna double helix",
+"keys": [
+"dna",
+"dna double helix",
+"helix"
+]
+},
+"compass": {
+"name": "compass",
+"keys": [
+"compass"
+]
+},
+"abacus": {
+"name": "abacus",
+"keys": [
+"abacus"
+]
+},
+"fire-extinguisher": {
+"name": "fire extinguisher",
+"keys": [
+"extinguisher",
+"fire",
+"fire extinguisher"
+]
+},
+"toolbox": {
+"name": "toolbox",
+"keys": [
+"toolbox"
+]
+},
+"brick": {
+"name": "brick",
+"keys": [
+"brick"
+]
+},
+"magnet": {
+"name": "magnet",
+"keys": [
+"magnet"
+]
+},
+"luggage": {
+"name": "luggage",
+"keys": [
+"luggage"
+]
+},
+"lotion-bottle": {
+"name": "lotion bottle",
+"keys": [
+"bottle",
+"lotion",
+"lotion bottle"
+]
+},
+"spool-of-thread": {
+"name": "spool of thread",
+"keys": [
+"spool",
+"spool of thread",
+"thread"
+]
+},
+"ball-of-yarn": {
+"name": "ball of yarn",
+"keys": [
+"ball",
+"ball of yarn",
+"yarn"
+]
+},
+"safety-pin": {
+"name": "safety pin",
+"keys": [
+"pin",
+"safety",
+"safety pin"
+]
+},
+"teddy-bear": {
+"name": "teddy bear",
+"keys": [
+"bear",
+"teddy",
+"teddy bear"
+]
+},
+"broom": {
+"name": "broom",
+"keys": [
+"broom"
+]
+},
+"basket": {
+"name": "basket",
+"keys": [
+"basket"
+]
+},
+"roll-of-paper": {
+"name": "roll of paper",
+"keys": [
+"paper",
+"roll",
+"roll of paper"
+]
+},
+"bar-of-soap": {
+"name": "bar of soap",
+"keys": [
+"bar",
+"bar of soap",
+"soap"
+]
+},
+"sponge": {
+"name": "sponge",
+"keys": [
+"sponge"
+]
+},
+"receipt": {
+"name": "receipt",
+"keys": [
+"receipt"
+]
+},
+"nazar-amulet": {
+"name": "nazar amulet",
+"keys": [
+"amulet",
+"nazar",
+"nazar amulet"
+]
+},
+"ballet-shoes": {
+"name": "ballet shoes",
+"keys": [
+"ballet",
+"ballet shoes",
+"shoes"
+]
+},
+"one-piece-swimsuit": {
+"name": "one-piece swimsuit",
+"keys": [
+"one-piece",
+"one-piece swimsuit",
+"swimsuit"
+]
+},
+"briefs": {
+"name": "briefs",
+"keys": [
+"briefs"
+]
+},
+"shorts": {
+"name": "shorts",
+"keys": [
+"shorts"
+]
+},
+"thong-sandal": {
+"name": "thong sandal",
+"keys": [
+"sandal",
+"thong",
+"thong sandal"
+]
+},
+"light-blue-heart": {
+"name": "light blue heart",
+"keys": [
+"heart",
+"light",
+"light blue heart"
+]
+},
+"grey-heart": {
+"name": "grey heart",
+"keys": [
+"grey",
+"grey heart",
+"heart"
+]
+},
+"pink-heart": {
+"name": "pink heart",
+"keys": [
+"heart",
+"pink",
+"pink heart"
+]
+},
+"drop-of-blood": {
+"name": "drop of blood",
+"keys": [
+"blood",
+"drop",
+"drop of blood"
+]
+},
+"adhesive-bandage": {
+"name": "adhesive bandage",
+"keys": [
+"adhesive",
+"adhesive bandage",
+"bandage"
+]
+},
+"stethoscope": {
+"name": "stethoscope",
+"keys": [
+"stethoscope"
+]
+},
+"x-ray": {
+"name": "x-ray",
+"keys": [
+"x-ray"
+]
+},
+"crutch": {
+"name": "crutch",
+"keys": [
+"crutch"
+]
+},
+"yo-yo": {
+"name": "yo-yo",
+"keys": [
+"yo-yo"
+]
+},
+"kite": {
+"name": "kite",
+"keys": [
+"kite"
+]
+},
+"parachute": {
+"name": "parachute",
+"keys": [
+"parachute"
+]
+},
+"boomerang": {
+"name": "boomerang",
+"keys": [
+"boomerang"
+]
+},
+"magic-wand": {
+"name": "magic wand",
+"keys": [
+"magic",
+"magic wand",
+"wand"
+]
+},
+"pinata": {
+"name": "pinata",
+"keys": [
+"pinata"
+]
+},
+"nesting-dolls": {
+"name": "nesting dolls",
+"keys": [
+"dolls",
+"nesting",
+"nesting dolls"
+]
+},
+"maracas": {
+"name": "maracas",
+"keys": [
+"maracas"
+]
+},
+"flute": {
+"name": "flute",
+"keys": [
+"flute"
+]
+},
+"ringed-planet": {
+"name": "ringed planet",
+"keys": [
+"planet",
+"ringed",
+"ringed planet"
+]
+},
+"chair": {
+"name": "chair",
+"keys": [
+"chair"
+]
+},
+"razor": {
+"name": "razor",
+"keys": [
+"razor"
+]
+},
+"axe": {
+"name": "axe",
+"keys": [
+"axe"
+]
+},
+"diya-lamp": {
+"name": "diya lamp",
+"keys": [
+"diya",
+"diya lamp",
+"lamp"
+]
+},
+"banjo": {
+"name": "banjo",
+"keys": [
+"banjo"
+]
+},
+"military-helmet": {
+"name": "military helmet",
+"keys": [
+"helmet",
+"military",
+"military helmet"
+]
+},
+"accordion": {
+"name": "accordion",
+"keys": [
+"accordion"
+]
+},
+"long-drum": {
+"name": "long drum",
+"keys": [
+"drum",
+"long",
+"long drum"
+]
+},
+"coin": {
+"name": "coin",
+"keys": [
+"coin"
+]
+},
+"carpentry-saw": {
+"name": "carpentry saw",
+"keys": [
+"carpentry",
+"carpentry saw",
+"saw"
+]
+},
+"screwdriver": {
+"name": "screwdriver",
+"keys": [
+"screwdriver"
+]
+},
+"ladder": {
+"name": "ladder",
+"keys": [
+"ladder"
+]
+},
+"hook": {
+"name": "hook",
+"keys": [
+"hook"
+]
+},
+"mirror": {
+"name": "mirror",
+"keys": [
+"mirror"
+]
+},
+"window": {
+"name": "window",
+"keys": [
+"window"
+]
+},
+"plunger": {
+"name": "plunger",
+"keys": [
+"plunger"
+]
+},
+"sewing-needle": {
+"name": "sewing needle",
+"keys": [
+"needle",
+"sewing",
+"sewing needle"
+]
+},
+"knot": {
+"name": "knot",
+"keys": [
+"knot"
+]
+},
+"bucket": {
+"name": "bucket",
+"keys": [
+"bucket"
+]
+},
+"mouse-trap": {
+"name": "mouse trap",
+"keys": [
+"mouse",
+"mouse trap",
+"trap"
+]
+},
+"toothbrush": {
+"name": "toothbrush",
+"keys": [
+"toothbrush"
+]
+},
+"headstone": {
+"name": "headstone",
+"keys": [
+"headstone"
+]
+},
+"placard": {
+"name": "placard",
+"keys": [
+"placard"
+]
+},
+"rock": {
+"name": "rock",
+"keys": [
+"rock"
+]
+},
+"mirror-ball": {
+"name": "mirror ball",
+"keys": [
+"ball",
+"mirror",
+"mirror ball"
+]
+},
+"identification-card": {
+"name": "identification card",
+"keys": [
+"card",
+"identification",
+"identification card"
+]
+},
+"low-battery": {
+"name": "low battery",
+"keys": [
+"battery",
+"low",
+"low battery"
+]
+},
+"hamsa": {
+"name": "hamsa",
+"keys": [
+"hamsa"
+]
+},
+"folding-hand-fan": {
+"name": "folding hand fan",
+"keys": [
+"fan",
+"folding",
+"folding hand fan"
+]
+},
+"hair-pick": {
+"name": "hair pick",
+"keys": [
+"hair",
+"hair pick",
+"pick"
+]
+},
+"khanda": {
+"name": "khanda",
+"keys": [
+"khanda"
+]
+},
+"fly": {
+"name": "fly",
+"keys": [
+"fly"
+]
+},
+"worm": {
+"name": "worm",
+"keys": [
+"worm"
+]
+},
+"beetle": {
+"name": "beetle",
+"keys": [
+"beetle"
+]
+},
+"cockroach": {
+"name": "cockroach",
+"keys": [
+"cockroach"
+]
+},
+"potted-plant": {
+"name": "potted plant",
+"keys": [
+"plant",
+"potted",
+"potted plant"
+]
+},
+"wood": {
+"name": "wood",
+"keys": [
+"wood"
+]
+},
+"feather": {
+"name": "feather",
+"keys": [
+"feather"
+]
+},
+"lotus": {
+"name": "lotus",
+"keys": [
+"lotus"
+]
+},
+"coral": {
+"name": "coral",
+"keys": [
+"coral"
+]
+},
+"empty-nest": {
+"name": "empty nest",
+"keys": [
+"empty",
+"empty nest",
+"nest"
+]
+},
+"nest-with-eggs": {
+"name": "nest with eggs",
+"keys": [
+"eggs",
+"nest",
+"nest with eggs"
+]
+},
+"hyacinth": {
+"name": "hyacinth",
+"keys": [
+"hyacinth"
+]
+},
+"jellyfish": {
+"name": "jellyfish",
+"keys": [
+"jellyfish"
+]
+},
+"wing": {
+"name": "wing",
+"keys": [
+"wing"
+]
+},
+"goose": {
+"name": "goose",
+"keys": [
+"goose"
+]
+},
+"anatomical-heart": {
+"name": "anatomical heart",
+"keys": [
+"anatomical",
+"anatomical heart",
+"heart"
+]
+},
+"lungs": {
+"name": "lungs",
+"keys": [
+"lungs"
+]
+},
+"people-hugging": {
+"name": "people hugging",
+"keys": [
+"hugging",
+"people",
+"people hugging"
+]
+},
+"pregnant-man": {
+"name": "pregnant man",
+"keys": [
+"man",
+"pregnant",
+"pregnant man"
+]
+},
+"pregnant-person": {
+"name": "pregnant person",
+"keys": [
+"person",
+"pregnant",
+"pregnant person"
+]
+},
+"person-with-crown": {
+"name": "person with crown",
+"keys": [
+"crown",
+"person",
+"person with crown"
+]
+},
+"moose": {
+"name": "moose",
+"keys": [
+"moose"
+]
+},
+"donkey": {
+"name": "donkey",
+"keys": [
+"donkey"
+]
+},
+"blueberries": {
+"name": "blueberries",
+"keys": [
+"blueberries"
+]
+},
+"bell-pepper": {
+"name": "bell pepper",
+"keys": [
+"bell",
+"bell pepper",
+"pepper"
+]
+},
+"olive": {
+"name": "olive",
+"keys": [
+"olive"
+]
+},
+"flatbread": {
+"name": "flatbread",
+"keys": [
+"flatbread"
+]
+},
+"tamale": {
+"name": "tamale",
+"keys": [
+"tamale"
+]
+},
+"fondue": {
+"name": "fondue",
+"keys": [
+"fondue"
+]
+},
+"teapot": {
+"name": "teapot",
+"keys": [
+"teapot"
+]
+},
+"pouring-liquid": {
+"name": "pouring liquid",
+"keys": [
+"liquid",
+"pouring",
+"pouring liquid"
+]
+},
+"beans": {
+"name": "beans",
+"keys": [
+"beans"
+]
+},
+"jar": {
+"name": "jar",
+"keys": [
+"jar"
+]
+},
+"ginger-root": {
+"name": "ginger root",
+"keys": [
+"ginger",
+"ginger root",
+"root"
+]
+},
+"pea-pod": {
+"name": "pea pod",
+"keys": [
+"pea",
+"pea pod",
+"pod"
+]
+},
+"melting-face": {
+"name": "melting face",
+"keys": [
+"melting",
+"melting face"
+]
+},
+"saluting-face": {
+"name": "saluting face",
+"keys": [
+"saluting",
+"saluting face"
+]
+},
+"face-with-open-eyes-and-hand-over-mouth": {
+"name": "face with open eyes and hand over mouth",
+"keys": [
+"face with open eyes and hand over mouth",
+"mouth"
+]
+},
+"face-with-peeking-eye": {
+"name": "face with peeking eye",
+"keys": [
+"eye",
+"face with peeking eye"
+]
+},
+"face-with-diagonal-mouth": {
+"name": "face with diagonal mouth",
+"keys": [
+"face with diagonal mouth",
+"mouth"
+]
+},
+"dotted-line-face": {
+"name": "dotted line face",
+"keys": [
+"dotted",
+"dotted line",
+"dotted line face",
+"line"
+]
+},
+"biting-lip": {
+"name": "biting lip",
+"keys": [
+"biting",
+"biting lip",
+"lip"
+]
+},
+"bubbles": {
+"name": "bubbles",
+"keys": [
+"bubbles"
+]
+},
+"shaking-face": {
+"name": "shaking face",
+"keys": [
+"shaking",
+"shaking face"
+]
+},
+"hand-with-index-finger-and-thumb-crossed": {
+"name": "hand with index finger and thumb crossed",
+"keys": [
+"crossed",
+"hand",
+"hand with index finger and thumb crossed"
+]
+},
+"rightwards-hand": {
+"name": "rightwards hand",
+"keys": [
+"hand",
+"rightwards",
+"rightwards hand"
+]
+},
+"leftwards-hand": {
+"name": "leftwards hand",
+"keys": [
+"hand",
+"leftwards",
+"leftwards hand"
+]
+},
+"palm-down-hand": {
+"name": "palm down hand",
+"keys": [
+"hand",
+"palm",
+"palm down hand"
+]
+},
+"palm-up-hand": {
+"name": "palm up hand",
+"keys": [
+"hand",
+"palm",
+"palm up hand"
+]
+},
+"index-pointing-at-the-viewer": {
+"name": "index pointing at the viewer",
+"keys": [
+"index",
+"index pointing at the viewer",
+"viewer"
+]
+},
+"heart-hands": {
+"name": "heart hands",
+"keys": [
+"hands",
+"heart",
+"heart hands"
+]
+},
+"leftwards-pushing-hand": {
+"name": "leftwards pushing hand",
+"keys": [
+"hand",
+"leftwards",
+"leftwards pushing hand"
+]
+},
+"rightwards-pushing-hand": {
+"name": "rightwards pushing hand",
+"keys": [
+"hand",
+"rightwards",
+"rightwards pushing hand"
+]
+},
+"double-exclamation-mark": {
+"name": "double exclamation mark",
+"keys": [
+"double",
+"double exclamation",
+"double exclamation mark",
+"exclamation"
+]
+},
+"exclamation-question-mark": {
+"name": "exclamation question mark",
+"keys": [
+"exclamation",
+"exclamation question",
+"exclamation question mark",
+"question"
+]
+},
+"trade-mark": {
+"name": "trade mark",
+"keys": [
+"trade",
+"trade mark"
+]
+},
+"information-source": {
+"name": "information source",
+"keys": [
+"information",
+"information source",
+"source"
+]
+},
+"left-right-arrow": {
+"name": "left right arrow",
+"keys": [
+"arrow",
+"left",
+"left right arrow"
+]
+},
+"up-down-arrow": {
+"name": "up down arrow",
+"keys": [
+"arrow",
+"up",
+"up down arrow"
+]
+},
+"north-west-arrow": {
+"name": "north west arrow",
+"keys": [
+"arrow",
+"north",
+"north west arrow"
+]
+},
+"north-east-arrow": {
+"name": "north east arrow",
+"keys": [
+"arrow",
+"north",
+"north east arrow"
+]
+},
+"south-east-arrow": {
+"name": "south east arrow",
+"keys": [
+"arrow",
+"south",
+"south east arrow"
+]
+},
+"south-west-arrow": {
+"name": "south west arrow",
+"keys": [
+"arrow",
+"south",
+"south west arrow"
+]
+},
+"leftwards-arrow-with-hook": {
+"name": "leftwards arrow with hook",
+"keys": [
+"hook",
+"leftwards",
+"leftwards arrow with hook"
+]
+},
+"rightwards-arrow-with-hook": {
+"name": "rightwards arrow with hook",
+"keys": [
+"hook",
+"rightwards",
+"rightwards arrow with hook"
+]
+},
+"watch": {
+"name": "watch",
+"keys": [
+"watch"
+]
+},
+"hourglass": {
+"name": "hourglass",
+"keys": [
+"hourglass"
+]
+},
+"keyboard": {
+"name": "keyboard",
+"keys": [
+"keyboard"
+]
+},
+"eject": {
+"name": "eject",
+"keys": [
+"eject"
+]
+},
+"black-right-pointing-double-triangle": {
+"name": "black right-pointing double triangle",
+"keys": [
+"black",
+"black right-pointing double triangle",
+"triangle"
+]
+},
+"black-left-pointing-double-triangle": {
+"name": "black left-pointing double triangle",
+"keys": [
+"black",
+"black left-pointing double triangle",
+"triangle"
+]
+},
+"black-up-pointing-double-triangle": {
+"name": "black up-pointing double triangle",
+"keys": [
+"black",
+"black up-pointing double triangle",
+"triangle"
+]
+},
+"black-down-pointing-double-triangle": {
+"name": "black down-pointing double triangle",
+"keys": [
+"black",
+"black down-pointing double triangle",
+"triangle"
+]
+},
+"black-right-pointing-double-triangle-with-vertical-bar": {
+"name": "black right-pointing double triangle with vertical bar",
+"keys": [
+"bar",
+"black",
+"black right-pointing double triangle with vertical bar"
+]
+},
+"black-left-pointing-double-triangle-with-vertical-bar": {
+"name": "black left-pointing double triangle with vertical bar",
+"keys": [
+"bar",
+"black",
+"black left-pointing double triangle with vertical bar"
+]
+},
+"black-right-pointing-triangle-with-double-vertical-bar": {
+"name": "black right-pointing triangle with double vertical bar",
+"keys": [
+"bar",
+"black",
+"black right-pointing triangle with double vertical bar"
+]
+},
+"alarm-clock": {
+"name": "alarm clock",
+"keys": [
+"alarm",
+"alarm clock",
+"clock"
+]
+},
+"stopwatch": {
+"name": "stopwatch",
+"keys": [
+"stopwatch"
+]
+},
+"timer-clock": {
+"name": "timer clock",
+"keys": [
+"clock",
+"timer",
+"timer clock"
+]
+},
+"hourglass-with-flowing-sand": {
+"name": "hourglass with flowing sand",
+"keys": [
+"hourglass",
+"hourglass with flowing sand",
+"sand"
+]
+},
+"double-vertical-bar": {
+"name": "double vertical bar",
+"keys": [
+"bar",
+"double",
+"double vertical bar"
+]
+},
+"black-square-for-stop": {
+"name": "black square for stop",
+"keys": [
+"black",
+"black square for stop",
+"stop"
+]
+},
+"black-circle-for-record": {
+"name": "black circle for record",
+"keys": [
+"black",
+"black circle for record",
+"record"
+]
+},
+"circled-latin-capital-letter-m": {
+"name": "circled latin capital letter m",
+"keys": [
+"circled",
+"circled latin capital letter m"
+]
+},
+"black-small-square": {
+"name": "black small square",
+"keys": [
+"black",
+"black small square",
+"square"
+]
+},
+"white-small-square": {
+"name": "white small square",
+"keys": [
+"square",
+"white",
+"white small square"
+]
+},
+"black-right-pointing-triangle": {
+"name": "black right-pointing triangle",
+"keys": [
+"black",
+"black right-pointing triangle",
+"triangle"
+]
+},
+"black-left-pointing-triangle": {
+"name": "black left-pointing triangle",
+"keys": [
+"black",
+"black left-pointing triangle",
+"triangle"
+]
+},
+"white-medium-square": {
+"name": "white medium square",
+"keys": [
+"square",
+"white",
+"white medium square"
+]
+},
+"black-medium-square": {
+"name": "black medium square",
+"keys": [
+"black",
+"black medium square",
+"square"
+]
+},
+"white-medium-small-square": {
+"name": "white medium small square",
+"keys": [
+"square",
+"white",
+"white medium small square"
+]
+},
+"black-medium-small-square": {
+"name": "black medium small square",
+"keys": [
+"black",
+"black medium small square",
+"square"
+]
+},
+"black-sun-with-rays": {
+"name": "black sun with rays",
+"keys": [
+"black",
+"black sun with rays",
+"rays"
+]
+},
+"cloud": {
+"name": "cloud",
+"keys": [
+"cloud"
+]
+},
+"umbrella": {
+"name": "umbrella",
+"keys": [
+"umbrella"
+]
+},
+"snowman": {
+"name": "snowman",
+"keys": [
+"snowman"
+]
+},
+"comet": {
+"name": "comet",
+"keys": [
+"comet"
+]
+},
+"black-telephone": {
+"name": "black telephone",
+"keys": [
+"black",
+"black telephone",
+"telephone"
+]
+},
+"ballot-box-with-check": {
+"name": "ballot box with check",
+"keys": [
+"ballot",
+"ballot box with check",
+"check"
+]
+},
+"umbrella-with-rain-drops": {
+"name": "umbrella with rain drops",
+"keys": [
+"drops",
+"umbrella",
+"umbrella with rain drops"
+]
+},
+"hot-beverage": {
+"name": "hot beverage",
+"keys": [
+"beverage",
+"hot",
+"hot beverage"
+]
+},
+"shamrock": {
+"name": "shamrock",
+"keys": [
+"shamrock"
+]
+},
+"white-up-pointing-index": {
+"name": "white up pointing index",
+"keys": [
+"index",
+"white",
+"white up pointing index"
+]
+},
+"skull-and-crossbones": {
+"name": "skull and crossbones",
+"keys": [
+"crossbones",
+"skull",
+"skull and crossbones"
+]
+},
+"radioactive": {
+"name": "radioactive",
+"keys": [
+"radioactive"
+]
+},
+"biohazard": {
+"name": "biohazard",
+"keys": [
+"biohazard"
+]
+},
+"orthodox-cross": {
+"name": "orthodox cross",
+"keys": [
+"cross",
+"orthodox",
+"orthodox cross"
+]
+},
+"star-and-crescent": {
+"name": "star and crescent",
+"keys": [
+"crescent",
+"star",
+"star and crescent"
+]
+},
+"peace": {
+"name": "peace",
+"keys": [
+"peace"
+]
+},
+"yin-yang": {
+"name": "yin yang",
+"keys": [
+"yang",
+"yin",
+"yin yang"
+]
+},
+"wheel-of-dharma": {
+"name": "wheel of dharma",
+"keys": [
+"dharma",
+"wheel",
+"wheel of dharma"
+]
+},
+"white-frowning-face": {
+"name": "white frowning face",
+"keys": [
+"frowning",
+"white",
+"white frowning",
+"white frowning face"
+]
+},
+"white-smiling-face": {
+"name": "white smiling face",
+"keys": [
+"smiling",
+"white",
+"white smiling",
+"white smiling face"
+]
+},
+"aries": {
+"name": "aries",
+"keys": [
+"aries"
+]
+},
+"taurus": {
+"name": "taurus",
+"keys": [
+"taurus"
+]
+},
+"gemini": {
+"name": "gemini",
+"keys": [
+"gemini"
+]
+},
+"cancer": {
+"name": "cancer",
+"keys": [
+"cancer"
+]
+},
+"leo": {
+"name": "leo",
+"keys": [
+"leo"
+]
+},
+"virgo": {
+"name": "virgo",
+"keys": [
+"virgo"
+]
+},
+"libra": {
+"name": "libra",
+"keys": [
+"libra"
+]
+},
+"scorpius": {
+"name": "scorpius",
+"keys": [
+"scorpius"
+]
+},
+"sagittarius": {
+"name": "sagittarius",
+"keys": [
+"sagittarius"
+]
+},
+"capricorn": {
+"name": "capricorn",
+"keys": [
+"capricorn"
+]
+},
+"aquarius": {
+"name": "aquarius",
+"keys": [
+"aquarius"
+]
+},
+"pisces": {
+"name": "pisces",
+"keys": [
+"pisces"
+]
+},
+"black-chess-pawn": {
+"name": "black chess pawn",
+"keys": [
+"black",
+"black chess pawn",
+"pawn"
+]
+},
+"black-spade-suit": {
+"name": "black spade suit",
+"keys": [
+"black",
+"black spade suit",
+"suit"
+]
+},
+"black-club-suit": {
+"name": "black club suit",
+"keys": [
+"black",
+"black club suit",
+"suit"
+]
+},
+"black-heart-suit": {
+"name": "black heart suit",
+"keys": [
+"black",
+"black heart suit",
+"suit"
+]
+},
+"black-diamond-suit": {
+"name": "black diamond suit",
+"keys": [
+"black",
+"black diamond suit",
+"suit"
+]
+},
+"hot-springs": {
+"name": "hot springs",
+"keys": [
+"hot",
+"hot springs",
+"springs"
+]
+},
+"black-universal-recycling": {
+"name": "black universal recycling",
+"keys": [
+"black",
+"black universal recycling",
+"recycling"
+]
+},
+"permanent-paper": {
+"name": "permanent paper",
+"keys": [
+"paper",
+"permanent",
+"permanent paper"
+]
+},
+"wheelchair": {
+"name": "wheelchair",
+"keys": [
+"wheelchair"
+]
+},
+"hammer-and-pick": {
+"name": "hammer and pick",
+"keys": [
+"hammer",
+"hammer and pick",
+"pick"
+]
+},
+"anchor": {
+"name": "anchor",
+"keys": [
+"anchor"
+]
+},
+"crossed-swords": {
+"name": "crossed swords",
+"keys": [
+"crossed",
+"crossed swords",
+"swords"
+]
+},
+"staff-of-aesculapius": {
+"name": "staff of aesculapius",
+"keys": [
+"aesculapius",
+"staff",
+"staff of aesculapius"
+]
+},
+"scales": {
+"name": "scales",
+"keys": [
+"scales"
+]
+},
+"alembic": {
+"name": "alembic",
+"keys": [
+"alembic"
+]
+},
+"gear": {
+"name": "gear",
+"keys": [
+"gear"
+]
+},
+"atom": {
+"name": "atom",
+"keys": [
+"atom"
+]
+},
+"fleur-de-lis": {
+"name": "fleur-de-lis",
+"keys": [
+"fleur-de-lis"
+]
+},
+"warning": {
+"name": "warning",
+"keys": [
+"warning"
+]
+},
+"high-voltage": {
+"name": "high voltage",
+"keys": [
+"high",
+"high voltage",
+"voltage"
+]
+},
+"medium-white-circle": {
+"name": "medium white circle",
+"keys": [
+"circle",
+"medium",
+"medium white circle"
+]
+},
+"medium-black-circle": {
+"name": "medium black circle",
+"keys": [
+"circle",
+"medium",
+"medium black circle"
+]
+},
+"coffin": {
+"name": "coffin",
+"keys": [
+"coffin"
+]
+},
+"funeral-urn": {
+"name": "funeral urn",
+"keys": [
+"funeral",
+"funeral urn",
+"urn"
+]
+},
+"soccer-ball": {
+"name": "soccer ball",
+"keys": [
+"ball",
+"soccer",
+"soccer ball"
+]
+},
+"baseball": {
+"name": "baseball",
+"keys": [
+"baseball"
+]
+},
+"snowman-without-snow": {
+"name": "snowman without snow",
+"keys": [
+"snow",
+"snowman",
+"snowman without snow"
+]
+},
+"sun-behind-cloud": {
+"name": "sun behind cloud",
+"keys": [
+"cloud",
+"sun",
+"sun behind cloud"
+]
+},
+"thunder-cloud-and-rain": {
+"name": "thunder cloud and rain",
+"keys": [
+"rain",
+"thunder",
+"thunder cloud and rain"
+]
+},
+"ophiuchus": {
+"name": "ophiuchus",
+"keys": [
+"ophiuchus"
+]
+},
+"pick": {
+"name": "pick",
+"keys": [
+"pick"
+]
+},
+"helmet-with-white-cross": {
+"name": "helmet with white cross",
+"keys": [
+"cross",
+"helmet",
+"helmet with white cross"
+]
+},
+"chains": {
+"name": "chains",
+"keys": [
+"chains"
+]
+},
+"no-entry-2": {
+"name": "no entry",
+"keys": [
+"entry",
+"no",
+"no entry"
+]
+},
+"shinto-shrine": {
+"name": "shinto shrine",
+"keys": [
+"shinto",
+"shinto shrine",
+"shrine"
+]
+},
+"church": {
+"name": "church",
+"keys": [
+"church"
+]
+},
+"mountain": {
+"name": "mountain",
+"keys": [
+"mountain"
+]
+},
+"umbrella-on-ground": {
+"name": "umbrella on ground",
+"keys": [
+"ground",
+"umbrella",
+"umbrella on ground"
+]
+},
+"fountain": {
+"name": "fountain",
+"keys": [
+"fountain"
+]
+},
+"flag-in-hole": {
+"name": "flag in hole",
+"keys": [
+"flag",
+"flag in hole",
+"hole"
+]
+},
+"ferry": {
+"name": "ferry",
+"keys": [
+"ferry"
+]
+},
+"sailboat": {
+"name": "sailboat",
+"keys": [
+"sailboat"
+]
+},
+"skier": {
+"name": "skier",
+"keys": [
+"skier"
+]
+},
+"ice-skate": {
+"name": "ice skate",
+"keys": [
+"ice",
+"ice skate",
+"skate"
+]
+},
+"person-with-ball": {
+"name": "person with ball",
+"keys": [
+"ball",
+"person",
+"person with ball"
+]
+},
+"tent": {
+"name": "tent",
+"keys": [
+"tent"
+]
+},
+"fuel-pump": {
+"name": "fuel pump",
+"keys": [
+"fuel",
+"fuel pump",
+"pump"
+]
+},
+"black-scissors": {
+"name": "black scissors",
+"keys": [
+"black",
+"black scissors",
+"scissors"
+]
+},
+"white-heavy-check-mark": {
+"name": "white heavy check mark",
+"keys": [
+"check",
+"white",
+"white heavy check",
+"white heavy check mark"
+]
+},
+"airplane": {
+"name": "airplane",
+"keys": [
+"airplane"
+]
+},
+"envelope": {
+"name": "envelope",
+"keys": [
+"envelope"
+]
+},
+"raised-fist": {
+"name": "raised fist",
+"keys": [
+"fist",
+"raised",
+"raised fist"
+]
+},
+"raised-hand": {
+"name": "raised hand",
+"keys": [
+"hand",
+"raised",
+"raised hand"
+]
+},
+"victory-hand": {
+"name": "victory hand",
+"keys": [
+"hand",
+"victory",
+"victory hand"
+]
+},
+"writing-hand": {
+"name": "writing hand",
+"keys": [
+"hand",
+"writing",
+"writing hand"
+]
+},
+"pencil": {
+"name": "pencil",
+"keys": [
+"pencil"
+]
+},
+"black-nib": {
+"name": "black nib",
+"keys": [
+"black",
+"black nib",
+"nib"
+]
+},
+"heavy-check-mark": {
+"name": "heavy check mark",
+"keys": [
+"check",
+"heavy",
+"heavy check",
+"heavy check mark"
+]
+},
+"heavy-multiplication-x": {
+"name": "heavy multiplication x",
+"keys": [
+"heavy",
+"heavy multiplication x"
+]
+},
+"latin-cross": {
+"name": "latin cross",
+"keys": [
+"cross",
+"latin",
+"latin cross"
+]
+},
+"star-of-david": {
+"name": "star of david",
+"keys": [
+"david",
+"star",
+"star of david"
+]
+},
+"sparkles": {
+"name": "sparkles",
+"keys": [
+"sparkles"
+]
+},
+"eight-spoked-asterisk": {
+"name": "eight spoked asterisk",
+"keys": [
+"asterisk",
+"eight",
+"eight spoked asterisk"
+]
+},
+"eight-pointed-black-star": {
+"name": "eight pointed black star",
+"keys": [
+"eight",
+"eight pointed black star",
+"star"
+]
+},
+"snowflake": {
+"name": "snowflake",
+"keys": [
+"snowflake"
+]
+},
+"sparkle": {
+"name": "sparkle",
+"keys": [
+"sparkle"
+]
+},
+"cross-mark": {
+"name": "cross mark",
+"keys": [
+"cross",
+"cross mark"
+]
+},
+"negative-squared-cross-mark": {
+"name": "negative squared cross mark",
+"keys": [
+"cross",
+"negative",
+"negative squared cross",
+"negative squared cross mark"
+]
+},
+"black-question-mark-ornament": {
+"name": "black question mark ornament",
+"keys": [
+"black",
+"black question mark ornament",
+"ornament"
+]
+},
+"white-question-mark-ornament": {
+"name": "white question mark ornament",
+"keys": [
+"ornament",
+"white",
+"white question mark ornament"
+]
+},
+"white-exclamation-mark-ornament": {
+"name": "white exclamation mark ornament",
+"keys": [
+"ornament",
+"white",
+"white exclamation mark ornament"
+]
+},
+"heavy-exclamation-mark": {
+"name": "heavy exclamation mark",
+"keys": [
+"exclamation",
+"heavy",
+"heavy exclamation",
+"heavy exclamation mark"
+]
+},
+"heavy-heart-exclamation-mark-ornament": {
+"name": "heavy heart exclamation mark ornament",
+"keys": [
+"heavy",
+"heavy heart exclamation mark ornament",
+"ornament"
+]
+},
+"heavy-black-heart": {
+"name": "heavy black heart",
+"keys": [
+"heart",
+"heavy",
+"heavy black heart"
+]
+},
+"heavy-plus": {
+"name": "heavy plus",
+"keys": [
+"heavy",
+"heavy plus",
+"plus"
+]
+},
+"heavy-minus": {
+"name": "heavy minus",
+"keys": [
+"heavy",
+"heavy minus",
+"minus"
+]
+},
+"heavy-division": {
+"name": "heavy division",
+"keys": [
+"division",
+"heavy",
+"heavy division"
+]
+},
+"black-rightwards-arrow": {
+"name": "black rightwards arrow",
+"keys": [
+"arrow",
+"black",
+"black rightwards arrow"
+]
+},
+"curly-loop": {
+"name": "curly loop",
+"keys": [
+"curly",
+"curly loop",
+"loop"
+]
+},
+"double-curly-loop": {
+"name": "double curly loop",
+"keys": [
+"double",
+"double curly loop",
+"loop"
+]
+},
+"arrow-pointing-rightwards-then-curving-upwards": {
+"name": "arrow pointing rightwards then curving upwards",
+"keys": [
+"arrow",
+"arrow pointing rightwards then curving upwards",
+"upwards"
+]
+},
+"arrow-pointing-rightwards-then-curving-downwards": {
+"name": "arrow pointing rightwards then curving downwards",
+"keys": [
+"arrow",
+"arrow pointing rightwards then curving downwards",
+"downwards"
+]
+},
+"leftwards-black-arrow": {
+"name": "leftwards black arrow",
+"keys": [
+"arrow",
+"leftwards",
+"leftwards black arrow"
+]
+},
+"upwards-black-arrow": {
+"name": "upwards black arrow",
+"keys": [
+"arrow",
+"upwards",
+"upwards black arrow"
+]
+},
+"downwards-black-arrow": {
+"name": "downwards black arrow",
+"keys": [
+"arrow",
+"downwards",
+"downwards black arrow"
+]
+},
+"black-large-square": {
+"name": "black large square",
+"keys": [
+"black",
+"black large square",
+"square"
+]
+},
+"white-large-square": {
+"name": "white large square",
+"keys": [
+"square",
+"white",
+"white large square"
+]
+},
+"white-medium-star": {
+"name": "white medium star",
+"keys": [
+"star",
+"white",
+"white medium star"
+]
+},
+"heavy-large-circle": {
+"name": "heavy large circle",
+"keys": [
+"circle",
+"heavy",
+"heavy large circle"
+]
+},
+"wavy-dash": {
+"name": "wavy dash",
+"keys": [
+"dash",
+"wavy",
+"wavy dash"
+]
+},
+"part-alternation-mark": {
+"name": "part alternation mark",
+"keys": [
+"alternation",
+"part",
+"part alternation",
+"part alternation mark"
+]
+},
+"circled-ideograph-congratulation": {
+"name": "circled ideograph congratulation",
+"keys": [
+"circled",
+"circled ideograph congratulation",
+"congratulation"
+]
+},
+"circled-ideograph-secret": {
+"name": "circled ideograph secret",
+"keys": [
+"circled",
+"circled ideograph secret",
+"secret"
+]
+},
+"copyright-2": {
+"name": "copyright",
+"keys": [
+"copyright"
+]
+},
+"registered-2": {
+"name": "registered",
+"keys": [
+"registered"
+]
+}
+}
