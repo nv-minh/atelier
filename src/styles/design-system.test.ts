@@ -366,7 +366,12 @@ describe("Hệ thiết kế — lưới an toàn", () => {
       // string (src/lib/ui/button-classes.ts) plus its test's expectation
       // (button-classes.test.ts) — 2 new lines, both real v2-token usage,
       // not legacy debt.
-      { cls: "surface",       budget: 21, count: () => countLines(/\bsurface\b/) },
+      // Task 6 report claimed 19→21 for the 2 new lines in button-classes.ts
+      // + button-classes.test.ts, but never confirmed the pre-task baseline —
+      // recounted: the true current total (including those 2 lines) is 19,
+      // not 21. Tightened back to the measured value, matching every other
+      // budget in this list (exact count, not headroom).
+      { cls: "surface",       budget: 19, count: () => countLines(/\bsurface\b/) },
     ];
 
     for (const { cls, budget, count } of BUDGETS) {
