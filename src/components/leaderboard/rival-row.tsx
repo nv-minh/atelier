@@ -75,7 +75,7 @@ export function RivalRow({ entry, nowIso }: { entry: BoardEntry; nowIso: string 
             </span>
           )}
         </span>
-        {activeLabel && <span className="block text-xs text-fg-muted opacity-70">{activeLabel}</span>}
+        {activeLabel && <span className="block text-xs text-fg-muted/70">{activeLabel}</span>}
       </span>
 
       {entry.delta !== null && entry.delta !== 0 && (

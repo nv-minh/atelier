@@ -47,7 +47,7 @@ export function WeeklyRecap({ data }: { data: WeeklyRecapData }) {
             <div className="flex items-center gap-4">
               <Delta value={r.d} suffix={r.dSuffix} />
               <span className="display text-lg tabular-nums w-16 text-right">{r.now}</span>
-              <span className="text-sm text-fg-muted opacity-60 tabular-nums w-12 text-right">{r.prev}</span>
+              <span className="text-sm text-fg-muted/60 tabular-nums w-12 text-right">{r.prev}</span>
             </div>
           </div>
         ))}
@@ -63,7 +63,7 @@ function fmtMin(sec: number): string {
 function Delta({ value, suffix = "" }: { value: number; suffix?: string }) {
   if (value === 0) {
     return (
-      <span className="inline-flex items-center gap-0.5 text-xs text-fg-muted opacity-60 w-14 justify-end">
+      <span className="inline-flex items-center gap-0.5 text-xs text-fg-muted/60 w-14 justify-end">
         <Minus size={12} />
       </span>
     );

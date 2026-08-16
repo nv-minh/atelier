@@ -125,7 +125,7 @@ export function ReminderSettings({
       {status === "denied" && <p className="text-xs text-ember mt-3">{t("settings.remindDenied")}</p>}
       {status === "unsupported" && <p className="text-xs text-fg-muted mt-3">{t("settings.remindUnsupported")}</p>}
       {status === "failed" && <p className="text-xs text-ember mt-3">{t("settings.remindFailed")}</p>}
-      <p className="text-xs text-fg-muted opacity-80 mt-3">{t("settings.remindIosHint")}</p>
+      <p className="text-xs text-fg-muted/80 mt-3">{t("settings.remindIosHint")}</p>
     </section>
   );
 }

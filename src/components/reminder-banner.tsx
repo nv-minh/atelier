@@ -18,9 +18,7 @@ export function ReminderBanner({ reminder }: { reminder: Reminder }) {
       <Bell size={16} className="text-ember shrink-0" aria-hidden />
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium">{t(key.title, { n: reminder.n })}</p>
-        {/* text-soft is an @layer components class, NOT a colour key: text-soft/70
-            compiles to nothing. Use a separate opacity utility. */}
-        <p className="text-xs text-fg-muted opacity-80 mt-0.5">{t(key.body, { n: reminder.n })}</p>
+        <p className="text-xs text-fg-muted/80 mt-0.5">{t(key.body, { n: reminder.n })}</p>
       </div>
       <Link
         href={reminder.url}

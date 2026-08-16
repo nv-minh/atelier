@@ -321,16 +321,9 @@ export function LibraryClient({
                   {w.hasNote && <StickyNote size={12} className="text-ember" aria-label={t("notebook.hasNote")} />}
                 </div>
                 {w.definitionEn && <p className="text-sm text-fg-muted mt-1 line-clamp-2">{w.definitionEn}</p>}
-                {/* `text-soft` is a @layer components class, not a Tailwind colour
-                    key — bare/opacity colour utilities like `text-soft/70` need a
-                    DEFAULT colour key to slash-modify, so that form silently
-                    compiles to nothing and the line rendered at full ink instead
-                    of dimmed. Splitting into `text-soft opacity-70` applies the
-                    dimming as a separate utility instead of trying to modify
-                    `text-soft` itself. */}
-                {w.definitionVi && <p className="text-xs text-fg-muted opacity-70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
+                {w.definitionVi && <p className="text-xs text-fg-muted/70 mt-0.5 line-clamp-1">{w.definitionVi}</p>}
                 {w.synonyms.length > 0 && (
-                  <p className="text-xs text-fg-muted opacity-80 mt-1">
+                  <p className="text-xs text-fg-muted/80 mt-1">
                     <span className="text-moss-600 dark:text-moss-400">{t("browse.syn")}</span> {w.synonyms.slice(0, 3).join(", ")}
                   </p>
                 )}
