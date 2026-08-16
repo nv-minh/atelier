@@ -17,5 +17,9 @@
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // scripts/tmp is gitignored throwaway probes written next to whatever branch
+  // they were debugging, so they routinely import symbols that exist only on
+  // that branch. Type-checking them makes `tsc --noEmit` fail on every OTHER
+  // branch for reasons that have nothing to do with the code being changed.
+  "exclude": ["node_modules", "scripts/tmp"]
 }
