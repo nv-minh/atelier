@@ -4,6 +4,12 @@
 - **Commit SHA (lúc đo):** `0489b995c23f751b1f2bda3f27f00875115221f5` (`0489b99`, branch `fix/ui-blocking-bugs`, working tree sạch, không có thay đổi trong `src/`)
 - **Tag ảnh chụp tương ứng:** `t00-baseline` (`data/ui-shots/t00-baseline/`, 84 file PNG — không commit, đã có trong `.gitignore`)
 - **Server đo:** `npm run build && npm start` (bản build production, cổng 3000), Chromium do Playwright điều khiển.
+- **Ghi chú vòng sửa 1 (`task-1-fix-round-1.md`):** ảnh `t00-baseline` đã được **xoá và chụp lại** bằng
+  `scripts/ui/shots.mjs` sau khi vá lỗi phát hiện redirect (phát hiện 1, xem mục ⚠️ 1 ngay dưới đây).
+  `src/` không đổi gì so với thời điểm đo gốc ở `0489b99` (`git diff --stat src/` vẫn trống lúc chụp
+  lại — đã xác nhận bảng kích thước route ở mục 2 dưới đây in ra y hệt build gốc), nên toàn bộ số đo
+  Lighthouse/kích thước route bên dưới vẫn đúng nguyên trạng; chỉ có ảnh PNG và cách công cụ *báo cáo*
+  route bị chuyển hướng là thay đổi.
 
 ## ⚠️ Hai phát hiện về môi trường cần biết trước khi đọc số liệu dưới đây
 
@@ -31,6 +37,18 @@ bypass, không phải bản đã đăng nhập.
 Muốn xem trải nghiệm đã đăng nhập thật (dùng cho audit ở
 `docs/superpowers/notes/2026-08-16-ui-v2-audit-logged-in.md`) phải chạy `npm run dev` — dev không ép
 `NODE_ENV=production` nên `AUTH_BYPASS` hoạt động đúng như tài liệu.
+
+**Hệ quả trên chính file ảnh (không chỉ trên HTTP status — vá ở vòng sửa 1):** vì `page.goto()` tự đi
+theo redirect, 6 file `data/ui-shots/t00-baseline/study__*.png` (3 bề rộng × 2 theme) **không phải**
+ảnh của `/study` — chúng byte-identical với `login__*.png` tương ứng (đã xác minh lại bằng MD5 sau khi
+chụp lại), tức route duy nhất trong 14 route của tag này mà tên file nói dối về thứ nó chụp. Từ vòng
+sửa 1, `scripts/ui/shots.mjs` phát hiện việc này tường minh (đi ngược
+`response.request().redirectedFrom()`) và ghi vào `data/ui-shots/t00-baseline/manifest.json` — bản ghi
+`/study` có `"redirected": true, "finalUrl": ".../login?callbackUrl=%2Fstudy"` — cũng như một hạng mục
+riêng trong dòng tổng kết stdout, tách khỏi hạng mục non-200. Quy ước xử lý trường hợp này cho **mọi**
+plan sau (route nào phải chụp trên `npm run dev` thay vì `npm start` để không dính lại đúng lỗi này) đã
+ghi tại spec **§6.1** (`docs/superpowers/specs/2026-08-16-ui-atelier-v2-design.md`) — xem ở đó, không
+nhắc lại lập luận tại đây.
 
 ### 2. Ảnh `fullPage: true` có thể "nhân đôi" thanh nav dưới giữa trang — đây là lỗi của công cụ chụp, không phải lỗi app
 
@@ -132,7 +150,27 @@ huy hiệu/heatmap/forecast tải trong 1 lần fetch phía server, xem `src/app
 ## 3. Tổng byte ảnh của `/browse` trang 1
 
 Đo bằng Playwright (`page.on('response')`, lọc `resourceType() === 'image'`, cộng
-`(await response.body()).length`), trên bản build production, trạng thái khách (trang 1 công khai):
+`(await response.body()).length`), trên bản build production, trạng thái khách, `/browse` trang 1
+mặc định (`scope=all`, xem `src/app/browse/page.tsx:22-38`).
 
-- **Số ảnh:** 46
-- **Tổng byte:** 1.589.458 bytes (≈ 1552.2 KiB / ≈ 1.52 MiB)
+**Điều kiện đo — bổ sung ở vòng sửa 1 (phát hiện 3):** `browser.newContext()` **không** truyền
+`viewport` (mặc định của Playwright là **1280×720**, `deviceScaleFactor: 1`), điều hướng bằng
+`waitUntil: "networkidle"`, không cookie/đăng nhập.
+
+**Con số này không tất định tuyệt đối ngay cả ở cùng một viewport** — đã xác minh trực tiếp bằng cách
+đo lại 6 lần liên tiếp ở đúng viewport 1280×720/dsf 1 vừa nêu: 5/6 lần ra **37 ảnh / 1.573.222 byte**,
+1/6 lần ra **22 ảnh / 787.832 byte** (ngoại lệ). Nguyên nhân: `/browse` dùng `loading="lazy"` gốc của
+trình duyệt (`src/components/word-image.tsx:54`), không dùng `IntersectionObserver` tự viết, nên số
+ảnh Chromium quyết định tải trước khi sự kiện `networkidle` chốt phụ thuộc thời điểm CPU/scheduler xử
+lý ngưỡng "gần viewport" của lazy-load gốc — **không chỉ** phụ thuộc bề rộng khung nhìn. Đo thêm ở
+375/414/768/1024/1280/1440px (dsf 1 và 2) cho kết quả rơi đúng vào hai cụm trên bất kể bề rộng, xác
+nhận bề rộng khung nhìn không phải biến duy nhất như phỏng đoán ban đầu của reviewer ở phát hiện 3.
+
+- **Số ảnh (đại diện, đo lại ở vòng sửa 1):** 37
+- **Tổng byte (đại diện, đo lại ở vòng sửa 1):** 1.573.222 bytes (≈ 1536.3 KiB / ≈ 1.50 MiB)
+- Con số gốc của note này trước vòng sửa 1 — **46 ảnh / 1.589.458 byte** — và con số reviewer đo lại ở
+  phát hiện 3 — **37 ảnh / 1.573.222 byte** — đều là số đo thật ở các lần chạy khác nhau của cùng một
+  phép đo không hoàn toàn tất định; không con số nào trong ba con số này (46/1.589.458, 37/1.573.222
+  reviewer, 37/1.573.222 đo lại ở vòng sửa 1) bị bịa. Muốn có con số ổn định, plan sau phải đổi
+  phương pháp đo (ví dụ cuộn hết trang bằng tay trước khi đếm, hoặc tắt lazy-load tạm thời khi đo) —
+  nằm ngoài phạm vi Task 1.
