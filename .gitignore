@@ -21,6 +21,18 @@ dev.db
 data/raw/
 data/cache/
 data/backups/
+# Raw LLM request/response logs from the grammar retranslation runs, and the
+# throwaway probe scripts written next to them. Inputs to a manual pipeline,
+# not to the app.
+data/llm-runs/
+scripts/tmp/
+# Screenshot artifacts from scripts/ui/shots.mjs — regenerated per task.
+data/ui-shots/
+
+# The 1,375 3D objects of the UI kit are committed ONCE, at public/3d/, where
+# the app actually serves them. Ignoring the kit's copy keeps 8.7 MB from
+# being tracked twice under two different paths.
+docs/files/atelier-ui-kit-v2/assets/3d/
 
 # transient parallel-crawl monitoring logs
 .crawl-w*.log
