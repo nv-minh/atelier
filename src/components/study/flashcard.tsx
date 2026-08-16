@@ -60,7 +60,16 @@ export function Flashcard({
           style={{ minHeight: "min(64vh, 520px)" }}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          onClick={() => !flipped && onFlip()}
+          onClick={(e) => {
+            // Toggle BOTH ways: the front says "tap to reveal", and the back
+            // must be flippable back too — on mobile there is no keyboard for
+            // the Space shortcut, so a one-way flip traps the answer side.
+            // Taps on controls living inside a face (audio, star, image
+            // search link, the <details> toggle) must not flip the card.
+            const el = e.target as Element;
+            if (el.closest("button,a,input,textarea,select,summary,[role='button']")) return;
+            onFlip();
+          }}
         >
           {/* FRONT */}
           <FrontFace card={card} dir={dir} clozeText={clozeText} />
