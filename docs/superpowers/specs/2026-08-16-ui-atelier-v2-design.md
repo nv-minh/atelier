@@ -230,6 +230,8 @@ npm run ui:shots -- --tag=<task>
 **R22** **Không rebase nhánh dài.** `git merge main` sau mỗi lần Plan 0 (và các fix sau) vào `main`. Một lần sed 530 dòng phát lại qua rebase là cỗ máy đẻ xung đột. Xếp `nav.tsx`, `browse/library-client.tsx`, `topics/*` — đúng những file `main` hay đụng — vào **cuối** lịch viết lại.
 **R23** **Bỏ `relative z-10` ở `layout.tsx:146` là giải phóng một stacking context.** Nó tồn tại để nội dung nằm trên lớp nhiễu `body::before`; lớp nhiễu bị xoá thì wrapper cũng đi theo, nhưng khi đó `pwa-install` (z-50) và `auth-gate` (z-[60]) — vốn là anh em của wrapper — đổi tương quan với nav. Kiểm đích danh ở task đổi màu, rồi triệt tiêu hẳn ở task token hoá z-index.
 
+**R24 — Hai vết nứt tương phản do cú đổi token, đã đo và sửa ở Plan 1 Task 3.** `ember.400`/`ember.500` (ramp cũ) có call site thật ("Khó" trong `rating-buttons.tsx` + `session-summary.tsx`) → trỏ sang `--due`, đúng vai trò hổ phách/cảnh báo thay vì accent chính. `.grammar-prose span.ending` đọc `--ember`/`--accent` đo được 3,78–4,09:1 trên navy dark (dưới AA 4.5:1) → đổi sang `--accent-fg` (8,3–9:1). Bài học cho mọi task còn lại đọc token qua lớp tương thích: **đo contrast bằng công thức luminance WCAG thật khi đổi nền, đừng giả định token cũ vẫn đạt chuẩn trên nền mới.**
+
 ---
 
 ## 8. Lộ trình
