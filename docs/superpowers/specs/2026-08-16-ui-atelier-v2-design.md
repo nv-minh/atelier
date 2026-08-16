@@ -184,6 +184,8 @@ Vì vậy, quy ước cho mọi plan:
 - **Số liệu hiệu năng** (Lighthouse, kích thước route, byte ảnh) luôn đo trên **bản build production**, và luôn ở trạng thái khách. So sánh với Plan 0 chỉ hợp lệ khi cùng một chế độ.
 - Mọi bảng số phải ghi rõ nó đo ở chế độ nào. Số không đo được thì ghi "không đo được" kèm lý do — **tuyệt đối không bịa**.
 
+**Byte ảnh của `/browse` không tất định nếu đo bằng `networkidle`.** Đo lại 6 lần ở cùng viewport 1280×720/dsf 1 cho 5 lần `37 ảnh / 1.573.222 byte` và 1 lần `22 ảnh / 787.832 byte`; đo ở 375→1440px (dsf 1 và 2) vẫn rơi vào đúng hai cụm đó. Nguyên nhân: `/browse` dùng `loading="lazy"` gốc của trình duyệt (`src/components/word-image.tsx:54`), nên số ảnh Chromium kịp tải trước khi `networkidle` chốt phụ thuộc scheduler, **không** phụ thuộc bề rộng khung nhìn. **Plan 4 phải cuộn hết trang rồi mới đếm** (hoặc tắt lazy-load lúc đo) nếu muốn con số "sau" so được với con số "trước". Con số nền để so: **~1,5 MB, 37–46 ảnh, trang 1, trạng thái khách**.
+
 **Ảnh `fullPage: true` vẽ lặp thanh nav `position: fixed`.** Với trang cao hơn khung nhìn, Chromium/Playwright đôi khi vẽ thanh nav đáy (`src/components/nav.tsx:93`) lặp lại ở giữa ảnh. **Đó là hạn chế của công cụ chụp, không phải lỗi app** — đã xác minh bằng cuộn tay. Đừng mở bug cho nó, và đừng "sửa" bố cục vì nó.
 
 **Cổng của mọi task:**
