@@ -46,6 +46,23 @@
   ::selection {
     background-color: rgb(var(--accent-rgb) / 0.25);
   }
+
+  /* Deferred at Task 3 (no call site yet, risk of changing existing
+     button/link sizing sight-unseen) — safe to add now that Task 6's
+     Button/IconButton primitives define their own explicit heights, and this
+     rule only draws an outline, it never affects box layout. Closes a real
+     gap: there was no visible :focus-visible ring anywhere in the app before
+     this. Verbatim from docs/files/atelier-ui-kit-v2/02-tokens.css §6. */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius: var(--r-xs);
+  }
+
+  :where(button, a[role="button"], [role="tab"]) {
+    min-height: var(--tap-min);
+    touch-action: manipulation;
+  }
 }
 
 @layer components {
@@ -225,9 +242,9 @@
   /* ── Atelier v2 kit §6 BASE (selected) + §7 ASSET 3D ─────────────────
      Verbatim from docs/files/atelier-ui-kit-v2/02-tokens.css lines 265-336,
      restricted to the classes/keyframes plan-1-task-3-brief Step 2.9 names —
-     html/body/focus-visible/tap-target rules from that section are NOT
-     copied (body is already handled above; the rest has no call site yet
-     and would risk changing existing button/link sizing sight-unseen). */
+     body is already handled above. The focus-visible and tap-target rules
+     from that section were deferred here at Task 3, then added to @layer
+     base (Task 6 follow-up) once Button/IconButton existed to make them safe. */
   .h-screen-dvh { height: 100dvh; }
   .min-h-screen-dvh { min-height: 100dvh; }
   .tabular { font-variant-numeric: tabular-nums; }

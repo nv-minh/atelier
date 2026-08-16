@@ -171,12 +171,9 @@ export function TopicViewer({
 
         {/* Nav controls (replaces rating buttons in practice mode) */}
         <div className="mt-6 grid grid-cols-2 gap-3">
-          <button
-            onClick={prev}
-            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 bg-surface py-3.5 font-medium hover:bg-paper-200/50 transition-colors"
-          >
+          <Button onClick={prev} variant="secondary" size="md">
             <ChevronLeft size={18} /> {t("topics.previous")}
-          </button>
+          </Button>
           <Button onClick={next} variant="primary" size="md">
             {t("topics.next")} <ChevronRight size={18} />
           </Button>

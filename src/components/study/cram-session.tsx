@@ -155,10 +155,14 @@ export function CramSession({
 
         {/* Cram nav: Prev / Mark review / Next */}
         <div className="mt-6 grid grid-cols-3 gap-3">
-          <button onClick={prev} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-hairline/10 bg-surface py-3.5 font-medium hover:bg-paper-200/50">
+          <Button onClick={prev} variant="secondary" size="md">
             <ChevronLeft size={18} /> {t("topics.previous")}
-          </button>
-          <button onClick={markAgain} className="inline-flex items-center justify-center gap-2 rounded-2xl border border-ember/30 text-ember py-3.5 font-medium hover:bg-ember/5">
+          </Button>
+          {/* Not a Button variant: this is a semantic "try again" action tinted
+              with the accent border/text (not a rounded-2xl shape as before —
+              matching its siblings' rounded-full so the row reads as one set,
+              per spec §2.2 "không trộn bo nhẹ với bo mạnh trong cùng màn hình"). */}
+          <button onClick={markAgain} className="inline-flex items-center justify-center gap-2 rounded-full border border-ember/30 text-ember py-3.5 font-medium hover:bg-ember/5">
             {t("study.cramAgain")}
           </button>
           <Button onClick={next} variant="primary" size="md">
