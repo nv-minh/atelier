@@ -16,7 +16,7 @@
 //   npx tsx scripts/grammar/translate-lessons.ts --dry-run             # Tier-0 report only
 //   npx tsx scripts/grammar/translate-lessons.ts                       # Tier-0 (glossary + spacing), writes DB
 //   npx tsx scripts/grammar/translate-lessons.ts --export out.json [--only 245,246] [--limit 40]
-//   npx tsx scripts/grammar/translate-lessons.ts --import out.vi.json [--dry-run]
+//   npx tsx scripts/grammar/translate-lessons.ts --import out.vi.json [--dry-run] [--dump dir]
 import "../../prisma/load-env";
 import { PrismaClient } from "@prisma/client";
 import { existsSync, mkdirSync, readFileSync, appendFileSync, writeFileSync } from "node:fs";
@@ -48,6 +48,7 @@ const ONLY = argOf("--only")?.split(",").map(Number).filter(Number.isInteger) ??
 const LIMIT = Number(argOf("--limit") ?? "0") || Infinity;
 const EXPORT_FILE = argOf("--export");
 const IMPORT_FILE = argOf("--import");
+const DUMP_DIR = argOf("--dump"); // write each would-be lesson body here (works with --dry-run)
 type Answers = Record<string, Record<string, string>>;
 const answers: Answers = IMPORT_FILE ? (JSON.parse(readFileSync(resolve(IMPORT_FILE), "utf8")) as Answers) : {};
 const exported: Record<string, { title: string; segments: Record<string, string> }> = {};
@@ -170,6 +171,11 @@ async function processLesson(lesson: Row): Promise<void> {
     return;
   }
 
+  if (DUMP_DIR) {
+    mkdirSync(resolve(DUMP_DIR), { recursive: true });
+    writeFileSync(resolve(DUMP_DIR, `${lesson.id}.after.html`), html, "utf-8");
+    writeFileSync(resolve(DUMP_DIR, `${lesson.id}.before.html`), viHtml, "utf-8");
+  }
   if (html === viHtml) {
     report.noChange++;
     return;
