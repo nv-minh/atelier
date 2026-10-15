@@ -57,3 +57,12 @@ describe("auditStem (Task 1 branches)", () => {
     expect(auditStem("I have _____ idea.", null)).toBe("ok");
   });
 });
+
+describe("auditLessonLang with deliberate-English keeps", () => {
+  it("does not count a block whose English segment is allowlisted", () => {
+    const en = "<p>He {0}goes{1} home.</p>".replace("{0}", "<b>").replace("{1}", "</b>");
+    const kept = new Set(["He {0}goes{1} home."]);
+    expect(auditLessonLang(en, en, PC, kept).proseGaps).toBe(0);
+    expect(auditLessonLang(en, en, PC).proseGaps).toBe(1);
+  });
+});

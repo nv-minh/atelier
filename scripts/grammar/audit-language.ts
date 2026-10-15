@@ -4,7 +4,7 @@
 // Usage: npm run grammar:audit-language -- --label baseline|after-lessons|final
 import "../../prisma/load-env";
 import { PrismaClient } from "@prisma/client";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { SEMANTIC_SPAN_CLASSES } from "../../src/lib/grammar/semantic-classes";
 import { auditLessonLang, auditStem, flagTitleVi, type StemAudit } from "../../src/lib/grammar/lang-audit";
@@ -12,6 +12,13 @@ import { isBlankStem } from "../../src/lib/grammar/vi-repair";
 
 const prisma = new PrismaClient();
 const PC: ReadonlySet<string> = new Set(SEMANTIC_SPAN_CLASSES);
+// Segments the translators marked "@keep" (deliberate English), per lesson id.
+const keepFiles = existsSync(resolve("data", "llm-runs"))
+  ? readdirSync(resolve("data", "llm-runs")).filter((f) => /^lesson-keeps-.*\.json$/.test(f)).sort()
+  : [];
+const KEEPS: Record<string, string[]> = keepFiles.length
+  ? (JSON.parse(readFileSync(resolve("data", "llm-runs", keepFiles[keepFiles.length - 1]), "utf8")) as Record<string, string[]>)
+  : {};
 const labelIdx = process.argv.indexOf("--label");
 const LABEL = labelIdx !== -1 && process.argv[labelIdx + 1] ? process.argv[labelIdx + 1] : "adhoc";
 
@@ -33,7 +40,7 @@ async function main(): Promise<void> {
       lesson.viNull++;
       continue;
     }
-    const a = auditLessonLang(l.contentEnHtml, l.contentViHtml, PC);
+    const a = auditLessonLang(l.contentEnHtml, l.contentViHtml, PC, new Set(KEEPS[String(l.id)] ?? []));
     if (a.tagMismatch) lesson.tagMismatch++;
     if (a.proseGaps > 0) {
       lesson.withProseGaps++;

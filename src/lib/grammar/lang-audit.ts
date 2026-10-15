@@ -22,7 +22,8 @@ const HEADING = /^h[1-4]$/;
 export function auditLessonLang(
   enHtml: string,
   viHtml: string,
-  protectedClasses: ReadonlySet<string>
+  protectedClasses: ReadonlySet<string>,
+  allowedEnglish?: ReadonlySet<string>
 ): LessonLangAudit {
   const enScan = scan(enHtml);
   const viScan = scan(viHtml);
@@ -36,7 +37,9 @@ export function auditLessonLang(
   let proseGaps = 0;
   let headingGaps = 0;
   for (const block of enWalk.blocks.values()) {
-    if (!isTranslatableSegment(block, english, toSegment(block))) continue;
+    const segment = toSegment(block);
+    if (!isTranslatableSegment(block, english, segment)) continue;
+    if (allowedEnglish?.has(segment.en)) continue; // deliberate English study material
     const viBlock = viWalk.blocks.get(block.id);
     if (viBlock && VI_DIACRITIC.test(blockProseText(viBlock))) continue;
     proseGaps++;
