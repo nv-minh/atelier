@@ -3,6 +3,7 @@ import {
   checkEntriesVi,
   checkExplanationVi,
   checkLessonVi,
+  fixProtectedSpacing,
   isBlankStem,
   isInflectionPattern,
   repairConfusedEntriesVi,
@@ -211,6 +212,37 @@ describe("repairMistakeTitleVi", () => {
   it("trả null khi tiêu đề không có dạng 'từ khoá (chú giải)'", () => {
     expect(repairMistakeTitleVi("Absorbed", "Hấp thụ")).toBeNull();
     expect(repairMistakeTitleVi("Absorbed (= interested)", null)).toBeNull();
+  });
+});
+
+describe("fixProtectedSpacing", () => {
+  it("chèn khoảng trắng nơi văn VN dính vào span/`<i>` bảo vệ — cả hai phía", () => {
+    // signal-word KHÔNG phải sentence-role class nên <p> vẫn là prose, không
+    // rơi vào quy tắc English-block của vi-repair.
+    const en = '<p>Use the <i>Simple Present</i>and<span class="signal-word">always</span>together.</p>';
+    const vi = '<p>Dùng thì<i>Simple Present</i>và<span class="signal-word">always</span>đi cùng nhau.</p>';
+    const out = fixProtectedSpacing(en, vi)!;
+    // 4: sau "Dùng thì", hai bên "và", và trước "đi cùng nhau".
+    expect(out.fixed).toBe(4);
+    expect(out.html).toBe(
+      '<p>Dùng thì <i>Simple Present</i> và <span class="signal-word">always</span> đi cùng nhau.</p>'
+    );
+  });
+
+  it("KHÔNG đụng chất liệu EN trong khối English (tomato<b>es</b>) hay cặp hình vị", () => {
+    const en = "<td>tomato => tomato<b>es</b></td>";
+    const vi = "<td>tomato => tomato<b>es</b></td>";
+    expect(fixProtectedSpacing(en, vi)!.fixed).toBe(0);
+  });
+
+  it("không chèn khi một bên là dấu câu hoặc đã có sẵn khoảng trắng", () => {
+    const en = "<p>Use (<i>do</i>) and <i>does</i> here.</p>";
+    const vi = "<p>Dùng (<i>do</i>) và <i>does</i> ở đây.</p>";
+    expect(fixProtectedSpacing(en, vi)!.fixed).toBe(0);
+  });
+
+  it("trả null khi hai tài liệu lệch chuỗi thẻ", () => {
+    expect(fixProtectedSpacing("<p>a</p>", "<div>a</div>")).toBeNull();
   });
 });
 
