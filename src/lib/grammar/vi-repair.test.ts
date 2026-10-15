@@ -10,6 +10,7 @@ import {
   repairExplanationVi,
   repairLessonViHtml,
   repairMistakeTitleVi,
+  VI_DIACRITIC,
 } from "./vi-repair";
 
 describe("isInflectionPattern", () => {
@@ -344,5 +345,15 @@ describe("checkEntriesVi — validator Tầng 1", () => {
       ])).ok
     ).toBe(false);
     expect(checkEntriesVi(en, JSON.stringify([{ w: "Bare", m: "  " }, { w: "Bear", m: "y" }])).ok).toBe(false);
+  });
+});
+
+describe("VI_DIACRITIC", () => {
+  it("recognises all-caps Vietnamese such as CHỦ NGỮ and CHÚ Ý", () => {
+    expect(VI_DIACRITIC.test("CHỦ NGỮ")).toBe(true);
+    expect(VI_DIACRITIC.test("CHÚ Ý!!")).toBe(true);
+  });
+  it("still rejects plain English", () => {
+    expect(VI_DIACRITIC.test("SUBJECT")).toBe(false);
   });
 });

@@ -110,7 +110,7 @@ export type Scan = { tags: string[]; nodes: Node[]; blocks: Map<number, Block> }
  * these; English prose never does. The Tier-1 gates use this as the "was this
  * actually translated" test.
  */
-export const VI_DIACRITIC = /[ăâđêôơưĂÂĐÊÔƠƯáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]/;
+export const VI_DIACRITIC = /[ăâđêôơưĂÂĐÊÔƠƯáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]/i;
 
 /**
  * True for a morphology demonstration like "tomato => tomatoes" or
