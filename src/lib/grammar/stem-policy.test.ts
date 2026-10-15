@@ -66,10 +66,23 @@ describe("repairStemVi", () => {
     ).toBe("Đặt trạng từ vào đúng vị trí trong câu");
   });
 
-  it("keeps a quoted target word verbatim, rejects a translated one", () => {
+  it("keeps a quoted target word verbatim and puts it back when it was translated", () => {
     const en = 'What\'s the plural of "Aircraft"?';
     expect(repairStemVi(en, 'Số nhiều của "Aircraft" là gì?')).toBe('Số nhiều của "Aircraft" là gì?');
-    expect(repairStemVi(en, 'Số nhiều của "Máy bay" là gì?')).toBeNull();
+    expect(repairStemVi(en, 'Số nhiều của "Máy bay" là gì?')).toBe('Số nhiều của "Aircraft" là gì?');
+    expect(repairStemVi('The plural of "military" is:', 'Số nhiều của "quân sự" là:')).toBe('Số nhiều của "military" là:');
+  });
+
+  it("restores curly quotes position by position", () => {
+    expect(repairStemVi("Choose “mouse” or “mice”", "Chọn “chuột” hoặc “những con chuột”")).toBe("Chọn “mouse” hoặc “mice”");
+  });
+
+  it("returns null when the quote count differs, so nothing can be placed safely", () => {
+    expect(repairStemVi('What\'s the plural of "mouse" or "louse"?', 'Số nhiều của "chuột" là gì?')).toBeNull();
+  });
+
+  it("returns null for a speaker label whose only Vietnamese was inside the quote", () => {
+    expect(repairStemVi("Tracy: \"I'm driving to work now\".", 'Tracy: "Bây giờ tôi đang lái xe đi làm".')).toBeNull();
   });
 });
 
@@ -78,6 +91,6 @@ describe("checkStemVi", () => {
     const en = "Place the adverb on the correct place in the sentence";
     expect(checkStemVi(en, "Đặt trạng từ vào đúng vị trí trong câu")).toEqual({ ok: true });
     expect(checkStemVi("I have _____ idea.", "Tôi có ý tưởng").ok).toBe(false);
-    expect(checkStemVi('What\'s the plural of "Aircraft"?', 'Số nhiều của "Máy bay" là gì?').ok).toBe(false);
+    expect(checkStemVi('What\'s the plural of "Aircraft"?', 'Số nhiều của "Máy bay" là gì?').ok).toBe(false); // repairable, not stored as is
   });
 });

@@ -61,9 +61,27 @@ export function repairStemVi(en: string, vi: string | null): string | null {
     return `${viCue}: ${hybrid.specimen}`;
   }
 
-  if (!VI_DIACRITIC.test(vi)) return null;
-  if (quotedSpans(en).some((span) => !vi.includes(span))) return null;
-  return vi;
+  const wanted = quotedSpans(en);
+  let out = vi;
+  if (wanted.some((span) => !out.includes(span))) {
+    // The model translated a quoted target word ("mouse" -> "chuột"): put the
+    // English back, but only when both sides quote the same number of spans so
+    // each one has an unambiguous partner.
+    const restored = restoreQuotedSpans(wanted, out);
+    if (restored === null) return null;
+    out = restored;
+  }
+  return VI_DIACRITIC.test(out) ? out : null;
+}
+
+const VI_QUOTE = /(["“])([^"”]+)(["”])/g;
+
+/** Replace the content of the n-th quoted span of `vi` with the n-th English one. */
+function restoreQuotedSpans(wanted: string[], vi: string): string | null {
+  const found = [...vi.matchAll(VI_QUOTE)];
+  if (found.length !== wanted.length) return null;
+  let i = 0;
+  return vi.replace(VI_QUOTE, (_m, open: string, _inner: string, close: string) => `${open}${wanted[i++]}${close}`);
 }
 
 /** ok only for a stem the policy would leave exactly as it is. */
