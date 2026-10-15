@@ -33,6 +33,9 @@
     "grammar:repair-vi": "tsx prisma/grammar-repair-vi.ts",
     "grammar:translate-export": "tsx prisma/grammar-translate-export.ts",
     "grammar:translate-import": "tsx prisma/grammar-translate-import.ts",
+    "grammar:audit-headings": "tsx scripts/grammar/audit-headings.ts",
+    "grammar:translate-lessons": "tsx scripts/grammar/translate-lessons.ts",
+    "grammar:audit-language": "tsx scripts/grammar/audit-language.ts",
     "ui:shots": "node scripts/ui/shots.mjs",
     "postinstall": "prisma generate",
     "brand:icons": "tsx scripts/brand/gen-icons.ts"
