@@ -75,15 +75,17 @@ describe("spliceSegment", () => {
     expect(parts.join("")).toBe("<h2>1. Cách dùng thì <i>Simple Present</i></h2>");
   });
 
-  it("từ chối: thiếu/thừa placeholder, đổi thứ tự, bạ chữ vào khe chỉ có slot", () => {
+  it("từ chối: thiếu/thừa placeholder, đổi thứ tự; chấp nhận khe bị bỏ chữ", () => {
     const html = "<p>Use <i>do</i> and <i>does</i> here.</p>";
     const walk = walkLesson(html, PC);
     const block = [...walk.blocks.values()][0];
     expect(spliceSegment(block, "Dùng {0} và {1} nhé.", [...walk.parts])).toBe(true);
     expect(spliceSegment(block, "Dùng {0} nhé.", [...walk.parts])).toBe(false); // thiếu {1}
     expect(spliceSegment(block, "Dùng {1} và {0} nhé.", [...walk.parts])).toBe(false); // sai thứ tự
-    expect(spliceSegment(block, "Dùng {0}{1} nhé.", [...walk.parts])).toBe(false); // mất chữ giữa 2 slot
-    expect(spliceSegment(block, "Dùng {0} và {1}", [...walk.parts])).toBe(false); // bỏ mất text node cuối
+    // Vietnamese reorders freely ("{0} pronouns" -> "Đại từ {0}"), so a gap that
+    // lost its English words is legal; only the placeholders are invariant.
+    expect(spliceSegment(block, "Dùng {0}{1} nhé.", [...walk.parts])).toBe(true);
+    expect(spliceSegment(block, "Dùng {0} và {1}", [...walk.parts])).toBe(true);
   });
 
   it("từ chối placeholder bịa ra hoặc méo mó", () => {
@@ -181,5 +183,15 @@ describe("spliceSegment when Vietnamese word order drops the leading English wor
     const parts = [...walk.parts];
     expect(spliceSegment(block, "{0} là trợ động từ không?", parts)).toBe(true);
     expect(parts.join("")).toBe("<p><i>do</i> là trợ động từ không?</p>");
+  });
+});
+
+describe("spliceSegment when Vietnamese word order moves text before the placeholder", () => {
+  it('accepts "Đại từ {0}" for "{0} pronouns" and empties the trailing node', () => {
+    const walk = walkLesson("<p><i>Reflexive</i> pronouns</p>", PC);
+    const block = walk.blocks.get(0)!;
+    const parts = [...walk.parts];
+    expect(spliceSegment(block, "Đại từ {0}", parts)).toBe(true);
+    expect(parts.join("")).toBe("<p>Đại từ <i>Reflexive</i></p>");
   });
 });

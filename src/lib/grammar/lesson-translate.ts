@@ -227,10 +227,10 @@ export function spliceSegment(block: SegBlock, translated: string, parts: string
       if (pieces[k].trim() !== "") return false;
       continue;
     }
-    // A stretch that carried content must not be dropped by the translation,
-    // except the leading one: Vietnamese word order legitimately turns
-    // "Is {0} an auxiliary?" into "{0} là trợ động từ không?".
-    if (k > 0 && pieces[k].trim() === "" && gaps[k].some((t) => t.text.trim() !== "")) return false;
+    // Vietnamese word order moves words across placeholders ("Is {0} an
+    // auxiliary?" -> "{0} là trợ động từ không?", "{0} pronouns" -> "Đại từ {0}"),
+    // so a gap may legitimately end up empty. Placeholder count and order are
+    // the invariants; the prose gate checks the result actually reads Vietnamese.
     writes.push({ index: gaps[k][0].partIndex, text: pieces[k] });
     for (const extra of gaps[k].slice(1)) writes.push({ index: extra.partIndex, text: "" });
   }
