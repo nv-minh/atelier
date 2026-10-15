@@ -36,6 +36,7 @@
     "grammar:audit-headings": "tsx scripts/grammar/audit-headings.ts",
     "grammar:translate-lessons": "tsx scripts/grammar/translate-lessons.ts",
     "grammar:audit-language": "tsx scripts/grammar/audit-language.ts",
+    "grammar:translate-titles": "tsx scripts/grammar/translate-titles.ts",
     "ui:shots": "node scripts/ui/shots.mjs",
     "postinstall": "prisma generate",
     "brand:icons": "tsx scripts/brand/gen-icons.ts"
