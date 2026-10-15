@@ -159,3 +159,27 @@ describe("assembleTranslated with images and tables", () => {
     expect(scan(out!.html).tags).toEqual(scan(en).tags);
   });
 });
+
+describe("spliceSegment with a block that opens with a protected span", () => {
+  it("maps the first translated piece to the text after the leading slot, not to the empty node before it", () => {
+    const en = '<p><span class="adjective">Adjectives</span> tell us <strong>something</strong> now.</p>';
+    const walk = walkLesson(en, PC);
+    const block = walk.blocks.get(0)!;
+    expect(toSegment(block).en).toBe("{0} tell us {1}something{2} now.");
+    const parts = [...walk.parts];
+    expect(spliceSegment(block, "{0} cho ta biết {1}điều gì đó{2} ngay bây giờ.", parts)).toBe(true);
+    expect(parts.join("")).toBe(
+      '<p><span class="adjective">Adjectives</span> cho ta biết <strong>điều gì đó</strong> ngay bây giờ.</p>'
+    );
+  });
+});
+
+describe("spliceSegment when Vietnamese word order drops the leading English words", () => {
+  it('accepts "{0} là trợ động từ không?" for "Is {0} an auxiliary?" and empties the leading node', () => {
+    const walk = walkLesson("<p>Is <i>do</i> an auxiliary?</p>", PC);
+    const block = walk.blocks.get(0)!;
+    const parts = [...walk.parts];
+    expect(spliceSegment(block, "{0} là trợ động từ không?", parts)).toBe(true);
+    expect(parts.join("")).toBe("<p><i>do</i> là trợ động từ không?</p>");
+  });
+});

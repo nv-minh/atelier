@@ -33,7 +33,7 @@ import {
   type SegBlock,
   type Segment,
 } from "../../src/lib/grammar/lesson-translate";
-import { VI_DIACRITIC, checkLessonVi, englishBlockIds, fixProtectedSpacing, scan } from "../../src/lib/grammar/vi-repair";
+import { VI_DIACRITIC, checkLessonVi, englishBlockIds, fixProtectedSpacing, repairLessonViHtml, scan } from "../../src/lib/grammar/vi-repair";
 
 const prisma = new PrismaClient();
 const PC: ReadonlySet<string> = new Set(SEMANTIC_SPAN_CLASSES);
@@ -90,7 +90,18 @@ async function processLesson(lesson: Row): Promise<void> {
     enTags.tags.length === viTags.tags.length &&
     enTags.tags.every((t, i) => t === viTags.tags[i]);
   if (!aligned) report.unaligned++;
-  const base = aligned ? viHtml : enHtml;
+  // Restore protected zones from the English original before anything else, and
+  // remember which prose blocks the machine round corrupted there: a block that
+  // reads Vietnamese but lost or merged a protected node ("...với and:" with
+  // "and" emptied) must be translated again, not skipped as "already good".
+  const repaired = aligned ? repairLessonViHtml(enHtml, viHtml) : null;
+  const base = repaired ? repaired.html : aligned ? viHtml : enHtml;
+  const corrupt = new Set<number>();
+  if (aligned) {
+    for (let n = 0; n < enTags.nodes.length; n++) {
+      if (enTags.nodes[n].protectedSpan && enTags.nodes[n].text !== viTags.nodes[n].text) corrupt.add(enTags.nodes[n].blockId);
+    }
+  }
 
   const candidates = translatableSegments(enHtml);
   const translations = new Map<number, string>();
@@ -98,7 +109,7 @@ async function processLesson(lesson: Row): Promise<void> {
   const pending: Array<{ blockId: number; segment: Segment }> = [];
 
   for (const { block, segment } of candidates) {
-    if (aligned && blockIsTranslated(viHtml, block.id, PC)) continue; // already Vietnamese
+    if (aligned && !corrupt.has(block.id) && blockIsTranslated(base, block.id, PC)) continue; // already Vietnamese
     const glossary = translateHeadingGlossary(segment.en);
     if (glossary !== null) {
       translations.set(block.id, glossary);
@@ -123,6 +134,7 @@ async function processLesson(lesson: Row): Promise<void> {
     if (got === "@keep") {
       allowedEnglish.add(p.segment.en);
       keepMap[String(lesson.id)] = [...(keepMap[String(lesson.id)] ?? []), p.segment.en];
+      translations.set(p.blockId, p.segment.en); // restore the English study material over any machine translation
       report.keeps++;
       continue;
     }

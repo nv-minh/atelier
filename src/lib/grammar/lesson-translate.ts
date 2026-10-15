@@ -193,41 +193,47 @@ export function isTranslatableSegment(
  * translation, never splices garbage.
  */
 export function spliceSegment(block: SegBlock, translated: string, parts: string[]): boolean {
-  const tokens = translated.split(/(\{\d+\})/);
-  const textItems = block.items.filter((it): it is SegText => it.kind === "text");
-  const writes: Array<{ index: number; text: string }> = [];
-  let slot = 0;
-  let textIdx = 0;
-  let pending = ""; // text accumulated since the last target/placeholder
-  let pendingHasTarget = false;
+  // Group the block's text nodes into gaps: gap k holds the text nodes sitting
+  // after slot k-1 and before slot k, which is exactly the stretch of the
+  // segment string between placeholders {k-1} and {k}. A block that opens with
+  // a slot still owns an empty gap-0 node, so mapping by position in a flat
+  // list would shift every piece one node to the left.
+  const gaps: SegText[][] = [[]];
+  for (const item of block.items) {
+    if (item.kind === "slot") gaps.push([]);
+    else gaps[gaps.length - 1].push(item);
+  }
 
+  const tokens = translated.split(/(\{\d+\})/);
+  const pieces: string[] = [""];
   for (const tok of tokens) {
     if (tok === "") continue;
     const m = /^\{(\d+)\}$/.exec(tok);
     if (m) {
       if (m[1] !== String(Number(m[1]))) return false; // "{00}" and friends are mangled
-      if (Number(m[1]) !== slot) return false;
-      if (!pendingHasTarget && pending !== "") return false;
-      slot++;
-      pending = "";
-      pendingHasTarget = false;
+      if (Number(m[1]) !== pieces.length - 1) return false; // out of order, repeated or skipped
+      pieces.push("");
       continue;
     }
     if (/^\{[^}]*\}$/.test(tok)) return false; // an invented or broken placeholder
-    pending += tok;
-    if (textIdx < textItems.length) {
-      writes.push({ index: textItems[textIdx].partIndex, text: pending });
-      textIdx++;
-      pending = "";
-      pendingHasTarget = true;
+    pieces[pieces.length - 1] += tok;
+  }
+  if (pieces.length !== gaps.length) return false; // a placeholder is missing or extra
+
+  const writes: Array<{ index: number; text: string }> = [];
+  for (let k = 0; k < gaps.length; k++) {
+    if (gaps[k].length === 0) {
+      // Nowhere to put text: only whitespace the translation added is harmless to drop.
+      if (pieces[k].trim() !== "") return false;
+      continue;
     }
+    // A stretch that carried content must not be dropped by the translation,
+    // except the leading one: Vietnamese word order legitimately turns
+    // "Is {0} an auxiliary?" into "{0} là trợ động từ không?".
+    if (k > 0 && pieces[k].trim() === "" && gaps[k].some((t) => t.text.trim() !== "")) return false;
+    writes.push({ index: gaps[k][0].partIndex, text: pieces[k] });
+    for (const extra of gaps[k].slice(1)) writes.push({ index: extra.partIndex, text: "" });
   }
-  if (slot !== block.items.filter((it) => it.kind === "slot").length) return false;
-  // Uncovered trailing nodes may only be whitespace the translation dropped.
-  for (; textIdx < textItems.length; textIdx++) {
-    if (textItems[textIdx].text.trim() !== "") return false;
-  }
-  if (!pendingHasTarget && pending !== "") return false;
   for (const w of writes) parts[w.index] = w.text;
   return true;
 }
