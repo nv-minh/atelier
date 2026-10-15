@@ -9,6 +9,7 @@ import {
   walkLesson,
 } from "./lesson-translate";
 import { VI_DIACRITIC, englishBlockIds, fixProtectedSpacing, isBlankStem, scan } from "./vi-repair";
+import { quotedSpans, repairStemVi, splitHybridStem } from "./stem-policy";
 
 export type LessonLangAudit = {
   proseGaps: number;
@@ -69,10 +70,12 @@ export type StemAudit =
   | "quote-mangled"
   | "specimen-translated";
 
-/** Task 1 covers the structural branches; stem-policy refines the rest. */
+/** Classify a stored questionVi against the stem policy (see stem-policy.ts). */
 export function auditStem(en: string, vi: string | null): StemAudit {
   if (vi === null) return "ok";
   if (isBlankStem(en)) return "blank-has-vi";
   if (!VI_DIACRITIC.test(vi)) return "vi-lacks-diacritic";
+  if (splitHybridStem(en) && repairStemVi(en, vi) !== vi) return "specimen-translated";
+  if (quotedSpans(en).some((span) => !vi.includes(span))) return "quote-mangled";
   return "ok";
 }

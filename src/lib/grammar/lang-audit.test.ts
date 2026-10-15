@@ -66,3 +66,25 @@ describe("auditLessonLang with deliberate-English keeps", () => {
     expect(auditLessonLang(en, en, PC).proseGaps).toBe(1);
   });
 });
+
+describe("auditStem policy branches", () => {
+  it("flags a hybrid stem whose English sentence was translated", () => {
+    expect(
+      auditStem(
+        "Transfer this Active Voice sentence into the Passive one: Britain kept Napoleon on the island of Saint Helena.",
+        "Chuyển câu Chủ động này sang câu Bị động: Nước Anh giữ Napoléon trên đảo Saint Helena."
+      )
+    ).toBe("specimen-translated");
+  });
+  it("accepts a hybrid stem whose sentence is verbatim English", () => {
+    expect(
+      auditStem(
+        "Transfer this Active Voice sentence into the Passive one: Britain kept Napoleon on the island of Saint Helena.",
+        "Chuyển câu Chủ động này sang câu Bị động: Britain kept Napoleon on the island of Saint Helena."
+      )
+    ).toBe("ok");
+  });
+  it("flags a translated quoted word", () => {
+    expect(auditStem('What\'s the plural of "Aircraft"?', 'Số nhiều của "Máy bay" là gì?')).toBe("quote-mangled");
+  });
+});
