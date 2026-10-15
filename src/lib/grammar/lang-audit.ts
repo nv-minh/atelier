@@ -7,6 +7,8 @@ import {
   isTranslatableSegment,
   toSegment,
   walkLesson,
+  type SegBlock,
+  type Walk,
 } from "./lesson-translate";
 import { VI_DIACRITIC, englishBlockIds, fixProtectedSpacing, isBlankStem, scan } from "./vi-repair";
 import { quotedSpans, repairStemVi, splitHybridStem } from "./stem-policy";
@@ -15,10 +17,45 @@ export type LessonLangAudit = {
   proseGaps: number;
   headingGaps: number;
   gluedSpans: number;
+  emptiedInline: number; // English words inside <b>/<em>/... that the VI body lost
   tagMismatch: boolean;
 };
 
 const HEADING = /^h[1-4]$/;
+const INLINE_OPEN = /^<(b|strong|em|u|cite|sup|sub|mark|span)\b[^>]*>$/i;
+const INLINE_CLOSE = /^<\/(b|strong|em|u|cite|sup|sub|mark|span)>$/i;
+
+/** Text of the gaps between consecutive slots of a block (gap k sits before slot k). */
+function gapTexts(block: SegBlock): { gaps: string[]; slots: string[] } {
+  const gaps = [""];
+  const slots: string[] = [];
+  for (const item of block.items) {
+    if (item.kind === "slot") {
+      slots.push(item.raw);
+      gaps.push("");
+    } else gaps[gaps.length - 1] += item.text;
+  }
+  return { gaps, slots };
+}
+
+/** Per block id: how many inline elements lost their English letters in the Vietnamese block. */
+export function emptiedInlineBlocks(enWalk: Walk, viWalk: Walk): Map<number, number> {
+  const out = new Map<number, number>();
+  for (const [id, enBlock] of enWalk.blocks) {
+    const viBlock = viWalk.blocks.get(id);
+    if (!viBlock) continue;
+    const en = gapTexts(enBlock);
+    const vi = gapTexts(viBlock);
+    for (let k = 1; k < en.gaps.length - 1 && k < vi.gaps.length; k++) {
+      const open = INLINE_OPEN.exec(en.slots[k - 1]);
+      const close = INLINE_CLOSE.exec(en.slots[k]);
+      if (open && close && open[1].toLowerCase() === close[1].toLowerCase() && /[A-Za-z]/.test(en.gaps[k]) && vi.gaps[k].trim() === "") {
+        out.set(id, (out.get(id) ?? 0) + 1);
+      }
+    }
+  }
+  return out;
+}
 
 export function auditLessonLang(
   enHtml: string,
@@ -29,7 +66,7 @@ export function auditLessonLang(
   const enScan = scan(enHtml);
   const viScan = scan(viHtml);
   if (enScan.tags.length !== viScan.tags.length || enScan.tags.some((t, i) => t !== viScan.tags[i])) {
-    return { proseGaps: 0, headingGaps: 0, gluedSpans: 0, tagMismatch: true };
+    return { proseGaps: 0, headingGaps: 0, gluedSpans: 0, emptiedInline: 0, tagMismatch: true };
   }
   const english = englishBlockIds(enScan);
   const enWalk = walkLesson(enHtml, protectedClasses);
@@ -47,7 +84,7 @@ export function auditLessonLang(
     if (HEADING.test(block.tag)) headingGaps++;
   }
   const gluedSpans = fixProtectedSpacing(enHtml, viHtml)?.fixed ?? 0;
-  return { proseGaps, headingGaps, gluedSpans, tagMismatch: false };
+  return { proseGaps, headingGaps, gluedSpans, emptiedInline: [...emptiedInlineBlocks(enWalk, viWalk).values()].reduce((x, y) => x + y, 0), tagMismatch: false };
 }
 
 /**

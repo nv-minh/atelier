@@ -220,8 +220,17 @@ export function spliceSegment(block: SegBlock, translated: string, parts: string
   }
   if (pieces.length !== gaps.length) return false; // a placeholder is missing or extra
 
+  const slots = block.items.filter((it): it is SegSlot => it.kind === "slot");
   const writes: Array<{ index: number; text: string }> = [];
   for (let k = 0; k < gaps.length; k++) {
+    // English inside inline emphasis ("the verb <b>be</b>") must survive: an
+    // emptied gap between an open and its matching close tag drops the word the
+    // sentence is about, and no gate can see it afterwards.
+    if (k > 0 && k < slots.length && pieces[k].trim() === "" && gaps[k].some((t) => /[A-Za-z]/.test(t.text))) {
+      const open = /^<(b|strong|em|u|cite|sup|sub|mark|span)\b[^>]*>$/i.exec(slots[k - 1].raw);
+      const close = /^<\/(b|strong|em|u|cite|sup|sub|mark|span)>$/i.exec(slots[k].raw);
+      if (open && close && open[1].toLowerCase() === close[1].toLowerCase()) return false;
+    }
     if (gaps[k].length === 0) {
       // Nowhere to put text: only whitespace the translation added is harmless to drop.
       if (pieces[k].trim() !== "") return false;

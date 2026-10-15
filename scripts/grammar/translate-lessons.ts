@@ -33,6 +33,7 @@ import {
   type SegBlock,
   type Segment,
 } from "../../src/lib/grammar/lesson-translate";
+import { emptiedInlineBlocks } from "../../src/lib/grammar/lang-audit";
 import { VI_DIACRITIC, checkLessonVi, englishBlockIds, fixProtectedSpacing, repairLessonViHtml, scan } from "../../src/lib/grammar/vi-repair";
 
 const prisma = new PrismaClient();
@@ -102,6 +103,8 @@ async function processLesson(lesson: Row): Promise<void> {
     for (let n = 0; n < enTags.nodes.length; n++) {
       if (enTags.nodes[n].protectedSpan && enTags.nodes[n].text !== viTags.nodes[n].text) corrupt.add(enTags.nodes[n].blockId);
     }
+    // English inside <b>/<em>/... that the machine round emptied ("the verb be" -> "").
+    for (const id of emptiedInlineBlocks(walkLesson(enHtml, PC), walkLesson(base, PC)).keys()) corrupt.add(id);
   }
 
   const candidates = translatableSegments(enHtml);

@@ -16,7 +16,7 @@ describe("auditLessonLang", () => {
 
   it("reports zero gaps for a fully Vietnamese lesson", () => {
     const vi = "<h2>Cách dùng thì hiện tại đơn</h2><p>Dùng cho thói quen.</p>";
-    expect(auditLessonLang(en, vi, PC)).toEqual({ proseGaps: 0, headingGaps: 0, gluedSpans: 0, tagMismatch: false });
+    expect(auditLessonLang(en, vi, PC)).toEqual({ proseGaps: 0, headingGaps: 0, gluedSpans: 0, emptiedInline: 0, tagMismatch: false });
   });
 
   it("counts a Vietnamese word glued to a protected <i>", () => {
@@ -86,5 +86,19 @@ describe("auditStem policy branches", () => {
   });
   it("flags a translated quoted word", () => {
     expect(auditStem('What\'s the plural of "Aircraft"?', 'Số nhiều của "Máy bay" là gì?')).toBe("quote-mangled");
+  });
+});
+
+describe("auditStem independent of the repair policy", () => {
+  it("flags a translated quoted sentence even when repairStemVi would accept the stem", () => {
+    expect(auditStem('Mia: "Oh no, I\'ve left my tickets at home".', 'Mia: "Ồ không, tôi để quên vé ở nhà rồi".')).toBe("specimen-translated");
+  });
+});
+
+describe("auditLessonLang emptiedInline", () => {
+  it("counts English words that an inline element lost in the Vietnamese body", () => {
+    const en = "<p>The verb <b>be</b> is irregular.</p>";
+    expect(auditLessonLang(en, "<p><b></b>Động từ này là bất quy tắc.</p>", PC).emptiedInline).toBe(1);
+    expect(auditLessonLang(en, "<p>Động từ <b>be</b> là bất quy tắc.</p>", PC).emptiedInline).toBe(0);
   });
 });

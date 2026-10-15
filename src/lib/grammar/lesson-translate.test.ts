@@ -195,3 +195,15 @@ describe("spliceSegment when Vietnamese word order moves text before the placeho
     expect(parts.join("")).toBe("<p>Đại từ <i>Reflexive</i></p>");
   });
 });
+
+describe("spliceSegment keeps English that sits inside inline emphasis", () => {
+  it("rejects a translation that empties <b>be</b>", () => {
+    const walk = walkLesson("<p>The verb <b>be</b> is irregular.</p>", PC);
+    const block = walk.blocks.get(0)!;
+    expect(toSegment(block).en).toBe("The verb {0}be{1} is irregular.");
+    expect(spliceSegment(block, "{0}{1}Động từ này là bất quy tắc.", [...walk.parts])).toBe(false);
+    const parts = [...walk.parts];
+    expect(spliceSegment(block, "Động từ {0}be{1} là bất quy tắc.", parts)).toBe(true);
+    expect(parts.join("")).toBe("<p>Động từ <b>be</b> là bất quy tắc.</p>");
+  });
+});

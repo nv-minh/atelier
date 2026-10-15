@@ -27,7 +27,7 @@ async function main(): Promise<void> {
     select: { id: true, titleEn: true, titleVi: true, contentEnHtml: true, contentViHtml: true },
     orderBy: { id: "asc" },
   });
-  const lesson = { total: lessons.length, viNull: 0, withProseGaps: 0, headingGaps: 0, gluedSpans: 0, tagMismatch: 0, titleFlagged: 0 };
+  const lesson = { total: lessons.length, viNull: 0, withProseGaps: 0, headingGaps: 0, gluedSpans: 0, emptiedInline: 0, lessonsWithEmptiedInline: 0, tagMismatch: 0, titleFlagged: 0 };
   const gapIds: number[] = [];
   const titleFlags: Array<{ id: number; titleEn: string; titleVi: string | null; reason: string }> = [];
   for (const l of lessons) {
@@ -48,6 +48,8 @@ async function main(): Promise<void> {
     }
     lesson.headingGaps += a.headingGaps;
     lesson.gluedSpans += a.gluedSpans;
+    lesson.emptiedInline += a.emptiedInline;
+    if (a.emptiedInline > 0) lesson.lessonsWithEmptiedInline++;
   }
 
   const stems: Record<string, Record<string, number>> = {};
