@@ -46,3 +46,19 @@ export function stemGlossTarget(questionEn: string, questionVi: string | null): 
 export function choiceGlossTargets(choices: string[]): Array<string | null> {
   return choices.map((c) => (wordCount(c) >= 3 ? c : null));
 }
+
+/** What the session shows as the question: Vietnamese mode adds " - <gloss>" after the stem. */
+export function buildStemDisplay(
+  questionEn: string,
+  questionVi: string | null,
+  stemGlossVi: string | null,
+  lang: "vi" | "en"
+): string {
+  if (lang !== "vi") return questionEn;
+  return joinGloss(questionVi ?? questionEn, stemGlossVi);
+}
+
+/** What an answer button shows: the English choice, plus " - <gloss>" in Vietnamese mode. */
+export function buildChoiceDisplay(choice: string, gloss: string | null | undefined, lang: "vi" | "en"): string {
+  return lang === "vi" ? joinGloss(choice, gloss) : choice;
+}

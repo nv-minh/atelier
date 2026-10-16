@@ -11,6 +11,8 @@ export type GrammarSessionItem = {
   id: number;
   questionEn: string;
   questionVi: string | null;
+  stemGlossVi: string | null; // Vietnamese translation shown as "EN - VI" after the stem
   choices: string[];
+  choicesGlossVi: Array<string | null> | null; // aligned with choices, null for words
   repeat: boolean; // already answered correctly before — replays earn 0 XP
 };

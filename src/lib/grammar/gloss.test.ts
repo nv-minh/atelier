@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkGloss, choiceGlossTargets, joinGloss, stemGlossTarget } from "./gloss";
+import { buildChoiceDisplay, buildStemDisplay, checkGloss, choiceGlossTargets, joinGloss, stemGlossTarget } from "./gloss";
 
 describe("joinGloss", () => {
   it("joins English and Vietnamese with a plain dash", () => {
@@ -62,5 +62,33 @@ describe("choiceGlossTargets", () => {
       "He is a doctor.",
       "Darren was eating the chicken",
     ]);
+  });
+});
+
+describe("buildStemDisplay / buildChoiceDisplay", () => {
+  it("never adds a translation in English mode", () => {
+    expect(buildStemDisplay("I have _____ idea.", null, "Tôi có _____ ý tưởng.", "en")).toBe("I have _____ idea.");
+    expect(buildChoiceDisplay("He is a doctor.", "Anh ấy là bác sĩ.", "en")).toBe("He is a doctor.");
+  });
+  it("appends the gloss to a fill-in-the-blank stem in Vietnamese mode", () => {
+    expect(buildStemDisplay("I have _____ idea.", null, "Tôi có _____ ý tưởng.", "vi")).toBe(
+      "I have _____ idea. - Tôi có _____ ý tưởng."
+    );
+  });
+  it("appends the gloss after a hybrid stem's Vietnamese cue and English sentence", () => {
+    expect(
+      buildStemDisplay(
+        "Transfer this Active Voice sentence into the Passive one: Britain kept Napoleon on the island of Saint Helena.",
+        "Chuyển câu Chủ động này sang câu Bị động: Britain kept Napoleon on the island of Saint Helena.",
+        "Nước Anh giữ Napoléon trên đảo Saint Helena.",
+        "vi"
+      )
+    ).toBe(
+      "Chuyển câu Chủ động này sang câu Bị động: Britain kept Napoleon on the island of Saint Helena. - Nước Anh giữ Napoléon trên đảo Saint Helena."
+    );
+  });
+  it("falls back to the plain stem or choice without a gloss", () => {
+    expect(buildStemDisplay("Place the adverb.", "Đặt trạng từ.", null, "vi")).toBe("Đặt trạng từ.");
+    expect(buildChoiceDisplay("am", null, "vi")).toBe("am");
   });
 });
