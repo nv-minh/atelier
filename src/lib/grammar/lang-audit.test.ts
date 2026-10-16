@@ -102,3 +102,11 @@ describe("auditLessonLang emptiedInline", () => {
     expect(auditLessonLang(en, "<p>Động từ <b>be</b> là bất quy tắc.</p>", PC).emptiedInline).toBe(0);
   });
 });
+
+describe("auditLessonLang emptiedInline ignores words that moved into the block text", () => {
+  it("does not count an inline word the translator kept outside the element", () => {
+    const en = "<p>We use <b>the</b> with superlatives.</p>";
+    expect(auditLessonLang(en, "<p>Chúng ta dùng the với dạng so sánh nhất.<b></b></p>", PC).emptiedInline).toBe(0);
+    expect(auditLessonLang(en, "<p>Chúng ta dùng mạo từ với dạng so sánh nhất.<b></b></p>", PC).emptiedInline).toBe(1);
+  });
+});

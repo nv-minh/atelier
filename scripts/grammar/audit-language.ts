@@ -16,9 +16,12 @@ const PC: ReadonlySet<string> = new Set(SEMANTIC_SPAN_CLASSES);
 const keepFiles = existsSync(resolve("data", "llm-runs"))
   ? readdirSync(resolve("data", "llm-runs")).filter((f) => /^lesson-keeps-.*\.json$/.test(f)).sort()
   : [];
-const KEEPS: Record<string, string[]> = keepFiles.length
-  ? (JSON.parse(readFileSync(resolve("data", "llm-runs", keepFiles[keepFiles.length - 1]), "utf8")) as Record<string, string[]>)
-  : {};
+const KEEPS: Record<string, string[]> = {};
+for (const f of keepFiles) {
+  // keeps accumulate across daily files: a later run must not hide an earlier one's allowlist
+  const day = JSON.parse(readFileSync(resolve("data", "llm-runs", f), "utf8")) as Record<string, string[]>;
+  for (const [id, segs] of Object.entries(day)) KEEPS[id] = [...(KEEPS[id] ?? []), ...segs];
+}
 const labelIdx = process.argv.indexOf("--label");
 const LABEL = labelIdx !== -1 && process.argv[labelIdx + 1] ? process.argv[labelIdx + 1] : "adhoc";
 

@@ -46,10 +46,11 @@ export function emptiedInlineBlocks(enWalk: Walk, viWalk: Walk): Map<number, num
     if (!viBlock) continue;
     const en = gapTexts(enBlock);
     const vi = gapTexts(viBlock);
+    const viText = vi.gaps.join("");
     for (let k = 1; k < en.gaps.length - 1 && k < vi.gaps.length; k++) {
       const open = INLINE_OPEN.exec(en.slots[k - 1]);
       const close = INLINE_CLOSE.exec(en.slots[k]);
-      if (open && close && open[1].toLowerCase() === close[1].toLowerCase() && /[A-Za-z]/.test(en.gaps[k]) && vi.gaps[k].trim() === "") {
+      if (open && close && open[1].toLowerCase() === close[1].toLowerCase() && /[A-Za-z]/.test(en.gaps[k]) && vi.gaps[k].trim() === "" && !viText.includes(en.gaps[k].trim())) {
         out.set(id, (out.get(id) ?? 0) + 1);
       }
     }
