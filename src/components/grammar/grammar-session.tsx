@@ -12,6 +12,7 @@ import { useI18n } from "@/components/i18n-provider";
 import { playSound } from "@/lib/sound";
 import { vibrate } from "@/lib/haptics";
 import type { GrammarSessionItem, GrammarSource } from "@/lib/grammar/session-types";
+import { buildChoiceDisplay, buildStemDisplay } from "@/lib/grammar/gloss";
 
 const LETTERS = ["A", "B", "C", "D"];
 const REVEAL_MS = 1400;
@@ -269,7 +270,7 @@ export function GrammarSession({
   }
 
   if (!current) return null;
-  const question = lang === "vi" && current.questionVi ? current.questionVi : current.questionEn;
+  const question = buildStemDisplay(current.questionEn, current.questionVi, current.stemGlossVi, lang);
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col">
@@ -329,7 +330,7 @@ export function GrammarSession({
                     }`}
                   >
                     <span className="text-xs font-mono text-soft mt-0.5">{LETTERS[i]}</span>
-                    <span className="text-sm leading-snug">{opt}</span>
+                    <span className="text-sm leading-snug">{buildChoiceDisplay(opt, current.choicesGlossVi?.[i], lang)}</span>
                     {shown && isCorrect && <CheckCircle2 size={16} className="ml-auto shrink-0 text-moss-500" />}
                     {shown && isPicked && !isCorrect && <XCircle size={16} className="ml-auto shrink-0 text-red-400" />}
                   </button>

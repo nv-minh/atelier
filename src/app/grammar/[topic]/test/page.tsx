@@ -5,6 +5,7 @@ import { getCurrentUser } from "@/lib/session";
 import { AuthRequired } from "@/components/auth-required";
 import { GrammarSession } from "@/components/grammar/grammar-session";
 import { GRAMMAR_SESSION_SIZE } from "@/lib/gamification-defs";
+import { normalizeChoiceGlosses } from "@/lib/grammar/gloss";
 import type { GrammarSessionItem } from "@/lib/grammar/session-types";
 
 export const dynamic = "force-dynamic";
@@ -59,7 +60,7 @@ export default async function GrammarTestPage({ params }: { params: { topic: str
   ];
   const rows = await prisma.grammarTestQuestion.findMany({
     where: { id: { in: picked.map((p) => p.id) } },
-    select: { id: true, questionEn: true, questionVi: true, choicesEn: true },
+    select: { id: true, questionEn: true, questionVi: true, choicesEn: true, stemGlossVi: true, choicesGlossVi: true },
   });
   const repeatById = new Map(picked.map((p) => [p.id, p.repeat]));
   const order = new Map(picked.map((p, i) => [p.id, i]));
@@ -69,6 +70,11 @@ export default async function GrammarTestPage({ params }: { params: { topic: str
       id: r.id,
       questionEn: r.questionEn,
       questionVi: r.questionVi,
+      stemGlossVi: r.stemGlossVi,
+      choicesGlossVi: normalizeChoiceGlosses(
+        Array.isArray(r.choicesEn) ? (r.choicesEn as string[]) : [],
+        Array.isArray(r.choicesGlossVi) ? (r.choicesGlossVi as Array<string | null>) : null
+      ),
       choices: Array.isArray(r.choicesEn) ? (r.choicesEn as string[]) : [],
       repeat: repeatById.get(r.id) ?? false,
     }));

@@ -343,6 +343,7 @@ model GrammarLesson {
   titleVi       String?
   contentEnHtml String  @db.Text // sanitized + image paths rewritten at import
   contentViHtml String? @db.Text
+  glossVi       Json? // { "<block id>": "Vietnamese translation" } for English example blocks; shown as "EN - VI"
 
   topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
@@ -350,12 +351,14 @@ model GrammarLesson {
 }
 
 model GrammarTestQuestion {
-  id          Int     @id // source id from tests.csv
-  topicId     Int
-  questionEn  String
-  questionVi  String?
-  choicesEn   Json // string[], 2–4 items; answers are EN-only by design
-  answerIndex Int // normalized 0-based
+  id             Int     @id // source id from tests.csv
+  topicId        Int
+  questionEn     String
+  questionVi     String?
+  choicesEn      Json // string[], 2–4 items; answers are EN-only by design
+  answerIndex    Int // normalized 0-based
+  stemGlossVi    String? @db.Text // Vietnamese translation of the English sentence in the stem
+  choicesGlossVi Json? // (string | null)[] aligned with choicesEn, null for words
 
   topic GrammarTopic @relation(fields: [topicId], references: [id], onDelete: Cascade)
 
@@ -363,16 +366,18 @@ model GrammarTestQuestion {
 }
 
 model GrammarPracticeQuestion {
-  id            Int     @id // source id from grammar_questions.csv
-  level         Int // 1 | 2
-  categoryEn    String
-  categoryVi    String?
-  questionEn    String
-  questionVi    String?
-  choicesEn     Json // string[]
-  answerIndex   Int // normalized 0-based
-  explanationEn String? @db.Text
-  explanationVi String? @db.Text
+  id             Int     @id // source id from grammar_questions.csv
+  level          Int // 1 | 2
+  categoryEn     String
+  categoryVi     String?
+  questionEn     String
+  questionVi     String?
+  choicesEn      Json // string[]
+  answerIndex    Int // normalized 0-based
+  explanationEn  String? @db.Text
+  explanationVi  String? @db.Text
+  stemGlossVi    String? @db.Text
+  choicesGlossVi Json?
 
   @@index([level, categoryEn])
 }

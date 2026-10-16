@@ -26,7 +26,9 @@ export function LessonReader({ data, authed }: { data: NonNullable<LessonPageDat
 
   const wantVi = lang === "vi";
   const viMissing = wantVi && !lesson.contentViHtml;
-  const html = wantVi && lesson.contentViHtml ? lesson.contentViHtml : lesson.contentEnHtml;
+  const html = wantVi
+    ? (lesson.contentViGlossHtml ?? lesson.contentViHtml ?? lesson.contentEnHtml)
+    : lesson.contentEnHtml;
   const title = wantVi && lesson.titleVi ? lesson.titleVi : lesson.titleEn;
   const topicName = wantVi && topic.nameVi ? topic.nameVi : topic.nameEn;
   const legend = useMemo(() => presentLegend(html), [html]);
