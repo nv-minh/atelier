@@ -8,13 +8,43 @@ import "../../prisma/load-env";
 import { Prisma, PrismaClient } from "@prisma/client";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
-import { checkGloss } from "../../src/lib/grammar/gloss";
+import { checkGloss, choiceGlossTargets, stemGlossTarget } from "../../src/lib/grammar/gloss";
+import { lessonGlossBlocks } from "../../src/lib/grammar/lesson-gloss";
 
 const prisma = new PrismaClient();
 const APPLY = process.argv.includes("--apply");
+const ALLOW_REJECTS = process.argv.includes("--allow-rejects");
+const norm = (t: string): string => t.replace(/\s+/g, " ").trim();
 const files = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
 type Exported = { items: Record<string, string>; targets: Record<string, Array<[string, number, string]>> };
+
+/** The English text each target holds in the database right now, keyed "table:id:slot". */
+async function currentEnglish(targets: Array<[string, number, string]>): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  const ids = (table: string): number[] => [...new Set(targets.filter((t) => t[0] === table).map((t) => t[1]))];
+  const lessonIds = ids("lessons");
+  if (lessonIds.length) {
+    const rows = await prisma.grammarLesson.findMany({ where: { id: { in: lessonIds } }, select: { id: true, contentEnHtml: true, contentViHtml: true } });
+    for (const r of rows) for (const b of lessonGlossBlocks(r.contentEnHtml, r.contentViHtml ?? r.contentEnHtml)) out.set(`lessons:${r.id}:${b.blockId}`, b.text);
+  }
+  for (const table of ["testQuestions", "practiceQuestions"] as const) {
+    const wanted = ids(table);
+    if (!wanted.length) continue;
+    const delegate = (table === "testQuestions" ? prisma.grammarTestQuestion : prisma.grammarPracticeQuestion) as unknown as {
+      findMany(a: unknown): Promise<Array<{ id: number; questionEn: string; questionVi: string | null; choicesEn: unknown }>>;
+    };
+    const rows = await delegate.findMany({ where: { id: { in: wanted } }, select: { id: true, questionEn: true, questionVi: true, choicesEn: true } });
+    for (const r of rows) {
+      const stem = stemGlossTarget(r.questionEn, r.questionVi);
+      if (stem) out.set(`${table}:${r.id}:stem`, stem);
+      choiceGlossTargets(r.choicesEn as string[]).forEach((c, i) => {
+        if (c) out.set(`${table}:${r.id}:c${i}`, c);
+      });
+    }
+  }
+  return out;
+}
 
 async function main(): Promise<void> {
   const [exportFile, ...answerFiles] = files;
@@ -32,6 +62,11 @@ async function main(): Promise<void> {
     }
   }
 
+  // An export can go stale (lesson edited, rows reordered): a gloss is only stored
+  // against English text that still matches what was translated.
+  const answered = [...answers.keys()].filter((k) => exp.items[k] !== undefined);
+  const current = await currentEnglish(answered.flatMap((k) => exp.targets[k] ?? []));
+  let stale = 0;
   let rejected = 0;
   let unknown = 0;
   const lessonGloss = new Map<number, Record<string, string>>();
@@ -50,6 +85,10 @@ async function main(): Promise<void> {
       continue;
     }
     for (const [table, id, slot] of exp.targets[key] ?? []) {
+      if (norm(current.get(`${table}:${id}:${slot}`) ?? "") !== norm(en)) {
+        stale++;
+        continue;
+      }
       if (table === "lessons") {
         lessonGloss.set(id, { ...(lessonGloss.get(id) ?? {}), [slot]: vi });
       } else if (slot === "stem") {
@@ -63,9 +102,14 @@ async function main(): Promise<void> {
     }
   }
   const covered = [...answers.keys()].filter((k) => exp.items[k] !== undefined).length;
-  console.log(`answers: ${answers.size}, accepted: ${covered - rejected}, rejected: ${rejected}, unknown keys: ${unknown}, still unanswered: ${Object.keys(exp.items).length - covered}`);
+  console.log(`answers: ${answers.size}, accepted: ${covered - rejected}, rejected: ${rejected}, unknown keys: ${unknown}, still unanswered: ${Object.keys(exp.items).length - covered}, stale targets skipped: ${stale}`);
   console.log(`would write: lessons ${lessonGloss.size}, stems ${[...stem.values()].reduce((n, m) => n + m.size, 0)}, choice rows ${[...choice.values()].reduce((n, m) => n + m.size, 0)}`);
   if (!APPLY) return;
+  if (rejected > 0 && !ALLOW_REJECTS) {
+    console.error(`refusing to apply: ${rejected} gloss(es) rejected. Fix or drop them (or pass --allow-rejects).`);
+    process.exitCode = 1;
+    return;
+  }
 
   const snap: Record<string, unknown[]> = {};
   const ops: Array<() => Promise<unknown>> = [];
