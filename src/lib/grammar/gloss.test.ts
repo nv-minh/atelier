@@ -55,12 +55,23 @@ describe("stemGlossTarget", () => {
 });
 
 describe("choiceGlossTargets", () => {
-  it("keeps only choices that are sentences", () => {
-    expect(choiceGlossTargets(["am", "is going", "He is a doctor.", "Darren was eating the chicken"])).toEqual([
+  it("keeps only choices that are sentences, not word lists or wrong word forms", () => {
+    expect(
+      choiceGlossTargets([
+        "am",
+        "more hotter / most hottest",
+        "new wooden brown round",
+        "He is a doctor.",
+        "Darren was eating the roast chicken greedily because he was very hungry",
+        "Darren was eating the chicken",
+      ])
+    ).toEqual([
+      null,
       null,
       null,
       "He is a doctor.",
-      "Darren was eating the chicken",
+      "Darren was eating the roast chicken greedily because he was very hungry",
+      null,
     ]);
   });
 });

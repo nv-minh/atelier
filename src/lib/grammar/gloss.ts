@@ -42,9 +42,17 @@ export function stemGlossTarget(questionEn: string, questionVi: string | null): 
   return null;
 }
 
-/** Per choice: the sentence to translate, or null for a word or short form. */
+/**
+ * Per choice: the sentence to translate, or null. Words, word forms
+ * ("more hotter / most hottest") and adjective lists have no translation worth
+ * showing; a sentence ends in terminal punctuation or runs to six words.
+ */
 export function choiceGlossTargets(choices: string[]): Array<string | null> {
-  return choices.map((c) => (wordCount(c) >= 3 ? c : null));
+  return choices.map((c) => {
+    const n = wordCount(c);
+    if (n < 3) return null;
+    return /[.!?]["')]?\s*$/.test(c) || n >= 6 ? c : null;
+  });
 }
 
 /** What the session shows as the question: Vietnamese mode adds " - <gloss>" after the stem. */
