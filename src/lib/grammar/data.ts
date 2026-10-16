@@ -2,6 +2,7 @@
 // components query prisma, no API hop — same pattern as topics-data.ts).
 import { prisma } from "@/lib/db";
 import { masteryPct } from "./mastery";
+import { applyBlockGloss } from "./lesson-gloss";
 
 const CLUSTER_ORDER = ["tenses", "word-classes", "sentence", "other"] as const;
 
@@ -218,6 +219,8 @@ export type LessonPageData = {
     titleVi: string | null;
     contentEnHtml: string;
     contentViHtml: string | null;
+    // Vietnamese body with the "EN - VI" gloss appended to its English example blocks; null when the lesson has none.
+    contentViGlossHtml: string | null;
   };
   read: boolean;
   prevOrder: number | null;
@@ -259,6 +262,10 @@ export async function getLessonPage(
       titleVi: lesson.titleVi,
       contentEnHtml: lesson.contentEnHtml,
       contentViHtml: lesson.contentViHtml,
+      contentViGlossHtml:
+        lesson.glossVi && typeof lesson.glossVi === "object" && Object.keys(lesson.glossVi).length > 0
+          ? applyBlockGloss(lesson.contentViHtml ?? lesson.contentEnHtml, lesson.glossVi as Record<string, string>)
+          : null,
     },
     read: !!readRow,
     prevOrder: idx > 0 ? list[idx - 1] : null,

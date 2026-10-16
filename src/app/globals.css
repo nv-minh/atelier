@@ -198,6 +198,8 @@
     line-height: 1.75;
     font-size: 0.975rem;
   }
+  /* "EN - VI" gloss appended to an English example: same line, quieter than the English. */
+  .grammar-prose .gloss { color: rgb(var(--ink-soft)); }
   .grammar-prose h1 { display: none; } /* duplicates the page title */
   .grammar-prose h2 {
     font-family: var(--font-display), Georgia, serif;
