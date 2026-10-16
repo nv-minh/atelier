@@ -87,6 +87,7 @@ async function main(): Promise<void> {
     for (const [table, id, slot] of exp.targets[key] ?? []) {
       if (norm(current.get(`${table}:${id}:${slot}`) ?? "") !== norm(en)) {
         stale++;
+        if (stale <= 10) console.log(`  ${key}: stale ${table}:${id}:${slot}\n    export: ${en.slice(0, 80)}\n    db:     ${(current.get(`${table}:${id}:${slot}`) ?? "(none)").slice(0, 80)}`);
         continue;
       }
       if (table === "lessons") {
