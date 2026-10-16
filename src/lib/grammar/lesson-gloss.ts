@@ -4,6 +4,8 @@
 // gates stay untouched: the gloss is appended only when the page is composed.
 import { TAG_SPLIT, BLOCK_TAGS, FORMULA, VOID_TAGS, englishBlockIds, scan } from "./vi-repair";
 
+// Containers that start a nested structure: the gloss must land before them.
+const NESTING = new Set(["ul", "ol", "table", "blockquote", "div"]);
 const escapeHtml = (s: string): string => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const norm = (s: string): string => s.replace(/&nbsp;|\s+/g, " ").trim();
 const words = (s: string): number => s.split(/\s+/).filter((w) => /[A-Za-z]/.test(w)).length;
@@ -16,21 +18,28 @@ const words = (s: string): number => s.split(/\s+/).filter((w) => /[A-Za-z]/.tes
 export function applyBlockGloss(html: string, gloss: Record<string, string>): string {
   if (Object.keys(gloss).length === 0) return html;
   const parts = html.split(TAG_SPLIT);
-  const stack: Array<{ name: string; blockId: number }> = [];
+  // `at` is the part index the gloss goes before: the first nested block, else
+  // the start of the trailing <br> run, else the closing tag itself.
+  const stack: Array<{ name: string; blockId: number; nestedAt?: number; brAt?: number }> = [];
+  const before = new Map<number, string>();
   let nextBlockId = 0;
-  for (let i = 1; i < parts.length; i += 2) {
+  for (let i = 0; i < parts.length; i++) {
     const part = parts[i];
+    if (i % 2 === 0) {
+      if (part.trim() && stack.length) for (const e of stack) e.brAt = undefined;
+      continue;
+    }
     const close = /^<\/\s*([a-zA-Z0-9]+)/.exec(part);
     if (close) {
       const name = close[1].toLowerCase();
       for (let j = stack.length - 1; j >= 0; j--) {
         if (stack[j].name !== name) continue;
-        let add = "";
         for (let k = stack.length - 1; k >= j; k--) {
           const text = stack[k].blockId >= 0 ? gloss[String(stack[k].blockId)] : undefined;
-          if (text) add += `<span class="gloss"> - ${escapeHtml(text)}</span>`;
+          if (!text) continue;
+          const at = stack[k].nestedAt ?? stack[k].brAt ?? i;
+          before.set(at, (before.get(at) ?? "") + `<span class="gloss"> - ${escapeHtml(text)}</span>`);
         }
-        parts[i] = add + part;
         stack.length = j;
         break;
       }
@@ -39,10 +48,16 @@ export function applyBlockGloss(html: string, gloss: Record<string, string>): st
     const open = /^<\s*([a-zA-Z0-9]+)([^>]*?)\/?>$/.exec(part);
     if (!open) continue;
     const name = open[1].toLowerCase();
+    if (name === "br") {
+      for (const e of stack) if (e.brAt === undefined) e.brAt = i;
+      continue;
+    }
     if (VOID_TAGS.has(name) || part.endsWith("/>")) continue;
-    stack.push({ name, blockId: BLOCK_TAGS.has(name) ? nextBlockId++ : -1 });
+    const isBlock = BLOCK_TAGS.has(name);
+    if (isBlock || NESTING.has(name)) for (const e of stack) if (e.nestedAt === undefined) e.nestedAt = i;
+    stack.push({ name, blockId: isBlock ? nextBlockId++ : -1 });
   }
-  return parts.join("");
+  return parts.map((part, i) => (before.get(i) ?? "") + part).join("");
 }
 
 /**

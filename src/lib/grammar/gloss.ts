@@ -37,7 +37,8 @@ export function checkGloss(en: string, vi: string): CheckResult {
 export function stemGlossTarget(questionEn: string, questionVi: string | null): string | null {
   if (wordCount(questionEn) < 3) return null;
   const hybrid = splitHybridStem(questionEn);
-  if (hybrid) return wordCount(hybrid.specimen) >= 1 ? hybrid.specimen : null;
+  // A blank before the colon means the cue IS the exercise sentence.
+  if (hybrid && !isBlankStem(hybrid.cue)) return wordCount(hybrid.specimen) >= 1 ? hybrid.specimen : null;
   if (isBlankStem(questionEn) || questionVi === null) return questionEn;
   return null;
 }
@@ -69,4 +70,23 @@ export function buildStemDisplay(
 /** What an answer button shows: the English choice, plus " - <gloss>" in Vietnamese mode. */
 export function buildChoiceDisplay(choice: string, gloss: string | null | undefined, lang: "vi" | "en"): string {
   return lang === "vi" ? joinGloss(choice, gloss) : choice;
+}
+
+/**
+ * Choice glosses are all-or-nothing per question: if a sentence choice has no
+ * translation while its siblings do, the lone glossed choice marks the answer
+ * (the unglossed ones were skipped as ungrammatical distractors). Returns the
+ * glosses to show, or null when they must all be hidden.
+ */
+export function normalizeChoiceGlosses(
+  choices: string[],
+  glosses: Array<string | null> | null
+): Array<string | null> | null {
+  const targets = choiceGlossTargets(choices);
+  if (!targets.some((t) => t !== null)) return null;
+  if (!glosses) return null;
+  for (let i = 0; i < targets.length; i++) {
+    if (targets[i] !== null && !(glosses[i] ?? "").trim()) return null;
+  }
+  return glosses;
 }

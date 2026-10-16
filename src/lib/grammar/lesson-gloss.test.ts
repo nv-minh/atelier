@@ -60,3 +60,22 @@ describe("lessonGlossBlocks", () => {
     expect(first.blockId).toBe(1);
   });
 });
+
+describe("applyBlockGloss placement", () => {
+  it("puts the gloss before a nested list, not after it", () => {
+    const html = "<ul><li>He goes home every day.<ul><li>Sub item here now.</li></ul></li></ul>";
+    expect(applyBlockGloss(html, { "0": "Anh ấy về nhà." })).toBe(
+      '<ul><li>He goes home every day.<span class="gloss"> - Anh ấy về nhà.</span><ul><li>Sub item here now.</li></ul></li></ul>'
+    );
+  });
+  it("puts the gloss before trailing <br> tags", () => {
+    expect(applyBlockGloss("<p>He goes home every day.<br><br></p>", { "0": "Anh ấy về nhà." })).toBe(
+      '<p>He goes home every day.<span class="gloss"> - Anh ấy về nhà.</span><br><br></p>'
+    );
+  });
+  it("keeps a <br> that sits between text", () => {
+    expect(applyBlockGloss("<p>He goes.<br>She comes home.</p>", { "0": "Anh đi. Cô đến." })).toBe(
+      '<p>He goes.<br>She comes home.<span class="gloss"> - Anh đi. Cô đến.</span></p>'
+    );
+  });
+});

@@ -5,6 +5,7 @@ import { getCurrentUser } from "@/lib/session";
 import { AuthRequired } from "@/components/auth-required";
 import { GrammarSession } from "@/components/grammar/grammar-session";
 import { GRAMMAR_SESSION_SIZE } from "@/lib/gamification-defs";
+import { normalizeChoiceGlosses } from "@/lib/grammar/gloss";
 import type { GrammarSessionItem } from "@/lib/grammar/session-types";
 
 export const dynamic = "force-dynamic";
@@ -70,7 +71,10 @@ export default async function GrammarTestPage({ params }: { params: { topic: str
       questionEn: r.questionEn,
       questionVi: r.questionVi,
       stemGlossVi: r.stemGlossVi,
-      choicesGlossVi: Array.isArray(r.choicesGlossVi) ? (r.choicesGlossVi as Array<string | null>) : null,
+      choicesGlossVi: normalizeChoiceGlosses(
+        Array.isArray(r.choicesEn) ? (r.choicesEn as string[]) : [],
+        Array.isArray(r.choicesGlossVi) ? (r.choicesGlossVi as Array<string | null>) : null
+      ),
       choices: Array.isArray(r.choicesEn) ? (r.choicesEn as string[]) : [],
       repeat: repeatById.get(r.id) ?? false,
     }));

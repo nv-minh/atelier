@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildChoiceDisplay, buildStemDisplay, checkGloss, choiceGlossTargets, joinGloss, stemGlossTarget } from "./gloss";
+import { buildChoiceDisplay, buildStemDisplay, checkGloss, choiceGlossTargets, joinGloss, normalizeChoiceGlosses, stemGlossTarget } from "./gloss";
 
 describe("joinGloss", () => {
   it("joins English and Vietnamese with a plain dash", () => {
@@ -101,5 +101,29 @@ describe("buildStemDisplay / buildChoiceDisplay", () => {
   it("falls back to the plain stem or choice without a gloss", () => {
     expect(buildStemDisplay("Place the adverb.", "Đặt trạng từ.", null, "vi")).toBe("Đặt trạng từ.");
     expect(buildChoiceDisplay("am", null, "vi")).toBe("am");
+  });
+});
+
+describe("normalizeChoiceGlosses (a translation on only some choices would give the answer away)", () => {
+  const choices = ["Turn off it!", "Turn it off!"];
+  it("keeps the glosses when every sentence choice has one", () => {
+    expect(normalizeChoiceGlosses(choices, ["Tắt nó đi!", "Tắt nó đi!"])).toEqual(["Tắt nó đi!", "Tắt nó đi!"]);
+  });
+  it("drops all glosses when any sentence choice lacks one", () => {
+    expect(normalizeChoiceGlosses(choices, [null, "Tắt nó đi!"])).toBeNull();
+    expect(normalizeChoiceGlosses(choices, null)).toBeNull();
+  });
+  it("ignores choices that never get a gloss (words)", () => {
+    expect(normalizeChoiceGlosses(["am", "He is a doctor."], [null, "Anh ấy là bác sĩ."])).toEqual([null, "Anh ấy là bác sĩ."]);
+  });
+  it("returns null when no choice is a sentence", () => {
+    expect(normalizeChoiceGlosses(["am", "is"], null)).toBeNull();
+  });
+});
+
+describe("stemGlossTarget with the blank before the colon", () => {
+  it("targets the whole stem so the exercise sentence is translated", () => {
+    const en = "The demand _____ labour is dependent on many factors: the demand will be higher in summer.";
+    expect(stemGlossTarget(en, null)).toBe(en);
   });
 });
