@@ -3,12 +3,14 @@ import {
   checkEntriesVi,
   checkExplanationVi,
   checkLessonVi,
+  fixProtectedSpacing,
   isBlankStem,
   isInflectionPattern,
   repairConfusedEntriesVi,
   repairExplanationVi,
   repairLessonViHtml,
   repairMistakeTitleVi,
+  VI_DIACRITIC,
 } from "./vi-repair";
 
 describe("isInflectionPattern", () => {
@@ -214,6 +216,37 @@ describe("repairMistakeTitleVi", () => {
   });
 });
 
+describe("fixProtectedSpacing", () => {
+  it("chèn khoảng trắng nơi văn VN dính vào span/`<i>` bảo vệ — cả hai phía", () => {
+    // signal-word KHÔNG phải sentence-role class nên <p> vẫn là prose, không
+    // rơi vào quy tắc English-block của vi-repair.
+    const en = '<p>Use the <i>Simple Present</i>and<span class="signal-word">always</span>together.</p>';
+    const vi = '<p>Dùng thì<i>Simple Present</i>và<span class="signal-word">always</span>đi cùng nhau.</p>';
+    const out = fixProtectedSpacing(en, vi)!;
+    // 4: sau "Dùng thì", hai bên "và", và trước "đi cùng nhau".
+    expect(out.fixed).toBe(4);
+    expect(out.html).toBe(
+      '<p>Dùng thì <i>Simple Present</i> và <span class="signal-word">always</span> đi cùng nhau.</p>'
+    );
+  });
+
+  it("KHÔNG đụng chất liệu EN trong khối English (tomato<b>es</b>) hay cặp hình vị", () => {
+    const en = "<td>tomato => tomato<b>es</b></td>";
+    const vi = "<td>tomato => tomato<b>es</b></td>";
+    expect(fixProtectedSpacing(en, vi)!.fixed).toBe(0);
+  });
+
+  it("không chèn khi một bên là dấu câu hoặc đã có sẵn khoảng trắng", () => {
+    const en = "<p>Use (<i>do</i>) and <i>does</i> here.</p>";
+    const vi = "<p>Dùng (<i>do</i>) và <i>does</i> ở đây.</p>";
+    expect(fixProtectedSpacing(en, vi)!.fixed).toBe(0);
+  });
+
+  it("trả null khi hai tài liệu lệch chuỗi thẻ", () => {
+    expect(fixProtectedSpacing("<p>a</p>", "<div>a</div>")).toBeNull();
+  });
+});
+
 describe("checkLessonVi — validator Tầng 1", () => {
   const en =
     "<table><thead><tr><th>Long form</th></tr></thead><tbody><tr>" +
@@ -312,5 +345,15 @@ describe("checkEntriesVi — validator Tầng 1", () => {
       ])).ok
     ).toBe(false);
     expect(checkEntriesVi(en, JSON.stringify([{ w: "Bare", m: "  " }, { w: "Bear", m: "y" }])).ok).toBe(false);
+  });
+});
+
+describe("VI_DIACRITIC", () => {
+  it("recognises all-caps Vietnamese such as CHỦ NGỮ and CHÚ Ý", () => {
+    expect(VI_DIACRITIC.test("CHỦ NGỮ")).toBe(true);
+    expect(VI_DIACRITIC.test("CHÚ Ý!!")).toBe(true);
+  });
+  it("still rejects plain English", () => {
+    expect(VI_DIACRITIC.test("SUBJECT")).toBe(false);
   });
 });

@@ -16,19 +16,24 @@
 // Prisma-free so vitest can cover it. Used by prisma/grammar-repair-vi.ts (the
 // one-off pass over the existing rows) and prisma/import-grammar.ts (so a
 // re-import cannot reintroduce the rot).
+//
+// lesson-translate.ts builds on the walker exported here (scan/englishBlockIds)
+// for its Tier-1 segment round; the placeholder-free node helpers that round
+// was originally specced around were removed once the segment design landed.
 import type { ConfusedEntry } from "./confused-json";
 import { SEMANTIC_SPAN_CLASSES } from "./semantic-classes";
 
 // Splitting on a capturing group yields [text, tag, text, tag, …, text]: text
-// at even indices, tags at odd ones, always an odd total.
-const TAG_SPLIT = /(<[^>]+>)/;
-const VOID_TAGS = new Set(["br", "hr", "img"]);
+// at even indices, tags at odd ones, always an odd total. Exported for
+// lesson-translate.ts, which walks the same token stream.
+export const TAG_SPLIT = /(<[^>]+>)/;
+export const VOID_TAGS = new Set(["br", "hr", "img"]);
 
 // Elements that delimit one unit of content. Protection is decided per block,
 // never per text node: `tomato => tomato<b>es</b>` is three text nodes of one
 // indivisible pattern, and restoring only the nodes that happen to look wrong
 // yields "dictionary => dictionarphải".
-const BLOCK_TAGS = new Set(["td", "th", "li", "p", "h1", "h2", "h3", "h4", "blockquote"]);
+export const BLOCK_TAGS = new Set(["td", "th", "li", "p", "h1", "h2", "h3", "h4", "blockquote"]);
 
 // Blocks whose text is study material rather than explanation. <td> holds
 // conjugation-table cells and <li> holds example sentences and word lists.
@@ -73,6 +78,12 @@ const PROTECTED_TAGS = new Set(["i"]);
 const ARROW = /=>|→|⇒|-->/;
 const STRIP_TAGS = /<[^>]+>/g;
 
+// A block that is a word-form recipe ("will + infinitive", "to be (was, were)
+// + infinitive + -ing", "has → 3rd person singular") is English material even
+// when it names word classes: every token in it is the English the learner has
+// to reproduce. Exported for lesson-translate.ts, which skips the same recipes.
+export const FORMULA = /[+→⇒]|=>/;
+
 // A block that talks *about* grammar is an instruction, not a specimen: "You
 // need the auxiliary do/does and the infinitive of the verb." Naming a word
 // class or a tense is what separates those from the examples around them — an
@@ -82,12 +93,6 @@ const STRIP_TAGS = /<[^>]+>/g;
 const METALANGUAGE =
   /\b(auxiliar(y|ies)|infinitives?|gerunds?|participles?|adverbs?|adjectives?|nouns?|pronouns?|verbs?|endings?|subjects?|objects?|prepositions?|articles?|modals?|tenses?|forms?|sentences?|clauses?|questions?|singular|plural|contracted|comparative|superlative|syllables?|vowels?|consonants?|apostrophes?|columns?)\b/i;
 
-// …unless it is a recipe rather than a sentence about one: "will + infinitive",
-// "to be (was, were) + infinitive + -ing", "has → 3rd person singular". Those
-// name word classes too, but every token in them is the English the learner
-// has to reproduce.
-const FORMULA = /[+→⇒]|=>/;
-
 // "Example:  deer" — the label is a cue and translates fine, everything after
 // it is the specimen and must not. Machine translation took the whole line, so
 // the invariant-plural demo "deer" arrived as "hươu" and "key => keys" as
@@ -95,9 +100,17 @@ const FORMULA = /[+→⇒]|=>/;
 // punctuation so the Vietnamese cue can be kept in front of the English body.
 const EXAMPLE_LABEL = /^(\s*)(Examples?|Ví dụ|VD)(\s*[:.]\s*)/i;
 
-type Node = { text: string; blockId: number; protectedSpan: boolean };
-type Block = { tag: string; text: string; hasRole: boolean };
-type Scan = { tags: string[]; nodes: Node[]; blocks: Map<number, Block> };
+export type Node = { text: string; blockId: number; protectedSpan: boolean };
+export type Block = { tag: string; text: string; hasRole: boolean };
+export type Scan = { tags: string[]; nodes: Node[]; blocks: Map<number, Block> };
+
+/**
+ * True for a Vietnamese string: contains at least one Vietnamese-specific
+ * diacritic character. Machine translation into Vietnamese always produces
+ * these; English prose never does. The Tier-1 gates use this as the "was this
+ * actually translated" test.
+ */
+export const VI_DIACRITIC = /[ăâđêôơưĂÂĐÊÔƠƯáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]/i;
 
 /**
  * True for a morphology demonstration like "tomato => tomatoes" or
@@ -126,8 +139,11 @@ export function isInflectionPattern(text: string): boolean {
  * remembers whether a sentence-role span appeared inside it. One walker for
  * both documents — two walkers would have to agree on block numbering, and
  * would silently drift apart the first time either changed.
+ *
+ * Exported for lesson-translate.ts, whose segment round walks the same tokens
+ * and must number blocks identically.
  */
-function scan(html: string): Scan {
+export function scan(html: string): Scan {
   const parts = html.split(TAG_SPLIT);
   const tags: string[] = [];
   const nodes: Node[] = [];
@@ -219,8 +235,9 @@ export function isExampleBlock(text: string): boolean {
 // Blocks whose full English text must survive any translation round verbatim:
 // conjugation-table cells, example lists, example sentences in <p>, and prose
 // blocks that happen to be an inflection pattern. Decided per block, never per
-// text node.
-function englishBlockIds(en: Scan): Set<number> {
+// text node. Exported for lesson-translate.ts, which must exclude exactly the
+// same blocks from its translatable segment set.
+export function englishBlockIds(en: Scan): Set<number> {
   const ids = new Set<number>();
   for (const [id, block] of en.blocks) {
     const text = block.text.trim();
@@ -337,60 +354,76 @@ export function repairMistakeTitleVi(titleEn: string, titleVi: string | null): s
   return `${en[1].trim()} (= ${vi[2].trim()})`;
 }
 
-// ── Tier-1 helpers: let an LLM touch ONLY the prose ──────────────────────
+// ── Tier-1: the LLM touches ONLY prose, via lesson-translate.ts ───────────
 //
 // The safest translation round never shows the protected zones to the model:
-// prose nodes are extracted, translated out-of-band, and spliced back while
-// every protected node is force-restored from the EN original. Assembly is
-// followed by checkLessonVi as the final gate.
+// segments are extracted with protected spans masked as {n} placeholders,
+// translated out-of-band, spliced back, and every protected node is
+// force-restored from the EN original. Assembly is followed by checkLessonVi
+// and checkLessonViProseVi as the final gates.
 
-export type ProseNode = { index: number; text: string };
+export type SpacingFix = { html: string; fixed: number } | null;
 
-/** The text nodes a translation round may render in Vietnamese, with their
- *  even-index position in the TAG_SPLIT token stream. */
-export function lessonProseNodes(enHtml: string): ProseNode[] {
-  const en = scan(enHtml);
-  const englishBlocks = englishBlockIds(en);
-  const out: ProseNode[] = [];
-  for (let n = 0; n < en.nodes.length; n++) {
-    const node = en.nodes[n];
-    if (englishBlocks.has(node.blockId) || node.protectedSpan) continue;
-    if (!node.text.trim()) continue;
-    out.push({ index: n, text: node.text });
-  }
-  return out;
-}
+// A word character on the VI side: Vietnamese (with or without diacritics) or
+// ASCII letters. Digits and punctuation deliberately excluded — "1.5<i>" never
+// happens, and "(<i>do</i>" must keep its parenthesis glued to the quote.
+const WORD_CHAR = /[A-Za-zăâđêôơưĂÂĐÊÔƠƯáàảãạấầẩẫậắằẳẵặéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]/;
 
 /**
- * Splice translated prose into a base document. Protected nodes come back as
- * the English original whatever the base says; prose nodes take their
- * translation when present and keep the base text otherwise (so a partial
- * batch degrades to the current VI, never to garbage). Returns null when the
- * base does not tokenize like the EN original — the caller then rebuilds from
- * the EN document itself.
+ * Repair the missing-space damage the machine round left where Vietnamese
+ * prose meets an inline tag: "thì<i>Present Continuous</i>" renders as
+ * "thìPresent Continuous". Only PROSE nodes are touched (nodes outside every
+ * English block and outside every protected span): "tomato<b>es</b>" inside a
+ * <td> is a morphology specimen whose glue is the point. Returns null when the
+ * two documents do not tokenize identically — the EN scan is what decides
+ * which blocks are English, so alignment is a precondition.
  */
-export function assembleLessonVi(
-  enHtml: string,
-  baseHtml: string,
-  viByIndex: ReadonlyMap<number, string>
-): string | null {
+export function fixProtectedSpacing(enHtml: string, viHtml: string): SpacingFix {
   const en = scan(enHtml);
-  const base = scan(baseHtml);
-  if (en.nodes.length !== base.nodes.length) return null;
-  if (en.tags.length !== base.tags.length) return null;
-  if (en.tags.some((t, i) => t !== base.tags[i])) return null;
+  const vi = scan(viHtml);
+  if (en.nodes.length !== vi.nodes.length) return null;
+  if (en.tags.length !== vi.tags.length) return null;
+  if (en.tags.some((tag, i) => tag !== vi.tags[i])) return null;
+
   const englishBlocks = englishBlockIds(en);
-  const parts = baseHtml.split(TAG_SPLIT);
-  for (let n = 0; n < en.nodes.length; n++) {
-    const node = en.nodes[n];
-    if (englishBlocks.has(node.blockId) || node.protectedSpan) {
-      parts[n * 2] = node.text;
-    } else {
-      const vi = viByIndex.get(n);
-      if (vi !== undefined) parts[n * 2] = vi;
+  const parts = viHtml.split(TAG_SPLIT);
+  let fixed = 0;
+
+  // Text nodes sit at even indices; the tag right after one is parts[i+1], the
+  // tag right before is parts[i-1]. A boundary needs a space when the word on
+  // the VI side is a letter AND the first visible character on the tag side is
+  // a letter too.
+  for (let n = 0; n < vi.nodes.length; n++) {
+    const node = vi.nodes[n];
+    if (englishBlocks.has(node.blockId) || node.protectedSpan) continue;
+    const idx = n * 2;
+    const text = parts[idx];
+    if (!text) continue;
+
+    const after = parts[idx + 1]; // tag (or trailing text end) following this node
+    if (after !== undefined && /^<\/?(i|span|b|strong|em|u|s|sup|cite)\b/.test(after)) {
+      const nextText = vi.nodes[n + 1]?.text ?? "";
+      // After a CLOSING tag the next node is outside the element; after an
+      // OPEN tag it is the element's own (protected or translated) content.
+      // Either way the same word-char test decides.
+      if (WORD_CHAR.test(text.slice(-1)) && nextText && WORD_CHAR.test(nextText[0])) {
+        parts[idx] = text + " ";
+        fixed++;
+      }
+    }
+
+    const before = parts[idx - 1]; // tag right before this node
+    const prev = parts[idx];
+    if (before !== undefined && /^<\/?(i|span|b|strong|em|u|s|sup|cite)\b/.test(before)) {
+      const prevText = vi.nodes[n - 1]?.text ?? "";
+      if (WORD_CHAR.test(prev[0]) && prevText && WORD_CHAR.test(prevText.slice(-1))) {
+        parts[idx] = " " + prev;
+        fixed++;
+      }
     }
   }
-  return parts.join("");
+  if (fixed === 0) return { html: viHtml, fixed: 0 };
+  return { html: parts.join(""), fixed };
 }
 
 

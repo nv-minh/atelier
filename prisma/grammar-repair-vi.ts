@@ -13,6 +13,7 @@
 // so a full backup gives this operation no cover whatsoever.
 //
 // Usage: npm run grammar:repair-vi -- [--dry-run] [--only <table>]
+//        npm run grammar:repair-vi -- --dry-run --examples --only testQuestions   (also lists stems that would fall back to English)
 //        npm run grammar:repair-vi -- --restore data/backups/grammar-vi-<ts>.json
 import "./load-env";
 import { Prisma, PrismaClient } from "@prisma/client";
@@ -20,12 +21,13 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { ConfusedEntry } from "../src/lib/grammar/confused-json";
 import {
-  isBlankStem,
   repairConfusedEntriesVi,
   repairExplanationVi,
   repairLessonViHtml,
   repairMistakeTitleVi,
 } from "../src/lib/grammar/vi-repair";
+import { repairStemVi, splitHybridStem } from "../src/lib/grammar/stem-policy";
+import { isBlankStem } from "../src/lib/grammar/vi-repair";
 
 const prisma = new PrismaClient();
 const DRY_RUN = process.argv.includes("--dry-run");
@@ -34,6 +36,7 @@ const argOf = (flag: string): string | null => {
   return i !== -1 && process.argv[i + 1] ? process.argv[i + 1] : null;
 };
 const RESTORE = argOf("--restore");
+const SHOW_EXAMPLES = process.argv.includes("--examples");
 const onlyIdx = process.argv.indexOf("--only");
 const ONLY = onlyIdx !== -1 && process.argv[onlyIdx + 1] ? process.argv[onlyIdx + 1] : null;
 
@@ -95,23 +98,37 @@ type StemDelegate = {
   updateMany(args: unknown): Promise<unknown>;
 };
 
-// Both question tables share the stem rule: a blank makes the sentence itself
-// the exercise, so only the English version poses the question at all.
-async function nullBlankStems(table: "testQuestions" | "practiceQuestions"): Promise<void> {
+// Both question tables share the stem policy (src/lib/grammar/stem-policy.ts):
+// a blank stem stays English, a hybrid stem keeps its English sentence verbatim
+// behind a Vietnamese cue, and quoted target words survive. A stem the policy
+// cannot make safe falls back to English (NULL) and shows up as "needs translation".
+async function repairStems(table: "testQuestions" | "practiceQuestions"): Promise<void> {
   const delegate = (
     table === "testQuestions" ? prisma.grammarTestQuestion : prisma.grammarPracticeQuestion
-  ) as unknown as StemDelegate;
-  const rows = await delegate.findMany({
+  ) as unknown as StemDelegate & {
+    update(args: unknown): Promise<unknown>;
+  };
+  const rows = (await delegate.findMany({
     where: { questionVi: { not: null } },
-    select: { id: true, questionEn: true },
-  });
-  const ids = rows.filter((r) => isBlankStem(r.questionEn)).map((r) => r.id);
-  note(table, "stemsNulled", ids.length);
-  note(table, "stemsKept", rows.length - ids.length);
-  if (DRY_RUN) return;
-  for (let i = 0; i < ids.length; i += 500) {
-    await delegate.updateMany({ where: { id: { in: ids.slice(i, i + 500) } }, data: { questionVi: null } });
+    select: { id: true, questionEn: true, questionVi: true },
+  })) as Array<{ id: number; questionEn: string; questionVi: string }>;
+  const ops: Array<() => Promise<unknown>> = [];
+  const examples: string[] = [];
+  for (const row of rows) {
+    const to = repairStemVi(row.questionEn, row.questionVi);
+    if (to === row.questionVi) {
+      note(table, "stemsKept");
+      continue;
+    }
+    const kind = isBlankStem(row.questionEn) ? "Blank" : splitHybridStem(row.questionEn) ? "Hybrid" : "Instruction";
+    note(table, to === null ? `stemsNulled${kind}` : `stemsRestored${kind}`);
+    if (SHOW_EXAMPLES && to === null && kind !== "Blank" && examples.length < 40) {
+      examples.push(`  #${row.id} EN: ${row.questionEn.slice(0, 90)}\n        VI: ${row.questionVi.slice(0, 90)}`);
+    }
+    ops.push(() => delegate.update({ where: { id: row.id }, data: { questionVi: to } }));
   }
+  if (examples.length) console.log(`${table} stems that would fall back to English:\n${examples.join("\n")}\n`);
+  await flush(ops);
 }
 
 async function repairExplanations(): Promise<void> {
@@ -265,9 +282,9 @@ async function main(): Promise<void> {
     console.log(`snapshot → ${file}\n`);
   }
   if (wants("lessons")) await repairLessons();
-  if (wants("testQuestions")) await nullBlankStems("testQuestions");
+  if (wants("testQuestions")) await repairStems("testQuestions");
   if (wants("practiceQuestions")) {
-    await nullBlankStems("practiceQuestions");
+    await repairStems("practiceQuestions");
     await repairExplanations();
   }
   if (wants("confusedPairs")) await repairConfusedPairs();

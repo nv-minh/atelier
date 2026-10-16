@@ -305,9 +305,6 @@ export function GrammarSession({
               <p className="text-xs text-soft font-mono mb-3">{t("grammar.test.title", { topic: topicName })}</p>
               {current.repeat && <p className="mb-3"><span className="pill text-soft">{t("grammar.test.repeatPill")}</span></p>}
               <h2 className="display text-xl sm:text-2xl leading-relaxed break-words">{question}</h2>
-              {lang === "vi" && current.questionVi && current.questionEn !== question && (
-                <p className="text-sm text-soft mt-2">{current.questionEn}</p>
-              )}
               <p className="text-xs text-soft mt-3">{t("grammar.test.pickAnswer")}</p>
             </div>
 
