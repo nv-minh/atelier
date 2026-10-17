@@ -6,6 +6,14 @@
 // actual word with a good en-GB / en-US voice. No more 404'd Oxford URLs.
 
 const recordingCache = new Map<string, string | null>();
+
+// The recording service is a free third-party API that regularly stalls (Cloudflare
+// 522, or no answer at all). Nothing can be heard until playWord gets past it, so it
+// gets a short deadline, and after one failure it is skipped for a while rather than
+// charging every following click the same wait.
+const RECORDING_TIMEOUT_MS = 1500;
+const RECORDING_COOLDOWN_MS = 60_000;
+let recordingDownUntil = 0;
 let voicesCache: SpeechSynthesisVoice[] | null = null;
 
 function getVoices(): SpeechSynthesisVoice[] {
@@ -28,11 +36,14 @@ export async function fetchRecording(word: string): Promise<string | null> {
   const w = word.trim().toLowerCase();
   if (!w) return null;
   if (recordingCache.has(w)) return recordingCache.get(w)!;
+  if (Date.now() < recordingDownUntil) return null;
   let result: string | null = null;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), RECORDING_TIMEOUT_MS);
   try {
     const res = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(w)}`,
-      { cache: "force-cache" }
+      { cache: "force-cache", signal: controller.signal }
     );
     if (res.ok) {
       const data = await res.json();
@@ -52,7 +63,11 @@ export async function fetchRecording(word: string): Promise<string | null> {
       }
     }
   } catch {
-    result = null;
+    // Timed out, offline or blocked: say nothing about the word itself, so do not cache.
+    recordingDownUntil = Date.now() + RECORDING_COOLDOWN_MS;
+    return null;
+  } finally {
+    clearTimeout(timer);
   }
   recordingCache.set(w, result);
   return result;

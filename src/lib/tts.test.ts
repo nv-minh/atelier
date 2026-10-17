@@ -189,3 +189,39 @@ describe("stopSpeaking", () => {
     expect(onFail).not.toHaveBeenCalled();
   });
 });
+
+describe("playWord when the recording service hangs", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.useRealTimers();
+    vi.resetModules();
+  });
+
+  // dictionaryapi.dev is a free third-party API that regularly stalls (Cloudflare 522
+  // or no response at all). Waiting on it forever means no sound in dictation mode.
+  it("gives up on the recording after a short timeout and speaks the word instead", async () => {
+    vi.useFakeTimers();
+    const { synth, spoken } = stubSpeech();
+    vi.stubGlobal("fetch", vi.fn((_url: string, init?: RequestInit) => new Promise((_res, rej) => init?.signal?.addEventListener("abort", () => rej(new DOMException("aborted", "AbortError"))))));
+    const { playWord } = await import("./tts");
+    const p = playWord("actress", { accent: "us", rate: 1 });
+    await vi.advanceTimersByTimeAsync(3000);
+    await p;
+    expect(synth.speak).toHaveBeenCalledTimes(1);
+    expect(spoken[0].text).toBe("actress");
+  });
+
+  it("does not make the next click wait for the stalled service again", async () => {
+    vi.useFakeTimers();
+    const { synth } = stubSpeech();
+    const fetchMock = vi.fn((_url: string, init?: RequestInit) => new Promise((_res, rej) => init?.signal?.addEventListener("abort", () => rej(new DOMException("aborted", "AbortError")))));
+    vi.stubGlobal("fetch", fetchMock);
+    const { playWord } = await import("./tts");
+    const first = playWord("actress", { accent: "us" });
+    await vi.advanceTimersByTimeAsync(3000);
+    await first;
+    await playWord("apple", { accent: "us" });
+    expect(synth.speak).toHaveBeenCalledTimes(2);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+});
