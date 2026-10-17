@@ -1,0 +1,10083 @@
+{
+ "abdomen": [
+  "body"
+ ],
+ "abduction": [
+  "body"
+ ],
+ "aboard": [
+  "travel"
+ ],
+ "abortion": [
+  "body"
+ ],
+ "abortion pill": [
+  "body"
+ ],
+ "abrasion": [
+  "body"
+ ],
+ "abroad": [
+  "travel"
+ ],
+ "academic": [
+  "education"
+ ],
+ "academy": [
+  "education"
+ ],
+ "accent": [
+  "communication"
+ ],
+ "accident": [
+  "travel"
+ ],
+ "accommodate": [
+  "home"
+ ],
+ "accommodation": [
+  "home",
+  "travel"
+ ],
+ "account": [
+  "money"
+ ],
+ "accountant": [
+  "work",
+  "money"
+ ],
+ "accrual": [
+  "money"
+ ],
+ "ache": [
+  "body"
+ ],
+ "acne": [
+  "body"
+ ],
+ "acoustic": [
+  "body"
+ ],
+ "acquaintance": [
+  "family"
+ ],
+ "acquirer": [
+  "money",
+  "work"
+ ],
+ "actor": [
+  "work",
+  "sports"
+ ],
+ "actress": [
+  "work",
+  "sports"
+ ],
+ "actual damages": [
+  "money"
+ ],
+ "actual eviction": [
+  "home"
+ ],
+ "ad": [
+  "communication",
+  "work"
+ ],
+ "addiction": [
+  "body"
+ ],
+ "address": [
+  "home"
+ ],
+ "adhesion": [
+  "body"
+ ],
+ "administer": [
+  "work"
+ ],
+ "administration": [
+  "work"
+ ],
+ "administrative": [
+  "work"
+ ],
+ "administrator": [
+  "work"
+ ],
+ "admiration": [
+  "emotions"
+ ],
+ "admire": [
+  "emotions"
+ ],
+ "admission": [
+  "education"
+ ],
+ "adolescent": [
+  "family"
+ ],
+ "adopt": [
+  "family"
+ ],
+ "adoption": [
+  "family"
+ ],
+ "adult": [
+  "family"
+ ],
+ "adulthood": [
+  "family"
+ ],
+ "adventure": [
+  "travel"
+ ],
+ "advertise": [
+  "communication"
+ ],
+ "advertisement": [
+  "communication"
+ ],
+ "advertiser": [
+  "work"
+ ],
+ "advertising": [
+  "work",
+  "communication"
+ ],
+ "advisor": [
+  "work"
+ ],
+ "affection": [
+  "emotions"
+ ],
+ "afford": [
+  "money"
+ ],
+ "affordable": [
+  "money"
+ ],
+ "afraid": [
+  "emotions"
+ ],
+ "after": [
+  "time"
+ ],
+ "afternoon": [
+  "time"
+ ],
+ "afterward": [
+  "time"
+ ],
+ "afterwards": [
+  "time"
+ ],
+ "age": [
+  "time"
+ ],
+ "agency": [
+  "work"
+ ],
+ "agenda": [
+  "work"
+ ],
+ "agent": [
+  "work"
+ ],
+ "aggression": [
+  "emotions"
+ ],
+ "aggressive": [
+  "emotions"
+ ],
+ "ago": [
+  "time"
+ ],
+ "agony": [
+  "body"
+ ],
+ "agree": [
+  "communication"
+ ],
+ "agricultural": [
+  "nature"
+ ],
+ "agriculture": [
+  "nature"
+ ],
+ "aide": [
+  "work"
+ ],
+ "aids": [
+  "body"
+ ],
+ "air": [
+  "nature"
+ ],
+ "aircraft": [
+  "travel"
+ ],
+ "airfare": [
+  "travel",
+  "money"
+ ],
+ "airline": [
+  "travel"
+ ],
+ "airplane": [
+  "travel"
+ ],
+ "airport": [
+  "travel"
+ ],
+ "album": [
+  "sports"
+ ],
+ "alcohol": [
+  "food"
+ ],
+ "alcoholic": [
+  "food"
+ ],
+ "algae": [
+  "nature"
+ ],
+ "algorithm": [
+  "technology"
+ ],
+ "algorithmic": [
+  "technology"
+ ],
+ "alimony": [
+  "money"
+ ],
+ "allergy": [
+  "body"
+ ],
+ "allocation": [
+  "money"
+ ],
+ "allowance": [
+  "money"
+ ],
+ "almond": [
+  "food"
+ ],
+ "alpine": [
+  "nature"
+ ],
+ "already": [
+  "time"
+ ],
+ "always": [
+  "time"
+ ],
+ "amateur": [
+  "sports"
+ ],
+ "amazed": [
+  "emotions"
+ ],
+ "ambulance": [
+  "body",
+  "travel"
+ ],
+ "amelia": [
+  "body"
+ ],
+ "amortization": [
+  "money"
+ ],
+ "amphetamine": [
+  "body"
+ ],
+ "amputation": [
+  "body"
+ ],
+ "analyst": [
+  "work"
+ ],
+ "ancestor": [
+  "family"
+ ],
+ "ancestral": [
+  "family"
+ ],
+ "anchor": [
+  "travel"
+ ],
+ "android": [
+  "technology"
+ ],
+ "anemia": [
+  "body"
+ ],
+ "anesthetic": [
+  "body"
+ ],
+ "anger": [
+  "emotions"
+ ],
+ "angry": [
+  "emotions"
+ ],
+ "animal": [
+  "animals"
+ ],
+ "animation": [
+  "technology"
+ ],
+ "ankle": [
+  "body"
+ ],
+ "anna": [
+  "money"
+ ],
+ "anniversary": [
+  "time"
+ ],
+ "announce": [
+  "communication"
+ ],
+ "announcement": [
+  "communication"
+ ],
+ "announcer": [
+  "communication"
+ ],
+ "annoy": [
+  "emotions"
+ ],
+ "annoyed": [
+  "emotions"
+ ],
+ "annoying": [
+  "emotions"
+ ],
+ "annual": [
+  "time"
+ ],
+ "annually": [
+  "time"
+ ],
+ "annuity": [
+  "money"
+ ],
+ "annuity in advance": [
+  "money"
+ ],
+ "annum": [
+  "time"
+ ],
+ "answer": [
+  "communication"
+ ],
+ "antagonist": [
+  "body"
+ ],
+ "anterior cardinal vein": [
+  "body"
+ ],
+ "anti-dumping duty": [
+  "money"
+ ],
+ "anti-inflammatory": [
+  "body"
+ ],
+ "antibiotic": [
+  "body"
+ ],
+ "antidepressant": [
+  "body"
+ ],
+ "antidote": [
+  "body"
+ ],
+ "antigen": [
+  "body"
+ ],
+ "antivirus": [
+  "technology"
+ ],
+ "anus": [
+  "body"
+ ],
+ "anxiety": [
+  "emotions"
+ ],
+ "anxious": [
+  "emotions"
+ ],
+ "anytime": [
+  "time"
+ ],
+ "aorta": [
+  "body"
+ ],
+ "apartment": [
+  "home"
+ ],
+ "api": [
+  "technology"
+ ],
+ "apnea": [
+  "body"
+ ],
+ "apologize": [
+  "communication"
+ ],
+ "apology": [
+  "communication"
+ ],
+ "app": [
+  "technology"
+ ],
+ "appetite": [
+  "food"
+ ],
+ "appetizer": [
+  "food"
+ ],
+ "apple": [
+  "food"
+ ],
+ "apple butter": [
+  "food"
+ ],
+ "apple pie": [
+  "food"
+ ],
+ "appliance": [
+  "home"
+ ],
+ "applicant": [
+  "work"
+ ],
+ "application": [
+  "work"
+ ],
+ "apply": [
+  "work"
+ ],
+ "appoint": [
+  "work"
+ ],
+ "appointment": [
+  "time"
+ ],
+ "apprehensive": [
+  "emotions"
+ ],
+ "apprentice": [
+  "work"
+ ],
+ "appropriation": [
+  "money"
+ ],
+ "appropriation bill": [
+  "money"
+ ],
+ "april": [
+  "time"
+ ],
+ "aquarium": [
+  "animals"
+ ],
+ "aquatic": [
+  "nature"
+ ],
+ "arbitrage": [
+  "money"
+ ],
+ "arch": [
+  "body"
+ ],
+ "architect": [
+  "work",
+  "city"
+ ],
+ "architectural": [
+  "city"
+ ],
+ "architecture": [
+  "city"
+ ],
+ "arena": [
+  "sports",
+  "city"
+ ],
+ "argentine": [
+  "animals"
+ ],
+ "argue": [
+  "communication"
+ ],
+ "argument": [
+  "communication"
+ ],
+ "arm": [
+  "body"
+ ],
+ "armpit": [
+  "body"
+ ],
+ "arrival": [
+  "travel"
+ ],
+ "arrive": [
+  "travel"
+ ],
+ "arse": [
+  "body"
+ ],
+ "art": [
+  "sports"
+ ],
+ "artery": [
+  "body"
+ ],
+ "arthritis": [
+  "body"
+ ],
+ "article": [
+  "communication"
+ ],
+ "articles of incorporation": [
+  "work"
+ ],
+ "articulate": [
+  "communication"
+ ],
+ "artificial intelligence": [
+  "technology"
+ ],
+ "artificial kidney": [
+  "body"
+ ],
+ "artist": [
+  "sports"
+ ],
+ "artistic": [
+  "sports"
+ ],
+ "artwork": [
+  "sports"
+ ],
+ "ash-key": [
+  "nature"
+ ],
+ "ashamed": [
+  "emotions"
+ ],
+ "ask": [
+  "communication"
+ ],
+ "asleep": [
+  "body"
+ ],
+ "aspiration pneumonia": [
+  "body"
+ ],
+ "aspirin": [
+  "body"
+ ],
+ "asset": [
+  "money"
+ ],
+ "assignment": [
+  "education"
+ ],
+ "assistant": [
+  "work"
+ ],
+ "assume": [
+  "mind"
+ ],
+ "assumption": [
+  "mind"
+ ],
+ "asteroid": [
+  "nature"
+ ],
+ "asthma": [
+  "body"
+ ],
+ "astronaut": [
+  "travel"
+ ],
+ "astronomy": [
+  "nature"
+ ],
+ "asynchronous": [
+  "technology"
+ ],
+ "athlete": [
+  "sports"
+ ],
+ "athletic": [
+  "sports"
+ ],
+ "atmosphere": [
+  "nature"
+ ],
+ "atomic cocktail": [
+  "body"
+ ],
+ "atrial": [
+  "body"
+ ],
+ "atrophy": [
+  "body"
+ ],
+ "attachment": [
+  "technology"
+ ],
+ "attendance": [
+  "education"
+ ],
+ "attic": [
+  "home"
+ ],
+ "attire": [
+  "clothing"
+ ],
+ "attorney": [
+  "work"
+ ],
+ "attraction": [
+  "city",
+  "sports"
+ ],
+ "atypical pneumonia": [
+  "body"
+ ],
+ "auction": [
+  "money"
+ ],
+ "audience": [
+  "sports"
+ ],
+ "audio": [
+  "technology"
+ ],
+ "audit": [
+  "money",
+  "work"
+ ],
+ "audition": [
+  "sports"
+ ],
+ "auditor": [
+  "money",
+  "work"
+ ],
+ "auditorium": [
+  "city"
+ ],
+ "auditory apparatus": [
+  "body"
+ ],
+ "august": [
+  "time"
+ ],
+ "aunt": [
+  "family"
+ ],
+ "authentication": [
+  "technology"
+ ],
+ "author": [
+  "communication"
+ ],
+ "autism": [
+  "body"
+ ],
+ "auto": [
+  "travel"
+ ],
+ "automate": [
+  "technology"
+ ],
+ "automatic": [
+  "technology"
+ ],
+ "automation": [
+  "technology"
+ ],
+ "automobile": [
+  "travel"
+ ],
+ "automotive": [
+  "travel"
+ ],
+ "autopsy": [
+  "body"
+ ],
+ "autumn": [
+  "time",
+  "nature"
+ ],
+ "avatar": [
+  "technology"
+ ],
+ "avenue": [
+  "city"
+ ],
+ "aversion": [
+  "emotions"
+ ],
+ "aviation": [
+  "travel"
+ ],
+ "baba": [
+  "food"
+ ],
+ "baby": [
+  "family"
+ ],
+ "backend": [
+  "technology"
+ ],
+ "backpack": [
+  "travel"
+ ],
+ "backstage": [
+  "sports"
+ ],
+ "backup copy": [
+  "technology"
+ ],
+ "bacon": [
+  "food"
+ ],
+ "bacteria": [
+  "body"
+ ],
+ "baggage": [
+  "travel"
+ ],
+ "bake": [
+  "food"
+ ],
+ "baker": [
+  "food",
+  "work"
+ ],
+ "bakery": [
+  "food",
+  "city"
+ ],
+ "balcony": [
+  "home"
+ ],
+ "ball": [
+  "sports"
+ ],
+ "ball carrier": [
+  "sports"
+ ],
+ "ballet": [
+  "sports"
+ ],
+ "ballroom": [
+  "home"
+ ],
+ "banana": [
+  "food"
+ ],
+ "band": [
+  "sports"
+ ],
+ "bandwidth": [
+  "technology"
+ ],
+ "bank": [
+  "money"
+ ],
+ "banker": [
+  "money",
+  "work"
+ ],
+ "banking": [
+  "money"
+ ],
+ "bankrupt": [
+  "money"
+ ],
+ "bankruptcy": [
+  "money"
+ ],
+ "banquet": [
+  "food"
+ ],
+ "bar": [
+  "food",
+  "city"
+ ],
+ "barbecue": [
+  "food"
+ ],
+ "bargain": [
+  "money",
+  "clothing"
+ ],
+ "barrister": [
+  "work"
+ ],
+ "barter away": [
+  "money"
+ ],
+ "base runner": [
+  "sports"
+ ],
+ "baseball": [
+  "sports"
+ ],
+ "baseball clinic": [
+  "sports"
+ ],
+ "basement": [
+  "home"
+ ],
+ "basket": [
+  "home"
+ ],
+ "basketball": [
+  "sports"
+ ],
+ "basketball clinic": [
+  "sports"
+ ],
+ "basketball player": [
+  "sports"
+ ],
+ "bass": [
+  "sports"
+ ],
+ "bat": [
+  "sports"
+ ],
+ "batch": [
+  "food"
+ ],
+ "bath": [
+  "home"
+ ],
+ "bathroom": [
+  "home"
+ ],
+ "baton": [
+  "sports"
+ ],
+ "batter": [
+  "sports"
+ ],
+ "battery": [
+  "technology"
+ ],
+ "bay": [
+  "nature"
+ ],
+ "beach": [
+  "nature",
+  "travel"
+ ],
+ "bean": [
+  "food"
+ ],
+ "bear": [
+  "animals"
+ ],
+ "beast": [
+  "animals"
+ ],
+ "beat": [
+  "sports"
+ ],
+ "beau": [
+  "family"
+ ],
+ "bed": [
+  "home"
+ ],
+ "bedroom": [
+  "home"
+ ],
+ "bedtime": [
+  "time",
+  "home"
+ ],
+ "bee": [
+  "animals"
+ ],
+ "beef": [
+  "food"
+ ],
+ "beer": [
+  "food"
+ ],
+ "beetle": [
+  "animals"
+ ],
+ "belief": [
+  "mind"
+ ],
+ "believe": [
+  "mind"
+ ],
+ "bell apple": [
+  "food"
+ ],
+ "belly": [
+  "body"
+ ],
+ "belt": [
+  "clothing"
+ ],
+ "benign": [
+  "body"
+ ],
+ "bequest": [
+  "money"
+ ],
+ "bet": [
+  "money"
+ ],
+ "beta blocker": [
+  "body"
+ ],
+ "beverage": [
+  "food"
+ ],
+ "biceps": [
+  "body"
+ ],
+ "bicycle": [
+  "travel"
+ ],
+ "bid": [
+  "money"
+ ],
+ "bidder": [
+  "money"
+ ],
+ "big data": [
+  "technology"
+ ],
+ "big toe": [
+  "body"
+ ],
+ "bigamy": [
+  "family"
+ ],
+ "bike": [
+  "travel"
+ ],
+ "bill": [
+  "money"
+ ],
+ "bin": [
+  "home"
+ ],
+ "biology": [
+  "education"
+ ],
+ "biometric": [
+  "technology"
+ ],
+ "bipolar": [
+  "body"
+ ],
+ "bird": [
+  "animals"
+ ],
+ "bird feed": [
+  "animals"
+ ],
+ "birth": [
+  "body",
+  "family"
+ ],
+ "birth canal": [
+  "body"
+ ],
+ "birth trauma": [
+  "body"
+ ],
+ "birthday": [
+  "time"
+ ],
+ "biscuit": [
+  "food"
+ ],
+ "bitter": [
+  "food"
+ ],
+ "black tea": [
+  "food"
+ ],
+ "blackout": [
+  "technology"
+ ],
+ "blackwater": [
+  "body"
+ ],
+ "bladder": [
+  "body"
+ ],
+ "blanket": [
+  "home"
+ ],
+ "blast trauma": [
+  "body"
+ ],
+ "bleed": [
+  "body"
+ ],
+ "bleeding": [
+  "body"
+ ],
+ "blind": [
+  "body"
+ ],
+ "blister": [
+  "body"
+ ],
+ "blitz": [
+  "sports"
+ ],
+ "blizzard": [
+  "nature"
+ ],
+ "blog": [
+  "technology"
+ ],
+ "bloke": [
+  "family"
+ ],
+ "blood": [
+  "body"
+ ],
+ "blood typing": [
+  "body"
+ ],
+ "blossom": [
+  "nature"
+ ],
+ "blue baby": [
+  "body"
+ ],
+ "blues": [
+  "sports"
+ ],
+ "bluetooth": [
+  "technology"
+ ],
+ "bluff": [
+  "nature"
+ ],
+ "blunt trauma": [
+  "body"
+ ],
+ "boardroom": [
+  "work"
+ ],
+ "boat": [
+  "travel"
+ ],
+ "body": [
+  "body"
+ ],
+ "boil": [
+  "food"
+ ],
+ "boilerplate": [
+  "technology"
+ ],
+ "bolster": [
+  "home"
+ ],
+ "bondholder": [
+  "money"
+ ],
+ "bonding": [
+  "body"
+ ],
+ "bone": [
+  "body"
+ ],
+ "bonus": [
+  "money",
+  "work"
+ ],
+ "boogie": [
+  "sports"
+ ],
+ "bookcase": [
+  "home"
+ ],
+ "booking": [
+  "travel"
+ ],
+ "bookmark": [
+  "technology"
+ ],
+ "bookstore": [
+  "city",
+  "clothing"
+ ],
+ "boolean": [
+  "technology"
+ ],
+ "boom": [
+  "money"
+ ],
+ "boot": [
+  "clothing"
+ ],
+ "booze": [
+  "food"
+ ],
+ "border": [
+  "travel"
+ ],
+ "bored": [
+  "emotions"
+ ],
+ "borrow": [
+  "money"
+ ],
+ "borrower": [
+  "money"
+ ],
+ "bosom": [
+  "body"
+ ],
+ "boss": [
+  "work"
+ ],
+ "bourbon": [
+  "food"
+ ],
+ "boutique": [
+  "clothing"
+ ],
+ "bowel": [
+  "body"
+ ],
+ "bowl": [
+  "home"
+ ],
+ "boxing": [
+  "sports"
+ ],
+ "boy": [
+  "family"
+ ],
+ "boyfriend": [
+  "family"
+ ],
+ "bracket creep": [
+  "money"
+ ],
+ "brain": [
+  "body"
+ ],
+ "brainstorm": [
+  "mind"
+ ],
+ "branch": [
+  "nature"
+ ],
+ "brand": [
+  "clothing"
+ ],
+ "bread": [
+  "food"
+ ],
+ "breakfast": [
+  "food"
+ ],
+ "breakpoint": [
+  "technology"
+ ],
+ "breast": [
+  "body"
+ ],
+ "breath": [
+  "body"
+ ],
+ "breathe": [
+  "body"
+ ],
+ "breathing": [
+  "body"
+ ],
+ "breed": [
+  "animals"
+ ],
+ "brew": [
+  "food"
+ ],
+ "brewer": [
+  "food"
+ ],
+ "brick": [
+  "home"
+ ],
+ "bride": [
+  "family"
+ ],
+ "bridge": [
+  "city"
+ ],
+ "briefcase": [
+  "work"
+ ],
+ "broadband": [
+  "technology"
+ ],
+ "broadcast": [
+  "technology"
+ ],
+ "broadcaster": [
+  "technology",
+  "work"
+ ],
+ "brokerage": [
+  "money"
+ ],
+ "broom": [
+  "home"
+ ],
+ "brother": [
+  "family"
+ ],
+ "brow": [
+  "body"
+ ],
+ "brown sauce": [
+  "food"
+ ],
+ "browser": [
+  "technology"
+ ],
+ "bruise": [
+  "body"
+ ],
+ "buck": [
+  "money"
+ ],
+ "bucket shop": [
+  "money"
+ ],
+ "buddy": [
+  "family"
+ ],
+ "budget": [
+  "money"
+ ],
+ "buffet": [
+  "food"
+ ],
+ "bug": [
+  "animals"
+ ],
+ "builder": [
+  "work"
+ ],
+ "building": [
+  "city"
+ ],
+ "building permit": [
+  "city"
+ ],
+ "bull": [
+  "animals"
+ ],
+ "bump": [
+  "body"
+ ],
+ "bus": [
+  "travel"
+ ],
+ "bush": [
+  "nature"
+ ],
+ "business": [
+  "work"
+ ],
+ "business deduction": [
+  "money"
+ ],
+ "businessman": [
+  "work"
+ ],
+ "businessperson": [
+  "work"
+ ],
+ "butter": [
+  "food"
+ ],
+ "buttocks": [
+  "body"
+ ],
+ "button": [
+  "clothing"
+ ],
+ "buy": [
+  "clothing",
+  "money"
+ ],
+ "buyout": [
+  "money",
+  "work"
+ ],
+ "bypass": [
+  "body"
+ ],
+ "byte": [
+  "technology"
+ ],
+ "cab": [
+  "travel"
+ ],
+ "cabin": [
+  "travel"
+ ],
+ "cable": [
+  "technology"
+ ],
+ "cache": [
+  "technology"
+ ],
+ "cafe": [
+  "food",
+  "city"
+ ],
+ "café": [
+  "food",
+  "city"
+ ],
+ "cafeteria": [
+  "food"
+ ],
+ "cage": [
+  "animals"
+ ],
+ "cake": [
+  "food"
+ ],
+ "cake mix": [
+  "food"
+ ],
+ "calculator": [
+  "technology"
+ ],
+ "calculus": [
+  "body"
+ ],
+ "calendar": [
+  "time"
+ ],
+ "calf": [
+  "body"
+ ],
+ "call": [
+  "communication"
+ ],
+ "callback": [
+  "technology"
+ ],
+ "caller": [
+  "communication"
+ ],
+ "calm": [
+  "emotions"
+ ],
+ "calm air": [
+  "nature"
+ ],
+ "camel": [
+  "animals"
+ ],
+ "camera": [
+  "technology"
+ ],
+ "camp": [
+  "travel"
+ ],
+ "camping": [
+  "travel",
+  "sports"
+ ],
+ "campus": [
+  "education"
+ ],
+ "canal": [
+  "nature"
+ ],
+ "cancer": [
+  "body"
+ ],
+ "candidate": [
+  "work"
+ ],
+ "candle": [
+  "home"
+ ],
+ "candy": [
+  "food"
+ ],
+ "candy bar": [
+  "food"
+ ],
+ "candy egg": [
+  "food"
+ ],
+ "canine": [
+  "body"
+ ],
+ "cap": [
+  "clothing"
+ ],
+ "cape": [
+  "nature"
+ ],
+ "capital gains tax": [
+  "money"
+ ],
+ "capital levy": [
+  "money"
+ ],
+ "capitalism": [
+  "money"
+ ],
+ "capitalist": [
+  "money"
+ ],
+ "capsule": [
+  "body"
+ ],
+ "captain": [
+  "travel"
+ ],
+ "captcha": [
+  "technology"
+ ],
+ "car": [
+  "travel"
+ ],
+ "caravan": [
+  "travel"
+ ],
+ "carbon": [
+  "nature"
+ ],
+ "carcinoma": [
+  "body"
+ ],
+ "carcinoma in situ": [
+  "body"
+ ],
+ "cardinal vein": [
+  "body"
+ ],
+ "career": [
+  "work"
+ ],
+ "cargo": [
+  "travel"
+ ],
+ "carmaker": [
+  "work"
+ ],
+ "carol": [
+  "sports"
+ ],
+ "carpenter": [
+  "work"
+ ],
+ "carpet": [
+  "home"
+ ],
+ "carriage": [
+  "travel"
+ ],
+ "carrot": [
+  "food"
+ ],
+ "cartel": [
+  "work"
+ ],
+ "cartilage": [
+  "body"
+ ],
+ "cartoon": [
+  "sports"
+ ],
+ "case knife": [
+  "food"
+ ],
+ "cash": [
+  "money"
+ ],
+ "casino": [
+  "sports"
+ ],
+ "cast": [
+  "sports"
+ ],
+ "castle": [
+  "city"
+ ],
+ "castor oil": [
+  "body"
+ ],
+ "cat": [
+  "animals"
+ ],
+ "cataract": [
+  "body"
+ ],
+ "cater": [
+  "food"
+ ],
+ "caterer": [
+  "food"
+ ],
+ "cattle": [
+  "animals"
+ ],
+ "cauliflower ear": [
+  "body"
+ ],
+ "cave": [
+  "nature"
+ ],
+ "cd": [
+  "technology"
+ ],
+ "cdn": [
+  "technology"
+ ],
+ "ceiling": [
+  "home"
+ ],
+ "celestial": [
+  "nature"
+ ],
+ "cell": [
+  "body"
+ ],
+ "cellar": [
+  "home"
+ ],
+ "cellphone": [
+  "technology"
+ ],
+ "cemetery": [
+  "city"
+ ],
+ "cent": [
+  "money"
+ ],
+ "century": [
+  "time"
+ ],
+ "cerebral": [
+  "mind"
+ ],
+ "cerebral hemorrhage": [
+  "body"
+ ],
+ "cervical disc syndrome": [
+  "body"
+ ],
+ "cervix": [
+  "body"
+ ],
+ "chair": [
+  "home"
+ ],
+ "chairman": [
+  "work"
+ ],
+ "chairperson": [
+  "work"
+ ],
+ "champion": [
+  "sports"
+ ],
+ "championship": [
+  "sports"
+ ],
+ "channel": [
+  "technology"
+ ],
+ "chant": [
+  "sports"
+ ],
+ "chap": [
+  "family"
+ ],
+ "charge": [
+  "money"
+ ],
+ "charger": [
+  "technology"
+ ],
+ "charley horse": [
+  "body"
+ ],
+ "charlotte": [
+  "food"
+ ],
+ "chat": [
+  "communication"
+ ],
+ "chatbot": [
+  "technology"
+ ],
+ "cheap": [
+  "money"
+ ],
+ "cheaply": [
+  "money"
+ ],
+ "checkout": [
+  "travel"
+ ],
+ "checkup": [
+  "body"
+ ],
+ "cheek": [
+  "body"
+ ],
+ "cheerful": [
+  "emotions"
+ ],
+ "cheese": [
+  "food"
+ ],
+ "cheeseburger": [
+  "food"
+ ],
+ "chef": [
+  "food",
+  "work"
+ ],
+ "chemistry": [
+  "education"
+ ],
+ "chemotherapy": [
+  "body"
+ ],
+ "cheque": [
+  "money"
+ ],
+ "chest": [
+  "body"
+ ],
+ "chicken": [
+  "animals",
+  "food"
+ ],
+ "chicken feed": [
+  "animals"
+ ],
+ "child": [
+  "family"
+ ],
+ "childhood": [
+  "family"
+ ],
+ "chilly": [
+  "nature"
+ ],
+ "chimney": [
+  "home"
+ ],
+ "chin": [
+  "body"
+ ],
+ "chip": [
+  "food"
+ ],
+ "chocolate": [
+  "food"
+ ],
+ "chocolate bar": [
+  "food"
+ ],
+ "chocolate egg": [
+  "food"
+ ],
+ "choir": [
+  "sports"
+ ],
+ "cholera": [
+  "body"
+ ],
+ "chop": [
+  "food"
+ ],
+ "chronic": [
+  "body"
+ ],
+ "chronology": [
+  "time"
+ ],
+ "chuck": [
+  "food"
+ ],
+ "church": [
+  "city"
+ ],
+ "cinema": [
+  "sports",
+  "city"
+ ],
+ "circulation": [
+  "body"
+ ],
+ "circus": [
+  "sports"
+ ],
+ "city": [
+  "city"
+ ],
+ "clad": [
+  "clothing"
+ ],
+ "class": [
+  "education"
+ ],
+ "classical": [
+  "sports"
+ ],
+ "classmate": [
+  "education"
+ ],
+ "classroom": [
+  "education"
+ ],
+ "cleaner": [
+  "work"
+ ],
+ "clearing house": [
+  "money"
+ ],
+ "clerk": [
+  "work"
+ ],
+ "click": [
+  "technology"
+ ],
+ "client": [
+  "work"
+ ],
+ "cliff": [
+  "nature"
+ ],
+ "climate": [
+  "nature"
+ ],
+ "clinic": [
+  "body"
+ ],
+ "clinical": [
+  "body"
+ ],
+ "clipboard": [
+  "technology"
+ ],
+ "clitoris": [
+  "body"
+ ],
+ "cloak": [
+  "clothing"
+ ],
+ "clock": [
+  "time"
+ ],
+ "closer": [
+  "sports"
+ ],
+ "closet": [
+  "home"
+ ],
+ "cloth": [
+  "clothing"
+ ],
+ "clothes": [
+  "clothing"
+ ],
+ "clothing": [
+  "clothing"
+ ],
+ "cloud": [
+  "nature"
+ ],
+ "cloud computing": [
+  "technology"
+ ],
+ "cloudy": [
+  "nature"
+ ],
+ "club": [
+  "sports"
+ ],
+ "club sandwich": [
+  "food"
+ ],
+ "clubbing": [
+  "body"
+ ],
+ "coach": [
+  "sports"
+ ],
+ "coal": [
+  "nature"
+ ],
+ "coast": [
+  "nature"
+ ],
+ "coastal": [
+  "nature"
+ ],
+ "coat": [
+  "clothing"
+ ],
+ "cockpit": [
+  "travel"
+ ],
+ "cocktail": [
+  "food"
+ ],
+ "code review": [
+  "technology"
+ ],
+ "coffee": [
+  "food"
+ ],
+ "coffee cup": [
+  "food"
+ ],
+ "coffee maker": [
+  "home"
+ ],
+ "cognitive": [
+  "mind"
+ ],
+ "coin": [
+  "money"
+ ],
+ "cold cuts": [
+  "food"
+ ],
+ "cold-water flat": [
+  "home"
+ ],
+ "collaborate": [
+  "work"
+ ],
+ "collaboration": [
+  "work"
+ ],
+ "collar": [
+  "clothing"
+ ],
+ "collateral": [
+  "money"
+ ],
+ "colleague": [
+  "work"
+ ],
+ "college": [
+  "education"
+ ],
+ "collision": [
+  "travel"
+ ],
+ "colon": [
+  "body"
+ ],
+ "colon cancer": [
+  "body"
+ ],
+ "colt": [
+  "animals"
+ ],
+ "columnist": [
+  "work"
+ ],
+ "combat pay": [
+  "money"
+ ],
+ "combination salad": [
+  "food"
+ ],
+ "comedy": [
+  "sports"
+ ],
+ "comet": [
+  "nature"
+ ],
+ "comment": [
+  "communication"
+ ],
+ "commentary": [
+  "communication"
+ ],
+ "commentator": [
+  "communication"
+ ],
+ "commerce": [
+  "work"
+ ],
+ "commercial": [
+  "work"
+ ],
+ "committee": [
+  "work"
+ ],
+ "commodity": [
+  "money"
+ ],
+ "communicate": [
+  "communication"
+ ],
+ "communication": [
+  "communication"
+ ],
+ "communications": [
+  "communication"
+ ],
+ "communications technology": [
+  "technology"
+ ],
+ "commute": [
+  "travel"
+ ],
+ "commuter": [
+  "travel"
+ ],
+ "companion": [
+  "family"
+ ],
+ "company": [
+  "work"
+ ],
+ "compassion": [
+  "emotions"
+ ],
+ "compassionate": [
+  "emotions"
+ ],
+ "compensation": [
+  "money"
+ ],
+ "compete": [
+  "sports"
+ ],
+ "competition": [
+  "sports"
+ ],
+ "competitor": [
+  "sports"
+ ],
+ "compile time": [
+  "technology"
+ ],
+ "compiler": [
+  "technology"
+ ],
+ "complete fracture": [
+  "body"
+ ],
+ "compose": [
+  "sports"
+ ],
+ "composer": [
+  "sports"
+ ],
+ "comprehension": [
+  "mind"
+ ],
+ "compress": [
+  "technology"
+ ],
+ "computer": [
+  "technology"
+ ],
+ "computer technology": [
+  "technology"
+ ],
+ "computer vision": [
+  "technology"
+ ],
+ "computerize": [
+  "technology"
+ ],
+ "comrade": [
+  "family"
+ ],
+ "concatenate": [
+  "technology"
+ ],
+ "conceive": [
+  "mind"
+ ],
+ "concentrate": [
+  "mind"
+ ],
+ "concentration": [
+  "mind"
+ ],
+ "concept": [
+  "mind"
+ ],
+ "concert": [
+  "sports"
+ ],
+ "concierge": [
+  "work"
+ ],
+ "conclude": [
+  "mind"
+ ],
+ "concurrency": [
+  "technology"
+ ],
+ "concussion": [
+  "body"
+ ],
+ "condom": [
+  "body"
+ ],
+ "conductor": [
+  "sports"
+ ],
+ "confer": [
+  "communication"
+ ],
+ "conference": [
+  "work"
+ ],
+ "confidence": [
+  "emotions"
+ ],
+ "confident": [
+  "emotions"
+ ],
+ "congratulate": [
+  "communication"
+ ],
+ "congratulation": [
+  "communication"
+ ],
+ "connectivity": [
+  "technology"
+ ],
+ "conscience money": [
+  "money"
+ ],
+ "conservation": [
+  "nature"
+ ],
+ "consortium": [
+  "work"
+ ],
+ "constipation": [
+  "body"
+ ],
+ "constructor": [
+  "technology"
+ ],
+ "consultancy": [
+  "work"
+ ],
+ "consultant": [
+  "work"
+ ],
+ "consumer": [
+  "money"
+ ],
+ "contact dermatitis": [
+  "body"
+ ],
+ "contagious": [
+  "body"
+ ],
+ "contender": [
+  "sports"
+ ],
+ "content management system": [
+  "technology"
+ ],
+ "contest": [
+  "sports"
+ ],
+ "contestant": [
+  "sports"
+ ],
+ "continent": [
+  "nature"
+ ],
+ "continuous integration": [
+  "technology"
+ ],
+ "contract": [
+  "work"
+ ],
+ "contractor": [
+  "work"
+ ],
+ "contractual": [
+  "work"
+ ],
+ "contribution": [
+  "money"
+ ],
+ "conversation": [
+  "communication"
+ ],
+ "convey": [
+  "communication"
+ ],
+ "cook": [
+  "food"
+ ],
+ "cookbook": [
+  "food"
+ ],
+ "cooker": [
+  "food",
+  "home"
+ ],
+ "cookie": [
+  "food"
+ ],
+ "cooking": [
+  "food"
+ ],
+ "cooling fan": [
+  "technology"
+ ],
+ "cop": [
+  "city"
+ ],
+ "copier": [
+  "work"
+ ],
+ "copper": [
+  "nature"
+ ],
+ "copyright": [
+  "work"
+ ],
+ "cord": [
+  "sports"
+ ],
+ "cordless": [
+  "technology"
+ ],
+ "corn": [
+  "food"
+ ],
+ "corn cake": [
+  "food"
+ ],
+ "corn sugar": [
+  "food"
+ ],
+ "cornea": [
+  "body"
+ ],
+ "corporate": [
+  "work"
+ ],
+ "corporation": [
+  "work"
+ ],
+ "correspondence": [
+  "communication"
+ ],
+ "correspondent": [
+  "communication"
+ ],
+ "corridor": [
+  "home"
+ ],
+ "cortex": [
+  "body"
+ ],
+ "cortical area": [
+  "body"
+ ],
+ "cosmetic": [
+  "clothing"
+ ],
+ "cost": [
+  "money"
+ ],
+ "costly": [
+  "money"
+ ],
+ "costume": [
+  "clothing"
+ ],
+ "cottage": [
+  "home"
+ ],
+ "cotton": [
+  "clothing"
+ ],
+ "cough": [
+  "body"
+ ],
+ "council": [
+  "city"
+ ],
+ "councillor": [
+  "city"
+ ],
+ "counselling": [
+  "mind"
+ ],
+ "counsellor": [
+  "work"
+ ],
+ "counselor": [
+  "work"
+ ],
+ "counter": [
+  "clothing"
+ ],
+ "counterparty": [
+  "money"
+ ],
+ "country-dance": [
+  "sports"
+ ],
+ "countryside": [
+  "nature"
+ ],
+ "county": [
+  "city"
+ ],
+ "coupon": [
+  "clothing"
+ ],
+ "courier": [
+  "travel"
+ ],
+ "course": [
+  "education"
+ ],
+ "court": [
+  "city"
+ ],
+ "courthouse": [
+  "city"
+ ],
+ "courtyard": [
+  "home"
+ ],
+ "cousin": [
+  "family"
+ ],
+ "cove": [
+  "nature"
+ ],
+ "coverage": [
+  "communication"
+ ],
+ "covert": [
+  "animals"
+ ],
+ "cow": [
+  "animals"
+ ],
+ "coworker": [
+  "work"
+ ],
+ "cpu": [
+  "technology"
+ ],
+ "cradle cap": [
+  "body"
+ ],
+ "craft": [
+  "sports"
+ ],
+ "crane": [
+  "animals"
+ ],
+ "crash": [
+  "travel"
+ ],
+ "cream": [
+  "food"
+ ],
+ "credit": [
+  "money"
+ ],
+ "creditor": [
+  "money"
+ ],
+ "credits": [
+  "sports"
+ ],
+ "creek": [
+  "nature"
+ ],
+ "crest": [
+  "nature"
+ ],
+ "crew": [
+  "travel"
+ ],
+ "cricket": [
+  "sports"
+ ],
+ "crime": [
+  "city"
+ ],
+ "criminal": [
+  "city"
+ ],
+ "criminal contempt": [
+  "city"
+ ],
+ "cringe": [
+  "emotions"
+ ],
+ "crop": [
+  "nature"
+ ],
+ "crowd": [
+  "city"
+ ],
+ "cruel": [
+  "emotions"
+ ],
+ "cruise": [
+  "travel"
+ ],
+ "cry": [
+  "emotions"
+ ],
+ "crystal": [
+  "nature"
+ ],
+ "css": [
+  "technology"
+ ],
+ "csv": [
+  "technology"
+ ],
+ "culinary": [
+  "food"
+ ],
+ "cultivate": [
+  "nature"
+ ],
+ "cup": [
+  "food"
+ ],
+ "cup tie": [
+  "sports"
+ ],
+ "cupboard": [
+  "home"
+ ],
+ "curator": [
+  "work"
+ ],
+ "curb": [
+  "city"
+ ],
+ "cure": [
+  "body"
+ ],
+ "curiosity": [
+  "emotions"
+ ],
+ "curious": [
+  "emotions"
+ ],
+ "currency": [
+  "money"
+ ],
+ "curriculum": [
+  "education"
+ ],
+ "cursor": [
+  "technology"
+ ],
+ "curtain": [
+  "home"
+ ],
+ "cushion": [
+  "home"
+ ],
+ "customer": [
+  "clothing"
+ ],
+ "customs": [
+  "money"
+ ],
+ "cut of pork": [
+  "food"
+ ],
+ "cybercrime": [
+  "technology"
+ ],
+ "cycle": [
+  "travel"
+ ],
+ "cycling": [
+  "sports"
+ ],
+ "cyclist": [
+  "sports"
+ ],
+ "dad": [
+  "family"
+ ],
+ "daddy": [
+  "family"
+ ],
+ "daily": [
+  "time"
+ ],
+ "dairy": [
+  "food"
+ ],
+ "dairy product": [
+  "food"
+ ],
+ "dam": [
+  "nature"
+ ],
+ "damages": [
+  "money"
+ ],
+ "dance": [
+  "sports"
+ ],
+ "dancer": [
+  "sports"
+ ],
+ "dancing": [
+  "sports"
+ ],
+ "dark": [
+  "nature"
+ ],
+ "dark meat": [
+  "food"
+ ],
+ "dark mode": [
+  "technology"
+ ],
+ "darkness": [
+  "nature"
+ ],
+ "dashboard": [
+  "technology"
+ ],
+ "data": [
+  "technology"
+ ],
+ "data mining": [
+  "technology"
+ ],
+ "data protection": [
+  "technology"
+ ],
+ "database": [
+  "technology"
+ ],
+ "dataset": [
+  "technology"
+ ],
+ "date": [
+  "time"
+ ],
+ "date bar": [
+  "food"
+ ],
+ "daughter": [
+  "family"
+ ],
+ "daughter-in-law": [
+  "family"
+ ],
+ "dawn": [
+  "time"
+ ],
+ "day": [
+  "time"
+ ],
+ "daytime": [
+  "time"
+ ],
+ "dead": [
+  "body"
+ ],
+ "deadline": [
+  "time"
+ ],
+ "dealer": [
+  "work"
+ ],
+ "dealership": [
+  "work"
+ ],
+ "dear": [
+  "communication"
+ ],
+ "death": [
+  "body"
+ ],
+ "debate": [
+  "communication"
+ ],
+ "debenture": [
+  "money"
+ ],
+ "debit": [
+  "money"
+ ],
+ "debt": [
+  "money"
+ ],
+ "debtor": [
+  "money"
+ ],
+ "debug": [
+  "technology"
+ ],
+ "debugger": [
+  "technology"
+ ],
+ "debut": [
+  "sports"
+ ],
+ "decade": [
+  "time"
+ ],
+ "decapitation": [
+  "body"
+ ],
+ "december": [
+  "time"
+ ],
+ "deck": [
+  "travel"
+ ],
+ "deck tennis": [
+  "sports"
+ ],
+ "decorate": [
+  "home"
+ ],
+ "decoration": [
+  "home"
+ ],
+ "decrypt": [
+  "technology"
+ ],
+ "deductible": [
+  "money"
+ ],
+ "deep learning": [
+  "technology"
+ ],
+ "deep-freeze": [
+  "food",
+  "home"
+ ],
+ "default": [
+  "technology"
+ ],
+ "defender": [
+  "sports"
+ ],
+ "deficit": [
+  "money"
+ ],
+ "deflation": [
+  "money"
+ ],
+ "deflationary": [
+  "money"
+ ],
+ "degree": [
+  "nature"
+ ],
+ "delay": [
+  "travel"
+ ],
+ "delegate": [
+  "work"
+ ],
+ "delegation": [
+  "work"
+ ],
+ "delete": [
+  "technology"
+ ],
+ "delicious": [
+  "food"
+ ],
+ "delight": [
+  "emotions"
+ ],
+ "delighted": [
+  "emotions"
+ ],
+ "deliver": [
+  "work"
+ ],
+ "deliverable": [
+  "work"
+ ],
+ "delivery": [
+  "travel"
+ ],
+ "democracy": [
+  "city"
+ ],
+ "demolish": [
+  "city"
+ ],
+ "demolition": [
+  "city"
+ ],
+ "dengue": [
+  "body"
+ ],
+ "dental": [
+  "body"
+ ],
+ "dental appliance": [
+  "body"
+ ],
+ "dental surgeon": [
+  "body"
+ ],
+ "dentist": [
+  "body",
+  "work"
+ ],
+ "depart": [
+  "travel"
+ ],
+ "department": [
+  "work"
+ ],
+ "departure": [
+  "travel"
+ ],
+ "departure tax": [
+  "travel"
+ ],
+ "deposit": [
+  "money"
+ ],
+ "depositor": [
+  "money"
+ ],
+ "deprecated": [
+  "technology"
+ ],
+ "depreciate": [
+  "money"
+ ],
+ "depreciation": [
+  "money"
+ ],
+ "depressed": [
+  "emotions"
+ ],
+ "depressing": [
+  "emotions"
+ ],
+ "depression": [
+  "body",
+  "emotions"
+ ],
+ "deputy": [
+  "work"
+ ],
+ "deregulation": [
+  "money"
+ ],
+ "dermatitis": [
+  "body"
+ ],
+ "dermatologist": [
+  "body"
+ ],
+ "desert": [
+  "nature"
+ ],
+ "design system": [
+  "technology"
+ ],
+ "designer": [
+  "work"
+ ],
+ "desk": [
+  "home"
+ ],
+ "desktop": [
+  "technology"
+ ],
+ "dessert": [
+  "food"
+ ],
+ "destination": [
+  "travel"
+ ],
+ "developer": [
+  "work"
+ ],
+ "device": [
+  "technology"
+ ],
+ "devops": [
+  "technology"
+ ],
+ "diabetes": [
+  "body"
+ ],
+ "diagnose": [
+  "body"
+ ],
+ "diagnosis": [
+  "body"
+ ],
+ "diagnostic": [
+  "body"
+ ],
+ "dialogue": [
+  "communication"
+ ],
+ "diaper rash": [
+  "body"
+ ],
+ "diaphragm": [
+  "body"
+ ],
+ "diarrhea": [
+  "body"
+ ],
+ "dictionary": [
+  "education"
+ ],
+ "diet": [
+  "food"
+ ],
+ "digital": [
+  "technology"
+ ],
+ "dine": [
+  "food"
+ ],
+ "diner": [
+  "food"
+ ],
+ "dinner": [
+  "food"
+ ],
+ "diploma": [
+  "education"
+ ],
+ "director": [
+  "work"
+ ],
+ "director-stockholder relation": [
+  "work"
+ ],
+ "disability": [
+  "body"
+ ],
+ "disability check": [
+  "money"
+ ],
+ "disabled": [
+  "body"
+ ],
+ "disappoint": [
+  "emotions"
+ ],
+ "disappointed": [
+  "emotions"
+ ],
+ "disappointment": [
+  "emotions"
+ ],
+ "discomfort": [
+  "body"
+ ],
+ "discount": [
+  "money",
+  "clothing"
+ ],
+ "discourse": [
+  "communication"
+ ],
+ "discuss": [
+  "communication"
+ ],
+ "discussion": [
+  "communication"
+ ],
+ "disease": [
+  "body"
+ ],
+ "disgust": [
+  "emotions"
+ ],
+ "dish": [
+  "food"
+ ],
+ "dishwasher": [
+  "home"
+ ],
+ "dislike": [
+  "emotions"
+ ],
+ "dismissal": [
+  "work"
+ ],
+ "disorder": [
+  "body"
+ ],
+ "distal": [
+  "body"
+ ],
+ "distractor": [
+  "education"
+ ],
+ "distress": [
+  "emotions"
+ ],
+ "distributor": [
+  "work"
+ ],
+ "district": [
+  "city"
+ ],
+ "dive": [
+  "sports"
+ ],
+ "dividend": [
+  "money"
+ ],
+ "divorce": [
+  "family"
+ ],
+ "divorced": [
+  "family"
+ ],
+ "dizziness": [
+  "body"
+ ],
+ "dns": [
+  "technology"
+ ],
+ "do-si-do": [
+  "sports"
+ ],
+ "doctor": [
+  "body",
+  "work"
+ ],
+ "documentary": [
+  "technology"
+ ],
+ "dog": [
+  "animals"
+ ],
+ "dog racing": [
+  "sports",
+  "animals"
+ ],
+ "dollar": [
+  "money"
+ ],
+ "domicile": [
+  "home"
+ ],
+ "donation": [
+  "money"
+ ],
+ "donut": [
+  "food"
+ ],
+ "door": [
+  "home"
+ ],
+ "doorman": [
+  "work"
+ ],
+ "dorm": [
+  "education",
+  "home"
+ ],
+ "dose": [
+  "body"
+ ],
+ "double cream": [
+  "food"
+ ],
+ "double dipping": [
+  "money"
+ ],
+ "double eagle": [
+  "money"
+ ],
+ "double entry": [
+  "money"
+ ],
+ "download": [
+  "technology"
+ ],
+ "downstairs": [
+  "home"
+ ],
+ "downtime": [
+  "technology"
+ ],
+ "downtown": [
+  "city"
+ ],
+ "drama": [
+  "sports"
+ ],
+ "dramatic production": [
+  "sports"
+ ],
+ "draw": [
+  "sports"
+ ],
+ "drawer": [
+  "home"
+ ],
+ "drawing": [
+  "sports"
+ ],
+ "dread": [
+  "emotions"
+ ],
+ "dream": [
+  "mind"
+ ],
+ "dress": [
+  "clothing"
+ ],
+ "dressed": [
+  "clothing"
+ ],
+ "dressing case": [
+  "travel"
+ ],
+ "drink": [
+  "food"
+ ],
+ "drip feed": [
+  "body"
+ ],
+ "drive": [
+  "travel"
+ ],
+ "driver": [
+  "travel"
+ ],
+ "driveway": [
+  "travel"
+ ],
+ "driving": [
+  "travel"
+ ],
+ "drought": [
+  "nature"
+ ],
+ "drove": [
+  "animals"
+ ],
+ "drug": [
+  "body"
+ ],
+ "drug cocktail": [
+  "body"
+ ],
+ "drum": [
+  "sports"
+ ],
+ "dryer": [
+  "home"
+ ],
+ "duct": [
+  "body"
+ ],
+ "dunk": [
+  "sports"
+ ],
+ "dvd": [
+  "technology"
+ ],
+ "dysfunction": [
+  "body"
+ ],
+ "e-book": [
+  "technology"
+ ],
+ "e-commerce": [
+  "technology",
+  "work"
+ ],
+ "ear": [
+  "body"
+ ],
+ "ear doctor": [
+  "body"
+ ],
+ "earn": [
+  "money"
+ ],
+ "earnings": [
+  "money"
+ ],
+ "earth": [
+  "nature"
+ ],
+ "earthquake": [
+  "nature"
+ ],
+ "eat": [
+  "food"
+ ],
+ "ecological": [
+  "nature"
+ ],
+ "economic": [
+  "money"
+ ],
+ "economical": [
+  "money"
+ ],
+ "economically": [
+  "money"
+ ],
+ "economics": [
+  "money"
+ ],
+ "economist": [
+  "money",
+  "work"
+ ],
+ "economize": [
+  "money"
+ ],
+ "economy": [
+  "money"
+ ],
+ "eczema": [
+  "body"
+ ],
+ "edema": [
+  "body"
+ ],
+ "edge case": [
+  "technology"
+ ],
+ "edible": [
+  "food"
+ ],
+ "editor": [
+  "work"
+ ],
+ "educate": [
+  "education"
+ ],
+ "educated": [
+  "education"
+ ],
+ "education": [
+  "education"
+ ],
+ "educational": [
+  "education"
+ ],
+ "educator": [
+  "education",
+  "work"
+ ],
+ "egg": [
+  "food"
+ ],
+ "egg cream": [
+  "food"
+ ],
+ "egg roll": [
+  "food"
+ ],
+ "elastic": [
+  "clothing"
+ ],
+ "elbow": [
+  "body"
+ ],
+ "electric shock": [
+  "body"
+ ],
+ "electrical work": [
+  "work"
+ ],
+ "electrician": [
+  "work"
+ ],
+ "electronic": [
+  "technology"
+ ],
+ "electronically": [
+  "technology"
+ ],
+ "electronics": [
+  "technology"
+ ],
+ "elementary": [
+  "education"
+ ],
+ "elephant": [
+  "animals"
+ ],
+ "email": [
+  "technology",
+  "communication"
+ ],
+ "embark": [
+  "travel"
+ ],
+ "embarrassed": [
+  "emotions"
+ ],
+ "embarrassing": [
+  "emotions"
+ ],
+ "embarrassment": [
+  "emotions"
+ ],
+ "embassy": [
+  "city"
+ ],
+ "embezzlement": [
+  "money"
+ ],
+ "emoji": [
+  "technology",
+  "communication"
+ ],
+ "emotion": [
+  "emotions"
+ ],
+ "emotional": [
+  "emotions"
+ ],
+ "emotionally": [
+  "emotions"
+ ],
+ "employ": [
+  "work"
+ ],
+ "employee": [
+  "work"
+ ],
+ "employer": [
+  "work"
+ ],
+ "employment": [
+  "work"
+ ],
+ "encapsulation": [
+  "technology"
+ ],
+ "encryption": [
+  "technology"
+ ],
+ "endpoint": [
+  "technology"
+ ],
+ "engineer": [
+  "work"
+ ],
+ "engineering": [
+  "work"
+ ],
+ "enrol": [
+  "education"
+ ],
+ "enroll": [
+  "education"
+ ],
+ "enrollment": [
+  "education"
+ ],
+ "enterprise": [
+  "work"
+ ],
+ "entertainment": [
+  "sports"
+ ],
+ "enthusiasm": [
+  "emotions"
+ ],
+ "enthusiastic": [
+  "emotions"
+ ],
+ "entrance": [
+  "city"
+ ],
+ "entrée": [
+  "food"
+ ],
+ "entrepreneur": [
+  "work"
+ ],
+ "entrepreneurial": [
+  "work"
+ ],
+ "environment": [
+  "nature"
+ ],
+ "environmental": [
+  "nature"
+ ],
+ "epidemic": [
+  "body"
+ ],
+ "episode": [
+  "technology"
+ ],
+ "erase": [
+  "technology"
+ ],
+ "erode": [
+  "nature"
+ ],
+ "erosion": [
+  "nature"
+ ],
+ "erupt": [
+  "nature"
+ ],
+ "eruption": [
+  "body"
+ ],
+ "escalator": [
+  "city"
+ ],
+ "esophagus": [
+  "body"
+ ],
+ "essay": [
+  "education"
+ ],
+ "estate": [
+  "home"
+ ],
+ "ethernet": [
+  "technology"
+ ],
+ "euro": [
+  "money"
+ ],
+ "evening": [
+  "time"
+ ],
+ "eviction": [
+  "home"
+ ],
+ "evolution": [
+  "nature"
+ ],
+ "exam": [
+  "education"
+ ],
+ "examination": [
+  "education"
+ ],
+ "excise": [
+  "money"
+ ],
+ "excited": [
+  "emotions"
+ ],
+ "excitement": [
+  "emotions"
+ ],
+ "exciting": [
+  "emotions"
+ ],
+ "excursion": [
+  "travel"
+ ],
+ "exercise": [
+  "body"
+ ],
+ "exhibit": [
+  "sports"
+ ],
+ "exhibition": [
+  "sports"
+ ],
+ "exit": [
+  "city"
+ ],
+ "expedition": [
+  "travel"
+ ],
+ "expenditure": [
+  "money"
+ ],
+ "expense": [
+  "money"
+ ],
+ "expensive": [
+  "money"
+ ],
+ "explain": [
+  "communication"
+ ],
+ "explanation": [
+  "communication"
+ ],
+ "exploration": [
+  "travel"
+ ],
+ "explore": [
+  "travel"
+ ],
+ "explorer": [
+  "travel"
+ ],
+ "export": [
+  "work"
+ ],
+ "exporter": [
+  "work"
+ ],
+ "express": [
+  "communication"
+ ],
+ "expression": [
+  "communication"
+ ],
+ "external ear": [
+  "body"
+ ],
+ "extremity": [
+  "body"
+ ],
+ "eye": [
+  "body"
+ ],
+ "eye socket": [
+  "body"
+ ],
+ "eye-lotion": [
+  "body"
+ ],
+ "eyeball": [
+  "body"
+ ],
+ "eyelid": [
+  "body"
+ ],
+ "fabric": [
+  "clothing"
+ ],
+ "face": [
+  "body"
+ ],
+ "factory": [
+  "work"
+ ],
+ "faculty": [
+  "education"
+ ],
+ "failover": [
+  "technology"
+ ],
+ "family": [
+  "family"
+ ],
+ "family man": [
+  "family"
+ ],
+ "fare": [
+  "travel"
+ ],
+ "farm": [
+  "nature"
+ ],
+ "farmer": [
+  "work"
+ ],
+ "farmer's lung": [
+  "body"
+ ],
+ "farming": [
+  "work"
+ ],
+ "fart": [
+  "body"
+ ],
+ "fascia": [
+  "body"
+ ],
+ "fashion": [
+  "clothing"
+ ],
+ "fashionable": [
+  "clothing"
+ ],
+ "father": [
+  "family"
+ ],
+ "fatigue": [
+  "body"
+ ],
+ "fear": [
+  "emotions"
+ ],
+ "fearful": [
+  "emotions"
+ ],
+ "fearless": [
+  "emotions"
+ ],
+ "feather": [
+  "animals"
+ ],
+ "february": [
+  "time"
+ ],
+ "fee": [
+  "money"
+ ],
+ "feed": [
+  "food"
+ ],
+ "feedback": [
+  "communication"
+ ],
+ "feeling": [
+  "emotions"
+ ],
+ "female genitalia": [
+  "body"
+ ],
+ "femur": [
+  "body"
+ ],
+ "fence": [
+  "home"
+ ],
+ "ferry": [
+  "travel"
+ ],
+ "fertile": [
+  "body"
+ ],
+ "festival": [
+  "sports"
+ ],
+ "fetal alcohol syndrome": [
+  "body"
+ ],
+ "fetal circulation": [
+  "body"
+ ],
+ "fetus": [
+  "body"
+ ],
+ "fever": [
+  "body"
+ ],
+ "fibre": [
+  "food"
+ ],
+ "field": [
+  "nature"
+ ],
+ "field event": [
+  "sports"
+ ],
+ "field trial": [
+  "sports"
+ ],
+ "field trip": [
+  "education",
+  "travel"
+ ],
+ "film": [
+  "sports"
+ ],
+ "film-maker": [
+  "sports"
+ ],
+ "finance": [
+  "money"
+ ],
+ "financial": [
+  "money"
+ ],
+ "financially": [
+  "money"
+ ],
+ "finch": [
+  "animals"
+ ],
+ "fine spray": [
+  "nature"
+ ],
+ "finger": [
+  "body"
+ ],
+ "firefighter": [
+  "work"
+ ],
+ "fireplace": [
+  "home"
+ ],
+ "firewall": [
+  "technology"
+ ],
+ "firmware": [
+  "technology"
+ ],
+ "fish": [
+  "animals"
+ ],
+ "fish and chips": [
+  "food"
+ ],
+ "fish cake": [
+  "food"
+ ],
+ "fishing": [
+  "sports"
+ ],
+ "fist": [
+  "body"
+ ],
+ "fit": [
+  "body"
+ ],
+ "fitness": [
+  "body"
+ ],
+ "fixture": [
+  "sports"
+ ],
+ "flash drive": [
+  "technology"
+ ],
+ "flat": [
+  "home"
+ ],
+ "flavor": [
+  "food"
+ ],
+ "flavour": [
+  "food"
+ ],
+ "flea bite": [
+  "body"
+ ],
+ "flesh": [
+  "body"
+ ],
+ "flextime": [
+  "work"
+ ],
+ "flight": [
+  "travel"
+ ],
+ "flight surgeon": [
+  "body"
+ ],
+ "flood": [
+  "nature"
+ ],
+ "floor": [
+  "home"
+ ],
+ "flop": [
+  "technology"
+ ],
+ "flour": [
+  "food"
+ ],
+ "flower": [
+  "nature"
+ ],
+ "flu": [
+  "body"
+ ],
+ "fly-fishing": [
+  "sports"
+ ],
+ "fog": [
+  "nature"
+ ],
+ "follow through": [
+  "sports"
+ ],
+ "fond": [
+  "emotions"
+ ],
+ "food": [
+  "food"
+ ],
+ "foot": [
+  "body"
+ ],
+ "footage": [
+  "technology"
+ ],
+ "football": [
+  "sports"
+ ],
+ "football player": [
+  "sports"
+ ],
+ "footwear": [
+  "clothing"
+ ],
+ "forearm": [
+  "body"
+ ],
+ "foreclosure": [
+  "money"
+ ],
+ "foreign key": [
+  "technology"
+ ],
+ "foreman": [
+  "work"
+ ],
+ "forest": [
+  "nature"
+ ],
+ "fork": [
+  "food"
+ ],
+ "fortune": [
+  "money"
+ ],
+ "forum": [
+  "communication"
+ ],
+ "fossil": [
+  "nature"
+ ],
+ "foster home": [
+  "family"
+ ],
+ "foster-nurse": [
+  "family"
+ ],
+ "foul": [
+  "sports"
+ ],
+ "fountain": [
+  "nature"
+ ],
+ "four-minute man": [
+  "sports"
+ ],
+ "fracture": [
+  "body"
+ ],
+ "franc": [
+  "money"
+ ],
+ "franchise": [
+  "work"
+ ],
+ "franchise tax": [
+  "money"
+ ],
+ "frank": [
+  "food"
+ ],
+ "fraternity": [
+  "education"
+ ],
+ "free agency": [
+  "sports"
+ ],
+ "free agent": [
+  "sports"
+ ],
+ "freelance": [
+  "work"
+ ],
+ "freeway": [
+  "travel"
+ ],
+ "freight": [
+  "travel"
+ ],
+ "freighter": [
+  "travel"
+ ],
+ "fresh": [
+  "food"
+ ],
+ "friday": [
+  "time"
+ ],
+ "fridge": [
+  "home"
+ ],
+ "friend": [
+  "family"
+ ],
+ "friendship": [
+  "family"
+ ],
+ "frighten": [
+  "emotions"
+ ],
+ "frightened": [
+  "emotions"
+ ],
+ "frightening": [
+  "emotions"
+ ],
+ "frog": [
+  "animals"
+ ],
+ "frontal lobe": [
+  "body"
+ ],
+ "frontal sinus": [
+  "body"
+ ],
+ "frontend": [
+  "technology"
+ ],
+ "frozen": [
+  "food"
+ ],
+ "fruit": [
+  "food"
+ ],
+ "fruit bar": [
+  "food"
+ ],
+ "fruit drink": [
+  "food"
+ ],
+ "fruit juice": [
+  "food"
+ ],
+ "frustrate": [
+  "emotions"
+ ],
+ "frustrated": [
+  "emotions"
+ ],
+ "frustrating": [
+  "emotions"
+ ],
+ "frustration": [
+  "emotions"
+ ],
+ "fry": [
+  "food"
+ ],
+ "full stack": [
+  "technology"
+ ],
+ "full-time": [
+  "work"
+ ],
+ "fun": [
+  "sports"
+ ],
+ "fund": [
+  "money"
+ ],
+ "funding": [
+  "money"
+ ],
+ "fundraise": [
+  "money"
+ ],
+ "fundraiser": [
+  "money"
+ ],
+ "fundraising": [
+  "money"
+ ],
+ "fungus": [
+  "nature"
+ ],
+ "funny bone": [
+  "body"
+ ],
+ "fur": [
+  "animals"
+ ],
+ "furious": [
+  "emotions"
+ ],
+ "furnace": [
+  "home"
+ ],
+ "furniture": [
+  "home"
+ ],
+ "fuse": [
+  "technology"
+ ],
+ "future": [
+  "time"
+ ],
+ "futures contract": [
+  "money"
+ ],
+ "gadget": [
+  "technology"
+ ],
+ "gale": [
+  "nature"
+ ],
+ "gallery": [
+  "city"
+ ],
+ "gamble": [
+  "money"
+ ],
+ "gambling": [
+  "sports",
+  "money"
+ ],
+ "game": [
+  "sports"
+ ],
+ "game misconduct": [
+  "sports"
+ ],
+ "gaming": [
+  "sports",
+  "technology"
+ ],
+ "garage": [
+  "home",
+  "travel"
+ ],
+ "garbage": [
+  "home"
+ ],
+ "garden": [
+  "home",
+  "nature"
+ ],
+ "gardener": [
+  "nature"
+ ],
+ "garment": [
+  "clothing"
+ ],
+ "gasoline": [
+  "travel"
+ ],
+ "gate": [
+  "home"
+ ],
+ "gateway": [
+  "technology"
+ ],
+ "gazette": [
+  "communication"
+ ],
+ "gear": [
+  "travel"
+ ],
+ "gender": [
+  "family"
+ ],
+ "gene": [
+  "body"
+ ],
+ "general practitioner": [
+  "body"
+ ],
+ "generalization": [
+  "mind"
+ ],
+ "generation": [
+  "family"
+ ],
+ "generative": [
+  "technology"
+ ],
+ "generator": [
+  "technology"
+ ],
+ "genetic": [
+  "body"
+ ],
+ "genitalia": [
+  "body"
+ ],
+ "genius": [
+  "mind"
+ ],
+ "genre": [
+  "sports"
+ ],
+ "gentleman": [
+  "family"
+ ],
+ "geographic": [
+  "education"
+ ],
+ "geography": [
+  "education"
+ ],
+ "germ": [
+  "body"
+ ],
+ "gesture": [
+  "communication"
+ ],
+ "gift": [
+  "clothing"
+ ],
+ "gig": [
+  "sports"
+ ],
+ "gigabyte": [
+  "technology"
+ ],
+ "girl": [
+  "family"
+ ],
+ "girlfriend": [
+  "family"
+ ],
+ "glacier": [
+  "nature"
+ ],
+ "glad": [
+  "emotions"
+ ],
+ "gland": [
+  "body"
+ ],
+ "glass": [
+  "home"
+ ],
+ "glasses": [
+  "clothing",
+  "body"
+ ],
+ "glaucoma": [
+  "body"
+ ],
+ "globe": [
+  "nature"
+ ],
+ "gloomy": [
+  "emotions"
+ ],
+ "glove": [
+  "clothing"
+ ],
+ "gluten": [
+  "food"
+ ],
+ "go": [
+  "travel"
+ ],
+ "goal": [
+  "sports"
+ ],
+ "golf": [
+  "sports"
+ ],
+ "good afternoon": [
+  "communication"
+ ],
+ "good morning": [
+  "communication"
+ ],
+ "goodbye": [
+  "communication"
+ ],
+ "goods": [
+  "clothing"
+ ],
+ "gorilla": [
+  "animals"
+ ],
+ "gossip": [
+  "communication"
+ ],
+ "gpu": [
+  "technology"
+ ],
+ "grade": [
+  "education"
+ ],
+ "graduate": [
+  "education"
+ ],
+ "graduation": [
+  "education"
+ ],
+ "graffiti": [
+  "city"
+ ],
+ "graft": [
+  "body"
+ ],
+ "grain": [
+  "food"
+ ],
+ "grandfather": [
+  "family"
+ ],
+ "grandma": [
+  "family"
+ ],
+ "grandmother": [
+  "family"
+ ],
+ "grandparent": [
+  "family"
+ ],
+ "granny": [
+  "family"
+ ],
+ "grant": [
+  "money"
+ ],
+ "graphic": [
+  "technology"
+ ],
+ "graphics": [
+  "technology"
+ ],
+ "grass": [
+  "nature"
+ ],
+ "grateful": [
+  "emotions"
+ ],
+ "gratuity": [
+  "money"
+ ],
+ "gravity": [
+  "nature"
+ ],
+ "great-aunt": [
+  "family"
+ ],
+ "great-nephew": [
+  "family"
+ ],
+ "great-uncle": [
+  "family"
+ ],
+ "green tea": [
+  "food"
+ ],
+ "green thumb": [
+  "nature"
+ ],
+ "greenhouse": [
+  "nature"
+ ],
+ "greet": [
+  "communication"
+ ],
+ "grey sole": [
+  "food"
+ ],
+ "grief": [
+  "emotions"
+ ],
+ "grill": [
+  "food"
+ ],
+ "grin": [
+  "body"
+ ],
+ "grind": [
+  "food"
+ ],
+ "grocery": [
+  "food",
+  "clothing"
+ ],
+ "groom": [
+  "family"
+ ],
+ "gross": [
+  "money"
+ ],
+ "gross profit": [
+  "money"
+ ],
+ "gross sales": [
+  "money"
+ ],
+ "ground": [
+  "nature"
+ ],
+ "growing pains": [
+  "body"
+ ],
+ "guard": [
+  "work"
+ ],
+ "guess": [
+  "mind"
+ ],
+ "guest": [
+  "home"
+ ],
+ "guide": [
+  "travel"
+ ],
+ "guilt": [
+  "emotions"
+ ],
+ "guilty": [
+  "emotions"
+ ],
+ "guinea": [
+  "money"
+ ],
+ "guitar": [
+  "sports"
+ ],
+ "gulf": [
+  "nature"
+ ],
+ "gum": [
+  "body"
+ ],
+ "gut": [
+  "body"
+ ],
+ "guy": [
+  "family"
+ ],
+ "gym": [
+  "sports"
+ ],
+ "gymnasium": [
+  "sports"
+ ],
+ "gymnastics": [
+  "sports"
+ ],
+ "habitat": [
+  "nature",
+  "animals"
+ ],
+ "hacker": [
+  "technology"
+ ],
+ "hair": [
+  "body"
+ ],
+ "half blood": [
+  "family"
+ ],
+ "half-and-half dressing": [
+  "food"
+ ],
+ "half-pay": [
+  "work"
+ ],
+ "halftime": [
+  "sports"
+ ],
+ "hall": [
+  "home"
+ ],
+ "hall of residence": [
+  "education",
+  "home"
+ ],
+ "hallucination": [
+  "technology"
+ ],
+ "hallway": [
+  "home"
+ ],
+ "ham": [
+  "food"
+ ],
+ "hamburger": [
+  "food"
+ ],
+ "hammer throw": [
+  "sports"
+ ],
+ "hamstring": [
+  "body"
+ ],
+ "hand": [
+  "body"
+ ],
+ "handicap": [
+  "sports"
+ ],
+ "handle": [
+  "home"
+ ],
+ "handset": [
+  "technology"
+ ],
+ "happily": [
+  "emotions"
+ ],
+ "happiness": [
+  "emotions"
+ ],
+ "happy": [
+  "emotions"
+ ],
+ "harbour": [
+  "travel"
+ ],
+ "hard code": [
+  "technology"
+ ],
+ "hard drive": [
+  "technology"
+ ],
+ "hard sauce": [
+  "food"
+ ],
+ "hardware": [
+  "technology"
+ ],
+ "hardworking": [
+  "work"
+ ],
+ "harvest": [
+  "nature"
+ ],
+ "hash": [
+  "food"
+ ],
+ "hat": [
+  "clothing"
+ ],
+ "hate": [
+  "emotions"
+ ],
+ "hatred": [
+  "emotions"
+ ],
+ "hay fever": [
+  "body"
+ ],
+ "hazel": [
+  "nature"
+ ],
+ "head": [
+  "body"
+ ],
+ "head nurse": [
+  "body",
+  "work"
+ ],
+ "headache": [
+  "body"
+ ],
+ "headline": [
+  "communication"
+ ],
+ "headphone": [
+  "technology"
+ ],
+ "headquarter": [
+  "work"
+ ],
+ "headquarters": [
+  "work"
+ ],
+ "headset": [
+  "technology"
+ ],
+ "heal": [
+  "body"
+ ],
+ "health": [
+  "body"
+ ],
+ "healthcare": [
+  "body"
+ ],
+ "healthful": [
+  "body"
+ ],
+ "healthy": [
+  "body"
+ ],
+ "heap": [
+  "technology"
+ ],
+ "hear": [
+  "body"
+ ],
+ "hearing": [
+  "body"
+ ],
+ "heart": [
+  "body"
+ ],
+ "heart murmur": [
+  "body"
+ ],
+ "heart-to-heart": [
+  "communication"
+ ],
+ "heartbreaking": [
+  "emotions"
+ ],
+ "heater": [
+  "home"
+ ],
+ "heating": [
+  "home"
+ ],
+ "heavy cream": [
+  "food"
+ ],
+ "heavy metal": [
+  "sports"
+ ],
+ "heavyweight": [
+  "sports"
+ ],
+ "hedge": [
+  "nature"
+ ],
+ "hedge fund": [
+  "money"
+ ],
+ "heel": [
+  "body"
+ ],
+ "heir": [
+  "family"
+ ],
+ "heirloom": [
+  "family"
+ ],
+ "helicopter": [
+  "travel"
+ ],
+ "hello": [
+  "communication"
+ ],
+ "helm": [
+  "travel"
+ ],
+ "helmet": [
+  "clothing"
+ ],
+ "hepatitis": [
+  "body"
+ ],
+ "hepatitis delta": [
+  "body"
+ ],
+ "herb": [
+  "food",
+  "nature"
+ ],
+ "hernia": [
+  "body"
+ ],
+ "heroin": [
+  "body"
+ ],
+ "herpes": [
+  "body"
+ ],
+ "hey": [
+  "communication"
+ ],
+ "hi": [
+  "communication"
+ ],
+ "hiccup": [
+  "body"
+ ],
+ "hickey": [
+  "body"
+ ],
+ "hierarchy": [
+  "work"
+ ],
+ "high tea": [
+  "food"
+ ],
+ "highway": [
+  "travel"
+ ],
+ "hijack": [
+  "travel"
+ ],
+ "hike": [
+  "sports",
+  "travel"
+ ],
+ "hiker": [
+  "sports"
+ ],
+ "hill": [
+  "nature"
+ ],
+ "hint": [
+  "communication"
+ ],
+ "hip": [
+  "body"
+ ],
+ "hippocampus": [
+  "body"
+ ],
+ "hire": [
+  "work"
+ ],
+ "hire-purchase": [
+  "money"
+ ],
+ "historian": [
+  "education"
+ ],
+ "history": [
+  "education"
+ ],
+ "hobby": [
+  "sports"
+ ],
+ "hockey": [
+  "sports"
+ ],
+ "hockey clinic": [
+  "sports"
+ ],
+ "hockey player": [
+  "sports"
+ ],
+ "holiday": [
+  "travel",
+  "time"
+ ],
+ "home stand": [
+  "sports"
+ ],
+ "homecoming": [
+  "education"
+ ],
+ "homeowner": [
+  "home"
+ ],
+ "homepage": [
+  "technology"
+ ],
+ "homework": [
+  "education"
+ ],
+ "honest woman": [
+  "family"
+ ],
+ "honey": [
+  "food"
+ ],
+ "honours": [
+  "education"
+ ],
+ "hope": [
+  "emotions"
+ ],
+ "hopeful": [
+  "emotions"
+ ],
+ "horizon": [
+  "nature"
+ ],
+ "hormone replacement therapy": [
+  "body"
+ ],
+ "horn": [
+  "animals"
+ ],
+ "horror": [
+  "emotions"
+ ],
+ "horse": [
+  "animals"
+ ],
+ "horse race": [
+  "sports"
+ ],
+ "hospice": [
+  "body"
+ ],
+ "hospital": [
+  "body",
+  "city"
+ ],
+ "hospitality": [
+  "travel"
+ ],
+ "hostility": [
+  "emotions"
+ ],
+ "hosting": [
+  "technology"
+ ],
+ "hot flash": [
+  "body"
+ ],
+ "hot pepper": [
+  "food"
+ ],
+ "hot plate": [
+  "home"
+ ],
+ "hot pot": [
+  "food"
+ ],
+ "hot weather": [
+  "nature"
+ ],
+ "hotel": [
+  "travel",
+  "city"
+ ],
+ "hotel bill": [
+  "travel",
+  "money"
+ ],
+ "hotline": [
+  "communication"
+ ],
+ "hotspot": [
+  "technology"
+ ],
+ "hour": [
+  "time"
+ ],
+ "hourly": [
+  "time"
+ ],
+ "house": [
+  "home"
+ ],
+ "household": [
+  "home"
+ ],
+ "housing": [
+  "home"
+ ],
+ "html": [
+  "technology"
+ ],
+ "http": [
+  "technology"
+ ],
+ "https": [
+  "technology"
+ ],
+ "humanities": [
+  "education"
+ ],
+ "humidity": [
+  "nature"
+ ],
+ "humiliation": [
+  "emotions"
+ ],
+ "hunger": [
+  "food"
+ ],
+ "hungry": [
+  "food"
+ ],
+ "hunt": [
+  "animals"
+ ],
+ "hunting": [
+  "sports"
+ ],
+ "hurdle": [
+  "sports"
+ ],
+ "hurricane": [
+  "nature"
+ ],
+ "hurt": [
+  "body"
+ ],
+ "husband": [
+  "family"
+ ],
+ "hush money": [
+  "money"
+ ],
+ "hygiene": [
+  "body"
+ ],
+ "hymn": [
+  "sports"
+ ],
+ "hyperlink": [
+  "technology"
+ ],
+ "ibuprofen": [
+  "body"
+ ],
+ "ice": [
+  "nature"
+ ],
+ "ice cream": [
+  "food"
+ ],
+ "ice maker": [
+  "home"
+ ],
+ "ice tea": [
+  "food"
+ ],
+ "icon": [
+  "technology"
+ ],
+ "icy": [
+  "nature"
+ ],
+ "idea": [
+  "mind"
+ ],
+ "ill": [
+  "body"
+ ],
+ "illness": [
+  "body"
+ ],
+ "illustration": [
+  "sports"
+ ],
+ "imagination": [
+  "mind"
+ ],
+ "imagine": [
+  "mind"
+ ],
+ "imaging": [
+  "body"
+ ],
+ "immune": [
+  "body"
+ ],
+ "immunity": [
+  "body"
+ ],
+ "importer": [
+  "work"
+ ],
+ "in-law": [
+  "family"
+ ],
+ "income": [
+  "money"
+ ],
+ "incubation": [
+  "body"
+ ],
+ "indirect tax": [
+  "money"
+ ],
+ "induction of labor": [
+  "body"
+ ],
+ "industry": [
+  "work"
+ ],
+ "infant": [
+  "family"
+ ],
+ "infect": [
+  "body"
+ ],
+ "infection": [
+  "body"
+ ],
+ "inflammation": [
+  "body"
+ ],
+ "inflation": [
+  "money"
+ ],
+ "influenza": [
+  "body"
+ ],
+ "ingredient": [
+  "food"
+ ],
+ "inherit": [
+  "money"
+ ],
+ "inheritance": [
+  "money"
+ ],
+ "inheritance tax": [
+  "money"
+ ],
+ "initialize": [
+  "technology"
+ ],
+ "inject": [
+  "body"
+ ],
+ "injection": [
+  "body"
+ ],
+ "injure": [
+  "body"
+ ],
+ "injured": [
+  "body"
+ ],
+ "injury": [
+  "body"
+ ],
+ "inner ear": [
+  "body"
+ ],
+ "insect": [
+  "animals"
+ ],
+ "inspector": [
+  "work"
+ ],
+ "installment": [
+  "money"
+ ],
+ "installment credit": [
+  "money"
+ ],
+ "installment plan": [
+  "money"
+ ],
+ "instructor": [
+  "education"
+ ],
+ "instrument": [
+  "sports"
+ ],
+ "insulin shock": [
+  "body"
+ ],
+ "insurance": [
+  "money"
+ ],
+ "insurer": [
+  "money"
+ ],
+ "intelligence": [
+  "mind"
+ ],
+ "intelligent": [
+  "mind"
+ ],
+ "interactive": [
+  "technology"
+ ],
+ "interest expense": [
+  "money"
+ ],
+ "interface": [
+  "technology"
+ ],
+ "intern": [
+  "work"
+ ],
+ "internet": [
+  "technology"
+ ],
+ "internship": [
+  "work",
+  "education"
+ ],
+ "interpreter": [
+  "communication",
+  "work"
+ ],
+ "interrogation": [
+  "communication"
+ ],
+ "intersection": [
+  "city",
+  "travel"
+ ],
+ "interview": [
+  "work"
+ ],
+ "intestinal bypass": [
+  "body"
+ ],
+ "intestinal obstruction": [
+  "body"
+ ],
+ "intestine": [
+  "body"
+ ],
+ "intonation": [
+  "communication"
+ ],
+ "intuition": [
+  "mind"
+ ],
+ "invasive": [
+  "body"
+ ],
+ "inventory": [
+  "work"
+ ],
+ "invest": [
+  "money"
+ ],
+ "investment": [
+  "money"
+ ],
+ "investor": [
+  "money"
+ ],
+ "invoice": [
+  "money"
+ ],
+ "involuntary": [
+  "body"
+ ],
+ "ip address": [
+  "technology"
+ ],
+ "iris": [
+  "body"
+ ],
+ "irrigation": [
+  "body"
+ ],
+ "irritable bowel syndrome": [
+  "body"
+ ],
+ "irritate": [
+  "emotions"
+ ],
+ "island": [
+  "nature"
+ ],
+ "itinerary": [
+  "travel"
+ ],
+ "jacket": [
+  "clothing"
+ ],
+ "jam": [
+  "food"
+ ],
+ "jam session": [
+  "sports"
+ ],
+ "january": [
+  "time"
+ ],
+ "javascript": [
+  "technology"
+ ],
+ "jaw": [
+  "body"
+ ],
+ "jazz": [
+  "sports"
+ ],
+ "jean": [
+  "clothing"
+ ],
+ "jeans": [
+  "clothing"
+ ],
+ "jet": [
+  "travel"
+ ],
+ "jewellery": [
+  "clothing"
+ ],
+ "jewelry": [
+  "clothing"
+ ],
+ "job": [
+  "work"
+ ],
+ "jockey": [
+  "sports"
+ ],
+ "jog": [
+  "sports"
+ ],
+ "journalism": [
+  "work"
+ ],
+ "journalist": [
+  "work"
+ ],
+ "journey": [
+  "travel"
+ ],
+ "joy": [
+  "emotions"
+ ],
+ "json": [
+  "technology"
+ ],
+ "judge": [
+  "work"
+ ],
+ "juice": [
+  "food"
+ ],
+ "july": [
+  "time"
+ ],
+ "jumping": [
+  "sports"
+ ],
+ "junction": [
+  "travel",
+  "city"
+ ],
+ "june": [
+  "time"
+ ],
+ "jungle rot": [
+  "body"
+ ],
+ "karate": [
+  "sports"
+ ],
+ "kernel": [
+  "food"
+ ],
+ "kettle": [
+  "home"
+ ],
+ "keyboard": [
+  "technology"
+ ],
+ "keyword": [
+  "technology"
+ ],
+ "kick": [
+  "sports"
+ ],
+ "kid": [
+  "family"
+ ],
+ "kidney": [
+  "body"
+ ],
+ "kitchen": [
+  "home"
+ ],
+ "kitten": [
+  "animals"
+ ],
+ "knee": [
+  "body"
+ ],
+ "knife": [
+  "home"
+ ],
+ "knuckle": [
+  "body"
+ ],
+ "lab": [
+  "education"
+ ],
+ "laboratory": [
+  "education"
+ ],
+ "labour": [
+  "work"
+ ],
+ "lactose intolerance": [
+  "body"
+ ],
+ "lad": [
+  "family"
+ ],
+ "lady": [
+  "family"
+ ],
+ "lake": [
+  "nature"
+ ],
+ "lamp": [
+  "home"
+ ],
+ "lancet": [
+  "body"
+ ],
+ "land": [
+  "nature"
+ ],
+ "landing": [
+  "travel"
+ ],
+ "landing page": [
+  "technology"
+ ],
+ "landlord": [
+  "home"
+ ],
+ "landmark": [
+  "city"
+ ],
+ "landscape": [
+  "nature"
+ ],
+ "lane": [
+  "travel"
+ ],
+ "language": [
+  "communication"
+ ],
+ "language lesson": [
+  "education"
+ ],
+ "lantern jaw": [
+  "body"
+ ],
+ "lap": [
+  "body"
+ ],
+ "laptop": [
+  "technology"
+ ],
+ "large intestine": [
+  "body"
+ ],
+ "large language model": [
+  "technology"
+ ],
+ "laser": [
+  "technology"
+ ],
+ "late": [
+  "time"
+ ],
+ "lately": [
+  "time"
+ ],
+ "latency": [
+  "technology"
+ ],
+ "later": [
+  "time"
+ ],
+ "latest": [
+  "time"
+ ],
+ "laugh": [
+  "emotions"
+ ],
+ "laughter": [
+  "emotions"
+ ],
+ "laundry": [
+  "home"
+ ],
+ "lawn": [
+  "home"
+ ],
+ "lawyer": [
+  "work"
+ ],
+ "lawyer-client relation": [
+  "work"
+ ],
+ "layoff": [
+  "work"
+ ],
+ "leader": [
+  "work"
+ ],
+ "leadership": [
+  "work"
+ ],
+ "leaf": [
+  "nature"
+ ],
+ "league": [
+  "sports"
+ ],
+ "learn": [
+  "education"
+ ],
+ "learning": [
+  "education"
+ ],
+ "leather": [
+  "clothing"
+ ],
+ "lecture": [
+  "education"
+ ],
+ "lecturer": [
+  "education"
+ ],
+ "ledger": [
+  "money"
+ ],
+ "left atrium": [
+  "body"
+ ],
+ "left coronary artery": [
+  "body"
+ ],
+ "leg": [
+  "body"
+ ],
+ "legacy": [
+  "money"
+ ],
+ "legal profession": [
+  "work"
+ ],
+ "legal separation": [
+  "family"
+ ],
+ "leisure": [
+  "sports"
+ ],
+ "lemon": [
+  "food"
+ ],
+ "lemon drop": [
+  "food"
+ ],
+ "lend": [
+  "money"
+ ],
+ "lender": [
+  "money"
+ ],
+ "lens capsule": [
+  "body"
+ ],
+ "lens cortex": [
+  "body"
+ ],
+ "lens nucleus": [
+  "body"
+ ],
+ "leprosy": [
+  "body"
+ ],
+ "lesson": [
+  "education"
+ ],
+ "letter": [
+  "communication"
+ ],
+ "letterhead": [
+  "work"
+ ],
+ "leukemia": [
+  "body"
+ ],
+ "liabilities": [
+  "money"
+ ],
+ "librarian": [
+  "work"
+ ],
+ "library": [
+  "education",
+  "city"
+ ],
+ "licensing fee": [
+  "money"
+ ],
+ "ligament": [
+  "body"
+ ],
+ "lightweight": [
+  "sports"
+ ],
+ "limb": [
+  "body"
+ ],
+ "lingerie": [
+  "clothing"
+ ],
+ "lion": [
+  "animals"
+ ],
+ "lip": [
+  "body"
+ ],
+ "liquidate": [
+  "money"
+ ],
+ "liquidation": [
+  "money"
+ ],
+ "liquidity": [
+  "money"
+ ],
+ "listen": [
+  "communication"
+ ],
+ "listener": [
+  "communication"
+ ],
+ "literacy": [
+  "education"
+ ],
+ "literature": [
+  "education"
+ ],
+ "little toe": [
+  "body"
+ ],
+ "liver": [
+  "body"
+ ],
+ "living quarters": [
+  "home"
+ ],
+ "lizard": [
+  "animals"
+ ],
+ "load balancer": [
+  "technology"
+ ],
+ "loan": [
+  "money"
+ ],
+ "lobby": [
+  "city"
+ ],
+ "lobe": [
+  "body"
+ ],
+ "local road": [
+  "travel"
+ ],
+ "lock": [
+  "home"
+ ],
+ "log": [
+  "nature"
+ ],
+ "logging": [
+  "technology"
+ ],
+ "login": [
+  "technology"
+ ],
+ "logo": [
+  "work"
+ ],
+ "logout": [
+  "technology"
+ ],
+ "loneliness": [
+  "emotions"
+ ],
+ "lonely": [
+  "emotions"
+ ],
+ "loop-line": [
+  "travel"
+ ],
+ "lorry": [
+  "travel"
+ ],
+ "lottery": [
+  "money"
+ ],
+ "lotus": [
+  "nature"
+ ],
+ "love": [
+  "emotions"
+ ],
+ "lower jaw": [
+  "body"
+ ],
+ "lower respiratory tract": [
+  "body"
+ ],
+ "lucrative": [
+  "money"
+ ],
+ "luggage": [
+  "travel"
+ ],
+ "lumen": [
+  "body"
+ ],
+ "lump sum": [
+  "money"
+ ],
+ "lunch": [
+  "food"
+ ],
+ "luncheon": [
+  "food"
+ ],
+ "lunchtime": [
+  "food",
+  "time"
+ ],
+ "lung": [
+  "body"
+ ],
+ "lupus": [
+  "body"
+ ],
+ "lymph node": [
+  "body"
+ ],
+ "lymph vessel": [
+  "body"
+ ],
+ "lyric": [
+  "sports"
+ ],
+ "ma": [
+  "family"
+ ],
+ "machine learning": [
+  "technology"
+ ],
+ "macroeconomic": [
+  "money"
+ ],
+ "macroeconomics": [
+  "money"
+ ],
+ "magazine": [
+  "technology"
+ ],
+ "magic bullet": [
+  "body"
+ ],
+ "magic trick": [
+  "sports"
+ ],
+ "mail": [
+  "communication"
+ ],
+ "main drag": [
+  "city"
+ ],
+ "malaria": [
+  "body"
+ ],
+ "male genitalia": [
+  "body"
+ ],
+ "male reproductive gland": [
+  "body"
+ ],
+ "malignant": [
+  "body"
+ ],
+ "mall": [
+  "city",
+  "clothing"
+ ],
+ "malnutrition": [
+  "body",
+  "food"
+ ],
+ "malware": [
+  "technology"
+ ],
+ "man": [
+  "family"
+ ],
+ "manage": [
+  "work"
+ ],
+ "management": [
+  "work"
+ ],
+ "manager": [
+  "work"
+ ],
+ "managerial": [
+  "work"
+ ],
+ "mango": [
+  "food"
+ ],
+ "mansion": [
+  "home"
+ ],
+ "manufacture": [
+  "work"
+ ],
+ "manufacturing": [
+  "work"
+ ],
+ "map": [
+  "travel"
+ ],
+ "marathon": [
+  "sports"
+ ],
+ "march": [
+  "time"
+ ],
+ "mare": [
+  "animals"
+ ],
+ "marine": [
+  "nature"
+ ],
+ "marital": [
+  "family"
+ ],
+ "marital status": [
+  "family"
+ ],
+ "market": [
+  "clothing"
+ ],
+ "marketer": [
+  "work"
+ ],
+ "marketing": [
+  "work"
+ ],
+ "marketplace": [
+  "work"
+ ],
+ "markup": [
+  "money"
+ ],
+ "marriage": [
+  "family"
+ ],
+ "marriage brokerage": [
+  "family"
+ ],
+ "married": [
+  "family"
+ ],
+ "marrow": [
+  "body"
+ ],
+ "marry": [
+  "family"
+ ],
+ "massage": [
+  "body"
+ ],
+ "match": [
+  "sports"
+ ],
+ "match play": [
+  "sports"
+ ],
+ "mate": [
+  "family"
+ ],
+ "math": [
+  "education"
+ ],
+ "mathematical": [
+  "education"
+ ],
+ "mathematics": [
+  "education"
+ ],
+ "maths": [
+  "education"
+ ],
+ "may": [
+  "time"
+ ],
+ "mayor": [
+  "city"
+ ],
+ "meadow": [
+  "nature"
+ ],
+ "meal": [
+  "food"
+ ],
+ "meal ticket": [
+  "food"
+ ],
+ "meaning": [
+  "communication"
+ ],
+ "meantime": [
+  "time"
+ ],
+ "meanwhile": [
+  "time"
+ ],
+ "measles": [
+  "body"
+ ],
+ "meat": [
+  "food"
+ ],
+ "meat pie": [
+  "food"
+ ],
+ "mechanic": [
+  "work"
+ ],
+ "medal": [
+  "sports"
+ ],
+ "media": [
+  "technology"
+ ],
+ "medical": [
+  "body"
+ ],
+ "medical bill": [
+  "body",
+  "money"
+ ],
+ "medical diagnosis": [
+  "body"
+ ],
+ "medical expense": [
+  "body",
+  "money"
+ ],
+ "medication": [
+  "body"
+ ],
+ "medicine": [
+  "body"
+ ],
+ "meditation": [
+  "mind"
+ ],
+ "meeting": [
+  "work"
+ ],
+ "melody": [
+  "sports"
+ ],
+ "membrane": [
+  "body"
+ ],
+ "memo": [
+  "work"
+ ],
+ "memorial": [
+  "city"
+ ],
+ "memorize": [
+  "mind"
+ ],
+ "memory": [
+  "mind"
+ ],
+ "mental": [
+  "mind"
+ ],
+ "mention": [
+  "communication"
+ ],
+ "mentor": [
+  "work"
+ ],
+ "menu": [
+  "food"
+ ],
+ "merchant": [
+  "work"
+ ],
+ "merger": [
+  "work"
+ ],
+ "merit pay": [
+  "work",
+  "money"
+ ],
+ "message": [
+  "communication"
+ ],
+ "messenger": [
+  "communication"
+ ],
+ "metadata": [
+  "technology"
+ ],
+ "meteor": [
+  "nature"
+ ],
+ "methadone": [
+  "body"
+ ],
+ "metropolis": [
+  "city"
+ ],
+ "microphone": [
+  "technology"
+ ],
+ "microservice": [
+  "technology"
+ ],
+ "mid-calf": [
+  "body"
+ ],
+ "middle ear": [
+  "body"
+ ],
+ "midfield": [
+  "sports"
+ ],
+ "midnight": [
+  "time"
+ ],
+ "midwife": [
+  "body"
+ ],
+ "migraine": [
+  "body"
+ ],
+ "migrant": [
+  "animals"
+ ],
+ "migration": [
+  "animals"
+ ],
+ "mileage": [
+  "travel"
+ ],
+ "milk": [
+  "food"
+ ],
+ "milk sickness": [
+  "body"
+ ],
+ "milo": [
+  "food"
+ ],
+ "mind": [
+  "mind"
+ ],
+ "miner": [
+  "work"
+ ],
+ "mineral": [
+  "nature"
+ ],
+ "mining": [
+  "work"
+ ],
+ "minor surgery": [
+  "body"
+ ],
+ "minute": [
+  "time"
+ ],
+ "mirror": [
+  "home"
+ ],
+ "miserable": [
+  "emotions"
+ ],
+ "misery": [
+  "emotions"
+ ],
+ "mobile": [
+  "technology"
+ ],
+ "mockup": [
+  "technology"
+ ],
+ "modem": [
+  "technology"
+ ],
+ "modern dance": [
+  "sports"
+ ],
+ "module": [
+  "technology"
+ ],
+ "moment": [
+  "time"
+ ],
+ "monastery": [
+  "city"
+ ],
+ "monday": [
+  "time"
+ ],
+ "monetary": [
+  "money"
+ ],
+ "money": [
+  "money"
+ ],
+ "monitor": [
+  "technology"
+ ],
+ "monitoring": [
+  "technology"
+ ],
+ "monkey": [
+  "animals"
+ ],
+ "monopoly": [
+  "work"
+ ],
+ "mons": [
+  "body"
+ ],
+ "month": [
+  "time"
+ ],
+ "monthly": [
+  "time"
+ ],
+ "monument": [
+  "city"
+ ],
+ "mood": [
+  "emotions"
+ ],
+ "moon": [
+  "nature"
+ ],
+ "moonlight": [
+  "nature"
+ ],
+ "moral hazard": [
+  "money"
+ ],
+ "morning": [
+  "time"
+ ],
+ "morning sickness": [
+  "body"
+ ],
+ "morphine": [
+  "body"
+ ],
+ "mortgage": [
+  "money",
+  "home"
+ ],
+ "mosque": [
+  "city"
+ ],
+ "mosquito": [
+  "animals"
+ ],
+ "mosquito bite": [
+  "body"
+ ],
+ "motel": [
+  "travel"
+ ],
+ "mother": [
+  "family"
+ ],
+ "mother's boy": [
+  "family"
+ ],
+ "motherboard": [
+  "technology"
+ ],
+ "motion sickness": [
+  "body"
+ ],
+ "motorcycle": [
+  "travel"
+ ],
+ "motorist": [
+  "travel"
+ ],
+ "mound": [
+  "sports"
+ ],
+ "mountain": [
+  "nature"
+ ],
+ "mouse": [
+  "animals"
+ ],
+ "mouth": [
+  "body"
+ ],
+ "movie": [
+  "technology",
+  "sports"
+ ],
+ "moving expense": [
+  "money"
+ ],
+ "mower": [
+  "home"
+ ],
+ "mud": [
+  "nature"
+ ],
+ "muddy": [
+  "nature"
+ ],
+ "multimedia": [
+  "technology"
+ ],
+ "multinational": [
+  "work"
+ ],
+ "multiple sclerosis": [
+  "body"
+ ],
+ "mum": [
+  "family"
+ ],
+ "mummy": [
+  "family"
+ ],
+ "municipal": [
+  "city"
+ ],
+ "muscle": [
+  "body"
+ ],
+ "muscular structure": [
+  "body"
+ ],
+ "museum": [
+  "city"
+ ],
+ "mushroom": [
+  "food"
+ ],
+ "music": [
+  "sports"
+ ],
+ "music genre": [
+  "sports"
+ ],
+ "musical": [
+  "sports"
+ ],
+ "musician": [
+  "sports"
+ ],
+ "mustang": [
+  "animals"
+ ],
+ "mutual fund": [
+  "money"
+ ],
+ "nail": [
+  "body"
+ ],
+ "naked eye": [
+  "body"
+ ],
+ "nanny": [
+  "family"
+ ],
+ "narcotic": [
+  "body"
+ ],
+ "nasal": [
+  "body"
+ ],
+ "natural": [
+  "nature"
+ ],
+ "natural language processing": [
+  "technology"
+ ],
+ "nature": [
+  "nature"
+ ],
+ "nausea": [
+  "body"
+ ],
+ "navigation": [
+  "travel"
+ ],
+ "neck": [
+  "body"
+ ],
+ "necklace": [
+  "clothing"
+ ],
+ "needle": [
+  "clothing"
+ ],
+ "negotiation": [
+  "work"
+ ],
+ "negotiator": [
+  "work"
+ ],
+ "neighborhood": [
+  "city"
+ ],
+ "neighbour": [
+  "family"
+ ],
+ "neighbourhood": [
+  "city"
+ ],
+ "nephew": [
+  "family"
+ ],
+ "nerve": [
+  "body"
+ ],
+ "nerve pathway": [
+  "body"
+ ],
+ "nervous": [
+  "emotions"
+ ],
+ "nervous system": [
+  "body"
+ ],
+ "ness": [
+  "nature"
+ ],
+ "nest": [
+  "animals"
+ ],
+ "neural arch": [
+  "body"
+ ],
+ "neural network": [
+  "technology"
+ ],
+ "neurologist": [
+  "body"
+ ],
+ "neurology": [
+  "body"
+ ],
+ "new penny": [
+  "money"
+ ],
+ "news": [
+  "technology"
+ ],
+ "newsletter": [
+  "communication"
+ ],
+ "newspaper": [
+  "technology"
+ ],
+ "newsstand": [
+  "city"
+ ],
+ "night": [
+  "time"
+ ],
+ "nipple": [
+  "body"
+ ],
+ "non-profit": [
+  "work"
+ ],
+ "noon": [
+  "time"
+ ],
+ "nose": [
+  "body"
+ ],
+ "nostalgia": [
+  "emotions"
+ ],
+ "notary": [
+  "work"
+ ],
+ "notebook": [
+  "education"
+ ],
+ "notion": [
+  "mind"
+ ],
+ "noun": [
+  "education"
+ ],
+ "novel": [
+  "sports"
+ ],
+ "novelist": [
+  "sports"
+ ],
+ "november": [
+  "time"
+ ],
+ "null": [
+  "technology"
+ ],
+ "nurse": [
+  "body",
+  "work"
+ ],
+ "nurse practitioner": [
+  "body",
+  "work"
+ ],
+ "nursery": [
+  "education"
+ ],
+ "nursing": [
+  "body"
+ ],
+ "nut": [
+  "food"
+ ],
+ "nutrition": [
+  "food",
+  "body"
+ ],
+ "o'clock": [
+  "time"
+ ],
+ "oasis": [
+  "nature"
+ ],
+ "obesity": [
+  "body"
+ ],
+ "occupation": [
+  "work"
+ ],
+ "ocean": [
+  "nature"
+ ],
+ "october": [
+  "time"
+ ],
+ "oculus dexter": [
+  "body"
+ ],
+ "oculus sinister": [
+  "body"
+ ],
+ "office": [
+  "work"
+ ],
+ "offline": [
+  "technology"
+ ],
+ "offline mode": [
+  "technology"
+ ],
+ "offspring": [
+  "family"
+ ],
+ "ointment": [
+  "body"
+ ],
+ "old lady": [
+  "family"
+ ],
+ "old-age pension": [
+  "money"
+ ],
+ "olfactory bulb": [
+  "body"
+ ],
+ "olfactory nerve": [
+  "body"
+ ],
+ "on the road": [
+  "travel"
+ ],
+ "onboarding": [
+  "technology"
+ ],
+ "one-night stand": [
+  "sports"
+ ],
+ "onion": [
+  "food"
+ ],
+ "online": [
+  "technology"
+ ],
+ "open source": [
+  "technology"
+ ],
+ "opera": [
+  "sports"
+ ],
+ "operating system": [
+  "technology"
+ ],
+ "operation": [
+  "body"
+ ],
+ "optic": [
+  "body"
+ ],
+ "optic cup": [
+  "body"
+ ],
+ "optic radiation": [
+  "body"
+ ],
+ "oral cancer": [
+  "body"
+ ],
+ "orchard": [
+  "nature"
+ ],
+ "orchestra": [
+  "sports"
+ ],
+ "organ": [
+  "body"
+ ],
+ "organ of hearing": [
+  "body"
+ ],
+ "organisation": [
+  "work"
+ ],
+ "organization": [
+  "work"
+ ],
+ "organization expense": [
+  "work",
+  "money"
+ ],
+ "orphan": [
+  "family"
+ ],
+ "ottoman": [
+  "home"
+ ],
+ "outdoor": [
+  "nature"
+ ],
+ "outdoors": [
+  "nature"
+ ],
+ "outfit": [
+  "clothing"
+ ],
+ "outing": [
+  "travel"
+ ],
+ "outlay": [
+  "money"
+ ],
+ "outlet": [
+  "clothing"
+ ],
+ "outrage": [
+  "emotions"
+ ],
+ "outsider": [
+  "family"
+ ],
+ "outskirts": [
+  "city"
+ ],
+ "outsource": [
+  "work"
+ ],
+ "ovary": [
+  "body"
+ ],
+ "oven": [
+  "food",
+  "home"
+ ],
+ "overdose": [
+  "body"
+ ],
+ "overhead": [
+  "money"
+ ],
+ "overnight": [
+  "time"
+ ],
+ "overpay": [
+  "money"
+ ],
+ "overseas": [
+  "travel"
+ ],
+ "oversee": [
+  "work"
+ ],
+ "overtime": [
+  "work"
+ ],
+ "overwhelm": [
+  "emotions"
+ ],
+ "owe": [
+  "money"
+ ],
+ "owner": [
+  "work"
+ ],
+ "oxygen": [
+  "body"
+ ],
+ "oyster": [
+  "food",
+  "animals"
+ ],
+ "pacemaker": [
+  "body"
+ ],
+ "pack": [
+  "travel"
+ ],
+ "paddy": [
+  "nature"
+ ],
+ "pain": [
+  "body"
+ ],
+ "painful": [
+  "body"
+ ],
+ "paint": [
+  "sports"
+ ],
+ "painter": [
+  "sports",
+  "work"
+ ],
+ "painting": [
+  "sports"
+ ],
+ "palace": [
+  "city"
+ ],
+ "pale": [
+  "body"
+ ],
+ "palliative": [
+  "body"
+ ],
+ "palm": [
+  "nature"
+ ],
+ "palsy": [
+  "body"
+ ],
+ "pan": [
+  "food",
+  "home"
+ ],
+ "panda": [
+  "animals"
+ ],
+ "pang": [
+  "emotions"
+ ],
+ "panic": [
+  "emotions"
+ ],
+ "pant": [
+  "body"
+ ],
+ "panther": [
+  "animals"
+ ],
+ "pants": [
+  "clothing"
+ ],
+ "paper money": [
+  "money"
+ ],
+ "paper route": [
+  "work"
+ ],
+ "paperwork": [
+  "work"
+ ],
+ "parade": [
+  "city"
+ ],
+ "paralegal": [
+  "work"
+ ],
+ "paraphrase": [
+  "communication"
+ ],
+ "parent": [
+  "family"
+ ],
+ "parental": [
+  "family"
+ ],
+ "parish": [
+  "city"
+ ],
+ "park": [
+  "city"
+ ],
+ "parking": [
+  "travel"
+ ],
+ "parse": [
+  "technology"
+ ],
+ "part-singing": [
+  "sports"
+ ],
+ "part-time": [
+  "work"
+ ],
+ "partner": [
+  "family"
+ ],
+ "partnership": [
+  "work"
+ ],
+ "party": [
+  "sports"
+ ],
+ "pass": [
+  "education"
+ ],
+ "passcode": [
+  "technology"
+ ],
+ "passenger": [
+  "travel"
+ ],
+ "passion": [
+  "emotions"
+ ],
+ "passionate": [
+  "emotions"
+ ],
+ "passport": [
+  "travel"
+ ],
+ "password": [
+  "technology"
+ ],
+ "past": [
+  "time"
+ ],
+ "pasta": [
+  "food"
+ ],
+ "pastry": [
+  "food"
+ ],
+ "pathology": [
+  "body"
+ ],
+ "patience": [
+  "emotions"
+ ],
+ "patient": [
+  "body"
+ ],
+ "patty": [
+  "food"
+ ],
+ "paved": [
+  "city"
+ ],
+ "pavement": [
+  "city"
+ ],
+ "pay": [
+  "money"
+ ],
+ "payable": [
+  "money"
+ ],
+ "paycheck": [
+  "money",
+  "work"
+ ],
+ "payday": [
+  "money",
+  "work"
+ ],
+ "payment": [
+  "money"
+ ],
+ "payoff": [
+  "money"
+ ],
+ "payout": [
+  "money"
+ ],
+ "payroll": [
+  "work",
+  "money"
+ ],
+ "peak": [
+  "nature"
+ ],
+ "pectoral": [
+  "body"
+ ],
+ "pedestrian": [
+  "city"
+ ],
+ "peer": [
+  "family"
+ ],
+ "peer-to-peer": [
+  "technology"
+ ],
+ "pelvic cavity": [
+  "body"
+ ],
+ "pelvic inflammatory disease": [
+  "body"
+ ],
+ "pelvis": [
+  "body"
+ ],
+ "pen": [
+  "education"
+ ],
+ "pencil": [
+  "education"
+ ],
+ "penetrating trauma": [
+  "body"
+ ],
+ "penis": [
+  "body"
+ ],
+ "penny": [
+  "money"
+ ],
+ "pension": [
+  "money"
+ ],
+ "pension fund": [
+  "money"
+ ],
+ "people": [
+  "family"
+ ],
+ "pepper": [
+  "food"
+ ],
+ "per diem": [
+  "work"
+ ],
+ "perceive": [
+  "mind"
+ ],
+ "perception": [
+  "mind"
+ ],
+ "perform": [
+  "sports"
+ ],
+ "performance": [
+  "sports"
+ ],
+ "performer": [
+  "sports"
+ ],
+ "period": [
+  "time"
+ ],
+ "periodical": [
+  "communication"
+ ],
+ "peripheral": [
+  "technology"
+ ],
+ "permanent tooth": [
+  "body"
+ ],
+ "person": [
+  "family"
+ ],
+ "personal expense": [
+  "money"
+ ],
+ "personality": [
+  "mind"
+ ],
+ "personality inventory": [
+  "mind"
+ ],
+ "personnel": [
+  "work"
+ ],
+ "perspective": [
+  "mind"
+ ],
+ "persuade": [
+  "communication"
+ ],
+ "peso": [
+  "money"
+ ],
+ "pet": [
+  "animals"
+ ],
+ "petrol": [
+  "travel"
+ ],
+ "pharmaceutical": [
+  "body"
+ ],
+ "pharmacist": [
+  "body"
+ ],
+ "pharmacy": [
+  "body"
+ ],
+ "philosopher": [
+  "mind"
+ ],
+ "philosophical": [
+  "mind"
+ ],
+ "philosophy": [
+  "mind"
+ ],
+ "phishing": [
+  "technology"
+ ],
+ "phone": [
+  "technology",
+  "communication"
+ ],
+ "phone bill": [
+  "money"
+ ],
+ "photo": [
+  "technology"
+ ],
+ "photocopier": [
+  "work"
+ ],
+ "photocopy": [
+  "work"
+ ],
+ "photograph": [
+  "technology"
+ ],
+ "photographer": [
+  "technology"
+ ],
+ "photography": [
+  "technology"
+ ],
+ "phrase": [
+  "communication"
+ ],
+ "physical": [
+  "body"
+ ],
+ "physician": [
+  "body"
+ ],
+ "physics": [
+  "education"
+ ],
+ "physiology": [
+  "body"
+ ],
+ "pia mater": [
+  "body"
+ ],
+ "piano": [
+  "sports"
+ ],
+ "picnic": [
+  "sports"
+ ],
+ "picture": [
+  "sports"
+ ],
+ "pie": [
+  "food"
+ ],
+ "piece de resistance": [
+  "food"
+ ],
+ "pig": [
+  "animals"
+ ],
+ "pigeon": [
+  "animals"
+ ],
+ "piles": [
+  "body"
+ ],
+ "pill": [
+  "body"
+ ],
+ "pillow": [
+  "home"
+ ],
+ "pilot": [
+  "travel",
+  "work"
+ ],
+ "pineapple": [
+  "food"
+ ],
+ "ping": [
+  "technology"
+ ],
+ "pit": [
+  "nature"
+ ],
+ "pitch": [
+  "sports"
+ ],
+ "pittance": [
+  "money"
+ ],
+ "pituitary": [
+  "body"
+ ],
+ "pity": [
+  "emotions"
+ ],
+ "pizza": [
+  "food"
+ ],
+ "place setting": [
+  "food"
+ ],
+ "placebo": [
+  "body"
+ ],
+ "placeholder": [
+  "technology"
+ ],
+ "placement": [
+  "work"
+ ],
+ "placenta": [
+  "body"
+ ],
+ "plague": [
+  "body"
+ ],
+ "plane": [
+  "travel"
+ ],
+ "planet": [
+  "nature"
+ ],
+ "plant": [
+  "nature"
+ ],
+ "plaque": [
+  "body"
+ ],
+ "plate": [
+  "food",
+  "home"
+ ],
+ "plateau": [
+  "nature"
+ ],
+ "platform": [
+  "travel"
+ ],
+ "play": [
+  "sports"
+ ],
+ "player": [
+  "sports"
+ ],
+ "playlist": [
+  "sports"
+ ],
+ "playoff": [
+  "sports"
+ ],
+ "pleased": [
+  "emotions"
+ ],
+ "pleasure": [
+  "emotions"
+ ],
+ "plug": [
+  "home"
+ ],
+ "plum": [
+  "food"
+ ],
+ "plumber": [
+  "work",
+  "home"
+ ],
+ "plural": [
+  "education"
+ ],
+ "pneumonia": [
+  "body"
+ ],
+ "pocket": [
+  "clothing"
+ ],
+ "pocket money": [
+  "money"
+ ],
+ "poem": [
+  "sports"
+ ],
+ "poet": [
+  "sports"
+ ],
+ "poetry": [
+  "sports"
+ ],
+ "poison": [
+  "body"
+ ],
+ "poison ivy": [
+  "body"
+ ],
+ "poison oak": [
+  "body"
+ ],
+ "poisonous": [
+  "body"
+ ],
+ "police": [
+  "city"
+ ],
+ "policeman": [
+  "city",
+  "work"
+ ],
+ "policyholder": [
+  "money"
+ ],
+ "politician": [
+  "work"
+ ],
+ "poll tax": [
+  "money"
+ ],
+ "pollute": [
+  "nature"
+ ],
+ "pollution": [
+  "nature"
+ ],
+ "polymorphism": [
+  "technology"
+ ],
+ "pond": [
+  "nature"
+ ],
+ "pool": [
+  "sports"
+ ],
+ "poor": [
+  "money"
+ ],
+ "pop": [
+  "sports"
+ ],
+ "pop-up": [
+  "technology"
+ ],
+ "popcorn": [
+  "food"
+ ],
+ "poppy": [
+  "nature"
+ ],
+ "population": [
+  "city"
+ ],
+ "porcelain": [
+  "home"
+ ],
+ "pore": [
+  "body"
+ ],
+ "pork": [
+  "food"
+ ],
+ "port": [
+  "travel"
+ ],
+ "portion": [
+  "food"
+ ],
+ "portrait": [
+  "sports"
+ ],
+ "post": [
+  "communication"
+ ],
+ "postage": [
+  "communication"
+ ],
+ "postal": [
+  "communication"
+ ],
+ "postcard": [
+  "communication",
+  "travel"
+ ],
+ "posterior cardinal vein": [
+  "body"
+ ],
+ "postpone": [
+  "time"
+ ],
+ "posture": [
+  "body"
+ ],
+ "pot": [
+  "food",
+  "home"
+ ],
+ "potato": [
+  "food"
+ ],
+ "potato skin": [
+  "food"
+ ],
+ "pottery": [
+  "sports"
+ ],
+ "poultry": [
+  "food",
+  "animals"
+ ],
+ "pound": [
+  "money"
+ ],
+ "pour": [
+  "food"
+ ],
+ "poverty": [
+  "money"
+ ],
+ "power supply": [
+  "technology"
+ ],
+ "practitioner": [
+  "work"
+ ],
+ "praise": [
+  "communication"
+ ],
+ "precinct": [
+  "city"
+ ],
+ "precipitation": [
+  "nature"
+ ],
+ "predator": [
+  "animals"
+ ],
+ "predecessor": [
+  "work"
+ ],
+ "predict": [
+  "mind"
+ ],
+ "prediction": [
+  "mind"
+ ],
+ "prefer": [
+  "mind"
+ ],
+ "preference": [
+  "mind"
+ ],
+ "pregnancy": [
+  "body"
+ ],
+ "pregnant": [
+  "body"
+ ],
+ "premium": [
+  "money"
+ ],
+ "prepayment": [
+  "money"
+ ],
+ "prescribe": [
+  "body"
+ ],
+ "prescription": [
+  "body"
+ ],
+ "preseason": [
+  "sports"
+ ],
+ "present": [
+  "time"
+ ],
+ "presentation": [
+  "work"
+ ],
+ "presenter": [
+  "technology"
+ ],
+ "presently": [
+  "time"
+ ],
+ "president": [
+  "work"
+ ],
+ "press": [
+  "communication"
+ ],
+ "presume": [
+  "mind"
+ ],
+ "prey": [
+  "animals"
+ ],
+ "price": [
+  "money"
+ ],
+ "pride": [
+  "emotions"
+ ],
+ "primary": [
+  "education"
+ ],
+ "primary key": [
+  "technology"
+ ],
+ "primary syphilis": [
+  "body"
+ ],
+ "primary tooth": [
+  "body"
+ ],
+ "printer": [
+  "technology"
+ ],
+ "printing": [
+  "technology"
+ ],
+ "prison": [
+  "city"
+ ],
+ "privatization": [
+  "work"
+ ],
+ "privatize": [
+  "work"
+ ],
+ "proceeds": [
+  "money"
+ ],
+ "processor": [
+  "technology"
+ ],
+ "proclaim": [
+  "communication"
+ ],
+ "procurement": [
+  "work"
+ ],
+ "produce": [
+  "work"
+ ],
+ "producer": [
+  "work"
+ ],
+ "product": [
+  "work"
+ ],
+ "production": [
+  "work"
+ ],
+ "productivity": [
+  "work"
+ ],
+ "profession": [
+  "work"
+ ],
+ "professional": [
+  "work"
+ ],
+ "professionally": [
+  "work"
+ ],
+ "professor": [
+  "education"
+ ],
+ "profit": [
+  "money",
+  "work"
+ ],
+ "profitability": [
+  "money"
+ ],
+ "profitable": [
+  "money"
+ ],
+ "prognosis": [
+  "body"
+ ],
+ "program": [
+  "technology"
+ ],
+ "programme": [
+  "technology"
+ ],
+ "programmer": [
+  "technology"
+ ],
+ "programming": [
+  "technology"
+ ],
+ "progressive tax": [
+  "money"
+ ],
+ "project": [
+  "education"
+ ],
+ "promote": [
+  "work"
+ ],
+ "promotion": [
+  "work"
+ ],
+ "promotional": [
+  "work"
+ ],
+ "promotional expense": [
+  "money"
+ ],
+ "pronounce": [
+  "communication"
+ ],
+ "proportional tax": [
+  "money"
+ ],
+ "prosperity": [
+  "money"
+ ],
+ "protective fold": [
+  "body"
+ ],
+ "protein": [
+  "food",
+  "body"
+ ],
+ "proud": [
+  "emotions"
+ ],
+ "proud flesh": [
+  "body"
+ ],
+ "proximal": [
+  "body"
+ ],
+ "pseudocode": [
+  "technology"
+ ],
+ "psychiatric": [
+  "body"
+ ],
+ "psychiatry": [
+  "body"
+ ],
+ "psychoanalysis": [
+  "mind",
+  "body"
+ ],
+ "psychological": [
+  "mind"
+ ],
+ "psychologist": [
+  "mind"
+ ],
+ "psychology": [
+  "mind"
+ ],
+ "pub": [
+  "food",
+  "city"
+ ],
+ "publishing": [
+  "work"
+ ],
+ "puck": [
+  "sports"
+ ],
+ "pudding": [
+  "food"
+ ],
+ "pull request": [
+  "technology"
+ ],
+ "pulmonary trunk": [
+  "body"
+ ],
+ "pulmonary tuberculosis": [
+  "body"
+ ],
+ "pulse": [
+  "body"
+ ],
+ "punctual": [
+  "time"
+ ],
+ "punk": [
+  "sports"
+ ],
+ "pupil": [
+  "education"
+ ],
+ "puppy fat": [
+  "body"
+ ],
+ "purchase": [
+  "money"
+ ],
+ "purchaser": [
+  "money"
+ ],
+ "purse": [
+  "money"
+ ],
+ "purser": [
+  "travel"
+ ],
+ "puzzle": [
+  "sports"
+ ],
+ "quack": [
+  "body"
+ ],
+ "qualification": [
+  "education"
+ ],
+ "qualify": [
+  "education"
+ ],
+ "quarantine": [
+  "body"
+ ],
+ "quarterly": [
+  "time"
+ ],
+ "question": [
+  "communication"
+ ],
+ "quill": [
+  "animals"
+ ],
+ "quit": [
+  "work"
+ ],
+ "race": [
+  "sports"
+ ],
+ "racing": [
+  "sports"
+ ],
+ "radar": [
+  "technology"
+ ],
+ "radial nerve": [
+  "body"
+ ],
+ "radiation sickness": [
+  "body"
+ ],
+ "radio": [
+  "technology"
+ ],
+ "rage": [
+  "emotions"
+ ],
+ "rail technology": [
+  "travel"
+ ],
+ "railroad": [
+  "travel"
+ ],
+ "railroad flat": [
+  "home"
+ ],
+ "railway": [
+  "travel"
+ ],
+ "rain": [
+  "nature"
+ ],
+ "raincoat": [
+  "clothing"
+ ],
+ "rainfall": [
+  "nature"
+ ],
+ "rainy": [
+  "nature"
+ ],
+ "ram": [
+  "technology"
+ ],
+ "ransomware": [
+  "technology"
+ ],
+ "rash": [
+  "body"
+ ],
+ "rat": [
+  "animals"
+ ],
+ "rat cheese": [
+  "food"
+ ],
+ "raw": [
+  "food"
+ ],
+ "ready-mix": [
+  "food"
+ ],
+ "real time": [
+  "technology"
+ ],
+ "realtor": [
+  "work"
+ ],
+ "reasoning": [
+  "mind"
+ ],
+ "rebate": [
+  "money"
+ ],
+ "reboot": [
+  "technology"
+ ],
+ "rebound tenderness": [
+  "body"
+ ],
+ "recall": [
+  "mind"
+ ],
+ "receipt": [
+  "money"
+ ],
+ "receivable": [
+  "money"
+ ],
+ "receiver": [
+  "technology"
+ ],
+ "receiver-creditor relation": [
+  "money"
+ ],
+ "reception": [
+  "work"
+ ],
+ "receptionist": [
+  "work"
+ ],
+ "receptor": [
+  "body"
+ ],
+ "recession": [
+  "money"
+ ],
+ "recipe": [
+  "food"
+ ],
+ "recompense": [
+  "money"
+ ],
+ "recording": [
+  "technology"
+ ],
+ "recover": [
+  "body"
+ ],
+ "recovery": [
+  "body"
+ ],
+ "recreation": [
+  "sports"
+ ],
+ "recreational": [
+  "sports"
+ ],
+ "recruit": [
+  "work"
+ ],
+ "recruiter": [
+  "work"
+ ],
+ "recruitment": [
+  "work"
+ ],
+ "rectum": [
+  "body"
+ ],
+ "recursion": [
+  "technology"
+ ],
+ "recycle": [
+  "nature"
+ ],
+ "redecorate": [
+  "home"
+ ],
+ "redundancy": [
+  "work"
+ ],
+ "refactor": [
+  "technology"
+ ],
+ "referee": [
+  "sports"
+ ],
+ "refinance": [
+  "money"
+ ],
+ "reflex arc": [
+  "body"
+ ],
+ "refreshment": [
+  "food"
+ ],
+ "refrigerator": [
+  "home"
+ ],
+ "refund": [
+  "money"
+ ],
+ "refundable": [
+  "money"
+ ],
+ "regeneration": [
+  "body"
+ ],
+ "regimen": [
+  "body"
+ ],
+ "regret": [
+  "emotions"
+ ],
+ "regular expression": [
+  "technology"
+ ],
+ "regulation time": [
+  "sports"
+ ],
+ "rehabilitation": [
+  "body"
+ ],
+ "rehearsal": [
+  "sports"
+ ],
+ "reimburse": [
+  "money"
+ ],
+ "reimbursement": [
+  "money"
+ ],
+ "reinvest": [
+  "money"
+ ],
+ "reinvestment": [
+  "money"
+ ],
+ "relax": [
+  "emotions"
+ ],
+ "relaxation": [
+  "emotions"
+ ],
+ "relaxed": [
+  "emotions"
+ ],
+ "relaxing": [
+  "emotions"
+ ],
+ "relief": [
+  "emotions"
+ ],
+ "relieved": [
+  "emotions"
+ ],
+ "remember": [
+  "mind"
+ ],
+ "remembrance": [
+  "mind"
+ ],
+ "remind": [
+  "mind"
+ ],
+ "reminder": [
+  "mind"
+ ],
+ "remittance": [
+  "money"
+ ],
+ "remodel": [
+  "home"
+ ],
+ "renovate": [
+  "home"
+ ],
+ "renovation": [
+  "home"
+ ],
+ "rent": [
+  "money",
+  "home"
+ ],
+ "rent-rebate": [
+  "money"
+ ],
+ "rent-roll": [
+  "money"
+ ],
+ "rental": [
+  "money"
+ ],
+ "repairperson": [
+  "work"
+ ],
+ "repay": [
+  "money"
+ ],
+ "repayment": [
+  "money"
+ ],
+ "repertoire": [
+  "sports"
+ ],
+ "reply": [
+  "communication"
+ ],
+ "report": [
+  "communication"
+ ],
+ "reporter": [
+  "communication"
+ ],
+ "reporting": [
+  "communication"
+ ],
+ "reproduction": [
+  "body"
+ ],
+ "reproductive system": [
+  "body"
+ ],
+ "research": [
+  "education"
+ ],
+ "researcher": [
+  "education"
+ ],
+ "resentment": [
+  "emotions"
+ ],
+ "reservation": [
+  "travel"
+ ],
+ "residence": [
+  "home"
+ ],
+ "residential": [
+  "home"
+ ],
+ "resign": [
+  "work"
+ ],
+ "resignation": [
+  "work"
+ ],
+ "resin": [
+  "nature"
+ ],
+ "resort": [
+  "travel"
+ ],
+ "respiratory distress syndrome": [
+  "body"
+ ],
+ "respiratory tract": [
+  "body"
+ ],
+ "respond": [
+  "communication"
+ ],
+ "response": [
+  "communication"
+ ],
+ "responsive": [
+  "technology"
+ ],
+ "restart": [
+  "technology"
+ ],
+ "restaurant": [
+  "food",
+  "city"
+ ],
+ "restless": [
+  "emotions"
+ ],
+ "restless legs syndrome": [
+  "body"
+ ],
+ "restroom": [
+  "city"
+ ],
+ "résumé": [
+  "work"
+ ],
+ "retail": [
+  "clothing"
+ ],
+ "retailer": [
+  "clothing"
+ ],
+ "retina": [
+  "body"
+ ],
+ "retire": [
+  "work"
+ ],
+ "retired": [
+  "work"
+ ],
+ "retirement": [
+  "work"
+ ],
+ "reunion": [
+  "family"
+ ],
+ "revaluation": [
+  "money"
+ ],
+ "revenue": [
+  "money"
+ ],
+ "review": [
+  "communication"
+ ],
+ "rhetoric": [
+  "communication"
+ ],
+ "rheumatoid arthritis": [
+  "body"
+ ],
+ "rhino": [
+  "animals"
+ ],
+ "rhyme": [
+  "sports"
+ ],
+ "rhythm": [
+  "sports"
+ ],
+ "rib cage": [
+  "body"
+ ],
+ "rice": [
+  "food"
+ ],
+ "rich": [
+  "money"
+ ],
+ "riches": [
+  "money"
+ ],
+ "ride": [
+  "sports"
+ ],
+ "ride the bench": [
+  "sports"
+ ],
+ "riding": [
+  "sports"
+ ],
+ "right atrium": [
+  "body"
+ ],
+ "right coronary artery": [
+  "body"
+ ],
+ "right of offset": [
+  "money"
+ ],
+ "ring": [
+  "clothing"
+ ],
+ "river": [
+  "nature"
+ ],
+ "road": [
+  "travel"
+ ],
+ "roaming": [
+  "technology"
+ ],
+ "robin": [
+  "animals"
+ ],
+ "robot": [
+  "technology"
+ ],
+ "robotics": [
+  "technology"
+ ],
+ "rock": [
+  "nature"
+ ],
+ "rock 'n' roll": [
+  "sports"
+ ],
+ "rock candy": [
+  "food"
+ ],
+ "rock climbing": [
+  "sports"
+ ],
+ "rocket": [
+  "technology"
+ ],
+ "roll": [
+  "food"
+ ],
+ "rollback": [
+  "technology"
+ ],
+ "rolling pin": [
+  "food",
+  "home"
+ ],
+ "roof": [
+  "home"
+ ],
+ "rooftop": [
+  "home"
+ ],
+ "room": [
+  "home"
+ ],
+ "root": [
+  "nature"
+ ],
+ "root beer": [
+  "food"
+ ],
+ "root canal": [
+  "body"
+ ],
+ "rope burn": [
+  "body"
+ ],
+ "rose": [
+  "nature"
+ ],
+ "rose apple": [
+  "food"
+ ],
+ "rosemary": [
+  "food"
+ ],
+ "rotary": [
+  "travel"
+ ],
+ "round robin": [
+  "sports"
+ ],
+ "route": [
+  "travel"
+ ],
+ "router": [
+  "technology"
+ ],
+ "rubbish": [
+  "home"
+ ],
+ "rug": [
+  "home"
+ ],
+ "rugby": [
+  "sports"
+ ],
+ "rumor": [
+  "communication"
+ ],
+ "rumour": [
+  "communication"
+ ],
+ "run": [
+  "sports"
+ ],
+ "runner": [
+  "sports"
+ ],
+ "running": [
+  "sports"
+ ],
+ "runtime": [
+  "technology"
+ ],
+ "rural": [
+  "nature"
+ ],
+ "sack": [
+  "work"
+ ],
+ "sad": [
+  "emotions"
+ ],
+ "sadly": [
+  "emotions"
+ ],
+ "safari": [
+  "travel"
+ ],
+ "sail": [
+  "travel"
+ ],
+ "sailing": [
+  "sports"
+ ],
+ "sailor": [
+  "travel"
+ ],
+ "salad": [
+  "food"
+ ],
+ "salary": [
+  "money",
+  "work"
+ ],
+ "sale": [
+  "clothing"
+ ],
+ "sales incentive": [
+  "work"
+ ],
+ "salesman": [
+  "work"
+ ],
+ "salespeople": [
+  "work"
+ ],
+ "salesperson": [
+  "work"
+ ],
+ "salt": [
+  "food"
+ ],
+ "sand": [
+  "nature"
+ ],
+ "sandstone": [
+  "nature"
+ ],
+ "sandwich": [
+  "food"
+ ],
+ "sanitary code": [
+  "body"
+ ],
+ "sanitation": [
+  "body"
+ ],
+ "sarcasm": [
+  "communication"
+ ],
+ "satellite": [
+  "technology"
+ ],
+ "satisfaction": [
+  "emotions"
+ ],
+ "satisfied": [
+  "emotions"
+ ],
+ "saturday": [
+  "time"
+ ],
+ "sauce": [
+  "food"
+ ],
+ "sauna": [
+  "body"
+ ],
+ "saver": [
+  "money"
+ ],
+ "saving": [
+  "money"
+ ],
+ "savings": [
+  "money"
+ ],
+ "sawyer": [
+  "work"
+ ],
+ "say": [
+  "communication"
+ ],
+ "scalability": [
+  "technology"
+ ],
+ "scalp": [
+  "body"
+ ],
+ "scam": [
+  "money"
+ ],
+ "scanner": [
+  "technology"
+ ],
+ "scar": [
+  "body"
+ ],
+ "scare": [
+  "emotions"
+ ],
+ "scared": [
+  "emotions"
+ ],
+ "scarf": [
+  "clothing"
+ ],
+ "scary": [
+  "emotions"
+ ],
+ "scenery": [
+  "nature"
+ ],
+ "sceptical": [
+  "mind"
+ ],
+ "schedule": [
+  "time"
+ ],
+ "schema": [
+  "technology"
+ ],
+ "schizophrenia": [
+  "body"
+ ],
+ "scholar": [
+  "education"
+ ],
+ "scholarship": [
+  "education"
+ ],
+ "school": [
+  "education"
+ ],
+ "science": [
+  "education"
+ ],
+ "scientist": [
+  "work"
+ ],
+ "score": [
+  "sports"
+ ],
+ "scorecard": [
+  "sports"
+ ],
+ "screen": [
+  "technology"
+ ],
+ "screening": [
+  "technology"
+ ],
+ "screenplay": [
+  "sports"
+ ],
+ "scroll": [
+  "technology"
+ ],
+ "sculpture": [
+  "sports"
+ ],
+ "sea": [
+  "nature"
+ ],
+ "sea bass": [
+  "food"
+ ],
+ "seafood": [
+  "food"
+ ],
+ "search bar": [
+  "technology"
+ ],
+ "search engine": [
+  "technology"
+ ],
+ "seaside": [
+  "nature",
+  "travel"
+ ],
+ "season": [
+  "time"
+ ],
+ "seat": [
+  "home"
+ ],
+ "secondary": [
+  "education"
+ ],
+ "secondary syphilis": [
+  "body"
+ ],
+ "secretary": [
+  "work"
+ ],
+ "sector": [
+  "work"
+ ],
+ "securities law": [
+  "money"
+ ],
+ "sedan": [
+  "travel"
+ ],
+ "sedative": [
+  "body"
+ ],
+ "seed": [
+  "nature"
+ ],
+ "seed stock": [
+  "nature"
+ ],
+ "seismic": [
+  "nature"
+ ],
+ "seldom": [
+  "time"
+ ],
+ "sell": [
+  "clothing"
+ ],
+ "seller": [
+  "clothing"
+ ],
+ "semester": [
+  "education"
+ ],
+ "semi": [
+  "home"
+ ],
+ "seminar": [
+  "education"
+ ],
+ "seminary": [
+  "education"
+ ],
+ "send": [
+  "communication"
+ ],
+ "sensation": [
+  "body"
+ ],
+ "sensor": [
+  "technology"
+ ],
+ "sentence": [
+  "communication"
+ ],
+ "sentiment": [
+  "emotions"
+ ],
+ "seo": [
+  "technology"
+ ],
+ "september": [
+  "time"
+ ],
+ "series": [
+  "technology"
+ ],
+ "server": [
+  "technology"
+ ],
+ "serverless": [
+  "technology"
+ ],
+ "sew": [
+  "clothing"
+ ],
+ "sewer": [
+  "city"
+ ],
+ "shaken": [
+  "emotions"
+ ],
+ "shame": [
+  "emotions"
+ ],
+ "shampoo": [
+  "body"
+ ],
+ "shank": [
+  "body"
+ ],
+ "shareholder": [
+  "money",
+  "work"
+ ],
+ "sheep": [
+  "animals"
+ ],
+ "sheet": [
+  "home"
+ ],
+ "shelf": [
+  "home"
+ ],
+ "shift": [
+  "work"
+ ],
+ "shin": [
+  "body"
+ ],
+ "ship": [
+  "travel"
+ ],
+ "shipping": [
+  "travel"
+ ],
+ "shirt": [
+  "clothing"
+ ],
+ "shock": [
+  "emotions"
+ ],
+ "shock therapy": [
+  "body"
+ ],
+ "shocked": [
+  "emotions"
+ ],
+ "shoe": [
+  "clothing"
+ ],
+ "shop": [
+  "clothing",
+  "city"
+ ],
+ "shopper": [
+  "clothing"
+ ],
+ "shopping": [
+  "clothing"
+ ],
+ "shore": [
+  "nature"
+ ],
+ "shortfall": [
+  "money"
+ ],
+ "shot put": [
+  "sports"
+ ],
+ "shoulder": [
+  "body"
+ ],
+ "show": [
+  "technology"
+ ],
+ "shower": [
+  "home"
+ ],
+ "shutdown": [
+  "technology"
+ ],
+ "shy": [
+  "emotions"
+ ],
+ "sibling": [
+  "family"
+ ],
+ "sick": [
+  "body"
+ ],
+ "sick pay": [
+  "work",
+  "money"
+ ],
+ "side of pork": [
+  "food"
+ ],
+ "sidewalk": [
+  "city"
+ ],
+ "sight": [
+  "body"
+ ],
+ "sightsee": [
+  "travel"
+ ],
+ "sign up": [
+  "technology"
+ ],
+ "signal": [
+  "communication"
+ ],
+ "signature recognition": [
+  "technology"
+ ],
+ "silk": [
+  "clothing"
+ ],
+ "silver certificate": [
+  "money"
+ ],
+ "sing": [
+  "sports"
+ ],
+ "singer": [
+  "sports"
+ ],
+ "singing": [
+  "sports"
+ ],
+ "singles": [
+  "sports"
+ ],
+ "sinus": [
+  "body"
+ ],
+ "sister": [
+  "family"
+ ],
+ "sitcom": [
+  "technology"
+ ],
+ "skate": [
+  "sports"
+ ],
+ "skateboard": [
+  "sports"
+ ],
+ "skeletal system": [
+  "body"
+ ],
+ "sketch": [
+  "sports"
+ ],
+ "ski": [
+  "sports"
+ ],
+ "ski run": [
+  "sports"
+ ],
+ "skiing": [
+  "sports"
+ ],
+ "skin": [
+  "body"
+ ],
+ "skin-dive": [
+  "sports"
+ ],
+ "skipper": [
+  "education"
+ ],
+ "skirt": [
+  "clothing"
+ ],
+ "skull": [
+  "body"
+ ],
+ "sky": [
+  "nature"
+ ],
+ "slang": [
+  "communication"
+ ],
+ "sleep": [
+  "body"
+ ],
+ "sleeping sickness": [
+  "body"
+ ],
+ "sleepy": [
+  "body"
+ ],
+ "sleeve": [
+  "clothing"
+ ],
+ "slice": [
+  "food"
+ ],
+ "slide": [
+  "technology"
+ ],
+ "slope": [
+  "nature"
+ ],
+ "small change": [
+  "money"
+ ],
+ "small intestine": [
+  "body"
+ ],
+ "smallpox": [
+  "body"
+ ],
+ "smartphone": [
+  "technology"
+ ],
+ "smell": [
+  "body"
+ ],
+ "smile": [
+  "body"
+ ],
+ "smoking": [
+  "body"
+ ],
+ "snack": [
+  "food"
+ ],
+ "snake": [
+  "animals"
+ ],
+ "sneeze": [
+  "body"
+ ],
+ "snippet": [
+  "technology"
+ ],
+ "snow": [
+  "nature"
+ ],
+ "snowy": [
+  "nature"
+ ],
+ "soap": [
+  "home"
+ ],
+ "soccer": [
+  "sports"
+ ],
+ "soccer player": [
+  "sports"
+ ],
+ "sock": [
+  "clothing"
+ ],
+ "socket": [
+  "technology"
+ ],
+ "soda water": [
+  "food"
+ ],
+ "sofa": [
+  "home"
+ ],
+ "soft drink": [
+  "food"
+ ],
+ "soft palate": [
+  "body"
+ ],
+ "soft-shoe": [
+  "sports"
+ ],
+ "software": [
+  "technology"
+ ],
+ "software package": [
+  "technology"
+ ],
+ "soil": [
+  "nature"
+ ],
+ "soil bank": [
+  "nature"
+ ],
+ "solar": [
+  "nature"
+ ],
+ "solicitor": [
+  "work"
+ ],
+ "solid state drive": [
+  "technology"
+ ],
+ "son": [
+  "family"
+ ],
+ "son-in-law": [
+  "family"
+ ],
+ "song": [
+  "sports"
+ ],
+ "sonny": [
+  "family"
+ ],
+ "sore throat": [
+  "body"
+ ],
+ "soup": [
+  "food"
+ ],
+ "source code": [
+  "technology"
+ ],
+ "spa": [
+  "body"
+ ],
+ "space": [
+  "nature"
+ ],
+ "spacious": [
+  "home"
+ ],
+ "spam": [
+  "technology"
+ ],
+ "spare tire": [
+  "body"
+ ],
+ "speak": [
+  "communication"
+ ],
+ "speaker": [
+  "communication"
+ ],
+ "species": [
+  "nature"
+ ],
+ "spectacle": [
+  "clothing"
+ ],
+ "spectator": [
+  "sports"
+ ],
+ "speech": [
+  "communication"
+ ],
+ "speech recognition": [
+  "technology"
+ ],
+ "spell": [
+  "education"
+ ],
+ "spelling": [
+  "education"
+ ],
+ "spend": [
+  "money"
+ ],
+ "spending": [
+  "money"
+ ],
+ "spice": [
+  "food"
+ ],
+ "spicy": [
+  "food"
+ ],
+ "spider": [
+  "animals"
+ ],
+ "spinal column": [
+  "body"
+ ],
+ "spinal cord": [
+  "body"
+ ],
+ "spine": [
+  "body"
+ ],
+ "spite": [
+  "emotions"
+ ],
+ "spleen": [
+  "body"
+ ],
+ "split end": [
+  "sports"
+ ],
+ "spoken": [
+  "communication"
+ ],
+ "spokesman": [
+  "communication"
+ ],
+ "spokesperson": [
+  "communication"
+ ],
+ "spokeswoman": [
+  "communication"
+ ],
+ "spoon": [
+  "food"
+ ],
+ "sport": [
+  "sports"
+ ],
+ "sporting": [
+  "sports"
+ ],
+ "sporting man": [
+  "sports"
+ ],
+ "spotted dick": [
+  "food"
+ ],
+ "spotted fever": [
+  "body"
+ ],
+ "spouse": [
+  "family"
+ ],
+ "spreadsheet": [
+  "technology"
+ ],
+ "spring": [
+  "time"
+ ],
+ "sprint": [
+  "technology"
+ ],
+ "spyware": [
+  "technology"
+ ],
+ "sql": [
+  "technology"
+ ],
+ "square dance": [
+  "sports"
+ ],
+ "squash": [
+  "food"
+ ],
+ "stack trace": [
+  "technology"
+ ],
+ "stadium": [
+  "sports"
+ ],
+ "staff": [
+  "work"
+ ],
+ "staging": [
+  "technology"
+ ],
+ "stair": [
+  "home"
+ ],
+ "staircase": [
+  "home"
+ ],
+ "stake": [
+  "money"
+ ],
+ "stall": [
+  "city"
+ ],
+ "stamp tax": [
+  "money"
+ ],
+ "stapler": [
+  "work"
+ ],
+ "star": [
+  "nature"
+ ],
+ "starve": [
+  "food"
+ ],
+ "statement": [
+  "communication"
+ ],
+ "static": [
+  "technology"
+ ],
+ "station": [
+  "travel"
+ ],
+ "stationery": [
+  "work"
+ ],
+ "statue": [
+  "city"
+ ],
+ "steak": [
+  "food"
+ ],
+ "steep": [
+  "nature"
+ ],
+ "steer": [
+  "travel"
+ ],
+ "stem": [
+  "nature"
+ ],
+ "stereo": [
+  "technology"
+ ],
+ "sterilization": [
+  "body"
+ ],
+ "sterling": [
+  "money"
+ ],
+ "stimulant": [
+  "body"
+ ],
+ "stipend": [
+  "money"
+ ],
+ "stir": [
+  "food"
+ ],
+ "stock": [
+  "money"
+ ],
+ "stockbroker": [
+  "money"
+ ],
+ "stockholder": [
+  "money"
+ ],
+ "stockmarket": [
+  "money"
+ ],
+ "stomach": [
+  "body"
+ ],
+ "stop": [
+  "travel"
+ ],
+ "store": [
+  "clothing"
+ ],
+ "storeroom": [
+  "home"
+ ],
+ "storey": [
+  "home"
+ ],
+ "storm": [
+  "nature"
+ ],
+ "strait": [
+  "nature"
+ ],
+ "stream": [
+  "nature"
+ ],
+ "streaming": [
+  "technology"
+ ],
+ "street": [
+  "city"
+ ],
+ "stress": [
+  "emotions"
+ ],
+ "strike": [
+  "work"
+ ],
+ "strike pay": [
+  "work"
+ ],
+ "stroke": [
+  "sports"
+ ],
+ "student": [
+  "education"
+ ],
+ "study": [
+  "education"
+ ],
+ "subject": [
+  "education"
+ ],
+ "subordinate": [
+  "work"
+ ],
+ "subprime": [
+  "money"
+ ],
+ "subscription": [
+  "money"
+ ],
+ "subsidiary": [
+  "work"
+ ],
+ "subsidize": [
+  "money"
+ ],
+ "subsidy": [
+  "money"
+ ],
+ "subtitle": [
+  "technology"
+ ],
+ "suburb": [
+  "city"
+ ],
+ "suburban": [
+  "city"
+ ],
+ "subway": [
+  "travel"
+ ],
+ "sudden death": [
+  "sports"
+ ],
+ "sugar": [
+  "food"
+ ],
+ "sugar bowl": [
+  "food"
+ ],
+ "sugar candy": [
+  "food"
+ ],
+ "suit": [
+  "clothing"
+ ],
+ "suitcase": [
+  "travel"
+ ],
+ "suite": [
+  "travel"
+ ],
+ "sum": [
+  "money"
+ ],
+ "summarize": [
+  "communication"
+ ],
+ "summer": [
+  "time"
+ ],
+ "summit": [
+  "nature"
+ ],
+ "sun": [
+  "nature"
+ ],
+ "sun tea": [
+  "food"
+ ],
+ "sunburn": [
+  "body"
+ ],
+ "sunday": [
+  "time"
+ ],
+ "sunken arch": [
+  "body"
+ ],
+ "sunscreen": [
+  "body"
+ ],
+ "sunshine": [
+  "nature"
+ ],
+ "supermarket": [
+  "clothing"
+ ],
+ "supervised learning": [
+  "technology"
+ ],
+ "supervisor": [
+  "work"
+ ],
+ "surf": [
+  "nature"
+ ],
+ "surgeon": [
+  "body"
+ ],
+ "surgery": [
+  "body"
+ ],
+ "surgical": [
+  "body"
+ ],
+ "suture": [
+  "body"
+ ],
+ "swallow": [
+  "body"
+ ],
+ "sweater": [
+  "clothing"
+ ],
+ "sweating sickness": [
+  "body"
+ ],
+ "sweet": [
+  "food"
+ ],
+ "swelling": [
+  "body"
+ ],
+ "swim": [
+  "sports"
+ ],
+ "swimming": [
+  "sports"
+ ],
+ "swimming event": [
+  "sports"
+ ],
+ "swimming meet": [
+  "sports"
+ ],
+ "swipe": [
+  "technology"
+ ],
+ "sympathetic nervous system": [
+  "body"
+ ],
+ "symptom": [
+  "body"
+ ],
+ "sync": [
+  "technology"
+ ],
+ "sync conflict": [
+  "technology"
+ ],
+ "syndicate": [
+  "work"
+ ],
+ "syndrome": [
+  "body"
+ ],
+ "syntax": [
+  "technology"
+ ],
+ "syphilis": [
+  "body"
+ ],
+ "syringe": [
+  "body"
+ ],
+ "t-shirt": [
+  "clothing"
+ ],
+ "table": [
+  "home"
+ ],
+ "table talk": [
+  "communication"
+ ],
+ "tablecloth": [
+  "home"
+ ],
+ "tablet": [
+  "technology"
+ ],
+ "tail": [
+  "animals"
+ ],
+ "tailor": [
+  "clothing",
+  "work"
+ ],
+ "take-home pay": [
+  "money",
+  "work"
+ ],
+ "takeover": [
+  "work"
+ ],
+ "talk": [
+  "communication"
+ ],
+ "tang": [
+  "food"
+ ],
+ "tango": [
+  "sports"
+ ],
+ "tanner": [
+  "money"
+ ],
+ "tap": [
+  "home"
+ ],
+ "tap dancing": [
+  "sports"
+ ],
+ "tariff": [
+  "money"
+ ],
+ "taste": [
+  "food"
+ ],
+ "tasty": [
+  "food"
+ ],
+ "tavern": [
+  "food",
+  "city"
+ ],
+ "tax": [
+  "money"
+ ],
+ "tax bill": [
+  "money"
+ ],
+ "taxable": [
+  "money"
+ ],
+ "taxation": [
+  "money"
+ ],
+ "taxi": [
+  "travel"
+ ],
+ "taxpayer": [
+  "money"
+ ],
+ "tea": [
+  "food"
+ ],
+ "tea bag": [
+  "food"
+ ],
+ "tea bread": [
+  "food"
+ ],
+ "tea maker": [
+  "food"
+ ],
+ "tea-like drink": [
+  "food"
+ ],
+ "teach": [
+  "education"
+ ],
+ "teacher": [
+  "education",
+  "work"
+ ],
+ "teaching": [
+  "education"
+ ],
+ "team": [
+  "sports"
+ ],
+ "tech": [
+  "technology"
+ ],
+ "technician": [
+  "technology"
+ ],
+ "technological": [
+  "technology"
+ ],
+ "technology": [
+  "technology"
+ ],
+ "teen": [
+  "family"
+ ],
+ "teenager": [
+  "family"
+ ],
+ "telecom": [
+  "technology"
+ ],
+ "telecommunication": [
+  "technology",
+  "communication"
+ ],
+ "telephone": [
+  "technology",
+  "communication"
+ ],
+ "television": [
+  "technology"
+ ],
+ "tell": [
+  "communication"
+ ],
+ "teller": [
+  "money"
+ ],
+ "temperature": [
+  "nature"
+ ],
+ "temple": [
+  "city"
+ ],
+ "temporal lobe": [
+  "body"
+ ],
+ "tenant": [
+  "home"
+ ],
+ "tenderness": [
+  "body"
+ ],
+ "tendon": [
+  "body"
+ ],
+ "tennis": [
+  "sports"
+ ],
+ "tennis player": [
+  "sports"
+ ],
+ "tennis pro": [
+  "sports"
+ ],
+ "tensor": [
+  "body"
+ ],
+ "tent": [
+  "travel"
+ ],
+ "tenure": [
+  "work"
+ ],
+ "terabyte": [
+  "technology"
+ ],
+ "terminal": [
+  "travel"
+ ],
+ "terrain": [
+  "nature"
+ ],
+ "terrify": [
+  "emotions"
+ ],
+ "terror": [
+  "emotions"
+ ],
+ "tertiary syphilis": [
+  "body"
+ ],
+ "test": [
+  "education"
+ ],
+ "test case": [
+  "technology"
+ ],
+ "testosterone": [
+  "body"
+ ],
+ "textbook": [
+  "education"
+ ],
+ "textile": [
+  "clothing"
+ ],
+ "the shits": [
+  "body"
+ ],
+ "theatre": [
+  "sports",
+  "city"
+ ],
+ "theatrical": [
+  "sports"
+ ],
+ "therapist": [
+  "body"
+ ],
+ "therapy": [
+  "body"
+ ],
+ "thermal": [
+  "nature"
+ ],
+ "thesis": [
+  "education"
+ ],
+ "thigh": [
+  "body"
+ ],
+ "think": [
+  "mind"
+ ],
+ "thinking": [
+  "mind"
+ ],
+ "thirst": [
+  "body"
+ ],
+ "thirsty": [
+  "body"
+ ],
+ "thoracic outlet syndrome": [
+  "body"
+ ],
+ "thread": [
+  "clothing"
+ ],
+ "thrill": [
+  "emotions"
+ ],
+ "thrilled": [
+  "emotions"
+ ],
+ "throat": [
+  "body"
+ ],
+ "throughput": [
+  "technology"
+ ],
+ "thumb": [
+  "body"
+ ],
+ "thumbnail": [
+  "technology"
+ ],
+ "thunderstorm": [
+  "nature"
+ ],
+ "thursday": [
+  "time"
+ ],
+ "thyroid gland": [
+  "body"
+ ],
+ "tibia": [
+  "body"
+ ],
+ "tic": [
+  "body"
+ ],
+ "tick": [
+  "animals"
+ ],
+ "ticket": [
+  "travel"
+ ],
+ "tide": [
+  "nature"
+ ],
+ "tie": [
+  "clothing"
+ ],
+ "tight end": [
+  "sports"
+ ],
+ "tile": [
+  "home"
+ ],
+ "timber": [
+  "nature"
+ ],
+ "time": [
+  "time"
+ ],
+ "time sheet": [
+  "work"
+ ],
+ "timeline": [
+  "time"
+ ],
+ "timer": [
+  "time"
+ ],
+ "timetable": [
+  "time",
+  "travel"
+ ],
+ "tin": [
+  "food"
+ ],
+ "today": [
+  "time"
+ ],
+ "toe": [
+  "body"
+ ],
+ "toilet": [
+  "home"
+ ],
+ "toiletry": [
+  "home"
+ ],
+ "token": [
+  "technology"
+ ],
+ "token money": [
+  "money"
+ ],
+ "toll": [
+  "travel",
+  "money"
+ ],
+ "tomato": [
+  "food"
+ ],
+ "tomorrow": [
+  "time"
+ ],
+ "toner": [
+  "technology"
+ ],
+ "tongue": [
+  "body"
+ ],
+ "tonight": [
+  "time"
+ ],
+ "tool-and-die work": [
+  "work"
+ ],
+ "tooth": [
+  "body"
+ ],
+ "torso": [
+  "body"
+ ],
+ "touchscreen": [
+  "technology"
+ ],
+ "tour": [
+  "travel"
+ ],
+ "tourism": [
+  "travel"
+ ],
+ "tourist": [
+  "travel"
+ ],
+ "tourist class": [
+  "travel"
+ ],
+ "tournament": [
+  "sports"
+ ],
+ "tow": [
+  "travel"
+ ],
+ "towel": [
+  "home"
+ ],
+ "tower": [
+  "city"
+ ],
+ "town": [
+  "city"
+ ],
+ "toxic shock": [
+  "body"
+ ],
+ "toxicity": [
+  "body"
+ ],
+ "toy": [
+  "sports"
+ ],
+ "track": [
+  "travel"
+ ],
+ "track event": [
+  "sports"
+ ],
+ "track meet": [
+  "sports"
+ ],
+ "tract": [
+  "body"
+ ],
+ "trade": [
+  "money",
+  "work"
+ ],
+ "trademark": [
+  "work"
+ ],
+ "trader": [
+  "money",
+  "work"
+ ],
+ "trading": [
+  "money"
+ ],
+ "traffic": [
+  "travel"
+ ],
+ "trailer": [
+  "travel"
+ ],
+ "train": [
+  "travel"
+ ],
+ "trainee": [
+  "work"
+ ],
+ "trainer": [
+  "clothing"
+ ],
+ "training": [
+  "work"
+ ],
+ "training table": [
+  "sports",
+  "food"
+ ],
+ "tranche": [
+  "money"
+ ],
+ "transact": [
+  "money",
+  "work"
+ ],
+ "transaction": [
+  "money"
+ ],
+ "transit": [
+  "travel"
+ ],
+ "translate": [
+  "communication"
+ ],
+ "translation": [
+  "communication"
+ ],
+ "translator": [
+  "communication",
+  "work"
+ ],
+ "transmit": [
+  "technology"
+ ],
+ "transplant": [
+  "body"
+ ],
+ "transport": [
+  "travel"
+ ],
+ "transportation": [
+  "travel"
+ ],
+ "trash": [
+  "home"
+ ],
+ "trauma": [
+  "body"
+ ],
+ "travel": [
+  "travel"
+ ],
+ "traveler": [
+  "travel"
+ ],
+ "traveller": [
+  "travel"
+ ],
+ "tray": [
+  "home"
+ ],
+ "treasure": [
+  "money"
+ ],
+ "treasury": [
+  "money"
+ ],
+ "treatment": [
+  "body"
+ ],
+ "tree": [
+  "nature"
+ ],
+ "trench fever": [
+  "body"
+ ],
+ "trench foot": [
+  "body"
+ ],
+ "trip": [
+  "travel"
+ ],
+ "triple cream": [
+  "food"
+ ],
+ "trophy": [
+  "sports"
+ ],
+ "tropical": [
+  "nature"
+ ],
+ "troubleshoot": [
+  "technology"
+ ],
+ "trousers": [
+  "clothing"
+ ],
+ "truck": [
+  "travel"
+ ],
+ "true rib": [
+  "body"
+ ],
+ "true vocal cord": [
+  "body"
+ ],
+ "trumpet": [
+  "sports"
+ ],
+ "trunk": [
+  "travel"
+ ],
+ "truss": [
+  "body"
+ ],
+ "trust deed": [
+  "money"
+ ],
+ "trustee": [
+  "money"
+ ],
+ "truth serum": [
+  "body"
+ ],
+ "tsunami": [
+  "nature"
+ ],
+ "tube foot": [
+  "animals"
+ ],
+ "tuck": [
+  "food"
+ ],
+ "tuesday": [
+  "time"
+ ],
+ "tuition": [
+  "education"
+ ],
+ "tuna": [
+  "animals",
+  "food"
+ ],
+ "tune": [
+  "sports"
+ ],
+ "tunnel": [
+  "travel"
+ ],
+ "tuple": [
+  "technology"
+ ],
+ "turnover": [
+  "work",
+  "money"
+ ],
+ "tv": [
+  "technology"
+ ],
+ "twin bill": [
+  "sports"
+ ],
+ "twitch": [
+  "body"
+ ],
+ "two-factor authentication": [
+  "technology"
+ ],
+ "typhoon": [
+  "nature"
+ ],
+ "tyre": [
+  "travel"
+ ],
+ "umbilical cord": [
+  "body"
+ ],
+ "uncle": [
+  "family"
+ ],
+ "unconscious": [
+  "body"
+ ],
+ "undergraduate": [
+  "education"
+ ],
+ "underway": [
+  "travel"
+ ],
+ "underwear": [
+  "clothing"
+ ],
+ "underwriter": [
+  "money"
+ ],
+ "unearned increment": [
+  "money"
+ ],
+ "unemployed": [
+  "work"
+ ],
+ "unemployment": [
+  "work"
+ ],
+ "unicorn": [
+  "animals"
+ ],
+ "uniform": [
+  "clothing"
+ ],
+ "uninstall": [
+  "technology"
+ ],
+ "union": [
+  "work"
+ ],
+ "unit test": [
+  "technology"
+ ],
+ "universe": [
+  "nature"
+ ],
+ "university": [
+  "education"
+ ],
+ "unsecured bond": [
+  "money"
+ ],
+ "upper jaw": [
+  "body"
+ ],
+ "upper respiratory tract": [
+  "body"
+ ],
+ "upstairs": [
+  "home"
+ ],
+ "upstream": [
+  "nature"
+ ],
+ "uptime": [
+  "technology"
+ ],
+ "uranium": [
+  "nature"
+ ],
+ "urban": [
+  "city"
+ ],
+ "urinary bladder": [
+  "body"
+ ],
+ "urinary tract": [
+  "body"
+ ],
+ "url": [
+  "technology"
+ ],
+ "usb": [
+  "technology"
+ ],
+ "user experience": [
+  "technology"
+ ],
+ "user interface": [
+  "technology"
+ ],
+ "uterine cavity": [
+  "body"
+ ],
+ "uterus": [
+  "body"
+ ],
+ "utility": [
+  "city"
+ ],
+ "utility man": [
+  "sports"
+ ],
+ "vacancy": [
+  "work"
+ ],
+ "vacation": [
+  "travel"
+ ],
+ "vaccine": [
+  "body"
+ ],
+ "vagina": [
+  "body"
+ ],
+ "vaginal artery": [
+  "body"
+ ],
+ "vale": [
+  "nature"
+ ],
+ "valley": [
+  "nature"
+ ],
+ "valuation": [
+  "money"
+ ],
+ "value": [
+  "money"
+ ],
+ "valve": [
+  "body"
+ ],
+ "van": [
+  "travel"
+ ],
+ "vanilla": [
+  "food"
+ ],
+ "variety meat": [
+  "food"
+ ],
+ "vascular system": [
+  "body"
+ ],
+ "vase": [
+  "home"
+ ],
+ "vegetable": [
+  "food"
+ ],
+ "vegetarian": [
+  "food",
+  "family"
+ ],
+ "vehicle": [
+  "travel"
+ ],
+ "vein": [
+  "body"
+ ],
+ "vend": [
+  "money"
+ ],
+ "vendor": [
+  "money",
+  "work"
+ ],
+ "venom": [
+  "animals"
+ ],
+ "vent": [
+  "body"
+ ],
+ "venture": [
+  "work"
+ ],
+ "venue": [
+  "city"
+ ],
+ "verdict": [
+  "city"
+ ],
+ "verse": [
+  "sports"
+ ],
+ "version control": [
+  "technology"
+ ],
+ "vertebrate foot": [
+  "body"
+ ],
+ "vessel": [
+  "body"
+ ],
+ "vest": [
+  "clothing"
+ ],
+ "vibes": [
+  "sports"
+ ],
+ "vice-presidency": [
+  "work"
+ ],
+ "victorious": [
+  "sports"
+ ],
+ "victory": [
+  "sports"
+ ],
+ "video": [
+  "technology"
+ ],
+ "videoconference": [
+  "technology"
+ ],
+ "villa": [
+  "home"
+ ],
+ "village": [
+  "city"
+ ],
+ "villager": [
+  "city"
+ ],
+ "vinegar": [
+  "food"
+ ],
+ "vineyard": [
+  "nature"
+ ],
+ "violin": [
+  "sports"
+ ],
+ "virtual machine": [
+  "technology"
+ ],
+ "virus": [
+  "body"
+ ],
+ "visa": [
+  "travel"
+ ],
+ "vitamin": [
+  "body",
+  "food"
+ ],
+ "vocal cord": [
+  "body"
+ ],
+ "volleyball": [
+  "sports"
+ ],
+ "vote": [
+  "city"
+ ],
+ "voting": [
+  "city"
+ ],
+ "voucher": [
+  "money"
+ ],
+ "vpn": [
+  "technology"
+ ],
+ "wage": [
+  "money",
+  "work"
+ ],
+ "waist": [
+  "body"
+ ],
+ "waiter": [
+  "food",
+  "work"
+ ],
+ "waitress": [
+  "food",
+  "work"
+ ],
+ "walk": [
+  "sports"
+ ],
+ "walk of life": [
+  "work"
+ ],
+ "walkway": [
+  "city"
+ ],
+ "wall": [
+  "home"
+ ],
+ "wallet": [
+  "money",
+  "clothing"
+ ],
+ "war": [
+  "city"
+ ],
+ "war baby": [
+  "family"
+ ],
+ "ward": [
+  "body"
+ ],
+ "warden": [
+  "work"
+ ],
+ "warehouse": [
+  "work"
+ ],
+ "warrior": [
+  "sports"
+ ],
+ "watch": [
+  "clothing"
+ ],
+ "water": [
+  "nature"
+ ],
+ "water ice": [
+  "food"
+ ],
+ "water ski": [
+  "sports"
+ ],
+ "wave": [
+  "nature"
+ ],
+ "wealth": [
+  "money"
+ ],
+ "wealthy": [
+  "money"
+ ],
+ "weather": [
+  "nature"
+ ],
+ "weather map": [
+  "nature"
+ ],
+ "weave": [
+  "clothing"
+ ],
+ "web app": [
+  "technology"
+ ],
+ "web page": [
+  "technology"
+ ],
+ "webcam": [
+  "technology"
+ ],
+ "webhook": [
+  "technology"
+ ],
+ "webpage": [
+  "technology"
+ ],
+ "website": [
+  "technology"
+ ],
+ "wedding": [
+  "family"
+ ],
+ "wednesday": [
+  "time"
+ ],
+ "weed": [
+  "nature"
+ ],
+ "week": [
+  "time"
+ ],
+ "weekday": [
+  "time"
+ ],
+ "weekend": [
+  "time"
+ ],
+ "weekly": [
+  "time"
+ ],
+ "weight": [
+  "body"
+ ],
+ "welfare": [
+  "body"
+ ],
+ "well-being": [
+  "body"
+ ],
+ "wellness": [
+  "body"
+ ],
+ "whale": [
+  "animals"
+ ],
+ "wheat": [
+  "food"
+ ],
+ "wheel": [
+  "travel"
+ ],
+ "wheelchair": [
+  "body"
+ ],
+ "whiplash": [
+  "body"
+ ],
+ "whisky": [
+  "food"
+ ],
+ "white chocolate": [
+  "food"
+ ],
+ "white goods": [
+  "home"
+ ],
+ "white rice": [
+  "food"
+ ],
+ "white sauce": [
+  "food"
+ ],
+ "whole-word method": [
+  "education"
+ ],
+ "wholesale": [
+  "work",
+  "money"
+ ],
+ "wholesaler": [
+  "work",
+  "money"
+ ],
+ "whooping cough": [
+  "body"
+ ],
+ "wicket": [
+  "sports"
+ ],
+ "widget": [
+  "technology"
+ ],
+ "widow": [
+  "family"
+ ],
+ "wife": [
+  "family"
+ ],
+ "wifi": [
+  "technology"
+ ],
+ "wild rice": [
+  "food"
+ ],
+ "wildlife": [
+  "animals",
+  "nature"
+ ],
+ "window": [
+  "home"
+ ],
+ "wine": [
+  "food"
+ ],
+ "wing": [
+  "animals"
+ ],
+ "winger": [
+  "sports"
+ ],
+ "winnings": [
+  "money"
+ ],
+ "wire": [
+  "technology"
+ ],
+ "wireframe": [
+  "technology"
+ ],
+ "wireless": [
+  "technology"
+ ],
+ "wisdom tooth": [
+  "body"
+ ],
+ "withdraw": [
+  "money"
+ ],
+ "withdrawal": [
+  "money"
+ ],
+ "withdrawal symptom": [
+  "body"
+ ],
+ "withholding": [
+  "money"
+ ],
+ "withholding tax": [
+  "money"
+ ],
+ "woman": [
+  "family"
+ ],
+ "womb": [
+  "body"
+ ],
+ "won ton": [
+  "food"
+ ],
+ "wood": [
+  "nature"
+ ],
+ "wooden": [
+  "home"
+ ],
+ "woodland": [
+  "nature"
+ ],
+ "wool": [
+  "clothing"
+ ],
+ "word": [
+  "communication"
+ ],
+ "work": [
+  "work"
+ ],
+ "workbook": [
+  "education"
+ ],
+ "worker": [
+  "work"
+ ],
+ "workflow": [
+  "work"
+ ],
+ "workforce": [
+  "work"
+ ],
+ "working": [
+  "work"
+ ],
+ "workout": [
+  "sports",
+  "body"
+ ],
+ "workplace": [
+  "work"
+ ],
+ "worksheet": [
+  "education"
+ ],
+ "workshop": [
+  "work"
+ ],
+ "worm": [
+  "animals"
+ ],
+ "worship": [
+  "family"
+ ],
+ "wound": [
+  "body"
+ ],
+ "woven": [
+  "clothing"
+ ],
+ "wrench": [
+  "body"
+ ],
+ "wrestling": [
+  "sports"
+ ],
+ "wrist": [
+  "body"
+ ],
+ "wristwatch": [
+  "clothing"
+ ],
+ "write": [
+  "communication"
+ ],
+ "writer": [
+  "work"
+ ],
+ "writing": [
+  "communication"
+ ],
+ "yard": [
+  "home"
+ ],
+ "yard goods": [
+  "clothing"
+ ],
+ "yarn": [
+  "communication"
+ ],
+ "year": [
+  "time"
+ ],
+ "yearly": [
+  "time"
+ ],
+ "yen": [
+  "money"
+ ],
+ "yoga": [
+  "sports",
+  "body"
+ ],
+ "yogurt": [
+  "food"
+ ],
+ "youngster": [
+  "family"
+ ],
+ "yuan": [
+  "money"
+ ],
+ "yummy": [
+  "food"
+ ],
+ "zoo": [
+  "animals",
+  "city"
+ ]
+}

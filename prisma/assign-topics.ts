@@ -1,18 +1,27 @@
 /* eslint-disable */
 import "./load-env";
 import { PrismaClient } from "@prisma/client";
-import { assignTopics, TOPICS } from "../src/lib/topic-taxonomy";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { TOPICS } from "../src/lib/topic-taxonomy";
 
 const prisma = new PrismaClient();
 
-// Curated pack slugs (tagged by import-packs.ts) must survive re-runs; keyword
-// topics are recomputed from scratch each time.
-const CURATED = new Set(TOPICS.filter((t) => t.curated).map((t) => t.slug));
+// Keyword topics come from the reviewed classification (data/topics/classification.json,
+// built by scripts/topics/classify-*.ts). Keyword substring matching was retired: its
+// precision measured ~20% (scripts/topics/audit-topics.ts). A word absent from the file
+// simply gets no keyword topic.
+const CLASSIFICATION = JSON.parse(readFileSync(resolve("data", "topics", "classification.json"), "utf8")) as Record<string, string[]>;
+
+// Pack-only slugs (tagged by import-packs.ts, no keywords) must survive re-runs.
+// `travel` is curated AND classified; its old pack tags were noisy ("house"), so the
+// classification is its only source now.
+const CURATED = new Set(TOPICS.filter((t) => t.curated && t.keywords.length === 0).map((t) => t.slug));
 
 async function main() {
   console.log("🏷️  Categorizing all words into topics...\n");
   const words = await prisma.word.findMany({
-    select: { id: true, word: true, definitionEn: true, example: true, synonyms: true, topics: true },
+    select: { id: true, word: true, topics: true },
   });
   console.log(`   Found ${words.length} words`);
 
@@ -24,22 +33,12 @@ async function main() {
     const batch = words.slice(i, i + BATCH);
     const updates = [];
     for (const w of batch) {
-      let syns: string[] = [];
-      try {
-        const v = JSON.parse(w.synonyms || "[]");
-        if (Array.isArray(v)) syns = v;
-      } catch {}
       let existing: string[] = [];
       try {
         const v = JSON.parse(w.topics || "[]");
         if (Array.isArray(v)) existing = v;
       } catch {}
-      const keywordTopics = assignTopics({
-        word: w.word,
-        definitionEn: w.definitionEn,
-        example: w.example,
-        synonyms: syns,
-      });
+      const keywordTopics = CLASSIFICATION[w.word] ?? [];
       const curated = existing.filter((s) => CURATED.has(s));
       const topics = [...curated, ...keywordTopics.filter((s) => !curated.includes(s))];
       for (const t of topics) topicCounts[t] = (topicCounts[t] ?? 0) + 1;
